@@ -1,0 +1,455 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_animation" kind="class" language="C++" prot="public">
+    <compoundname>wxAnimation</compoundname>
+    <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
+    <includes local="no">wx/animate.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_animation_1a765cb80873e0eca9fc87587c911c9010" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxAnimation::wxAnimation</definition>
+        <argsstring>()</argsstring>
+        <name>wxAnimation</name>
+        <briefdescription>
+<para>Constructs a new empty animation object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call <ref refid="classwx_animation_1a51b1efabf9a3ffa70e7246fc11f8054c" kindref="member">Load()</ref> to initialize it.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_animation_ctrl_1a0c2a91c98c8d8495202dfaae7dff8621" kindref="member">wxAnimationCtrl::CreateAnimation()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="325" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a7b9ef90b074e1d4a01ed0134a10cd446" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxAnimation::wxAnimation</definition>
+        <argsstring>(const wxString &amp;name, wxAnimationType type=wxANIMATION_TYPE_ANY)</argsstring>
+        <name>wxAnimation</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="animate_8h_1a35e82d083076c53b78824576ee4e1717" kindref="member">wxAnimationType</ref></type>
+          <declname>type</declname>
+          <defval><ref refid="animate_8h_1a35e82d083076c53b78824576ee4e1717ae772ee7c4175f5c6b00c3d1f39857e56" kindref="member">wxANIMATION_TYPE_ANY</ref></defval>
+        </param>
+        <briefdescription>
+<para>Constructs a new animation object and load the animation data from the given filename. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A filename. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>One of the <ref refid="animate_8h_1a35e82d083076c53b78824576ee4e1717" kindref="member">wxAnimationType</ref> values; wxANIMATION_TYPE_ANY means that the function should try to autodetect the filetype.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="classwx_animation_ctrl_1a0c2a91c98c8d8495202dfaae7dff8621" kindref="member">wxAnimationCtrl::CreateAnimation()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="339" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a6ab261f9b374e4480f37a9163aad01ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxAnimation::wxAnimation</definition>
+        <argsstring>(const wxAnimation &amp;other)</argsstring>
+        <name>wxAnimation</name>
+        <param>
+          <type>const <ref refid="classwx_animation" kindref="compound">wxAnimation</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="344" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a757ca421aaf544f6c2f2247f9b9b6846" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxAnimation::IsOk</definition>
+        <argsstring>() const</argsstring>
+        <name>IsOk</name>
+        <briefdescription>
+<para>Returns true if animation data is present. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="349" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a9a264d9088ae82c26f66c41a2ebd73d5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxAnimation::IsCompatibleWith</definition>
+        <argsstring>(wxClassInfo *ci) const</argsstring>
+        <name>IsCompatibleWith</name>
+        <param>
+          <type><ref refid="classwx_class_info" kindref="compound">wxClassInfo</ref> *</type>
+          <declname>ci</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if animation can be used with controls of the given type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function checks if this animation object can be used with <ref refid="classwx_animation_ctrl" kindref="compound">wxAnimationCtrl</ref> of particular type. This will be always the case for the platforms where only a single <ref refid="classwx_animation_ctrl" kindref="compound">wxAnimationCtrl</ref> implementation is available, but not necessarily under e.g. wxGTK where both native (but limited) GTK implementation and generic implementation can be used.</para>
+<para><simplesect kind="since"><para>3.1.4 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="362" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a0ef8ab5dc7fc2d97dfc8f727fcebf99b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxAnimation::GetDelay</definition>
+        <argsstring>(unsigned int frame) const</argsstring>
+        <name>GetDelay</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+<para>Returns the delay for the i-th frame in milliseconds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <computeroutput>-1</computeroutput> is returned the frame is to be displayed forever. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="368" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a1981f973d0aed697bda04ecfa70a76e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int wxAnimation::GetFrameCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFrameCount</name>
+        <briefdescription>
+<para>Returns the number of frames for this animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is not implemented in the native wxGTK implementation of this class and always returns 0 there. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="376" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a248c1115fbaa4634b212bab6fde858a4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_image" kindref="compound">wxImage</ref></type>
+        <definition>wxImage wxAnimation::GetFrame</definition>
+        <argsstring>(unsigned int frame) const</argsstring>
+        <name>GetFrame</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+<para>Returns the i-th frame as a <ref refid="classwx_image" kindref="compound">wxImage</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is not implemented in the native wxGTK implementation of this class and always returns an invalid image there. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="384" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a982fba32aeb0148d9a7b8f1216cf382b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
+        <definition>wxSize wxAnimation::GetSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSize</name>
+        <briefdescription>
+<para>Returns the size of the animation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="389" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a2a10e371a72ffc893f2827a6701c8116" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxAnimation::LoadFile</definition>
+        <argsstring>(const wxString &amp;name, wxAnimationType type=wxANIMATION_TYPE_ANY)</argsstring>
+        <name>LoadFile</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="animate_8h_1a35e82d083076c53b78824576ee4e1717" kindref="member">wxAnimationType</ref></type>
+          <declname>type</declname>
+          <defval><ref refid="animate_8h_1a35e82d083076c53b78824576ee4e1717ae772ee7c4175f5c6b00c3d1f39857e56" kindref="member">wxANIMATION_TYPE_ANY</ref></defval>
+        </param>
+        <briefdescription>
+<para>Loads an animation from a file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A filename. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>One of the <ref refid="animate_8h_1a35e82d083076c53b78824576ee4e1717" kindref="member">wxAnimationType</ref> values; wxANIMATION_TYPE_ANY means that the function should try to autodetect the filetype.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the operation succeeded, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="402" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a51b1efabf9a3ffa70e7246fc11f8054c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxAnimation::Load</definition>
+        <argsstring>(wxInputStream &amp;stream, wxAnimationType type=wxANIMATION_TYPE_ANY)</argsstring>
+        <name>Load</name>
+        <param>
+          <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type><ref refid="animate_8h_1a35e82d083076c53b78824576ee4e1717" kindref="member">wxAnimationType</ref></type>
+          <declname>type</declname>
+          <defval><ref refid="animate_8h_1a35e82d083076c53b78824576ee4e1717ae772ee7c4175f5c6b00c3d1f39857e56" kindref="member">wxANIMATION_TYPE_ANY</ref></defval>
+        </param>
+        <briefdescription>
+<para>Loads an animation from the given stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stream to use to load the animation. Under wxGTK may be any kind of stream; under other platforms this must be a seekable stream. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>One of the <ref refid="animate_8h_1a35e82d083076c53b78824576ee4e1717" kindref="member">wxAnimationType</ref> enumeration values.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the operation succeeded, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="416" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classwx_animation_1a7d0df772ebce5c58dc0869dea087d726" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>wxAnimationDecoderList &amp;</type>
+        <definition>static wxAnimationDecoderList &amp; wxAnimation::GetHandlers</definition>
+        <argsstring>()</argsstring>
+        <name>GetHandlers</name>
+        <briefdescription>
+<para>Returns the list of animation decoders used by the generic animation and <computeroutput><ref refid="classwx_generic_animation_ctrl" kindref="compound">wxGenericAnimationCtrl</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="423" column="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1aa5c611fb70dd7231fe0b143e59a3c3e3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void wxAnimation::AddHandler</definition>
+        <argsstring>(wxAnimationDecoder *handler)</argsstring>
+        <name>AddHandler</name>
+        <param>
+          <type><ref refid="classwx_animation_decoder" kindref="compound">wxAnimationDecoder</ref> *</type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+<para>Add a new decoder to the list of animation decoders. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="428" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a8ac4391a4a6d2fef1c78cab20efc0c69" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void wxAnimation::InsertHandler</definition>
+        <argsstring>(wxAnimationDecoder *handler)</argsstring>
+        <name>InsertHandler</name>
+        <param>
+          <type><ref refid="classwx_animation_decoder" kindref="compound">wxAnimationDecoder</ref> *</type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+<para>Insert a new decoder to the front of the list of animation decoders. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="433" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1acf4b95ea5d76c808dbb3e090c9de04a5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classwx_animation_decoder" kindref="compound">wxAnimationDecoder</ref> *</type>
+        <definition>static const wxAnimationDecoder * wxAnimation::FindHandler</definition>
+        <argsstring>(wxAnimationType animType)</argsstring>
+        <name>FindHandler</name>
+        <param>
+          <type><ref refid="animate_8h_1a35e82d083076c53b78824576ee4e1717" kindref="member">wxAnimationType</ref></type>
+          <declname>animType</declname>
+        </param>
+        <briefdescription>
+<para>Search for an animation decoder by type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="438" column="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1a0d117cd137a725f1409c127f15649ab1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void wxAnimation::InitStandardHandlers</definition>
+        <argsstring>()</argsstring>
+        <name>InitStandardHandlers</name>
+        <briefdescription>
+<para>Load the stock animation decoders (currently GIF and ANI) into the list of decoders. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is called automatically at program startup. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="444" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_1aad44a17347156a5e5872984c558db339" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void wxAnimation::CleanUpHandlers</definition>
+        <argsstring>()</argsstring>
+        <name>CleanUpHandlers</name>
+        <briefdescription>
+<para>Clear out the animation decoder list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is called automatically at program shutdown. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animate.h" line="450" column="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <computeroutput><ref refid="classwx_animation" kindref="compound">wxAnimation</ref></computeroutput> class handles the interface between the animation control and the details of the animation image or data. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Predefined objects/pointers: <ref refid="animate_8h_1a511afb5aaf468a90108facf18c255ae4" kindref="member">wxNullAnimation</ref></para>
+<para><simplesect kind="see"><para><ref refid="classwx_animation_ctrl" kindref="compound">wxAnimationCtrl</ref>, <ref refid="page_samples_1page_samples_animate" kindref="member">Animation Sample</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>wxAnimation</label>
+        <link refid="classwx_animation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>wxAnimation</label>
+        <link refid="classwx_animation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_refData</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
+    </collaborationgraph>
+    <location file="interface/wx/animate.h" line="315" column="1" bodyfile="interface/wx/animate.h" bodystart="316" bodyend="451"/>
+    <listofallmembers>
+      <member refid="classwx_animation_1aa5c611fb70dd7231fe0b143e59a3c3e3" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>AddHandler</name></member>
+      <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxAnimation</scope><name>AllocExclusive</name></member>
+      <member refid="classwx_animation_1aad44a17347156a5e5872984c558db339" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>CleanUpHandlers</name></member>
+      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxAnimation</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxAnimation</scope><name>CreateRefData</name></member>
+      <member refid="classwx_animation_1acf4b95ea5d76c808dbb3e090c9de04a5" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>FindHandler</name></member>
+      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxAnimation</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_animation_1a0ef8ab5dc7fc2d97dfc8f727fcebf99b" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>GetDelay</name></member>
+      <member refid="classwx_animation_1a248c1115fbaa4634b212bab6fde858a4" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>GetFrame</name></member>
+      <member refid="classwx_animation_1a1981f973d0aed697bda04ecfa70a76e0" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>GetFrameCount</name></member>
+      <member refid="classwx_animation_1a7d0df772ebce5c58dc0869dea087d726" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>GetHandlers</name></member>
+      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>GetRefData</name></member>
+      <member refid="classwx_animation_1a982fba32aeb0148d9a7b8f1216cf382b" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>GetSize</name></member>
+      <member refid="classwx_animation_1a0d117cd137a725f1409c127f15649ab1" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>InitStandardHandlers</name></member>
+      <member refid="classwx_animation_1a8ac4391a4a6d2fef1c78cab20efc0c69" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>InsertHandler</name></member>
+      <member refid="classwx_animation_1a9a264d9088ae82c26f66c41a2ebd73d5" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>IsCompatibleWith</name></member>
+      <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>IsKindOf</name></member>
+      <member refid="classwx_animation_1a757ca421aaf544f6c2f2247f9b9b6846" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>IsOk</name></member>
+      <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>IsSameAs</name></member>
+      <member refid="classwx_animation_1a51b1efabf9a3ffa70e7246fc11f8054c" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>Load</name></member>
+      <member refid="classwx_animation_1a2a10e371a72ffc893f2827a6701c8116" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>LoadFile</name></member>
+      <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxAnimation</scope><name>m_refData</name></member>
+      <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>operator delete</name></member>
+      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>Ref</name></member>
+      <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>SetRefData</name></member>
+      <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>UnRef</name></member>
+      <member refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>UnShare</name></member>
+      <member refid="classwx_animation_1a765cb80873e0eca9fc87587c911c9010" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>wxAnimation</name></member>
+      <member refid="classwx_animation_1a7b9ef90b074e1d4a01ed0134a10cd446" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>wxAnimation</name></member>
+      <member refid="classwx_animation_1a6ab261f9b374e4480f37a9163aad01ba" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>wxAnimation</name></member>
+      <member refid="classwx_object_1acaa378363a28af421ab56ad7b46eadf0" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>wxObject</name></member>
+      <member refid="classwx_object_1a4721b4dc9b7aff0f30904ba2ea3954cf" prot="public" virt="non-virtual"><scope>wxAnimation</scope><name>wxObject</name></member>
+      <member refid="classwx_object_1a2a51aa8bfbab47ca2f051bcf84b3f35b" prot="public" virt="virtual"><scope>wxAnimation</scope><name>~wxObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,850 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_graphics_renderer" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>wxGraphicsRenderer</compoundname>
+    <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
+    <includes local="no">wx/graphics.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_graphics_renderer_1a573bb148fca440d288110993ed997410" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_bitmap" kindref="compound">wxGraphicsBitmap</ref></type>
+        <definition>virtual wxGraphicsBitmap wxGraphicsRenderer::CreateBitmap</definition>
+        <argsstring>(const wxBitmap &amp;bitmap)=0</argsstring>
+        <name>CreateBitmap</name>
+        <param>
+          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <declname>bitmap</declname>
+        </param>
+        <briefdescription>
+<para>Creates <ref refid="classwx_graphics_bitmap" kindref="compound">wxGraphicsBitmap</ref> from an existing <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an invalid wxNullGraphicsBitmap on failure. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1305" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a6807794469fa58c7c94bb31d144acc69" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_bitmap" kindref="compound">wxGraphicsBitmap</ref></type>
+        <definition>virtual wxGraphicsBitmap wxGraphicsRenderer::CreateBitmapFromImage</definition>
+        <argsstring>(const wxImage &amp;image)=0</argsstring>
+        <name>CreateBitmapFromImage</name>
+        <param>
+          <type>const <ref refid="classwx_image" kindref="compound">wxImage</ref> &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+<para>Creates <ref refid="classwx_graphics_bitmap" kindref="compound">wxGraphicsBitmap</ref> from an existing <ref refid="classwx_image" kindref="compound">wxImage</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is more efficient than converting <ref refid="classwx_image" kindref="compound">wxImage</ref> to <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> first and then calling <ref refid="classwx_graphics_renderer_1a573bb148fca440d288110993ed997410" kindref="member">CreateBitmap()</ref> but otherwise has the same effect.</para>
+<para>Returns an invalid wxNullGraphicsBitmap on failure.</para>
+<para><simplesect kind="since"><para>2.9.3 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1317" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1ae2297b12e7f4d1c4f1d836d887318317" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_image" kindref="compound">wxImage</ref></type>
+        <definition>virtual wxImage wxGraphicsRenderer::CreateImageFromBitmap</definition>
+        <argsstring>(const wxGraphicsBitmap &amp;bmp)=0</argsstring>
+        <name>CreateImageFromBitmap</name>
+        <param>
+          <type>const <ref refid="classwx_graphics_bitmap" kindref="compound">wxGraphicsBitmap</ref> &amp;</type>
+          <declname>bmp</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_image" kindref="compound">wxImage</ref> from a <ref refid="classwx_graphics_bitmap" kindref="compound">wxGraphicsBitmap</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is used by the more convenient <ref refid="classwx_graphics_bitmap_1afe5b68d6584d416f5ef88b06a06b4242" kindref="member">wxGraphicsBitmap::ConvertToImage</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1324" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a21b876848026e6d6d79abd0e6e4ceb28" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_bitmap" kindref="compound">wxGraphicsBitmap</ref></type>
+        <definition>virtual wxGraphicsBitmap wxGraphicsRenderer::CreateBitmapFromNativeBitmap</definition>
+        <argsstring>(void *bitmap)=0</argsstring>
+        <name>CreateBitmapFromNativeBitmap</name>
+        <param>
+          <type>void *</type>
+          <declname>bitmap</declname>
+        </param>
+        <briefdescription>
+<para>Creates <ref refid="classwx_graphics_bitmap" kindref="compound">wxGraphicsBitmap</ref> from a native bitmap handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><emphasis>bitmap</emphasis> meaning is platform-dependent. Currently it&apos;s a GDI+ <computeroutput>Bitmap</computeroutput> pointer under MSW, <computeroutput>CGImage</computeroutput> pointer under macOS or a <computeroutput>cairo_surface_t</computeroutput> pointer when using Cairo under any platform.</para>
+<para>Notice that this method takes ownership of <emphasis>bitmap</emphasis>, i.e. it will be destroyed when the returned <ref refid="classwx_graphics_bitmap" kindref="compound">wxGraphicsBitmap</ref> is. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1336" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a8e9d88060d2f305050007fa0e0f1b5f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
+        <definition>virtual wxGraphicsContext * wxGraphicsRenderer::CreateContext</definition>
+        <argsstring>(wxWindow *window)=0</argsstring>
+        <name>CreateContext</name>
+        <param>
+          <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> from a <ref refid="classwx_window" kindref="compound">wxWindow</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1341" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a917966669506b5086005833a927734f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
+        <definition>virtual wxGraphicsContext * wxGraphicsRenderer::CreateContext</definition>
+        <argsstring>(const wxWindowDC &amp;windowDC)=0</argsstring>
+        <name>CreateContext</name>
+        <param>
+          <type>const <ref refid="classwx_window_d_c" kindref="compound">wxWindowDC</ref> &amp;</type>
+          <declname>windowDC</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> from a <ref refid="classwx_window_d_c" kindref="compound">wxWindowDC</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1346" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a4db02063f2c1b603c4b017cc3c0140cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
+        <definition>virtual wxGraphicsContext * wxGraphicsRenderer::CreateContext</definition>
+        <argsstring>(const wxMemoryDC &amp;memoryDC)=0</argsstring>
+        <name>CreateContext</name>
+        <param>
+          <type>const <ref refid="classwx_memory_d_c" kindref="compound">wxMemoryDC</ref> &amp;</type>
+          <declname>memoryDC</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> from a <ref refid="classwx_memory_d_c" kindref="compound">wxMemoryDC</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1351" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a01f1d1db6da513c4680f4175b44944cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
+        <definition>virtual wxGraphicsContext * wxGraphicsRenderer::CreateContext</definition>
+        <argsstring>(const wxPrinterDC &amp;printerDC)=0</argsstring>
+        <name>CreateContext</name>
+        <param>
+          <type>const <ref refid="classwx_printer_d_c" kindref="compound">wxPrinterDC</ref> &amp;</type>
+          <declname>printerDC</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> from a <ref refid="classwx_printer_d_c" kindref="compound">wxPrinterDC</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>Not implemented for Direct2D renderer (on MSW). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1357" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a9a84ffc7ec1b606352d26e74221d8be9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
+        <definition>virtual wxGraphicsContext * wxGraphicsRenderer::CreateContext</definition>
+        <argsstring>(const wxEnhMetaFileDC &amp;metaFileDC)=0</argsstring>
+        <name>CreateContext</name>
+        <param>
+          <type>const wxEnhMetaFileDC &amp;</type>
+          <declname>metaFileDC</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> from a wxEnhMetaFileDC. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function, as wxEnhMetaFileDC class itself, is only available only under MSW (but not for Direct2D renderer). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1365" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a013783b6a162aa69b2fa3bee00df447a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
+        <definition>wxGraphicsContext * wxGraphicsRenderer::CreateContextFromUnknownDC</definition>
+        <argsstring>(wxDC &amp;dc)</argsstring>
+        <name>CreateContextFromUnknownDC</name>
+        <param>
+          <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> &amp;</type>
+          <declname>dc</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> from a DC of unknown specific type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> if <emphasis>dc</emphasis> is a supported type (i.e. has a corresponding <ref refid="classwx_graphics_renderer_1a8e9d88060d2f305050007fa0e0f1b5f5" kindref="member">CreateContext()</ref> method, e.g. <ref refid="classwx_window_d_c" kindref="compound">wxWindowDC</ref> or <ref refid="classwx_memory_d_c" kindref="compound">wxMemoryDC</ref>). Returns NULL if the DC is unsupported.</para>
+<para>This method is only useful as a helper in generic code that operates with <ref refid="classwx_d_c" kindref="compound">wxDC</ref> and doesn&apos;t known its exact type. Use the appropriate <ref refid="classwx_graphics_renderer_1a8e9d88060d2f305050007fa0e0f1b5f5" kindref="member">CreateContext()</ref> overload instead if you know that the DC is e.g. <ref refid="classwx_window_d_c" kindref="compound">wxWindowDC</ref>.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_graphics_context_1aa8000f79cb2123da46b31c15246c7383" kindref="member">wxGraphicsContext::CreateFromUnknownDC()</ref></para>
+</simplesect>
+<simplesect kind="since"><para>3.1.3 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1383" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a784688a2b1020351837790b48ee4cdca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
+        <definition>wxGraphicsContext * wxGraphicsRenderer::CreateContextFromImage</definition>
+        <argsstring>(wxImage &amp;image)</argsstring>
+        <name>CreateContextFromImage</name>
+        <param>
+          <type><ref refid="classwx_image" kindref="compound">wxImage</ref> &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> associated with a <ref refid="classwx_image" kindref="compound">wxImage</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is used by wxContext::CreateFromImage() and is not normally called directly.</para>
+<para><simplesect kind="since"><para>2.9.3 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1393" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1af4925b45520135fd41788fc37e244029" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_brush" kindref="compound">wxGraphicsBrush</ref></type>
+        <definition>virtual wxGraphicsBrush wxGraphicsRenderer::CreateBrush</definition>
+        <argsstring>(const wxBrush &amp;brush)=0</argsstring>
+        <name>CreateBrush</name>
+        <param>
+          <type>const <ref refid="classwx_brush" kindref="compound">wxBrush</ref> &amp;</type>
+          <declname>brush</declname>
+        </param>
+        <briefdescription>
+<para>Creates a native brush from a <ref refid="classwx_brush" kindref="compound">wxBrush</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1398" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a876136ecca42eec1221262423dd480cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
+        <definition>virtual wxGraphicsContext * wxGraphicsRenderer::CreateContextFromNativeContext</definition>
+        <argsstring>(void *context)=0</argsstring>
+        <name>CreateContextFromNativeContext</name>
+        <param>
+          <type>void *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> from a native context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This native context must be a CGContextRef for Core Graphics, a Graphics pointer for GDIPlus, an ID2D1RenderTarget pointer for Direct2D, a cairo_t pointer or HDC for Cairo on MSW, or a cairo_t pointer for Cairo on any other platform. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1407" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a1fc536e8ad3ae87cd5979cbb50edc02a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
+        <definition>virtual wxGraphicsContext * wxGraphicsRenderer::CreateContextFromNativeWindow</definition>
+        <argsstring>(void *window)=0</argsstring>
+        <name>CreateContextFromNativeWindow</name>
+        <param>
+          <type>void *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> from a native window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1412" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a5b0e0b419191ca672f3a043ac20f4228" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
+        <definition>virtual wxGraphicsContext * wxGraphicsRenderer::CreateMeasuringContext</definition>
+        <argsstring>()=0</argsstring>
+        <name>CreateMeasuringContext</name>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> that can be used for measuring texts only. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>No drawing commands are allowed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1425" column="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1afebce1c20aa5d61fffb91b968e2d630d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_font" kindref="compound">wxGraphicsFont</ref></type>
+        <definition>virtual wxGraphicsFont wxGraphicsRenderer::CreateFont</definition>
+        <argsstring>(const wxFont &amp;font, const wxColour &amp;col= *wxBLACK)=0</argsstring>
+        <name>CreateFont</name>
+        <param>
+          <type>const <ref refid="classwx_font" kindref="compound">wxFont</ref> &amp;</type>
+          <declname>font</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
+          <declname>col</declname>
+          <defval>*<ref refid="colour_8h_1a28c9e9208c4907063eb9869ff2332776" kindref="member">wxBLACK</ref></defval>
+        </param>
+        <briefdescription>
+<para>Creates a native graphics font from a <ref refid="classwx_font" kindref="compound">wxFont</ref> and a text colour. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1430" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a6969476be51ad558d09687f727918ed1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_font" kindref="compound">wxGraphicsFont</ref></type>
+        <definition>virtual wxGraphicsFont wxGraphicsRenderer::CreateFont</definition>
+        <argsstring>(double sizeInPixels, const wxString &amp;facename, int flags=wxFONTFLAG_DEFAULT, const wxColour &amp;col= *wxBLACK)=0</argsstring>
+        <name>CreateFont</name>
+        <param>
+          <type>double</type>
+          <declname>sizeInPixels</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>facename</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval><ref refid="interface_2wx_2font_8h_1a332098a83a5d888d2e1169b4bd9565daa7d4aeb5a9cd61d36185166643cbe59ad" kindref="member">wxFONTFLAG_DEFAULT</ref></defval>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
+          <declname>col</declname>
+          <defval>*<ref refid="colour_8h_1a28c9e9208c4907063eb9869ff2332776" kindref="member">wxBLACK</ref></defval>
+        </param>
+        <briefdescription>
+<para>Creates a graphics font with the given characteristics. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If possible, the <ref refid="classwx_graphics_renderer_1afebce1c20aa5d61fffb91b968e2d630d" kindref="member">CreateFont()</ref> overload taking <ref refid="classwx_font" kindref="compound">wxFont</ref> should be used instead. The main advantage of this overload is that it can be used without X server connection under Unix when using Cairo.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sizeInPixels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height of the font in user space units, i.e. normally pixels. Notice that this is different from the overload taking <ref refid="classwx_font" kindref="compound">wxFont</ref> as <ref refid="classwx_font" kindref="compound">wxFont</ref> size is specified in points. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>facename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the font. The same font name might not be available under all platforms so the font name can also be empty to use the default platform font. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Combination of wxFontFlag enum elements. Currently only <computeroutput>wxFONTFLAG_ITALIC</computeroutput> and <computeroutput>wxFONTFLAG_BOLD</computeroutput> are supported. By default the normal font version is used. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The font colour, black by default.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>2.9.3 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1457" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a3b2de8e1a3b5f2d9cb6b20be22c8892b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_font" kindref="compound">wxGraphicsFont</ref></type>
+        <definition>virtual wxGraphicsFont wxGraphicsRenderer::CreateFontAtDPI</definition>
+        <argsstring>(const wxFont &amp;font, const wxRealPoint &amp;dpi, const wxColour &amp;col= *wxBLACK)=0</argsstring>
+        <name>CreateFontAtDPI</name>
+        <param>
+          <type>const <ref refid="classwx_font" kindref="compound">wxFont</ref> &amp;</type>
+          <declname>font</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_real_point" kindref="compound">wxRealPoint</ref> &amp;</type>
+          <declname>dpi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
+          <declname>col</declname>
+          <defval>*<ref refid="colour_8h_1a28c9e9208c4907063eb9869ff2332776" kindref="member">wxBLACK</ref></defval>
+        </param>
+        <briefdescription>
+<para>Creates a native graphics font from a <ref refid="classwx_font" kindref="compound">wxFont</ref> and a text colour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The specified DPI is used to convert the (fractional) <ref refid="classwx_font" kindref="compound">wxFont</ref> point-size to a fractional pixel-size.</para>
+<para><simplesect kind="since"><para>3.1.3 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1470" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a880a03a3e12675e0c32a99ca0bdc07c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_brush" kindref="compound">wxGraphicsBrush</ref></type>
+        <definition>virtual wxGraphicsBrush wxGraphicsRenderer::CreateLinearGradientBrush</definition>
+        <argsstring>(wxDouble x1, wxDouble y1, wxDouble x2, wxDouble y2, const wxGraphicsGradientStops &amp;stops, const wxGraphicsMatrix &amp;matrix=wxNullGraphicsMatrix)=0</argsstring>
+        <name>CreateLinearGradientBrush</name>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>y2</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_graphics_gradient_stops" kindref="compound">wxGraphicsGradientStops</ref> &amp;</type>
+          <declname>stops</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_graphics_matrix" kindref="compound">wxGraphicsMatrix</ref> &amp;</type>
+          <declname>matrix</declname>
+          <defval><ref refid="graphics_8h_1a07954c042dc231f9f0edbfa558a7d2cb" kindref="member">wxNullGraphicsMatrix</ref></defval>
+        </param>
+        <briefdescription>
+<para>Creates a native brush with a linear gradient. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Stops support is new since wxWidgets 2.9.1, previously only the start and end colours could be specified.</para>
+<para>The ability to apply a transformation matrix to the gradient was added in 3.1.3 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1483" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a502cedf20552ed22d8cae823b045105b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_matrix" kindref="compound">wxGraphicsMatrix</ref></type>
+        <definition>virtual wxGraphicsMatrix wxGraphicsRenderer::CreateMatrix</definition>
+        <argsstring>(wxDouble a=1.0, wxDouble b=0.0, wxDouble c=0.0, wxDouble d=1.0, wxDouble tx=0.0, wxDouble ty=0.0)=0</argsstring>
+        <name>CreateMatrix</name>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>a</declname>
+          <defval>1.0</defval>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>b</declname>
+          <defval>0.0</defval>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>c</declname>
+          <defval>0.0</defval>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>d</declname>
+          <defval>1.0</defval>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>tx</declname>
+          <defval>0.0</defval>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>ty</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+<para>Creates a native affine transformation matrix from the passed in values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The defaults result in an identity matrix. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1494" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1acdaf5505ed3833c4cb76112d001b8717" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_path" kindref="compound">wxGraphicsPath</ref></type>
+        <definition>virtual wxGraphicsPath wxGraphicsRenderer::CreatePath</definition>
+        <argsstring>()=0</argsstring>
+        <name>CreatePath</name>
+        <briefdescription>
+<para>Creates a native graphics path which is initially empty. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1502" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1addc5c8708c8cf97e51eab9f6bb2a43c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_pen" kindref="compound">wxGraphicsPen</ref></type>
+        <definition>virtual wxGraphicsPen wxGraphicsRenderer::CreatePen</definition>
+        <argsstring>(const wxGraphicsPenInfo &amp;info)=0</argsstring>
+        <name>CreatePen</name>
+        <param>
+          <type>const <ref refid="classwx_graphics_pen_info" kindref="compound">wxGraphicsPenInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Creates a native pen from its description. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>3.1.1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1509" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a93ad33cafd9f55047573783160f7ebbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_brush" kindref="compound">wxGraphicsBrush</ref></type>
+        <definition>virtual wxGraphicsBrush wxGraphicsRenderer::CreateRadialGradientBrush</definition>
+        <argsstring>(wxDouble startX, wxDouble startY, wxDouble endX, wxDouble endY, wxDouble radius, const wxGraphicsGradientStops &amp;stops, const wxGraphicsMatrix &amp;matrix=wxNullGraphicsMatrix)=0</argsstring>
+        <name>CreateRadialGradientBrush</name>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>startX</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>startY</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>endX</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>endY</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_graphics_gradient_stops" kindref="compound">wxGraphicsGradientStops</ref> &amp;</type>
+          <declname>stops</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_graphics_matrix" kindref="compound">wxGraphicsMatrix</ref> &amp;</type>
+          <declname>matrix</declname>
+          <defval><ref refid="graphics_8h_1a07954c042dc231f9f0edbfa558a7d2cb" kindref="member">wxNullGraphicsMatrix</ref></defval>
+        </param>
+        <briefdescription>
+<para>Creates a native brush with a radial gradient. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Stops support is new since wxWidgets 2.9.1, previously only the start and end colours could be specified.</para>
+<para>The ability to apply a transformation matrix to the gradient was added in 3.1.3 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1519" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1ac435b309c38f927c062406e15a75d096" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_graphics_bitmap" kindref="compound">wxGraphicsBitmap</ref></type>
+        <definition>virtual wxGraphicsBitmap wxGraphicsRenderer::CreateSubBitmap</definition>
+        <argsstring>(const wxGraphicsBitmap &amp;bitmap, wxDouble x, wxDouble y, wxDouble w, wxDouble h)=0</argsstring>
+        <name>CreateSubBitmap</name>
+        <param>
+          <type>const <ref refid="classwx_graphics_bitmap" kindref="compound">wxGraphicsBitmap</ref> &amp;</type>
+          <declname>bitmap</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a75a450a943d1f217d7cf24f2b9eeed2e" kindref="member">wxDouble</ref></type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+<para>Extracts a sub-bitmap from an existing bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1528" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1afba6de5b8d2415167cfe5a1d6c179003" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>virtual wxString wxGraphicsRenderer::GetName</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetName</name>
+        <briefdescription>
+<para>Returns the name of the technology used by the renderer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Currently this function returns &quot;gdiplus&quot; for Windows GDI+ implementation, &quot;direct2d&quot; for Windows Direct2D implementation, &quot;cairo&quot; for Cairo implementation and &quot;cg&quot; for macOS CoreGraphics implementation.</para>
+<para><simplesect kind="remark"><para>The string returned by this method is not user-readable and is expected to be used internally by the program only.</para>
+</simplesect>
+<simplesect kind="since"><para>3.1.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1545" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a4b2a82b70638120b6d0b811d453cae0e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void wxGraphicsRenderer::GetVersion</definition>
+        <argsstring>(int *major, int *minor=NULL, int *micro=NULL) const =0</argsstring>
+        <name>GetVersion</name>
+        <param>
+          <type>int *</type>
+          <declname>major</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>minor</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>micro</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+<para>Returns the version major, minor and micro/build of the technology used by the renderer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Currently this function returns the OS major and minor versions in the parameters with the matching names and sets <emphasis>micro</emphasis> to 0 for the GDI+ and CoreGraphics engines which are considered to be parts of their respective OS.</para>
+<para>For Cairo, this is the major,minor,micro version of the Cairo library which is returned. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1559" column="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classwx_graphics_renderer_1ad146fd4828656b79b1094016fc3b9110" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
+        <definition>static wxGraphicsContext * wxGraphicsRenderer::CreateContextFromNativeHDC</definition>
+        <argsstring>(WXHDC dc)</argsstring>
+        <name>CreateContextFromNativeHDC</name>
+        <param>
+          <type>WXHDC</type>
+          <declname>dc</declname>
+        </param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> from a native DC handle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Windows only.</para>
+<para><simplesect kind="since"><para>3.1.1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1419" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a45ad50c976863fa5bba7a63d69599b40" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_graphics_renderer" kindref="compound">wxGraphicsRenderer</ref> *</type>
+        <definition>static wxGraphicsRenderer * wxGraphicsRenderer::GetDefaultRenderer</definition>
+        <argsstring>()</argsstring>
+        <name>GetDefaultRenderer</name>
+        <briefdescription>
+<para>Returns the default renderer on this platform. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>On macOS this is the Core Graphics (a.k.a. Quartz 2D) renderer, on MSW the GDIPlus renderer, and on GTK we currently default to the Cairo renderer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1566" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a82933112c5ee82ca5bdee0b8cac4a1e2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_graphics_renderer" kindref="compound">wxGraphicsRenderer</ref> *</type>
+        <definition>static wxGraphicsRenderer * wxGraphicsRenderer::GetCairoRenderer</definition>
+        <argsstring>()</argsstring>
+        <name>GetCairoRenderer</name>
+        <briefdescription>
+<para>Returns Cairo renderer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1570" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1a29c172723b5354c64ac0d80b0dfb0037" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_graphics_renderer" kindref="compound">wxGraphicsRenderer</ref> *</type>
+        <definition>static wxGraphicsRenderer * wxGraphicsRenderer::GetGDIPlusRenderer</definition>
+        <argsstring>()</argsstring>
+        <name>GetGDIPlusRenderer</name>
+        <briefdescription>
+<para>Returns GDI+ renderer (MSW only). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1574" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_graphics_renderer_1afb1995eef02b02c7724dcd90443c1c2d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_graphics_renderer" kindref="compound">wxGraphicsRenderer</ref> *</type>
+        <definition>static wxGraphicsRenderer * wxGraphicsRenderer::GetDirect2DRenderer</definition>
+        <argsstring>()</argsstring>
+        <name>GetDirect2DRenderer</name>
+        <briefdescription>
+<para>Returns Direct2D renderer (MSW only). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/graphics.h" line="1578" column="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A <ref refid="classwx_graphics_renderer" kindref="compound">wxGraphicsRenderer</ref> is the instance corresponding to the rendering engine used. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>There may be multiple instances on a system, if there are different rendering engines present, but there is always only one instance per engine. This instance is pointed back to by all objects created by it (<ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref>, <ref refid="classwx_graphics_path" kindref="compound">wxGraphicsPath</ref> etc.) and can be retrieved through their <ref refid="classwx_graphics_object_1a0c39cbf592f20ac90b3718d399210e1e" kindref="member">wxGraphicsObject::GetRenderer()</ref> method. Therefore you can create an additional instance of a path etc. by calling <ref refid="classwx_graphics_object_1a0c39cbf592f20ac90b3718d399210e1e" kindref="member">wxGraphicsObject::GetRenderer()</ref> and then using the appropriate CreateXXX() function of that renderer.</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_graphics_path" kindref="compound">wxGraphicsPath</ref><sp/>*path<sp/>=<sp/></highlight><highlight class="comment">//<sp/>from<sp/>somewhere</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classwx_graphics_brush" kindref="compound">wxGraphicsBrush</ref><sp/>*brush<sp/>=<sp/>path-&gt;<ref refid="classwx_graphics_object_1a0c39cbf592f20ac90b3718d399210e1e" kindref="member">GetRenderer</ref>()-&gt;<ref refid="classwx_graphics_renderer_1af4925b45520135fd41788fc37e244029" kindref="member">CreateBrush</ref>(<sp/>*<ref refid="brush_8h_1a69faad3dd0814b86866bd36d0963d598" kindref="member">wxBLACK_BRUSH</ref><sp/>);</highlight></codeline>
+</programlisting></para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>wxGraphicsRenderer</label>
+        <link refid="classwx_graphics_renderer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>wxGraphicsRenderer</label>
+        <link refid="classwx_graphics_renderer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_refData</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
+    </collaborationgraph>
+    <location file="interface/wx/graphics.h" line="1297" column="1" bodyfile="interface/wx/graphics.h" bodystart="1298" bodyend="1579"/>
+    <listofallmembers>
+      <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>AllocExclusive</name></member>
+      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxGraphicsRenderer</scope><name>CloneRefData</name></member>
+      <member refid="classwx_graphics_renderer_1a573bb148fca440d288110993ed997410" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateBitmap</name></member>
+      <member refid="classwx_graphics_renderer_1a6807794469fa58c7c94bb31d144acc69" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateBitmapFromImage</name></member>
+      <member refid="classwx_graphics_renderer_1a21b876848026e6d6d79abd0e6e4ceb28" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateBitmapFromNativeBitmap</name></member>
+      <member refid="classwx_graphics_renderer_1af4925b45520135fd41788fc37e244029" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateBrush</name></member>
+      <member refid="classwx_graphics_renderer_1a8e9d88060d2f305050007fa0e0f1b5f5" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateContext</name></member>
+      <member refid="classwx_graphics_renderer_1a917966669506b5086005833a927734f2" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateContext</name></member>
+      <member refid="classwx_graphics_renderer_1a4db02063f2c1b603c4b017cc3c0140cf" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateContext</name></member>
+      <member refid="classwx_graphics_renderer_1a01f1d1db6da513c4680f4175b44944cc" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateContext</name></member>
+      <member refid="classwx_graphics_renderer_1a9a84ffc7ec1b606352d26e74221d8be9" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateContext</name></member>
+      <member refid="classwx_graphics_renderer_1a784688a2b1020351837790b48ee4cdca" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>CreateContextFromImage</name></member>
+      <member refid="classwx_graphics_renderer_1a876136ecca42eec1221262423dd480cb" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateContextFromNativeContext</name></member>
+      <member refid="classwx_graphics_renderer_1ad146fd4828656b79b1094016fc3b9110" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>CreateContextFromNativeHDC</name></member>
+      <member refid="classwx_graphics_renderer_1a1fc536e8ad3ae87cd5979cbb50edc02a" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateContextFromNativeWindow</name></member>
+      <member refid="classwx_graphics_renderer_1a013783b6a162aa69b2fa3bee00df447a" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>CreateContextFromUnknownDC</name></member>
+      <member refid="classwx_graphics_renderer_1afebce1c20aa5d61fffb91b968e2d630d" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateFont</name></member>
+      <member refid="classwx_graphics_renderer_1a6969476be51ad558d09687f727918ed1" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateFont</name></member>
+      <member refid="classwx_graphics_renderer_1a3b2de8e1a3b5f2d9cb6b20be22c8892b" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateFontAtDPI</name></member>
+      <member refid="classwx_graphics_renderer_1ae2297b12e7f4d1c4f1d836d887318317" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateImageFromBitmap</name></member>
+      <member refid="classwx_graphics_renderer_1a880a03a3e12675e0c32a99ca0bdc07c5" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateLinearGradientBrush</name></member>
+      <member refid="classwx_graphics_renderer_1a502cedf20552ed22d8cae823b045105b" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateMatrix</name></member>
+      <member refid="classwx_graphics_renderer_1a5b0e0b419191ca672f3a043ac20f4228" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateMeasuringContext</name></member>
+      <member refid="classwx_graphics_renderer_1acdaf5505ed3833c4cb76112d001b8717" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreatePath</name></member>
+      <member refid="classwx_graphics_renderer_1addc5c8708c8cf97e51eab9f6bb2a43c3" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreatePen</name></member>
+      <member refid="classwx_graphics_renderer_1a93ad33cafd9f55047573783160f7ebbd" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateRadialGradientBrush</name></member>
+      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxGraphicsRenderer</scope><name>CreateRefData</name></member>
+      <member refid="classwx_graphics_renderer_1ac435b309c38f927c062406e15a75d096" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>CreateSubBitmap</name></member>
+      <member refid="classwx_graphics_renderer_1a82933112c5ee82ca5bdee0b8cac4a1e2" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>GetCairoRenderer</name></member>
+      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxGraphicsRenderer</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_graphics_renderer_1a45ad50c976863fa5bba7a63d69599b40" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>GetDefaultRenderer</name></member>
+      <member refid="classwx_graphics_renderer_1afb1995eef02b02c7724dcd90443c1c2d" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>GetDirect2DRenderer</name></member>
+      <member refid="classwx_graphics_renderer_1a29c172723b5354c64ac0d80b0dfb0037" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>GetGDIPlusRenderer</name></member>
+      <member refid="classwx_graphics_renderer_1afba6de5b8d2415167cfe5a1d6c179003" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>GetName</name></member>
+      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>GetRefData</name></member>
+      <member refid="classwx_graphics_renderer_1a4b2a82b70638120b6d0b811d453cae0e" prot="public" virt="pure-virtual"><scope>wxGraphicsRenderer</scope><name>GetVersion</name></member>
+      <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>IsKindOf</name></member>
+      <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>IsSameAs</name></member>
+      <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>m_refData</name></member>
+      <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>operator delete</name></member>
+      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>Ref</name></member>
+      <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>SetRefData</name></member>
+      <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>UnRef</name></member>
+      <member refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>UnShare</name></member>
+      <member refid="classwx_object_1acaa378363a28af421ab56ad7b46eadf0" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>wxObject</name></member>
+      <member refid="classwx_object_1a4721b4dc9b7aff0f30904ba2ea3954cf" prot="public" virt="non-virtual"><scope>wxGraphicsRenderer</scope><name>wxObject</name></member>
+      <member refid="classwx_object_1a2a51aa8bfbab47ca2f051bcf84b3f35b" prot="public" virt="virtual"><scope>wxGraphicsRenderer</scope><name>~wxObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

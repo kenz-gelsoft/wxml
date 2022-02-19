@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_web_auth_challenge" kind="class" language="C++" prot="public">
+    <compoundname>wxWebAuthChallenge</compoundname>
+    <includes local="no">wx/webrequest.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classwx_web_auth_challenge_1a2fbcf16487d30f11776482c5c29b9e96" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Source</name>
+        <enumvalue id="classwx_web_auth_challenge_1a2fbcf16487d30f11776482c5c29b9e96a1fdce06dc2af1828f8e328637f9afa68" prot="public">
+          <name>Source_Server</name>
+          <briefdescription>
+<para>The server requested authentication. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classwx_web_auth_challenge_1a2fbcf16487d30f11776482c5c29b9e96ac6f3d3df19f846855c015ab9f6601c4e" prot="public">
+          <name>Source_Proxy</name>
+          <briefdescription>
+<para>A proxy requested authentication. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="482" column="5" bodyfile="interface/wx/webrequest.h" bodystart="483" bodyend="489"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_web_auth_challenge_1a51b8321b7e18905315958a4993dbf7dd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_web_auth_challenge_1a2fbcf16487d30f11776482c5c29b9e96" kindref="member">Source</ref></type>
+        <definition>Source wxWebAuthChallenge::GetSource</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSource</name>
+        <briefdescription>
+<para>Returns which source requested credentials with this challenge. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="494" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_auth_challenge_1aecb81214f313246ff1d1935c26618ad6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxWebAuthChallenge::SetCredentials</definition>
+        <argsstring>(const wxWebCredentials &amp;cred)</argsstring>
+        <name>SetCredentials</name>
+        <param>
+          <type>const <ref refid="classwx_web_credentials" kindref="compound">wxWebCredentials</ref> &amp;</type>
+          <declname>cred</declname>
+        </param>
+        <briefdescription>
+<para>Used to provide user credentials to the authentication challenge. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classwx_web_credentials" kindref="compound">wxWebCredentials</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="501" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Authentication challenge information available via <ref refid="classwx_web_request_1a08c476fdf2641b980368978aeff04212" kindref="member">wxWebRequest::GetAuthChallenge()</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Use <ref refid="classwx_web_auth_challenge_1aecb81214f313246ff1d1935c26618ad6" kindref="member">SetCredentials()</ref> to provide user credentials, e.g. <programlisting><codeline><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>request.GetState()<sp/>==<sp/><ref refid="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9abaa4dba7e456c6b2ea33ddc9a5664423" kindref="member">wxWebRequest::State_Unauthorized</ref><sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_web_credentials" kindref="compound">wxWebCredentials</ref><sp/>cred(</highlight><highlight class="stringliteral">&quot;me&quot;</highlight><highlight class="normal">,<sp/><ref refid="classwx_secret_value" kindref="compound">wxSecretValue</ref>(</highlight><highlight class="stringliteral">&quot;s3krit&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>request.GetAuthChallenge().SetCredentials(cred);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <location file="interface/wx/webrequest.h" line="479" column="1" bodyfile="interface/wx/webrequest.h" bodystart="480" bodyend="502"/>
+    <listofallmembers>
+      <member refid="classwx_web_auth_challenge_1a51b8321b7e18905315958a4993dbf7dd" prot="public" virt="non-virtual"><scope>wxWebAuthChallenge</scope><name>GetSource</name></member>
+      <member refid="classwx_web_auth_challenge_1aecb81214f313246ff1d1935c26618ad6" prot="public" virt="non-virtual"><scope>wxWebAuthChallenge</scope><name>SetCredentials</name></member>
+      <member refid="classwx_web_auth_challenge_1a2fbcf16487d30f11776482c5c29b9e96" prot="public" virt="non-virtual"><scope>wxWebAuthChallenge</scope><name>Source</name></member>
+      <member refid="classwx_web_auth_challenge_1a2fbcf16487d30f11776482c5c29b9e96ac6f3d3df19f846855c015ab9f6601c4e" prot="public" virt="non-virtual"><scope>wxWebAuthChallenge</scope><name>Source_Proxy</name></member>
+      <member refid="classwx_web_auth_challenge_1a2fbcf16487d30f11776482c5c29b9e96a1fdce06dc2af1828f8e328637f9afa68" prot="public" virt="non-virtual"><scope>wxWebAuthChallenge</scope><name>Source_Server</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

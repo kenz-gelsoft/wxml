@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_temp_f_file" kind="class" language="C++" prot="public">
+    <compoundname>wxTempFFile</compoundname>
+    <includes local="no">wx/ffile.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_temp_f_file_1ad08e94dcbbbc01620cabc5c25cb7d588" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxTempFFile::wxTempFFile</definition>
+        <argsstring>()</argsstring>
+        <name>wxTempFFile</name>
+        <briefdescription>
+<para>Default constructor doesn&apos;t do anything. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call <ref refid="classwx_temp_f_file_1a28fe308f5878fc42cd9dfa3cd5e25a92" kindref="member">Open()</ref> later. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="56" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_temp_f_file_1a4134015d6f58a092881fb90c9a4d4853" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxTempFFile::wxTempFFile</definition>
+        <argsstring>(const wxString &amp;strName)</argsstring>
+        <name>wxTempFFile</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>strName</declname>
+        </param>
+        <briefdescription>
+<para>Associates <ref refid="classwx_temp_f_file" kindref="compound">wxTempFFile</ref> with the file to be replaced and opens it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>You should use <ref refid="classwx_temp_f_file_1ad86924c02eab1012b79b470b685dee5d" kindref="member">IsOpened()</ref> to verify that the constructor succeeded. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="64" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_temp_f_file_1a66f7df779ac28955778eb893c3c737d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxTempFFile::~wxTempFFile</definition>
+        <argsstring>()</argsstring>
+        <name>~wxTempFFile</name>
+        <briefdescription>
+<para>Destructor calls <ref refid="classwx_temp_f_file_1a80b7d0f03a178a61754fdbea9c609a42" kindref="member">Discard()</ref> if temporary file is still open. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="69" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_temp_f_file_1a86d0973e272123c3425f893ddcbfbc82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxTempFFile::Commit</definition>
+        <argsstring>()</argsstring>
+        <name>Commit</name>
+        <briefdescription>
+<para>Validate changes: deletes the old file of name m_strName and renames the new file to the old name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if both actions succeeded.</para>
+<para>If false is returned it may unfortunately mean two quite different things: either that the old file couldn&apos;t be deleted or that the new file couldn&apos;t be renamed to the old name. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="79" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_temp_f_file_1a80b7d0f03a178a61754fdbea9c609a42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxTempFFile::Discard</definition>
+        <argsstring>()</argsstring>
+        <name>Discard</name>
+        <briefdescription>
+<para>Discard changes: the old file contents are not changed, the temporary file is deleted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="85" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_temp_f_file_1a3203252240706595109f127ef2fb9720" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxTempFFile::Flush</definition>
+        <argsstring>()</argsstring>
+        <name>Flush</name>
+        <briefdescription>
+<para>Flush the data written to the file to disk. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This simply calls <ref refid="classwx_f_file_1a914af50f413957a7decd928ababf1112" kindref="member">wxFFile::Flush()</ref> for the underlying file and may be necessary with file systems such as XFS and Ext4 under Linux. Calling this function may however have serious performance implications and also is not necessary with many other file systems so it is not done by default <ndash/> but you can call it before calling <ref refid="classwx_temp_f_file_1a86d0973e272123c3425f893ddcbfbc82" kindref="member">Commit()</ref> to absolutely ensure that the data was indeed written to the disk correctly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="97" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_temp_f_file_1ad86924c02eab1012b79b470b685dee5d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxTempFFile::IsOpened</definition>
+        <argsstring>() const</argsstring>
+        <name>IsOpened</name>
+        <briefdescription>
+<para>Returns true if the file was successfully opened. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="102" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_temp_f_file_1a370966c4e3958b69fa8c2c1a3eec923a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
+        <definition>wxFileOffset wxTempFFile::Length</definition>
+        <argsstring>() const</argsstring>
+        <name>Length</name>
+        <briefdescription>
+<para>Returns the length of the file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns <ref refid="filefn_8h_1ab184c7199d93541d22ae42e515cbbcb7" kindref="member">wxInvalidOffset</ref> if the length couldn&apos;t be determined.</para>
+<para>Please also note that there is <emphasis>no</emphasis> guarantee that reading that many bytes from the file will always succeed. While this is true for regular files (unless the file size has been changed by another process in between <ref refid="classwx_temp_f_file_1a370966c4e3958b69fa8c2c1a3eec923a" kindref="member">Length()</ref> and Read() calls), some special files, such as most files under <computeroutput>/sys</computeroutput> or <computeroutput>/proc</computeroutput> directories under Linux, don&apos;t actually contain as much data as their size indicates. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="116" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_temp_f_file_1a28fe308f5878fc42cd9dfa3cd5e25a92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxTempFFile::Open</definition>
+        <argsstring>(const wxString &amp;strName)</argsstring>
+        <name>Open</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>strName</declname>
+        </param>
+        <briefdescription>
+<para>Open the temporary file, returns true on success, false if an error occurred. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><emphasis>strName</emphasis> is the name of file to be replaced. The temporary file is always created in the directory where <emphasis>strName</emphasis> is. In particular, if <emphasis>strName</emphasis> doesn&apos;t include the path, it is created in the current directory and the program should have write access to it for the function to succeed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="126" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_temp_f_file_1a21ea2761e196e7f1efe83688261d93df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxTempFFile::Seek</definition>
+        <argsstring>(wxFileOffset ofs, wxSeekMode mode=wxFromStart)</argsstring>
+        <name>Seek</name>
+        <param>
+          <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
+          <declname>ofs</declname>
+        </param>
+        <param>
+          <type><ref refid="filefn_8h_1ae3981f8632f0391e5c852bf62eb982b0" kindref="member">wxSeekMode</ref></type>
+          <declname>mode</declname>
+          <defval><ref refid="filefn_8h_1ae3981f8632f0391e5c852bf62eb982b0afe95aa5f8bbda276d20a0860a2af841d" kindref="member">wxFromStart</ref></defval>
+        </param>
+        <briefdescription>
+<para>Seeks to the specified position and returns true on success. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="131" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_temp_f_file_1a80bd9754989d016fa08f01c6738010ab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
+        <definition>wxFileOffset wxTempFFile::Tell</definition>
+        <argsstring>() const</argsstring>
+        <name>Tell</name>
+        <briefdescription>
+<para>Returns the current position. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="136" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_temp_f_file_1ac74e38aec7f85971d3778b52b9d995dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxTempFFile::Write</definition>
+        <argsstring>(const wxString &amp;str, const wxMBConv &amp;conv=wxMBConvUTF8())</argsstring>
+        <name>Write</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> &amp;</type>
+          <declname>conv</declname>
+          <defval><ref refid="classwx_m_b_conv_u_t_f8" kindref="compound">wxMBConvUTF8</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Writes the contents of the string to the file, returns true on success. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The second argument is only meaningful in Unicode build of wxWidgets when <emphasis>conv</emphasis> is used to convert <emphasis>str</emphasis> to multibyte representation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/ffile.h" line="144" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classwx_temp_f_file" kindref="compound">wxTempFFile</ref> provides a relatively safe way to replace the contents of the existing file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The name is explained by the fact that it may be also used as just a temporary file if you don&apos;t replace the old file contents.</para>
+<para>Usually, when a program replaces the contents of some file it first opens it for writing, thus losing all of the old data and then starts recreating it. This approach is not very safe because during the regeneration of the file bad things may happen: the program may find that there is an internal error preventing it from completing file generation, the user may interrupt it (especially if file generation takes long time) and, finally, any other external interrupts (power supply failure or a disk error) will leave you without either the original file or the new one.</para>
+<para><ref refid="classwx_temp_f_file" kindref="compound">wxTempFFile</ref> addresses this problem by creating a temporary file which is meant to replace the original file - but only after it is fully written. So, if the user interrupts the program during the file generation, the old file won&apos;t be lost. Also, if the program discovers itself that it doesn&apos;t want to replace the old file there is no problem - in fact, <ref refid="classwx_temp_f_file" kindref="compound">wxTempFFile</ref> will <bold>not</bold> replace the old file by default, you should explicitly call <ref refid="classwx_temp_f_file_1a86d0973e272123c3425f893ddcbfbc82" kindref="member">wxTempFFile::Commit()</ref> to do it. Calling <ref refid="classwx_temp_f_file_1a80b7d0f03a178a61754fdbea9c609a42" kindref="member">wxTempFFile::Discard()</ref> explicitly discards any modifications: it closes and deletes the temporary file and leaves the original file unchanged. If you call neither <ref refid="classwx_temp_f_file_1a86d0973e272123c3425f893ddcbfbc82" kindref="member">Commit()</ref> nor <ref refid="classwx_temp_f_file_1a80b7d0f03a178a61754fdbea9c609a42" kindref="member">Discard()</ref>, the destructor will call <ref refid="classwx_temp_f_file_1a80b7d0f03a178a61754fdbea9c609a42" kindref="member">Discard()</ref> automatically.</para>
+<para>To summarize: if you want to replace another file, create an instance of <ref refid="classwx_temp_f_file" kindref="compound">wxTempFFile</ref> passing the name of the file to be replaced to the constructor. (You may also use default constructor and pass the file name to <ref refid="classwx_temp_f_file_1a28fe308f5878fc42cd9dfa3cd5e25a92" kindref="member">wxTempFFile::Open</ref>.) Then you can write to <ref refid="classwx_temp_f_file" kindref="compound">wxTempFFile</ref> using wxFFile-like functions and later call <ref refid="classwx_temp_f_file_1a86d0973e272123c3425f893ddcbfbc82" kindref="member">wxTempFFile::Commit()</ref> to replace the old file (and close this one) or call <ref refid="classwx_temp_f_file_1a80b7d0f03a178a61754fdbea9c609a42" kindref="member">wxTempFFile::Discard()</ref> to cancel the modifications.</para>
+<para><simplesect kind="since"><para>3.1.4</para>
+</simplesect>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+    </detaileddescription>
+    <location file="interface/wx/ffile.h" line="48" column="1" bodyfile="interface/wx/ffile.h" bodystart="49" bodyend="145"/>
+    <listofallmembers>
+      <member refid="classwx_temp_f_file_1a86d0973e272123c3425f893ddcbfbc82" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>Commit</name></member>
+      <member refid="classwx_temp_f_file_1a80b7d0f03a178a61754fdbea9c609a42" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>Discard</name></member>
+      <member refid="classwx_temp_f_file_1a3203252240706595109f127ef2fb9720" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>Flush</name></member>
+      <member refid="classwx_temp_f_file_1ad86924c02eab1012b79b470b685dee5d" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>IsOpened</name></member>
+      <member refid="classwx_temp_f_file_1a370966c4e3958b69fa8c2c1a3eec923a" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>Length</name></member>
+      <member refid="classwx_temp_f_file_1a28fe308f5878fc42cd9dfa3cd5e25a92" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>Open</name></member>
+      <member refid="classwx_temp_f_file_1a21ea2761e196e7f1efe83688261d93df" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>Seek</name></member>
+      <member refid="classwx_temp_f_file_1a80bd9754989d016fa08f01c6738010ab" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>Tell</name></member>
+      <member refid="classwx_temp_f_file_1ac74e38aec7f85971d3778b52b9d995dd" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>Write</name></member>
+      <member refid="classwx_temp_f_file_1ad08e94dcbbbc01620cabc5c25cb7d588" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>wxTempFFile</name></member>
+      <member refid="classwx_temp_f_file_1a4134015d6f58a092881fb90c9a4d4853" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>wxTempFFile</name></member>
+      <member refid="classwx_temp_f_file_1a66f7df779ac28955778eb893c3c737d2" prot="public" virt="non-virtual"><scope>wxTempFFile</scope><name>~wxTempFFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

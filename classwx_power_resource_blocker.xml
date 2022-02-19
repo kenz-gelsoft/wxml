@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_power_resource_blocker" kind="class" language="C++" prot="public">
+    <compoundname>wxPowerResourceBlocker</compoundname>
+    <includes local="no">wx/power.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_power_resource_blocker_1a672c8e2f32f28e3318b842ed23809f6c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxPowerResourceBlocker::wxPowerResourceBlocker</definition>
+        <argsstring>(wxPowerResourceKind kind, const wxString &amp;reason=wxString())</argsstring>
+        <name>wxPowerResourceBlocker</name>
+        <param>
+          <type><ref refid="power_8h_1a85435183edc96b79a76ceefb6b7d0815" kindref="member">wxPowerResourceKind</ref></type>
+          <declname>kind</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>reason</declname>
+          <defval><ref refid="classwx_string" kindref="compound">wxString</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Acquires the power resource. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses the same parameters as <ref refid="classwx_power_resource_1a6e4a2e4834ef9c70d2326ffdb3008c3c" kindref="member">wxPowerResource::Acquire()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/power.h" line="203" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_power_resource_blocker_1a30a6311d9783d27a964bac894c93dfe3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxPowerResourceBlocker::IsInEffect</definition>
+        <argsstring>() const</argsstring>
+        <name>IsInEffect</name>
+        <briefdescription>
+<para>Returns whether the power resource could be acquired. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be used to inform the user that the application will not prevent automatic suspending.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_power_resource_1a6e4a2e4834ef9c70d2326ffdb3008c3c" kindref="member">wxPowerResource::Acquire()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/power.h" line="214" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_power_resource_blocker_1a80c7035be00e46077fbdf1f756464a4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxPowerResourceBlocker::~wxPowerResourceBlocker</definition>
+        <argsstring>()</argsstring>
+        <name>~wxPowerResourceBlocker</name>
+        <briefdescription>
+<para>Releases the power resource. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classwx_power_resource_1ad2dd22e78be3ce6a5004702e820b50c9" kindref="member">wxPowerResource::Release()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/power.h" line="221" column="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Helper RAII class ensuring that power resources are released. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="classwx_power_resource_blocker" kindref="compound">wxPowerResourceBlocker</ref> object acquires a power resource in the constructor and releases it in the destructor making it impossible to forget to release the power resource (which would prevent suspending or screen power off until the application ends).</para>
+<para>Example: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyWindow::DoSomething()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_power_resource_blocker" kindref="compound">wxPowerResourceBlocker</ref></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>blocker(<ref refid="power_8h_1a85435183edc96b79a76ceefb6b7d0815ae43d71f3997bdc14306c07681add0fa2" kindref="member">wxPOWER_RESOURCE_SYSTEM</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Downloading<sp/>something<sp/>important&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!blocker.IsInEffect()<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>resource<sp/>could<sp/>not<sp/>be<sp/>acquired,<sp/>tell<sp/>the<sp/>user<sp/>that<sp/>he<sp/>has</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>keep<sp/>the<sp/>system<sp/>alive</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2log_8h_1a249358701f3c2d410088ddf7a61d8564" kindref="member">wxLogMessage</ref>(</highlight><highlight class="stringliteral">&quot;Warning:<sp/>system<sp/>may<sp/>suspend<sp/>while<sp/>downloading.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Run<sp/>an<sp/>important<sp/>download<sp/>and<sp/>the<sp/>system<sp/>will<sp/>not<sp/>suspend<sp/>while<sp/>downloading</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>download.size();<sp/>++i<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>download.readByte();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wxPOWER_RESOURCE_SYSTEM<sp/>automatically<sp/>released<sp/>here.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="since"><para>3.1.0 <heading level="2"></heading>
+</para>
+</simplesect>
+Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para><simplesect kind="see"><para><ref refid="classwx_power_resource" kindref="compound">wxPowerResource</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/power.h" line="195" column="1" bodyfile="interface/wx/power.h" bodystart="196" bodyend="222"/>
+    <listofallmembers>
+      <member refid="classwx_power_resource_blocker_1a30a6311d9783d27a964bac894c93dfe3" prot="public" virt="non-virtual"><scope>wxPowerResourceBlocker</scope><name>IsInEffect</name></member>
+      <member refid="classwx_power_resource_blocker_1a672c8e2f32f28e3318b842ed23809f6c" prot="public" virt="non-virtual"><scope>wxPowerResourceBlocker</scope><name>wxPowerResourceBlocker</name></member>
+      <member refid="classwx_power_resource_blocker_1a80c7035be00e46077fbdf1f756464a4e" prot="public" virt="non-virtual"><scope>wxPowerResourceBlocker</scope><name>~wxPowerResourceBlocker</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

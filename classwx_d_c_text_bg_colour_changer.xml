@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_d_c_text_bg_colour_changer" kind="class" language="C++" prot="public">
+    <compoundname>wxDCTextBgColourChanger</compoundname>
+    <includes local="no">wx/dc.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_d_c_text_bg_colour_changer_1ad92606fe84ef0ebef48d40915321a1f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxDCTextBgColourChanger::wxDCTextBgColourChanger</definition>
+        <argsstring>(wxDC &amp;dc)</argsstring>
+        <name>wxDCTextBgColourChanger</name>
+        <param>
+          <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> &amp;</type>
+          <declname>dc</declname>
+        </param>
+        <briefdescription>
+<para>Trivial constructor not changing anything. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor is useful if you don&apos;t know beforehand if the colour needs to be changed or not. It simply creates the object which won&apos;t do anything in its destructor unless <ref refid="classwx_d_c_text_bg_colour_changer_1ade2a8419b27be3f9690d67b0f749cf8b" kindref="member">Set()</ref> is called <ndash/> in which case it would reset the previous colour. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/dc.h" line="2020" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_d_c_text_bg_colour_changer_1afe25ac2bb298ef75ea87670d38778973" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxDCTextBgColourChanger::wxDCTextBgColourChanger</definition>
+        <argsstring>(wxDC &amp;dc, const wxColour &amp;col)</argsstring>
+        <name>wxDCTextBgColourChanger</name>
+        <param>
+          <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> &amp;</type>
+          <declname>dc</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
+          <declname>col</declname>
+        </param>
+        <briefdescription>
+<para>Sets <emphasis>col</emphasis> on the given <emphasis>dc</emphasis>, storing the old one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DC where the colour must be temporary set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text background colour to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/dc.h" line="2030" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_d_c_text_bg_colour_changer_1ade2a8419b27be3f9690d67b0f749cf8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxDCTextBgColourChanger::Set</definition>
+        <argsstring>(const wxColour &amp;col)</argsstring>
+        <name>Set</name>
+        <param>
+          <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
+          <declname>col</declname>
+        </param>
+        <briefdescription>
+<para>Set the background colour to use. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is meant to be called once only and only on the objects created with the constructor overload not taking <ref refid="classwx_colour" kindref="compound">wxColour</ref> argument and has the same effect as the other constructor, i.e. sets the background colour to the given <emphasis>col</emphasis> and ensures that the old value is restored when this object is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/dc.h" line="2041" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_d_c_text_bg_colour_changer_1a00ec291a92a47212d239166a1df5b409" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxDCTextBgColourChanger::~wxDCTextBgColourChanger</definition>
+        <argsstring>()</argsstring>
+        <name>~wxDCTextBgColourChanger</name>
+        <briefdescription>
+<para>Restores the background colour originally selected in the DC passed to the ctor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/dc.h" line="2046" column="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classwx_d_c_text_bg_colour_changer" kindref="compound">wxDCTextBgColourChanger</ref> is a small helper class for setting a background text colour on a <ref refid="classwx_d_c" kindref="compound">wxDC</ref> and unsetting it automatically in the destructor, restoring the previous one. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para><simplesect kind="see"><para><ref refid="classwx_d_c_1a3ed22bd0a0b835d4d085261bb022766b" kindref="member">wxDC::SetTextBackground()</ref>, <ref refid="classwx_d_c_font_changer" kindref="compound">wxDCFontChanger</ref>, <ref refid="classwx_d_c_pen_changer" kindref="compound">wxDCPenChanger</ref>, <ref refid="classwx_d_c_brush_changer" kindref="compound">wxDCBrushChanger</ref>, <ref refid="classwx_d_c_clipper" kindref="compound">wxDCClipper</ref>, <ref refid="classwx_d_c_text_colour_changer" kindref="compound">wxDCTextColourChanger</ref>, <ref refid="classwx_d_c_bg_mode_changer" kindref="compound">wxDCBgModeChanger</ref></para>
+</simplesect>
+<simplesect kind="since"><para>3.1.3 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/dc.h" line="2009" column="1" bodyfile="interface/wx/dc.h" bodystart="2010" bodyend="2047"/>
+    <listofallmembers>
+      <member refid="classwx_d_c_text_bg_colour_changer_1ade2a8419b27be3f9690d67b0f749cf8b" prot="public" virt="non-virtual"><scope>wxDCTextBgColourChanger</scope><name>Set</name></member>
+      <member refid="classwx_d_c_text_bg_colour_changer_1ad92606fe84ef0ebef48d40915321a1f7" prot="public" virt="non-virtual"><scope>wxDCTextBgColourChanger</scope><name>wxDCTextBgColourChanger</name></member>
+      <member refid="classwx_d_c_text_bg_colour_changer_1afe25ac2bb298ef75ea87670d38778973" prot="public" virt="non-virtual"><scope>wxDCTextBgColourChanger</scope><name>wxDCTextBgColourChanger</name></member>
+      <member refid="classwx_d_c_text_bg_colour_changer_1a00ec291a92a47212d239166a1df5b409" prot="public" virt="non-virtual"><scope>wxDCTextBgColourChanger</scope><name>~wxDCTextBgColourChanger</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

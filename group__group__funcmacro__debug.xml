@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="group__group__funcmacro__debug" kind="group">
+    <compoundname>group_funcmacro_debug</compoundname>
+    <title>Debugging macros</title>
+    <briefdescription>
+<para>Useful macros and functions for error checking and defensive programming. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Starting with wxWidgets 2.9.1, debugging support in wxWidgets is always compiled in by default, you need to explicitly define <ref refid="debug_8h_1a7ce424d27d39bb92c26c80b6a1903725" kindref="member">wxDEBUG_LEVEL</ref> as 0 to disable it completely. However, by default debugging macros are dormant in the release builds, i.e. when the main program is compiled with the standard <computeroutput>NDEBUG</computeroutput> symbol being defined. You may explicitly activate the debugging checks in the release build by calling <ref refid="debug_8h_1a7a8443c97e45d2943f03769aaa787376" kindref="member">wxSetAssertHandler()</ref> with a custom function if needed.</para>
+<para>When debugging support is active, failure of both <ref refid="debug_8h_1a204cc264ee560b67e6c6467ba8ffee5f" kindref="member">wxASSERT()</ref> and <ref refid="debug_8h_1acce4d688e56d4de1bbef692e7df2e3e3" kindref="member">wxCHECK()</ref> macros conditions result in a debug alert. When debugging support is inactive or turned off entirely at compilation time, <ref refid="debug_8h_1a204cc264ee560b67e6c6467ba8ffee5f" kindref="member">wxASSERT()</ref> and <ref refid="debug_8h_1aa5b456751cd8c71e9a787fba16ecbd68" kindref="member">wxFAIL()</ref> macros don&apos;t do anything while <ref refid="debug_8h_1acce4d688e56d4de1bbef692e7df2e3e3" kindref="member">wxCHECK()</ref> still checks its condition and returns if it fails, even if no alerts are shown to the user.</para>
+<para>Finally, the compile time assertions don&apos;t happen during the run-time but result in the compilation error messages if the condition they check fail. They are always enabled and are not affected by <ref refid="debug_8h_1a7ce424d27d39bb92c26c80b6a1903725" kindref="member">wxDEBUG_LEVEL</ref>.</para>
+<para>Related class group: <ref refid="group__group__class__debugging" kindref="compound">Debugging</ref>. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

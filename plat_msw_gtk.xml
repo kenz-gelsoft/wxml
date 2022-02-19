@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="plat_msw_gtk" kind="page">
+    <compoundname>plat_msw_gtk</compoundname>
+    <title>Building wxGTK port with Win32 GDK backend</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="plat_msw_gtk_1md_docs_msw_gtk"/></para>
+<para>GTK+ widget toolkit has multiple GDK backends and one of them is Win32. It is a wrapper around Windows API.</para>
+<para>See <ulink url="http://www.gtk.org/download/win32.php">http://www.gtk.org/download/win32.php</ulink></para>
+<para>These notes don&apos;t consider building wxGTK with X11 backend under Windows.</para>
+<para>Building steps:</para>
+<para><orderedlist>
+<listitem><para>wxGTK/Win32 build is similar to wxMSW one and you should have configured and be able to build wxWidgets as described in <ref refid="plat_msw_install" kindref="compound">Installing wxWidgets for Windows</ref></para>
+</listitem><listitem><para>wxGTK/Win32 is disabled by default in wxWidgets, you need to enable it in bakefiles manually. Apply following patch manually or using Cygwin: <verbatim> patch -p0 &lt; docs/msw/gtkfix.patch
+</verbatim> Regenerate required make/project files:</para>
+<para>cd build\bakefiles bakefile_gen</para>
+</listitem><listitem><para>Download GTK+ for Windows and uncompress files in the directory without spaces in the name. We suppose later that GTK+/Win32 is in the C:\gtk directory.</para>
+<para><ulink url="http://ftp.gnome.org/pub/gnome/binaries/win32/gtk+/2.24/gtk+_2.24.10-1_win32.zip">http://ftp.gnome.org/pub/gnome/binaries/win32/gtk+/2.24/gtk+_2.24.10-1_win32.zip</ulink></para>
+</listitem><listitem><para>Building</para>
+</listitem></orderedlist>
+</para>
+<para>4.1 If you are using Visual C++ project files you need to setup GTK+ 2 include directories <verbatim>C:\gtk\lib\include\gtk-2.0
+C:\gtk\lib\include\glib-2.0
+C:\gtk\lib\include\cairo
+C:\gtk\lib\include\pango-1.0
+C:\gtk\lib\include\gdk-pixbuf-2.0
+C:\gtk\lib\include\atk-1.0
+C:\gtk\lib\glib-2.0\include
+C:\gtk\lib\gtk-2.0\include
+</verbatim> and library directory <verbatim>C:\gtk\lib\
+</verbatim> See <ulink url="http://msdn.microsoft.com/en-us/library/t9az1d21(v=vs.90).aspx">http://msdn.microsoft.com/en-us/library/t9az1d21(v=vs.90).aspx</ulink></para>
+<para>Open solution file in build\msw directory, select &quot;GTK+ Debug&quot; solution configuration and build the solution. To be sure that everything is as expected you can build minimal sample.</para>
+<para>GTK+ is linked to wxWidgets always as DLL, so C:\gtk\bin directory should be in PATH% environment variable before application run.</para>
+<para>4.2 You can also build using nmake: <verbatim>set INCLUDE=C:\gtk\lib\glib-2.0\include\;C:\gtk\lib\gtk-2.0\include\;C:\gtk\include\cairo\;C:\gtk\include\pango-1.0\;C:\gtk\include\gtk-2.0\;C:\gtk\include\glib-2.0\;C:\gtk\include\gdk-pixbuf-2.0\;C:\gtk\include\atk-1.0\;
+set LIB=C:\gtk\lib\;
+set PATH=C:\gtk\bin\;%PATH%;
+
+nmake -f makefile.vc &quot;TOOLKIT=GTK&quot; &quot;TOOLKIT_VERSION=2&quot;
+</verbatim> or with MinGW: <verbatim>set CXXFLAGS=%CXXFLAGS% -IC:\gtk\include\gtk-2.0
+set CXXFLAGS=%CXXFLAGS% -IC:\gtk\include\glib-2.0
+set CXXFLAGS=%CXXFLAGS% -IC:\gtk\include\cairo
+set CXXFLAGS=%CXXFLAGS% -IC:\gtk\include\pango-1.0
+set CXXFLAGS=%CXXFLAGS% -IC:\gtk\include\gdk-pixbuf-2.0
+set CXXFLAGS=%CXXFLAGS% -IC:\gtk\include\atk-1.0
+set CXXFLAGS=%CXXFLAGS% -IC:\gtk\lib\glib-2.0\include
+set CXXFLAGS=%CXXFLAGS% -IC:\gtk\lib\gtk-2.0\include
+set CFLAGS=%CXXFLAGS%
+set LDFLAGS=%LDFLAGS% -LC:\gtk\lib
+set PATH=C:\gtk\bin\;%PATH%;
+
+mingw32-make -f makefile.gcc &quot;TOOLKIT=GTK&quot; &quot;TOOLKIT_VERSION=2&quot;
+</verbatim><orderedlist>
+<listitem><para>Now you can use wxGTK/Win32 as wxMSW in your applications. </para>
+</listitem></orderedlist>
+</para>
+    </detaileddescription>
+    <location file="docs/msw/gtk.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="overview_cmake" kind="page">
+    <compoundname>overview_cmake</compoundname>
+    <title>CMake Overview</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="overview_cmake_1md_docs_doxygen_overviews_cmake"/></para>
+<para>CMake allows building wxWidgets on various platforms with your preferred build system.</para>
+<para>Most linux distributions contain CMake as a package on Windows and macOS you can download an installer at the <ulink url="https://cmake.org">CMake Page</ulink>.</para>
+<sect1 id="overview_cmake_1cmake_gui">
+<title>Using the CMake GUI</title>
+<para><orderedlist>
+<listitem><para>Start the CMake GUI</para>
+</listitem><listitem><para>Specify the wxWidgets root as your source folder</para>
+</listitem><listitem><para>Specify a path where the build files should be created. It&apos;s recommended to use a path outside the wxWidgets root folder.</para>
+</listitem><listitem><para>Press the <emphasis>Configure</emphasis> button and you will be asked which IDE or build system you wish to use</para>
+</listitem><listitem><para><emphasis>Optionally</emphasis>: Customize any of the options</para>
+</listitem><listitem><para>Press the <emphasis>Generate</emphasis> button</para>
+</listitem><listitem><para>Open the wxWidgets project with your preferred IDE</para>
+</listitem></orderedlist>
+</para>
+</sect1>
+<sect1 id="overview_cmake_1cmake_cli">
+<title>Using the CMake Command Line</title>
+<para><orderedlist>
+<listitem><para>Create a folder where the build/project files should be created</para>
+</listitem><listitem><para>Change into the created folder</para>
+</listitem><listitem><para>Run <computeroutput>cmake -G &quot;Unix Makefiles&quot; path_to_wxWidgets_root</computeroutput></para>
+</listitem><listitem><para>After that you can run <computeroutput>cmake --build .</computeroutput> to start the build process or directly use your chosen build system.</para>
+</listitem></orderedlist>
+</para>
+<para>Run <computeroutput>cmake --help</computeroutput> to see a list of available generators on your platform. These can than be specified using the -G command line option. On Windows it is recommended to use Visual Studio and on macOS Xcode is recommended. Various build options can be specified using -D see <ulink url="#cmake_options">available options</ulink>.</para>
+<sect2 id="overview_cmake_1cmake_cli_samples">
+<title>Command Line Examples</title>
+<para>Building with tests using <ulink url="https://ninja-build.org/">Ninja</ulink>: <programlisting filename=".sh"><codeline><highlight class="normal">cmake<sp/>-G<sp/>&quot;Ninja&quot;<sp/>~/Downloads/wxWidgets_3.1<sp/>-DwxBUILD_TESTS=ALL</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>.</highlight></codeline>
+</programlisting></para>
+<para>Building the minimal sample: <programlisting filename=".sh"><codeline><highlight class="normal">cmake<sp/>~/Downloads/wxWidgets_3.1<sp/>-DwxBUILD_SAMPLES=SOME</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>.<sp/>--target<sp/>minimal</highlight></codeline>
+</programlisting></para>
+<para>Installing static libraries to some path: <programlisting filename=".sh"><codeline><highlight class="normal">cmake<sp/>~/Downloads/wxWidgets_3.1<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-DCMAKE_INSTALL_PREFIX=~/wx_install<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-DwxBUILD_SHARED=OFF</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>.<sp/>--target<sp/>install</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="overview_cmake_1cmake_options">
+<title>Build options</title>
+<para>The following list of build options can either be configured in the CMake UI or specified via the -D command line option when running the cmake command.</para>
+<para><table rows="9" cols="4"><row>
+<entry thead="yes"><para>Option Name   </para>
+</entry><entry thead="yes"><para>Type   </para>
+</entry><entry thead="yes"><para>Default   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxBUILD_SHARED   </para>
+</entry><entry thead="no"><para>BOOL   </para>
+</entry><entry thead="no"><para>ON   </para>
+</entry><entry thead="no"><para>Build shared or static libraries    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxBUILD_TESTS   </para>
+</entry><entry thead="no"><para>STRING   </para>
+</entry><entry thead="no"><para>OFF   </para>
+</entry><entry thead="no"><para>CONSOLE_ONLY, ALL or OFF    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxBUILD_SAMPLES   </para>
+</entry><entry thead="no"><para>STRING   </para>
+</entry><entry thead="no"><para>OFF   </para>
+</entry><entry thead="no"><para>SOME, ALL or OFF    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxBUILD_DEMOS   </para>
+</entry><entry thead="no"><para>BOOL   </para>
+</entry><entry thead="no"><para>OFF   </para>
+</entry><entry thead="no"><para>Build demo applications    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_GUI   </para>
+</entry><entry thead="no"><para>BOOL   </para>
+</entry><entry thead="no"><para>ON   </para>
+</entry><entry thead="no"><para>Build the UI libraries    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxBUILD_COMPATIBILITY   </para>
+</entry><entry thead="no"><para>STRING   </para>
+</entry><entry thead="no"><para>3.0   </para>
+</entry><entry thead="no"><para>2.8, 3.0 or 3.1 API compatibility    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxBUILD_PRECOMP   </para>
+</entry><entry thead="no"><para>BOOL   </para>
+</entry><entry thead="no"><para>ON   </para>
+</entry><entry thead="no"><para>Use precompiled headers    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxBUILD_MONOLITHIC   </para>
+</entry><entry thead="no"><para>BOOL   </para>
+</entry><entry thead="no"><para>OFF   </para>
+</entry><entry thead="no"><para>Build a single library   </para>
+</entry></row>
+</table>
+</para>
+<para>A complete list of options and advanced options can be found when using the CMake GUI.</para>
+</sect1>
+<sect1 id="overview_cmake_1cmake_recommendations">
+<title>Recommendations</title>
+<para>While CMake in wxWidgets aims to support most generators available in CMake the following generators are recommended:<itemizedlist>
+<listitem><para>Windows: Visual Studio (any supported version)</para>
+</listitem><listitem><para>macOS: Xcode</para>
+</listitem><listitem><para>Linux: Ninja or Makefiles</para>
+</listitem></itemizedlist>
+</para>
+<para>CMake 3.10 or newer is recommended. The minimum version required is 2.8.12.</para>
+</sect1>
+<sect1 id="overview_cmake_1cmake_apps">
+<title>Using CMake with your applications</title>
+<para>If you are using CMake with your own application there are various ways to use wxWidgets:<itemizedlist>
+<listitem><para>Using an installed, binary or compiled version of wxWidgets using <computeroutput>find_package()</computeroutput></para>
+</listitem><listitem><para>wxWidgets as a sub directory.</para>
+</listitem><listitem><para>CMake&apos;s <ulink url="https://cmake.org/cmake/help/latest/module/ExternalProject.html">ExternalProject module</ulink>.</para>
+</listitem></itemizedlist>
+</para>
+<sect2 id="overview_cmake_1cmake_find_package">
+<title>Using find_package</title>
+<para>You can use <computeroutput>find_package(wxWidgets)</computeroutput> to use a compiled version of wxWidgets. Have a look at the <ulink url="https://cmake.org/cmake/help/latest/module/FindwxWidgets.html">CMake Documentation</ulink> for detailed instructions.</para>
+<para>Your <emphasis>CMakeLists.txt</emphasis> would look like this: <programlisting><codeline><highlight class="normal">...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">find_package(wxWidgets<sp/>REQUIRED<sp/>COMPONENTS<sp/>net<sp/>core<sp/>base)</highlight></codeline>
+<codeline><highlight class="normal">include(${wxWidgets_USE_FILE})</highlight></codeline>
+<codeline><highlight class="normal">add_executable(myapp<sp/>myapp.cpp)</highlight></codeline>
+<codeline><highlight class="normal">target_link_libraries(myapp<sp/>${wxWidgets_LIBRARIES})</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="overview_cmake_1cmake_subdir">
+<title>Using a sub directory</title>
+<para>You can use wxWidgets as a subdirectory in your application&apos;s build tree e.g. as a git submodule. This way the wxWidgets libraries will be part of your applications build process.</para>
+<para>Your <emphasis>CMakeLists.txt</emphasis> would look like this: <programlisting><codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">add_subdirectory(libs/wxWidgets)</highlight></codeline>
+<codeline><highlight class="normal">add_executable(myapp<sp/>myapp.cpp)</highlight></codeline>
+<codeline><highlight class="normal">target_link_libraries(myapp<sp/>wx::net<sp/>wx::core<sp/>wx::base)</highlight></codeline>
+</programlisting> </para>
+</sect2>
+</sect1>
+    </detaileddescription>
+    <location file="docs/doxygen/overviews/cmake.md"/>
+  </compounddef>
+</doxygen>

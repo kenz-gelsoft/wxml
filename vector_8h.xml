@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="vector_8h" kind="file" language="C++">
+    <compoundname>vector.h</compoundname>
+    <innerclass refid="classwx_vector_3_01_t_01_4" prot="public">wxVector&lt; T &gt;</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="vector_8h_1a51f3ce4aa4cecea615da3fc293d40e6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void wxVectorSort</definition>
+        <argsstring>(wxVector&lt; T &gt; &amp;v)</argsstring>
+        <name>wxVectorSort</name>
+        <param>
+          <type>wxVector&lt; T &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Sort the contents of a <computeroutput><ref refid="classwx_vector_3_01_t_01_4" kindref="compound">wxVector&lt;T&gt;</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In a STL build this function will be defined as a thin wrapper around std::sort. To be sortable the contained type must support the less-than operator.</para>
+<para><programlisting><codeline><highlight class="normal">wxVector&lt;SomeClass&gt;<sp/>v;</highlight></codeline>
+<codeline><highlight class="normal">...<sp/>//<sp/>items<sp/>are<sp/>added<sp/>to<sp/>the<sp/>vector<sp/>v...</highlight></codeline>
+<codeline><highlight class="normal">wxVectorSort(v);</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="see"><para><ref refid="classwx_vector_3_01_t_01_4" kindref="compound">wxVector&lt;T&gt;</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/vector.h" line="309" column="6" declfile="interface/wx/vector.h" declline="309" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="vector_8h_1a1111837faeeba89448496571455f6025" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool wxVectorContains</definition>
+        <argsstring>(const wxVector&lt; T &gt; &amp;v, const T &amp;value)</argsstring>
+        <name>wxVectorContains</name>
+        <param>
+          <type>const wxVector&lt; T &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if the vector contains the given value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is just a trivial wrapper around std::find().</para>
+<para><simplesect kind="since"><para>3.1.5 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/vector.h" line="319" column="6" declfile="interface/wx/vector.h" declline="319" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="interface/wx/vector.h"/>
+  </compounddef>
+</doxygen>

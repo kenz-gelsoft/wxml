@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_g_l_attribs_base" kind="class" language="C++" prot="public">
+    <compoundname>wxGLAttribsBase</compoundname>
+    <derivedcompoundref refid="classwx_g_l_attributes" prot="public" virt="non-virtual">wxGLAttributes</derivedcompoundref>
+    <derivedcompoundref refid="classwx_g_l_context_attrs" prot="public" virt="non-virtual">wxGLContextAttrs</derivedcompoundref>
+    <includes local="no">wx/glcanvas.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_g_l_attribs_base_1aa20250566d1d8a22feb04aa787e9cb77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxGLAttribsBase::wxGLAttribsBase</definition>
+        <argsstring>()</argsstring>
+        <name>wxGLAttribsBase</name>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="52" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_attribs_base_1afc4de6372bda492c7dd584617aa03d3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxGLAttribsBase::AddAttribute</definition>
+        <argsstring>(int attribute)</argsstring>
+        <name>AddAttribute</name>
+        <param>
+          <type>int</type>
+          <declname>attribute</declname>
+        </param>
+        <briefdescription>
+<para>Adds an integer value to the list of attributes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>attribute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="60" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_attribs_base_1af955df6b44725e0a990d1d17bb824102" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxGLAttribsBase::AddAttribBits</definition>
+        <argsstring>(int searchVal, int combineVal)</argsstring>
+        <name>AddAttribBits</name>
+        <param>
+          <type>int</type>
+          <declname>searchVal</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>combineVal</declname>
+        </param>
+        <briefdescription>
+<para>Combine (bitwise OR) a given value with the existing one, if any. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function first searches for an identifier and then combines the given value with the value right after the identifier. If the identifier is not found, two new values (i.e. the identifier and the given value) are added to the list.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>searchVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The identifier to search for. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>combineVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to combine with the existing one. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="74" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_attribs_base_1a23c0bd4aa6a6f88fe1feb125d773f16d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxGLAttribsBase::SetNeedsARB</definition>
+        <argsstring>(bool needsARB=true)</argsstring>
+        <name>SetNeedsARB</name>
+        <param>
+          <type>bool</type>
+          <declname>needsARB</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Sets the necessity of using special ARB-functions (e.g. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>wglCreateContextAttribsARB in MSW) for some of the attributes of the list. Multi-sampling and modern context require these ARB-functions.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>needsARB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true if an ARB-function is needed for any of the attributes.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="classwx_g_l_attribs_base_1ad4cba38d7db1f57727cca59ab85ce123" kindref="member">NeedsARB</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="87" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_attribs_base_1ac19b8a554482616eef577cba219f487b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxGLAttribsBase::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+<para>Delete contents and sets ARB-flag to false. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="90" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_attribs_base_1a0bdf6d85a2c1f9a6bb08b6647cdedf1d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int *</type>
+        <definition>const int * wxGLAttribsBase::GetGLAttrs</definition>
+        <argsstring>() const</argsstring>
+        <name>GetGLAttrs</name>
+        <briefdescription>
+<para>Returns a pointer to the internal list of attributes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It&apos;s very unlikely you need this function. If the list is empty the returned value is NULL. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="97" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_attribs_base_1a80eb518ec7df09c9591ac98a740e89e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxGLAttribsBase::GetSize</definition>
+        <argsstring>()</argsstring>
+        <name>GetSize</name>
+        <briefdescription>
+<para>Returns the size of the internal list of attributes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Remember that the last value in the list must be a &apos;0&apos; (zero). So, a minimal list is of size = 2, the first value is meaningful and the last is &apos;0&apos;. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="103" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_attribs_base_1ad4cba38d7db1f57727cca59ab85ce123" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxGLAttribsBase::NeedsARB</definition>
+        <argsstring>() const</argsstring>
+        <name>NeedsARB</name>
+        <briefdescription>
+<para>Returns the current value of the ARB-flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classwx_g_l_attribs_base_1a23c0bd4aa6a6f88fe1feb125d773f16d" kindref="member">SetNeedsARB</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="110" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is the base class for <ref refid="classwx_g_l_attributes" kindref="compound">wxGLAttributes</ref> and <ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It stores internally the list required by OS and OpenGL driver for setting display and rendering context attributes.</para>
+<para>Normally this class is not used directly. But there&apos;s a case where it its member functions are useful: setting attributes not handled by wxWidgets. Suppose the OpenGL Board sets a new functionality of the context, by adding a new attribute (let&apos;s call it NEW_CTX_F) and also a new type of context by allowing a new bit value (let&apos;s call it NEW_BITS) for the CONTEXT_PROFILE_MASK_ARB value. These new values can be added to the list using code like this:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref><sp/>cxtAttrs;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Some<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">cxtAttrs.<ref refid="classwx_g_l_context_attrs_1aac1afdc7dc9d233631d69fbb13e4d04c" kindref="member">CoreProfile</ref>().<ref refid="classwx_g_l_context_attrs_1ac2b272f5b876316cd0e3c36b821125f0" kindref="member">OGLVersion</ref>(5,<sp/>0);<sp/></highlight><highlight class="comment">//<sp/>OGL<sp/>5.0,<sp/>whenever<sp/>available</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">cxtAttrs.<ref refid="classwx_g_l_context_attrs_1a73c62604badcceb82bd90ae2906b5804" kindref="member">PlatformDefaults</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Values<sp/>usually<sp/>are<sp/>platform-dependant<sp/>named<sp/>(even<sp/>value<sp/>assigned!)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__WXMSW__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cxtAttrs.<ref refid="classwx_g_l_attribs_base_1afc4de6372bda492c7dd584617aa03d3b" kindref="member">AddAttribute</ref>(WGL_NEW_CTX_F);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cxtAttrs.<ref refid="classwx_g_l_attribs_base_1af955df6b44725e0a990d1d17bb824102" kindref="member">AddAttribBits</ref>(WGL_CONTEXT_PROFILE_MASK_ARB,<sp/>WGL_NEW_BITS);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__WXX11__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cxtAttrs.<ref refid="classwx_g_l_attribs_base_1afc4de6372bda492c7dd584617aa03d3b" kindref="member">AddAttribute</ref>(GLX_NEW_CTX_F);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cxtAttrs.<ref refid="classwx_g_l_attribs_base_1af955df6b44725e0a990d1d17bb824102" kindref="member">AddAttribBits</ref>(GLX_CONTEXT_PROFILE_MASK_ARB,<sp/>GLX_NEW_BITS);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Other<sp/>platforms</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">cxtAttrs.<ref refid="classwx_g_l_context_attrs_1adb251b51f515af5dacf1a36f77075a4c" kindref="member">EndList</ref>();<sp/></highlight><highlight class="comment">//<sp/>Don&apos;t<sp/>forget<sp/>this</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">cxtAttrs.<ref refid="classwx_g_l_attribs_base_1a23c0bd4aa6a6f88fe1feb125d773f16d" kindref="member">SetNeedsARB</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>Context<sp/>attributes<sp/>are<sp/>set<sp/>by<sp/>an<sp/>ARB-function</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="since"><para>3.1.0</para>
+</simplesect>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxgl" kindref="member">wxGL</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para><simplesect kind="see"><para><ref refid="classwx_g_l_canvas" kindref="compound">wxGLCanvas</ref>, <ref refid="classwx_g_l_context" kindref="compound">wxGLContext</ref>, <ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref>, <ref refid="classwx_g_l_attributes" kindref="compound">wxGLAttributes</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>wxGLAttribsBase</label>
+        <link refid="classwx_g_l_attribs_base"/>
+      </node>
+      <node id="2">
+        <label>wxGLAttributes</label>
+        <link refid="classwx_g_l_attributes"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxGLContextAttrs</label>
+        <link refid="classwx_g_l_context_attrs"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="interface/wx/glcanvas.h" line="48" column="1" bodyfile="interface/wx/glcanvas.h" bodystart="49" bodyend="111"/>
+    <listofallmembers>
+      <member refid="classwx_g_l_attribs_base_1af955df6b44725e0a990d1d17bb824102" prot="public" virt="non-virtual"><scope>wxGLAttribsBase</scope><name>AddAttribBits</name></member>
+      <member refid="classwx_g_l_attribs_base_1afc4de6372bda492c7dd584617aa03d3b" prot="public" virt="non-virtual"><scope>wxGLAttribsBase</scope><name>AddAttribute</name></member>
+      <member refid="classwx_g_l_attribs_base_1a0bdf6d85a2c1f9a6bb08b6647cdedf1d" prot="public" virt="non-virtual"><scope>wxGLAttribsBase</scope><name>GetGLAttrs</name></member>
+      <member refid="classwx_g_l_attribs_base_1a80eb518ec7df09c9591ac98a740e89e8" prot="public" virt="non-virtual"><scope>wxGLAttribsBase</scope><name>GetSize</name></member>
+      <member refid="classwx_g_l_attribs_base_1ad4cba38d7db1f57727cca59ab85ce123" prot="public" virt="non-virtual"><scope>wxGLAttribsBase</scope><name>NeedsARB</name></member>
+      <member refid="classwx_g_l_attribs_base_1ac19b8a554482616eef577cba219f487b" prot="public" virt="non-virtual"><scope>wxGLAttribsBase</scope><name>Reset</name></member>
+      <member refid="classwx_g_l_attribs_base_1a23c0bd4aa6a6f88fe1feb125d773f16d" prot="public" virt="non-virtual"><scope>wxGLAttribsBase</scope><name>SetNeedsARB</name></member>
+      <member refid="classwx_g_l_attribs_base_1aa20250566d1d8a22feb04aa787e9cb77" prot="public" virt="non-virtual"><scope>wxGLAttribsBase</scope><name>wxGLAttribsBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

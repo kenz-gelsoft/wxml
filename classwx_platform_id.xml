@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_platform_id" kind="class" language="C++" prot="public">
+    <compoundname>wxPlatformId</compoundname>
+    <includes local="no">wx/platinfo.h</includes>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classwx_platform_id_1a497b03480c9aca34d988702747b1b614" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>static wxString wxPlatformId::GetCurrent</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrent</name>
+        <briefdescription>
+<para>Returns the preferred current platform name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Use <ref refid="classwx_platform_id_1ad8dee7f5286062202a127cd816a48570" kindref="member">MatchesCurrent()</ref> to check if the name is one of the possibly several names corresponding to the current platform.</para>
+<para>Returns one of &quot;msw&quot;, &quot;mac&quot; or &quot;unix&quot; or an empty string if the current platform is not recognized. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/platinfo.h" line="171" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_platform_id_1ad8dee7f5286062202a127cd816a48570" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool wxPlatformId::MatchesCurrent</definition>
+        <argsstring>(const wxString &amp;s)</argsstring>
+        <name>MatchesCurrent</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if the given string matches the current platform. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/platinfo.h" line="176" column="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines a very broad platform categorization. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Usually you would use <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> to get all the platform details rather than this class which only distinguishes between MSW, Mac and Unix platforms.</para>
+<para>This class is mostly useful if a short string describing the platform corresponds to the current platform, i.e. the platform under which the executable runs. The recognized strings are:</para>
+<para><itemizedlist>
+<listitem><para>&quot;msw&quot; (preferred) or &quot;win&quot; (for compatibility) for MSW.</para>
+</listitem><listitem><para>&quot;mac&quot; for Apple systems, i.e. macOS and iOS.</para>
+</listitem><listitem><para>&quot;unix&quot; for the (other) Unix-like systems.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="since"><para>3.1.5 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/platinfo.h" line="160" column="1" bodyfile="interface/wx/platinfo.h" bodystart="161" bodyend="177"/>
+    <listofallmembers>
+      <member refid="classwx_platform_id_1a497b03480c9aca34d988702747b1b614" prot="private" virt="non-virtual"><scope>wxPlatformId</scope><name>GetCurrent</name></member>
+      <member refid="classwx_platform_id_1ad8dee7f5286062202a127cd816a48570" prot="private" virt="non-virtual"><scope>wxPlatformId</scope><name>MatchesCurrent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

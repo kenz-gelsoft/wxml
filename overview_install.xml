@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="overview_install" kind="page">
+    <compoundname>overview_install</compoundname>
+    <title>Installing wxWidgets</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="overview_install_1md_docs_doxygen_overviews_install"/></para>
+<para>wxWidgets headers and libraries must be available in order to build the applications using it, so the first step when starting to use wxWidgets is to install it. This can be done, for all platforms and library versions, by building wxWidgets from sources, but for the most common platforms pre-built binaries of the libraries are also provided, so the first decision to make is whether to use these binaries or build the library yourself. Building the libraries yourself allows you to compile the latest version using exactly the options you need, and so is the most flexible solution, but using the binaries may be simpler and faster <ndash/> the choice is yours, just follow the instructions in the corresponding section below depending on the approach you prefer. Of course, you only need to do one <emphasis>or</emphasis> the other, <emphasis>not</emphasis> both.</para>
+<sect1 id="overview_install_1autotoc_md9">
+<title>Using Binaries</title>
+<para>How to install binaries depends on your platform:</para>
+<para><itemizedlist>
+<listitem><para>For Microsoft Windows (MSW), wxWidgets project provides official binaries on the <ulink url="http://www.wxwidgets.org/downloads/">Downloads page</ulink>, please see the <ref refid="plat_msw_binaries" kindref="compound">instructions for using them</ref>.</para>
+</listitem><listitem><para>For Linux, and other free Unix-like systems, wxWidgets packages are available in system repositories under the name &quot;wxGTK&quot;. Note that to develop applications using wxWidgets you may need to install the &quot;development&quot; packages and not just the libraries needed for running the applications using wxWidgets. For example, under Debian and Debian-derived systems such as Ubuntu, you need to run <computeroutput>apt get libwxgtkX.Y-dev</computeroutput>.</para>
+</listitem><listitem><para>For macOS, wxWidgets is available in third-party package managers such as <ulink url="https://brew.sh/">brew</ulink> or <ulink url="https://www.macports.org/">MacPorts</ulink>, and you can install them in the usual way.</para>
+</listitem></itemizedlist>
+</para>
+<para>Additionally, some third-party C++ package managers also provide wxWidgets binaries. For example, please see <ulink url="https://www.wxwidgets.org/blog/2019/01/wxwidgets-and-vcpkg/">this post</ulink> for the instructions about using <ulink url="https://github.com/microsoft/vcpkg">vcpkg</ulink> C++ package manager for installing wxWidgets.</para>
+</sect1>
+<sect1 id="overview_install_1autotoc_md10">
+<title>Building from Source</title>
+<sect2 id="overview_install_1autotoc_md11">
+<title>Getting the sources</title>
+<para>To build the library you need to get its sources first. The recommended way to do it is to use Git to check them out from the official wxWidgets repository using the following command: <verbatim>$ git clone --recurse-submodules https://github.com/wxWidgets/wxWidgets.git
+</verbatim> Alternatively, you can download the sources from the <ulink url="https://brew.sh/">downloads page</ulink>. Please note that all the source archives in different formats (ZIP, 7z, tar.bz2) contain the same files, but use different line ending formats: Unix (&quot;LF&quot;) for the latter one and DOS (&quot;CR LF&quot;) for the two other ones, and it is usually preferable to choose the format corresponding to the current platform. When downloading the sources with DOS ends of lines, prefer 7z format for much smaller file size.</para>
+</sect2>
+<sect2 id="overview_install_1autotoc_md12">
+<title>Selecting the build system</title>
+<para>wxWidgets can be built using <ulink url="https://cmake.org/">CMake</ulink> under all platforms. Please follow <ref refid="overview_cmake" kindref="compound">CMake build instructions</ref> if you prefer to use it.</para>
+<para>Otherwise, please use the appropriate instructions depending on your platform:</para>
+<para><itemizedlist>
+<listitem><para>For native wxMSW port under <ref refid="plat_msw_install" kindref="compound">Microsoft Windows</ref>.</para>
+</listitem><listitem><para>For wxGTK under <ref refid="plat_gtk_install" kindref="compound">Linux and other Unix-like systems</ref>.</para>
+</listitem><listitem><para>For native wxOSX port under <ref refid="plat_osx_install" kindref="compound">macOS</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para>The wxWidgets ports mentioned above are the main ones, however other variants also exist, see <ref refid="page_port" kindref="compound">platform details</ref> page for the full list.</para>
+</sect2>
+</sect1>
+<sect1 id="overview_install_1autotoc_md13">
+<title>Verifying the Installation</title>
+<para>After installing wxWidgets, it is recommended to check that the library can actually be used by building a minimal wxWidgets program using it, such as <computeroutput>samples/minimal/minimal.cpp</computeroutput> included in wxWidgets distributions.</para>
+<para>You may choose to build this program in any of the following ways:</para>
+<para><itemizedlist>
+<listitem><para>Directly from command line under any Unix-like systems, including macOS and Unix-like environments such as Cygwin or MSYS2 under MSW, just run</para>
+<para>$ c++ -o minimal minimal.cpp <computeroutput>wx-config --cxxflags --libs</computeroutput></para>
+<para>Please note that you <emphasis>must</emphasis> use <computeroutput>wx-config</computeroutput> to obtain the compiler and linker flags in this case.</para>
+</listitem><listitem><para>Using CMake, and the provided <computeroutput>samples/minimal/CMakeLists.txt</computeroutput> file.</para>
+</listitem><listitem><para>Using Microsoft Visual Studio IDE: simply create a new project and add the provided <computeroutput>wxwidgets.props</computeroutput> property sheet file to it as explained in the instructions and build the project as usual.</para>
+</listitem><listitem><para>Using another IDE with wxWidgets support, such as <ulink url="https://brew.sh/">Code::Blocks</ulink> or <ulink url="https://www.macports.org/">CodeLite</ulink>, please use the IDE wizards.</para>
+</listitem><listitem><para>If you use another IDE, under Unix you should run <computeroutput>wx-config --cxxflags</computeroutput> and <computeroutput>wx-config --libs</computeroutput> commands separately and copy-and-paste their output to the &quot;Additional preprocessor options&quot; and &quot;Additional linker options&quot; fields in your IDE, respectively. Under MSW systems you need to configure the IDE using the instructions in the #msw_build_appsmanual setup&quot;&quot; section. </para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="docs/doxygen/overviews/install.md"/>
+  </compounddef>
+</doxygen>

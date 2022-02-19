@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_std_output_stream" kind="class" language="C++" prot="public">
+    <compoundname>wxStdOutputStream</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::ostream</basecompoundref>
+    <includes local="no">wx/stdstream.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_std_output_stream_1a9e38e64274028ae4fc12908a98bc8293" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxStdOutputStream::wxStdOutputStream</definition>
+        <argsstring>(wxOutputStream &amp;stream)</argsstring>
+        <name>wxStdOutputStream</name>
+        <param>
+          <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Creates a std::ostream derived stream which writes to a <ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream to write to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stdstream.h" line="183" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_std_output_stream_1aedd715f0036f9e2ee263998505aeda50" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual wxStdOutputStream::~wxStdOutputStream</definition>
+        <argsstring>()</argsstring>
+        <name>~wxStdOutputStream</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stdstream.h" line="188" column="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classwx_std_output_stream" kindref="compound">wxStdOutputStream</ref> is a std::ostream derived stream which writes to a <ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Example: <programlisting><codeline><highlight class="normal"><ref refid="classwx_f_file_output_stream" kindref="compound">wxFFileOutputStream</ref><sp/>file(</highlight><highlight class="stringliteral">&quot;out.txt.gz&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classwx_zlib_output_stream" kindref="compound">wxZlibOutputStream</ref><sp/>gzipOutput(file,<sp/>-1,<sp/><ref refid="zstream_8h_1a64bea75633419f58a90931e19349c384af7aa5280cec791d2ee89d8fa62a6eae9" kindref="member">wxZLIB_GZIP</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classwx_std_output_stream" kindref="compound">wxStdOutputStream</ref><sp/>out(gzipOutput);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">out<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Hello<sp/>world!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="txtstrm_8h_1a696f69d76df63d35e1d28df1cc6f9532" kindref="member">std::endl</ref>;</highlight></codeline>
+</programlisting></para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para><simplesect kind="see"><para><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref>, <ref refid="classwx_std_output_stream_buffer" kindref="compound">wxStdOutputStreamBuffer</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>std::ostream</label>
+      </node>
+      <node id="1">
+        <label>wxStdOutputStream</label>
+        <link refid="classwx_std_output_stream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>std::ostream</label>
+      </node>
+      <node id="1">
+        <label>wxStdOutputStream</label>
+        <link refid="classwx_std_output_stream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="interface/wx/stdstream.h" line="173" column="1" bodyfile="interface/wx/stdstream.h" bodystart="174" bodyend="189"/>
+    <listofallmembers>
+      <member refid="classwx_std_output_stream_1a9e38e64274028ae4fc12908a98bc8293" prot="public" virt="non-virtual"><scope>wxStdOutputStream</scope><name>wxStdOutputStream</name></member>
+      <member refid="classwx_std_output_stream_1aedd715f0036f9e2ee263998505aeda50" prot="public" virt="virtual"><scope>wxStdOutputStream</scope><name>~wxStdOutputStream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

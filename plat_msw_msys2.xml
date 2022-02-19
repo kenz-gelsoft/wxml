@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="plat_msw_msys2" kind="page">
+    <compoundname>plat_msw_msys2</compoundname>
+    <title>Building wxMSW port with Win32 MSys2 backend</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="plat_msw_msys2_1md_docs_msw_msys2_msw"/></para>
+<para>The MSys2 website is <ulink url="http://www.msys2.org/">http://www.msys2.org/</ulink></para>
+<para>These building steps are NOT the normal way to build MSys2 MinGW packages. But, they are a way the wxWidgets developers can test that wxWidgets can build the wxMSW libraries under MSys2 MinGW.</para>
+<para>For the MSys2 way please see <ulink url="https://github.com/Alexpux/MINGW-packages">https://github.com/Alexpux/MINGW-packages</ulink></para>
+<para>Building steps:</para>
+<para>A. Install the mingw32 packages needed to build wxMSW using the configure/make build method. From the MSys2 MinGW prompt: <verbatim> pacman -S --needed --noconfirm make
+ pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-libjpeg-turbo
+ pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-libpng
+ pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-libtiff
+ pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-gcc
+</verbatim> Packages that are needed but are normally installed already. <verbatim>pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-gcc-libs
+pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-expat
+pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-xz
+pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-zlib
+</verbatim></para>
+<para>B. Build the wxMSW static library<orderedlist>
+<listitem><para>Open MSys2 MinGW Prompt (These steps were tested on MinGW64; but, should work under MinGW32)</para>
+</listitem><listitem><para>Use the cd command to change directory to the wxWidgets top folder.</para>
+</listitem><listitem><para>Create the &quot;build-${MSYSTEM_CARCH}-msw-static&quot; folder to build the static libraries <verbatim> mkdir -p build-${MSYSTEM_CARCH}-msw-static
+</verbatim></para>
+</listitem><listitem><para>Configure wxWidgets</para>
+<para>Option &quot;--disable-precomp-headers&quot; is NOT needed. I am doing it to check for compile issues; And, I think my old 32 bit Windows machine works best with it disabled. <verbatim>cd build-${MSYSTEM_CARCH}-msw-static &amp;&amp; \
+../configure --with-msw \
+    --disable-shared \
+    --disable-precomp-headers \
+&amp;&amp; cd ..
+</verbatim></para>
+</listitem><listitem><para>make the wxMSW static libraries <verbatim> cd build-${MSYSTEM_CARCH}-msw-static &amp;&amp; make &amp;&amp; cd ..
+</verbatim> C. Build and run the minimal static sample <verbatim>1. Clean the minimal sample
+
+        cd build-${MSYSTEM_CARCH}-msw-static/samples/minimal &amp;&amp; make clean &amp;&amp; cd ../../..
+
+2. Build the minimal sample
+
+        cd build-${MSYSTEM_CARCH}-msw-static/samples/minimal &amp;&amp; make &amp;&amp; cd ../../..
+
+3. Run the minimal sample
+
+        ./build-${MSYSTEM_CARCH}-msw-static/samples/minimal/minimal.exe
+</verbatim> D. Clean the static samples <verbatim>    cd build-${MSYSTEM_CARCH}-msw-static/samples &amp;&amp; make clean &amp;&amp; cd ../..
+</verbatim> E. Build and run the typetest static sample to verify MIME database works <verbatim>    cd build-${MSYSTEM_CARCH}-msw-static/samples/typetest &amp;&amp; make &amp;&amp; cd ../../..
+    ./build-${MSYSTEM_CARCH}-msw-static/samples/typetest/typetest.exe
+</verbatim> F. Build and run the drawing static sample <verbatim>    cd build-${MSYSTEM_CARCH}-msw-static/samples/drawing &amp;&amp; make &amp;&amp; cd ../../..
+    cd samples/drawing &amp;&amp; ../../build-${MSYSTEM_CARCH}-msw-static/samples/drawing/drawing.exe &amp;&amp; cd ../..
+</verbatim> G. Build and run the splash static sample <verbatim>    cd build-${MSYSTEM_CARCH}-msw-static/samples/splash &amp;&amp; make &amp;&amp; cd ../../..
+    cd samples/splash &amp;&amp; ../../build-${MSYSTEM_CARCH}-msw-static/samples/splash/splash.exe &amp;&amp; cd ../..
+</verbatim> H. Build and run the widgets static sample <verbatim>    cd build-${MSYSTEM_CARCH}-msw-static/samples/widgets &amp;&amp; make &amp;&amp; cd ../../..
+    cd samples/widgets &amp;&amp; ../../build-${MSYSTEM_CARCH}-msw-static/samples/widgets/widgets.exe &amp;&amp; cd ../..
+</verbatim> I. Build all the rest of the static samples <verbatim>    cd build-${MSYSTEM_CARCH}-msw-static/samples &amp;&amp; make &amp;&amp; cd ../..
+</verbatim> </para>
+</listitem></orderedlist>
+</para>
+    </detaileddescription>
+    <location file="docs/msw/msys2-msw.md"/>
+  </compounddef>
+</doxygen>

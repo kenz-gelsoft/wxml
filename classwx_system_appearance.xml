@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_system_appearance" kind="class" language="C++" prot="public">
+    <compoundname>wxSystemAppearance</compoundname>
+    <includes local="no">wx/settings.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_system_appearance_1a4858a2efd83f6a701ea20775a44bad37" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>wxString wxSystemAppearance::GetName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetName</name>
+        <briefdescription>
+<para>Return the name if available or empty string otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is currently only implemented for macOS and returns a not necessarily user-readable string such as &quot;NSAppearanceNameAqua&quot; there and an empty string under all the other platforms. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/settings.h" line="281" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_system_appearance_1a399d06fab6086dc97508f1704e3f0f0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxSystemAppearance::IsDark</definition>
+        <argsstring>() const</argsstring>
+        <name>IsDark</name>
+        <briefdescription>
+<para>Return true if the current system there is explicitly recognized as being a dark theme or if the default window background is dark. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method should be used to check whether custom colours more appropriate for the default (light) or dark appearance should be used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/settings.h" line="290" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_system_appearance_1a77746a67ff2021aceae20364446ab7a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxSystemAppearance::IsUsingDarkBackground</definition>
+        <argsstring>() const</argsstring>
+        <name>IsUsingDarkBackground</name>
+        <briefdescription>
+<para>Return true if the default window background is significantly darker than foreground. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is used by <ref refid="classwx_system_appearance_1a399d06fab6086dc97508f1704e3f0f0a" kindref="member">IsDark()</ref> if there is no platform-specific way to determine whether a dark mode is being used and is generally not very useful to call directly.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_colour_1a2e9b5da1063e8467a0eabc14d214e729" kindref="member">wxColour::GetLuminance()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/settings.h" line="302" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Provides information about the current system appearance. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>An object of this class can be retrieved using <ref refid="classwx_system_settings_1aa975daf83a1d20621e517eaedbf43088" kindref="member">wxSystemSettings::GetAppearance()</ref> and can then be queried for some aspects of the current system appearance, notably whether the system is using a dark theme, i.e. a theme with predominantly dark background.</para>
+<para>This is useful for custom controls that don&apos;t use the standard system colours, as they need to adjust the colours used for drawing them to fit in the system look.</para>
+<para><simplesect kind="since"><para>3.1.3 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/settings.h" line="271" column="1" bodyfile="interface/wx/settings.h" bodystart="272" bodyend="303"/>
+    <listofallmembers>
+      <member refid="classwx_system_appearance_1a4858a2efd83f6a701ea20775a44bad37" prot="public" virt="non-virtual"><scope>wxSystemAppearance</scope><name>GetName</name></member>
+      <member refid="classwx_system_appearance_1a399d06fab6086dc97508f1704e3f0f0a" prot="public" virt="non-virtual"><scope>wxSystemAppearance</scope><name>IsDark</name></member>
+      <member refid="classwx_system_appearance_1a77746a67ff2021aceae20364446ab7a1" prot="public" virt="non-virtual"><scope>wxSystemAppearance</scope><name>IsUsingDarkBackground</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

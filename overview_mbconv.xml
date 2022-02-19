@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="overview_mbconv" kind="page">
+    <compoundname>overview_mbconv</compoundname>
+    <title>wxMBConv Overview</title>
+    <tableofcontents>
+      <tocsect>
+        <name>Background: The Need for Conversion</name>
+        <reference>overview_mbconv_1overview_mbconv_need</reference>
+    </tocsect>
+      <tocsect>
+        <name>Background: The wxString Class</name>
+        <reference>overview_mbconv_1overview_mbconv_string</reference>
+    </tocsect>
+      <tocsect>
+        <name>wxMBConv Classes</name>
+        <reference>overview_mbconv_1overview_mbconv_classes</reference>
+    </tocsect>
+      <tocsect>
+        <name>wxMBConv Objects</name>
+        <reference>overview_mbconv_1overview_mbconv_objects</reference>
+    </tocsect>
+      <tocsect>
+        <name>wxCSConv</name>
+        <reference>overview_mbconv_1overview_mbconv_csconv</reference>
+    </tocsect>
+      <tocsect>
+        <name>Converting Strings</name>
+        <reference>overview_mbconv_1overview_mbconv_converting</reference>
+    </tocsect>
+      <tocsect>
+        <name>Converting Buffers</name>
+        <reference>overview_mbconv_1overview_mbconv_buffers</reference>
+    </tocsect>
+    </tableofcontents>
+    <briefdescription>
+<para>The <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> classes in wxWidgets enable an Unicode-aware application to easily convert between Unicode and the variety of 8-bit encoding systems still in use. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> classes in wxWidgets enable an Unicode-aware application to easily convert between Unicode and the variety of 8-bit encoding systems still in use.</para>
+<para><simplesect kind="see"><para><ref refid="group__group__class__conv" kindref="compound">Text Conversion</ref></para>
+</simplesect>
+</para>
+<sect1 id="overview_mbconv_1overview_mbconv_need">
+<title>Background: The Need for Conversion</title>
+<para>As programs have become more and more globalized, and users are exchanging documents across country boundaries as never before, applications need to take into account the different letters and symbols in use around the world. It is no longer enough to just depend on the default byte-sized character sets that computers have traditionally used.</para>
+<para>The Unicode standard is the solution to most tasks involving processing and exchanging text in arbitrary languages. Unicode is able to contain the complete set of characters used in all languages of the world in one unified global coding system.</para>
+<para>Unicode text can be represented in various encodings, one of the most commonly used being UTF-8. UTF-8 along with UTF-7 are so-called &quot;compatibility encodings&quot;, which exist to facilitate the migration from old 8-bit encodings to Unicode. Despite the wide adoption of Unicode, a number of legacy systems out there still depends on the old 8-bit encodings.</para>
+<para>Sending Unicode data from one Unicode-aware system to another, e.g. through a network connection or regular files, is typically done by encoding the data into a multibyte encoding; usually UTF-8.</para>
+</sect1>
+<sect1 id="overview_mbconv_1overview_mbconv_string">
+<title>Background: The wxString Class</title>
+<para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>rewrite this overview; it&apos;s not up2date with <ref refid="classwx_string" kindref="compound">wxString</ref> changes</para>
+</xrefdescription></xrefsect></para>
+<para>If you have compiled wxWidgets in Unicode mode, the wxChar type will become identical to wchar_t rather than char, and a <ref refid="classwx_string" kindref="compound">wxString</ref> stores wxChars. Hence, all <ref refid="classwx_string" kindref="compound">wxString</ref> manipulation in your application will then operate on Unicode strings, and almost as easily as working with ordinary char strings (you just need to remember to use the <ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT()</ref> macro to encapsulate any string literals).</para>
+<para>But often, your environment doesn&apos;t want Unicode strings. You could be sending data over a network, or processing a text file for some other application. You need a way to quickly convert your easily-handled Unicode data to and from a traditional 8-bit encoding. And this is what the <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> classes do.</para>
+</sect1>
+<sect1 id="overview_mbconv_1overview_mbconv_classes">
+<title>wxMBConv Classes</title>
+<para>The base class for all these conversions is the <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> class (which itself implements standard libc locale conversion). Derived classes include wxMBConvLibc, several different wxMBConvUTFxxx classes, and <ref refid="classwx_c_s_conv" kindref="compound">wxCSConv</ref>, which implement different kinds of conversions. You can also derive your own class for your own custom encoding and use it, should you need it. All you need to do is override the MB2WC and WC2MB methods.</para>
+</sect1>
+<sect1 id="overview_mbconv_1overview_mbconv_objects">
+<title>wxMBConv Objects</title>
+<para>Several of the wxWidgets-provided <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> classes have predefined instances (wxConvLibc, wxConvFileName, wxConvUTF7, wxConvUTF8, wxConvLocal). You can use these predefined objects directly, or you can instantiate your own objects.</para>
+<para>A variable, wxConvCurrent, points to the conversion object that the user interface is supposed to use, in the case that the user interface is not Unicode-based (like with GTK+ 1.2). By default, it points to wxConvLibc or wxConvLocal, depending on which works best on the current platform.</para>
+</sect1>
+<sect1 id="overview_mbconv_1overview_mbconv_csconv">
+<title>wxCSConv</title>
+<para>The <ref refid="classwx_c_s_conv" kindref="compound">wxCSConv</ref> class is special because when it is instantiated, you can tell it which character set it should use, which makes it meaningful to keep many instances of them around, each with a different character set (or you can create a <ref refid="classwx_c_s_conv" kindref="compound">wxCSConv</ref> instance on the fly).</para>
+<para>The predefined <ref refid="classwx_c_s_conv" kindref="compound">wxCSConv</ref> instance, wxConvLocal, is preset to use the default user character set, but you should rarely need to use it directly, it is better to go through wxConvCurrent.</para>
+</sect1>
+<sect1 id="overview_mbconv_1overview_mbconv_converting">
+<title>Converting Strings</title>
+<para>Once you have chosen which object you want to use to convert your text, here is how you would use them with <ref refid="classwx_string" kindref="compound">wxString</ref>. These examples all assume that you are using a Unicode build of wxWidgets, although they will still compile in a non-Unicode build (they just won&apos;t convert anything).</para>
+<para>Example 1: Constructing a <ref refid="classwx_string" kindref="compound">wxString</ref> from input in current encoding.</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>str(input_data,<sp/>*wxConvCurrent);</highlight></codeline>
+</programlisting></para>
+<para>Example 2: Input in UTF-8 encoding.</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>str(input_data,<sp/>wxConvUTF8);</highlight></codeline>
+</programlisting></para>
+<para>Example 3: Input in KOI8-R. Construction of <ref refid="classwx_c_s_conv" kindref="compound">wxCSConv</ref> instance on the fly.</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>str(input_data,<sp/><ref refid="classwx_c_s_conv" kindref="compound">wxCSConv</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;koi8-r&quot;</highlight><highlight class="normal">)));</highlight></codeline>
+</programlisting></para>
+<para>Example 4: Printing a <ref refid="classwx_string" kindref="compound">wxString</ref> to stdout in UTF-8 encoding.</para>
+<para><programlisting><codeline><highlight class="normal">puts(str.mb_str(wxConvUTF8));</highlight></codeline>
+</programlisting></para>
+<para>Example 5: Printing a <ref refid="classwx_string" kindref="compound">wxString</ref> to stdout in custom encoding. Using preconstructed <ref refid="classwx_c_s_conv" kindref="compound">wxCSConv</ref> instance.</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_c_s_conv" kindref="compound">wxCSConv</ref><sp/>cust(user_encoding);</highlight></codeline>
+<codeline><highlight class="normal">printf(</highlight><highlight class="stringliteral">&quot;Data:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>str.mb_str(cust));</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="note"><para>Since mb_str() returns a temporary <ref refid="classwx_char_buffer" kindref="compound">wxCharBuffer</ref> to hold the result of the conversion, you need to explicitly cast it to const char* if you use it in a vararg context (like with printf).</para>
+</simplesect>
+</para>
+</sect1>
+<sect1 id="overview_mbconv_1overview_mbconv_buffers">
+<title>Converting Buffers</title>
+<para>If you have specialized needs, or just don&apos;t want to use <ref refid="classwx_string" kindref="compound">wxString</ref>, you can also use the conversion methods of the conversion objects directly. This can even be useful if you need to do conversion in a non-Unicode build of wxWidgets; converting a string from UTF-8 to the current encoding should be possible by doing this:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>str(wxConvUTF8.cMB2WC(input_data),<sp/>*wxConvCurrent);</highlight></codeline>
+</programlisting></para>
+<para>Here, cMB2WC of the UTF8 object returns a <ref refid="classwx_w_char_buffer" kindref="compound">wxWCharBuffer</ref> containing a Unicode string. The <ref refid="classwx_string" kindref="compound">wxString</ref> constructor then converts it back to an 8-bit character set using the passed conversion object, *wxConvCurrent. (In a Unicode build of wxWidgets, the constructor ignores the passed conversion object and retains the Unicode data.)</para>
+<para>This could also be done by first making a <ref refid="classwx_string" kindref="compound">wxString</ref> of the original data:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>input_str(input_data);</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>str(input_str.wc_str(wxConvUTF8),<sp/>*wxConvCurrent);</highlight></codeline>
+</programlisting></para>
+<para>To print a wxChar buffer to a non-Unicode stdout:</para>
+<para><programlisting><codeline><highlight class="normal">printf(</highlight><highlight class="stringliteral">&quot;Data:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>wxConvCurrent-&gt;cWX2MB(unicode_data));</highlight></codeline>
+</programlisting></para>
+<para>If you need to do more complex processing on the converted data, you may want to store the temporary buffer in a local variable:</para>
+<para><programlisting><codeline><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxWX2MBbuf<sp/>tmp_buf<sp/>=<sp/>wxConvCurrent-&gt;cWX2MB(unicode_data);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tmp_str<sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>tmp_buf;</highlight></codeline>
+<codeline><highlight class="normal">printf(</highlight><highlight class="stringliteral">&quot;Data:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>tmp_str);</highlight></codeline>
+<codeline><highlight class="normal">process_data(tmp_str);</highlight></codeline>
+</programlisting></para>
+<para>If a conversion had taken place in cWX2MB (i.e. in a Unicode build), the buffer will be deallocated as soon as tmp_buf goes out of scope. The macro wxWX2MBbuf reflects the correct return value of cWX2MB (either char* or <ref refid="classwx_char_buffer" kindref="compound">wxCharBuffer</ref>), except for the const. </para>
+</sect1>
+    </detaileddescription>
+    <location file="docs/doxygen/overviews/mbconvclasses.h"/>
+  </compounddef>
+</doxygen>

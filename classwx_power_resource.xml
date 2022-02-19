@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_power_resource" kind="class" language="C++" prot="public">
+    <compoundname>wxPowerResource</compoundname>
+    <includes local="no">wx/power.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classwx_power_resource_1a6e4a2e4834ef9c70d2326ffdb3008c3c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool wxPowerResource::Acquire</definition>
+        <argsstring>(wxPowerResourceKind kind, const wxString &amp;reason=wxString())</argsstring>
+        <name>Acquire</name>
+        <param>
+          <type><ref refid="power_8h_1a85435183edc96b79a76ceefb6b7d0815" kindref="member">wxPowerResourceKind</ref></type>
+          <declname>kind</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>reason</declname>
+          <defval><ref refid="classwx_string" kindref="compound">wxString</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Acquire a power resource for the application. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If successful, the system will not automatically power of the screen or suspend until <ref refid="classwx_power_resource_1ad2dd22e78be3ce6a5004702e820b50c9" kindref="member">Release()</ref> is called.</para>
+<para>Every call to Acquire <bold>must</bold> be matched by a corresponding call to <ref refid="classwx_power_resource_1ad2dd22e78be3ce6a5004702e820b50c9" kindref="member">Release()</ref> or the system will not suspend until the application ends, use <ref refid="classwx_power_resource_blocker" kindref="compound">wxPowerResourceBlocker</ref> to ensure that this happens.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>kind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Power resource required, either <ref refid="power_8h_1a85435183edc96b79a76ceefb6b7d0815a57d075e7ccd69ac5ad3066214d194271" kindref="member">wxPOWER_RESOURCE_SCREEN</ref> or <ref refid="power_8h_1a85435183edc96b79a76ceefb6b7d0815ae43d71f3997bdc14306c07681add0fa2" kindref="member">wxPOWER_RESOURCE_SYSTEM</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional reason may be specified which might be used on some platforms to inform the user what is preventing power saving. It should usually describe the operation requiring the resource and specifying it is strongly recommended. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns true if the acquisition was successful.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classwx_power_resource_1ad2dd22e78be3ce6a5004702e820b50c9" kindref="member">Release()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/power.h" line="143" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_power_resource_1ad2dd22e78be3ce6a5004702e820b50c9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void wxPowerResource::Release</definition>
+        <argsstring>(wxPowerResourceKind kind)</argsstring>
+        <name>Release</name>
+        <param>
+          <type><ref refid="power_8h_1a85435183edc96b79a76ceefb6b7d0815" kindref="member">wxPowerResourceKind</ref></type>
+          <declname>kind</declname>
+        </param>
+        <briefdescription>
+<para>Release a previously acquired power resource. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Release <bold>must</bold> be called for every <ref refid="classwx_power_resource_1a6e4a2e4834ef9c70d2326ffdb3008c3c" kindref="member">Acquire()</ref> call made to restore normal power saving behaviour</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>kind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Power resource to be released.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="classwx_power_resource_1a6e4a2e4834ef9c70d2326ffdb3008c3c" kindref="member">Acquire()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/power.h" line="156" column="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Helper functions for acquiring and releasing the given power resource. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>If an application performs a long running task without user interaction it is often necessary to prevent the system from automatically suspending or powering off the screen and <ref refid="classwx_power_resource_1a6e4a2e4834ef9c70d2326ffdb3008c3c" kindref="member">Acquire()</ref> method can be used to do this.</para>
+<para>Notice that currently this functionality is only implemented for MSW and macOS.</para>
+<para>If possible, use <ref refid="classwx_power_resource_blocker" kindref="compound">wxPowerResourceBlocker</ref> class to ensure that <ref refid="classwx_power_resource_1ad2dd22e78be3ce6a5004702e820b50c9" kindref="member">Release()</ref> is called instead of calling it manually.</para>
+<para><simplesect kind="since"><para>3.1.0 <heading level="2"></heading>
+</para>
+</simplesect>
+Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para><simplesect kind="see"><para><ref refid="classwx_power_resource_blocker" kindref="compound">wxPowerResourceBlocker</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/power.h" line="120" column="1" bodyfile="interface/wx/power.h" bodystart="121" bodyend="157"/>
+    <listofallmembers>
+      <member refid="classwx_power_resource_1a6e4a2e4834ef9c70d2326ffdb3008c3c" prot="public" virt="non-virtual"><scope>wxPowerResource</scope><name>Acquire</name></member>
+      <member refid="classwx_power_resource_1ad2dd22e78be3ce6a5004702e820b50c9" prot="public" virt="non-virtual"><scope>wxPowerResource</scope><name>Release</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

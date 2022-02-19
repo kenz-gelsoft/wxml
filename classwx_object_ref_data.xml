@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_object_ref_data" kind="class" language="C++" prot="public">
+    <compoundname>wxObjectRefData</compoundname>
+    <derivedcompoundref refid="classwx_animation_decoder" prot="public" virt="non-virtual">wxAnimationDecoder</derivedcompoundref>
+    <derivedcompoundref refid="classwx_p_g_cell_data" prot="public" virt="non-virtual">wxPGCellData</derivedcompoundref>
+    <derivedcompoundref refid="classwx_p_g_cell_renderer" prot="public" virt="non-virtual">wxPGCellRenderer</derivedcompoundref>
+    <derivedcompoundref refid="classwx_p_g_choices_data" prot="public" virt="non-virtual">wxPGChoicesData</derivedcompoundref>
+    <derivedcompoundref refid="classwx_variant_data" prot="public" virt="non-virtual">wxVariantData</derivedcompoundref>
+    <includes local="no">wx/object.h</includes>
+    <briefdescription>
+<para>This class is just a typedef to <ref refid="classwx_ref_counter" kindref="compound">wxRefCounter</ref> and is used by <ref refid="classwx_object" kindref="compound">wxObject</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Derive classes from this to store your own data in wxObject-derived classes. When retrieving information from a <ref refid="classwx_object" kindref="compound">wxObject</ref>&apos;s reference data, you will need to cast to your own derived class.</para>
+<para>Below is an example illustrating how to store reference counted data in a class derived from <ref refid="classwx_object" kindref="compound">wxObject</ref> including copy-on-write semantics.</para>
+<sect1 id="classwx_object_ref_data_1objectrefdata_example">
+<title>Example</title>
+<para><programlisting><codeline><highlight class="comment">//<sp/>include<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyCar<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_object" kindref="compound">wxObject</ref></highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyCar()<sp/>{<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyCar(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>price<sp/>);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>IsOk()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_refData<sp/>!=<sp/>NULL;<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="interface_2wx_2string_8h_1adb9de78b97ce2369da971e3d1604a899" kindref="member">operator == </ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MyCar&amp;<sp/>car<sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="interface_2wx_2string_8h_1a8f5342a458e5be812e8e52954fe0d12c" kindref="member">operator != </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MyCar&amp;<sp/>car)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>==<sp/>car);<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetPrice(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>price<sp/>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>GetPrice()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classwx_object_ref_data" kindref="compound">wxObjectRefData</ref><sp/>*CreateRefData()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classwx_object_ref_data" kindref="compound">wxObjectRefData</ref><sp/>*CloneRefData(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_object_ref_data" kindref="compound">wxObjectRefData</ref><sp/>*data)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="object_8h_1a9c252d076397bec5ac241272a7a60747" kindref="member">wxDECLARE_DYNAMIC_CLASS</ref>(MyCar);</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>implementation</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>--------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>the<sp/>reference<sp/>data<sp/>class<sp/>is<sp/>typically<sp/>a<sp/>private<sp/>class<sp/>only<sp/>visible<sp/>in<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>implementation<sp/>source<sp/>file<sp/>of<sp/>the<sp/>refcounted<sp/>class.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyCarRefData<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_object_ref_data" kindref="compound">wxObjectRefData</ref></highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyCarRefData()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_price<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyCarRefData(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MyCarRefData&amp;<sp/>data<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classwx_object_ref_data" kindref="compound">wxObjectRefData</ref>()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>copy<sp/>refcounted<sp/>data;<sp/>this<sp/>is<sp/>usually<sp/>a<sp/>time-<sp/>and<sp/>memory-consuming<sp/>operation</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>and<sp/>is<sp/>only<sp/>done<sp/>when<sp/>two<sp/>(or<sp/>more)<sp/>MyCar<sp/>instances<sp/>need<sp/>to<sp/>unshare<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>common<sp/>instance<sp/>of<sp/>MyCarRefData</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_price<sp/>=<sp/>data.m_price;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="interface_2wx_2string_8h_1adb9de78b97ce2369da971e3d1604a899" kindref="member">operator == </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MyCarRefData&amp;<sp/>data)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_price<sp/>==<sp/>data.m_price;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>real<sp/>world,<sp/>reference<sp/>counting<sp/>is<sp/>usually<sp/>used<sp/>only<sp/>when</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>wxObjectRefData-derived<sp/>class<sp/>holds<sp/>data<sp/>very<sp/>memory-consuming;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>in<sp/>this<sp/>example<sp/>the<sp/>various<sp/>MyCar<sp/>instances<sp/>may<sp/>share<sp/>a<sp/>MyCarRefData</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>instance<sp/>which<sp/>however<sp/>only<sp/>takes<sp/>4<sp/>bytes<sp/>for<sp/>this<sp/>integer!</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_price;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>M_CARDATA<sp/>((MyCarRefData<sp/>*)m_refData)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="object_8h_1a4cbf0c21eb5986eb489dc67450eab1d1" kindref="member">wxIMPLEMENT_DYNAMIC_CLASS</ref>(MyCar,<sp/><ref refid="classwx_object" kindref="compound">wxObject</ref>);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">MyCar::MyCar(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>price<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>here<sp/>we<sp/>init<sp/>the<sp/>MyCar<sp/>internal<sp/>data:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>m_refData<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyCarRefData();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>M_CARDATA-&gt;m_price<sp/>=<sp/>price;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classwx_object_ref_data" kindref="compound">wxObjectRefData</ref><sp/>*MyCar::CreateRefData()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyCarRefData;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classwx_object_ref_data" kindref="compound">wxObjectRefData</ref><sp/>*MyCar::CloneRefData(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_object_ref_data" kindref="compound">wxObjectRefData</ref><sp/>*data)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyCarRefData(*(MyCarRefData<sp/>*)data);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="interface_2wx_2string_8h_1adb9de78b97ce2369da971e3d1604a899" kindref="member">MyCar::operator == </ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MyCar&amp;<sp/>car<sp/>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_refData<sp/>==<sp/>car.m_refData)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_refData<sp/>||<sp/>!car.m_refData)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>here<sp/>we<sp/>use<sp/>the<sp/>MyCarRefData::operator==()<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note<sp/>however<sp/>that<sp/>this<sp/>comparison<sp/>may<sp/>be<sp/>very<sp/>slow<sp/>if<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reference<sp/>data<sp/>contains<sp/>a<sp/>lot<sp/>of<sp/>data<sp/>to<sp/>be<sp/>compared.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<sp/>*(MyCarRefData*)m_refData<sp/>==<sp/>*(MyCarRefData*)car.m_refData<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyCar::SetPrice(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>price<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>since<sp/>this<sp/>function<sp/>modifies<sp/>one<sp/>of<sp/>the<sp/>MyCar<sp/>internal<sp/>property,</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>need<sp/>to<sp/>be<sp/>sure<sp/>that<sp/>the<sp/>other<sp/>MyCar<sp/>instances<sp/>which<sp/>share<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>same<sp/>MyCarRefData<sp/>instance<sp/>are<sp/>not<sp/>affected<sp/>by<sp/>this<sp/>call.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>I.e.<sp/>it&apos;s<sp/>very<sp/>important<sp/>to<sp/>call<sp/>UnShare()<sp/>in<sp/>all<sp/>setters<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>refcounted<sp/>classes!</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>UnShare();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>M_CARDATA-&gt;m_price<sp/>=<sp/>price;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MyCar::GetPrice()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debug_8h_1a4822a2ea9fdd0bc98caa3ff42587743e" kindref="member">wxCHECK_MSG</ref>(<sp/>IsOk(),<sp/>-1,<sp/></highlight><highlight class="stringliteral">&quot;invalid<sp/>car&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>M_CARDATA-&gt;m_price;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para><simplesect kind="see"><para><ref refid="classwx_object" kindref="compound">wxObject</ref>, <ref refid="classwx_object_data_ptr_3_01_t_01_4" kindref="compound">wxObjectDataPtr&lt;T&gt;</ref>, <ref refid="overview_refcount" kindref="compound">Reference Counting</ref> </para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>wxANIDecoder</label>
+        <link refid="classwx_a_n_i_decoder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxAnimationDecoder</label>
+        <link refid="classwx_animation_decoder"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxGIFDecoder</label>
+        <link refid="classwx_g_i_f_decoder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
+      <node id="5">
+        <label>wxPGCellData</label>
+        <link refid="classwx_p_g_cell_data"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>wxPGCellRenderer</label>
+        <link refid="classwx_p_g_cell_renderer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>wxPGChoicesData</label>
+        <link refid="classwx_p_g_choices_data"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>wxPGDefaultRenderer</label>
+        <link refid="classwx_p_g_default_renderer"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>wxVariantData</label>
+        <link refid="classwx_variant_data"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>wxVariantDataCurrency</label>
+        <link refid="classwx_variant_data_currency"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>wxVariantDataErrorCode</label>
+        <link refid="classwx_variant_data_error_code"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>wxVariantDataSafeArray</label>
+        <link refid="classwx_variant_data_safe_array"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="interface/wx/object.h" line="8" column="1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_cmd_line_arg" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>wxCmdLineArg</compoundname>
+    <includes local="no">wx/cmdline.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_cmd_line_arg_1ac8bf8891ae0d165b9722232489917432" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual wxCmdLineArg::~wxCmdLineArg</definition>
+        <argsstring>()</argsstring>
+        <name>~wxCmdLineArg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/cmdline.h" line="227" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_cmd_line_arg_1a61d873b1f0c271d0c049ad01dfb9b70d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref> &amp;</type>
+        <definition>virtual const wxDateTime &amp; wxCmdLineArg::GetDateVal</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetDateVal</name>
+        <briefdescription>
+<para>Returns the command line argument value as a <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This call works only for <computeroutput>wxCMD_LINE_VAL_DATE</computeroutput> options </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/cmdline.h" line="234" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_cmd_line_arg_1a6630745257801b47a3c3619500b8a70f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double wxCmdLineArg::GetDoubleVal</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetDoubleVal</name>
+        <briefdescription>
+<para>Returns the command line argument value as a double. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This call works only for <computeroutput>wxCMD_LINE_VAL_DOUBLE</computeroutput> options </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/cmdline.h" line="241" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_cmd_line_arg_1a2d5b29966d6e8a29d9df2bf355640490" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="cmdline_8h_1a8d2905d549d4a4f566a97755c9e4ec7b" kindref="member">wxCmdLineEntryType</ref></type>
+        <definition>virtual wxCmdLineEntryType wxCmdLineArg::GetKind</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetKind</name>
+        <briefdescription>
+<para>Returns the command line argument entry kind. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Parameters can only be retrieved as strings, with <ref refid="classwx_cmd_line_arg_1a2eca3b2cde8221f2fd87f94995d525d5" kindref="member">GetStrVal()</ref></para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cmdline_8h_1a8d2905d549d4a4f566a97755c9e4ec7b" kindref="member">wxCmdLineEntryType</ref>, <ref refid="classwx_cmd_line_arg_1a74a8d354f2d8e252276fdb795b300a19" kindref="member">GetType()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/cmdline.h" line="250" column="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_cmd_line_arg_1adf164d59983b1240c949449815775ffa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>long</type>
+        <definition>virtual long wxCmdLineArg::GetLongVal</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetLongVal</name>
+        <briefdescription>
+<para>Returns the command line argument value as a long. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This call works only for <computeroutput>wxCMD_LINE_VAL_NUMBER</computeroutput> options </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/cmdline.h" line="257" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_cmd_line_arg_1a8c775178a6405cb09f04d5e6fb5a69ab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>virtual wxString wxCmdLineArg::GetLongName</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetLongName</name>
+        <briefdescription>
+<para>Returns the command line argument long name if any. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This call makes sense only for options and switches </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/cmdline.h" line="264" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_cmd_line_arg_1a684cc3e3aded64caeab1329a709e7e0e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>virtual wxString wxCmdLineArg::GetShortName</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetShortName</name>
+        <briefdescription>
+<para>Returns the command line argument short name if any. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This call makes sense only for options and switches </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/cmdline.h" line="271" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_cmd_line_arg_1a2eca3b2cde8221f2fd87f94995d525d5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+        <definition>virtual const wxString &amp; wxCmdLineArg::GetStrVal</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetStrVal</name>
+        <briefdescription>
+<para>Returns the command line argument value as a string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This call works only for <computeroutput>wxCMD_LINE_VAL_STRING</computeroutput> options and parameters </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/cmdline.h" line="279" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_cmd_line_arg_1a74a8d354f2d8e252276fdb795b300a19" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="cmdline_8h_1a25a5da7d58fcc0da36cd70c859306994" kindref="member">wxCmdLineParamType</ref></type>
+        <definition>virtual wxCmdLineParamType wxCmdLineArg::GetType</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetType</name>
+        <briefdescription>
+<para>Returns the command line argument parameter type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This call makes sense only for options (i.e. <ref refid="classwx_cmd_line_arg_1a2d5b29966d6e8a29d9df2bf355640490" kindref="member">GetKind()</ref> == <computeroutput>wxCMD_LINE_OPTION</computeroutput>).</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="cmdline_8h_1a25a5da7d58fcc0da36cd70c859306994" kindref="member">wxCmdLineParamType</ref>, <ref refid="classwx_cmd_line_arg_1a2d5b29966d6e8a29d9df2bf355640490" kindref="member">GetKind()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/cmdline.h" line="289" column="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_cmd_line_arg_1afa9fa6b6c591e57d5f014b308d6da949" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool wxCmdLineArg::IsNegated</definition>
+        <argsstring>() const =0</argsstring>
+        <name>IsNegated</name>
+        <briefdescription>
+<para>Returns true if the switch was negated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This call works only for switches. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/cmdline.h" line="296" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The interface <ref refid="classwx_cmd_line_arg" kindref="compound">wxCmdLineArg</ref> provides information for an instance of argument passed on command line. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Example of use:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_cmd_line_parser" kindref="compound">wxCmdLineParser</ref><sp/>parser;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(wxCmdLineArgs::const_iterator<sp/>itarg=parser.<ref refid="classwx_cmd_line_parser_1a472277a7cee2bac77b1745642fca1cc0" kindref="member">GetArguments</ref>().<ref refid="classwx_cmd_line_args_1ae06bcc5d24d320b374c635d2e09c7ba5" kindref="member">begin</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>itarg!=parser.<ref refid="classwx_cmd_line_parser_1a472277a7cee2bac77b1745642fca1cc0" kindref="member">GetArguments</ref>().<ref refid="classwx_cmd_line_args_1a39f6aef56d0cd1ddfd5ed27caf79e563" kindref="member">end</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++itarg)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>optionName;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(itarg-&gt;GetKind())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="cmdline_8h_1a8d2905d549d4a4f566a97755c9e4ec7ba4bdfe48303c70682eeb535feb2174d37" kindref="member">wxCMD_LINE_SWITCH</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(itarg-&gt;IsNegated())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="cmdline_8h_1a8d2905d549d4a4f566a97755c9e4ec7ba9469050817bba3c783d8e3d26c28f95e" kindref="member">wxCMD_LINE_OPTION</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>assuming<sp/>that<sp/>all<sp/>the<sp/>options<sp/>have<sp/>a<sp/>short<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optionName<sp/>=<sp/>itarg-&gt;GetShortName();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(itarg-&gt;GetType())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="cmdline_8h_1a25a5da7d58fcc0da36cd70c859306994af229435dfad006cfd0bf8d9b39f8d6ac" kindref="member">wxCMD_LINE_VAL_NUMBER</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>something<sp/>with<sp/>itarg-&gt;GetLongVal();</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="cmdline_8h_1a25a5da7d58fcc0da36cd70c859306994a0bf6dc2facaaa280d12b984a416a249d" kindref="member">wxCMD_LINE_VAL_DOUBLE</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>something<sp/>with<sp/>itarg-&gt;GetDoubleVal();</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="cmdline_8h_1a25a5da7d58fcc0da36cd70c859306994a847ab236a363be86ae27e02bfd45407d" kindref="member">wxCMD_LINE_VAL_DATE</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>something<sp/>with<sp/>itarg-&gt;GetDateVal();</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="cmdline_8h_1a25a5da7d58fcc0da36cd70c859306994a7220d647869c6dbf642d08c0bf9bcbee" kindref="member">wxCMD_LINE_VAL_STRING</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>something<sp/>with<sp/>itarg-&gt;GetStrVal();</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="cmdline_8h_1a8d2905d549d4a4f566a97755c9e4ec7ba9f4de5ec3b142ad3051b476ca3441f30" kindref="member">wxCMD_LINE_PARAM</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>something<sp/>with<sp/>itarg-&gt;GetStrVal();</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>With C++11, the for loop could be written: <programlisting><codeline><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;arg<sp/>:<sp/>parser.<ref refid="classwx_cmd_line_parser_1a472277a7cee2bac77b1745642fca1cc0" kindref="member">GetArguments</ref>())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>working<sp/>on<sp/>arg<sp/>as<sp/>with<sp/>*itarg<sp/>above</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="since"><para>3.1.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/cmdline.h" line="224" column="1" bodyfile="interface/wx/cmdline.h" bodystart="225" bodyend="297"/>
+    <listofallmembers>
+      <member refid="classwx_cmd_line_arg_1a61d873b1f0c271d0c049ad01dfb9b70d" prot="public" virt="pure-virtual"><scope>wxCmdLineArg</scope><name>GetDateVal</name></member>
+      <member refid="classwx_cmd_line_arg_1a6630745257801b47a3c3619500b8a70f" prot="public" virt="pure-virtual"><scope>wxCmdLineArg</scope><name>GetDoubleVal</name></member>
+      <member refid="classwx_cmd_line_arg_1a2d5b29966d6e8a29d9df2bf355640490" prot="public" virt="pure-virtual"><scope>wxCmdLineArg</scope><name>GetKind</name></member>
+      <member refid="classwx_cmd_line_arg_1a8c775178a6405cb09f04d5e6fb5a69ab" prot="public" virt="pure-virtual"><scope>wxCmdLineArg</scope><name>GetLongName</name></member>
+      <member refid="classwx_cmd_line_arg_1adf164d59983b1240c949449815775ffa" prot="public" virt="pure-virtual"><scope>wxCmdLineArg</scope><name>GetLongVal</name></member>
+      <member refid="classwx_cmd_line_arg_1a684cc3e3aded64caeab1329a709e7e0e" prot="public" virt="pure-virtual"><scope>wxCmdLineArg</scope><name>GetShortName</name></member>
+      <member refid="classwx_cmd_line_arg_1a2eca3b2cde8221f2fd87f94995d525d5" prot="public" virt="pure-virtual"><scope>wxCmdLineArg</scope><name>GetStrVal</name></member>
+      <member refid="classwx_cmd_line_arg_1a74a8d354f2d8e252276fdb795b300a19" prot="public" virt="pure-virtual"><scope>wxCmdLineArg</scope><name>GetType</name></member>
+      <member refid="classwx_cmd_line_arg_1afa9fa6b6c591e57d5f014b308d6da949" prot="public" virt="pure-virtual"><scope>wxCmdLineArg</scope><name>IsNegated</name></member>
+      <member refid="classwx_cmd_line_arg_1ac8bf8891ae0d165b9722232489917432" prot="public" virt="virtual"><scope>wxCmdLineArg</scope><name>~wxCmdLineArg</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

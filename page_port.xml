@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="page_port" kind="page">
+    <compoundname>page_port</compoundname>
+    <title>Platform Details</title>
+    <innerpage refid="plat_gtk_install">wxWidgets for GTK installation</innerpage>
+    <innerpage refid="plat_osx_install">wxWidgets for macOS installation</innerpage>
+    <innerpage refid="plat_x11_install">wxWidgets for X11 installation</innerpage>
+    <innerpage refid="plat_motif_install">wxWidgets for Motif installation</innerpage>
+    <innerpage refid="plat_msw_install">Installing wxWidgets for Windows</innerpage>
+    <innerpage refid="plat_msw_binaries">How to use wxMSW binaries</innerpage>
+    <innerpage refid="plat_qt_install">wxWidgets for Qt installation</innerpage>
+    <innerpage refid="plat_qt_architecture">wxQt Architecture</innerpage>
+    <innerpage refid="plat_ios_install">Building wxWidgets for iOS</innerpage>
+    <tableofcontents>
+      <tocsect>
+        <name>wxGTK</name>
+        <reference>page_port_1page_port_wxgtk</reference>
+    </tocsect>
+      <tocsect>
+        <name>wxOSX/Cocoa</name>
+        <reference>page_port_1page_port_wxosx</reference>
+    </tocsect>
+      <tocsect>
+        <name>wxX11</name>
+        <reference>page_port_1page_port_wxx11</reference>
+    </tocsect>
+      <tocsect>
+        <name>wxMotif</name>
+        <reference>page_port_1page_port_wxmotif</reference>
+    </tocsect>
+      <tocsect>
+        <name>wxMSW</name>
+        <reference>page_port_1page_port_wxmsw</reference>
+    <tableofcontents>
+      <tocsect>
+        <name>Resources and Application Icon</name>
+        <reference>page_port_1page_port_wxmsw_resources</reference>
+    </tocsect>
+    </tableofcontents>
+    </tocsect>
+      <tocsect>
+        <name>wxQt</name>
+        <reference>page_port_1page_port_wxQt</reference>
+    </tocsect>
+      <tocsect>
+        <name>wxiOS</name>
+        <reference>page_port_1page_port_wxiOS</reference>
+    </tocsect>
+      <tocsect>
+        <name>Native Toolkit Documentation</name>
+        <reference>page_port_1page_port_nativedocs</reference>
+    </tocsect>
+    </tableofcontents>
+    <briefdescription>
+<para>wxWidgets defines a common API across platforms, but uses the native graphical user interface (GUI) on each platform, so your program will take on the native look and feel that users are familiar with. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>wxWidgets defines a common API across platforms, but uses the native graphical user interface (GUI) on each platform, so your program will take on the native look and feel that users are familiar with.</para>
+<para>Unfortunately native toolkits and hardware do not always support the functionality that the wxWidgets API requires. This chapter collects notes about differences among supported platforms and ports.</para>
+<sect1 id="page_port_1page_port_wxgtk">
+<title>wxGTK</title>
+<para>wxGTK is a port of wxWidgets using the GTK library. It makes use of GTK&apos;s native widgets wherever possible and uses wxWidgets&apos; generic controls when needed.</para>
+<para>You will need GTK 2.6 or higher which is available from:</para>
+<para><ulink url="https://www.gtk.org">https://www.gtk.org</ulink></para>
+<para>The newer version of GTK you use, the more native widgets and features will be utilized. We have gone to great lengths to allow compiling wxWidgets applications with the latest version of GTK, with the resulting binary working on systems even with a much earlier version of GTK. You will have to ensure that the application is launched with lazy symbol binding for that.</para>
+<para>In order to configure wxWidgets to compile wxGTK you will need to use the <computeroutput>--with-gtk</computeroutput> argument to the <computeroutput>configure</computeroutput> script. This is the default for many systems.</para>
+<para>GTK 3 is the default starting with wxWidgets 3.1.4. Use <computeroutput>configure</computeroutput> option <computeroutput>--with-gtk=2</computeroutput> to use GTK 2.</para>
+<para><ref refid="plat_gtk_install" kindref="compound">Build and Install Instructions</ref></para>
+</sect1>
+<sect1 id="page_port_1page_port_wxosx">
+<title>wxOSX/Cocoa</title>
+<para>wxOSX/Cocoa is the port of wxWidgets for the macOS platform. It requires a minimum SDK 10.11, Xcode 7.2.1 or greater (runs under 10.10.5 and higher), and fully supports amd64 as well ARM builds and deploying under 10.10.</para>
+<para><ref refid="plat_osx_install" kindref="compound">Build and Install Instructions</ref></para>
+</sect1>
+<sect1 id="page_port_1page_port_wxx11">
+<title>wxX11</title>
+<para>wxX11 is a port of wxWidgets using X11 (The X Window System) as the underlying graphics backend. wxX11 draws its widgets using the wxUniversal widget set which is now part of wxWidgets. wxX11 is well-suited for a number of special applications such as those running on systems with few resources (PDAs) or for applications which need to use a special themed look.</para>
+<para>In order to configure wxWidgets to compile wxX11 you will need to type:</para>
+<para><verbatim>configure --with-x11 --with-universal </verbatim></para>
+<para><ref refid="plat_x11_install" kindref="compound">Build Instructions</ref></para>
+</sect1>
+<sect1 id="page_port_1page_port_wxmotif">
+<title>wxMotif</title>
+<para>wxMotif is a port of wxWidgets for X11 systems using Motif libraries. It is no longer actively maintained and by now rather obsolete.</para>
+<para><ref refid="plat_motif_install" kindref="compound">Build Instructions</ref></para>
+</sect1>
+<sect1 id="page_port_1page_port_wxmsw">
+<title>wxMSW</title>
+<para>wxMSW is a port of wxWidgets for the Windows platforms (Windows XP and later are supported). wxMSW provides native look and feel for each Windows version. This port can be compiled with several compilers including Microsoft VC++ 2003 or later, MinGW, Cygwin as well as cross-compilation with a Linux-hosted MinGW tool chain.</para>
+<para><ref refid="plat_msw_install" kindref="compound">Build and Install Instructions</ref></para>
+<para><ref refid="plat_msw_binaries" kindref="compound">Using pre-built binaries</ref></para>
+<sect2 id="page_port_1page_port_wxmsw_resources">
+<title>Resources and Application Icon</title>
+<para>All applications using wxMSW should have a Windows resource file (<computeroutput></computeroutput>.rc extension) and this file should include <computeroutput>include/wx/msw/wx.rc</computeroutput> file which defines resources used by wxWidgets itself.</para>
+<para>Among other things, <computeroutput>wx.rc</computeroutput> defines some standard icons, all of which have names starting with the &quot;wx&quot; prefix. This normally ensures that any icons defined in the application&apos;s own resource file come before them in alphabetical order which is important because Explorer (Windows shell) selects the first icon in alphabetical order to use as the application icon which is displayed when viewing its file in the file manager. So if all the icons defined in your application start with &quot;x&quot;, &quot;y&quot; or &quot;z&quot;, they won&apos;t be used by Explorer. To avoid this, ensure that the icon which is meant to be used as the main application icon has a name preceding &quot;wxICON&quot; in alphabetical order.</para>
+</sect2>
+</sect1>
+<sect1 id="page_port_1page_port_wxQt">
+<title>wxQt</title>
+<para>wxQt is a port of wxWidgets using Qt libraries. It requires Qt 5 or later.</para>
+<para><ref refid="plat_qt_install" kindref="compound">Build Instructions</ref></para>
+<para><ref refid="plat_qt_architecture" kindref="compound">Architecture Overview</ref></para>
+</sect1>
+<sect1 id="page_port_1page_port_wxiOS">
+<title>wxiOS</title>
+<para>wxiOS is a port of wxWidgets using Cocoa touch libraries for iOS. It is very basic in it current form, but is included for further improvements and very simple applications. It requires iOS 9 or later and fully supports 64 bit builds.</para>
+<para><ref refid="plat_ios_install" kindref="compound">Build Instructions</ref></para>
+</sect1>
+<sect1 id="page_port_1page_port_nativedocs">
+<title>Native Toolkit Documentation</title>
+<para>It&apos;s sometimes useful to interface directly with the underlying toolkit used by wxWidgets to e.g. use toolkit-specific features. In such case (or when you want to e.g. write a port-specific patch) it can be necessary to use the underlying toolkit API directly:</para>
+<para><itemizedlist>
+<listitem><para>wxMSW port uses Win32 API: see MSDN docs at <ulink url="https://docs.microsoft.com/en-us/windows/win32/controls/window-controls">https://docs.microsoft.com/en-us/windows/win32/controls/window-controls</ulink></para>
+</listitem><listitem><para>wxGTK port uses GTK and other lower-level libraries; see<itemizedlist>
+<listitem><para>GTK docs at <ulink url="https://developer.gnome.org/gtk/">https://developer.gnome.org/gtk/</ulink></para>
+</listitem><listitem><para>GDK docs at <ulink url="https://library.gnome.org/devel/gdk/">https://library.gnome.org/devel/gdk/</ulink></para>
+</listitem><listitem><para>GLib docs at <ulink url="https://library.gnome.org/devel/glib/">https://library.gnome.org/devel/glib/</ulink></para>
+</listitem><listitem><para>GObject docs at <ulink url="https://library.gnome.org/devel/gobject/">https://library.gnome.org/devel/gobject/</ulink></para>
+</listitem><listitem><para>Pango docs at <ulink url="https://library.gnome.org/devel/pango/">https://library.gnome.org/devel/pango/</ulink></para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>wxOSX port uses the Cocoa API: see Cocoa docs at <ulink url="https://developer.apple.com/cocoa">https://developer.apple.com/cocoa</ulink> </para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="docs/doxygen/mainpages/platdetails.h"/>
+  </compounddef>
+</doxygen>

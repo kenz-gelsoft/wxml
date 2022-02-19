@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_grid_blocks" kind="class" language="C++" prot="public">
+    <compoundname>wxGridBlocks</compoundname>
+    <includes local="no">wx/grid.h</includes>
+    <innerclass refid="classwx_grid_blocks_1_1iterator" prot="public">wxGridBlocks::iterator</innerclass>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_grid_blocks_1a1925700a12867900a94dd6dccda358a0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_grid_blocks_1_1iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator wxGridBlocks::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <briefdescription>
+<para>Return iterator corresponding to the beginning of the range. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="2254" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_grid_blocks_1a617c39bfb248ca39b098ca85c6ea64c1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_grid_blocks_1_1iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator wxGridBlocks::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <briefdescription>
+<para>Return iterator corresponding to the end of the range. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="2257" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents a collection of grid blocks that can be iterated over. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides read-only access to the blocks making up the grid selection in the most general case.</para>
+<para>Note that objects of this class can only be returned by <ref refid="classwx_grid" kindref="compound">wxGrid</ref>, but not constructed in the application code.</para>
+<para>The preferable way to iterate over it is using C++11 range-for loop: <programlisting><codeline><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>block:<sp/>grid-&gt;GetSelectedBlocks()<sp/>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...<sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>something<sp/>with<sp/>block<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> When not using C++11, iteration has to be done manually: <programlisting><codeline><highlight class="normal"><ref refid="classwx_grid_blocks" kindref="compound">wxGridBlocks</ref><sp/>range<sp/>=<sp/>grid-&gt;GetSelectedBlocks();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/><ref refid="classwx_grid_blocks_1_1iterator" kindref="compound">wxGridBlocks::iterator</ref><sp/>it<sp/>=<sp/>range.<ref refid="classwx_grid_blocks_1a1925700a12867900a94dd6dccda358a0" kindref="member">begin</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>!=<sp/>range.<ref refid="classwx_grid_blocks_1a617c39bfb248ca39b098ca85c6ea64c1" kindref="member">end</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>++it<sp/>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...<sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>something<sp/>with<sp/>*it<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="since"><para>3.1.4 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/grid.h" line="2229" column="1" bodyfile="interface/wx/grid.h" bodystart="2230" bodyend="2258"/>
+    <listofallmembers>
+      <member refid="classwx_grid_blocks_1a1925700a12867900a94dd6dccda358a0" prot="public" virt="non-virtual"><scope>wxGridBlocks</scope><name>begin</name></member>
+      <member refid="classwx_grid_blocks_1a617c39bfb248ca39b098ca85c6ea64c1" prot="public" virt="non-virtual"><scope>wxGridBlocks</scope><name>end</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

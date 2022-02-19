@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_grid_activation_result" kind="class" language="C++" prot="public">
+    <compoundname>wxGridActivationResult</compoundname>
+    <includes local="no">wx/grid.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classwx_grid_activation_result_1a95df013833e281010bf71f520529a420" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_grid_activation_result" kindref="compound">wxGridActivationResult</ref></type>
+        <definition>static wxGridActivationResult wxGridActivationResult::DoNothing</definition>
+        <argsstring>()</argsstring>
+        <name>DoNothing</name>
+        <briefdescription>
+<para>Indicate that nothing should be done and the cell shouldn&apos;t be edited at all. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that this is different from <ref refid="classwx_grid_activation_result_1a01a20b4694933f169c73402024abe39a" kindref="member">DoEdit()</ref> and may be useful when the value of the cell wouldn&apos;t change if it were activated anyhow, e.g. because the key or mouse event carried by <ref refid="classwx_grid_activation_source" kindref="compound">wxGridActivationSource</ref> would leave the cell value unchanged. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="524" column="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_grid_activation_result_1ade1bf782bc0eb8bcc83f92837d00a377" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_grid_activation_result" kindref="compound">wxGridActivationResult</ref></type>
+        <definition>static wxGridActivationResult wxGridActivationResult::DoChange</definition>
+        <argsstring>(const wxString &amp;newval)</argsstring>
+        <name>DoChange</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>newval</declname>
+        </param>
+        <briefdescription>
+<para>Indicate that activating the cell is possible and would change its value to the given one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the method to call for activatable editors, using it will result in changing the value of the cell to <emphasis>newval</emphasis> without showing the editor control at all.</para>
+<para>Note that the change may still be vetoed by wxEVT_GRID_CELL_CHANGING handler. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="537" column="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_grid_activation_result_1a01a20b4694933f169c73402024abe39a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_grid_activation_result" kindref="compound">wxGridActivationResult</ref></type>
+        <definition>static wxGridActivationResult wxGridActivationResult::DoEdit</definition>
+        <argsstring>()</argsstring>
+        <name>DoEdit</name>
+        <briefdescription>
+<para>Indicate that the editor control should be shown and the cell should be edited normally. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the default return value of <ref refid="classwx_grid_cell_editor_1a9eb24dbc65c4c07543f4c975f09fedcc" kindref="member">wxGridCellEditor::TryActivate()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="545" column="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents the result of <ref refid="classwx_grid_cell_editor_1a9eb24dbc65c4c07543f4c975f09fedcc" kindref="member">wxGridCellEditor::TryActivate()</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Editors overriding <ref refid="classwx_grid_cell_editor_1a9eb24dbc65c4c07543f4c975f09fedcc" kindref="member">wxGridCellEditor::TryActivate()</ref> must use one of <ref refid="classwx_grid_activation_result_1a95df013833e281010bf71f520529a420" kindref="member">DoNothing()</ref>, <ref refid="classwx_grid_activation_result_1ade1bf782bc0eb8bcc83f92837d00a377" kindref="member">DoChange()</ref> or <ref refid="classwx_grid_activation_result_1a01a20b4694933f169c73402024abe39a" kindref="member">DoEdit()</ref> methods to return an object of this type corresponding to the desired action.</para>
+<para><simplesect kind="since"><para>3.1.4 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/grid.h" line="512" column="1" bodyfile="interface/wx/grid.h" bodystart="513" bodyend="546"/>
+    <listofallmembers>
+      <member refid="classwx_grid_activation_result_1ade1bf782bc0eb8bcc83f92837d00a377" prot="public" virt="non-virtual"><scope>wxGridActivationResult</scope><name>DoChange</name></member>
+      <member refid="classwx_grid_activation_result_1a01a20b4694933f169c73402024abe39a" prot="public" virt="non-virtual"><scope>wxGridActivationResult</scope><name>DoEdit</name></member>
+      <member refid="classwx_grid_activation_result_1a95df013833e281010bf71f520529a420" prot="public" virt="non-virtual"><scope>wxGridActivationResult</scope><name>DoNothing</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

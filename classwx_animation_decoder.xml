@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_animation_decoder" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>wxAnimationDecoder</compoundname>
+    <basecompoundref refid="classwx_object_ref_data" prot="public" virt="non-virtual">wxObjectRefData</basecompoundref>
+    <derivedcompoundref refid="classwx_a_n_i_decoder" prot="public" virt="non-virtual">wxANIDecoder</derivedcompoundref>
+    <derivedcompoundref refid="classwx_g_i_f_decoder" prot="public" virt="non-virtual">wxGIFDecoder</derivedcompoundref>
+    <includes local="no">wx/animdecod.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_animation_decoder_1abe9bcfdf571f621c01b45f4ba7b23c67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxAnimationDecoder::wxAnimationDecoder</definition>
+        <argsstring>()</argsstring>
+        <name>wxAnimationDecoder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="38" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1aee2e6550e542f4f44b5489fd49813688" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool wxAnimationDecoder::Load</definition>
+        <argsstring>(wxInputStream &amp;stream)=0</argsstring>
+        <name>Load</name>
+        <reimplementedby refid="classwx_a_n_i_decoder_1ad7111eadee4f91b118359d43469c115a">Load</reimplementedby>
+        <reimplementedby refid="classwx_g_i_f_decoder_1afc69d1233621bb9ef3afe1766077a127">Load</reimplementedby>
+        <param>
+          <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Load the animation image frames from the given stream. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="43" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1a654cb2aa54b7ea1527a12790c86d78e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxAnimationDecoder::CanRead</definition>
+        <argsstring>(wxInputStream &amp;stream) const</argsstring>
+        <name>CanRead</name>
+        <param>
+          <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if this decoder supports loading from the given stream. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="48" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1a2301d27671818499b0e77f45452e418c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_animation_decoder" kindref="compound">wxAnimationDecoder</ref> *</type>
+        <definition>virtual wxAnimationDecoder * wxAnimationDecoder::Clone</definition>
+        <argsstring>() const =0</argsstring>
+        <name>Clone</name>
+        <reimplementedby refid="classwx_a_n_i_decoder_1a9dc4926a1e874164a022a6aa8b58f687">Clone</reimplementedby>
+        <reimplementedby refid="classwx_g_i_f_decoder_1ad92b33387f5df85d30580a437ccadd24">Clone</reimplementedby>
+        <briefdescription>
+<para>Create a copy of this decoder. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="53" column="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1a6b684221b6f452e08bdea5caf0d1ef88" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="animate_8h_1a35e82d083076c53b78824576ee4e1717" kindref="member">wxAnimationType</ref></type>
+        <definition>virtual wxAnimationType wxAnimationDecoder::GetType</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetType</name>
+        <reimplementedby refid="classwx_a_n_i_decoder_1af3a32df85e6f1fffe18a49742090ce5b">GetType</reimplementedby>
+        <reimplementedby refid="classwx_g_i_f_decoder_1a99698e9a245e21387f97841e2ccf20b4">GetType</reimplementedby>
+        <briefdescription>
+<para>Return the animation type this decoder implements. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="58" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1a27610cff9c608e839848ef0f676dafc7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool wxAnimationDecoder::ConvertToImage</definition>
+        <argsstring>(unsigned int frame, wxImage *image) const =0</argsstring>
+        <name>ConvertToImage</name>
+        <reimplementedby refid="classwx_a_n_i_decoder_1a7339e84d7b791d6e6a7c824c306b74ee">ConvertToImage</reimplementedby>
+        <reimplementedby refid="classwx_g_i_f_decoder_1a623fca7dc4c18ab5f842b3bbf9080136">ConvertToImage</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>frame</declname>
+        </param>
+        <param>
+          <type><ref refid="classwx_image" kindref="compound">wxImage</ref> *</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+<para>Convert given frame to <computeroutput><ref refid="classwx_image" kindref="compound">wxImage</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="63" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1a9eabc9015b0b3c2da124334e71749bd5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
+        <definition>virtual wxSize wxAnimationDecoder::GetFrameSize</definition>
+        <argsstring>(unsigned int frame) const =0</argsstring>
+        <name>GetFrameSize</name>
+        <reimplementedby refid="classwx_a_n_i_decoder_1a8367394eb5d21a06cceb2588c14b2b1c">GetFrameSize</reimplementedby>
+        <reimplementedby refid="classwx_g_i_f_decoder_1a57abd6ab3305902d731129c0f974faf8">GetFrameSize</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="73" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1a90a4df2b348d5d7136490619dba6db9a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
+        <definition>virtual wxPoint wxAnimationDecoder::GetFramePosition</definition>
+        <argsstring>(unsigned int frame) const =0</argsstring>
+        <name>GetFramePosition</name>
+        <reimplementedby refid="classwx_a_n_i_decoder_1aba8ad2362fb8d0aff98310a856a20195">GetFramePosition</reimplementedby>
+        <reimplementedby refid="classwx_g_i_f_decoder_1aac37294265d5b9f5e1f8e35da3914717">GetFramePosition</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="79" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1ac4d23bdc3482c6d637e495597441bd6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="animdecod_8h_1a435e91c594295e65fd26b14c1eab07e6" kindref="member">wxAnimationDisposal</ref></type>
+        <definition>virtual wxAnimationDisposal wxAnimationDecoder::GetDisposalMethod</definition>
+        <argsstring>(unsigned int frame) const =0</argsstring>
+        <name>GetDisposalMethod</name>
+        <reimplementedby refid="classwx_a_n_i_decoder_1a1934acd5bef82e8b4221b432f4daf89a">GetDisposalMethod</reimplementedby>
+        <reimplementedby refid="classwx_g_i_f_decoder_1a4963425fb6220bcdd9fe19c86f1c0a1e">GetDisposalMethod</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+<para>What should be done after displaying this frame. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="84" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1ac7e5501c3a076ac40c4ad46530c9826e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>long</type>
+        <definition>virtual long wxAnimationDecoder::GetDelay</definition>
+        <argsstring>(unsigned int frame) const =0</argsstring>
+        <name>GetDelay</name>
+        <reimplementedby refid="classwx_a_n_i_decoder_1a68bdb62166105ece4e7fadfc19dfa05c">GetDelay</reimplementedby>
+        <reimplementedby refid="classwx_g_i_f_decoder_1a7c3a79b1b042cef61f89e1a60febd41e">GetDelay</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+<para>Return the number of milliseconds this frame should be displayed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If -1 is returned then the frame must be displayed forever. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="90" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1a547151e6e9d88a518ee629b75e57b8b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_colour" kindref="compound">wxColour</ref></type>
+        <definition>virtual wxColour wxAnimationDecoder::GetTransparentColour</definition>
+        <argsstring>(unsigned int frame) const =0</argsstring>
+        <name>GetTransparentColour</name>
+        <reimplementedby refid="classwx_a_n_i_decoder_1a61aa1a6f95ca93398cbb4fc610b98cb5">GetTransparentColour</reimplementedby>
+        <reimplementedby refid="classwx_g_i_f_decoder_1a959ebdb6a5e61fcaaae3b06aaa891d39">GetTransparentColour</reimplementedby>
+        <param>
+          <type>unsigned int</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+<para>The transparent colour for this frame, if any, or <computeroutput>wxNullColour</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="95" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1a9cfd10fe4bfaa56649e0c32b911bedc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
+        <definition>wxSize wxAnimationDecoder::GetAnimationSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAnimationSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="97" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1a1685a06f621eda806fd98131923bc3f3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_colour" kindref="compound">wxColour</ref></type>
+        <definition>wxColour wxAnimationDecoder::GetBackgroundColour</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBackgroundColour</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="98" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_animation_decoder_1acf5dcdb3ccdd8a28d5d87c641f807b54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int wxAnimationDecoder::GetFrameCount</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFrameCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="99" column="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classwx_animation_decoder_1ac769ef6f8bf8fbd1987c3c1d27e4d0c8" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool wxAnimationDecoder::DoCanRead</definition>
+        <argsstring>(wxInputStream &amp;stream) const =0</argsstring>
+        <name>DoCanRead</name>
+        <reimplementedby refid="classwx_a_n_i_decoder_1a1aa28b44aaa94ebefbf8b3220800e07b">DoCanRead</reimplementedby>
+        <reimplementedby refid="classwx_g_i_f_decoder_1aae15859b1612154f2fa9485888c0a17b">DoCanRead</reimplementedby>
+        <param>
+          <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Checks the signature of the data in the given stream and returns true if it appears to be a valid animation format recognized by the animation decoder; this function should modify the stream current position without taking care of restoring it since <computeroutput><ref refid="classwx_animation_decoder_1a654cb2aa54b7ea1527a12790c86d78e1" kindref="member">CanRead()</ref></computeroutput> will do it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/animdecod.h" line="108" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classwx_animation_decoder" kindref="compound">wxAnimationDecoder</ref> is used by <computeroutput><ref refid="classwx_animation" kindref="compound">wxAnimation</ref></computeroutput> for loading frames and other information for the animation from the animation image file. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>wxANIDecoder</label>
+        <link refid="classwx_a_n_i_decoder"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wxAnimationDecoder</label>
+        <link refid="classwx_animation_decoder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxGIFDecoder</label>
+        <link refid="classwx_g_i_f_decoder"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>wxAnimationDecoder</label>
+        <link refid="classwx_animation_decoder"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
+    </collaborationgraph>
+    <location file="interface/wx/animdecod.h" line="35" column="1" bodyfile="interface/wx/animdecod.h" bodystart="36" bodyend="109"/>
+    <listofallmembers>
+      <member refid="classwx_animation_decoder_1a654cb2aa54b7ea1527a12790c86d78e1" prot="public" virt="non-virtual"><scope>wxAnimationDecoder</scope><name>CanRead</name></member>
+      <member refid="classwx_animation_decoder_1a2301d27671818499b0e77f45452e418c" prot="public" virt="pure-virtual"><scope>wxAnimationDecoder</scope><name>Clone</name></member>
+      <member refid="classwx_animation_decoder_1a27610cff9c608e839848ef0f676dafc7" prot="public" virt="pure-virtual"><scope>wxAnimationDecoder</scope><name>ConvertToImage</name></member>
+      <member refid="classwx_animation_decoder_1ac769ef6f8bf8fbd1987c3c1d27e4d0c8" prot="protected" virt="pure-virtual"><scope>wxAnimationDecoder</scope><name>DoCanRead</name></member>
+      <member refid="classwx_animation_decoder_1a9cfd10fe4bfaa56649e0c32b911bedc0" prot="public" virt="non-virtual"><scope>wxAnimationDecoder</scope><name>GetAnimationSize</name></member>
+      <member refid="classwx_animation_decoder_1a1685a06f621eda806fd98131923bc3f3" prot="public" virt="non-virtual"><scope>wxAnimationDecoder</scope><name>GetBackgroundColour</name></member>
+      <member refid="classwx_animation_decoder_1ac7e5501c3a076ac40c4ad46530c9826e" prot="public" virt="pure-virtual"><scope>wxAnimationDecoder</scope><name>GetDelay</name></member>
+      <member refid="classwx_animation_decoder_1ac4d23bdc3482c6d637e495597441bd6b" prot="public" virt="pure-virtual"><scope>wxAnimationDecoder</scope><name>GetDisposalMethod</name></member>
+      <member refid="classwx_animation_decoder_1acf5dcdb3ccdd8a28d5d87c641f807b54" prot="public" virt="non-virtual"><scope>wxAnimationDecoder</scope><name>GetFrameCount</name></member>
+      <member refid="classwx_animation_decoder_1a90a4df2b348d5d7136490619dba6db9a" prot="public" virt="pure-virtual"><scope>wxAnimationDecoder</scope><name>GetFramePosition</name></member>
+      <member refid="classwx_animation_decoder_1a9eabc9015b0b3c2da124334e71749bd5" prot="public" virt="pure-virtual"><scope>wxAnimationDecoder</scope><name>GetFrameSize</name></member>
+      <member refid="classwx_animation_decoder_1a547151e6e9d88a518ee629b75e57b8b7" prot="public" virt="pure-virtual"><scope>wxAnimationDecoder</scope><name>GetTransparentColour</name></member>
+      <member refid="classwx_animation_decoder_1a6b684221b6f452e08bdea5caf0d1ef88" prot="public" virt="pure-virtual"><scope>wxAnimationDecoder</scope><name>GetType</name></member>
+      <member refid="classwx_animation_decoder_1aee2e6550e542f4f44b5489fd49813688" prot="public" virt="pure-virtual"><scope>wxAnimationDecoder</scope><name>Load</name></member>
+      <member refid="classwx_animation_decoder_1abe9bcfdf571f621c01b45f4ba7b23c67" prot="public" virt="non-virtual"><scope>wxAnimationDecoder</scope><name>wxAnimationDecoder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

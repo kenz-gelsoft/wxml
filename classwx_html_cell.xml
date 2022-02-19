@@ -1,0 +1,856 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_html_cell" kind="class" language="C++" prot="public">
+    <compoundname>wxHtmlCell</compoundname>
+    <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
+    <derivedcompoundref refid="classwx_html_colour_cell" prot="public" virt="non-virtual">wxHtmlColourCell</derivedcompoundref>
+    <derivedcompoundref refid="classwx_html_container_cell" prot="public" virt="non-virtual">wxHtmlContainerCell</derivedcompoundref>
+    <derivedcompoundref refid="classwx_html_font_cell" prot="public" virt="non-virtual">wxHtmlFontCell</derivedcompoundref>
+    <derivedcompoundref refid="classwx_html_widget_cell" prot="public" virt="non-virtual">wxHtmlWidgetCell</derivedcompoundref>
+    <derivedcompoundref refid="classwx_html_word_cell" prot="public" virt="non-virtual">wxHtmlWordCell</derivedcompoundref>
+    <includes local="no">wx/html/htmlcell.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_html_cell_1aac6636a52a073486383e0f278607534b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxHtmlCell::wxHtmlCell</definition>
+        <argsstring>()</argsstring>
+        <name>wxHtmlCell</name>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="187" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1aaa3007a55b29adabe4eba5dac31a4ebd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool wxHtmlCell::AdjustPagebreak</definition>
+        <argsstring>(int *pagebreak, int pageHeight) const</argsstring>
+        <name>AdjustPagebreak</name>
+        <param>
+          <type>int *</type>
+          <declname>pagebreak</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pageHeight</declname>
+        </param>
+        <briefdescription>
+<para>This method is called when paginating HTML, e.g. when printing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>User code should never call this function, but may need to override it in custom HTML cell classes with any specific page breaking requirements.</para>
+<para>On input, <emphasis>pagebreak</emphasis> contains y-coordinate of page break (i.e. the horizontal line that should not be crossed by words, images etc.) relative to the parent cell on entry and may be modified to request a page break at a position before it if this cell cannot be divided into two pieces (each one on its own page).</para>
+<para>Note that page break must still happen on the current page, i.e. the returned value must be strictly greater than <programlisting><codeline><highlight class="normal"><sp/>*pagebreak<sp/>-</highlight></codeline>
+<codeline><highlight class="normal">pageHeight<sp/></highlight></codeline>
+</programlisting> and less or equal to <computeroutput>*pagebreak</computeroutput> for the value of <emphasis>pagebreak</emphasis> on input.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pagebreak</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>position in pixels of the pagebreak. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pageHeight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the height in pixels of the page drawable area</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if pagebreak was modified, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="214" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1abebd247b545b1885e2a6406a1fc20d0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void wxHtmlCell::Draw</definition>
+        <argsstring>(wxDC &amp;dc, int x, int y, int view_y1, int view_y2, wxHtmlRenderingInfo &amp;info)</argsstring>
+        <name>Draw</name>
+        <param>
+          <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> &amp;</type>
+          <declname>dc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>view_y1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>view_y2</declname>
+        </param>
+        <param>
+          <type><ref refid="classwx_html_rendering_info" kindref="compound">wxHtmlRenderingInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Renders the cell. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device context to which the cell is to be drawn. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordinates of parent&apos;s upper left corner (origin). You must add this to m_PosX,m_PosY when passing coordinates to dc&apos;s methods Example: <programlisting><codeline><highlight class="normal">dc-&gt;DrawText(</highlight><highlight class="stringliteral">&quot;hello&quot;</highlight><highlight class="normal">,<sp/>x<sp/>+<sp/>m_PosX,<sp/>y<sp/>+<sp/>m_PosY)</highlight></codeline>
+</programlisting> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>view_y1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>y-coord of the first line visible in window. This is used to optimize rendering speed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>view_y2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>y-coord of the last line visible in window. This is used to optimize rendering speed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional information for the rendering of the cell. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="237" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1abe8d7bac1f334d039a55c25eb55626c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void wxHtmlCell::DrawInvisible</definition>
+        <argsstring>(wxDC &amp;dc, int x, int y, wxHtmlRenderingInfo &amp;info)</argsstring>
+        <name>DrawInvisible</name>
+        <param>
+          <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> &amp;</type>
+          <declname>dc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="classwx_html_rendering_info" kindref="compound">wxHtmlRenderingInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>This method is called instead of <ref refid="classwx_html_cell_1abebd247b545b1885e2a6406a1fc20d0a" kindref="member">Draw()</ref> when the cell is certainly out of the screen (and thus invisible). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is not nonsense - some tags (like <ref refid="classwx_html_colour_cell" kindref="compound">wxHtmlColourCell</ref> or font setter) must be drawn even if they are invisible!</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device context to which the cell is to be drawn. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordinates of parent&apos;s upper left corner. You must add this to m_PosX,m_PosY when passing coordinates to dc&apos;s methods Example: <programlisting><codeline><highlight class="normal">dc-&gt;DrawText(</highlight><highlight class="stringliteral">&quot;hello&quot;</highlight><highlight class="normal">,<sp/>x<sp/>+<sp/>m_PosX,<sp/>y<sp/>+<sp/>m_PosY)</highlight></codeline>
+</programlisting> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional information for the rendering of the cell. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="256" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1a5715340963bbbf4c830e541c6f91af75" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const <ref refid="classwx_html_cell" kindref="compound">wxHtmlCell</ref> *</type>
+        <definition>virtual const wxHtmlCell * wxHtmlCell::Find</definition>
+        <argsstring>(int condition, const void *param) const</argsstring>
+        <name>Find</name>
+        <param>
+          <type>int</type>
+          <declname>condition</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+<para>Returns pointer to itself if this cell matches condition (or if any of the cells following in the list matches), NULL otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>(In other words if you call top-level container&apos;s <ref refid="classwx_html_cell_1a5715340963bbbf4c830e541c6f91af75" kindref="member">Find()</ref> it will return pointer to the first cell that matches the condition)</para>
+<para>It is recommended way how to obtain pointer to particular cell or to cell of some type (e.g. wxHtmlAnchorCell reacts on wxHTML_COND_ISANCHOR condition).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>condition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unique integer identifier of condition </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional parameters </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="273" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1a566b7d68f51db3e7b2dbc9f2f482aefc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classwx_html_cell" kindref="compound">wxHtmlCell</ref> *</type>
+        <definition>virtual wxHtmlCell * wxHtmlCell::FindCellByPos</definition>
+        <argsstring>(wxCoord x, wxCoord y, unsigned flags=wxHTML_FIND_EXACT) const</argsstring>
+        <name>FindCellByPos</name>
+        <param>
+          <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>flags</declname>
+          <defval><ref refid="htmlcell_8h_1aabfcbcb5ac86a1edac4035264bc7d2b8a7316605165f19d96eb1938d9c90d3dea" kindref="member">wxHTML_FIND_EXACT</ref></defval>
+        </param>
+        <briefdescription>
+<para>Find a cell inside this cell positioned at the given coordinates (relative to this&apos;s positions). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns NULL if no such cell exists. The flag can be used to specify whether to look for terminal or nonterminal cells or both. In either case, returned cell is deepest cell in cells tree that contains [x,y]. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="282" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1ada9db07a6be3d6748b38b725a4b4f675" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxHtmlCell::GetDescent</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDescent</name>
+        <briefdescription>
+<para>Returns descent value of the cell (m_Descent member). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See explanation: <image type="html" name="htmlcell_descent.png"></image>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="291" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1a9cf4c34706e4b4cb1f40f325af5956f2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classwx_html_cell" kindref="compound">wxHtmlCell</ref> *</type>
+        <definition>virtual wxHtmlCell * wxHtmlCell::GetFirstChild</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFirstChild</name>
+        <briefdescription>
+<para>Returns pointer to the first cell in the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>You can then use child&apos;s <ref refid="classwx_html_cell_1ae82f9ba7c871ac3fe55236f44d9c2423" kindref="member">GetNext()</ref> method to obtain pointer to the next cell in list.</para>
+<para><simplesect kind="note"><para>This shouldn&apos;t be used by the end user. If you need some way of finding particular cell in the list, try <ref refid="classwx_html_cell_1a5715340963bbbf4c830e541c6f91af75" kindref="member">Find()</ref> method instead. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="301" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1a136408eaa12cb7043eb3ea40f5956795" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxHtmlCell::GetHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>GetHeight</name>
+        <briefdescription>
+<para>Returns height of the cell (m_Height member). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="306" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1a540142e28e68dd9811ebd0b110711683" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+        <definition>const wxString &amp; wxHtmlCell::GetId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetId</name>
+        <briefdescription>
+<para>Returns unique cell identifier if there is any, the empty string otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="311" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1a8a9a0d10d8b286c387c3ce26551451e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classwx_html_link_info" kindref="compound">wxHtmlLinkInfo</ref> *</type>
+        <definition>virtual wxHtmlLinkInfo * wxHtmlCell::GetLink</definition>
+        <argsstring>(int x=0, int y=0) const</argsstring>
+        <name>GetLink</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Returns hypertext link if associated with this cell or NULL otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See <ref refid="classwx_html_link_info" kindref="compound">wxHtmlLinkInfo</ref>. (Note: this makes sense only for visible tags).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordinates of position where the user pressed mouse button. These coordinates are used e.g. by COLORMAP. Values are relative to the upper left corner of THIS cell (i.e. from 0 to m_Width or m_Height) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="322" column="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1af1c6dab0ebf88402f48503e0a750e10d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classwx_cursor" kindref="compound">wxCursor</ref></type>
+        <definition>virtual wxCursor wxHtmlCell::GetMouseCursor</definition>
+        <argsstring>(wxHtmlWindowInterface *window) const</argsstring>
+        <name>GetMouseCursor</name>
+        <param>
+          <type><ref refid="classwx_html_window_interface" kindref="compound">wxHtmlWindowInterface</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Returns cursor to show when mouse pointer is over the cell. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>interface to the parent HTML window</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="classwx_html_cell_1ae7b9e97f1ec3d854690e11ff7207b978" kindref="member">GetMouseCursorAt()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="332" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1ae7b9e97f1ec3d854690e11ff7207b978" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classwx_cursor" kindref="compound">wxCursor</ref></type>
+        <definition>virtual wxCursor wxHtmlCell::GetMouseCursorAt</definition>
+        <argsstring>(wxHtmlWindowInterface *window, const wxPoint &amp;rePos) const</argsstring>
+        <name>GetMouseCursorAt</name>
+        <param>
+          <type><ref refid="classwx_html_window_interface" kindref="compound">wxHtmlWindowInterface</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
+          <declname>rePos</declname>
+        </param>
+        <briefdescription>
+<para>Returns cursor to show when mouse pointer is over the specified point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function should be overridden instead of <ref refid="classwx_html_cell_1ae7b9e97f1ec3d854690e11ff7207b978" kindref="member">GetMouseCursorAt()</ref> if the cursor should depend on the exact position of the mouse in the window.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>interface to the parent HTML window </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rePos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position to show cursor.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>3.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="348" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1ae82f9ba7c871ac3fe55236f44d9c2423" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_html_cell" kindref="compound">wxHtmlCell</ref> *</type>
+        <definition>wxHtmlCell * wxHtmlCell::GetNext</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNext</name>
+        <briefdescription>
+<para>Returns pointer to the next cell in list (see <ref refid="htmlcell_8h" kindref="compound">htmlcell.h</ref> if you&apos;re interested in details). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="355" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1a11d8733208fbb09eb55b7d8b2ad363d2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_html_container_cell" kindref="compound">wxHtmlContainerCell</ref> *</type>
+        <definition>wxHtmlContainerCell * wxHtmlCell::GetParent</definition>
+        <argsstring>() const</argsstring>
+        <name>GetParent</name>
+        <briefdescription>
+<para>Returns pointer to parent container. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="360" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1aca452bf6312605b63219abc946835a11" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxHtmlCell::GetPosX</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPosX</name>
+        <briefdescription>
+<para>Returns X position within parent (the value is relative to parent&apos;s upper left corner). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned value is meaningful only if parent&apos;s <ref refid="classwx_html_cell_1ada68b93b129fafc7b251580408b67fd6" kindref="member">Layout()</ref> was called before! </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="367" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1add31c18ac4923efa195a867d9f6b2a17" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxHtmlCell::GetPosY</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPosY</name>
+        <briefdescription>
+<para>Returns Y position within parent (the value is relative to parent&apos;s upper left corner). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned value is meaningful only if parent&apos;s <ref refid="classwx_html_cell_1ada68b93b129fafc7b251580408b67fd6" kindref="member">Layout()</ref> was called before! </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="374" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1aa5a6f7009eee2758b07d945b6abf9c6d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxHtmlCell::GetWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>GetWidth</name>
+        <briefdescription>
+<para>Returns width of the cell (m_Width member). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="379" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1ada68b93b129fafc7b251580408b67fd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void wxHtmlCell::Layout</definition>
+        <argsstring>(int w)</argsstring>
+        <name>Layout</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+<para>Layouts the cell. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method performs two actions:<orderedlist>
+<listitem><para>adjusts the cell&apos;s width according to the fact that maximal possible width is <emphasis>w</emphasis> (this has sense when working with horizontal lines, tables etc.)</para>
+</listitem><listitem><para>prepares layout (=fill-in m_PosX, m_PosY (and sometimes m_Height) members) based on actual width <emphasis>w</emphasis> </para>
+</listitem></orderedlist>
+</para>
+<para>It must be called before displaying cells structure because m_PosX and m_PosY are undefined (or invalid) before calling <ref refid="classwx_html_cell_1ada68b93b129fafc7b251580408b67fd6" kindref="member">Layout()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="393" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1ae6ed35ebd27616ae32905461507fe8db" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool wxHtmlCell::ProcessMouseClick</definition>
+        <argsstring>(wxHtmlWindowInterface *window, const wxPoint &amp;pos, const wxMouseEvent &amp;event)</argsstring>
+        <name>ProcessMouseClick</name>
+        <param>
+          <type><ref refid="classwx_html_window_interface" kindref="compound">wxHtmlWindowInterface</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_mouse_event" kindref="compound">wxMouseEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>This function is simple event handler. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Each time the user clicks mouse button over a cell within <ref refid="classwx_html_window" kindref="compound">wxHtmlWindow</ref> this method of that cell is called. Default behaviour is to call <ref refid="classwx_html_window_1ab7086e665bb533a34dc11ab29465db09" kindref="member">wxHtmlWindow::LoadPage</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>interface to the parent HTML window </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>coordinates of mouse click (this is relative to cell&apos;s origin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mouse event that triggered the call</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if a link was clicked, false otherwise.</para>
+</simplesect>
+<simplesect kind="since"><para>2.7.0 (before OnMouseClick() method served a similar purpose).</para>
+</simplesect>
+<simplesect kind="note"><para>If you need more &quot;advanced&quot; event handling you should use wxHtmlBinderCell instead. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="415" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1ae70b6dde74d962102a80bbceef1ce372" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxHtmlCell::SetId</definition>
+        <argsstring>(const wxString &amp;id)</argsstring>
+        <name>SetId</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Sets unique cell identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Default value is no identifier, i.e. empty string. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="422" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1af85de831d0381ebe7b862ed3d147f306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxHtmlCell::SetLink</definition>
+        <argsstring>(const wxHtmlLinkInfo &amp;link)</argsstring>
+        <name>SetLink</name>
+        <param>
+          <type>const <ref refid="classwx_html_link_info" kindref="compound">wxHtmlLinkInfo</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+<para>Sets the hypertext link associated with this cell. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>(Default value is <ref refid="classwx_html_link_info" kindref="compound">wxHtmlLinkInfo</ref>(&quot;&quot;, &quot;&quot;) (no link)) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="428" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1af744488eb0f3fc67b15e89c88bf8e916" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxHtmlCell::SetNext</definition>
+        <argsstring>(wxHtmlCell *cell)</argsstring>
+        <name>SetNext</name>
+        <param>
+          <type><ref refid="classwx_html_cell" kindref="compound">wxHtmlCell</ref> *</type>
+          <declname>cell</declname>
+        </param>
+        <briefdescription>
+<para>Sets the next cell in the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This shouldn&apos;t be called by user - it is to be used only by <ref refid="classwx_html_container_cell_1a84c159f60c4bd8f82622647428720667" kindref="member">wxHtmlContainerCell::InsertCell</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="434" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1abd0726c3573d161c7db27f12705ec124" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxHtmlCell::SetParent</definition>
+        <argsstring>(wxHtmlContainerCell *p)</argsstring>
+        <name>SetParent</name>
+        <param>
+          <type><ref refid="classwx_html_container_cell" kindref="compound">wxHtmlContainerCell</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Sets parent container of this cell. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is called from <ref refid="classwx_html_container_cell_1a84c159f60c4bd8f82622647428720667" kindref="member">wxHtmlContainerCell::InsertCell</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="440" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1a6cba35376a5280f83450c3993f517851" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void wxHtmlCell::SetPos</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>SetPos</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Sets the cell&apos;s position within parent container. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="445" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_html_cell_1a989cce1ced245ab50497dd607b9cc453" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>virtual wxString wxHtmlCell::ConvertToText</definition>
+        <argsstring>(wxHtmlSelection *sel) const</argsstring>
+        <name>ConvertToText</name>
+        <param>
+          <type><ref refid="classwx_html_selection" kindref="compound">wxHtmlSelection</ref> *</type>
+          <declname>sel</declname>
+        </param>
+        <briefdescription>
+<para>Converts the cell into text representation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If sel != NULL then only part of the cell inside the selection is converted. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/html/htmlcell.h" line="451" column="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Internal data structure. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It represents fragments of parsed HTML page, the so-called <bold>cell</bold> - a word, picture, table, horizontal line and so on. It is used by <ref refid="classwx_html_window" kindref="compound">wxHtmlWindow</ref> and <ref refid="classwx_html_win_parser" kindref="compound">wxHtmlWinParser</ref> to represent HTML page in memory.</para>
+<para>You can divide cells into two groups : <emphasis>visible</emphasis> cells with non-zero width and height and <emphasis>helper</emphasis> cells (usually with zero width and height) that perform special actions such as color or font change.</para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxhtml" kindref="member">wxHTML</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para><simplesect kind="see"><para><ref refid="overview_html_1overview_html_cells" kindref="member">Cells and Containers</ref>, <ref refid="classwx_html_container_cell" kindref="compound">wxHtmlContainerCell</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>wxHtmlCell</label>
+        <link refid="classwx_html_cell"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxHtmlColourCell</label>
+        <link refid="classwx_html_colour_cell"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxHtmlContainerCell</label>
+        <link refid="classwx_html_container_cell"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxHtmlFontCell</label>
+        <link refid="classwx_html_font_cell"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>wxHtmlWidgetCell</label>
+        <link refid="classwx_html_widget_cell"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>wxHtmlWordCell</label>
+        <link refid="classwx_html_word_cell"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>wxHtmlWordWithTabsCell</label>
+        <link refid="classwx_html_word_with_tabs_cell"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>wxHtmlCell</label>
+        <link refid="classwx_html_cell"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_refData</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
+    </collaborationgraph>
+    <location file="interface/wx/html/htmlcell.h" line="181" column="1" bodyfile="interface/wx/html/htmlcell.h" bodystart="182" bodyend="453"/>
+    <listofallmembers>
+      <member refid="classwx_html_cell_1aaa3007a55b29adabe4eba5dac31a4ebd" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>AdjustPagebreak</name></member>
+      <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxHtmlCell</scope><name>AllocExclusive</name></member>
+      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxHtmlCell</scope><name>CloneRefData</name></member>
+      <member refid="classwx_html_cell_1a989cce1ced245ab50497dd607b9cc453" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>ConvertToText</name></member>
+      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxHtmlCell</scope><name>CreateRefData</name></member>
+      <member refid="classwx_html_cell_1abebd247b545b1885e2a6406a1fc20d0a" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>Draw</name></member>
+      <member refid="classwx_html_cell_1abe8d7bac1f334d039a55c25eb55626c0" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>DrawInvisible</name></member>
+      <member refid="classwx_html_cell_1a5715340963bbbf4c830e541c6f91af75" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>Find</name></member>
+      <member refid="classwx_html_cell_1a566b7d68f51db3e7b2dbc9f2f482aefc" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>FindCellByPos</name></member>
+      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_html_cell_1ada9db07a6be3d6748b38b725a4b4f675" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>GetDescent</name></member>
+      <member refid="classwx_html_cell_1a9cf4c34706e4b4cb1f40f325af5956f2" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>GetFirstChild</name></member>
+      <member refid="classwx_html_cell_1a136408eaa12cb7043eb3ea40f5956795" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>GetHeight</name></member>
+      <member refid="classwx_html_cell_1a540142e28e68dd9811ebd0b110711683" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>GetId</name></member>
+      <member refid="classwx_html_cell_1a8a9a0d10d8b286c387c3ce26551451e9" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>GetLink</name></member>
+      <member refid="classwx_html_cell_1af1c6dab0ebf88402f48503e0a750e10d" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>GetMouseCursor</name></member>
+      <member refid="classwx_html_cell_1ae7b9e97f1ec3d854690e11ff7207b978" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>GetMouseCursorAt</name></member>
+      <member refid="classwx_html_cell_1ae82f9ba7c871ac3fe55236f44d9c2423" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>GetNext</name></member>
+      <member refid="classwx_html_cell_1a11d8733208fbb09eb55b7d8b2ad363d2" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>GetParent</name></member>
+      <member refid="classwx_html_cell_1aca452bf6312605b63219abc946835a11" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>GetPosX</name></member>
+      <member refid="classwx_html_cell_1add31c18ac4923efa195a867d9f6b2a17" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>GetPosY</name></member>
+      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>GetRefData</name></member>
+      <member refid="classwx_html_cell_1aa5a6f7009eee2758b07d945b6abf9c6d" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>GetWidth</name></member>
+      <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>IsKindOf</name></member>
+      <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>IsSameAs</name></member>
+      <member refid="classwx_html_cell_1ada68b93b129fafc7b251580408b67fd6" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>Layout</name></member>
+      <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxHtmlCell</scope><name>m_refData</name></member>
+      <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>operator delete</name></member>
+      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>operator new</name></member>
+      <member refid="classwx_html_cell_1ae6ed35ebd27616ae32905461507fe8db" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>ProcessMouseClick</name></member>
+      <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>Ref</name></member>
+      <member refid="classwx_html_cell_1ae70b6dde74d962102a80bbceef1ce372" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>SetId</name></member>
+      <member refid="classwx_html_cell_1af85de831d0381ebe7b862ed3d147f306" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>SetLink</name></member>
+      <member refid="classwx_html_cell_1af744488eb0f3fc67b15e89c88bf8e916" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>SetNext</name></member>
+      <member refid="classwx_html_cell_1abd0726c3573d161c7db27f12705ec124" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>SetParent</name></member>
+      <member refid="classwx_html_cell_1a6cba35376a5280f83450c3993f517851" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>SetPos</name></member>
+      <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>SetRefData</name></member>
+      <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>UnRef</name></member>
+      <member refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>UnShare</name></member>
+      <member refid="classwx_html_cell_1aac6636a52a073486383e0f278607534b" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>wxHtmlCell</name></member>
+      <member refid="classwx_object_1acaa378363a28af421ab56ad7b46eadf0" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>wxObject</name></member>
+      <member refid="classwx_object_1a4721b4dc9b7aff0f30904ba2ea3954cf" prot="public" virt="non-virtual"><scope>wxHtmlCell</scope><name>wxObject</name></member>
+      <member refid="classwx_object_1a2a51aa8bfbab47ca2f051bcf84b3f35b" prot="public" virt="virtual"><scope>wxHtmlCell</scope><name>~wxObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

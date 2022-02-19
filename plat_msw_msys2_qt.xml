@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="plat_msw_msys2_qt" kind="page">
+    <compoundname>plat_msw_msys2_qt</compoundname>
+    <title>Building wxQT port with Win32 MSys2 Qt5 backend</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="plat_msw_msys2_qt_1md_docs_msw_msys2_qt"/></para>
+<para>The MSys2 website is <ulink url="http://www.msys2.org/">http://www.msys2.org/</ulink></para>
+<para>These building steps are NOT the normal way to build MSys2 MinGW packages. But, they are a way the wxWidgets developers can test that wxWidgets can build the wxQT/Win32 libraries under MSys2 MinGW.</para>
+<para>For the MSys2 way please see <ulink url="https://github.com/Alexpux/MINGW-packages">https://github.com/Alexpux/MINGW-packages</ulink> and <ulink url="https://github.com/msys2/msys2/wiki/Creating-packages">https://github.com/msys2/msys2/wiki/Creating-packages</ulink></para>
+<para>Building steps:</para>
+<para>A. Install the MSys2 mingw packages needed to build wxQT/Win32 using the configure/make build method. From the MSys2 MinGW prompt: <verbatim> pacman -S --needed --noconfirm make
+ pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-libjpeg-turbo
+ pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-libpng
+ pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-libtiff
+ pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-gcc
+ pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-pkg-config
+ pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-qt5
+</verbatim></para>
+<para>Packages that are needed but are normally installed already. <verbatim>pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-gcc-libs
+pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-expat
+pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-xz
+pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-zlib
+pacman -S --needed --noconfirm ${MINGW_PACKAGE_PREFIX}-gdk-pixbuf2
+</verbatim></para>
+<para>B. Build the wxQT/Win32 static library<orderedlist>
+<listitem><para>Open MSys2 MinGW Prompt (These steps were tested on MinGW64; but, should work under MinGW32)</para>
+</listitem><listitem><para>Use the cd command to change directory to the wxWidgets top folder.</para>
+</listitem><listitem><para>Create the &quot;build-${MSYSTEM_CARCH}-qt-static&quot; folder to build the static libraries <verbatim> mkdir -p build-${MSYSTEM_CARCH}-qt-static
+</verbatim></para>
+</listitem><listitem><para>Configure wxWidgets Option &quot;--disable-precomp-headers&quot; is NOT needed. It is being used to test for compile issues.</para>
+<para>Remove configure option &quot;--disable-wxdib&quot; to set wxUSE_WXDIB to 1. At the time these directions where written wxUSE_WXDIB set to 1 resulted in build error in dnd sample and run-time errors in other samples.</para>
+<para>cd build-${MSYSTEM_CARCH}-qt-static &amp;&amp; \ ../configure <ndash/>with-qt \ <ndash/>disable-wxdib \ <ndash/>disable-shared \ <ndash/>disable-precomp-headers \ &amp;&amp; cd ..</para>
+</listitem><listitem><para>clean the wxQT static libraries <verbatim> cd build-${MSYSTEM_CARCH}-qt-static &amp;&amp; make clean &amp;&amp; cd ..
+</verbatim></para>
+</listitem><listitem><para>make the wxQT static libraries <verbatim> cd build-${MSYSTEM_CARCH}-qt-static &amp;&amp; make &amp;&amp; cd ..
+</verbatim></para>
+</listitem></orderedlist>
+</para>
+<para>C. Build and run the minimal static sample<orderedlist>
+<listitem><para>Clean the minimal sample <verbatim> cd build-${MSYSTEM_CARCH}-qt-static/samples/minimal &amp;&amp; make clean &amp;&amp; cd ../../..
+</verbatim></para>
+</listitem><listitem><para>Build the minimal sample <verbatim> cd build-${MSYSTEM_CARCH}-qt-static/samples/minimal &amp;&amp; make &amp;&amp; cd ../../..
+</verbatim></para>
+</listitem><listitem><para>Run the minimal sample <verbatim> ./build-${MSYSTEM_CARCH}-qt-static/samples/minimal/minimal.exe
+</verbatim></para>
+</listitem></orderedlist>
+</para>
+<para>D. Build most of the static samples<orderedlist>
+<listitem><para>Clean most of the static samples <verbatim> cd build-${MSYSTEM_CARCH}-qt-static/samples &amp;&amp; make clean &amp;&amp; cd ../..
+</verbatim></para>
+</listitem><listitem><para>Build most of the static samples <verbatim> cd build-${MSYSTEM_CARCH}-qt-static/samples &amp;&amp; make &amp;&amp; cd ../..
+</verbatim></para>
+</listitem></orderedlist>
+</para>
+<para>E. Run the drawing static sample <verbatim>    cd samples/drawing &amp;&amp; ../../build-${MSYSTEM_CARCH}-qt-static/samples/drawing/drawing.exe &amp;&amp; cd ../..
+</verbatim> F. Run the splash static sample <verbatim>    cd samples/splash &amp;&amp; ../../build-${MSYSTEM_CARCH}-qt-static/samples/splash/splash.exe &amp;&amp; cd ../..
+</verbatim> G. Run the widgets static sample <verbatim>    cd samples/widgets &amp;&amp; ../../build-${MSYSTEM_CARCH}-qt-static/samples/widgets/widgets.exe &amp;&amp; cd ../..
+</verbatim> H. Run the toolbar static sample <verbatim>    cd samples/toolbar &amp;&amp; ../../build-${MSYSTEM_CARCH}-qt-static/samples/toolbar/toolbar.exe &amp;&amp; cd ../..
+</verbatim> I. Run the image static sample <verbatim>    cd samples/image &amp;&amp; ../../build-${MSYSTEM_CARCH}-qt-static/samples/image/image.exe &amp;&amp; cd ../..
+</verbatim> J. Run the dnd static sample <verbatim>    cd samples/dnd &amp;&amp; ../../build-${MSYSTEM_CARCH}-qt-static/samples/dnd/dnd.exe &amp;&amp; cd ../..
+</verbatim> </para>
+    </detaileddescription>
+    <location file="docs/msw/msys2-qt.md"/>
+  </compounddef>
+</doxygen>

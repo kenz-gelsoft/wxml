@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="propgridiface_8h" kind="file" language="C++">
+    <compoundname>propgridiface.h</compoundname>
+    <innerclass refid="classwx_property_grid_interface" prot="public">wxPropertyGridInterface</innerclass>
+    <innerclass refid="classwx_p_g_prop_arg_cls" prot="public">wxPGPropArgCls</innerclass>
+      <sectiondef kind="user-defined">
+      <memberdef kind="define" id="propgridiface_8h_1a02064e949a659998a5b05d94a5203158" prot="public" static="no">
+        <name>wxPG_LABEL</name>
+        <initializer>(*wxPGProperty::sm_wxPG_LABEL)</initializer>
+        <briefdescription>
+<para>Used to tell <ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref> to use label as name as well. </para>
+        </briefdescription>
+        <detaileddescription>
+<sect1 id="propgridiface_8h_1propgrid_misc_data">
+<title>wxPropertyGrid Miscellaneous</title>
+<para>This section describes some miscellaneous values, types and macros. </para>
+</sect1>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/propgrid/propgridiface.h" line="83" column="9" bodyfile="interface/wx/propgrid/propgridiface.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="propgridiface_8h_1a3411b5d72d19021e8170aa210149b5b9" prot="public" static="no">
+        <name>wxPG_LABEL_STRING</name>
+        <initializer><ref refid="chartype_8h_1a0a06701ea0e6bb00c5171ace1b1f5691" kindref="member">wxS</ref>(&quot;@!&quot;)</initializer>
+        <briefdescription>
+<para>This is the value placed in wxPGProperty::sm_wxPG_LABEL. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/propgrid/propgridiface.h" line="88" column="9" bodyfile="interface/wx/propgrid/propgridiface.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="propgridiface_8h_1a7ba4ad4a4912e3d0c814ab0a08fc6f01" prot="public" static="no">
+        <name>wxPG_COLOUR_BLACK</name>
+        <initializer>(*<ref refid="colour_8h_1a28c9e9208c4907063eb9869ff2332776" kindref="member">wxBLACK</ref>)</initializer>
+        <briefdescription>
+<para>Used to tell <ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref> to use label as name as well. </para>
+        </briefdescription>
+        <detaileddescription>
+<sect1 id="propgridiface_8h_1propgrid_misc_data">
+<title>wxPropertyGrid Miscellaneous</title>
+<para>This section describes some miscellaneous values, types and macros. </para>
+</sect1>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/propgrid/propgridiface.h" line="90" column="9" bodyfile="interface/wx/propgrid/propgridiface.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="propgridiface_8h_1a59fd572254a501df13236ad5363b4253" prot="public" static="no">
+        <name>wxPG_COLOUR</name>
+        <param><defname>R</defname></param>
+        <param><defname>G</defname></param>
+        <param><defname>B</defname></param>
+        <initializer>((<ref refid="defs_8h_1afdb12e5345c3fae4b537e813df9f02a3" kindref="member">wxUint32</ref>)(R+(G&lt;&lt;8)+(B&lt;&lt;16)))</initializer>
+        <briefdescription>
+<para>Convert Red, Green and Blue to a single 32-bit value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/propgrid/propgridiface.h" line="95" column="9" bodyfile="interface/wx/propgrid/propgridiface.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="propgridiface_8h_1a6da9de26639368cfba7ef3306a64fd45" prot="public" static="no">
+        <name>wxPG_DEFAULT_IMAGE_SIZE</name>
+        <initializer><ref refid="gdicmn_8h_1a33a012cdb075e9f78c93f63bec2dc27b" kindref="member">wxDefaultSize</ref></initializer>
+        <briefdescription>
+<para>If property is supposed to have custom-painted image, then returning this in OnMeasureImage() will usually be enough. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/propgrid/propgridiface.h" line="101" column="9" bodyfile="interface/wx/propgrid/propgridiface.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <memberdef kind="enum" id="propgridiface_8h_1ae2e5452962f3a4cdaca5b55846514a4e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>wxPG_PROPERTYVALUES_FLAGS</name>
+        <enumvalue id="propgridiface_8h_1ae2e5452962f3a4cdaca5b55846514a4eaf9ff01f6a75e8ac59fd54089cb0509cb" prot="public">
+          <name>wxPG_DONT_RECURSE</name>
+          <initializer>= 0x00000000</initializer>
+          <briefdescription>
+<para>Flag for wxPropertyGridInterface::SetProperty* functions, <ref refid="classwx_property_grid_interface_1aac3d5502e764989ed8b031a3d75b8814" kindref="member">wxPropertyGridInterface::HideProperty()</ref>, etc. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Apply changes only for the property in question. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="propgridiface_8h_1ae2e5452962f3a4cdaca5b55846514a4ea1992bab46b50495ec68085d5eaebea51" prot="public">
+          <name>wxPG_KEEP_STRUCTURE</name>
+          <initializer>= 0x00000010</initializer>
+          <briefdescription>
+<para>Flag for <ref refid="classwx_property_grid_interface_1ad3b171468f2b3999b98c44be4be5b45d" kindref="member">wxPropertyGridInterface::GetPropertyValues()</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Use this flag to retain category structure; each sub-category will be its own wxVariantList of <ref refid="classwx_variant" kindref="compound">wxVariant</ref>. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="propgridiface_8h_1ae2e5452962f3a4cdaca5b55846514a4eac9c20676ced7bcd3ecbd227bdc3f70da" prot="public">
+          <name>wxPG_RECURSE</name>
+          <initializer>= 0x00000020</initializer>
+          <briefdescription>
+<para>Flag for wxPropertyGridInterface::SetProperty* functions, <ref refid="classwx_property_grid_interface_1aac3d5502e764989ed8b031a3d75b8814" kindref="member">wxPropertyGridInterface::HideProperty()</ref>, etc. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Apply changes recursively for the property and all its children. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="propgridiface_8h_1ae2e5452962f3a4cdaca5b55846514a4ea48386e3571f94e92f77be46ff8816a46" prot="public">
+          <name>wxPG_INC_ATTRIBUTES</name>
+          <initializer>= 0x00000040</initializer>
+          <briefdescription>
+<para>Flag for <ref refid="classwx_property_grid_interface_1ad3b171468f2b3999b98c44be4be5b45d" kindref="member">wxPropertyGridInterface::GetPropertyValues()</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Use this flag to include property attributes as well. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="propgridiface_8h_1ae2e5452962f3a4cdaca5b55846514a4ea44bd5239a911eb253c8ab859cd2c9cfa" prot="public">
+          <name>wxPG_RECURSE_STARTS</name>
+          <initializer>= 0x00000080</initializer>
+          <briefdescription>
+<para>Used when first starting recursion. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="propgridiface_8h_1ae2e5452962f3a4cdaca5b55846514a4ea62fe88801882c64dcfac0ae13b3620c5" prot="public">
+          <name>wxPG_FORCE</name>
+          <initializer>= 0x00000100</initializer>
+          <briefdescription>
+<para>Force value change. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="propgridiface_8h_1ae2e5452962f3a4cdaca5b55846514a4ea1e9e60a90147682f3479966fe683694f" prot="public">
+          <name>wxPG_SORT_TOP_LEVEL_ONLY</name>
+          <initializer>= 0x00000200</initializer>
+          <briefdescription>
+<para>Only sort categories and their immediate children. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Sorting done by wxPG_AUTO_SORT option uses this. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<sect1 id="propgridiface_8h_1propgrid_property_values_attributes">
+<title>wxPropertyGrid Property Values Attribute Identifiers</title>
+<para>Many <ref refid="classwx_property_grid_interface" kindref="compound">wxPropertyGridInterface</ref> and <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> methods to set property value or to modify its state use these flags to specify additional details of the operation. </para>
+</sect1>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/propgrid/propgridiface.h" line="18" column="1" bodyfile="interface/wx/propgrid/propgridiface.h" bodystart="19" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="propgridiface_8h_1a3f566131b8cbb5f0e282b3db4f5c501c" prot="public" static="no">
+        <type>const <ref refid="classwx_p_g_prop_arg_cls" kindref="compound">wxPGPropArgCls</ref> &amp;</type>
+        <definition>typedef const wxPGPropArgCls&amp; wxPGPropArg</definition>
+        <argsstring></argsstring>
+        <name>wxPGPropArg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/propgrid/propgridiface.h" line="1257" column="30" bodyfile="interface/wx/propgrid/propgridiface.h" bodystart="1257" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="interface/wx/propgrid/propgridiface.h"/>
+  </compounddef>
+</doxygen>

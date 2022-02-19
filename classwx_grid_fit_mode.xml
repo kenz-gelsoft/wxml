@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_grid_fit_mode" kind="class" language="C++" prot="public">
+    <compoundname>wxGridFitMode</compoundname>
+    <includes local="no">wx/grid.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_grid_fit_mode_1aaaaafc140065464c7dade42aa06d7fa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxGridFitMode::wxGridFitMode</definition>
+        <argsstring>()</argsstring>
+        <name>wxGridFitMode</name>
+        <briefdescription>
+<para>Default constructor creates an object not specifying any behaviour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor is not very useful, use static methods <ref refid="classwx_grid_fit_mode_1a216bb9314f771977ad70e558d315fbbe" kindref="member">Clip()</ref> and <ref refid="classwx_grid_fit_mode_1a12207e20ec172c721d340452459eca32" kindref="member">Overflow()</ref> below to create objects of this class instead. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="1157" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_grid_fit_mode_1a5840e51005c2305e03cea47045c1469e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxGridFitMode::IsSpecified</definition>
+        <argsstring>() const</argsstring>
+        <name>IsSpecified</name>
+        <briefdescription>
+<para>Return true if the object specifies some particular behaviour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method returns false for default-constructed objects of this type only. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="1180" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_grid_fit_mode_1ae74a901ad413eef6f44fccd0f901572c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxGridFitMode::IsClip</definition>
+        <argsstring>() const</argsstring>
+        <name>IsClip</name>
+        <briefdescription>
+<para>Return true if the object specifies clipping behaviour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method returns true only for the objects returned by <ref refid="classwx_grid_fit_mode_1a216bb9314f771977ad70e558d315fbbe" kindref="member">Clip()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="1187" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_grid_fit_mode_1a04ae0dd07ce87506e4597b0be21dcc03" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxGridFitMode::IsOverflow</definition>
+        <argsstring>() const</argsstring>
+        <name>IsOverflow</name>
+        <briefdescription>
+<para>Return true if the object specifies overflow behaviour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method returns true only for the objects returned by <ref refid="classwx_grid_fit_mode_1a12207e20ec172c721d340452459eca32" kindref="member">Overflow()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="1194" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_grid_fit_mode_1afb6fd6cd79ee34e7e8ff5126220a382d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="gdicmn_8h_1a0293befa07fe89f6efd8caec89c3b489" kindref="member">wxEllipsizeMode</ref></type>
+        <definition>wxEllipsizeMode wxGridFitMode::GetEllipsizeMode</definition>
+        <argsstring>() const</argsstring>
+        <name>GetEllipsizeMode</name>
+        <briefdescription>
+<para>Return ellipsize mode, possibly <computeroutput>wxELLIPSIZE_NONE</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For the objects constructed using <ref refid="classwx_grid_fit_mode_1a8640366d134423b75c834213b1335e1b" kindref="member">Ellipsize()</ref>, the same ellipsization mode as was passed to it is returned. For all the other objects, <ref refid="gdicmn_8h_1a0293befa07fe89f6efd8caec89c3b489ae4c8bd13c9e9c6af29a618bc7a554a3a" kindref="member">wxELLIPSIZE_NONE</ref> is. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="1203" column="21"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classwx_grid_fit_mode_1a216bb9314f771977ad70e558d315fbbe" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_grid_fit_mode" kindref="compound">wxGridFitMode</ref></type>
+        <definition>static wxGridFitMode wxGridFitMode::Clip</definition>
+        <argsstring>()</argsstring>
+        <name>Clip</name>
+        <briefdescription>
+<para>Pseudo-constructor for object specifying clipping behaviour. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="1162" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_grid_fit_mode_1a12207e20ec172c721d340452459eca32" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_grid_fit_mode" kindref="compound">wxGridFitMode</ref></type>
+        <definition>static wxGridFitMode wxGridFitMode::Overflow</definition>
+        <argsstring>()</argsstring>
+        <name>Overflow</name>
+        <briefdescription>
+<para>Pseudo-constructor for object specifying overflow behaviour. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="1167" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_grid_fit_mode_1a8640366d134423b75c834213b1335e1b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_grid_fit_mode" kindref="compound">wxGridFitMode</ref></type>
+        <definition>static wxGridFitMode wxGridFitMode::Ellipsize</definition>
+        <argsstring>(wxEllipsizeMode ellipsize=wxELLIPSIZE_END)</argsstring>
+        <name>Ellipsize</name>
+        <param>
+          <type><ref refid="gdicmn_8h_1a0293befa07fe89f6efd8caec89c3b489" kindref="member">wxEllipsizeMode</ref></type>
+          <declname>ellipsize</declname>
+          <defval><ref refid="gdicmn_8h_1a0293befa07fe89f6efd8caec89c3b489afffc4ee1338574f3877f35c78080e6e3" kindref="member">wxELLIPSIZE_END</ref></defval>
+        </param>
+        <briefdescription>
+<para>Pseudo-constructor for object specifying ellipsize behaviour. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/grid.h" line="1172" column="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Allows to specify the behaviour when the cell contents doesn&apos;t fit into its allotted space. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Objects of this class are used with <ref refid="classwx_grid_cell_attr_1a4f2d955d77f7b2c4681c81fb585c2a8f" kindref="member">wxGridCellAttr::SetFitMode()</ref> and <ref refid="classwx_grid_1a365ce4dfc980b8a620f18ef592d41fe6" kindref="member">wxGrid::SetDefaultCellFitMode()</ref> and <ref refid="classwx_grid_1aa1dcb4f247223090e5931f8ad37e2312" kindref="member">wxGrid::SetCellFitMode()</ref> functions and allow to specify what should happen if the cell contents doesn&apos;t fit into the available space. The possibilities are:</para>
+<para><itemizedlist>
+<listitem><para>Overflow into the cell to the right if it is empty, or possibly several cells, if the cell contents still doesn&apos;t fit after overflowing into the immediately neighbouring cell.</para>
+</listitem><listitem><para>Clip the cell contents, discarding the part which doesn&apos;t fit.</para>
+</listitem><listitem><para>Ellipsize the cell contents, i.e. replace the non-fitting part with ellipsis (<computeroutput></computeroutput>...), putting the ellipsis at the end by default, but possibly at the beginning or in the middle.</para>
+</listitem></itemizedlist>
+</para>
+<para>The default behaviour is to overflow, use <ref refid="classwx_grid_1a365ce4dfc980b8a620f18ef592d41fe6" kindref="member">wxGrid::SetDefaultCellFitMode()</ref> to change this, for example: <programlisting><codeline><highlight class="normal">grid-&gt;SetDefaultCellFitMode(<ref refid="classwx_grid_fit_mode_1a216bb9314f771977ad70e558d315fbbe" kindref="member">wxGridFitMode::Clip</ref>());</highlight></codeline>
+</programlisting></para>
+<para>Objects of this class are created using static functions instead of constructors for better readability and can&apos;t be changed after creating them except by using the assignment operator.</para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para><simplesect kind="since"><para>3.1.4 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/grid.h" line="1148" column="1" bodyfile="interface/wx/grid.h" bodystart="1149" bodyend="1204"/>
+    <listofallmembers>
+      <member refid="classwx_grid_fit_mode_1a216bb9314f771977ad70e558d315fbbe" prot="public" virt="non-virtual"><scope>wxGridFitMode</scope><name>Clip</name></member>
+      <member refid="classwx_grid_fit_mode_1a8640366d134423b75c834213b1335e1b" prot="public" virt="non-virtual"><scope>wxGridFitMode</scope><name>Ellipsize</name></member>
+      <member refid="classwx_grid_fit_mode_1afb6fd6cd79ee34e7e8ff5126220a382d" prot="public" virt="non-virtual"><scope>wxGridFitMode</scope><name>GetEllipsizeMode</name></member>
+      <member refid="classwx_grid_fit_mode_1ae74a901ad413eef6f44fccd0f901572c" prot="public" virt="non-virtual"><scope>wxGridFitMode</scope><name>IsClip</name></member>
+      <member refid="classwx_grid_fit_mode_1a04ae0dd07ce87506e4597b0be21dcc03" prot="public" virt="non-virtual"><scope>wxGridFitMode</scope><name>IsOverflow</name></member>
+      <member refid="classwx_grid_fit_mode_1a5840e51005c2305e03cea47045c1469e" prot="public" virt="non-virtual"><scope>wxGridFitMode</scope><name>IsSpecified</name></member>
+      <member refid="classwx_grid_fit_mode_1a12207e20ec172c721d340452459eca32" prot="public" virt="non-virtual"><scope>wxGridFitMode</scope><name>Overflow</name></member>
+      <member refid="classwx_grid_fit_mode_1aaaaafc140065464c7dade42aa06d7fa3" prot="public" virt="non-virtual"><scope>wxGridFitMode</scope><name>wxGridFitMode</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

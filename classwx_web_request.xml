@@ -1,0 +1,721 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_web_request" kind="class" language="C++" prot="public">
+    <compoundname>wxWebRequest</compoundname>
+    <includes local="no">wx/webrequest.h</includes>
+      <sectiondef kind="user-defined">
+      <header>Request options</header>
+      <description><para>Methods that set options before starting the request </para>
+</description>
+      <memberdef kind="function" id="classwx_web_request_1a922f4fa22f9f336b6f916e114ca22350" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxWebRequest::SetHeader</definition>
+        <argsstring>(const wxString &amp;name, const wxString &amp;value)</argsstring>
+        <name>SetHeader</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets a request header which will be sent to the server by this request. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The header will be added if it hasn&apos;t been set before or replaced otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the header </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String value of the header. An empty string will remove the header. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="313" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1ae4cac9451b6e04014851a2ea1852f125" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxWebRequest::SetMethod</definition>
+        <argsstring>(const wxString &amp;method)</argsstring>
+        <name>SetMethod</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>method</declname>
+        </param>
+        <briefdescription>
+<para>Set <ulink url="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">common</ulink> or expanded HTTP method. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default method is GET unless request data is provided in which case POST is the default.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>method</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>HTTP method name, e.g. &quot;GET&quot;. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="325" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1aac9a109b07c5c979bab7f636ec0f3d34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxWebRequest::SetData</definition>
+        <argsstring>(const wxString &amp;text, const wxString &amp;contentType, const wxMBConv &amp;conv=wxConvUTF8)</argsstring>
+        <name>SetData</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>contentType</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> &amp;</type>
+          <declname>conv</declname>
+          <defval>wxConvUTF8</defval>
+        </param>
+        <briefdescription>
+<para>Set the text to be posted to the server. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>After a successful call to this method, the request will use HTTP <computeroutput>POST</computeroutput> instead of the default <computeroutput>GET</computeroutput> when it&apos;s executed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text data to post. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>contentType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of HTTP &quot;Content-Type&quot; header, e.g. &quot;text/html;
+    charset=UTF-8&quot;. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>conv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Conversion used when sending the text to the server </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="341" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1a30b4a9840a1da65df9fe27be33654eec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxWebRequest::SetData</definition>
+        <argsstring>(wxInputStream *dataStream, const wxString &amp;contentType, wxFileOffset dataSize=wxInvalidOffset)</argsstring>
+        <name>SetData</name>
+        <param>
+          <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> *</type>
+          <declname>dataStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>contentType</declname>
+        </param>
+        <param>
+          <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
+          <declname>dataSize</declname>
+          <defval><ref refid="filefn_8h_1ab184c7199d93541d22ae42e515cbbcb7" kindref="member">wxInvalidOffset</ref></defval>
+        </param>
+        <briefdescription>
+<para>Set the binary data to be posted to the server. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The next request will be a HTTP <computeroutput>POST</computeroutput> instead of the default HTTP <computeroutput>GET</computeroutput> and the given <emphasis>dataStream</emphasis> will be posted as the body of this request.</para>
+<para>Example of use: <programlisting><codeline><highlight class="normal">std::unique_ptr&lt;wxInputStream&gt;<sp/>stream(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_file_input_stream" kindref="compound">wxFileInputStream</ref>(</highlight><highlight class="stringliteral">&quot;some_file.dat&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!stream-&gt;IsOk()<sp/>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Handle<sp/>error<sp/>(due<sp/>to<sp/>e.g.<sp/>file<sp/>not<sp/>found)<sp/>here.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">request.SetData(stream.release(),<sp/></highlight><highlight class="stringliteral">&quot;application/octet-stream&quot;</highlight><highlight class="normal">)</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dataStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data in this stream will be posted as the request body. The pointer may be NULL, which will result in sending 0 bytes of data, but if not empty, should be valid, i.e. <ref refid="classwx_stream_base_1ad33abd694469e858fc3bbb0163a7fc4b" kindref="member">wxInputStream::IsOk()</ref> must return true. This object takes ownership of the passed in pointer and will delete it, i.e. the pointer must be heap-allocated. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>contentType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of HTTP &quot;Content-Type&quot; header, e.g. &quot;application/octet-stream&quot;. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dataSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Amount of data which is sent to the server. If set to <computeroutput>wxInvalidOffset</computeroutput> all stream data is sent.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>false if <emphasis>dataStream</emphasis> is not-empty but invalid or if <emphasis>dataSize</emphasis> is not specified and the attempt to determine stream size failed; true in all the other cases. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="379" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1a730a05fc31dff20e3f68e25dc6cec3c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxWebRequest::SetStorage</definition>
+        <argsstring>(Storage storage)</argsstring>
+        <name>SetStorage</name>
+        <param>
+          <type><ref refid="classwx_web_request_1a4c83d7666f65c85e205b9b0f7b60e451" kindref="member">Storage</ref></type>
+          <declname>storage</declname>
+        </param>
+        <briefdescription>
+<para>Sets how response data will be stored. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default storage method <computeroutput>Storage_Memory</computeroutput> collects all response data in memory until the request is completed. This is fine for most usage scenarios like API calls, loading images, etc. For larger downloads or if the response data will be used permanently <computeroutput>Storage_File</computeroutput> instructs the request to write the response to a temporary file. This temporary file may then be read or moved after the request is complete. The file will be downloaded to the system temp directory as returned by <ref refid="classwx_standard_paths_1a67e70dee83ed715db981eaad74cdf427" kindref="member">wxStandardPaths::GetTempDir()</ref>. To specify a different directory use <ref refid="classwx_web_session_1ad6352ab0944576d66eb25777ceda565d" kindref="member">wxWebSession::SetTempDir()</ref>.</para>
+<para>Sometimes response data needs to be processed while its downloaded from the server. For example if the response is in a format that can be parsed piece by piece like XML, JSON or an archive format like ZIP. In these cases storing the data in memory or a file before being able to process it might not be ideal and <computeroutput>Storage_None</computeroutput> should be set. With this storage method the data is only available during the <computeroutput>wxEVT_WEBREQUEST_DATA</computeroutput> event calls as soon as it&apos;s received from the server. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="404" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1ae9c2783421145c77e5c48cda091b26e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxWebRequest::DisablePeerVerify</definition>
+        <argsstring>(bool disable=true)</argsstring>
+        <name>DisablePeerVerify</name>
+        <param>
+          <type>bool</type>
+          <declname>disable</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Disable SSL certificate verification. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be used to connect to self signed servers or other invalid SSL connections. Disabling verification makes the communication insecure. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="413" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1a8f807ec5bd0c70d48b7e3966f64efe80" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxWebRequest::IsPeerVerifyDisabled</definition>
+        <argsstring>() const</argsstring>
+        <name>IsPeerVerifyDisabled</name>
+        <briefdescription>
+<para>Returns if peer verification has been disabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classwx_web_request_1ae9c2783421145c77e5c48cda091b26e5" kindref="member">DisablePeerVerify()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="420" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Progress methods</header>
+      <description><para>Methods that describe the requests progress </para>
+</description>
+      <memberdef kind="function" id="classwx_web_request_1a6aa586ad92d482da8a40b188e68e354a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9" kindref="member">State</ref></type>
+        <definition>State wxWebRequest::GetState</definition>
+        <argsstring>() const</argsstring>
+        <name>GetState</name>
+        <briefdescription>
+<para>Returns the current state of the request. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="430" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1a3b908188afac2029f3bfdd549e4b32a7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
+        <definition>wxFileOffset wxWebRequest::GetBytesSent</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBytesSent</name>
+        <briefdescription>
+<para>Returns the number of bytes sent to the server. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This value grows monotonically from 0 to <ref refid="classwx_web_request_1a59a43178b1e68660a8202874a921e0b6" kindref="member">GetBytesExpectedToSend()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="437" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1a59a43178b1e68660a8202874a921e0b6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
+        <definition>wxFileOffset wxWebRequest::GetBytesExpectedToSend</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBytesExpectedToSend</name>
+        <briefdescription>
+<para>Returns the total number of bytes expected to be sent to the server. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This value stays unchanged throughout the request duration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="444" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1adeda05f8ad6deccbbb4fc6031ca24704" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
+        <definition>wxFileOffset wxWebRequest::GetBytesReceived</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBytesReceived</name>
+        <briefdescription>
+<para>Returns the number of bytes received from the server. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This value grows monotonically from 0 to <ref refid="classwx_web_request_1ab99eaf7c50f9e16a75bdc1d2292a67c6" kindref="member">GetBytesExpectedToReceive()</ref> (unless it is unknown). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="452" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1ab99eaf7c50f9e16a75bdc1d2292a67c6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
+        <definition>wxFileOffset wxWebRequest::GetBytesExpectedToReceive</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBytesExpectedToReceive</name>
+        <briefdescription>
+<para>Returns the number of bytes expected to be received from the server. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This value is based on the <computeroutput>Content-Length</computeroutput> header, if none is found it will return -1.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_web_response_1a5af2999e2d56ec04ca03f38cb8fd759d" kindref="member">wxWebResponse::GetContentLength()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="462" column="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9" prot="public" static="no" strong="no">
+        <type></type>
+        <name>State</name>
+        <enumvalue id="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9af16e9baacb6acaa32adea26960a37024" prot="public">
+          <name>State_Idle</name>
+          <briefdescription>
+<para>The request has just been created and <ref refid="classwx_web_request_1a668b708f7f943ce16d768f73dcda4e68" kindref="member">Start()</ref> has not been called. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9abaa4dba7e456c6b2ea33ddc9a5664423" prot="public">
+          <name>State_Unauthorized</name>
+          <briefdescription>
+<para>The request is currently unauthorized. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Calling <ref refid="classwx_web_request_1a08c476fdf2641b980368978aeff04212" kindref="member">GetAuthChallenge()</ref> returns a challenge object with further details and calling SetCredentials() on this object will retry the request using these credentials. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9ad8c3ae3bf24c1480b2bacd3bcc8e8b4f" prot="public">
+          <name>State_Active</name>
+          <briefdescription>
+<para>The request is about to start. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>An event notifying about the switch to this state is generated when <ref refid="classwx_web_request_1a668b708f7f943ce16d768f73dcda4e68" kindref="member">Start()</ref> is called (unless an error occurs, in which case the state becomes State_Failed instead). Handling this event allows to do something right before the asynchronous request actually starts. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9a2128a4ff9813b4b67ac1928bc388961d" prot="public">
+          <name>State_Completed</name>
+          <briefdescription>
+<para>The request completed successfully and all data has been received. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>The HTTP status code returned by <ref refid="classwx_web_response_1ab9cf958d114d304a2cc39b22d647dd4c" kindref="member">wxWebResponse::GetStatus()</ref> will be in 100-399 range, and typically 200. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9a7dc4489dd5f7a551a69c37b738f58157" prot="public">
+          <name>State_Failed</name>
+          <briefdescription>
+<para>The request failed. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This can happen either because the request couldn&apos;t be performed at all (e.g. a connection error) or if the server returned an HTTP error. In the former case <ref refid="classwx_web_response_1ab9cf958d114d304a2cc39b22d647dd4c" kindref="member">wxWebResponse::GetStatus()</ref> returns 0, while in the latter it returns a value in 400-599 range. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9a09af2b339223feb9bf378f747bffca1d" prot="public">
+          <name>State_Cancelled</name>
+          <briefdescription>
+<para>The request has been cancelled before completion by calling <ref refid="classwx_web_request_1a89ce076c6def7aa3e3141bb96044bef2" kindref="member">Cancel()</ref> </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Possible request states returned by <ref refid="classwx_web_request_1a6aa586ad92d482da8a40b188e68e354a" kindref="member">GetState()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="137" column="5" bodyfile="interface/wx/webrequest.h" bodystart="138" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="enum" id="classwx_web_request_1a4c83d7666f65c85e205b9b0f7b60e451" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Storage</name>
+        <enumvalue id="classwx_web_request_1a4c83d7666f65c85e205b9b0f7b60e451aefb5ea9db09fb1a46397167b8286335a" prot="public">
+          <name>Storage_Memory</name>
+          <briefdescription>
+<para>All data is collected in memory until the request is complete. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>It can be later retrieved using <ref refid="classwx_web_response_1a2c65ded3f4a43542426c49741aba7ef1" kindref="member">wxWebResponse::AsString()</ref> or <ref refid="classwx_web_response_1aeaa6b760c5ce4773fd19ff59d54dfbe1" kindref="member">wxWebResponse::GetStream()</ref>. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classwx_web_request_1a4c83d7666f65c85e205b9b0f7b60e451aa7e734f30eb05664e8eb351fa2ac46aa" prot="public">
+          <name>Storage_File</name>
+          <briefdescription>
+<para>The data is written to a file on disk as it is received. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>This file can be later read from using <ref refid="classwx_web_response_1aeaa6b760c5ce4773fd19ff59d54dfbe1" kindref="member">wxWebResponse::GetStream()</ref> or otherwise processed using <ref refid="classwx_web_request_event_1ad375b9e12d7abd1ca3fab0223bbfdb35" kindref="member">wxWebRequestEvent::GetDataFile()</ref>. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classwx_web_request_1a4c83d7666f65c85e205b9b0f7b60e451a85a7cc26e95442e5e5fad3e8900a3140" prot="public">
+          <name>Storage_None</name>
+          <briefdescription>
+<para>The data is not stored by the request and is only available via events. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Data can be retrieved using <ref refid="classwx_web_request_event_1acd4220e9549f5a07574dd8ef65395133" kindref="member">wxWebRequestEvent::GetDataBuffer()</ref> and <ref refid="classwx_web_request_event_1a9bd0bb22eda096e6f23adb87c2f7b5c5" kindref="member">wxWebRequestEvent::GetDataSize()</ref> methods from wxEVT_WEBREQUEST_DATA handler. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Possible storage types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set by <ref refid="classwx_web_request_1a730a05fc31dff20e3f68e25dc6cec3c0" kindref="member">SetStorage()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="186" column="5" bodyfile="interface/wx/webrequest.h" bodystart="187" bodyend="213"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_web_request_1a75244f9064ce6f4cdc7db7dc0ed153d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxWebRequest::wxWebRequest</definition>
+        <argsstring>()</argsstring>
+        <name>wxWebRequest</name>
+        <briefdescription>
+<para>Default constructor creates an invalid object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize it by assigning <ref refid="classwx_web_session_1a4799995a9dadd69dc51e999116d7f45d" kindref="member">wxWebSession::CreateRequest()</ref> to it before using it.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_web_request_1af478893bbafd6fb503138b496c6a5a91" kindref="member">IsOk()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="223" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1af478893bbafd6fb503138b496c6a5a91" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxWebRequest::IsOk</definition>
+        <argsstring>() const</argsstring>
+        <name>IsOk</name>
+        <briefdescription>
+<para>Check if the object is valid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the object is invalid, it must be assigned a valid request before any other methods can be used (with the exception of <ref refid="classwx_web_request_1af9e0ce16e8f3455c0ca3d28f21218a14" kindref="member">GetNativeHandle()</ref>). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="231" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1af9e0ce16e8f3455c0ca3d28f21218a14" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>wxWebRequestHandle</type>
+        <definition>wxWebRequestHandle wxWebRequest::GetNativeHandle</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNativeHandle</name>
+        <briefdescription>
+<para>Return the native handle corresponding to this request object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>wxWebRequestHandle</computeroutput> is an opaque type containing a value of the following type according to the backend being used:</para>
+<para><itemizedlist>
+<listitem><para>For WinHTTP backend, this is <computeroutput>HINTERNET</computeroutput> request handle.</para>
+</listitem><listitem><para>For CURL backend, this is a <computeroutput>CURL</computeroutput> struct pointer.</para>
+</listitem><listitem><para>For macOS backend, this is <computeroutput>NSURLSessionTask</computeroutput> object pointer.</para>
+</listitem></itemizedlist>
+</para>
+<para>Note that this function returns a valid value only after the request is started successfully using <ref refid="classwx_web_request_1a668b708f7f943ce16d768f73dcda4e68" kindref="member">Start()</ref>. Notably, it is guaranteed to return a valid value when handling <ref refid="classwx_web_request_event" kindref="compound">wxWebRequestEvent</ref> corresponding to the switch to <computeroutput>State_Active</computeroutput>.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_web_session_1ad4f8568100cf380a70c73d65c550051d" kindref="member">wxWebSession::GetNativeHandle()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="250" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1a668b708f7f943ce16d768f73dcda4e68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxWebRequest::Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>Send the request to the server asynchronously. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Events will be triggered on success or failure.</para>
+<para>The current state must be <computeroutput>State_Idle</computeroutput>, already started requests can&apos;t be started again.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_web_request_1a89ce076c6def7aa3e3141bb96044bef2" kindref="member">Cancel()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="262" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1a89ce076c6def7aa3e3141bb96044bef2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxWebRequest::Cancel</definition>
+        <argsstring>()</argsstring>
+        <name>Cancel</name>
+        <briefdescription>
+<para>Cancel an active request. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that cancelling is asynchronous, so the application needs to wait until the request state becomes <computeroutput>State_Cancelled</computeroutput> to know when the request was really cancelled.</para>
+<para>Request must be active when <ref refid="classwx_web_request_1a89ce076c6def7aa3e3141bb96044bef2" kindref="member">Cancel()</ref> is called, i.e. the current state can&apos;t be <computeroutput>State_Idle</computeroutput>. However, because it can be difficult to avoid doing it in some circumstances, <ref refid="classwx_web_request_1a89ce076c6def7aa3e3141bb96044bef2" kindref="member">Cancel()</ref> may be called multiple times and only a single <ref refid="classwx_web_request_event" kindref="compound">wxWebRequestEvent</ref> will be sent even in this case. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="276" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1acfdc96581e6e0d3ad06bb8e28a5c538f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_web_response" kindref="compound">wxWebResponse</ref></type>
+        <definition>wxWebResponse wxWebRequest::GetResponse</definition>
+        <argsstring>() const</argsstring>
+        <name>GetResponse</name>
+        <briefdescription>
+<para>Returns a response object after a successful request. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Before sending a request or after a failed request this will return an invalid response object, i.e. such that <ref refid="classwx_web_response_1af88acfa8309bfcb19bf45e181b0751e8" kindref="member">wxWebResponse::IsOk()</ref> returns NULL. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="285" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1a08c476fdf2641b980368978aeff04212" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_web_auth_challenge" kindref="compound">wxWebAuthChallenge</ref></type>
+        <definition>wxWebAuthChallenge wxWebRequest::GetAuthChallenge</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAuthChallenge</name>
+        <briefdescription>
+<para>Returns the current authentication challenge object while the request is in <computeroutput>State_Unauthorized</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="291" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_request_1ad71f5f06006a4a7eace02a5b322ba89d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxWebRequest::GetId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetId</name>
+        <briefdescription>
+<para>Returns the id specified while creating this request. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="296" column="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class allows for simple HTTP requests using the operating system&apos;s components as implementation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The latest features of the operating system will be used if available (e.g. HTTP/2, TLS 1.3). System-wide configuration like proxy and SSL certificates will be used when possible.</para>
+<para>Instances of <ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref> are created by using <ref refid="classwx_web_session_1a4799995a9dadd69dc51e999116d7f45d" kindref="member">wxWebSession::CreateRequest()</ref>.</para>
+<para>The requests are handled asynchronously and event handlers are used to communicate the request status. The response data may be stored in memory, to a file or processed directly, see <ref refid="classwx_web_request_1a730a05fc31dff20e3f68e25dc6cec3c0" kindref="member">SetStorage()</ref> for details.</para>
+<para>Example usage in an event handler function of some window (i.e. <computeroutput>this</computeroutput> in the example below is a <ref refid="classwx_window" kindref="compound">wxWindow</ref> pointer):</para>
+<para><programlisting><codeline><highlight class="comment">//<sp/>Create<sp/>the<sp/>request<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref><sp/>request<sp/>=<sp/><ref refid="classwx_web_session_1a958c319ae8b98773d54e6909646436bd" kindref="member">wxWebSession::GetDefault</ref>().<ref refid="classwx_web_session_1a4799995a9dadd69dc51e999116d7f45d" kindref="member">CreateRequest</ref>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;https://www.wxwidgets.org/downloads/logos/blocks.png&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!request.<ref refid="classwx_web_request_1af478893bbafd6fb503138b496c6a5a91" kindref="member">IsOk</ref>()<sp/>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>not<sp/>expected,<sp/>but<sp/>handle<sp/>the<sp/>error<sp/>somehow.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Bind<sp/>state<sp/>event</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">Bind(<ref refid="webrequest_8h_1a04295bf5fc8053e001f719a6f480d5f0" kindref="member">wxEVT_WEBREQUEST_STATE</ref>,<sp/>[](<ref refid="classwx_web_request_event" kindref="compound">wxWebRequestEvent</ref>&amp;<sp/>evt)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(evt.<ref refid="classwx_web_request_event_1a6023bb924ca04864135b18dcc850eb75" kindref="member">GetState</ref>())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Request<sp/>completed</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>wxWebRequest::State_Completed:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxImage<sp/>logoImage(*evt.GetResponse().GetStream());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(logoImage.IsOk())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxLogInfo(</highlight><highlight class="stringliteral">&quot;Image<sp/>successfully<sp/>downloaded&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>do<sp/>something<sp/>with<sp/>it<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Request<sp/>failed</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9a7dc4489dd5f7a551a69c37b738f58157" kindref="member">wxWebRequest::State_Failed</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2log_8h_1a0dd3c633f990f794e76065c9a7af4c87" kindref="member">wxLogError</ref>(</highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>load<sp/>logo:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>evt.<ref refid="classwx_web_request_event_1a5e1ca859b12c825a9c61e0552f6ae920" kindref="member">GetErrorDescription</ref>());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Start<sp/>the<sp/>request</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">request.<ref refid="classwx_web_request_1a668b708f7f943ce16d768f73dcda4e68" kindref="member">Start</ref>();</highlight></codeline>
+</programlisting></para>
+<sect1 id="classwx_web_request_1apple_http">
+<title>macOS and iOS App Transport Security</title>
+<para>Starting with macOS 10.11 and iOS 9 an application cannot create unsecure connections (this includes HTTP and unverified HTTPS). You have to include additional fields in your Info.plist to enable such connections. For further details see the documentation on NSAppTransportSecurity <ulink url="https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity">here</ulink></para>
+</sect1>
+<sect1 id="classwx_web_view_1descriptions">
+<title>Implementation Descriptions</title>
+<para>The following APIs are used per platform, additional details about supported features may be found in their documentation.</para>
+<para>Available features by implementation and minimum version: <table rows="5" cols="4"><row>
+<entry thead="yes"><para>Operating System</para>
+</entry><entry thead="yes"><para>API</para>
+</entry><entry thead="yes"><para>HTTPS</para>
+</entry><entry thead="yes"><para>HTTP/2 </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Windows </para>
+</entry><entry thead="no"><para><ulink url="https://docs.microsoft.com/en-us/windows/desktop/WinHttp/about-winhttp">WinHTTP</ulink>  </para>
+</entry><entry thead="no"><para>Yes </para>
+</entry><entry thead="no"><para>Windows 10 1607  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>macOS </para>
+</entry><entry thead="no"><para><ulink url="https://developer.apple.com/documentation/foundation/urlsession">NSURLSession</ulink>  </para>
+</entry><entry thead="no"><para>macOS 10.9 </para>
+</entry><entry thead="no"><para>macOS 10.11  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>iOS </para>
+</entry><entry thead="no"><para><ulink url="https://developer.apple.com/documentation/foundation/urlsession">NSURLSession</ulink>  </para>
+</entry><entry thead="no"><para>iOS 7.0 </para>
+</entry><entry thead="no"><para>iOS 9.0  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Linux </para>
+</entry><entry thead="no"><para><ulink url="https://curl.haxx.se/libcurl/">libcurl</ulink>  </para>
+</entry><entry thead="no"><para>Yes </para>
+</entry><entry thead="no"><para>7.47.0  </para>
+</entry></row>
+</table>
+</para>
+<para><linebreak/>
+<heading level="2">Events emitted by this class</heading>
+</para>
+<para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_web_request_event" kindref="compound">wxWebRequestEvent</ref>&amp;<nonbreakablespace/>event)</para>
+<para>Event macros for events emitted by this class: <itemizedlist>
+<listitem><para>wxEVT_WEBREQUEST_STATE(id,  func): The request state changed. </para>
+</listitem>
+<listitem><para>wxEVT_WEBREQUEST_DATA(id,  func): A new block of data has been downloaded. <linebreak/>
+ <simplesect kind="since"><para>3.1.5</para>
+</simplesect>
+<heading level="2"></heading>
+</para>
+</listitem>
+</itemizedlist>
+Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxnet" kindref="member">wxNet</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para><simplesect kind="see"><para><ref refid="classwx_web_response" kindref="compound">wxWebResponse</ref>, <ref refid="classwx_web_session" kindref="compound">wxWebSession</ref> </para>
+</simplesect>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="interface/wx/webrequest.h" line="131" column="1" bodyfile="interface/wx/webrequest.h" bodystart="132" bodyend="464"/>
+    <listofallmembers>
+      <member refid="classwx_web_request_1a89ce076c6def7aa3e3141bb96044bef2" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>Cancel</name></member>
+      <member refid="classwx_web_request_1ae9c2783421145c77e5c48cda091b26e5" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>DisablePeerVerify</name></member>
+      <member refid="classwx_web_request_1a08c476fdf2641b980368978aeff04212" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>GetAuthChallenge</name></member>
+      <member refid="classwx_web_request_1ab99eaf7c50f9e16a75bdc1d2292a67c6" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>GetBytesExpectedToReceive</name></member>
+      <member refid="classwx_web_request_1a59a43178b1e68660a8202874a921e0b6" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>GetBytesExpectedToSend</name></member>
+      <member refid="classwx_web_request_1adeda05f8ad6deccbbb4fc6031ca24704" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>GetBytesReceived</name></member>
+      <member refid="classwx_web_request_1a3b908188afac2029f3bfdd549e4b32a7" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>GetBytesSent</name></member>
+      <member refid="classwx_web_request_1ad71f5f06006a4a7eace02a5b322ba89d" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>GetId</name></member>
+      <member refid="classwx_web_request_1af9e0ce16e8f3455c0ca3d28f21218a14" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>GetNativeHandle</name></member>
+      <member refid="classwx_web_request_1acfdc96581e6e0d3ad06bb8e28a5c538f" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>GetResponse</name></member>
+      <member refid="classwx_web_request_1a6aa586ad92d482da8a40b188e68e354a" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>GetState</name></member>
+      <member refid="classwx_web_request_1af478893bbafd6fb503138b496c6a5a91" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>IsOk</name></member>
+      <member refid="classwx_web_request_1a8f807ec5bd0c70d48b7e3966f64efe80" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>IsPeerVerifyDisabled</name></member>
+      <member refid="classwx_web_request_1aac9a109b07c5c979bab7f636ec0f3d34" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>SetData</name></member>
+      <member refid="classwx_web_request_1a30b4a9840a1da65df9fe27be33654eec" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>SetData</name></member>
+      <member refid="classwx_web_request_1a922f4fa22f9f336b6f916e114ca22350" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>SetHeader</name></member>
+      <member refid="classwx_web_request_1ae4cac9451b6e04014851a2ea1852f125" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>SetMethod</name></member>
+      <member refid="classwx_web_request_1a730a05fc31dff20e3f68e25dc6cec3c0" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>SetStorage</name></member>
+      <member refid="classwx_web_request_1a668b708f7f943ce16d768f73dcda4e68" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>Start</name></member>
+      <member refid="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>State</name></member>
+      <member refid="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9ad8c3ae3bf24c1480b2bacd3bcc8e8b4f" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>State_Active</name></member>
+      <member refid="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9a09af2b339223feb9bf378f747bffca1d" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>State_Cancelled</name></member>
+      <member refid="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9a2128a4ff9813b4b67ac1928bc388961d" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>State_Completed</name></member>
+      <member refid="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9a7dc4489dd5f7a551a69c37b738f58157" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>State_Failed</name></member>
+      <member refid="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9af16e9baacb6acaa32adea26960a37024" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>State_Idle</name></member>
+      <member refid="classwx_web_request_1a5966a37f02c98ca5477e79495c4b32d9abaa4dba7e456c6b2ea33ddc9a5664423" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>State_Unauthorized</name></member>
+      <member refid="classwx_web_request_1a4c83d7666f65c85e205b9b0f7b60e451" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>Storage</name></member>
+      <member refid="classwx_web_request_1a4c83d7666f65c85e205b9b0f7b60e451aa7e734f30eb05664e8eb351fa2ac46aa" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>Storage_File</name></member>
+      <member refid="classwx_web_request_1a4c83d7666f65c85e205b9b0f7b60e451aefb5ea9db09fb1a46397167b8286335a" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>Storage_Memory</name></member>
+      <member refid="classwx_web_request_1a4c83d7666f65c85e205b9b0f7b60e451a85a7cc26e95442e5e5fad3e8900a3140" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>Storage_None</name></member>
+      <member refid="classwx_web_request_1a75244f9064ce6f4cdc7db7dc0ed153d9" prot="public" virt="non-virtual"><scope>wxWebRequest</scope><name>wxWebRequest</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

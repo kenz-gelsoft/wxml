@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_web_session" kind="class" language="C++" prot="public">
+    <compoundname>wxWebSession</compoundname>
+    <includes local="no">wx/webrequest.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_web_session_1a4799995a9dadd69dc51e999116d7f45d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref></type>
+        <definition>wxWebRequest wxWebSession::CreateRequest</definition>
+        <argsstring>(wxEvtHandler *handler, const wxString &amp;url, int id=wxID_ANY)</argsstring>
+        <name>CreateRequest</name>
+        <param>
+          <type><ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref> *</type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+          <defval><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbba1f375b01ea03a713bbb7e32a36a2589c" kindref="member">wxID_ANY</ref></defval>
+        </param>
+        <briefdescription>
+<para>Create a new request for the specified URL. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The specified objects will be notified via <ref refid="classwx_web_request_event" kindref="compound">wxWebRequestEvent</ref> objects when the request state changes, e.g. when it is completed. It must be specified and its lifetime must be long enough to last until the request is completed. In particular, if the handler is a top-level window, the request must be cancelled before the window can be closed and destroyed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The handler object to notify, must be non-NULL. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The URL of the HTTP resource for this request </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional id sent with events </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new request object, use <ref refid="classwx_web_request_1af478893bbafd6fb503138b496c6a5a91" kindref="member">wxWebRequest::IsOk()</ref> to check if its creation has succeeded. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="679" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_session_1a7e5b904ea1d7244d5122af822d32976b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classwx_version_info" kindref="compound">wxVersionInfo</ref></type>
+        <definition>virtual wxVersionInfo wxWebSession::GetLibraryVersionInfo</definition>
+        <argsstring>()</argsstring>
+        <name>GetLibraryVersionInfo</name>
+        <briefdescription>
+<para>Retrieve the version information about the implementation library used by this session. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="685" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_session_1a8f036b6d9259c6843e91e5bf385f4b89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxWebSession::AddCommonHeader</definition>
+        <argsstring>(const wxString &amp;name, const wxString &amp;value)</argsstring>
+        <name>AddCommonHeader</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets a request header in every <ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref> created from this session after is has been set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A good example for a session-wide request header is the <computeroutput>User-Agent</computeroutput> header.</para>
+<para>Calling this function with the same header name again replaces the previously used value.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the header </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String value of the header </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="700" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_session_1ad6352ab0944576d66eb25777ceda565d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxWebSession::SetTempDir</definition>
+        <argsstring>(const wxString &amp;dir)</argsstring>
+        <name>SetTempDir</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Override the default temporary directory that may be used by the session implementation, when required. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="706" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_session_1ae5795c929e7e9d66a5caf9950d248cb7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>wxString wxWebSession::GetTempDir</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTempDir</name>
+        <briefdescription>
+<para>Returns the current temporary directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classwx_web_session_1ad6352ab0944576d66eb25777ceda565d" kindref="member">SetTempDir()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="713" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_session_1ad4f8568100cf380a70c73d65c550051d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>wxWebSessionHandle</type>
+        <definition>wxWebSessionHandle wxWebSession::GetNativeHandle</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNativeHandle</name>
+        <briefdescription>
+<para>Return the native handle corresponding to this session object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>wxWebSessionHandle</computeroutput> is an opaque type containing a value of the following type according to the backend being used:</para>
+<para><itemizedlist>
+<listitem><para>For WinHTTP backend, this is <computeroutput>HINTERNET</computeroutput> session handle.</para>
+</listitem><listitem><para>For CURL backend, this is a <computeroutput>CURLM</computeroutput> struct pointer.</para>
+</listitem><listitem><para>For macOS backend, this is <computeroutput>NSURLSession</computeroutput> object pointer.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="see"><para><ref refid="classwx_web_request_1af9e0ce16e8f3455c0ca3d28f21218a14" kindref="member">wxWebRequest::GetNativeHandle()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="766" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_session_1a6172aba7ae955a015f944399c728d4df" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxWebSession::IsOpened</definition>
+        <argsstring>() const</argsstring>
+        <name>IsOpened</name>
+        <briefdescription>
+<para>Return true if the session was successfully opened and can be used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="771" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_session_1a5e26ec47283fac0a07b7b3faf64b320a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxWebSession::Close</definition>
+        <argsstring>()</argsstring>
+        <name>Close</name>
+        <briefdescription>
+<para>Close the session. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This frees any resources associated with the session and puts it in an invalid state. Another session object can be assigned to it later to allow using this object again. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="780" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classwx_web_session_1a958c319ae8b98773d54e6909646436bd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_web_session" kindref="compound">wxWebSession</ref> &amp;</type>
+        <definition>static wxWebSession &amp; wxWebSession::GetDefault</definition>
+        <argsstring>()</argsstring>
+        <name>GetDefault</name>
+        <briefdescription>
+<para>Returns the default session. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="718" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_session_1aff8b2fcc0382122703b67bd4b106c417" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_web_session" kindref="compound">wxWebSession</ref></type>
+        <definition>static wxWebSession wxWebSession::New</definition>
+        <argsstring>(const wxString &amp;backend=wxString())</argsstring>
+        <name>New</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>backend</declname>
+          <defval><ref refid="classwx_string" kindref="compound">wxString</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Creates a new <ref refid="classwx_web_session" kindref="compound">wxWebSession</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><emphasis>backend</emphasis> may be specified explicitly by using of the predefined <computeroutput>wxWebSessionBackendWinHTTP</computeroutput>, <computeroutput>wxWebSessionBackendURLSession</computeroutput> or <computeroutput>wxWebSessionBackendCURL</computeroutput> constants to select the corresponding backend or left empty to select the default backend. The default depends on the current platform: WinHTTP-based implementation is used under MSW, NSURLSession-based one under macOS and libcurl-based otherwise.</para>
+<para>Further, if <computeroutput>WXWEBREQUEST_BACKEND</computeroutput> environment variable is defined, it overrides the default backend selection, allowing to force the use of libcurl-based implementation by default under MSW or macOS platforms, for example.</para>
+<para>Use <ref refid="classwx_web_session_1a6172aba7ae955a015f944399c728d4df" kindref="member">IsOpened()</ref> to check if the session creation succeeded.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>backend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The backend web session implementation to use or empty to use the default implementation as described above.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The created <ref refid="classwx_web_session" kindref="compound">wxWebSession</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="744" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_session_1a62347f0327ea9df6d5b6854fc6c81956" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool wxWebSession::IsBackendAvailable</definition>
+        <argsstring>(const wxString &amp;backend)</argsstring>
+        <name>IsBackendAvailable</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>backend</declname>
+        </param>
+        <briefdescription>
+<para>Allows to check if the specified backend is available at runtime. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Usually the default backend should always be available, but e.g. macOS before 10.9 does not have the <computeroutput>NSURLSession</computeroutput> implementation available. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="752" column="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Session allows creating <ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref> objects used for the actual HTTP requests. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>It also handles session-wide parameters and data used by <ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref> instances.</para>
+<para>Usually the default session available via <ref refid="classwx_web_session_1a958c319ae8b98773d54e6909646436bd" kindref="member">wxWebSession::GetDefault()</ref> should be used. Additional instances might be useful if session separation is required. Instances <bold>must not</bold> be deleted before every active web request has finished.</para>
+<para>Every <ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref> sharing the same session object will use the same cookies. Additionally, an underlying network connection might be kept alive to achieve faster additional responses.</para>
+<para><simplesect kind="since"><para>3.1.5</para>
+</simplesect>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxnet" kindref="member">wxNet</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para><simplesect kind="see"><para><ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/webrequest.h" line="655" column="1" bodyfile="interface/wx/webrequest.h" bodystart="656" bodyend="781"/>
+    <listofallmembers>
+      <member refid="classwx_web_session_1a8f036b6d9259c6843e91e5bf385f4b89" prot="public" virt="non-virtual"><scope>wxWebSession</scope><name>AddCommonHeader</name></member>
+      <member refid="classwx_web_session_1a5e26ec47283fac0a07b7b3faf64b320a" prot="public" virt="non-virtual"><scope>wxWebSession</scope><name>Close</name></member>
+      <member refid="classwx_web_session_1a4799995a9dadd69dc51e999116d7f45d" prot="public" virt="non-virtual"><scope>wxWebSession</scope><name>CreateRequest</name></member>
+      <member refid="classwx_web_session_1a958c319ae8b98773d54e6909646436bd" prot="public" virt="non-virtual"><scope>wxWebSession</scope><name>GetDefault</name></member>
+      <member refid="classwx_web_session_1a7e5b904ea1d7244d5122af822d32976b" prot="public" virt="virtual"><scope>wxWebSession</scope><name>GetLibraryVersionInfo</name></member>
+      <member refid="classwx_web_session_1ad4f8568100cf380a70c73d65c550051d" prot="public" virt="non-virtual"><scope>wxWebSession</scope><name>GetNativeHandle</name></member>
+      <member refid="classwx_web_session_1ae5795c929e7e9d66a5caf9950d248cb7" prot="public" virt="non-virtual"><scope>wxWebSession</scope><name>GetTempDir</name></member>
+      <member refid="classwx_web_session_1a62347f0327ea9df6d5b6854fc6c81956" prot="public" virt="non-virtual"><scope>wxWebSession</scope><name>IsBackendAvailable</name></member>
+      <member refid="classwx_web_session_1a6172aba7ae955a015f944399c728d4df" prot="public" virt="non-virtual"><scope>wxWebSession</scope><name>IsOpened</name></member>
+      <member refid="classwx_web_session_1aff8b2fcc0382122703b67bd4b106c417" prot="public" virt="non-virtual"><scope>wxWebSession</scope><name>New</name></member>
+      <member refid="classwx_web_session_1ad6352ab0944576d66eb25777ceda565d" prot="public" virt="non-virtual"><scope>wxWebSession</scope><name>SetTempDir</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

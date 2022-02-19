@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_d_c_bg_mode_changer" kind="class" language="C++" prot="public">
+    <compoundname>wxDCBgModeChanger</compoundname>
+    <includes local="no">wx/dc.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_d_c_bg_mode_changer_1aaf4f613ca8e2f4fa843fd200b83e9726" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxDCBgModeChanger::wxDCBgModeChanger</definition>
+        <argsstring>(wxDC &amp;dc)</argsstring>
+        <name>wxDCBgModeChanger</name>
+        <param>
+          <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> &amp;</type>
+          <declname>dc</declname>
+        </param>
+        <briefdescription>
+<para>Trivial constructor not changing anything. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor is useful if you don&apos;t know beforehand if the background mode needs to be changed or not. It simply creates the object which won&apos;t do anything in its destructor unless <ref refid="classwx_d_c_bg_mode_changer_1acfd8767add6056044cea6311084e2e6e" kindref="member">Set()</ref> is called <ndash/> in which case it would reset the previous mode. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/dc.h" line="2076" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_d_c_bg_mode_changer_1a5f7177e72dacb75a2cb0d9bf9fbf3832" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxDCBgModeChanger::wxDCBgModeChanger</definition>
+        <argsstring>(wxDC &amp;dc, int mode)</argsstring>
+        <name>wxDCBgModeChanger</name>
+        <param>
+          <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> &amp;</type>
+          <declname>dc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Sets <emphasis>mode</emphasis> on the given <emphasis>dc</emphasis>, storing the old one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DC where the mode must be temporary set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The background mode to set, one of <computeroutput>wxBRUSHSTYLE_SOLID</computeroutput> or <computeroutput>wxBRUSHSTYLE_TRANSPARENT</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/dc.h" line="2087" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_d_c_bg_mode_changer_1acfd8767add6056044cea6311084e2e6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxDCBgModeChanger::Set</definition>
+        <argsstring>(int mode)</argsstring>
+        <name>Set</name>
+        <param>
+          <type>int</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Set the text background mode to use. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is meant to be called once only and only on the objects created with the constructor overload not taking mode argument and has the same effect as the other constructor, i.e. sets the background mode to the given <emphasis>one</emphasis>, and ensures that the old value is restored when this object is destroyed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/dc.h" line="2098" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_d_c_bg_mode_changer_1af972123c283e3b033b7f93c976f52a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxDCBgModeChanger::~wxDCBgModeChanger</definition>
+        <argsstring>()</argsstring>
+        <name>~wxDCBgModeChanger</name>
+        <briefdescription>
+<para>Restores the text background mode originally selected in the DC passed to the ctor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/dc.h" line="2103" column="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="interface/wx/dc.h" line="2065" column="1" bodyfile="interface/wx/dc.h" bodystart="2066" bodyend="2104"/>
+    <listofallmembers>
+      <member refid="classwx_d_c_bg_mode_changer_1acfd8767add6056044cea6311084e2e6e" prot="public" virt="non-virtual"><scope>wxDCBgModeChanger</scope><name>Set</name></member>
+      <member refid="classwx_d_c_bg_mode_changer_1aaf4f613ca8e2f4fa843fd200b83e9726" prot="public" virt="non-virtual"><scope>wxDCBgModeChanger</scope><name>wxDCBgModeChanger</name></member>
+      <member refid="classwx_d_c_bg_mode_changer_1a5f7177e72dacb75a2cb0d9bf9fbf3832" prot="public" virt="non-virtual"><scope>wxDCBgModeChanger</scope><name>wxDCBgModeChanger</name></member>
+      <member refid="classwx_d_c_bg_mode_changer_1af972123c283e3b033b7f93c976f52a98" prot="public" virt="non-virtual"><scope>wxDCBgModeChanger</scope><name>~wxDCBgModeChanger</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

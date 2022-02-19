@@ -1,0 +1,1540 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_styled_text_event" kind="class" language="C++" prot="public">
+    <compoundname>wxStyledTextEvent</compoundname>
+    <basecompoundref refid="classwx_command_event" prot="public" virt="non-virtual">wxCommandEvent</basecompoundref>
+    <includes local="no">wx/stc/stc.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_styled_text_event_1a28d0d22f9a9bec05e8c8b7c83b1eea3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxStyledTextEvent::wxStyledTextEvent</definition>
+        <argsstring>(wxEventType commandType=0, int id=0)</argsstring>
+        <name>wxStyledTextEvent</name>
+        <param>
+          <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
+          <declname>commandType</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8311" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a8279354e8ff8c26b6a6edf43e920ffb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxStyledTextEvent::wxStyledTextEvent</definition>
+        <argsstring>(const wxStyledTextEvent &amp;event)</argsstring>
+        <name>wxStyledTextEvent</name>
+        <param>
+          <type>const <ref refid="classwx_styled_text_event" kindref="compound">wxStyledTextEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8316" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1ad06a45394cc8bf755c68ec2b20e2ac7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxStyledTextEvent::~wxStyledTextEvent</definition>
+        <argsstring>()</argsstring>
+        <name>~wxStyledTextEvent</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8321" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a89e96846c7be8f6091a8111c1df8be71" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxStyledTextEvent::GetAlt</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAlt</name>
+        <briefdescription>
+<para>Returns true if the Alt key is pressed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for the following event types:<itemizedlist>
+<listitem><para><computeroutput>wxEVT_STC_DOUBLECLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_MARGINCLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_DCLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_RELEASE_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_INDICATOR_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_INDICATOR_RELEASE</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_MARGIN_RIGHT_CLICK</computeroutput> </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8336" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1ad9ee473d288212689a7d273c520ee6c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetAnnotationsLinesAdded</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAnnotationsLinesAdded</name>
+        <briefdescription>
+<para>Returns the number of lines that have been added to or removed from an annotation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for <computeroutput>wxEVT_STC_MODIFIED</computeroutput> events when the result of <ref refid="classwx_styled_text_event_1ada5e3205841ac3888d8d8e3790f065f2" kindref="member">GetModificationType()</ref> includes <ref refid="stc_8h_1a398b0f66d772d375c559036a71bd9fd5" kindref="member">wxSTC_MOD_CHANGEANNOTATION</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8347" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a84a9622e7dced2ce64427d2aa00566ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxStyledTextEvent::GetControl</definition>
+        <argsstring>() const</argsstring>
+        <name>GetControl</name>
+        <briefdescription>
+<para>Returns true if the Control key is pressed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for the following event types:<itemizedlist>
+<listitem><para><computeroutput>wxEVT_STC_DOUBLECLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_MARGINCLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_DCLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_RELEASE_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_INDICATOR_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_INDICATOR_RELEASE</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_MARGIN_RIGHT_CLICK</computeroutput> </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8362" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1ad58815f837ea525cb02a374e13b5f36e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetDragFlags</definition>
+        <argsstring>()</argsstring>
+        <name>GetDragFlags</name>
+        <briefdescription>
+<para>Returns flags for the drag operation associated with this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for <computeroutput>wxEVT_STC_START_DRAG</computeroutput> events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8369" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1aad6985b4c7452986177b361aa1fe0ebb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="interface_2wx_2dnd_8h_1adbd4b292582eebbc9a6ce3dee31c2afb" kindref="member">wxDragResult</ref></type>
+        <definition>wxDragResult wxStyledTextEvent::GetDragResult</definition>
+        <argsstring>()</argsstring>
+        <name>GetDragResult</name>
+        <briefdescription>
+<para>Returns drag result for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for <computeroutput>wxEVT_STC_DRAG_OVER</computeroutput> and <computeroutput>wxEVT_STC_DO_DROP</computeroutput> events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8377" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a8fcde815326750cc413db29532386c92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>wxString wxStyledTextEvent::GetDragText</definition>
+        <argsstring>()</argsstring>
+        <name>GetDragText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000074"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString()</ref> instead. </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8382" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a3c7c07ff2fcafef2c0086adad31e453e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetFoldLevelNow</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFoldLevelNow</name>
+        <briefdescription>
+<para>Returns the current fold level for the line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for <computeroutput>wxEVT_STC_MODIFIED</computeroutput> events when the result of <ref refid="classwx_styled_text_event_1ada5e3205841ac3888d8d8e3790f065f2" kindref="member">GetModificationType()</ref> includes <ref refid="stc_8h_1a581a034c68538dc0075872ca66b66b10" kindref="member">wxSTC_MOD_CHANGEFOLD</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8391" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a1c6b3e7473de75e4901cdf329468cb2a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetFoldLevelPrev</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFoldLevelPrev</name>
+        <briefdescription>
+<para>Returns previous fold level for the line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for <computeroutput>wxEVT_STC_MODIFIED</computeroutput> events when the result of <ref refid="classwx_styled_text_event_1ada5e3205841ac3888d8d8e3790f065f2" kindref="member">GetModificationType()</ref> includes <ref refid="stc_8h_1a581a034c68538dc0075872ca66b66b10" kindref="member">wxSTC_MOD_CHANGEFOLD</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8400" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1ac47f4baf2ef03254b3f8f3d0313e9a37" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetKey</definition>
+        <argsstring>() const</argsstring>
+        <name>GetKey</name>
+        <briefdescription>
+<para>Returns the key code of the key that generated this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for the following event types:<itemizedlist>
+<listitem><para><computeroutput>wxEVT_STC_CHARADDED</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_USERLISTSELECTION</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_AUTOCOMP_SELECTION</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_AUTOCOMP_COMPLETED</computeroutput> </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8411" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1adc5c3ad1d8493c5448c6951e019533ab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetLength</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLength</name>
+        <briefdescription>
+<para>Returns the length (number of characters) of this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for <computeroutput>wxEVT_STC_MODIFIED</computeroutput> and <computeroutput>wxEVT_STC_NEEDSHOWN</computeroutput> events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8419" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a6243e8ef95c9a6ec57f9e9db15eac650" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetLine</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLine</name>
+        <briefdescription>
+<para>Returns zero-based line number for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for <computeroutput>wxEVT_STC_DOUBLECLICK</computeroutput> and <computeroutput>wxEVT_STC_MODIFIED</computeroutput> events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8427" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a177237b0a55f3b63d1c2d49919b304be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetLinesAdded</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLinesAdded</name>
+        <briefdescription>
+<para>Returns the number of lines added or deleted with this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for <computeroutput>wxEVT_STC_MODIFIED</computeroutput> events when the result of <ref refid="classwx_styled_text_event_1ada5e3205841ac3888d8d8e3790f065f2" kindref="member">GetModificationType()</ref> includes <ref refid="stc_8h_1a4a559742eca2e154bbafce4e406c8ba3" kindref="member">wxSTC_MOD_INSERTTEXT </ref> or <ref refid="stc_8h_1aa4666609b7bfd957901c44b54f4c2d51" kindref="member">wxSTC_MOD_DELETETEXT</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8438" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a252463b91de0446fb62e5961381d7ccc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetListCompletionMethod</definition>
+        <argsstring>() const</argsstring>
+        <name>GetListCompletionMethod</name>
+        <briefdescription>
+<para>Returns a value describing the action that closed the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned value will be one of the following constants:</para>
+<para><table rows="5" cols="2"><row>
+<entry thead="no"><para><ref refid="stc_8h_1a7186c50bbb7ea7fa50da6afb1c4dea6d" kindref="member">wxSTC_AC_FILLUP</ref> </para>
+</entry><entry thead="no"><para>A fillup character caused the completion.  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="stc_8h_1abdaabb866a6e3c8b215fcf6965aee38b" kindref="member">wxSTC_AC_DOUBLECLICK</ref> </para>
+</entry><entry thead="no"><para>A double-click caused the completion.  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="stc_8h_1a08d53060457c6c35780046986ee65e62" kindref="member">wxSTC_AC_TAB</ref> </para>
+</entry><entry thead="no"><para>The tab key caused the completion.  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="stc_8h_1a9557c33ee8f3e3d761228e196a432819" kindref="member">wxSTC_AC_NEWLINE</ref> </para>
+</entry><entry thead="no"><para>The enter key caused the completion.  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="stc_8h_1a30ef81f086768547b7ab3ab91637dbe7" kindref="member">wxSTC_AC_COMMAND</ref> </para>
+</entry><entry thead="no"><para>The <ref refid="classwx_styled_text_ctrl_1ae73acee3f1f2e5009574a4d58dc30899" kindref="member">wxStyledTextCtrl::AutoCompComplete</ref> method was called.  </para>
+</entry></row>
+</table>
+</para>
+<para>This method is valid for <computeroutput>wxEVT_STC_USERLISTSELECTION</computeroutput>, <computeroutput>wxEVT_STC_AUTOCOMP_SELECTION</computeroutput>, and <computeroutput>wxEVT_STC_AUTOCOMP_COMPLETED</computeroutput> events.</para>
+<para><simplesect kind="since"><para>3.1.1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8475" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a8a330c5ce1d9e424c185562a4b5b6267" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetListType</definition>
+        <argsstring>() const</argsstring>
+        <name>GetListType</name>
+        <briefdescription>
+<para>Returns the list type for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The list type is an integer passed to a list when it is created with the <ref refid="classwx_styled_text_ctrl_1aca26323e7a482fb4fe2651ef2158f2c1" kindref="member">wxStyledTextCtrl::UserListShow </ref> method and can be used to distinguish lists if more than one is used.</para>
+<para>This method is valid for <computeroutput>wxEVT_STC_AUTOCOMP_SELECTION_CHANGE</computeroutput> and <computeroutput>wxEVT_STC_USERLISTSELECTION</computeroutput> events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8488" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a721338aabc99de61d8fc6eb31f88fe08" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetLParam</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLParam</name>
+        <briefdescription>
+<para>Returns the value of the LParam field for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for <computeroutput>wxEVT_STC_MACRORECORD</computeroutput> events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8495" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a561b5b495952215e134d8f1022059ae9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetMargin</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMargin</name>
+        <briefdescription>
+<para>Returns the zero-based index of the margin that generated this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for <computeroutput>wxEVT_STC_MARGINCLICK</computeroutput> and <computeroutput>wxEVT_STC_MARGIN_RIGHT_CLICK</computeroutput> events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8503" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1aa4a8c2913ec2635ef3affa57a32f590a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetMessage</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMessage</name>
+        <briefdescription>
+<para>Returns a message number while a macro is being recorded. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Many of the <ref refid="classwx_styled_text_ctrl" kindref="compound">wxStyledTextCtrl</ref> methods such as <ref refid="classwx_styled_text_ctrl_1a2fd8afea2355396a93b2b8ba99f1a559" kindref="member">InsertText</ref> and <ref refid="classwx_styled_text_ctrl_1ad6e87818b17d8977c31037376a079285" kindref="member">Paste</ref> have an event number associated with them. This method returns that number while a macro is being recorded so that the macro can be played back later.</para>
+<para>This method is valid for <computeroutput>wxEVT_STC_MACRORECORD</computeroutput> events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8516" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1ada5e3205841ac3888d8d8e3790f065f2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetModificationType</definition>
+        <argsstring>() const</argsstring>
+        <name>GetModificationType</name>
+        <briefdescription>
+<para>Returns the modification type for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The modification type is a bit list that describes the change that generated this event. It may contain one or more of the following values:</para>
+<para><itemizedlist>
+<listitem><para><ref refid="stc_8h_1a4a559742eca2e154bbafce4e406c8ba3" kindref="member">wxSTC_MOD_INSERTTEXT </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1aa4666609b7bfd957901c44b54f4c2d51" kindref="member">wxSTC_MOD_DELETETEXT </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1abc087abd7089d20dedef343a44f70b01" kindref="member">wxSTC_MOD_CHANGESTYLE </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a581a034c68538dc0075872ca66b66b10" kindref="member">wxSTC_MOD_CHANGEFOLD </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a39840bb6a3b6fd61f27ee730e96ca6ef" kindref="member">wxSTC_PERFORMED_USER </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a9379e6f84f04aa1de9d0c62e2c923842" kindref="member">wxSTC_PERFORMED_UNDO </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a27464beda1d135e680ebfa10a9df34f2" kindref="member">wxSTC_PERFORMED_REDO </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1aa2f9c9e8f3f9cb7dd8927ffb93713917" kindref="member">wxSTC_MULTISTEPUNDOREDO </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a801f01813452904bb637ddbd80414787" kindref="member">wxSTC_LASTSTEPINUNDOREDO </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a2a9573535e788da65fca5ef52ec37d87" kindref="member">wxSTC_MOD_CHANGEMARKER </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a941ce4a267be825c6ab29ccd89015734" kindref="member">wxSTC_MOD_BEFOREINSERT </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a6eb28b1c2d9c35794afde95b62638820" kindref="member">wxSTC_MOD_BEFOREDELETE </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a761cf53f89af7511f037d863e0d4aeab" kindref="member">wxSTC_MULTILINEUNDOREDO </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a688b7ef068e617d8dd644c546c03e915" kindref="member">wxSTC_STARTACTION </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1ad923f7964a19f0d590f341fa54058352" kindref="member">wxSTC_MOD_CHANGEINDICATOR </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1aa16c786472aff86c47643b7233578a7b" kindref="member">wxSTC_MOD_CHANGELINESTATE </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a03371a39e58b94b242bb5ff9bac552ef" kindref="member">wxSTC_MOD_CHANGEMARGIN </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a398b0f66d772d375c559036a71bd9fd5" kindref="member">wxSTC_MOD_CHANGEANNOTATION </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1ad5f582857eb110ba3411d0beebd1c324" kindref="member">wxSTC_MOD_CONTAINER </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a9a4fe698f426c11c4513bcf0ab90d840" kindref="member">wxSTC_MOD_LEXERSTATE </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a248cb1d8dd1695c5a7d1acc68f9755a5" kindref="member">wxSTC_MOD_INSERTCHECK </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a751837ff1916a59b32bfb0330536ad20" kindref="member">wxSTC_MOD_CHANGETABSTOPS </ref></para>
+</listitem></itemizedlist>
+</para>
+<para>This method is valid for <computeroutput>wxEVT_STC_MODIFIED</computeroutput> events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8585" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a6fbd6f0adc5ff6924d9f3b18d9c74c57" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetModifiers</definition>
+        <argsstring>() const</argsstring>
+        <name>GetModifiers</name>
+        <briefdescription>
+<para>Returns the modifiers of the key press or mouse click for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned value is a bit list that may contain one or more of the following values:</para>
+<para><itemizedlist>
+<listitem><para><ref refid="stc_8h_1a96e91fb692f7a8fef8931c70969edfd8" kindref="member">wxSTC_KEYMOD_SHIFT </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1af3b003183859f51d199e297401a07833" kindref="member">wxSTC_KEYMOD_CTRL </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a52236ce7a2aa6723226cf9c2296d58e9" kindref="member">wxSTC_KEYMOD_ALT </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1abb8226d4ba81c0d58c8ebc143627aba8" kindref="member">wxSTC_KEYMOD_SUPER </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a247cb114cb9637c2760b7d194f7f5df5" kindref="member">wxSTC_KEYMOD_META </ref></para>
+</listitem></itemizedlist>
+</para>
+<para>In addition, the value can be checked for equality with <ref refid="stc_8h_1a66ddc49fa3c0e526fad53f627ee96bb2" kindref="member">wxSTC_KEYMOD_NORM </ref> to test if no modifiers are present.</para>
+<para>This method is valid for the following event types:<itemizedlist>
+<listitem><para><computeroutput>wxEVT_STC_DOUBLECLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_MARGINCLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_DCLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_RELEASE_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_INDICATOR_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_INDICATOR_RELEASE</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_MARGIN_RIGHT_CLICK</computeroutput> </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8613" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPosition</name>
+        <briefdescription>
+<para>Returns the zero-based text position associated this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for the following event types:<itemizedlist>
+<listitem><para><computeroutput>wxEVT_STC_STYLENEEDED</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_DOUBLECLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_MODIFIED</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_MARGINCLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_NEEDSHOWN</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_USERLISTSELECTION</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_DWELLSTART</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_DWELLEND</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_DCLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_RELEASE_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_INDICATOR_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_INDICATOR_RELEASE</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_CALLTIP_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_AUTOCOMP_SELECTION</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_AUTOCOMP_SELECTION_CHANGE</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_AUTOCOMP_COMPLETED</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_MARGIN_RIGHT_CLICK</computeroutput> </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8638" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1aea29eed3d5a551a497c06a0bce09ddfc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxStyledTextEvent::GetShift</definition>
+        <argsstring>() const</argsstring>
+        <name>GetShift</name>
+        <briefdescription>
+<para>Returns true if the Shift key is pressed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for the following event types:<itemizedlist>
+<listitem><para><computeroutput>wxEVT_STC_DOUBLECLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_MARGINCLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_DCLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_HOTSPOT_RELEASE_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_INDICATOR_CLICK</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_INDICATOR_RELEASE</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_MARGIN_RIGHT_CLICK</computeroutput> </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8653" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a1ab0fe80affb57ba977a0dea21e0a615" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>wxString wxStyledTextEvent::GetText</definition>
+        <argsstring>() const</argsstring>
+        <name>GetText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000075"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString()</ref> instead. </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8658" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1ac07d0dc230ea07b4a37a10b30847eee7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetToken</definition>
+        <argsstring>() const</argsstring>
+        <name>GetToken</name>
+        <briefdescription>
+<para>Returns the token value for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The token is an integer value that can be set with a call to the <ref refid="classwx_styled_text_ctrl_1a14353874dba30d73b1cde1f245e09c10" kindref="member">wxStyledTextCtrl::AddUndoAction</ref> method.</para>
+<para>This method is valid for <computeroutput>wxEVT_STC_MODIFIED</computeroutput> events when the result of <ref refid="classwx_styled_text_event_1ada5e3205841ac3888d8d8e3790f065f2" kindref="member">GetModificationType()</ref> includes <ref refid="stc_8h_1ad5f582857eb110ba3411d0beebd1c324" kindref="member">wxSTC_MOD_CONTAINER</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8671" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1abc71e8e9565a24c82de11c6008f48073" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetUpdated</definition>
+        <argsstring>() const</argsstring>
+        <name>GetUpdated</name>
+        <briefdescription>
+<para>Returns the value of the updated field for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The value of this field is a bit list that describes the change that generated this event. It may contain one or more of the following values:</para>
+<para><itemizedlist>
+<listitem><para><ref refid="stc_8h_1a704364befd181aedc7972a4f3f0cc0cc" kindref="member">wxSTC_UPDATE_CONTENT </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a792392e7e20ba78a906812e64244d0b8" kindref="member">wxSTC_UPDATE_SELECTION </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1a6958bfe9c4b67445acf93a04d2a319f2" kindref="member">wxSTC_UPDATE_V_SCROLL </ref></para>
+</listitem><listitem><para><ref refid="stc_8h_1acfb89ad52afa9432a041222bf8b5ed7b" kindref="member">wxSTC_UPDATE_H_SCROLL </ref></para>
+</listitem></itemizedlist>
+</para>
+<para>This method is valid for <computeroutput>wxEVT_STC_UPDATEUI</computeroutput> events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8691" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a215d825b7df04e5eb6a9c5d33938e6b5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetWParam</definition>
+        <argsstring>() const</argsstring>
+        <name>GetWParam</name>
+        <briefdescription>
+<para>Returns value of the WParam field for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for <computeroutput>wxEVT_STC_MACRORECORD</computeroutput> events. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8698" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a588a59a7d32d981a3b10c0a2484cf7d6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetX</definition>
+        <argsstring>() const</argsstring>
+        <name>GetX</name>
+        <briefdescription>
+<para>Returns the X coordinate of the mouse for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for the following event types:<itemizedlist>
+<listitem><para><computeroutput>wxEVT_STC_DWELLSTART</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_DWELLEND</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_START_DRAG</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_DRAG_OVER</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_DO_DROP</computeroutput> </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8710" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a9d1660f2218e6ece8b185465a2d9dcc9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxStyledTextEvent::GetY</definition>
+        <argsstring>() const</argsstring>
+        <name>GetY</name>
+        <briefdescription>
+<para>Returns the Y coordinate of the mouse for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is valid for the following event types:<itemizedlist>
+<listitem><para><computeroutput>wxEVT_STC_DWELLSTART</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_DWELLEND</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_START_DRAG</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_DRAG_OVER</computeroutput> </para>
+</listitem><listitem><para><computeroutput>wxEVT_STC_DO_DROP</computeroutput> </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8722" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a5b94c84c49fc59413657f6d0bc5fbd60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetAnnotationLinesAdded</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetAnnotationLinesAdded</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the annotation lines added value for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8727" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1ab84f35fc651bfd3f46fe3e717043f7cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetDragFlags</definition>
+        <argsstring>(int flags)</argsstring>
+        <name>SetDragFlags</name>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+<para>Sets the drag flags for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8732" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a5247d9338bbae9d2f1d178eb7b923ebd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetDragResult</definition>
+        <argsstring>(wxDragResult val)</argsstring>
+        <name>SetDragResult</name>
+        <param>
+          <type><ref refid="interface_2wx_2dnd_8h_1adbd4b292582eebbc9a6ce3dee31c2afb" kindref="member">wxDragResult</ref></type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the drag result for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8737" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1ad0a642b038ae175f2bdc96e0e182d3dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetDragText</definition>
+        <argsstring>(const wxString &amp;val)</argsstring>
+        <name>SetDragText</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the drag text for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000076"><xreftitle>Deprecated</xreftitle><xrefdescription></xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8744" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a65bb4d25fe464ae215db46657fa43e48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetFoldLevelNow</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetFoldLevelNow</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the current fold level for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8749" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a26cdb60a8f6118d83116345dce7aba4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetFoldLevelPrev</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetFoldLevelPrev</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the previous fold level for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8754" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1ab5a70c91ee066c33901220597faf801e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetKey</definition>
+        <argsstring>(int k)</argsstring>
+        <name>SetKey</name>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+<para>Sets the key code for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8759" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1acfd2ec4af69b166e9a1f3b2b6cd748a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetLength</definition>
+        <argsstring>(int len)</argsstring>
+        <name>SetLength</name>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>Sets the length value for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8764" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a5a5ded1d5f4b3264d102d17126dad124" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetLine</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetLine</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets line number for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8769" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a91377ba6defe2bf60e44ab179e0d3c21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetLinesAdded</definition>
+        <argsstring>(int num)</argsstring>
+        <name>SetLinesAdded</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+<para>Sets the number of lines added for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8774" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1aff6d7048b0696557ef6a05a56b80bafc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetListCompletionMethod</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetListCompletionMethod</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the list completion method for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>3.1.1 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8781" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1acebc4a692d3aa51235c5d230341a6220" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetListType</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetListType</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the list type for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8786" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a52a41758786d8439874b5c4a463ff8a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetLParam</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetLParam</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets value of the LParam field for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8791" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1aa9563e793e631551603e6c1acd963efa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetMargin</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetMargin</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets margin number for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8796" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1aa5d7012504e37f0a2127a2d1dec016ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetMessage</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetMessage</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets message number for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8801" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a39c5b50beac9216280cd9b86c4791704" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetModificationType</definition>
+        <argsstring>(int t)</argsstring>
+        <name>SetModificationType</name>
+        <param>
+          <type>int</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Sets the modification type for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8806" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1abc5abc6f44b266b8e930616dbe17f7b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetModifiers</definition>
+        <argsstring>(int m)</argsstring>
+        <name>SetModifiers</name>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+<para>Sets the value of the modifiers field for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8811" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1af261b54ce46dde38624c8856eef14f33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetPosition</definition>
+        <argsstring>(int pos)</argsstring>
+        <name>SetPosition</name>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Sets file position for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8816" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a0e2f8c57dde6dafbb54bb5bf067b373d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetText</definition>
+        <argsstring>(const wxString &amp;t)</argsstring>
+        <name>SetText</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Sets the text for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000077"><xreftitle>Deprecated</xreftitle><xrefdescription></xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8823" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a462860a837e186afa7eefa8c95a3e04e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetToken</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetToken</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the token for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8828" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a219469d972652c9c33b969e604949d13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetUpdated</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetUpdated</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the value of the updated field for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8833" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a741d3ce054a1489f2e9509a6a11c5645" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetWParam</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetWParam</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the value of the WParam field for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8838" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a802dc603e8ab1ff7f82d57d393558836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetX</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetX</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the X value for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8843" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_styled_text_event_1a66bd9e86614d08a09681407f55592055" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxStyledTextEvent::SetY</definition>
+        <argsstring>(int val)</argsstring>
+        <name>SetY</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the Y value for this event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/stc/stc.h" line="8848" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The type of events sent from <ref refid="classwx_styled_text_ctrl" kindref="compound">wxStyledTextCtrl</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><linebreak/>
+<heading level="2">Events using this class</heading>
+</para>
+<para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_styled_text_event" kindref="compound">wxStyledTextEvent</ref>&amp;<nonbreakablespace/>event)</para>
+<para>Event macros: <itemizedlist>
+<listitem><para>EVT_STC_AUTOCOMP_CANCELLED(id,  fn): Process a <computeroutput>wxEVT_STC_AUTOCOMP_CANCELLED</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_AUTOCOMP_CHAR_DELETED(id,  fn): Process a <computeroutput>wxEVT_STC_AUTOCOMP_CHAR_DELETED</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_AUTOCOMP_COMPLETED(id,  fn): Process a <computeroutput>wxEVT_STC_AUTOCOMP_COMPLETED</computeroutput> event. <simplesect kind="since"><para>3.1.1</para>
+</simplesect>
+</para>
+</listitem>
+<listitem><para>EVT_STC_AUTOCOMP_SELECTION(id,  fn): Process a <computeroutput>wxEVT_STC_AUTOCOMP_SELECTION</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_AUTOCOMP_SELECTION_CHANGE(id,  fn): Process a <computeroutput>wxEVT_STC_AUTOCOMP_SELECTION_CHANGE</computeroutput> event. <simplesect kind="since"><para>3.1.3</para>
+</simplesect>
+</para>
+</listitem>
+<listitem><para>EVT_STC_CALLTIP_CLICK(id,  fn): Process a <computeroutput>wxEVT_STC_CALLTIP_CLICK</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_CHANGE(id,  fn): Process a <computeroutput>wxEVT_STC_CHANGE</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_CHARADDED(id,  fn): Process a <computeroutput>wxEVT_STC_CHARADDED</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_CLIPBOARD_COPY(id,  fn): Process a <computeroutput>wxEVT_STC_CLIPBOARD_COPY</computeroutput> event. <simplesect kind="since"><para>3.1.0</para>
+</simplesect>
+</para>
+</listitem>
+<listitem><para>EVT_STC_CLIPBOARD_PASTE(id,  fn): Process a <computeroutput>wxEVT_STC_CLIPBOARD_PASTE</computeroutput> event. <simplesect kind="since"><para>3.1.0</para>
+</simplesect>
+</para>
+</listitem>
+<listitem><para>EVT_STC_DO_DROP(id,  fn): Process a <computeroutput>wxEVT_STC_DO_DROP</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_DOUBLECLICK(id,  fn): Process a <computeroutput>wxEVT_STC_DOUBLECLICK</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_DRAG_OVER(id,  fn): Process a <computeroutput>wxEVT_STC_DRAG_OVER</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_DWELLEND(id,  fn): Process a <computeroutput>wxEVT_STC_DWELLEND</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_DWELLSTART(id,  fn): Process a <computeroutput>wxEVT_STC_DWELLSTART</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_HOTSPOT_CLICK(id,  fn): Process a <computeroutput>wxEVT_STC_HOTSPOT_CLICK</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_HOTSPOT_DCLICK(id,  fn): Process a <computeroutput>wxEVT_STC_HOTSPOT_DCLICK</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_HOTSPOT_RELEASE_CLICK(id,  fn): Process a <computeroutput>wxEVT_STC_HOTSPOT_RELEASE_CLICK</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_INDICATOR_CLICK(id,  fn): Process a <computeroutput>wxEVT_STC_INDICATOR_CLICK</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_INDICATOR_RELEASE(id,  fn): Process a <computeroutput>wxEVT_STC_INDICATOR_RELEASE</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_MACRORECORD(id,  fn): Process a <computeroutput>wxEVT_STC_MACRORECORD</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_MARGIN_RIGHT_CLICK(id,  fn): Process a <computeroutput>wxEVT_STC_MARGIN_RIGHT_CLICK</computeroutput> event. <simplesect kind="since"><para>3.1.1</para>
+</simplesect>
+</para>
+</listitem>
+<listitem><para>EVT_STC_MARGINCLICK(id,  fn): Process a <computeroutput>wxEVT_STC_MARGINCLICK</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_MODIFIED(id,  fn): Process a <computeroutput>wxEVT_STC_MODIFIED</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_NEEDSHOWN(id,  fn): Process a <computeroutput>wxEVT_STC_NEEDSHOWN</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_PAINTED(id,  fn): Process a <computeroutput>wxEVT_STC_PAINTED</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_ROMODIFYATTEMPT(id,  fn): Process a <computeroutput>wxEVT_STC_ROMODIFYATTEMPT</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_SAVEPOINTLEFT(id,  fn): Process a <computeroutput>wxEVT_STC_SAVEPOINTLEFT</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_SAVEPOINTREACHED(id,  fn): Process a <computeroutput>wxEVT_STC_SAVEPOINTREACHED</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_START_DRAG(id,  fn): Process a <computeroutput>wxEVT_STC_START_DRAG</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_STYLENEEDED(id,  fn): Process a <computeroutput>wxEVT_STC_STYLENEEDED</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_UPDATEUI(id,  fn): Process a <computeroutput>wxEVT_STC_UPDATEUI</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_USERLISTSELECTION(id,  fn): Process a <computeroutput>wxEVT_STC_USERLISTSELECTION</computeroutput> event. </para>
+</listitem>
+<listitem><para>EVT_STC_ZOOM(id,  fn): Process a <computeroutput>wxEVT_STC_ZOOM</computeroutput> event. <linebreak/>
+ Most of the Scintilla notifications are mapped to a similarly named <ref refid="classwx_styled_text_event" kindref="compound">wxStyledTextEvent</ref>. However a few of the notifications would only offer information available in other wxWidgets event types, and in those cases a corresponding <ref refid="classwx_styled_text_event" kindref="compound">wxStyledTextEvent</ref> is not defined. Currently, the <computeroutput>wxEVT_KEY_DOWN</computeroutput> event is used instead of the <computeroutput>SCN_KEY</computeroutput> notification. The regular wxWidgets drag and drop functionality can be used instead of the <computeroutput>SCN_URIDROPPED</computeroutput> notification. The <computeroutput>wxEVT_SET_FOCUS</computeroutput> event is used instead of the <computeroutput>SCN_FOCUSIN</computeroutput> notification. And the <computeroutput>wxEVT_KILL_FOCUS</computeroutput> event is used instead of the <computeroutput>SCN_FOCUSOUT</computeroutput> notification.</para>
+</listitem>
+</itemizedlist>
+</para>
+<sect1 id="classwx_styled_text_event_1event_types">
+<title>Event Types</title>
+<para>The following is a brief description of when the control generates these events and a list of which methods provide relevant information. Additional details can be found in the Scintilla documentation (<ulink url="http://www.scintilla.org/ScintillaDoc.html#Notifications">http://www.scintilla.org/ScintillaDoc.html#Notifications</ulink>).</para>
+<para><computeroutput>wxEVT_STC_AUTOCOMP_CANCELLED</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when an autocompletion list has been canceled.</para>
+</listitem><listitem><para>Valid event functions: none.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_AUTOCOMP_CHAR_DELETED</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when a character has been deleted from an autocompletion list.</para>
+</listitem><listitem><para>Valid event functions: none.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_AUTOCOMP_COMPLETED</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated after an autocompletion list has closed and inserted its text into the control.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1ac47f4baf2ef03254b3f8f3d0313e9a37" kindref="member">GetKey</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString</ref>, <ref refid="classwx_styled_text_event_1a252463b91de0446fb62e5961381d7ccc" kindref="member">GetListCompletionMethod</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_AUTOCOMP_SELECTION</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when an entry has been selected in an autocompletion list but before the text has been inserted.</para>
+</listitem><listitem><para>To prevent the insertion, call <ref refid="classwx_styled_text_ctrl_1a67a96291c515f843bdb50ff2befbe04e" kindref="member">wxStyledTextCtrl::AutoCompCancel</ref> in the event handler.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1ac47f4baf2ef03254b3f8f3d0313e9a37" kindref="member">GetKey</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString</ref>, <ref refid="classwx_styled_text_event_1a252463b91de0446fb62e5961381d7ccc" kindref="member">GetListCompletionMethod</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_AUTOCOMP_SELECTION_CHANGE</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when items are highlighted in an autocompletion or user list.</para>
+</listitem><listitem><para><ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref> will return the position at which the list is being shown.</para>
+</listitem><listitem><para>For a user list, <ref refid="classwx_styled_text_event_1a8a330c5ce1d9e424c185562a4b5b6267" kindref="member">GetListType</ref> will return the list type. The list type is a value input in to the <ref refid="classwx_styled_text_ctrl_1aca26323e7a482fb4fe2651ef2158f2c1" kindref="member">wxStyledTextCtrl::UserListShow</ref> method when a user list is created.</para>
+</listitem><listitem><para>For an autocompletion list, <ref refid="classwx_styled_text_event_1a8a330c5ce1d9e424c185562a4b5b6267" kindref="member">GetListType</ref> will always return zero.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1a8a330c5ce1d9e424c185562a4b5b6267" kindref="member">GetListType</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_CALLTIP_CLICK</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when a calltip has been clicked.</para>
+</listitem><listitem><para><ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref> will return 1 if the up arrow has been clicked, 2 if the down arrow has been clicked, and 0 for all other clicks.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_CHANGE</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when the text of the document has changed.</para>
+</listitem><listitem><para>This an older style event and should probably not be used in new code. Use <computeroutput>wxEVT_STC_MODIFIED</computeroutput> instead.</para>
+</listitem><listitem><para>Valid event functions: none.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_CHARADDED</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when a character has been added to the control.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1ac47f4baf2ef03254b3f8f3d0313e9a37" kindref="member">GetKey</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_CLIPBOARD_COPY</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when text is being cut or copied to the clipboard.</para>
+</listitem><listitem><para>Use <ref refid="classwx_command_event_1a06ca56ac6680fe3b3178d8abd913d450" kindref="member">wxStyledTextEvent::SetString()</ref> to modify the text that will be placed on the clipboard.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString</ref>, <ref refid="classwx_command_event_1a06ca56ac6680fe3b3178d8abd913d450" kindref="member">SetString</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_CLIPBOARD_PASTE</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when text is being pasted from the clipboard.</para>
+</listitem><listitem><para>Use <ref refid="classwx_command_event_1a06ca56ac6680fe3b3178d8abd913d450" kindref="member">wxStyledTextEvent::SetString()</ref> to modify the text that will be inserted into the control.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString</ref>, <ref refid="classwx_command_event_1a06ca56ac6680fe3b3178d8abd913d450" kindref="member">SetString</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_DO_DROP</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when text is being dropped into the control.</para>
+</listitem><listitem><para>Details of the drag may be altered by changing the respective fields of the event.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1aad6985b4c7452986177b361aa1fe0ebb" kindref="member">GetDragResult</ref>, <ref refid="classwx_styled_text_event_1a5247d9338bbae9d2f1d178eb7b923ebd" kindref="member">SetDragResult</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1af261b54ce46dde38624c8856eef14f33" kindref="member">SetPosition</ref>, <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString</ref>, <ref refid="classwx_command_event_1a06ca56ac6680fe3b3178d8abd913d450" kindref="member">SetString</ref>, <ref refid="classwx_styled_text_event_1a588a59a7d32d981a3b10c0a2484cf7d6" kindref="member">GetX</ref>, <ref refid="classwx_styled_text_event_1a9d1660f2218e6ece8b185465a2d9dcc9" kindref="member">GetY</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_DOUBLECLICK</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when the control has been double-clicked.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1a6243e8ef95c9a6ec57f9e9db15eac650" kindref="member">GetLine</ref>, <ref refid="classwx_styled_text_event_1a6fbd6f0adc5ff6924d9f3b18d9c74c57" kindref="member">GetModifiers</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1a89e96846c7be8f6091a8111c1df8be71" kindref="member">GetAlt</ref>, <ref refid="classwx_styled_text_event_1a84a9622e7dced2ce64427d2aa00566ad" kindref="member">GetControl</ref>, <ref refid="classwx_styled_text_event_1aea29eed3d5a551a497c06a0bce09ddfc" kindref="member">GetShift</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_DRAG_OVER</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated repeatedly as text is being dragged inside the control.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1aad6985b4c7452986177b361aa1fe0ebb" kindref="member">GetDragResult</ref>, <ref refid="classwx_styled_text_event_1a5247d9338bbae9d2f1d178eb7b923ebd" kindref="member">SetDragResult</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1a588a59a7d32d981a3b10c0a2484cf7d6" kindref="member">GetX</ref>, <ref refid="classwx_styled_text_event_1a9d1660f2218e6ece8b185465a2d9dcc9" kindref="member">GetY</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_DWELLEND</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when the mouse has been moved after a <computeroutput>wxEVT_STC_DWELLSTART</computeroutput> event.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1a588a59a7d32d981a3b10c0a2484cf7d6" kindref="member">GetX</ref>, <ref refid="classwx_styled_text_event_1a9d1660f2218e6ece8b185465a2d9dcc9" kindref="member">GetY</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_DWELLSTART</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when the mouse has remained still for a certain amount of time.</para>
+</listitem><listitem><para>The amount of time can be specified with <ref refid="classwx_styled_text_ctrl_1a8cbdb87eac5f4edd2bf78703192255fc" kindref="member">wxStyledTextCtrl::SetMouseDwellTime</ref>.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1a588a59a7d32d981a3b10c0a2484cf7d6" kindref="member">GetX</ref>, <ref refid="classwx_styled_text_event_1a9d1660f2218e6ece8b185465a2d9dcc9" kindref="member">GetY</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_HOTSPOT_CLICK</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when a hotspot has been clicked.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1a6fbd6f0adc5ff6924d9f3b18d9c74c57" kindref="member">GetModifiers</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1a89e96846c7be8f6091a8111c1df8be71" kindref="member">GetAlt</ref>, <ref refid="classwx_styled_text_event_1a84a9622e7dced2ce64427d2aa00566ad" kindref="member">GetControl</ref>, <ref refid="classwx_styled_text_event_1aea29eed3d5a551a497c06a0bce09ddfc" kindref="member">GetShift</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_HOTSPOT_DCLICK</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when a hotspot has been double-clicked.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1a6fbd6f0adc5ff6924d9f3b18d9c74c57" kindref="member">GetModifiers</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1a89e96846c7be8f6091a8111c1df8be71" kindref="member">GetAlt</ref>, <ref refid="classwx_styled_text_event_1a84a9622e7dced2ce64427d2aa00566ad" kindref="member">GetControl</ref>, <ref refid="classwx_styled_text_event_1aea29eed3d5a551a497c06a0bce09ddfc" kindref="member">GetShift</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_HOTSPOT_RELEASE_CLICK</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when a click-over hotspot has been released.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1a6fbd6f0adc5ff6924d9f3b18d9c74c57" kindref="member">GetModifiers</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1a89e96846c7be8f6091a8111c1df8be71" kindref="member">GetAlt</ref>, <ref refid="classwx_styled_text_event_1a84a9622e7dced2ce64427d2aa00566ad" kindref="member">GetControl</ref>, <ref refid="classwx_styled_text_event_1aea29eed3d5a551a497c06a0bce09ddfc" kindref="member">GetShift</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_INDICATOR_CLICK</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when an indicator has been clicked.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1a6fbd6f0adc5ff6924d9f3b18d9c74c57" kindref="member">GetModifiers</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1a89e96846c7be8f6091a8111c1df8be71" kindref="member">GetAlt</ref>, <ref refid="classwx_styled_text_event_1a84a9622e7dced2ce64427d2aa00566ad" kindref="member">GetControl</ref>, <ref refid="classwx_styled_text_event_1aea29eed3d5a551a497c06a0bce09ddfc" kindref="member">GetShift</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_INDICATOR_RELEASE</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when a click over an indicator has been released.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1a6fbd6f0adc5ff6924d9f3b18d9c74c57" kindref="member">GetModifiers</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1a89e96846c7be8f6091a8111c1df8be71" kindref="member">GetAlt</ref>, <ref refid="classwx_styled_text_event_1a84a9622e7dced2ce64427d2aa00566ad" kindref="member">GetControl</ref>, <ref refid="classwx_styled_text_event_1aea29eed3d5a551a497c06a0bce09ddfc" kindref="member">GetShift</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_MACRORECORD</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated while macro recording is in progress.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1aa4a8c2913ec2635ef3affa57a32f590a" kindref="member">GetMessage</ref>, <ref refid="classwx_styled_text_event_1a721338aabc99de61d8fc6eb31f88fe08" kindref="member">GetLParam</ref>, <ref refid="classwx_styled_text_event_1a215d825b7df04e5eb6a9c5d33938e6b5" kindref="member">GetWParam</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_MARGIN_RIGHT_CLICK</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when one of the margins is clicked with the right mouse button.</para>
+</listitem><listitem><para>This event is only generated if <ref refid="classwx_styled_text_ctrl_1ae70bbd7ab233d7d8b3ffc6b7e8de1920" kindref="member">SetMarginSensitive</ref> has been called for one or more of the margins.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1a561b5b495952215e134d8f1022059ae9" kindref="member">GetMargin</ref>, <ref refid="classwx_styled_text_event_1a6fbd6f0adc5ff6924d9f3b18d9c74c57" kindref="member">GetModifiers</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1a89e96846c7be8f6091a8111c1df8be71" kindref="member">GetAlt</ref>, <ref refid="classwx_styled_text_event_1a84a9622e7dced2ce64427d2aa00566ad" kindref="member">GetControl</ref>, <ref refid="classwx_styled_text_event_1aea29eed3d5a551a497c06a0bce09ddfc" kindref="member">GetShift</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_MARGINCLICK</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when one of the margins is clicked.</para>
+</listitem><listitem><para>This event is only generated if <ref refid="classwx_styled_text_ctrl_1ae70bbd7ab233d7d8b3ffc6b7e8de1920" kindref="member">SetMarginSensitive</ref> has been called for one or more of the margins.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1a561b5b495952215e134d8f1022059ae9" kindref="member">GetMargin</ref>, <ref refid="classwx_styled_text_event_1a6fbd6f0adc5ff6924d9f3b18d9c74c57" kindref="member">GetModifiers</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_styled_text_event_1a89e96846c7be8f6091a8111c1df8be71" kindref="member">GetAlt</ref>, <ref refid="classwx_styled_text_event_1a84a9622e7dced2ce64427d2aa00566ad" kindref="member">GetControl</ref>, <ref refid="classwx_styled_text_event_1aea29eed3d5a551a497c06a0bce09ddfc" kindref="member">GetShift</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_MODIFIED</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when the contents of the control have changed or are about to change.</para>
+</listitem><listitem><para>You should not attempt to make any changes to the control inside a handler for this event.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1ad9ee473d288212689a7d273c520ee6c4" kindref="member">GetAnnotationsLinesAdded</ref>, <ref refid="classwx_styled_text_event_1a3c7c07ff2fcafef2c0086adad31e453e" kindref="member">GetFoldLevelNow</ref>, <ref refid="classwx_styled_text_event_1a1c6b3e7473de75e4901cdf329468cb2a" kindref="member">GetFoldLevelPrev</ref>, <ref refid="classwx_styled_text_event_1adc5c3ad1d8493c5448c6951e019533ab" kindref="member">GetLength</ref>, <ref refid="classwx_styled_text_event_1a6243e8ef95c9a6ec57f9e9db15eac650" kindref="member">GetLine</ref>, <ref refid="classwx_styled_text_event_1a177237b0a55f3b63d1c2d49919b304be" kindref="member">GetLinesAdded</ref>, <ref refid="classwx_styled_text_event_1ada5e3205841ac3888d8d8e3790f065f2" kindref="member">GetModificationType</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString</ref>, <ref refid="classwx_styled_text_event_1ac07d0dc230ea07b4a37a10b30847eee7" kindref="member">GetToken</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_NEEDSHOWN</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when certain lines should be made visible by scrolling the text in the control.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1adc5c3ad1d8493c5448c6951e019533ab" kindref="member">GetLength</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_PAINTED</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when the control has been refreshed.</para>
+</listitem><listitem><para>Valid event functions: none.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_ROMODIFYATTEMPT</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when an attempt has been made to change the control&apos;s text after it has been set read-only.</para>
+</listitem><listitem><para>Valid event functions: none.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_SAVEPOINTREACHED</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when the undo history has been made empty.</para>
+</listitem><listitem><para>Valid event functions: none.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_SAVEPOINTLEFT</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when the undo history is no longer empty.</para>
+</listitem><listitem><para>Valid event functions: none.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_START_DRAG</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when text is being dragged from the control.</para>
+</listitem><listitem><para>Details of the drag may be altered by changing the respective fields of the event; in particular, set an empty string to prohibit the drag entirely.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1ad58815f837ea525cb02a374e13b5f36e" kindref="member">GetDragFlags</ref>, <ref refid="classwx_styled_text_event_1ab84f35fc651bfd3f46fe3e717043f7cc" kindref="member">SetDragFlags</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString</ref>, <ref refid="classwx_command_event_1a06ca56ac6680fe3b3178d8abd913d450" kindref="member">SetString</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_STYLENEEDED</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when the control has determined that style bytes should be set for a portion of the document.</para>
+</listitem><listitem><para>These events are only sent if the lexer is set to <ref refid="stc_8h_1a8e4610851a20458fc64f12095b40b51e" kindref="member">wxSTC_LEX_CONTAINER</ref>.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_UPDATEUI</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when the text, style, cursor position, selection, or scrolling of the control has changed.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1abc71e8e9565a24c82de11c6008f48073" kindref="member">GetUpdated</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_USERLISTSELECTION</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when a selection has been made from a user list.</para>
+</listitem><listitem><para>Valid event functions: <ref refid="classwx_styled_text_event_1a8a330c5ce1d9e424c185562a4b5b6267" kindref="member">GetListType</ref>, <ref refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" kindref="member">GetPosition</ref>, <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString</ref>, <ref refid="classwx_styled_text_event_1ac47f4baf2ef03254b3f8f3d0313e9a37" kindref="member">GetKey</ref>, <ref refid="classwx_styled_text_event_1a252463b91de0446fb62e5961381d7ccc" kindref="member">GetListCompletionMethod</ref>.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>wxEVT_STC_ZOOM</computeroutput> </para>
+<para><itemizedlist>
+<listitem><para>Generated when the zoom factor of the control has been changed either by the user or a call to <ref refid="classwx_styled_text_ctrl_1ad5d6fc9fc4a1362dfb1d048d77e0210b" kindref="member">wxStyledTextCtrl::ZoomIn</ref>/<ref refid="classwx_styled_text_ctrl_1a08c90b90ddb67c6bdb362474e294eba6" kindref="member">ZoomOut</ref>.</para>
+</listitem><listitem><para>Valid event functions: none.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxstc" kindref="member">wxSTC</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ , \ &lt;/&gt;&lt;/&gt; </para>
+</sect1>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>wxCommandEvent</label>
+        <link refid="classwx_command_event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
+      <node id="1">
+        <label>wxStyledTextEvent</label>
+        <link refid="classwx_styled_text_event"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>wxCommandEvent</label>
+        <link refid="classwx_command_event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_refData</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
+      <node id="1">
+        <label>wxStyledTextEvent</label>
+        <link refid="classwx_styled_text_event"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="interface/wx/stc/stc.h" line="8306" column="1" bodyfile="interface/wx/stc/stc.h" bodystart="8306" bodyend="8849"/>
+    <listofallmembers>
+      <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>AllocExclusive</name></member>
+      <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxStyledTextEvent</scope><name>Clone</name></member>
+      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxStyledTextEvent</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxStyledTextEvent</scope><name>CreateRefData</name></member>
+      <member refid="classwx_styled_text_event_1a89e96846c7be8f6091a8111c1df8be71" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetAlt</name></member>
+      <member refid="classwx_styled_text_event_1ad9ee473d288212689a7d273c520ee6c4" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetAnnotationsLinesAdded</name></member>
+      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxStyledTextEvent</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_command_event_1a3d41eef5b753ff2fd0b822bd1e0c6af9" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetClientData</name></member>
+      <member refid="classwx_command_event_1a48e7b34762b82cdc9d1b5d58d1e6a17f" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetClientObject</name></member>
+      <member refid="classwx_styled_text_event_1a84a9622e7dced2ce64427d2aa00566ad" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetControl</name></member>
+      <member refid="classwx_styled_text_event_1ad58815f837ea525cb02a374e13b5f36e" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetDragFlags</name></member>
+      <member refid="classwx_styled_text_event_1aad6985b4c7452986177b361aa1fe0ebb" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetDragResult</name></member>
+      <member refid="classwx_styled_text_event_1a8fcde815326750cc413db29532386c92" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetDragText</name></member>
+      <member refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131" prot="public" virt="virtual"><scope>wxStyledTextEvent</scope><name>GetEventCategory</name></member>
+      <member refid="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetEventObject</name></member>
+      <member refid="classwx_event_1a01c89719ef6241a6e612a313a259c1c2" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetEventType</name></member>
+      <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetEventUserData</name></member>
+      <member refid="classwx_command_event_1abdba7c3e93f0dbf99f5382e60e7a461a" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetExtraLong</name></member>
+      <member refid="classwx_styled_text_event_1a3c7c07ff2fcafef2c0086adad31e453e" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetFoldLevelNow</name></member>
+      <member refid="classwx_styled_text_event_1a1c6b3e7473de75e4901cdf329468cb2a" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetFoldLevelPrev</name></member>
+      <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetId</name></member>
+      <member refid="classwx_command_event_1a24ad2aab26646c762ca3092a7ffd5ccd" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetInt</name></member>
+      <member refid="classwx_styled_text_event_1ac47f4baf2ef03254b3f8f3d0313e9a37" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetKey</name></member>
+      <member refid="classwx_styled_text_event_1adc5c3ad1d8493c5448c6951e019533ab" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetLength</name></member>
+      <member refid="classwx_styled_text_event_1a6243e8ef95c9a6ec57f9e9db15eac650" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetLine</name></member>
+      <member refid="classwx_styled_text_event_1a177237b0a55f3b63d1c2d49919b304be" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetLinesAdded</name></member>
+      <member refid="classwx_styled_text_event_1a252463b91de0446fb62e5961381d7ccc" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetListCompletionMethod</name></member>
+      <member refid="classwx_styled_text_event_1a8a330c5ce1d9e424c185562a4b5b6267" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetListType</name></member>
+      <member refid="classwx_styled_text_event_1a721338aabc99de61d8fc6eb31f88fe08" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetLParam</name></member>
+      <member refid="classwx_styled_text_event_1a561b5b495952215e134d8f1022059ae9" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetMargin</name></member>
+      <member refid="classwx_styled_text_event_1aa4a8c2913ec2635ef3affa57a32f590a" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetMessage</name></member>
+      <member refid="classwx_styled_text_event_1ada5e3205841ac3888d8d8e3790f065f2" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetModificationType</name></member>
+      <member refid="classwx_styled_text_event_1a6fbd6f0adc5ff6924d9f3b18d9c74c57" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetModifiers</name></member>
+      <member refid="classwx_styled_text_event_1ac15f9a1605c669c1962522b6262b3f21" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetPosition</name></member>
+      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_command_event_1a93609c04b8fd7001259efb5d65645fe6" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetSelection</name></member>
+      <member refid="classwx_styled_text_event_1aea29eed3d5a551a497c06a0bce09ddfc" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetShift</name></member>
+      <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetSkipped</name></member>
+      <member refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetString</name></member>
+      <member refid="classwx_styled_text_event_1a1ab0fe80affb57ba977a0dea21e0a615" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetText</name></member>
+      <member refid="classwx_event_1a48662230971127737d2500cef7be549d" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetTimestamp</name></member>
+      <member refid="classwx_styled_text_event_1ac07d0dc230ea07b4a37a10b30847eee7" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetToken</name></member>
+      <member refid="classwx_styled_text_event_1abc71e8e9565a24c82de11c6008f48073" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetUpdated</name></member>
+      <member refid="classwx_styled_text_event_1a215d825b7df04e5eb6a9c5d33938e6b5" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetWParam</name></member>
+      <member refid="classwx_styled_text_event_1a588a59a7d32d981a3b10c0a2484cf7d6" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetX</name></member>
+      <member refid="classwx_styled_text_event_1a9d1660f2218e6ece8b185465a2d9dcc9" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>GetY</name></member>
+      <member refid="classwx_command_event_1a3e5510a00ebb9fb5e7bf7dc5e89f3588" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>IsChecked</name></member>
+      <member refid="classwx_event_1a31f6a4377d6d36964b8eae4e56ec43e0" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>IsCommandEvent</name></member>
+      <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>IsKindOf</name></member>
+      <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>IsSameAs</name></member>
+      <member refid="classwx_command_event_1a44f4144f027fcb7feadb4c23bcbfeb5f" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>IsSelection</name></member>
+      <member refid="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>m_propagationLevel</name></member>
+      <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>m_refData</name></member>
+      <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>operator delete</name></member>
+      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>Ref</name></member>
+      <member refid="classwx_event_1a0acb5c75f6e67b8822ad8ba3c5bdc4fe" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>ResumePropagation</name></member>
+      <member refid="classwx_styled_text_event_1a5b94c84c49fc59413657f6d0bc5fbd60" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetAnnotationLinesAdded</name></member>
+      <member refid="classwx_command_event_1a1778d16766134e08cafcdb49b06855ce" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetClientData</name></member>
+      <member refid="classwx_command_event_1a752e5a0fb8992b062c4dec6866171586" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetClientObject</name></member>
+      <member refid="classwx_styled_text_event_1ab84f35fc651bfd3f46fe3e717043f7cc" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetDragFlags</name></member>
+      <member refid="classwx_styled_text_event_1a5247d9338bbae9d2f1d178eb7b923ebd" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetDragResult</name></member>
+      <member refid="classwx_styled_text_event_1ad0a642b038ae175f2bdc96e0e182d3dc" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetDragText</name></member>
+      <member refid="classwx_event_1a3460217d04c36393ab868ba453fde13d" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetEventObject</name></member>
+      <member refid="classwx_event_1aa29fb7459d64602e09837fea1e516d27" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetEventType</name></member>
+      <member refid="classwx_command_event_1a13ac3c581b99d110bac2c6b74803d2df" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetExtraLong</name></member>
+      <member refid="classwx_styled_text_event_1a65bb4d25fe464ae215db46657fa43e48" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetFoldLevelNow</name></member>
+      <member refid="classwx_styled_text_event_1a26cdb60a8f6118d83116345dce7aba4e" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetFoldLevelPrev</name></member>
+      <member refid="classwx_event_1ab9973f687bfa8a60318d8d9bd629d0d4" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetId</name></member>
+      <member refid="classwx_command_event_1aeaed91ffb1d02f07d7ea40f029f95a7c" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetInt</name></member>
+      <member refid="classwx_styled_text_event_1ab5a70c91ee066c33901220597faf801e" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetKey</name></member>
+      <member refid="classwx_styled_text_event_1acfd2ec4af69b166e9a1f3b2b6cd748a8" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetLength</name></member>
+      <member refid="classwx_styled_text_event_1a5a5ded1d5f4b3264d102d17126dad124" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetLine</name></member>
+      <member refid="classwx_styled_text_event_1a91377ba6defe2bf60e44ab179e0d3c21" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetLinesAdded</name></member>
+      <member refid="classwx_styled_text_event_1aff6d7048b0696557ef6a05a56b80bafc" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetListCompletionMethod</name></member>
+      <member refid="classwx_styled_text_event_1acebc4a692d3aa51235c5d230341a6220" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetListType</name></member>
+      <member refid="classwx_styled_text_event_1a52a41758786d8439874b5c4a463ff8a1" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetLParam</name></member>
+      <member refid="classwx_styled_text_event_1aa9563e793e631551603e6c1acd963efa" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetMargin</name></member>
+      <member refid="classwx_styled_text_event_1aa5d7012504e37f0a2127a2d1dec016ba" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetMessage</name></member>
+      <member refid="classwx_styled_text_event_1a39c5b50beac9216280cd9b86c4791704" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetModificationType</name></member>
+      <member refid="classwx_styled_text_event_1abc5abc6f44b266b8e930616dbe17f7b5" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetModifiers</name></member>
+      <member refid="classwx_styled_text_event_1af261b54ce46dde38624c8856eef14f33" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetPosition</name></member>
+      <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetRefData</name></member>
+      <member refid="classwx_command_event_1a06ca56ac6680fe3b3178d8abd913d450" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetString</name></member>
+      <member refid="classwx_styled_text_event_1a0e2f8c57dde6dafbb54bb5bf067b373d" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetText</name></member>
+      <member refid="classwx_event_1ad4380dff3144a986cb960473051a1d8d" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetTimestamp</name></member>
+      <member refid="classwx_styled_text_event_1a462860a837e186afa7eefa8c95a3e04e" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetToken</name></member>
+      <member refid="classwx_styled_text_event_1a219469d972652c9c33b969e604949d13" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetUpdated</name></member>
+      <member refid="classwx_styled_text_event_1a741d3ce054a1489f2e9509a6a11c5645" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetWParam</name></member>
+      <member refid="classwx_styled_text_event_1a802dc603e8ab1ff7f82d57d393558836" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetX</name></member>
+      <member refid="classwx_styled_text_event_1a66bd9e86614d08a09681407f55592055" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>SetY</name></member>
+      <member refid="classwx_event_1ac7a178c3c781c80f1308945042f76e7f" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>ShouldPropagate</name></member>
+      <member refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>Skip</name></member>
+      <member refid="classwx_event_1a060a7d222404daff4d3cef30cddeaae3" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>StopPropagation</name></member>
+      <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>UnRef</name></member>
+      <member refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>UnShare</name></member>
+      <member refid="classwx_command_event_1aad941347872cd71fedcfc765fae7b2f7" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>wxCommandEvent</name></member>
+      <member refid="classwx_event_1aaf2a5cf056d006859cea36689ba13d36" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>wxEvent</name></member>
+      <member refid="classwx_object_1acaa378363a28af421ab56ad7b46eadf0" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>wxObject</name></member>
+      <member refid="classwx_object_1a4721b4dc9b7aff0f30904ba2ea3954cf" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>wxObject</name></member>
+      <member refid="classwx_styled_text_event_1a28d0d22f9a9bec05e8c8b7c83b1eea3b" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>wxStyledTextEvent</name></member>
+      <member refid="classwx_styled_text_event_1a8279354e8ff8c26b6a6edf43e920ffb6" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>wxStyledTextEvent</name></member>
+      <member refid="classwx_object_1a2a51aa8bfbab47ca2f051bcf84b3f35b" prot="public" virt="virtual"><scope>wxStyledTextEvent</scope><name>~wxObject</name></member>
+      <member refid="classwx_styled_text_event_1ad06a45394cc8bf755c68ec2b20e2ac7c" prot="public" virt="non-virtual"><scope>wxStyledTextEvent</scope><name>~wxStyledTextEvent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

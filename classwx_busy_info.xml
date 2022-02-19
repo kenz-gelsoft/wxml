@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_busy_info" kind="class" language="C++" prot="public">
+    <compoundname>wxBusyInfo</compoundname>
+    <includes local="no">wx/busyinfo.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_busy_info_1ab5e29cf81518600a855de4ad4619a2a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxBusyInfo::wxBusyInfo</definition>
+        <argsstring>(const wxBusyInfoFlags &amp;flags)</argsstring>
+        <name>wxBusyInfo</name>
+        <param>
+          <type>const <ref refid="classwx_busy_info_flags" kindref="compound">wxBusyInfoFlags</ref> &amp;</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+<para>General constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor allows specifying all supported attributes by calling the appropriate methods on <ref refid="classwx_busy_info_flags" kindref="compound">wxBusyInfoFlags</ref> object passed to it as parameter. All of them are optional but usually at least the message should be specified.</para>
+<para><simplesect kind="since"><para>3.1.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/busyinfo.h" line="98" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_busy_info_1aa53bff52ae401bab878169e7d04b86d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxBusyInfo::wxBusyInfo</definition>
+        <argsstring>(const wxString &amp;msg, wxWindow *parent=NULL)</argsstring>
+        <name>wxBusyInfo</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <declname>parent</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+<para>Simple constructor specifying only the message and the parent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructs a busy info window as child of <emphasis>parent</emphasis> and displays <emphasis>msg</emphasis> in it. It is exactly equivalent to using <programlisting><codeline><highlight class="normal"><ref refid="classwx_busy_info_1ab5e29cf81518600a855de4ad4619a2a0" kindref="member">wxBusyInfo</ref>(<ref refid="classwx_busy_info_flags" kindref="compound">wxBusyInfoFlags</ref>().Parent(parent).Label(message))</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="note"><para>If <emphasis>parent</emphasis> is not NULL you must ensure that it is not closed while the busy info is shown. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/busyinfo.h" line="112" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_busy_info_1ad88b7c7da6843fc904640d3d3d80a4f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxBusyInfo::UpdateText</definition>
+        <argsstring>(const wxString &amp;str)</argsstring>
+        <name>UpdateText</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Update the information text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <emphasis>text</emphasis> string may contain markup as described in <ref refid="classwx_control_1afeb308dc3b54d8d735b33cb250395503" kindref="member">wxControl::SetLabelMarkup()</ref>.</para>
+<para><simplesect kind="since"><para>3.1.3 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/busyinfo.h" line="122" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_busy_info_1a24b955b0479ee37f0eb462e54871c577" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxBusyInfo::UpdateLabel</definition>
+        <argsstring>(const wxString &amp;str)</argsstring>
+        <name>UpdateLabel</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classwx_busy_info_1ad88b7c7da6843fc904640d3d3d80a4f3" kindref="member">UpdateText()</ref> but doesn&apos;t interpret the string as containing markup. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>3.1.3 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/busyinfo.h" line="129" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_busy_info_1af6d67f322ed46bc4eb1148d41f5c129b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual wxBusyInfo::~wxBusyInfo</definition>
+        <argsstring>()</argsstring>
+        <name>~wxBusyInfo</name>
+        <briefdescription>
+<para>Hides and closes the window containing the information text. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/busyinfo.h" line="134" column="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class makes it easy to tell your user that the program is temporarily busy. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Normally the main thread should always return to the main loop to continue dispatching events as quickly as possible, hence this class shouldn&apos;t be needed. However if the main thread does need to block, this class provides a simple way to at least show this to the user: just create a <ref refid="classwx_busy_info" kindref="compound">wxBusyInfo</ref> object on the stack, and within the current scope, a message window will be shown.</para>
+<para>For example:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_busy_info" kindref="compound">wxBusyInfo</ref><sp/>wait(</highlight><highlight class="stringliteral">&quot;Please<sp/>wait,<sp/>working...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>100000;<sp/>i++)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>DoACalculation();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>It works by creating a window in the constructor, and deleting it in the destructor.</para>
+<para>This window is rather plain by default but can be customized by passing <ref refid="classwx_busy_info" kindref="compound">wxBusyInfo</ref> constructor an object of <ref refid="classwx_busy_info_flags" kindref="compound">wxBusyInfoFlags</ref> class instead of a simple message. Here is an example from the dialogs sample:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_busy_info" kindref="compound">wxBusyInfo</ref><sp/>info</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_busy_info_flags" kindref="compound">wxBusyInfoFlags</ref>()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Parent(</highlight><highlight class="keyword">this</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Icon(<ref refid="classwx_art_provider_1ac9bd0ba166e5ef9515c68542bb96da09" kindref="member">wxArtProvider::GetIcon</ref>(<ref refid="artprov_8h_1a77792d3024a7d6f70ede7cbe85ca9286" kindref="member">wxART_PRINT</ref>,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="artprov_8h_1a9ddf3086129ceb810ad2543b1b0564ab" kindref="member">wxART_OTHER</ref>,<sp/><ref refid="classwx_size" kindref="compound">wxSize</ref>(128,<sp/>128)))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Title(</highlight><highlight class="stringliteral">&quot;&lt;b&gt;Printing<sp/>your<sp/>document&lt;/b&gt;&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Text(</highlight><highlight class="stringliteral">&quot;Please<sp/>wait...&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Foreground(*<ref refid="colour_8h_1a3b00973fd189d6ddd42d74046bd45694" kindref="member">wxWHITE</ref>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Background(*<ref refid="colour_8h_1a28c9e9208c4907063eb9869ff2332776" kindref="member">wxBLACK</ref>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Transparency(4*<ref refid="colour_8h_1ae1306fc09217b01cfec7bfb46eed0d66" kindref="member">wxALPHA_OPAQUE</ref>/5)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+</programlisting></para>
+<para>This shows that separate title and text can be set, and that simple markup (<ref refid="classwx_control_1afeb308dc3b54d8d735b33cb250395503" kindref="member">wxControl::SetLabelMarkup()</ref>) can be used in them, and that it&apos;s also possible to add an icon and customize the colours and transparency of the window.</para>
+<para>You may also want to call wxTheApp-&gt;Yield() to refresh the window periodically (in case it had been obscured by other windows, for example) like this:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_window_disabler" kindref="compound">wxWindowDisabler</ref><sp/>disableAll;</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classwx_busy_info" kindref="compound">wxBusyInfo</ref><sp/>wait(</highlight><highlight class="stringliteral">&quot;Please<sp/>wait,<sp/>working...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>100000;<sp/>i++)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>DoACalculation();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!(i<sp/>%<sp/>1000)<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2app_8h_1a01fd2cb0a8fbaade87800e71a50e855d" kindref="member">wxTheApp</ref>-&gt;<ref refid="classwx_app_console_1a302adeb701f247bf8cac1570efc25020" kindref="member">Yield</ref>();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>but take care to not cause undesirable reentrancies when doing it (see <ref refid="classwx_app_console_1a302adeb701f247bf8cac1570efc25020" kindref="member">wxApp::Yield</ref> for more details). The simplest way to do it is to use <ref refid="classwx_window_disabler" kindref="compound">wxWindowDisabler</ref> class as illustrated in the above example.</para>
+<para>Note that a <ref refid="classwx_busy_info" kindref="compound">wxBusyInfo</ref> is always built with the <computeroutput>wxSTAY_ON_TOP</computeroutput> window style (see <ref refid="classwx_frame" kindref="compound">wxFrame</ref> window styles for more info).</para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+    </detaileddescription>
+    <location file="interface/wx/busyinfo.h" line="85" column="1" bodyfile="interface/wx/busyinfo.h" bodystart="86" bodyend="135"/>
+    <listofallmembers>
+      <member refid="classwx_busy_info_1a24b955b0479ee37f0eb462e54871c577" prot="public" virt="non-virtual"><scope>wxBusyInfo</scope><name>UpdateLabel</name></member>
+      <member refid="classwx_busy_info_1ad88b7c7da6843fc904640d3d3d80a4f3" prot="public" virt="non-virtual"><scope>wxBusyInfo</scope><name>UpdateText</name></member>
+      <member refid="classwx_busy_info_1ab5e29cf81518600a855de4ad4619a2a0" prot="public" virt="non-virtual"><scope>wxBusyInfo</scope><name>wxBusyInfo</name></member>
+      <member refid="classwx_busy_info_1aa53bff52ae401bab878169e7d04b86d3" prot="public" virt="non-virtual"><scope>wxBusyInfo</scope><name>wxBusyInfo</name></member>
+      <member refid="classwx_busy_info_1af6d67f322ed46bc4eb1148d41f5c129b" prot="public" virt="virtual"><scope>wxBusyInfo</scope><name>~wxBusyInfo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

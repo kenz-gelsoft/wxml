@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="overview_persistence" kind="page">
+    <compoundname>overview_persistence</compoundname>
+    <title>Persistent Objects Overview</title>
+    <tableofcontents>
+      <tocsect>
+        <name>Using Persistent Windows</name>
+        <reference>overview_persistence_1persistence_using</reference>
+    </tocsect>
+      <tocsect>
+        <name>Defining Custom Persistent Windows</name>
+        <reference>overview_persistence_1persistence_defining</reference>
+    </tocsect>
+    </tableofcontents>
+    <briefdescription>
+<para>Persistent objects are simply the objects which automatically save their state when they are destroyed and restore it when they are recreated, even during another program invocation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Persistent objects are simply the objects which automatically save their state when they are destroyed and restore it when they are recreated, even during another program invocation.</para>
+<para>Most often, persistent objects are, in fact, persistent windows as it is especially convenient to automatically restore the UI state when the program is restarted but an object of any class can be made persistent. Moreover, persistence is implemented in a non-intrusive way so that the original object class doesn&apos;t need to be modified at all in order to add support for saving and restoring its properties.</para>
+<para>The persistence framework includes the following components:</para>
+<para><itemizedlist>
+<listitem><para><ref refid="classwx_persistence_manager" kindref="compound">wxPersistenceManager</ref> which all persistent objects register themselves with. This class handles actual saving and restoring of persistent data as well as various global aspects of persistence, e.g. it can be used to disable restoring the saved data.</para>
+</listitem><listitem><para><ref refid="classwx_persistent_object" kindref="compound">wxPersistentObject</ref> is the base class for all persistent objects or, rather, adaptors for the persistent objects as this class main purpose is to provide the bridge between the original class <ndash/> which has no special persistence support <ndash/> and <ref refid="classwx_persistence_manager" kindref="compound">wxPersistenceManager</ref>,</para>
+</listitem><listitem><para>wxPersistentWindow&lt;&gt; which derives from <ref refid="classwx_persistent_object" kindref="compound">wxPersistentObject</ref> and implements some of its methods using wxWindow-specific functionality. Notably, <ref refid="classwx_persistence_manager" kindref="compound">wxPersistenceManager</ref> handles the destruction of persistent windows automatically implicitly while it has to be done explicitly for the arbitrary persistent objects.</para>
+</listitem><listitem><para><ref refid="persist_8h_1ad80ef91e22893e60106a0acd55c6aa9f" kindref="member">wxCreatePersistentObject()</ref> function which is used to create the appropriate persistence adapter for the object.</para>
+</listitem></itemizedlist>
+</para>
+<sect1 id="overview_persistence_1persistence_using">
+<title>Using Persistent Windows</title>
+<para>wxWidgets has built-in support for a (constantly growing) number of controls. Currently the following classes are supported:</para>
+<para><itemizedlist>
+<listitem><para><ref refid="classwx_top_level_window" kindref="compound">wxTopLevelWindow</ref> (and hence <ref refid="classwx_frame" kindref="compound">wxFrame</ref> and <ref refid="classwx_dialog" kindref="compound">wxDialog</ref>)</para>
+</listitem><listitem><para><ref refid="classwx_book_ctrl_base" kindref="compound">wxBookCtrlBase</ref> (i.e. <ref refid="classwx_notebook" kindref="compound">wxNotebook</ref>, <ref refid="classwx_listbook" kindref="compound">wxListbook</ref>, <ref refid="classwx_toolbook" kindref="compound">wxToolbook</ref> and <ref refid="classwx_choicebook" kindref="compound">wxChoicebook</ref>)</para>
+</listitem><listitem><para><ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> (and derivatives such as <ref refid="classwx_data_view_list_ctrl" kindref="compound">wxDataViewListCtrl</ref>)</para>
+</listitem><listitem><para><ref refid="classwx_treebook" kindref="compound">wxTreebook</ref></para>
+</listitem></itemizedlist>
+</para>
+<para>To automatically save and restore the properties of the windows of classes listed above you need to:</para>
+<para><orderedlist>
+<listitem><para>Set a unique name for the window by either using this name in its constructor or calling <ref refid="classwx_window_1af80875cda5e1af98dcd7c8e712e3c800" kindref="member">wxWindow::SetName()</ref>: this step is important as the name is used in the configuration file and so must be unique among all windows of the same class.</para>
+</listitem><listitem><para>Call <ref refid="classwx_persistence_manager_1a2573798843d1eaadeec097df836e182e" kindref="member">wxPersistenceManager::Register()</ref> at any moment after creating the window and then <ref refid="classwx_persistence_manager_1a932d8f5cf981aed723f79d1923f67aed" kindref="member">wxPersistenceManager::Restore()</ref> when the settings may be restored (which can&apos;t be always done immediately, e.g. often the window needs to be populated first). If settings can be restored immediately after the window creation, as is often the case for <ref refid="classwx_top_level_window" kindref="compound">wxTopLevelWindow</ref>, for example, then <ref refid="classwx_persistence_manager_1a2d90794f76e46b357bcffc01be657f94" kindref="member">wxPersistenceManager::RegisterAndRestore()</ref> can be used to do both at once.</para>
+</listitem><listitem><para>If you do not want the settings for the window to be saved (for example the changes to the dialog size are usually not saved if the dialog was cancelled), you need to call <ref refid="classwx_persistence_manager_1a453383431eb8f8127f0ac0d8a2cee1c5" kindref="member">wxPersistenceManager::Unregister()</ref> manually. Otherwise the settings will be automatically saved when the control itself is destroyed.</para>
+</listitem></orderedlist>
+</para>
+<para>A convenient <ref refid="persist_8h_1a1f903bc09a3ee6d8e6a54657a985573c" kindref="member">wxPersistentRegisterAndRestore()</ref> helper function can be used to perform the first steps at once, e.g. to automatically save and restore the position of a <computeroutput>MyFrame</computeroutput> window in your application, you need to only do the following:</para>
+<para><programlisting><codeline><highlight class="preprocessor">#include<sp/>&lt;<ref refid="persist_2toplevel_8h" kindref="compound">wx/persist/toplevel.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">MyFrame::MyFrame(<ref refid="classwx_window" kindref="compound">wxWindow</ref>*<sp/>parent,<sp/>...)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classwx_frame" kindref="compound">wxFrame</ref>(parent,<sp/>...)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...<sp/>all<sp/>the<sp/>other<sp/>initialization<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Restore<sp/>the<sp/>previously<sp/>saved<sp/>geometry,<sp/>if<sp/>any,<sp/>and<sp/>register<sp/>this<sp/>frame</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>its<sp/>geometry<sp/>to<sp/>be<sp/>saved<sp/>when<sp/>it<sp/>is<sp/>closed<sp/>using<sp/>the<sp/>given<sp/>wxConfig</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>key<sp/>name.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<ref refid="persist_8h_1a1f903bc09a3ee6d8e6a54657a985573c" kindref="member">wxPersistentRegisterAndRestore</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;my_frame_name&quot;</highlight><highlight class="normal">)<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Choose<sp/>some<sp/>custom<sp/>default<sp/>size<sp/>for<sp/>the<sp/>first<sp/>run<sp/>--<sp/>or<sp/>don&apos;t<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>anything<sp/>at<sp/>all<sp/>and<sp/>let<sp/>the<sp/>system<sp/>use<sp/>the<sp/>default<sp/>initial<sp/>size.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetClientSize(FromDIP(<ref refid="classwx_size" kindref="compound">wxSize</ref>(800,<sp/>600)));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Show(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>And here is an example of using a notebook control which automatically remembers the last open page without using the helper function:</para>
+<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_notebook" kindref="compound">wxNotebook</ref><sp/>*book<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_notebook" kindref="compound">wxNotebook</ref>(parent,<sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbba1f375b01ea03a713bbb7e32a36a2589c" kindref="member">wxID_ANY</ref>);</highlight></codeline>
+<codeline><highlight class="normal">book-&gt;<ref refid="classwx_window_1af80875cda5e1af98dcd7c8e712e3c800" kindref="member">SetName</ref>(</highlight><highlight class="stringliteral">&quot;MyBook&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>do<sp/>not<sp/>use<sp/>the<sp/>default<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">book-&gt;<ref refid="classwx_book_ctrl_base_1ab47f8935c3705a452fce7d292d8181dd" kindref="member">AddPage</ref>(...);</highlight></codeline>
+<codeline><highlight class="normal">book-&gt;<ref refid="classwx_book_ctrl_base_1ab47f8935c3705a452fce7d292d8181dd" kindref="member">AddPage</ref>(...);</highlight></codeline>
+<codeline><highlight class="normal">book-&gt;<ref refid="classwx_book_ctrl_base_1ab47f8935c3705a452fce7d292d8181dd" kindref="member">AddPage</ref>(...);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>don&apos;t<sp/>check<sp/>for<sp/>the<sp/>return<sp/>value<sp/>here<sp/>as<sp/>the<sp/>first<sp/>page<sp/>is<sp/>selected</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>by<sp/>default<sp/>anyhow<sp/>and<sp/>we<sp/>just<sp/>keep<sp/>this<sp/>selection<sp/>in<sp/>this<sp/>case.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classwx_persistence_manager_1a4a6a946bdd6dc862fb66db774a4b9de7" kindref="member">wxPersistenceManager::Get</ref>().<ref refid="classwx_persistence_manager_1a2d90794f76e46b357bcffc01be657f94" kindref="member">RegisterAndRestore</ref>(book);</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="overview_persistence_1persistence_defining">
+<title>Defining Custom Persistent Windows</title>
+<para>User-defined classes can be easily integrated with <ref refid="classwx_persistence_manager" kindref="compound">wxPersistenceManager</ref>. To add support for your custom class <computeroutput>MyWidget</computeroutput> you just need to:</para>
+<para><orderedlist>
+<listitem><para>Define a new <computeroutput>MyPersistentWidget</computeroutput> class inheriting from wxPersistentWindow&lt;MyWidget&gt;.</para>
+</listitem><listitem><para>Implement its pure virtual GetKind() method returning a unique string identifying all <computeroutput>MyWidget</computeroutput> objects, typically something like <computeroutput>&quot;widget&quot;</computeroutput> </para>
+</listitem><listitem><para>Implement its pure virtual Save() and Restore() methods to actually save and restore the widget settings using <ref refid="classwx_persistent_object_1ac1fcea880e365018189ae3534c50a80f" kindref="member">wxPersistentObject::SaveValue()</ref> and <ref refid="classwx_persistent_object_1a7dd10ed5914be1d60f9104f0a80bafe5" kindref="member">wxPersistentObject::RestoreValue()</ref> methods.</para>
+</listitem><listitem><para>Define <ref refid="persist_8h_1ad80ef91e22893e60106a0acd55c6aa9f" kindref="member">wxCreatePersistentObject()</ref> overload taking <computeroutput>MyWidget</computeroutput> * and returning a new <computeroutput>MyPersistentWidget</computeroutput> object.</para>
+</listitem></orderedlist>
+</para>
+<para>If you want to add persistence support for a class not deriving from <ref refid="classwx_window" kindref="compound">wxWindow</ref>, you need to derive <computeroutput>MyPersistentWidget</computeroutput> directly from <ref refid="classwx_persistent_object" kindref="compound">wxPersistentObject</ref> and so implement its pure virtual <ref refid="classwx_persistent_object_1ae175687a86da6a3d0d6edac12840d7e0" kindref="member">wxPersistentObject::GetName()</ref> method too. Additionally, you must ensure that <ref refid="classwx_persistence_manager_1ab8a9b090b5f84df7b6a765fed78d4820" kindref="member">wxPersistenceManager::SaveAndUnregister()</ref> is called when your object is destroyed as this can be only done automatically for windows. </para>
+</sect1>
+    </detaileddescription>
+    <location file="docs/doxygen/overviews/persistence.h"/>
+  </compounddef>
+</doxygen>

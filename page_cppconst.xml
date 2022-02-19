@@ -1,0 +1,584 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="page_cppconst" kind="page">
+    <compoundname>page_cppconst</compoundname>
+    <title>Preprocessor Symbols</title>
+    <tableofcontents>
+      <tocsect>
+        <name>GUI system</name>
+        <reference>page_cppconst_1page_cppconst_guisystem</reference>
+    </tocsect>
+      <tocsect>
+        <name>Operating Systems</name>
+        <reference>page_cppconst_1page_cppconst_os</reference>
+    </tocsect>
+      <tocsect>
+        <name>Hardware Architectures (CPU)</name>
+        <reference>page_cppconst_1page_cppconst_cpu</reference>
+    </tocsect>
+      <tocsect>
+        <name>Compilers</name>
+        <reference>page_cppconst_1page_cppconst_compiler</reference>
+    </tocsect>
+      <tocsect>
+        <name>Feature Tests</name>
+        <reference>page_cppconst_1page_cppconst_featuretests</reference>
+    </tocsect>
+      <tocsect>
+        <name>MSVC-specific Symbols</name>
+        <reference>page_cppconst_1page_cppconst_msvc_setup_h</reference>
+    <tableofcontents>
+      <tocsect>
+        <name>Library Selection for MSVC</name>
+        <reference>page_cppconst_1page_cppconst_msvc_setup_h_no_libs</reference>
+    </tocsect>
+    </tableofcontents>
+    </tocsect>
+      <tocsect>
+        <name>Compatibility Macros</name>
+        <reference>page_cppconst_1page_cppconst_compatibility</reference>
+    </tocsect>
+      <tocsect>
+        <name>Miscellaneous</name>
+        <reference>page_cppconst_1page_cppconst_miscellaneous</reference>
+    </tocsect>
+    </tableofcontents>
+    <briefdescription>
+<para>These are preprocessor symbols used in the wxWidgets source, grouped by category (and sorted by alphabetical order inside each category). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>These are preprocessor symbols used in the wxWidgets source, grouped by category (and sorted by alphabetical order inside each category).</para>
+<para>All of these macros except for the <computeroutput>wxUSE_XXX</computeroutput> variety is defined if the corresponding condition is true and undefined if it isn&apos;t, so they should be always tested using #ifdef and not #if.</para>
+<sect1 id="page_cppconst_1page_cppconst_guisystem">
+<title>GUI system</title>
+<para><table rows="23" cols="2"><row>
+<entry thead="no"><para><bold>WXBASE</bold> </para>
+</entry><entry thead="no"><para>Only wxBase, no GUI features (same as <computeroutput>wxUSE_GUI</computeroutput> == 0) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXDFB</bold> </para>
+</entry><entry thead="no"><para>wxUniversal using DirectFB </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXGTK</bold> </para>
+</entry><entry thead="no"><para>GTK+ </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXGTK127</bold> </para>
+</entry><entry thead="no"><para>GTK+ 1.2.7 or higher </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXGTK20</bold> </para>
+</entry><entry thead="no"><para>GTK+ 2.0 (2.6) or higher </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXGTK210</bold> </para>
+</entry><entry thead="no"><para>GTK+ 2.10 or higher </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXGTK218</bold> </para>
+</entry><entry thead="no"><para>GTK+ 2.18 or higher </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXGTK220</bold> </para>
+</entry><entry thead="no"><para>GTK+ 2.20 or higher </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXMAC</bold> </para>
+</entry><entry thead="no"><para>old define, same as <computeroutput><bold>WXOSX</bold></computeroutput> </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXMOTIF</bold> </para>
+</entry><entry thead="no"><para>Motif </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXMOTIF20</bold> </para>
+</entry><entry thead="no"><para>Motif 2.0 or higher </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXMSW</bold> </para>
+</entry><entry thead="no"><para>GUI using <ulink url="http://en.wikipedia.org/wiki/Windows_User">Windows Controls</ulink>. Notice that for compatibility reasons, this symbol is defined for console applications under Windows as well, but it should only be used in the GUI code while <computeroutput><bold>WINDOWS</bold></computeroutput> should be used for the platform tests. </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXOSX</bold> </para>
+</entry><entry thead="no"><para>OS X GUI using any Apple widget framework (AppKit or UIKit) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXOSX_IPHONE</bold> </para>
+</entry><entry thead="no"><para>iPhone (UIKit) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXOSX_COCOA</bold> </para>
+</entry><entry thead="no"><para>macOS using Cocoa (AppKit) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXOSX_MAC</bold> </para>
+</entry><entry thead="no"><para>macOS (Cocoa) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXPM</bold> </para>
+</entry><entry thead="no"><para>OS/2 native Presentation Manager (not used any longer). </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXSTUBS</bold> </para>
+</entry><entry thead="no"><para>Stubbed version (&apos;template&apos; wxWin implementation) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXXT</bold> </para>
+</entry><entry thead="no"><para>Xt; mutually exclusive with WX_MOTIF, not implemented in wxWidgets 2.x </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXX11</bold> </para>
+</entry><entry thead="no"><para>wxX11 (<computeroutput><bold>WXUNIVERSAL</bold></computeroutput> will be also defined) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXWINE</bold> </para>
+</entry><entry thead="no"><para>WINE (i.e. WIN32 on Unix) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXUNIVERSAL</bold> </para>
+</entry><entry thead="no"><para>wxUniversal port, always defined in addition to one of the symbols above so this should be tested first. </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>X</bold> </para>
+</entry><entry thead="no"><para>any X11-based GUI toolkit except GTK+ </para>
+</entry></row>
+</table>
+</para>
+<para>wxOSX is the successor of the venerable wxMac, it currently exists in two versions: Cocoa for the desktop and a very early iPhone port. To summarize:</para>
+<para><itemizedlist>
+<listitem><para>If you want to test for wxOSX on the desktop, use <computeroutput><bold>WXOSX_MAC</bold></computeroutput>. </para>
+</listitem>
+<listitem><para>If you want to test for wxOSX on the iPhone, use <computeroutput><bold>WXOSX_IPHONE</bold></computeroutput>. </para>
+</listitem>
+<listitem><para>If you want to test for any port under macOS, including, for example, wxGTK and also wxBase, use <computeroutput><bold>DARWIN</bold></computeroutput> (see below).</para>
+</listitem>
+</itemizedlist>
+The convention is to use the <computeroutput>__WX</computeroutput> prefix for these symbols, although this has not always been followed.</para>
+</sect1>
+<sect1 id="page_cppconst_1page_cppconst_os">
+<title>Operating Systems</title>
+<para><table rows="28" cols="2"><row>
+<entry thead="no"><para><bold>APPLE</bold> </para>
+</entry><entry thead="no"><para>any Mac OS version </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>AIX</bold> </para>
+</entry><entry thead="no"><para>AIX </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>BSD</bold> </para>
+</entry><entry thead="no"><para>Any *BSD system </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>CYGWIN</bold> </para>
+</entry><entry thead="no"><para>Cygwin: Unix on Win32 </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>DARWIN</bold> </para>
+</entry><entry thead="no"><para>OS X (with BSD C library), using any port (see also <computeroutput><bold>WXOSX</bold></computeroutput>) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>DATA_GENERAL</bold> </para>
+</entry><entry thead="no"><para>DG-UX </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>FREEBSD</bold> </para>
+</entry><entry thead="no"><para>FreeBSD </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>HPUX</bold> </para>
+</entry><entry thead="no"><para>HP-UX (Unix) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>GNU</bold> </para>
+</entry><entry thead="no"><para>GNU Hurd </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>LINUX</bold> </para>
+</entry><entry thead="no"><para>Linux </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>MACH</bold> </para>
+</entry><entry thead="no"><para>Mach-O Architecture (OS X only builds) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>OSF</bold> </para>
+</entry><entry thead="no"><para>OSF/1 </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>QNX</bold> </para>
+</entry><entry thead="no"><para>QNX Neutrino RTOS </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>SGI</bold> </para>
+</entry><entry thead="no"><para>IRIX </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>SOLARIS</bold> </para>
+</entry><entry thead="no"><para>Solaris </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>SUN</bold> </para>
+</entry><entry thead="no"><para>Any Sun </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>SUNOS</bold> </para>
+</entry><entry thead="no"><para>Sun OS </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>SVR4</bold> </para>
+</entry><entry thead="no"><para>SystemV R4 </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>SYSV</bold> </para>
+</entry><entry thead="no"><para>SystemV generic </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>ULTRIX</bold> </para>
+</entry><entry thead="no"><para>Ultrix </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>UNIX</bold> </para>
+</entry><entry thead="no"><para>any Unix </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>UNIX_LIKE</bold> </para>
+</entry><entry thead="no"><para>Unix, BeOS or VMS </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>VMS</bold> </para>
+</entry><entry thead="no"><para>VMS </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WINDOWS</bold> </para>
+</entry><entry thead="no"><para>Any Windows platform, using any port (see also <computeroutput><bold>WXMSW</bold></computeroutput>) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WIN16</bold> </para>
+</entry><entry thead="no"><para>Win16 API (not supported since wxWidgets 2.6) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WIN32</bold> </para>
+</entry><entry thead="no"><para>Win32 API </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WIN64</bold> </para>
+</entry><entry thead="no"><para>Win64 (mostly same as Win32 but data type sizes are different) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WINE</bold> </para>
+</entry><entry thead="no"><para>Wine </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="page_cppconst_1page_cppconst_cpu">
+<title>Hardware Architectures (CPU)</title>
+<para>Note that not all of these symbols are always defined, it depends on the compiler used.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para><bold>ALPHA</bold> </para>
+</entry><entry thead="no"><para>DEC Alpha architecture </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>INTEL</bold> </para>
+</entry><entry thead="no"><para>Intel i386 or compatible </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>IA64</bold> </para>
+</entry><entry thead="no"><para>Intel 64 bit architecture </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>POWERPC</bold> </para>
+</entry><entry thead="no"><para>Motorola Power PC </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="page_cppconst_1page_cppconst_compiler">
+<title>Compilers</title>
+<para><table rows="15" cols="2"><row>
+<entry thead="no"><para><bold>BORLANDC</bold> </para>
+</entry><entry thead="no"><para>Borland C++. The value of the macro corresponds to the compiler version: 500 is 5.0 (not used any more). </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>DIGITALMARS</bold> </para>
+</entry><entry thead="no"><para>Digital Mars (not used any more). </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>GNUG</bold> </para>
+</entry><entry thead="no"><para>Gnu C++ on any platform, see also wxCHECK_GCC_VERSION </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>GNUWIN32</bold> </para>
+</entry><entry thead="no"><para>Gnu-Win32 compiler, see also wxCHECK_W32API_VERSION </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>INTELC</bold> </para>
+</entry><entry thead="no"><para>Intel C++ compiler </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>MINGW32</bold> </para>
+</entry><entry thead="no"><para>Either MinGW32 or MinGW-w64 in either 32 or 64 bits </para>
+</entry></row>
+<row>
+<entry thead="no"><para>__MINGW32_TOOLCHAIN </para>
+</entry><entry thead="no"><para>MinGW32 only (32 bits only right now) </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>MINGW64</bold> </para>
+</entry><entry thead="no"><para>MinGW-w64 in 64 bit builds </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>MINGW64_TOOLCHAIN</bold> </para>
+</entry><entry thead="no"><para>MinGW-w64 in either 32 or 64 bit builds </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>SUNCC</bold> </para>
+</entry><entry thead="no"><para>Sun CC, see also wxCHECK_SUNCC_VERSION </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>SYMANTECC</bold> </para>
+</entry><entry thead="no"><para>Symantec C++ (not used any more). </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>VISAGECPP</bold> </para>
+</entry><entry thead="no"><para>IBM Visual Age (OS/2) (not used any more). </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>VISUALC</bold> </para>
+</entry><entry thead="no"><para>Microsoft Visual C++, see also <ref refid="platform_8h_1a5a01a6b9009ee0ef3b90d520b1a0f5c1" kindref="member">wxCHECK_VISUALC_VERSION</ref>. The value of this macro corresponds to the compiler version: <computeroutput>1020</computeroutput> for <computeroutput>4.2</computeroutput> (the first supported version), <computeroutput>1100</computeroutput> for <computeroutput>5.0</computeroutput>, <computeroutput>1200</computeroutput> for <computeroutput>6.0</computeroutput> and so on. For convenience, the symbols <bold>VISUALCn</bold> are also defined for each major compiler version from 5 to 12, i.e. you can use tests such as <computeroutput>#ifdef __VISUALC7__</computeroutput> to test for compiler version being precisely 7. </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>XLC</bold> </para>
+</entry><entry thead="no"><para>AIX compiler </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WATCOMC</bold> </para>
+</entry><entry thead="no"><para>Watcom C++. The value of this macro corresponds to the compiler version, <computeroutput>1100</computeroutput> is <computeroutput>11.0</computeroutput> and <computeroutput>1200</computeroutput> is OpenWatcom (not used any more). </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="page_cppconst_1page_cppconst_featuretests">
+<title>Feature Tests</title>
+<para>Some library features may not be always available even if they were selected by the user. To make it possible to check if this is the case, the library predefines the symbols in the form <computeroutput>wxHAS_FEATURE</computeroutput>. Unlike <computeroutput>wxUSE_FEATURE</computeroutput> symbols which are defined by the library user (directly in <computeroutput>setup.h</computeroutput> or by running configure script) and which must be always defined as either 0 or 1, the <computeroutput>wxHAS</computeroutput> symbols are only defined if the corresponding feature is available and not defined at all otherwise.</para>
+<para>Currently the following symbols exist:</para>
+<para><table rows="23" cols="2"><row>
+<entry thead="no"><para>wxHAS_3STATE_CHECKBOX </para>
+</entry><entry thead="no"><para>Defined if <ref refid="classwx_check_box" kindref="compound">wxCheckBox</ref> supports wxCHK_3STATE flag, i.e. is capable of showing three states and not only the usual two. Currently defined for almost all ports. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_ATOMIC_OPS </para>
+</entry><entry thead="no"><para>Defined if <ref refid="atomic_8h_1a35470b5fc125b443e73b7967100752d4" kindref="member">wxAtomicInc()</ref> and <ref refid="atomic_8h_1a396a0a6c5b705d46862564f5b16897b2" kindref="member">wxAtomicDec()</ref> functions have an efficient (CPU-specific) implementation. Notice that the functions themselves are always available but can be prohibitively slow to use when implemented in a generic way, using a critical section. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_BITMAPTOGGLEBUTTON </para>
+</entry><entry thead="no"><para>Defined in <computeroutput><ref refid="tglbtn_8h" kindref="compound">wx/tglbtn.h</ref></computeroutput> if <ref refid="classwx_bitmap_toggle_button" kindref="compound">wxBitmapToggleButton</ref> class is available in addition to <ref refid="classwx_toggle_button" kindref="compound">wxToggleButton</ref>. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_CONFIG_TEMPLATE_RW </para>
+</entry><entry thead="no"><para>Defined if the currently used compiler supports template Read() and Write() methods in wxConfig. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_MEMBER_DEFAULT </para>
+</entry><entry thead="no"><para>Defined if the currently used compiler supports C++11 <computeroutput>=default</computeroutput>. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_LARGE_FILES </para>
+</entry><entry thead="no"><para>Defined if <ref refid="classwx_file" kindref="compound">wxFile</ref> supports files more than 4GB in size (notice that you must include <computeroutput><ref refid="filefn_8h" kindref="compound">wx/filefn.h</ref></computeroutput> before testing for this symbol). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_LARGE_FFILES </para>
+</entry><entry thead="no"><para>Defined if <ref refid="classwx_f_file" kindref="compound">wxFFile</ref> supports files more than 4GB in size (notice that you must include <computeroutput><ref refid="filefn_8h" kindref="compound">wx/filefn.h</ref></computeroutput> before testing for this symbol). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_LONG_LONG_T_DIFFERENT_FROM_LONG </para>
+</entry><entry thead="no"><para>Defined if compiler supports a 64 bit integer type (available as <computeroutput>wxLongLong_t</computeroutput>) and this type is different from long. Notice that, provided wxUSE_LONGLONG is not turned off, some 64 bit type is always available to wxWidgets programs and this symbol only indicates a presence of such primitive type. It is useful to decide whether some function should be overloaded for both <computeroutput>long</computeroutput> and <computeroutput>long long</computeroutput> types. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_MULTIPLE_FILEDLG_FILTERS </para>
+</entry><entry thead="no"><para>Defined if <ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref> supports multiple (&apos;|&apos;-separated) filters. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_NATIVE_ANIMATIONCTRL </para>
+</entry><entry thead="no"><para>Defined if native <ref refid="classwx_animation_ctrl" kindref="compound">wxAnimationCtrl</ref> class is being used (this symbol only exists in wxWidgets 3.1.4 and later). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_NATIVE_DATAVIEWCTRL </para>
+</entry><entry thead="no"><para>Defined if native <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> class is being used (this symbol only exists in wxWidgets 3.1.4 and later). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_NATIVE_WINDOW </para>
+</entry><entry thead="no"><para>Defined if <ref refid="classwx_native_window" kindref="compound">wxNativeWindow</ref> class is available. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_NOEXCEPT </para>
+</entry><entry thead="no"><para>Defined if the currently used compiler supports C++11 <computeroutput>noexcept</computeroutput>. <computeroutput>wxNOEXCEPT</computeroutput> is defined as this keyword in this case, and as nothing otherwise. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_NULLPTR_T </para>
+</entry><entry thead="no"><para>Defined if the currently used compiler supports C++11 <computeroutput>nullptr</computeroutput>. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_IMAGES_IN_RESOURCES </para>
+</entry><entry thead="no"><para>Defined if <ulink url="http://en.wikipedia.org/wiki/Resource_(Windows)">Windows resource files</ulink> or OS/2 resource files are available on the current platform. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_POWER_EVENTS </para>
+</entry><entry thead="no"><para>Defined if <ref refid="classwx_power_event" kindref="compound">wxPowerEvent</ref> are ever generated on the current platform. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_RADIO_MENU_ITEMS </para>
+</entry><entry thead="no"><para>Defined if the current port supports radio menu items (see <ref refid="classwx_menu_1a341af26a4d59740d99d17aa1a6ed6e48" kindref="member">wxMenu::AppendRadioItem</ref>). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_RAW_BITMAP </para>
+</entry><entry thead="no"><para>Defined if direct access to bitmap data using the classes in <computeroutput><ref refid="rawbmp_8h" kindref="compound">wx/rawbmp.h</ref></computeroutput> is supported. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_RAW_KEY_CODES </para>
+</entry><entry thead="no"><para>Defined if raw key codes (see <ref refid="classwx_key_event_1a45762aa4caa39a298a3552f592391936" kindref="member">wxKeyEvent::GetRawKeyCode</ref> are supported. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_REGEX_ADVANCED </para>
+</entry><entry thead="no"><para>Defined if advanced syntax is available in <ref refid="classwx_reg_ex" kindref="compound">wxRegEx</ref>. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_TASK_BAR_ICON </para>
+</entry><entry thead="no"><para>Defined if <ref refid="classwx_task_bar_icon" kindref="compound">wxTaskBarIcon</ref> is available on the current platform. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_WINDOW_LABEL_IN_STATIC_BOX </para>
+</entry><entry thead="no"><para>Defined if <ref refid="classwx_static_box_1a67369167050464548e9ef0f791844f60" kindref="member">wxStaticBox::Create()</ref> overload taking <computeroutput>wxWindow*</computeroutput> instead of the text label is available on the current platform. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_MODE_T </para>
+</entry><entry thead="no"><para>Defined when wxWidgets defines <computeroutput>mode_t</computeroutput> typedef for the compilers not providing it. If another library used in a wxWidgets application, such as ACE (<ulink url="http://www.cs.wustl.edu/~schmidt/ACE.html">http://www.cs.wustl.edu/~schmidt/ACE.html</ulink>), also defines <computeroutput>mode_t</computeroutput>, this symbol can be predefined after including the other library header, such as <computeroutput>&quot;ace/os_include/sys/os_types.h&quot;</computeroutput> in ACE case, but before including any wxWidgets headers, to prevent a definition conflict. </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="page_cppconst_1page_cppconst_msvc_setup_h">
+<title>MSVC-specific Symbols</title>
+<para>Microsoft Visual C++ users may use the special <computeroutput>wx/setup.h</computeroutput> file for this compiler in <computeroutput>include/msvc</computeroutput> subdirectory. This file implicitly links in all the wxWidgets libraries using MSVC-specific pragmas which usually is much more convenient than manually specifying the libraries list in all of the project configurations.</para>
+<para>By default, the pragmas used in this file to actually link with wxWidgets libraries suppose that the libraries are located in <computeroutput>vc_lib</computeroutput> or <computeroutput>vc_dll</computeroutput> directory which is used by default. However when using multiple MSVC versions, or when using the <ref refid="plat_msw_binaries" kindref="compound">official binaries</ref>, the libraries are in a directory containing the compiler version number, e.g. <computeroutput>vc140_dll</computeroutput>. To make linking work in this case, you must predefine <computeroutput>wxMSVC_VERSION</computeroutput> as <computeroutput>vc140</computeroutput> <emphasis>before</emphasis> include <computeroutput>wx/setup.h</computeroutput> file, i.e. typically in the MSVS project options. Alternatively, you can predefine <computeroutput>wxMSVC_VERSION_AUTO</computeroutput> symbol (without any value), which means that the appropriate compiler version should be used automatically, e.g. &quot;vc100&quot; for VC 10 (MSVS 2010), &quot;vc140&quot; for VC 14 (MSVS 2015) etc. Additionally, VC 14 is a special case as it has 3 minor versions: VC 14.0, 14.1 and 14.2, corresponding to MSVS 2015, 2017 and 2019; that are ABI-compatible with each other. Due to this, it can also be useful to reuse the single build of wxWidgets with all versions of the compiler and this is supported if <computeroutput>wxMSVC_VERSION_ABI_COMPAT</computeroutput> is defined: the compiler prefix &quot;vc14x&quot; is used in this case.</para>
+<para>If the makefiles have been used to build the libraries from source and the <computeroutput>CFG</computeroutput> variable has been set to specify a different output path for that particular configuration of build then the <computeroutput>wxCFG</computeroutput> preprocessor symbol should be set in the project that uses wxWidgets to the same value as the <computeroutput>CFG</computeroutput> variable in order for the correct <computeroutput>wx/setup.h</computeroutput> file to automatically be included for that configuration.</para>
+<sect2 id="page_cppconst_1page_cppconst_msvc_setup_h_no_libs">
+<title>Library Selection for MSVC</title>
+<para>As explained above, MSVC users don&apos;t need to explicitly specify wxWidgets libraries to link with, as this is done by <computeroutput>wx/setup.h</computeroutput>. However sometimes linking with all the libraries, as is done by default, is not desirable, for example because some of them were not built and this is where the symbols in this section can be helpful: defining them allows to not link with the corresponding library. The following symbols are honoured: <verbatim>- wxNO_AUI_LIB
+- wxNO_HTML_LIB
+- wxNO_MEDIA_LIB
+- wxNO_NET_LIB
+- wxNO_PROPGRID_LIB
+- wxNO_QA_LIB
+- wxNO_RICHTEXT_LIB
+- wxNO_WEBVIEW_LIB
+- wxNO_XML_LIB
+- wxNO_REGEX_LIB
+- wxNO_EXPAT_LIB
+- wxNO_JPEG_LIB
+- wxNO_PNG_LIB
+- wxNO_TIFF_LIB
+- wxNO_ZLIB_LIB
+</verbatim> Notice that the base library is always included and the core is always included for the GUI applications (i.e. those which don&apos;t define <computeroutput>wxUSE_GUI</computeroutput> as 0).</para>
+</sect2>
+</sect1>
+<sect1 id="page_cppconst_1page_cppconst_compatibility">
+<title>Compatibility Macros</title>
+<para>wxWidgets always tries to preserve source backwards compatibility, however sometimes existing symbols may need to be removed. Except in exceedingly rare cases, this happens in several steps: first, the symbol is marked as deprecated, so that using it results in a warning when using the common compilers (e.g. any non-ancient version of MSVC, gcc or clang) in some wxWidgets release <computeroutput>x.y</computeroutput>. It can still be used, however the warnings indicate all the places in your code which will need to be updated in the future. If your code doesn&apos;t use any deprecated symbols or you have already fixed all their occurrences, you may change <computeroutput>WXWIN_COMPATIBILITY_x_y</computeroutput> to 0 to ensure they can&apos;t be used <ndash/> however its default value is still 1 at this time.</para>
+<para>At some point in the future, the next stable wxWidgets release <computeroutput>x.y+2</computeroutput> changes the default <computeroutput>WXWIN_COMPATIBILITY_x_y</computeroutput> value to 0, meaning that now the symbol becomes unavailable by default and if you still want to be able to compile the code using it, you need to explicitly change <computeroutput>WXWIN_COMPATIBILITY_x_y</computeroutput> to 1 when building the library.</para>
+<para>And, finally, the symbol is completely removed from the library in the next stable version after this, i.e. <computeroutput>x.y+4</computeroutput>. <computeroutput>WXWIN_COMPATIBILITY_x_y</computeroutput> itself is removed as well at this time, as it is not useful any longer.</para>
+<para>According to this general rule, currently, i.e. in wxWidgets 3.2, the following two symbols are defined: <computeroutput>WXWIN_COMPATIBILITY_2_8</computeroutput>, as 0, and <computeroutput>WXWIN_COMPATIBILITY_3_0</computeroutput>, as 1. Please see <ref refid="overview_backwardcompat" kindref="compound">Backwards Compatibility</ref> for even more details.</para>
+<para><table rows="4" cols="2"><row>
+<entry thead="no"><para>WXWIN_COMPATIBILITY_2_8 </para>
+</entry><entry thead="no"><para>defined as 0 by default meaning that symbols existing in wxWidgets 2.8 but deprecated in 3.0 release are not available by default. It can be changed to 1 to make them available, but it is strongly recommended to update the code using them instead. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>WXWIN_COMPATIBILITY_3_0 </para>
+</entry><entry thead="no"><para>defined as 1 by default meaning that symbols existing in wxWidgets 3.0 but deprecated since then are still available. It can be changed to 1 to ensure that no deprecated symbols are used accidentally. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxDIALOG_UNIT_COMPATIBILITY </para>
+</entry><entry thead="no"><para>wxMSW-specific setting which can be set to 1 to make <ref refid="classwx_window_1a8f92c15635a44b85392d16f5906c31ef" kindref="member">wxWindow::GetCharWidth()</ref> and <ref refid="classwx_window_1aa488520238094f858bea3c3a2c6b9809" kindref="member">wxWindow::GetCharHeight()</ref> more compatible with old wxWidgets versions. Changing it is not recommended. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_UNSAFE_WXSTRING_CONV </para>
+</entry><entry thead="no"><para>this option determines if unsafe implicit conversions of <ref refid="classwx_string" kindref="compound">wxString</ref> to <computeroutput>char*</computeroutput> or <computeroutput>std::string</computeroutput> (depending on whether <computeroutput>wxUSE_STL</computeroutput> is 0 or 1) are defined. It is set to 1 by default for compatibility reasons, however it is recommended to set it to 0 for the new projects. See also <computeroutput>wxNO_UNSAFE_WXSTRING_CONV</computeroutput> below for an alternative way of disabling these unsafe conversions not requiring rebuilding the library. </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="page_cppconst_1page_cppconst_miscellaneous">
+<title>Miscellaneous</title>
+<para><table rows="16" cols="2"><row>
+<entry thead="no"><para><bold>WXWINDOWS</bold> </para>
+</entry><entry thead="no"><para>always defined in wxWidgets applications, see also wxCHECK_VERSION </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxDEBUG_LEVEL </para>
+</entry><entry thead="no"><para>defined as 1 by default, may be pre-defined as 0 before including wxWidgets headers to disable generation of any code at all for the assertion macros, see <ref refid="overview_debugging" kindref="compound">Debugging</ref> </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>WXDEBUG</bold> </para>
+</entry><entry thead="no"><para>defined if wxDEBUG_LEVEL is 1 or more, undefined otherwise </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_XXX </para>
+</entry><entry thead="no"><para>if defined as 1, feature XXX is active, see the <ref refid="page_wxusedef" kindref="compound">wxUSE Preprocessor Symbols</ref> (the symbols of this form are always defined, use #if and not #ifdef to test for them) </para>
+</entry></row>
+<row>
+<entry thead="no"><para>WX_PRECOMP </para>
+</entry><entry thead="no"><para>is defined if precompiled headers (PCH) are in use. In this case, <computeroutput>wx/wxprec.h</computeroutput> includes <computeroutput>wx/wx.h</computeroutput> which, in turn, includes a number of wxWidgets headers thus making it unnecessary to include them explicitly. However if this is not defined, you do need to include them and so the usual idiom which allows to support both cases is to first include <computeroutput>wx/wxprec.h</computeroutput>  and then, inside <computeroutput>#ifndef WX_PRECOMP</computeroutput>, individual headers you need.} </para>
+</entry></row>
+<row>
+<entry thead="no"><para>_UNICODE and UNICODE </para>
+</entry><entry thead="no"><para>both are defined if wxUSE_UNICODE is set to <computeroutput>1</computeroutput>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_GUI </para>
+</entry><entry thead="no"><para>this particular feature test macro is defined to 1 when compiling or using the library with the GUI features activated, if it is defined as <computeroutput>0</computeroutput>, only wxBase is available. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_BASE </para>
+</entry><entry thead="no"><para>only used by wxWidgets internally (defined as 1 when building wxBase code, either as a standalone library or as part of the monolithic wxWidgets library, defined as 0 when building GUI library only) </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxNO_RTTI </para>
+</entry><entry thead="no"><para>is defined if the compiler RTTI support has been switched off </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxNO_EXCEPTIONS </para>
+</entry><entry thead="no"><para>is defined if the compiler support for C++ exceptions has been switched off </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxNO_THREADS </para>
+</entry><entry thead="no"><para>if this macro is defined, the compilation options don&apos;t include compiler flags needed for multithreaded code generation. This implies that wxUSE_THREADS is 0 and also that other (non-wx-based) threading packages cannot be used neither. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxNO_UNSAFE_WXSTRING_CONV </para>
+</entry><entry thead="no"><para>this symbol is not defined by wxWidgets itself, but can be defined by the applications using the library to disable unsafe implicit conversions in <ref refid="classwx_string" kindref="compound">wxString</ref> class. This is especially useful when using standard build of the library, e.g. installed by the system package manager under Unix, which is compiled with <computeroutput>wxUSE_UNSAFE_WXSTRING_CONV</computeroutput> set to 1 for compatibility reasons as <computeroutput>-DwxNO_UNSAFE_WXSTRING_CONV</computeroutput> can be used only compiling the application code, without rebuilding the library. Support for this option appeared in wxWidgets 3.1.1. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxNO_IMPLICIT_WXSTRING_ENCODING </para>
+</entry><entry thead="no"><para>this symbol is not defined by wxWidgets itself, but can be defined by the applications using the library to disable implicit conversions from and to <computeroutput>const char*</computeroutput> in <ref refid="classwx_string" kindref="compound">wxString</ref> class. Support for this option appeared in wxWidgets 3.1.4. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>WXMAKINGDLL_XXX </para>
+</entry><entry thead="no"><para>used internally and defined when building the library <computeroutput>XXX</computeroutput> as a DLL; when a monolithic wxWidgets build is used only a single <computeroutput>WXMAKINGDLL</computeroutput> symbol is defined </para>
+</entry></row>
+<row>
+<entry thead="no"><para>WXUSINGDLL </para>
+</entry><entry thead="no"><para>defined when compiling code which uses wxWidgets as a DLL/shared library </para>
+</entry></row>
+<row>
+<entry thead="no"><para>WXBUILDING </para>
+</entry><entry thead="no"><para>defined when building wxWidgets itself, whether as a static or shared library </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="docs/doxygen/mainpages/const_cpp.h"/>
+  </compounddef>
+</doxygen>

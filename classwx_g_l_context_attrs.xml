@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="classwx_g_l_context_attrs" kind="class" language="C++" prot="public">
+    <compoundname>wxGLContextAttrs</compoundname>
+    <basecompoundref refid="classwx_g_l_attribs_base" prot="public" virt="non-virtual">wxGLAttribsBase</basecompoundref>
+    <includes local="no">wx/glcanvas.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1aac1afdc7dc9d233631d69fbb13e4d04c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::CoreProfile</definition>
+        <argsstring>()</argsstring>
+        <name>CoreProfile</name>
+        <briefdescription>
+<para>Request an OpenGL core profile for the context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the requested OpenGL version is less than 3.2, this attribute is ignored and the functionality of the context is determined solely by the requested version. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="310" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1a6ab949c13bd6a1694b9986a3b32f5e82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::MajorVersion</definition>
+        <argsstring>(int val)</argsstring>
+        <name>MajorVersion</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Request specific OpenGL core major version number (&gt;= 3). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The major version number requested.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+It has no effect under macOS where specifying <ref refid="classwx_g_l_context_attrs_1aac1afdc7dc9d233631d69fbb13e4d04c" kindref="member">CoreProfile()</ref> will result in using OpenGL version at least 3.2. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="321" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1ad576f49e7ec0d5a4807de6d67a2668aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::MinorVersion</definition>
+        <argsstring>(int val)</argsstring>
+        <name>MinorVersion</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Request specific OpenGL core minor version number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minor version number requested, e.g. 2 if OpenGL 3.2 is requested.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+It has no effect under macOS where specifying <ref refid="classwx_g_l_context_attrs_1aac1afdc7dc9d233631d69fbb13e4d04c" kindref="member">CoreProfile()</ref> will result in using OpenGL version at least 3.2. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="332" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1ac2b272f5b876316cd0e3c36b821125f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::OGLVersion</definition>
+        <argsstring>(int vmayor, int vminor)</argsstring>
+        <name>OGLVersion</name>
+        <param>
+          <type>int</type>
+          <declname>vmayor</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>vminor</declname>
+        </param>
+        <briefdescription>
+<para>An easy way of requesting an OpenGL version. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vmayor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The major version number requested, e.g. 4 if OpenGL 4.5 is requested.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vminor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minor version number requested, e.g. 5 if OpenGL 4.5 is requested.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+It has no effect under macOS where specifying <ref refid="classwx_g_l_context_attrs_1aac1afdc7dc9d233631d69fbb13e4d04c" kindref="member">CoreProfile()</ref> will result in using OpenGL version at least 3.2. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="346" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1a41603a43c27433251b934012c1ffd2da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::CompatibilityProfile</definition>
+        <argsstring>()</argsstring>
+        <name>CompatibilityProfile</name>
+        <briefdescription>
+<para>Request a type of context with all OpenGL features from version 1.0 to the newest available by the GPU driver. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In this mode the GPU may be some slower than it would be without this compatibility attribute. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="353" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1a3255195f8828885acddf2318acb901e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::ForwardCompatible</definition>
+        <argsstring>()</argsstring>
+        <name>ForwardCompatible</name>
+        <briefdescription>
+<para>Request a forward-compatible context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Forward-compatible contexts are defined only for OpenGL versions 3.0 and later. They must not support functionality marked as deprecated or removed by the requested version of the OpenGL API.</para>
+<para>It has no effect under macOS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="363" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1a23fac66737393e160ae851cce459a28d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::ES2</definition>
+        <argsstring>()</argsstring>
+        <name>ES2</name>
+        <briefdescription>
+<para>Request an ES or ES2 (&quot;Embedded Subsystem&quot;) context. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These are special subsets of OpenGL, lacking some features of the full specification. Used mainly in embedded devices such as mobile phones.</para>
+<para>It has no effect under macOS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="372" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1a4d96247f6d8fb38da1c4375c628bd22c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::DebugCtx</definition>
+        <argsstring>()</argsstring>
+        <name>DebugCtx</name>
+        <briefdescription>
+<para>Request debugging functionality. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This tells OpenGL to prepare a set where some logs are enabled and also allows OGL to send debug messages through a callback function.</para>
+<para>It has no effect under macOS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="381" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1a95e40381faa4fd547718e2139fd154ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::Robust</definition>
+        <argsstring>()</argsstring>
+        <name>Robust</name>
+        <briefdescription>
+<para>Request robustness, or how OpenGL handles out-of-bounds buffer object accesses and graphics reset notification behaviours. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It has no effect under macOS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="389" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1aa0efd200030f9a406f2a02c83fac4525" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::NoResetNotify</definition>
+        <argsstring>()</argsstring>
+        <name>NoResetNotify</name>
+        <briefdescription>
+<para>With robustness enabled, never deliver notification of reset events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It has no effect under macOS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="396" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1a05422b8a78aa84912cecb9e16603a460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::LoseOnReset</definition>
+        <argsstring>()</argsstring>
+        <name>LoseOnReset</name>
+        <briefdescription>
+<para>With robustness enabled, if graphics reset happens, all context state is lost. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It has no effect under macOS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="404" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1a9c63fa1eed777f160bcf927cdea8d3a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::ResetIsolation</definition>
+        <argsstring>()</argsstring>
+        <name>ResetIsolation</name>
+        <briefdescription>
+<para>Request OpenGL to protect other applications or shared contexts from reset side-effects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It has no effect under macOS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="412" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1aa06feb6dbf871812dabe78b374af8c8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::ReleaseFlush</definition>
+        <argsstring>(int val=1)</argsstring>
+        <name>ReleaseFlush</name>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Request OpenGL to avoid or not flushing pending commands when the context is made no longer current (released). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If you don&apos;t specify this attribute, the GPU driver default is &apos;flushing&apos;.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0 for not flushing, 1 (wxWidgets default) for flushing pending commands.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+It has no effect under macOS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="424" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1a73c62604badcceb82bd90ae2906b5804" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref> &amp;</type>
+        <definition>wxGLContextAttrs &amp; wxGLContextAttrs::PlatformDefaults</definition>
+        <argsstring>()</argsstring>
+        <name>PlatformDefaults</name>
+        <briefdescription>
+<para>Set platform specific defaults. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Currently only Unix defaults are implemented: use X11 direct rendering and use X11 RGBA type. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="430" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_g_l_context_attrs_1adb251b51f515af5dacf1a36f77075a4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxGLContextAttrs::EndList</definition>
+        <argsstring>()</argsstring>
+        <name>EndList</name>
+        <briefdescription>
+<para>The set of attributes must end with this one; otherwise, the GPU may display nothing at all. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/glcanvas.h" line="436" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class is used for setting context attributes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Since OpenGL version 3.0 the ARB adds attributes time to time to the rendering context functionality. wxWidgets implements attributes up to OGL 4.5, but you can set new attributes by using <ref refid="classwx_g_l_attribs_base_1afc4de6372bda492c7dd584617aa03d3b" kindref="member">AddAttribute()</ref> and <ref refid="classwx_g_l_attribs_base_1af955df6b44725e0a990d1d17bb824102" kindref="member">AddAttribBits()</ref> functions inherited from the base <ref refid="classwx_g_l_attribs_base" kindref="compound">wxGLAttribsBase</ref> class.</para>
+<para>Attributes can be chained. For example: <programlisting><codeline><highlight class="normal"><ref refid="classwx_g_l_context_attrs" kindref="compound">wxGLContextAttrs</ref><sp/>cxtAttrs;</highlight></codeline>
+<codeline><highlight class="normal">cxtAttrs.<ref refid="classwx_g_l_context_attrs_1aac1afdc7dc9d233631d69fbb13e4d04c" kindref="member">CoreProfile</ref>().<ref refid="classwx_g_l_context_attrs_1ac2b272f5b876316cd0e3c36b821125f0" kindref="member">OGLVersion</ref>(4,<sp/>5).<ref refid="classwx_g_l_context_attrs_1a95e40381faa4fd547718e2139fd154ab" kindref="member">Robust</ref>().<ref refid="classwx_g_l_context_attrs_1a9c63fa1eed777f160bcf927cdea8d3a4" kindref="member">ResetIsolation</ref>().<ref refid="classwx_g_l_context_attrs_1adb251b51f515af5dacf1a36f77075a4c" kindref="member">EndList</ref>();</highlight></codeline>
+</programlisting></para>
+<para>Notice that <ref refid="classwx_g_l_context_attrs_1adb251b51f515af5dacf1a36f77075a4c" kindref="member">EndList()</ref> must be used as the last attribute. Not adding it will likely result in nothing displayed at all.</para>
+<para><simplesect kind="since"><para>3.1.0</para>
+</simplesect>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxgl" kindref="member">wxGL</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para><simplesect kind="see"><para><ref refid="classwx_g_l_canvas" kindref="compound">wxGLCanvas</ref>, <ref refid="classwx_g_l_context" kindref="compound">wxGLContext</ref>, <ref refid="classwx_g_l_attribs_base" kindref="compound">wxGLAttribsBase</ref>, <ref refid="classwx_g_l_attributes" kindref="compound">wxGLAttributes</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>wxGLAttribsBase</label>
+        <link refid="classwx_g_l_attribs_base"/>
+      </node>
+      <node id="1">
+        <label>wxGLContextAttrs</label>
+        <link refid="classwx_g_l_context_attrs"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>wxGLAttribsBase</label>
+        <link refid="classwx_g_l_attribs_base"/>
+      </node>
+      <node id="1">
+        <label>wxGLContextAttrs</label>
+        <link refid="classwx_g_l_context_attrs"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="interface/wx/glcanvas.h" line="300" column="1" bodyfile="interface/wx/glcanvas.h" bodystart="301" bodyend="437"/>
+    <listofallmembers>
+      <member refid="classwx_g_l_attribs_base_1af955df6b44725e0a990d1d17bb824102" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>AddAttribBits</name></member>
+      <member refid="classwx_g_l_attribs_base_1afc4de6372bda492c7dd584617aa03d3b" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>AddAttribute</name></member>
+      <member refid="classwx_g_l_context_attrs_1a41603a43c27433251b934012c1ffd2da" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>CompatibilityProfile</name></member>
+      <member refid="classwx_g_l_context_attrs_1aac1afdc7dc9d233631d69fbb13e4d04c" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>CoreProfile</name></member>
+      <member refid="classwx_g_l_context_attrs_1a4d96247f6d8fb38da1c4375c628bd22c" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>DebugCtx</name></member>
+      <member refid="classwx_g_l_context_attrs_1adb251b51f515af5dacf1a36f77075a4c" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>EndList</name></member>
+      <member refid="classwx_g_l_context_attrs_1a23fac66737393e160ae851cce459a28d" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>ES2</name></member>
+      <member refid="classwx_g_l_context_attrs_1a3255195f8828885acddf2318acb901e1" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>ForwardCompatible</name></member>
+      <member refid="classwx_g_l_attribs_base_1a0bdf6d85a2c1f9a6bb08b6647cdedf1d" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>GetGLAttrs</name></member>
+      <member refid="classwx_g_l_attribs_base_1a80eb518ec7df09c9591ac98a740e89e8" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>GetSize</name></member>
+      <member refid="classwx_g_l_context_attrs_1a05422b8a78aa84912cecb9e16603a460" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>LoseOnReset</name></member>
+      <member refid="classwx_g_l_context_attrs_1a6ab949c13bd6a1694b9986a3b32f5e82" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>MajorVersion</name></member>
+      <member refid="classwx_g_l_context_attrs_1ad576f49e7ec0d5a4807de6d67a2668aa" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>MinorVersion</name></member>
+      <member refid="classwx_g_l_attribs_base_1ad4cba38d7db1f57727cca59ab85ce123" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>NeedsARB</name></member>
+      <member refid="classwx_g_l_context_attrs_1aa0efd200030f9a406f2a02c83fac4525" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>NoResetNotify</name></member>
+      <member refid="classwx_g_l_context_attrs_1ac2b272f5b876316cd0e3c36b821125f0" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>OGLVersion</name></member>
+      <member refid="classwx_g_l_context_attrs_1a73c62604badcceb82bd90ae2906b5804" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>PlatformDefaults</name></member>
+      <member refid="classwx_g_l_context_attrs_1aa06feb6dbf871812dabe78b374af8c8d" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>ReleaseFlush</name></member>
+      <member refid="classwx_g_l_attribs_base_1ac19b8a554482616eef577cba219f487b" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>Reset</name></member>
+      <member refid="classwx_g_l_context_attrs_1a9c63fa1eed777f160bcf927cdea8d3a4" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>ResetIsolation</name></member>
+      <member refid="classwx_g_l_context_attrs_1a95e40381faa4fd547718e2139fd154ab" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>Robust</name></member>
+      <member refid="classwx_g_l_attribs_base_1a23c0bd4aa6a6f88fe1feb125d773f16d" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>SetNeedsARB</name></member>
+      <member refid="classwx_g_l_attribs_base_1aa20250566d1d8a22feb04aa787e9cb77" prot="public" virt="non-virtual"><scope>wxGLContextAttrs</scope><name>wxGLAttribsBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
