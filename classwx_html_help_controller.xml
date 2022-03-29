@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_html_help_controller" kind="class" language="C++" prot="public">
     <compoundname>wxHtmlHelpController</compoundname>
     <basecompoundref refid="classwx_help_controller_base" prot="public" virt="non-virtual">wxHelpControllerBase</basecompoundref>
@@ -107,7 +107,7 @@
         </briefdescription>
         <detaileddescription>
 <para>a <ref refid="overview_html_1overview_html_helpformats" kindref="member">.hhp file</ref>; an HTML Help Workshop project file) into the list of loaded books.</para>
-<para>This must be called at least once before displaying any help. <emphasis>bookFile</emphasis> or <emphasis>bookUrl</emphasis> may be either <computeroutput>&quot;.hhp&quot;</computeroutput> file or a ZIP archive that contains an arbitrary number of <computeroutput>&quot;.hhp&quot;</computeroutput> files in its top-level directory. This ZIP archive must have <computeroutput>&quot;.zip&quot;</computeroutput> or <computeroutput>&quot;.htb&quot;</computeroutput> extension (the latter stands for &quot;HTML book&quot;). In other words, <programlisting><codeline><highlight class="normal"><ref refid="classwx_html_help_controller_1aff569d5ea7135ef2ee60f0028519de73" kindref="member">AddBook</ref>(<ref refid="classwx_file_name" kindref="compound">wxFileName</ref>(</highlight><highlight class="stringliteral">&quot;help.zip&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<para>This must be called at least once before displaying any help. <emphasis>bookFile</emphasis> or <emphasis>bookUrl</emphasis> may be either <computeroutput>&quot;.hhp&quot;</computeroutput> file or a ZIP archive that contains an arbitrary number of <computeroutput>&quot;.hhp&quot;</computeroutput> files in its top-level directory. This ZIP archive must have <computeroutput>&quot;.zip&quot;</computeroutput> or <computeroutput>&quot;.htb&quot;</computeroutput> extension (the latter stands for &quot;HTML book&quot;). In other words, <programlisting><codeline><highlight class="normal">AddBook(wxFileName(&quot;help.zip&quot;))</highlight></codeline>
 </programlisting> is possible and is the recommended way.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -397,7 +397,7 @@
         </briefdescription>
         <detaileddescription>
 <para>If there is associated config object, <ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref> automatically reads and writes settings (including <ref refid="classwx_html_window" kindref="compound">wxHtmlWindow</ref>&apos;s settings) when needed. The only thing you must do is create wxConfig object and call <ref refid="classwx_html_help_controller_1a9b7e458493b103a45539aeb379f0ef40" kindref="member">UseConfig()</ref>.</para>
-<para>If you do not use <ref refid="classwx_html_help_controller_1a9b7e458493b103a45539aeb379f0ef40" kindref="member">UseConfig()</ref>, <ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref> will use the default wxConfig object if available (for details see wxConfigBase::Get and wxConfigBase::Set). </para>
+<para>If you do not use <ref refid="classwx_html_help_controller_1a9b7e458493b103a45539aeb379f0ef40" kindref="member">UseConfig()</ref>, <ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref> will use the default wxConfig object if available (for details see <ref refid="classwx_config_base_1a61bfb04c1c133190b3e851b252ed1c60" kindref="member">wxConfigBase::Get</ref> and <ref refid="classwx_config_base_1a8e2ca739326f32379d6816522a5d1907" kindref="member">wxConfigBase::Set</ref>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -426,9 +426,9 @@
         </inbodydescription>
         <location file="interface/wx/html/helpctrl.h" line="245" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_html_help_controller_1ad8aca74bf64222de8a08f0922cf85040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_html_help_controller_1a871fed2e64ec3f3a1f2406892afae0e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_html_help_window" kindref="compound">wxHtmlHelpWindow</ref> *</type>
-        <definition>wxHtmlHelpWindow * wxHtmlHelpController::GetHelpWindow</definition>
+        <definition>wxHtmlHelpWindow* wxHtmlHelpController::GetHelpWindow</definition>
         <argsstring>()</argsstring>
         <name>GetHelpWindow</name>
         <briefdescription>
@@ -459,9 +459,9 @@
         </inbodydescription>
         <location file="interface/wx/html/helpctrl.h" line="259" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_html_help_controller_1a4a2841cebad1fdea6f6f2699889c3ffc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_html_help_controller_1ab7728b2096c36608cfd893ee525c2d99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_html_help_frame" kindref="compound">wxHtmlHelpFrame</ref> *</type>
-        <definition>wxHtmlHelpFrame * wxHtmlHelpController::GetFrame</definition>
+        <definition>wxHtmlHelpFrame* wxHtmlHelpController::GetFrame</definition>
         <argsstring>()</argsstring>
         <name>GetFrame</name>
         <briefdescription>
@@ -474,9 +474,9 @@
         </inbodydescription>
         <location file="interface/wx/html/helpctrl.h" line="264" column="21"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_html_help_controller_1aa9e4a1ca525aba15573235ac5315093c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_html_help_controller_1ae2634bd7620b0cfc145930843d578804" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_html_help_dialog" kindref="compound">wxHtmlHelpDialog</ref> *</type>
-        <definition>wxHtmlHelpDialog * wxHtmlHelpController::GetDialog</definition>
+        <definition>wxHtmlHelpDialog* wxHtmlHelpController::GetDialog</definition>
         <argsstring>()</argsstring>
         <name>GetDialog</name>
         <briefdescription>
@@ -491,9 +491,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
-      <memberdef kind="function" id="classwx_html_help_controller_1a55d05fe07fd51e1e8b54865a9d369704" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_html_help_controller_1aa22d800be0b36caeee8614ebc18fd77a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_html_help_dialog" kindref="compound">wxHtmlHelpDialog</ref> *</type>
-        <definition>virtual wxHtmlHelpDialog * wxHtmlHelpController::CreateHelpDialog</definition>
+        <definition>virtual wxHtmlHelpDialog* wxHtmlHelpController::CreateHelpDialog</definition>
         <argsstring>(wxHtmlHelpData *data)</argsstring>
         <name>CreateHelpDialog</name>
         <param>
@@ -509,9 +509,9 @@
         </inbodydescription>
         <location file="interface/wx/html/helpctrl.h" line="279" column="30"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_html_help_controller_1a4d707104a58d68a7e1b1f3005d446478" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_html_help_controller_1a47424a299137987fcf1c982d17b1665e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_html_help_frame" kindref="compound">wxHtmlHelpFrame</ref> *</type>
-        <definition>virtual wxHtmlHelpFrame * wxHtmlHelpController::CreateHelpFrame</definition>
+        <definition>virtual wxHtmlHelpFrame* wxHtmlHelpController::CreateHelpFrame</definition>
         <argsstring>(wxHtmlHelpData *data)</argsstring>
         <name>CreateHelpFrame</name>
         <param>
@@ -529,9 +529,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This help controller provides an easy way of displaying HTML help in your application (see <ref refid="page_samples_1page_samples_html" kindref="member">HTML Sample</ref>, test example). </para>
     </briefdescription>
     <detaileddescription>
+<para>This help controller provides an easy way of displaying HTML help in your application (see <ref refid="page_samples_1page_samples_html" kindref="member">HTML Sample</ref>, test example).</para>
 <para>The help system is based on <bold>books</bold> (see <ref refid="classwx_html_help_controller_1aff569d5ea7135ef2ee60f0028519de73" kindref="member">wxHtmlHelpController::AddBook</ref>). A book is a logical section of documentation (for example &quot;User&apos;s Guide&quot; or &quot;Programmer&apos;s Guide&quot; or &quot;C++ Reference&quot; or &quot;wxWidgets Reference&quot;). The help controller can handle as many books as you want.</para>
 <para>Although this class has an API compatible with other wxWidgets help controllers as documented by <ref refid="classwx_help_controller" kindref="compound">wxHelpController</ref>, it is recommended that you use the enhanced capabilities of <ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref>&apos;s API.</para>
 <para>wxHTML uses Microsoft&apos;s HTML Help Workshop project files (.hhp, .hhk, .hhc) as its native format. The file format is described in <ref refid="overview_html_1overview_html_helpformats" kindref="member">Help Files Format</ref>. The directory <computeroutput>helpfiles</computeroutput> in the <ref refid="page_samples_1page_samples_html" kindref="member">HTML Sample</ref> contains sample project files.</para>
@@ -550,15 +550,15 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
       <node id="1">
         <label>wxHtmlHelpController</label>
         <link refid="classwx_html_help_controller"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="3">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -568,12 +568,6 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>wxHtmlHelpController</label>
-        <link refid="classwx_html_help_controller"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -581,20 +575,26 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxHtmlHelpController</label>
+        <link refid="classwx_html_help_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/html/helpctrl.h" line="57" column="1" bodyfile="interface/wx/html/helpctrl.h" bodystart="58" bodyend="286"/>
+    <location file="interface/wx/html/helpctrl.h" line="58" column="1" bodyfile="interface/wx/html/helpctrl.h" bodystart="57" bodyend="286"/>
     <listofallmembers>
       <member refid="classwx_html_help_controller_1aff569d5ea7135ef2ee60f0028519de73" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>AddBook</name></member>
       <member refid="classwx_html_help_controller_1ae2f3ccf2959bae8fa2ab9d18d4eaed8e" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>AddBook</name></member>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxHtmlHelpController</scope><name>CloneRefData</name></member>
-      <member refid="classwx_html_help_controller_1a55d05fe07fd51e1e8b54865a9d369704" prot="protected" virt="virtual"><scope>wxHtmlHelpController</scope><name>CreateHelpDialog</name></member>
-      <member refid="classwx_html_help_controller_1a4d707104a58d68a7e1b1f3005d446478" prot="protected" virt="virtual"><scope>wxHtmlHelpController</scope><name>CreateHelpFrame</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxHtmlHelpController</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxHtmlHelpController</scope><name>CloneRefData</name></member>
+      <member refid="classwx_html_help_controller_1aa22d800be0b36caeee8614ebc18fd77a" prot="protected" virt="virtual"><scope>wxHtmlHelpController</scope><name>CreateHelpDialog</name></member>
+      <member refid="classwx_html_help_controller_1a47424a299137987fcf1c982d17b1665e" prot="protected" virt="virtual"><scope>wxHtmlHelpController</scope><name>CreateHelpFrame</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxHtmlHelpController</scope><name>CreateRefData</name></member>
       <member refid="classwx_html_help_controller_1ad9face873feeb61bb8b54a458605b8e4" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>Display</name></member>
       <member refid="classwx_html_help_controller_1a13918b23f9de9c34b161272af8c5bee7" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>Display</name></member>
       <member refid="classwx_help_controller_base_1acef270454911598d88e31016124f487c" prot="public" virt="pure-virtual"><scope>wxHtmlHelpController</scope><name>DisplayBlock</name></member>
@@ -604,14 +604,15 @@
       <member refid="classwx_help_controller_base_1a57ad6b821d19d61de836a445fb9a1365" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>DisplaySection</name></member>
       <member refid="classwx_help_controller_base_1a84351b9fd7d02de52bd0a292995f06e4" prot="public" virt="pure-virtual"><scope>wxHtmlHelpController</scope><name>DisplaySection</name></member>
       <member refid="classwx_help_controller_base_1a416082870baafe1719ee4af2a9c50a26" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>DisplayTextPopup</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_html_help_controller_1aa9e4a1ca525aba15573235ac5315093c" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>GetDialog</name></member>
-      <member refid="classwx_html_help_controller_1a4a2841cebad1fdea6f6f2699889c3ffc" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>GetFrame</name></member>
-      <member refid="classwx_help_controller_base_1a512a9481ea54fbaecae1ea03c1b1e62d" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>GetFrameParameters</name></member>
-      <member refid="classwx_html_help_controller_1ad8aca74bf64222de8a08f0922cf85040" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>GetHelpWindow</name></member>
-      <member refid="classwx_help_controller_base_1aad01d3f5694ecd805a813459450ea054" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>GetParentWindow</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_html_help_controller_1ae2634bd7620b0cfc145930843d578804" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>GetDialog</name></member>
+      <member refid="classwx_html_help_controller_1ab7728b2096c36608cfd893ee525c2d99" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>GetFrame</name></member>
+      <member refid="classwx_help_controller_base_1a756498b71be6d604e358551ad2d2289e" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>GetFrameParameters</name></member>
+      <member refid="classwx_html_help_controller_1a871fed2e64ec3f3a1f2406892afae0e8" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>GetHelpWindow</name></member>
+      <member refid="classwx_help_controller_base_1a05097c57ea9f317104b00c8a2d6923d8" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>GetParentWindow</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>GetRefData</name></member>
       <member refid="classwx_help_controller_base_1ac7a8fa6e2f659cdca5863f8a3e35e1f0" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>Initialize</name></member>
+      <member refid="classwx_help_controller_base_1ae637c7add0d5f48544c72d8982691568" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>Initialize</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>IsSameAs</name></member>
       <member refid="classwx_html_help_controller_1ae22ee2f714ad59162e1f7d583899e58b" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>KeywordSearch</name></member>
@@ -619,7 +620,7 @@
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>m_refData</name></member>
       <member refid="classwx_help_controller_base_1afe4eee3105ed7529420cde766a156a13" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>OnQuit</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>operator new</name></member>
       <member refid="classwx_help_controller_base_1a66380fa26b81c64bb3ead8b22ae620cb" prot="public" virt="pure-virtual"><scope>wxHtmlHelpController</scope><name>Quit</name></member>
       <member refid="classwx_html_help_controller_1a35f8138cb4de3d9310a7abbe18c264e5" prot="public" virt="virtual"><scope>wxHtmlHelpController</scope><name>ReadCustomization</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxHtmlHelpController</scope><name>Ref</name></member>

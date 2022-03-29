@@ -1,11 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="interface_2wx_2propgrid_2propgrid_8h" kind="file" language="C++">
     <compoundname>propgrid.h</compoundname>
     <innerclass refid="classwx_p_g_validation_info" prot="public">wxPGValidationInfo</innerclass>
     <innerclass refid="classwx_property_grid" prot="public">wxPropertyGrid</innerclass>
     <innerclass refid="classwx_property_grid_event" prot="public">wxPropertyGridEvent</innerclass>
-    <innerclass refid="classwx_property_grid_populator" prot="public">wxPropertyGridPopulator</innerclass>
       <sectiondef kind="user-defined">
       <memberdef kind="define" id="interface_2wx_2propgrid_2propgrid_8h_1acf768b936525faa42392f653a3296eb4" prot="public" static="no">
         <name>wxPG_DEFAULT_STYLE</name>
@@ -17,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="259" column="9" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="259" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="199" column="9" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="199" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="interface_2wx_2propgrid_2propgrid_8h_1a422babdd5ce8058435ed638fd1c486b0" prot="public" static="no">
         <name>wxPGMAN_DEFAULT_STYLE</name>
@@ -29,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="263" column="9" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="263" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="203" column="9" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="203" bodyend="-1"/>
       </memberdef>
       <memberdef kind="enum" id="interface_2wx_2propgrid_2propgrid_8h_1a967b646b15085e115051d83a65ffdfe8" prot="public" static="no" strong="no">
         <type></type>
@@ -159,18 +158,6 @@
 <para>Recommended if you use a header. </para>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="interface_2wx_2propgrid_2propgrid_8h_1a967b646b15085e115051d83a65ffdfe8a24be8705f1f5a63cef82a947bca4fe8e" prot="public">
-          <name>wxPG_WINDOW_STYLE_MASK</name>
-          <initializer>= wxPG_AUTO_SORT|wxPG_HIDE_CATEGORIES|wxPG_BOLD_MODIFIED|
-                         wxPG_SPLITTER_AUTO_CENTER|wxPG_TOOLTIPS|wxPG_HIDE_MARGIN|
-                         wxPG_STATIC_SPLITTER|wxPG_LIMITED_EDITING|wxPG_TOOLBAR|
-                         wxPG_DESCRIPTION|wxPG_NO_INTERNAL_BORDER</initializer>
-          <briefdescription>
-<para>A mask which can be used to filter (out) all styles. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -181,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="15" column="1" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="16" bodyend="118"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="16" column="1" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="15" bodyend="98"/>
       </memberdef>
       <memberdef kind="enum" id="interface_2wx_2propgrid_2propgrid_8h_1aeebee6f1621b080999ea22a5b76b00a6" prot="public" static="no" strong="no">
         <type></type>
@@ -190,13 +177,11 @@
           <name>wxPG_EX_INIT_NOCAT</name>
           <initializer>= 0x00001000</initializer>
           <briefdescription>
-<para>Speeds up switching to wxPG_HIDE_CATEGORIES mode. </para>
+<para>NOTE: wxPG_EX_xxx are extra window styles and must be set using SetExtraStyle() member function. </para>
           </briefdescription>
           <detaileddescription>
-<para>Initially, if wxPG_HIDE_CATEGORIES is not defined, the non-categorized data storage is not activated, and switching the mode first time becomes somewhat slower. wxPG_EX_INIT_NOCAT activates the non-categorized data storage right away.</para>
-<para><simplesect kind="remark"><para>If you do plan not switching to non-categoric mode, or if you don&apos;t plan to use categories at all, then using this style will result in waste of resources. </para>
-</simplesect>
-</para>
+<para>Speeds up switching to wxPG_HIDE_CATEGORIES mode. Initially, if wxPG_HIDE_CATEGORIES is not defined, the non-categorized data storage is not activated, and switching the mode first time becomes somewhat slower. wxPG_EX_INIT_NOCAT activates the non-categorized data storage right away.</para>
+<para>NOTE: If you do plan not switching to non-categoric mode, or if you don&apos;t plan to use categories at all, then using this style will result in waste of resources. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="interface_2wx_2propgrid_2propgrid_8h_1aeebee6f1621b080999ea22a5b76b00a6a443aca3a5f6f899f70a84b5590d48b5b" prot="public">
@@ -212,7 +197,7 @@
           <name>wxPG_EX_MODE_BUTTONS</name>
           <initializer>= 0x00008000</initializer>
           <briefdescription>
-<para>Shows alphabetic/categoric mode buttons on <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref> tool bar. </para>
+<para>Shows alphabetic/categoric mode buttons from tool bar. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -253,16 +238,14 @@
 <para>If this style is used, built-in attributes (such as wxPG_FLOAT_PRECISION and wxPG_STRING_PASSWORD) are not stored into property&apos;s attribute storage (thus they are not readable). </para>
           </briefdescription>
           <detaileddescription>
-<para><simplesect kind="remark"><para>This option is global, and applies to all wxPG property containers. </para>
-</simplesect>
-</para>
+<para>Note that this option is global, and applies to all wxPG property containers. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="interface_2wx_2propgrid_2propgrid_8h_1aeebee6f1621b080999ea22a5b76b00a6ae8f6908ee6c88e7d4ed26683e9ece0be" prot="public">
           <name>wxPG_EX_HIDE_PAGE_BUTTONS</name>
           <initializer>= 0x01000000</initializer>
           <briefdescription>
-<para>Hides page selection buttons from <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref> tool bar. </para>
+<para>Hides page selection buttons from tool bar. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -274,7 +257,7 @@
 <para>Allows multiple properties to be selected by user (by pressing SHIFT when clicking on a property, or by dragging with left mouse button down). </para>
           </briefdescription>
           <detaileddescription>
-<para>You can get array of selected properties with <ref refid="classwx_property_grid_interface_1a4ecb8a1c98dc75f4c1ca050b734c15be" kindref="member">wxPropertyGridInterface::GetSelectedProperties()</ref>. In multiple selection mode <ref refid="classwx_property_grid_interface_1a87c31d90e34f42f3e9defd349bfc8f60" kindref="member">wxPropertyGridInterface::GetSelection()</ref> returns property which has editor active (usually the first one selected). Other useful member functions are ClearSelection(), AddToSelection() and RemoveFromSelection(). </para>
+<para>You can get array of selected properties with <ref refid="classwx_property_grid_interface_1aed80d8a6e570b3e5e84ba592a4510ce6" kindref="member">wxPropertyGridInterface::GetSelectedProperties()</ref>. In multiple selection mode <ref refid="classwx_property_grid_interface_1a5d8360a1c8e53d453af62d32784855aa" kindref="member">wxPropertyGridInterface::GetSelection()</ref> returns property which has editor active (usually the first one selected). Other useful member functions are ClearSelection(), AddToSelection() and RemoveFromSelection(). </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="interface_2wx_2propgrid_2propgrid_8h_1aeebee6f1621b080999ea22a5b76b00a6aaa0e72711f15d171d27449dccc8f32d8" prot="public">
@@ -294,7 +277,7 @@
           <name>wxPG_EX_NO_TOOLBAR_DIVIDER</name>
           <initializer>= 0x04000000</initializer>
           <briefdescription>
-<para>Don&apos;t show divider above <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref> toolbar (wxMSW only). </para>
+<para>Don&apos;t show divider above toolbar, on Windows. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -303,58 +286,19 @@
           <name>wxPG_EX_TOOLBAR_SEPARATOR</name>
           <initializer>= 0x08000000</initializer>
           <briefdescription>
-<para>Show a separator below the <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref> toolbar. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="interface_2wx_2propgrid_2propgrid_8h_1aeebee6f1621b080999ea22a5b76b00a6ac0e99398b923377bbc3770e05a0e753d" prot="public">
-          <name>wxPG_EX_ALWAYS_ALLOW_FOCUS</name>
-          <initializer>= 0x00100000</initializer>
-          <briefdescription>
-<para>Allows taking focus on the entire area (on canvas) even if <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> is not a standalone control. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="interface_2wx_2propgrid_2propgrid_8h_1aeebee6f1621b080999ea22a5b76b00a6a3628cf349e3830381bd44e09006d6ed4" prot="public">
-          <name>wxPG_EX_WINDOW_PG_STYLE_MASK</name>
-          <initializer>= wxPG_EX_INIT_NOCAT|wxPG_EX_HELP_AS_TOOLTIPS|wxPG_EX_NATIVE_DOUBLE_BUFFERING|
-                               wxPG_EX_AUTO_UNSPECIFIED_VALUES|wxPG_EX_WRITEONLY_BUILTIN_ATTRIBUTES|
-                               wxPG_EX_MULTIPLE_SELECTION|wxPG_EX_ENABLE_TLP_TRACKING|wxPG_EX_ALWAYS_ALLOW_FOCUS</initializer>
-          <briefdescription>
-<para>A mask which can be used to filter (out) all extra styles applicable to <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref>. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="interface_2wx_2propgrid_2propgrid_8h_1aeebee6f1621b080999ea22a5b76b00a6a58cea287b6dc2a82e0b7766b7ef19ca9" prot="public">
-          <name>wxPG_EX_WINDOW_PGMAN_STYLE_MASK</name>
-          <initializer>= wxPG_EX_NO_FLAT_TOOLBAR|wxPG_EX_MODE_BUTTONS|wxPG_EX_HIDE_PAGE_BUTTONS|
-                                  wxPG_EX_NO_TOOLBAR_DIVIDER|wxPG_EX_TOOLBAR_SEPARATOR</initializer>
-          <briefdescription>
-<para>A mask which can be used to filter (out) all extra styles applicable to <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref>. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="interface_2wx_2propgrid_2propgrid_8h_1aeebee6f1621b080999ea22a5b76b00a6aac33d592a3eb3a23a824701a92900183" prot="public">
-          <name>wxPG_EX_WINDOW_STYLE_MASK</name>
-          <initializer>= wxPG_EX_WINDOW_PG_STYLE_MASK|wxPG_EX_WINDOW_PGMAN_STYLE_MASK</initializer>
-          <briefdescription>
-<para>A mask which can be used to filter (out) all extra styles. </para>
+<para>Show a separator below the toolbar. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para>NOTE: wxPG_EX_xxx are extra window styles and must be set using SetExtraStyle() member function. </para>
+<para>Combines various styles. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="124" column="1" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="125" bodyend="255"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="101" column="1" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="100" bodyend="195"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -412,7 +356,7 @@
           <name>wxPG_VFB_SHOW_MESSAGE_ON_STATUSBAR</name>
           <initializer>= 0x20</initializer>
           <briefdescription>
-<para>Similar to wxPG_VFB_SHOW_MESSAGE, except always displays the message on the status bar (when present - you can reimplement <ref refid="classwx_property_grid_1abba9a17c7fd66f41fa5d1dda7b31fadd" kindref="member">wxPropertyGrid::GetStatusBar()</ref> in a derived class to specify this yourself). </para>
+<para>Similar to wxPG_VFB_SHOW_MESSAGE, except always displays the message on the status bar (when present - you can reimplement <ref refid="classwx_property_grid_1a56a8acd3679b1906251057ecc95f2a74" kindref="member">wxPropertyGrid::GetStatusBar()</ref> in a derived class to specify this yourself). </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -436,7 +380,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="275" column="1" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="276" bodyend="330"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="216" column="1" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="215" bodyend="264"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -486,6 +430,7 @@
         <enumvalue id="interface_2wx_2propgrid_2propgrid_8h_1a241dc2408e56a31edee6739e9b101b0aa81557288979a810f7408553bc4d13f83" prot="public">
           <name>wxPG_ACTION_CANCEL_EDIT</name>
           <briefdescription>
+<para>Cancel and undo any editing done in the currently active property editor. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -523,24 +468,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="392" column="1" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="393" bodyend="424"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="320" column="1" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="319" bodyend="349"/>
       </memberdef>
       </sectiondef>
-      <sectiondef kind="define">
-      <memberdef kind="define" id="interface_2wx_2propgrid_2propgrid_8h_1aa68b1f38f898b7123acbd19c2ee7888a" prot="public" static="no">
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="interface_2wx_2propgrid_2propgrid_8h_1ae6021bf370bb7766e513f49649dee232" prot="public" static="no">
+        <type><ref refid="defs_8h_1a02052a0390b909998c03fe2371d8e83e" kindref="member">wxByte</ref></type>
+        <definition>typedef wxByte wxPGVFBFlags</definition>
+        <argsstring></argsstring>
         <name>wxPGVFBFlags</name>
-        <initializer>unsigned char</initializer>
         <briefdescription>
-<para>Having this as define instead of wxByte typedef makes things easier for wxPython bindings (ignoring and redefining it in SWIG interface file seemed rather tricky) </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="340" column="9" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="340" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="269" column="16" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="269" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="typedef">
       <memberdef kind="typedef" id="interface_2wx_2propgrid_2propgrid_8h_1aa112317fc96fe18b118f083d6c0c0daf" prot="public" static="no">
         <type>int(*</type>
         <definition>typedef int(* wxPGSortCallback) (wxPropertyGrid *propGrid, wxPGProperty *p1, wxPGProperty *p2)</definition>
@@ -563,7 +507,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="446" column="9" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="446" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="371" column="9" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="371" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -578,7 +522,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1451" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1451" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1311" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1311" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1a7de092d91fe26c1c0d1c151a2111da00" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -591,7 +535,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1452" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1452" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1312" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1312" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1a4b83013c916cc08e7bcac5d40f87d405" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -604,7 +548,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1453" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1453" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1313" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1313" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1ac95150b4e14c360b630bd054f6d1ea77" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -617,7 +561,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1454" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1454" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1314" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1314" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1ab65af02df892d3a2ee02c6e89809d81b" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -630,7 +574,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1455" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1455" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1315" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1315" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1a0534fbcbad35a17377016221fa3306bf" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -643,7 +587,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1456" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1456" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1316" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1316" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1a1bf25d7409d3ffbf8a2c305c3b8e8181" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -656,7 +600,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1457" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1457" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1317" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1317" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1a63dd42ec780dab442adafc8b7f889553" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -669,7 +613,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1458" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1458" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1318" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1318" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1adb89a1b7fe7438a1d38bebf5e687639b" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -682,7 +626,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1459" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1459" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1319" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1319" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1aec266bee54d0efa25a1f5c86d6749bdb" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -695,7 +639,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1460" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1460" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1320" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1320" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1aa7597d23c493245bc1d40a22f225e79b" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -708,7 +652,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1461" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1461" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1321" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1321" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1aa369a75eec77fff9c6448c23977242cf" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -721,7 +665,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1462" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1462" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1322" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1322" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1aab23c762b69d6c19ae554ac27c176c49" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -734,7 +678,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1463" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1463" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1323" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1323" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="interface_2wx_2propgrid_2propgrid_8h_1a88979e163f425404b0586aaa7930e395" prot="public" static="no" mutable="no">
         <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
@@ -747,7 +691,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/propgrid.h" line="1464" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1464" bodyend="-1"/>
+        <location file="interface/wx/propgrid/propgrid.h" line="1324" column="13" bodyfile="interface/wx/propgrid/propgrid.h" bodystart="1324" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

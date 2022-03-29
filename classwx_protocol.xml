@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_protocol" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxProtocol</compoundname>
     <basecompoundref refid="classwx_socket_client" prot="public" virt="non-virtual">wxSocketClient</basecompoundref>
@@ -41,9 +41,9 @@
         </inbodydescription>
         <location file="interface/wx/protocol/protocol.h" line="126" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_protocol_1ae349a6332ed6ac60df6e364beb2c4add" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classwx_protocol_1aeda59b8f64b04633e31a55d904ff7445" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classwx_protocol_log" kindref="compound">wxProtocolLog</ref> *</type>
-        <definition>wxProtocolLog * wxProtocol::GetLog</definition>
+        <definition>wxProtocolLog* wxProtocol::GetLog</definition>
         <argsstring>() const</argsstring>
         <name>GetLog</name>
         <briefdescription>
@@ -55,9 +55,9 @@
         </inbodydescription>
         <location file="interface/wx/protocol/protocol.h" line="131" column="19" bodyfile="interface/wx/protocol/protocol.h" bodystart="131" bodyend="131"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_protocol_1a0a43bebdeb29a9cd7ae7b803d0474438" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_protocol_1a5b385ca23b57e99fd6ff41e455efe736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_protocol_log" kindref="compound">wxProtocolLog</ref> *</type>
-        <definition>wxProtocolLog * wxProtocol::DetachLog</definition>
+        <definition>wxProtocolLog* wxProtocol::DetachLog</definition>
         <argsstring>()</argsstring>
         <name>DetachLog</name>
         <briefdescription>
@@ -160,13 +160,13 @@
         </inbodydescription>
         <location file="interface/wx/protocol/protocol.h" line="64" column="29"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_protocol_1a6092b02d99c86f371ced79f251de8d42" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_protocol_1a1adc6bb4d61c1ef993cc17006562acae" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> *</type>
-        <definition>virtual wxInputStream * wxProtocol::GetInputStream</definition>
+        <definition>virtual wxInputStream* wxProtocol::GetInputStream</definition>
         <argsstring>(const wxString &amp;path)=0</argsstring>
         <name>GetInputStream</name>
-        <reimplementedby refid="classwx_f_t_p_1ae8879ab762fc5e21d0e56e8c3726af59">GetInputStream</reimplementedby>
-        <reimplementedby refid="classwx_h_t_t_p_1a3b84b27753253d9232d1f199402485a9">GetInputStream</reimplementedby>
+        <reimplementedby refid="classwx_h_t_t_p_1a10939b192691ad1d619d9770116368bf">GetInputStream</reimplementedby>
+        <reimplementedby refid="classwx_f_t_p_1a97d34cb6df2b6075e49a50b88d4a54b9">GetInputStream</reimplementedby>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>path</declname>
@@ -265,9 +265,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Represents a protocol for use with <ref refid="classwx_u_r_l" kindref="compound">wxURL</ref>. </para>
     </briefdescription>
     <detaileddescription>
+<para>Represents a protocol for use with <ref refid="classwx_u_r_l" kindref="compound">wxURL</ref>.</para>
 <para>Note that you may want to change the default time-out for HTTP/FTP connections and network operations (using <ref refid="classwx_protocol_1ab1e5d1001c2a7b4c6cf50b8e26829985" kindref="member">SetDefaultTimeout()</ref>) since the default time-out value is quite long (60 seconds).</para>
 <para><heading level="2"></heading>
 </para>
@@ -277,6 +277,22 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>wxSocketBase</label>
+        <link refid="classwx_socket_base"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
+      <node id="2">
+        <label>wxSocketClient</label>
+        <link refid="classwx_socket_client"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="5">
         <label>wxFTP</label>
         <link refid="classwx_f_t_p"/>
@@ -289,30 +305,20 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-      </node>
       <node id="1">
         <label>wxProtocol</label>
         <link refid="classwx_protocol"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="3">
         <label>wxSocketBase</label>
         <link refid="classwx_socket_base"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>wxSocketClient</label>
-        <link refid="classwx_socket_client"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="4">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -320,9 +326,11 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="5">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
+      <node id="2">
+        <label>wxSocketClient</label>
+        <link refid="classwx_socket_client"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="1">
         <label>wxProtocol</label>
@@ -330,42 +338,34 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>wxSocketBase</label>
-        <link refid="classwx_socket_base"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxSocketClient</label>
-        <link refid="classwx_socket_client"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
+      <node id="5">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/protocol/protocol.h" line="39" column="1" bodyfile="interface/wx/protocol/protocol.h" bodystart="40" bodyend="154"/>
+    <location file="interface/wx/protocol/protocol.h" line="40" column="1" bodyfile="interface/wx/protocol/protocol.h" bodystart="39" bodyend="154"/>
     <listofallmembers>
       <member refid="classwx_protocol_1a251f4c7e9d13fc23a863540bbbedd81b" prot="public" virt="pure-virtual"><scope>wxProtocol</scope><name>Abort</name></member>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxProtocol</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxProtocol</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxProtocol</scope><name>CloneRefData</name></member>
       <member refid="classwx_socket_base_1a054754d97e15427949ffa30af8ce9945" prot="public" virt="virtual"><scope>wxProtocol</scope><name>Close</name></member>
       <member refid="classwx_socket_client_1a581cdb757cce6020c8caac1ddd74a599" prot="public" virt="virtual"><scope>wxProtocol</scope><name>Connect</name></member>
       <member refid="classwx_socket_client_1a2167813338c94621a9ee0180524974a5" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Connect</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxProtocol</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxProtocol</scope><name>CreateRefData</name></member>
       <member refid="classwx_socket_base_1ab0b0926cfdfdd00b8b5c5f7f57cea861" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Destroy</name></member>
-      <member refid="classwx_protocol_1a0a43bebdeb29a9cd7ae7b803d0474438" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>DetachLog</name></member>
-      <member refid="classwx_socket_base_1a50dbb2d0ad42a0c970177c284cb76309" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Discard</name></member>
+      <member refid="classwx_protocol_1a5b385ca23b57e99fd6ff41e455efe736" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>DetachLog</name></member>
+      <member refid="classwx_socket_base_1a5cfc8b791cff6723dd499509d99d02be" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Discard</name></member>
       <member refid="classwx_socket_base_1a01e5ad5aa72ee502998d61530771450d" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Error</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxProtocol</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_socket_base_1a86099c0e9a37c72d5a859e63bd417733" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>GetClientData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxProtocol</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_socket_base_1a1f12eadaa516c9dcacb32e029d8031fc" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>GetClientData</name></member>
       <member refid="classwx_protocol_1af51b393375c8cec2eb30c85b4c92cfb6" prot="public" virt="virtual"><scope>wxProtocol</scope><name>GetContentType</name></member>
       <member refid="classwx_protocol_1a6caa8f1c508eb5602dbb21c2d3ff10d5" prot="public" virt="virtual"><scope>wxProtocol</scope><name>GetError</name></member>
       <member refid="classwx_socket_base_1aee914b014ad1eb5d7d0a3d086ae1422e" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>GetFlags</name></member>
-      <member refid="classwx_protocol_1a6092b02d99c86f371ced79f251de8d42" prot="public" virt="pure-virtual"><scope>wxProtocol</scope><name>GetInputStream</name></member>
+      <member refid="classwx_protocol_1a1adc6bb4d61c1ef993cc17006562acae" prot="public" virt="pure-virtual"><scope>wxProtocol</scope><name>GetInputStream</name></member>
       <member refid="classwx_socket_base_1aec013dd4b29b88a664a4b8216c587c26" prot="public" virt="virtual"><scope>wxProtocol</scope><name>GetLocal</name></member>
-      <member refid="classwx_protocol_1ae349a6332ed6ac60df6e364beb2c4add" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>GetLog</name></member>
+      <member refid="classwx_protocol_1aeda59b8f64b04633e31a55d904ff7445" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>GetLog</name></member>
       <member refid="classwx_socket_base_1a59ed4cb9faeb84bb3a153a6609ee81d7" prot="public" virt="virtual"><scope>wxProtocol</scope><name>GetPeer</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>GetRefData</name></member>
       <member refid="classwx_socket_base_1a419752c214a4fbf48a8dac32f8b02c32" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>GetSocket</name></member>
       <member refid="classwx_socket_base_1acb1ee9d96106f2b8424f48eb997f09f1" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>GetTimeout</name></member>
       <member refid="classwx_socket_base_1a4c4c4cc8e1fcd824ef621b0f3d17b29f" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Initialize</name></member>
@@ -385,10 +385,10 @@
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxProtocol</scope><name>m_refData</name></member>
       <member refid="classwx_socket_base_1acfaca539bd0fe0e9c0b1018c77e6701c" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Notify</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>operator new</name></member>
-      <member refid="classwx_socket_base_1ab8bb6646627bbf4b2929bb6f799aa754" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Peek</name></member>
-      <member refid="classwx_socket_base_1a83eb0c25689eaa910d6618ebb8491d32" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Read</name></member>
-      <member refid="classwx_socket_base_1aec5e4d770aff8f385bfcf5ae2909d2d0" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>ReadMsg</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>operator new</name></member>
+      <member refid="classwx_socket_base_1a944eb846a3849dd34f7825cfdce3bcd1" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Peek</name></member>
+      <member refid="classwx_socket_base_1aa75b3c2dd051a012cfbd0596d95f80c2" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Read</name></member>
+      <member refid="classwx_socket_base_1a7c16b20282272c68acfe04107d430bf6" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>ReadMsg</name></member>
       <member refid="classwx_protocol_1a98f5d494d988353de194104bd7e83fe1" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Reconnect</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Ref</name></member>
       <member refid="classwx_socket_base_1a386797430bfc9f568be388e7abf6c782" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>RestoreState</name></member>
@@ -406,7 +406,7 @@
       <member refid="classwx_protocol_1ab1f11044077ce6755e17eab0b0b461a1" prot="public" virt="virtual"><scope>wxProtocol</scope><name>SetUser</name></member>
       <member refid="classwx_socket_base_1acfa7398ce7fac6e8db20caeb3a09b10e" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Shutdown</name></member>
       <member refid="classwx_socket_base_1a90d2aea95b10c68eee2656860d90e23e" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>ShutdownOutput</name></member>
-      <member refid="classwx_socket_base_1a74f146f45415bb4be3d83e12034cdd85" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Unread</name></member>
+      <member refid="classwx_socket_base_1a8fd912526830f7b079ac28677424d40a" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Unread</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>UnRef</name></member>
       <member refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>UnShare</name></member>
       <member refid="classwx_socket_base_1ae46d0dea0ec25af581ba3119cca4bd7e" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Wait</name></member>
@@ -414,8 +414,8 @@
       <member refid="classwx_socket_base_1aab8fdd558f149d70ed265dad0f12e9f8" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>WaitForRead</name></member>
       <member refid="classwx_socket_base_1abda804254aa40c9f8ae363dbc5ebc1f2" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>WaitForWrite</name></member>
       <member refid="classwx_socket_client_1a83c92e8c27a72c3610c9eb0b60e92d74" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>WaitOnConnect</name></member>
-      <member refid="classwx_socket_base_1ab71d54333d9bb0a59da25db2251e0b52" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Write</name></member>
-      <member refid="classwx_socket_base_1a4819a705c641f8df9b42446ca6fae697" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>WriteMsg</name></member>
+      <member refid="classwx_socket_base_1a7676f1821d2e17db95de2438346355cd" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>Write</name></member>
+      <member refid="classwx_socket_base_1a91abca66c1d5bf4237aa87b0e796464b" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>WriteMsg</name></member>
       <member refid="classwx_object_1acaa378363a28af421ab56ad7b46eadf0" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>wxObject</name></member>
       <member refid="classwx_object_1a4721b4dc9b7aff0f30904ba2ea3954cf" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>wxObject</name></member>
       <member refid="classwx_socket_base_1a3bf32997db6732a5b053d8d52b1173f0" prot="public" virt="non-virtual"><scope>wxProtocol</scope><name>wxSocketBase</name></member>

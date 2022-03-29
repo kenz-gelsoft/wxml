@@ -1,28 +1,22 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_envvars" kind="page">
     <compoundname>overview_envvars</compoundname>
     <title>Environment Variables</title>
     <briefdescription>
-<para>This section describes all environment variables that affect execution of wxWidgets programs. </para>
     </briefdescription>
     <detaileddescription>
 <para>This section describes all environment variables that affect execution of wxWidgets programs.</para>
-<para><table rows="3" cols="2"><row>
+<para><table rows="2" cols="2"><row>
 <entry thead="no"><para>WXTRACE </para>
 </entry><entry thead="no"><para>(Debug build only.) This variable can be set to a comma-separated list of trace masks used in wxLogTrace calls; <ref refid="classwx_log_1a4c11ee23ce5264b6c5921a17610cda13" kindref="member">wxLog::AddTraceMask</ref> is called for every mask in the list during wxWidgets initialization. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>WXPREFIX </para>
-</entry><entry thead="no"><para>(Unix only.) Overrides installation prefix. Normally, the prefix is hard-coded and is the same as the value passed to <computeroutput>configure</computeroutput> via the <computeroutput>--prefix</computeroutput> switch when compiling the library (typically <computeroutput>/usr/local</computeroutput> or <computeroutput>/usr</computeroutput>). You can set WXPREFIX if you are for example distributing a binary version of an application and you don&apos;t know in advance where it will be installed. </para>
-</entry></row>
-<row>
-<entry thead="no"><para>WXWEBREQUEST_BACKEND </para>
-</entry><entry thead="no"><para>This variable can be set to override the choice of the default backend used by <ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref>, see <ref refid="classwx_web_session_1aff8b2fcc0382122703b67bd4b106c417" kindref="member">wxWebSession::New()</ref>. Most common use is to set it to <computeroutput>&quot;CURL&quot;</computeroutput> to force using libcurl-based implementation under MSW or macOS platforms where the native implementation would be chosen by default. </para>
+</entry><entry thead="no"><para>(Unix only.) Overrides installation prefix. Normally, the prefix is hard-coded and is the same as the value passed to <computeroutput>configure</computeroutput> via the <computeroutput><ndash/>prefix</computeroutput> switch when compiling the library (typically <computeroutput>/usr/local</computeroutput> or <computeroutput>/usr</computeroutput>). You can set WXPREFIX if you are for example distributing a binary version of an application and you don&apos;t know in advance where it will be installed. </para>
 </entry></row>
 </table>
 </para>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/envvars.h"/>
   </compounddef>
 </doxygen>

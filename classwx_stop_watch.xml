@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_stop_watch" kind="class" language="C++" prot="public">
     <compoundname>wxStopWatch</compoundname>
     <includes local="no">wx/stopwatch.h</includes>
@@ -106,19 +106,19 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>The <ref refid="classwx_stop_watch" kindref="compound">wxStopWatch</ref> class allow you to measure time intervals. </para>
     </briefdescription>
     <detaileddescription>
+<para>The <ref refid="classwx_stop_watch" kindref="compound">wxStopWatch</ref> class allow you to measure time intervals.</para>
 <para>For example, you may use it to measure the time elapsed by some function:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_stop_watch" kindref="compound">wxStopWatch</ref><sp/>sw;</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxStopWatch<sp/>sw;</highlight></codeline>
 <codeline><highlight class="normal">CallLongRunningFunction();</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="interface_2wx_2log_8h_1a249358701f3c2d410088ddf7a61d8564" kindref="member">wxLogMessage</ref>(</highlight><highlight class="stringliteral">&quot;The<sp/>long<sp/>running<sp/>function<sp/>took<sp/>%ldms<sp/>to<sp/>execute&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sw.<ref refid="classwx_stop_watch_1a74283b2bb0c5324e1e20dd43cf4543eb" kindref="member">Time</ref>());</highlight></codeline>
-<codeline><highlight class="normal">sw.<ref refid="classwx_stop_watch_1a6c99e7590ec82169918d41328142f829" kindref="member">Pause</ref>();</highlight></codeline>
+<codeline><highlight class="normal">wxLogMessage(&quot;The<sp/>long<sp/>running<sp/>function<sp/>took<sp/>%ldms<sp/>to<sp/>execute&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sw.Time());</highlight></codeline>
+<codeline><highlight class="normal">sw.Pause();</highlight></codeline>
 <codeline><highlight class="normal">...<sp/>stopwatch<sp/>is<sp/>stopped<sp/>now<sp/>...</highlight></codeline>
 <codeline><highlight class="normal">sw.Resume();</highlight></codeline>
 <codeline><highlight class="normal">CallLongRunningFunction();</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="interface_2wx_2log_8h_1a249358701f3c2d410088ddf7a61d8564" kindref="member">wxLogMessage</ref>(</highlight><highlight class="stringliteral">&quot;And<sp/>calling<sp/>it<sp/>twice<sp/>took<sp/>%ldms<sp/>in<sp/>all&quot;</highlight><highlight class="normal">,<sp/>sw.<ref refid="classwx_stop_watch_1a74283b2bb0c5324e1e20dd43cf4543eb" kindref="member">Time</ref>());</highlight></codeline>
+<codeline><highlight class="normal">wxLogMessage(&quot;And<sp/>calling<sp/>it<sp/>twice<sp/>took<sp/>$ldms<sp/>in<sp/>all&quot;,<sp/>sw.Time());</highlight></codeline>
 </programlisting></para>
 <para>Since wxWidgets 2.9.3 this class uses <computeroutput>QueryPerformanceCounter()</computeroutput> function under MSW to measure the elapsed time. It provides higher precision than the usual timer functions but can suffer from bugs in its implementation in some Windows XP versions. If you encounter such problems, installing a Microsoft hot fix from <ulink url="http://support.microsoft.com/?id=896256">http://support.microsoft.com/?id=896256</ulink> could be necessary.</para>
 <para><heading level="2"></heading>
@@ -128,7 +128,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/stopwatch.h" line="39" column="1" bodyfile="interface/wx/stopwatch.h" bodystart="40" bodyend="88"/>
+    <location file="interface/wx/stopwatch.h" line="40" column="1" bodyfile="interface/wx/stopwatch.h" bodystart="39" bodyend="88"/>
     <listofallmembers>
       <member refid="classwx_stop_watch_1a6c99e7590ec82169918d41328142f829" prot="public" virt="non-virtual"><scope>wxStopWatch</scope><name>Pause</name></member>
       <member refid="classwx_stop_watch_1ae7059b8ce649c52af5f94d5d85bff78a" prot="public" virt="non-virtual"><scope>wxStopWatch</scope><name>Resume</name></member>

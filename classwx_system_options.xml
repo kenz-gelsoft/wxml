@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_system_options" kind="class" language="C++" prot="public">
     <compoundname>wxSystemOptions</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/sysopt.h" line="144" column="5"/>
+        <location file="interface/wx/sysopt.h" line="154" column="5"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/sysopt.h" line="152" column="21"/>
+        <location file="interface/wx/sysopt.h" line="162" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classwx_system_options_1a51e4eb471bfd1472e874c6ca2fd89660" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/sysopt.h" line="160" column="16"/>
+        <location file="interface/wx/sysopt.h" line="170" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_system_options_1ac53621f9648eda4dc69d43c8da54bd39" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/sysopt.h" line="168" column="17"/>
+        <location file="interface/wx/sysopt.h" line="178" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_system_options_1a9040fd20567d5f848000d681b0bb4da9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/sysopt.h" line="177" column="17"/>
+        <location file="interface/wx/sysopt.h" line="187" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_system_options_1aa04043bfa0ffee30aaf09f2e436f6208" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/sysopt.h" line="183" column="17"/>
+        <location file="interface/wx/sysopt.h" line="193" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_system_options_1abbde7fd57657d7cc3db0a91f9292b28c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -149,21 +149,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/sysopt.h" line="184" column="17"/>
+        <location file="interface/wx/sysopt.h" line="194" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_system_options" kindref="compound">wxSystemOptions</ref> stores option/value pairs that wxWidgets itself or applications can use to alter behaviour at run-time. </para>
     </briefdescription>
     <detaileddescription>
-<para>It can be used to optimize behaviour that doesn&apos;t deserve a distinct API, but is still important to be able to configure.</para>
+<para><ref refid="classwx_system_options" kindref="compound">wxSystemOptions</ref> stores option/value pairs that wxWidgets itself or applications can use to alter behaviour at run-time. It can be used to optimize behaviour that doesn&apos;t deserve a distinct API, but is still important to be able to configure.</para>
 <para>System options can be set by the program itself using <ref refid="classwx_system_options_1aa04043bfa0ffee30aaf09f2e436f6208" kindref="member">SetOption()</ref> method and they also can be set from the program environment by defining an environment variable <computeroutput>wx_option</computeroutput> to set the given option for all wxWidgets applications or <computeroutput>wx_appname_option</computeroutput> to set it just for the application with the given name (as returned by <ref refid="classwx_app_console_1a228d7699a00845219744c08e8c78b889" kindref="member">wxApp::GetAppName()</ref>). Notice that any characters not allowed in the environment variables names, such as periods and dashes, should be replaced with underscores. E.g. to define a system option &quot;foo-bar&quot; you need to define the environment variable &quot;wx_foo_bar&quot;.</para>
 <para>The program may use system options for its own needs but they are mostly used to control the behaviour of wxWidgets library itself.</para>
 <para>These options are currently recognised by wxWidgets:</para>
 <sect1 id="classwx_system_options_1sysopt_all">
 <title>All platforms</title>
 <para> <itemizedlist>
-<listitem><para>exit-on-assert: If set to non-zero value, abort the program if an assertion fails. The default behaviour in case of assertion failure depends on the build mode and can be changed by overriding <ref refid="classwx_app_console_1a5f91d78bbfe3c9ef28e8e3c8fdf29989" kindref="member">wxApp::OnAssertFailure()</ref> but setting this option allows changing it without modifying the program code and also applies to asserts which may happen before the <ref refid="classwx_app" kindref="compound">wxApp</ref> object creation or after its destruction. <linebreak/>
+<listitem><para>exit-on-assert: If set to non-zero value, abort the program if an assertion fails. The default behaviour in case of assertion failure depends on the build mode and can be changed by overriding <ref refid="classwx_app_console_1a5f91d78bbfe3c9ef28e8e3c8fdf29989" kindref="member">wxApp::OnAssertFailure()</ref> but setting this option allows to change it without modifying the program code and also applies to asserts which may happen before the <ref refid="classwx_app" kindref="compound">wxApp</ref> object creation or after its destruction. <linebreak/>
  </para>
 </listitem>
 </itemizedlist>
@@ -182,7 +181,11 @@
 </listitem>
 <listitem><para>msw.staticbox.optimized-paint: If set to 0, switches off optimized <ref refid="classwx_static_box" kindref="compound">wxStaticBox</ref> painting. Setting this to 0 causes more flicker, but allows applications to paint graphics on the parent of a static box (the optimized refresh causes any such drawing to disappear). </para>
 </listitem>
-<listitem><para>msw.font.no-proof-quality: If set to 1, use default fonts quality instead of proof quality when creating fonts. With proof quality the fonts have slightly better appearance but not all fonts are available in this quality, e.g. the Terminal font in small sizes is not and this option may be used if wider fonts selection is more important than higher quality. <linebreak/>
+<listitem><para>msw.display.directdraw: If set to 1, use DirectDraw-based implementation of <ref refid="classwx_display" kindref="compound">wxDisplay</ref>. By default the standard Win32 functions are used. </para>
+</listitem>
+<listitem><para>msw.font.no-proof-quality: If set to 1, use default fonts quality instead of proof quality when creating fonts. With proof quality the fonts have slightly better appearance but not all fonts are available in this quality, e.g. the Terminal font in small sizes is not and this option may be used if wider fonts selection is more important than higher quality. </para>
+</listitem>
+<listitem><para>wince.dialog.real-ok-cancel: The PocketPC guidelines recommend for Ok/Cancel dialogs to use an OK button located inside the caption bar and implement Cancel functionality through Undo outside the dialog. <ref refid="classwx_dialog_1ae362b7c61430593ef8ac5034f1bd92c8" kindref="member">wxDialog::CreateButtonSizer</ref> will follow the native behaviour on WinCE but it can be overridden with real wxButtons by setting the option below to 1. <linebreak/>
 </para>
 </listitem>
 </itemizedlist>
@@ -191,7 +194,7 @@
 <sect1 id="classwx_system_options_1sysopt_gtk">
 <title>GTK+</title>
 <para> <itemizedlist>
-<listitem><para>gtk.tlw.can-set-transparent: <ref refid="classwx_top_level_window_1a392cf325512c5558d776ca85abc0c451" kindref="member">wxTopLevelWindow::CanSetTransparent()</ref> method normally tries to detect automatically whether transparency for top level windows is currently supported, however this may sometimes fail and this option allows overriding the automatic detection. Setting it to 1 makes the transparency be always available (setting it can still fail, of course) and setting it to 0 makes it always unavailable. </para>
+<listitem><para>gtk.tlw.can-set-transparent: <ref refid="classwx_top_level_window_1a392cf325512c5558d776ca85abc0c451" kindref="member">wxTopLevelWindow::CanSetTransparent()</ref> method normally tries to detect automatically whether transparency for top level windows is currently supported, however this may sometimes fail and this option allows to override the automatic detection. Setting it to 1 makes the transparency be always available (setting it can still fail, of course) and setting it to 0 makes it always unavailable. </para>
 </listitem>
 <listitem><para>gtk.desktop: This option can be set to override the default desktop environment determination. Supported values are GNOME and KDE. </para>
 </listitem>
@@ -210,9 +213,9 @@
 </listitem>
 <listitem><para>mac.listctrl.always_use_generic: Tells <ref refid="classwx_list_ctrl" kindref="compound">wxListCtrl</ref> to use the generic control even when it is capable of using the native control instead. Also known as wxMAC_ALWAYS_USE_GENERIC_LISTCTRL. </para>
 </listitem>
-<listitem><para>mac.textcontrol-use-spell-checker: If 1 activates the spell checking in <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>. </para>
+<listitem><para>mac.textcontrol-use-spell-checker: This option only has effect for Mac OS X 10.4 and higher. If 1 activates the spell checking in <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>. </para>
 </listitem>
-<listitem><para>osx.openfiledialog.always-show-types: Per default a <ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref> with wxFD_OPEN does not show a types-popup on macOS but allows the selection of files from any of the supported types. Setting this to 1 shows a <ref refid="classwx_choice" kindref="compound">wxChoice</ref> for selection (if there is more than one supported filetype). <linebreak/>
+<listitem><para>osx.openfiledialog.always-show-types: Per default a <ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref> with wxFD_OPEN does not show a types-popup on OSX but allows the selection of files from any of the supported types. Setting this to 1 shows a <ref refid="classwx_choice" kindref="compound">wxChoice</ref> for selection (if there is more than one supported filetype). <linebreak/>
 </para>
 </listitem>
 </itemizedlist>
@@ -254,33 +257,33 @@ The compile-time option to include or exclude this functionality is wxUSE_SYSTEM
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="3">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
-      </node>
       <node id="1">
         <label>wxSystemOptions</label>
         <link refid="classwx_system_options"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/sysopt.h" line="135" column="1" bodyfile="interface/wx/sysopt.h" bodystart="136" bodyend="186"/>
+    <location file="interface/wx/sysopt.h" line="146" column="1" bodyfile="interface/wx/sysopt.h" bodystart="145" bodyend="196"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxSystemOptions</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxSystemOptions</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxSystemOptions</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxSystemOptions</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxSystemOptions</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxSystemOptions</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxSystemOptions</scope><name>GetClassInfo</name></member>
       <member refid="classwx_system_options_1a729f712b29e3aa842cab3a8810194257" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>GetOption</name></member>
       <member refid="classwx_system_options_1a51e4eb471bfd1472e874c6ca2fd89660" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>GetOptionInt</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>GetRefData</name></member>
       <member refid="classwx_system_options_1ac53621f9648eda4dc69d43c8da54bd39" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>HasOption</name></member>
       <member refid="classwx_system_options_1a9040fd20567d5f848000d681b0bb4da9" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>IsFalse</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxSystemOptions</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>Ref</name></member>
       <member refid="classwx_system_options_1aa04043bfa0ffee30aaf09f2e436f6208" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>SetOption</name></member>
       <member refid="classwx_system_options_1abbde7fd57657d7cc3db0a91f9292b28c" prot="public" virt="non-virtual"><scope>wxSystemOptions</scope><name>SetOption</name></member>

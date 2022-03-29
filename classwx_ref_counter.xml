@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_ref_counter" kind="class" language="C++" prot="public">
     <compoundname>wxRefCounter</compoundname>
     <derivedcompoundref refid="classwx_data_view_model" prot="public" virt="non-virtual">wxDataViewModel</derivedcompoundref>
@@ -86,10 +86,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class is used to manage reference-counting providing a simple interface and a counter. </para>
     </briefdescription>
     <detaileddescription>
-<para><ref refid="classwx_ref_counter" kindref="compound">wxRefCounter</ref> can be easily used together with <ref refid="classwx_object_data_ptr_3_01_t_01_4" kindref="compound">wxObjectDataPtr&lt;T&gt;</ref> to ensure that no calls to <ref refid="classwx_ref_counter_1a803eb5be907b1a342082ceb59c01d8c5" kindref="member">wxRefCounter::DecRef()</ref> are missed - thus avoiding memory leaks.</para>
+<para>This class is used to manage reference-counting providing a simple interface and a counter. <ref refid="classwx_ref_counter" kindref="compound">wxRefCounter</ref> can be easily used together with <ref refid="classwx_object_data_ptr_3_01_t_01_4" kindref="compound">wxObjectDataPtr&lt;T&gt;</ref> to ensure that no calls to <ref refid="classwx_ref_counter_1a803eb5be907b1a342082ceb59c01d8c5" kindref="member">wxRefCounter::DecRef()</ref> are missed - thus avoiding memory leaks.</para>
 <para><ref refid="classwx_object_ref_data" kindref="compound">wxObjectRefData</ref> is a typedef to <ref refid="classwx_ref_counter" kindref="compound">wxRefCounter</ref> and is used as the built-in reference counted storage for wxObject-derived classes.</para>
 <para><heading level="2"></heading>
 </para>
@@ -99,22 +98,50 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="4">
-        <label>wxDataViewIndexListModel</label>
-        <link refid="classwx_data_view_index_list_model"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>wxDataViewListModel</label>
-        <link refid="classwx_data_view_list_model"/>
-        <childnode refid="2" relation="public-inheritance">
+      <node id="12">
+        <label>wxGridCellEnumEditor</label>
+        <link refid="classwx_grid_cell_enum_editor"/>
+        <childnode refid="11" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5">
         <label>wxDataViewListStore</label>
         <link refid="classwx_data_view_list_store"/>
         <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wxRefCounter</label>
+        <link refid="classwx_ref_counter"/>
+      </node>
+      <node id="16">
+        <label>wxGridCellNumberEditor</label>
+        <link refid="classwx_grid_cell_number_editor"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>wxGridCellBoolRenderer</label>
+        <link refid="classwx_grid_cell_bool_renderer"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxDataViewIndexListModel</label>
+        <link refid="classwx_data_view_index_list_model"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>wxGridCellTextEditor</label>
+        <link refid="classwx_grid_cell_text_editor"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>wxGridCellEnumRenderer</label>
+        <link refid="classwx_grid_cell_enum_renderer"/>
+        <childnode refid="19" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
@@ -129,70 +156,16 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="21">
+        <label>wxGridCellDateTimeRenderer</label>
+        <link refid="classwx_grid_cell_date_time_renderer"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="6">
         <label>wxDataViewVirtualListModel</label>
         <link refid="classwx_data_view_virtual_list_model"/>
         <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>wxGridCellActivatableEditor</label>
-        <link refid="classwx_grid_cell_activatable_editor"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>wxGridCellAttr</label>
-        <link refid="classwx_grid_cell_attr"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>wxGridCellAutoWrapStringEditor</label>
-        <link refid="classwx_grid_cell_auto_wrap_string_editor"/>
-        <childnode refid="15" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="22">
-        <label>wxGridCellAutoWrapStringRenderer</label>
-        <link refid="classwx_grid_cell_auto_wrap_string_renderer"/>
-        <childnode refid="21" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>wxGridCellBoolEditor</label>
-        <link refid="classwx_grid_cell_bool_editor"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>wxGridCellBoolRenderer</label>
-        <link refid="classwx_grid_cell_bool_renderer"/>
-        <childnode refid="19" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>wxGridCellChoiceEditor</label>
-        <link refid="classwx_grid_cell_choice_editor"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>wxGridCellDateEditor</label>
-        <link refid="classwx_grid_cell_date_editor"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="23">
-        <label>wxGridCellDateRenderer</label>
-        <link refid="classwx_grid_cell_date_renderer"/>
-        <childnode refid="21" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="24">
-        <label>wxGridCellDateTimeRenderer</label>
-        <link refid="classwx_grid_cell_date_time_renderer"/>
-        <childnode refid="23" relation="public-inheritance">
         </childnode>
       </node>
       <node id="9">
@@ -201,66 +174,74 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="13">
-        <label>wxGridCellEnumEditor</label>
-        <link refid="classwx_grid_cell_enum_editor"/>
-        <childnode refid="12" relation="public-inheritance">
+      <node id="24">
+        <label>wxGridCellNumberRenderer</label>
+        <link refid="classwx_grid_cell_number_renderer"/>
+        <childnode refid="19" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="25">
-        <label>wxGridCellEnumRenderer</label>
-        <link refid="classwx_grid_cell_enum_renderer"/>
-        <childnode refid="21" relation="public-inheritance">
+      <node id="20">
+        <label>wxGridCellAutoWrapStringRenderer</label>
+        <link refid="classwx_grid_cell_auto_wrap_string_renderer"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>wxGridCellAttr</label>
+        <link refid="classwx_grid_cell_attr"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>wxGridCellChoiceEditor</label>
+        <link refid="classwx_grid_cell_choice_editor"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>wxGridCellAutoWrapStringEditor</label>
+        <link refid="classwx_grid_cell_auto_wrap_string_editor"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>wxGridCellBoolEditor</label>
+        <link refid="classwx_grid_cell_bool_editor"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>wxGridCellFloatRenderer</label>
+        <link refid="classwx_grid_cell_float_renderer"/>
+        <childnode refid="19" relation="public-inheritance">
         </childnode>
       </node>
       <node id="17">
-        <label>wxGridCellFloatEditor</label>
-        <link refid="classwx_grid_cell_float_editor"/>
-        <childnode refid="15" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>wxGridCellFloatRenderer</label>
-        <link refid="classwx_grid_cell_float_renderer"/>
-        <childnode refid="21" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>wxGridCellNumberEditor</label>
-        <link refid="classwx_grid_cell_number_editor"/>
-        <childnode refid="15" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>wxGridCellNumberRenderer</label>
-        <link refid="classwx_grid_cell_number_renderer"/>
-        <childnode refid="21" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="19">
         <label>wxGridCellRenderer</label>
         <link refid="classwx_grid_cell_renderer"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="21">
+      <node id="3">
+        <label>wxDataViewListModel</label>
+        <link refid="classwx_data_view_list_model"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
         <label>wxGridCellStringRenderer</label>
         <link refid="classwx_grid_cell_string_renderer"/>
-        <childnode refid="19" relation="public-inheritance">
+        <childnode refid="17" relation="public-inheritance">
         </childnode>
       </node>
       <node id="15">
-        <label>wxGridCellTextEditor</label>
-        <link refid="classwx_grid_cell_text_editor"/>
-        <childnode refid="9" relation="public-inheritance">
+        <label>wxGridCellFloatEditor</label>
+        <link refid="classwx_grid_cell_float_editor"/>
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>wxRefCounter</label>
-        <link refid="classwx_ref_counter"/>
-      </node>
     </inheritancegraph>
-    <location file="interface/wx/object.h" line="162" column="1" bodyfile="interface/wx/object.h" bodystart="163" bodyend="201"/>
+    <location file="interface/wx/object.h" line="163" column="1" bodyfile="interface/wx/object.h" bodystart="162" bodyend="201"/>
     <listofallmembers>
       <member refid="classwx_ref_counter_1a803eb5be907b1a342082ceb59c01d8c5" prot="public" virt="non-virtual"><scope>wxRefCounter</scope><name>DecRef</name></member>
       <member refid="classwx_ref_counter_1a98ca5fc3fa6219d993dd3654925c46aa" prot="public" virt="non-virtual"><scope>wxRefCounter</scope><name>GetRefCount</name></member>

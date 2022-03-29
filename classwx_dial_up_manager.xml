@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_dial_up_manager" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxDialUpManager</compoundname>
     <includes local="no">wx/dialup.h</includes>
@@ -248,7 +248,7 @@
 <para>Sometimes the built-in logic for determining the online status may fail, so, in general, the user should be allowed to override it. </para>
         </briefdescription>
         <detaileddescription>
-<para>This function allows forcefully setting the online status - whatever our internal algorithm may think about it.</para>
+<para>This function allows to forcefully set the online status - whatever our internal algorithm may think about it.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_dial_up_manager_1a95964e7683e3818044496499d2c1cb70" kindref="member">IsOnline()</ref> </para>
 </simplesect>
 </para>
@@ -283,9 +283,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classwx_dial_up_manager_1aebcb6d60546ca1f46ba667d1af3706e6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_dial_up_manager_1a695c7032e6b025c1ddd293eaea442f40" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_dial_up_manager" kindref="compound">wxDialUpManager</ref> *</type>
-        <definition>static wxDialUpManager * wxDialUpManager::Create</definition>
+        <definition>static wxDialUpManager* wxDialUpManager::Create</definition>
         <argsstring>()</argsstring>
         <name>Create</name>
         <briefdescription>
@@ -300,12 +300,11 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class encapsulates functions dealing with verifying the connection status of the workstation (connected to the Internet via a direct connection, connected through a modem or not connected at all) and to establish this connection if possible/required (i.e. </para>
     </briefdescription>
     <detaileddescription>
-<para>in the case of the modem).</para>
+<para>This class encapsulates functions dealing with verifying the connection status of the workstation (connected to the Internet via a direct connection, connected through a modem or not connected at all) and to establish this connection if possible/required (i.e. in the case of the modem).</para>
 <para>The program may also wish to be notified about the change in the connection status (for example, to perform some action when the user connects to the network the next time or, on the contrary, to stop receiving data from the net when the user hangs up the modem). For this, you need to use one of the event macros described below.</para>
-<para>This class is different from other wxWidgets classes in that there is at most one instance of this class in the program accessed via <ref refid="classwx_dial_up_manager_1aebcb6d60546ca1f46ba667d1af3706e6" kindref="member">Create()</ref> and you can&apos;t create the objects of this class directly.</para>
+<para>This class is different from other wxWidgets classes in that there is at most one instance of this class in the program accessed via <ref refid="classwx_dial_up_manager_1a695c7032e6b025c1ddd293eaea442f40" kindref="member">Create()</ref> and you can&apos;t create the objects of this class directly.</para>
 <para><linebreak/>
 <heading level="2">Events emitted by this class</heading>
 </para>
@@ -323,10 +322,10 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/dialup.h" line="39" column="1" bodyfile="interface/wx/dialup.h" bodystart="40" bodyend="182"/>
+    <location file="interface/wx/dialup.h" line="40" column="1" bodyfile="interface/wx/dialup.h" bodystart="39" bodyend="182"/>
     <listofallmembers>
       <member refid="classwx_dial_up_manager_1a5f7353cc5ac19f115b589fbf4f603ec6" prot="public" virt="pure-virtual"><scope>wxDialUpManager</scope><name>CancelDialing</name></member>
-      <member refid="classwx_dial_up_manager_1aebcb6d60546ca1f46ba667d1af3706e6" prot="public" virt="non-virtual"><scope>wxDialUpManager</scope><name>Create</name></member>
+      <member refid="classwx_dial_up_manager_1a695c7032e6b025c1ddd293eaea442f40" prot="public" virt="non-virtual"><scope>wxDialUpManager</scope><name>Create</name></member>
       <member refid="classwx_dial_up_manager_1a8c94f29ebc0d535ed4c54b9f04b0e67d" prot="public" virt="pure-virtual"><scope>wxDialUpManager</scope><name>Dial</name></member>
       <member refid="classwx_dial_up_manager_1a8ed5256ff997883460a3fdf71dee4c87" prot="public" virt="pure-virtual"><scope>wxDialUpManager</scope><name>DisableAutoCheckOnlineStatus</name></member>
       <member refid="classwx_dial_up_manager_1a266e3d7b0bd204eb65e677297235c67e" prot="public" virt="pure-virtual"><scope>wxDialUpManager</scope><name>EnableAutoCheckOnlineStatus</name></member>

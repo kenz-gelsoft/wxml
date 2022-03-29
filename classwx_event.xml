@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_event" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxEvent</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -8,15 +8,12 @@
     <derivedcompoundref refid="classwx_calculate_layout_event" prot="public" virt="non-virtual">wxCalculateLayoutEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_close_event" prot="public" virt="non-virtual">wxCloseEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_command_event" prot="public" virt="non-virtual">wxCommandEvent</derivedcompoundref>
-    <derivedcompoundref refid="classwx_d_p_i_changed_event" prot="public" virt="non-virtual">wxDPIChangedEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_dial_up_event" prot="public" virt="non-virtual">wxDialUpEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_display_changed_event" prot="public" virt="non-virtual">wxDisplayChangedEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_drop_files_event" prot="public" virt="non-virtual">wxDropFilesEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_erase_event" prot="public" virt="non-virtual">wxEraseEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_file_system_watcher_event" prot="public" virt="non-virtual">wxFileSystemWatcherEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_focus_event" prot="public" virt="non-virtual">wxFocusEvent</derivedcompoundref>
-    <derivedcompoundref refid="classwx_full_screen_event" prot="public" virt="non-virtual">wxFullScreenEvent</derivedcompoundref>
-    <derivedcompoundref refid="classwx_gesture_event" prot="public" virt="non-virtual">wxGestureEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_iconize_event" prot="public" virt="non-virtual">wxIconizeEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_idle_event" prot="public" virt="non-virtual">wxIdleEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_init_dialog_event" prot="public" virt="non-virtual">wxInitDialogEvent</derivedcompoundref>
@@ -44,7 +41,6 @@
     <derivedcompoundref refid="classwx_task_bar_icon_event" prot="public" virt="non-virtual">wxTaskBarIconEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_thread_event" prot="public" virt="non-virtual">wxThreadEvent</derivedcompoundref>
     <derivedcompoundref refid="classwx_timer_event" prot="public" virt="non-virtual">wxTimerEvent</derivedcompoundref>
-    <derivedcompoundref refid="classwx_web_request_event" prot="public" virt="non-virtual">wxWebRequestEvent</derivedcompoundref>
     <includes local="no">wx/event.h</includes>
       <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" static="no" mutable="no">
@@ -110,15 +106,15 @@
         </inbodydescription>
         <location file="interface/wx/event.h" line="117" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_event_1a26878097a702e8d0368da150125d4158" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_event" kindref="compound">wxEvent</ref> *</type>
-        <definition>virtual wxEvent * wxEvent::Clone</definition>
+        <definition>virtual wxEvent* wxEvent::Clone</definition>
         <argsstring>() const =0</argsstring>
         <name>Clone</name>
-        <reimplementedby refid="classwx_window_modal_dialog_event_1ac4d11894eeb1ee365ed8d4ee646e78dd">Clone</reimplementedby>
-        <reimplementedby refid="classwx_thread_event_1a12938fd82b6f61d33c6e7186abe492e0">Clone</reimplementedby>
-        <reimplementedby refid="classwx_rich_text_event_1a9b7fda50fb412cef3b4d49bb48b19db5">Clone</reimplementedby>
-        <reimplementedby refid="classwx_text_url_event_1a04115d2c38c2c054e18b047a9e728df2">Clone</reimplementedby>
+        <reimplementedby refid="classwx_window_modal_dialog_event_1aba301094a2493d77ad03985ebfd5ef3e">Clone</reimplementedby>
+        <reimplementedby refid="classwx_text_url_event_1a8b2245b034520259bc6cadd6ab43c904">Clone</reimplementedby>
+        <reimplementedby refid="classwx_rich_text_event_1abb626f4efe9c0a14c4ba6a3e32885db0">Clone</reimplementedby>
+        <reimplementedby refid="classwx_thread_event_1a2c24add96ebc850421c6f721229b13b7">Clone</reimplementedby>
         <briefdescription>
 <para>Returns a copy of the event. </para>
         </briefdescription>
@@ -126,16 +122,16 @@
 <para>Any event that is posted to the wxWidgets event system for later action (via <ref refid="classwx_evt_handler_1a0737c6d2cbcd5ded4b1ecdd53ed0def3" kindref="member">wxEvtHandler::AddPendingEvent</ref>, <ref refid="classwx_evt_handler_1acffd03bf407a856166ea71ef0318b59a" kindref="member">wxEvtHandler::QueueEvent</ref> or <ref refid="event_8h_1a0cf60a1ad3a5f1e659f7ae591570f58d" kindref="member">wxPostEvent()</ref>) must implement this method.</para>
 <para>All wxWidgets events fully implement this method, but any derived events implemented by the user should also implement this method just in case they (or some event derived from them) are ever posted.</para>
 <para>All wxWidgets events implement a copy constructor, so the easiest way of implementing the Clone function is to implement a copy constructor for a new event (call it MyEvent) and then define the Clone function like this:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_event" kindref="compound">wxEvent</ref><sp/>*<ref refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" kindref="member">Clone</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyEvent(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxEvent<sp/>*Clone()<sp/>const<sp/>{<sp/>return<sp/>new<sp/>MyEvent(*this);<sp/>}</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/event.h" line="138" column="21"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_event_1a424a4ffaaaf95164d8952ef9ab2ef444" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_object" kindref="compound">wxObject</ref> *</type>
-        <definition>wxObject * wxEvent::GetEventObject</definition>
+        <definition>wxObject* wxEvent::GetEventObject</definition>
         <argsstring>() const</argsstring>
         <name>GetEventObject</name>
         <briefdescription>
@@ -192,9 +188,9 @@
         </inbodydescription>
         <location file="interface/wx/event.h" line="161" column="9"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_object" kindref="compound">wxObject</ref> *</type>
-        <definition>wxObject * wxEvent::GetEventUserData</definition>
+        <definition>wxObject* wxEvent::GetEventUserData</definition>
         <argsstring>() const</argsstring>
         <name>GetEventUserData</name>
         <briefdescription>
@@ -403,12 +399,13 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>An event is a structure holding information about an event passed to a callback or member function. </para>
     </briefdescription>
     <detaileddescription>
+<para>An event is a structure holding information about an event passed to a callback or member function.</para>
 <para><ref refid="classwx_event" kindref="compound">wxEvent</ref> used to be a multipurpose event object, and is an abstract base class for other event classes (see below).</para>
 <para>For more information about events, see the <ref refid="overview_events" kindref="compound">Events and Event Handling</ref> overview.</para>
-<para><bold>wxPerl Note:</bold> In wxPerl custom event classes should be derived from <computeroutput>Wx::PlEvent</computeroutput> and <computeroutput>Wx::PlCommandEvent</computeroutput>.  <heading level="2"></heading>
+<para><bold>wxPerl Note:</bold> In wxPerl custom event classes should be derived from <computeroutput>Wx::PlEvent</computeroutput> and <computeroutput>Wx::PlCommandEvent</computeroutput>.</para>
+<para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
 <para><simplesect kind="see"><para><ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>, <ref refid="classwx_mouse_event" kindref="compound">wxMouseEvent</ref> </para>
@@ -416,58 +413,28 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>wxActivateEvent</label>
-        <link refid="classwx_activate_event"/>
+      <node id="77">
+        <label>wxMoveEvent</label>
+        <link refid="classwx_move_event"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="8">
-        <label>wxActiveXEvent</label>
-        <link refid="classwx_active_x_event"/>
+      <node id="62">
+        <label>wxDisplayChangedEvent</label>
+        <link refid="classwx_display_changed_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>wxHtmlLinkEvent</label>
+        <link refid="classwx_html_link_event"/>
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>wxAuiManagerEvent</label>
-        <link refid="classwx_aui_manager_event"/>
+      <node id="89">
+        <label>wxSocketEvent</label>
+        <link refid="classwx_socket_event"/>
         <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="29">
-        <label>wxAuiNotebookEvent</label>
-        <link refid="classwx_aui_notebook_event"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>wxAuiToolBarEvent</label>
-        <link refid="classwx_aui_tool_bar_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="28">
-        <label>wxBookCtrlEvent</label>
-        <link refid="classwx_book_ctrl_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>wxCalculateLayoutEvent</label>
-        <link refid="classwx_calculate_layout_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>wxCalendarEvent</label>
-        <link refid="classwx_calendar_event"/>
-        <childnode refid="15" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>wxChildFocusEvent</label>
-        <link refid="classwx_child_focus_event"/>
-        <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
       <node id="10">
@@ -476,27 +443,85 @@
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="36">
+        <label>wxRibbonBarEvent</label>
+        <link refid="classwx_ribbon_bar_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>wxPaintEvent</label>
+        <link refid="classwx_paint_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>wxRibbonButtonBarEvent</label>
+        <link refid="classwx_ribbon_button_bar_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>wxContextMenuEvent</label>
+        <link refid="classwx_context_menu_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>wxSysColourChangedEvent</label>
+        <link refid="classwx_sys_colour_changed_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>wxKeyEvent</label>
+        <link refid="classwx_key_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
+      <node id="22">
+        <label>wxHtmlCellEvent</label>
+        <link refid="classwx_html_cell_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>wxDataViewEvent</label>
+        <link refid="classwx_data_view_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="6">
         <label>wxCloseEvent</label>
         <link refid="classwx_close_event"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="11">
-        <label>wxCollapsiblePaneEvent</label>
-        <link refid="classwx_collapsible_pane_event"/>
+      <node id="85">
+        <label>wxScrollWinEvent</label>
+        <link refid="classwx_scroll_win_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>wxScrollEvent</label>
+        <link refid="classwx_scroll_event"/>
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="12">
-        <label>wxColourDialogEvent</label>
-        <link refid="classwx_colour_dialog_event"/>
-        <childnode refid="7" relation="public-inheritance">
+      <node id="92">
+        <label>wxThreadEvent</label>
+        <link refid="classwx_thread_event"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="13">
-        <label>wxColourPickerEvent</label>
-        <link refid="classwx_colour_picker_event"/>
+      <node id="54">
+        <label>wxUpdateUIEvent</label>
+        <link refid="classwx_update_u_i_event"/>
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
@@ -506,528 +531,446 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="14">
-        <label>wxContextMenuEvent</label>
-        <link refid="classwx_context_menu_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="59">
-        <label>wxDPIChangedEvent</label>
-        <link refid="classwx_d_p_i_changed_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="30">
-        <label>wxDataViewEvent</label>
-        <link refid="classwx_data_view_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>wxDateEvent</label>
-        <link refid="classwx_date_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="60">
-        <label>wxDialUpEvent</label>
-        <link refid="classwx_dial_up_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="61">
-        <label>wxDisplayChangedEvent</label>
-        <link refid="classwx_display_changed_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="62">
-        <label>wxDropFilesEvent</label>
-        <link refid="classwx_drop_files_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="63">
-        <label>wxEraseEvent</label>
-        <link refid="classwx_erase_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>wxEvent</label>
-        <link refid="classwx_event"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="17">
-        <label>wxFileCtrlEvent</label>
-        <link refid="classwx_file_ctrl_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="18">
         <label>wxFileDirPickerEvent</label>
         <link refid="classwx_file_dir_picker_event"/>
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="64">
-        <label>wxFileSystemWatcherEvent</label>
-        <link refid="classwx_file_system_watcher_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>wxFindDialogEvent</label>
-        <link refid="classwx_find_dialog_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="65">
-        <label>wxFocusEvent</label>
-        <link refid="classwx_focus_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>wxFontPickerEvent</label>
-        <link refid="classwx_font_picker_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="66">
-        <label>wxFullScreenEvent</label>
-        <link refid="classwx_full_screen_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="67">
-        <label>wxGestureEvent</label>
-        <link refid="classwx_gesture_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>wxGridEditorCreatedEvent</label>
-        <link refid="classwx_grid_editor_created_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="31">
-        <label>wxGridEvent</label>
-        <link refid="classwx_grid_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="32">
-        <label>wxGridRangeSelectEvent</label>
-        <link refid="classwx_grid_range_select_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="33">
         <label>wxGridSizeEvent</label>
         <link refid="classwx_grid_size_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="34">
-        <label>wxHeaderCtrlEvent</label>
-        <link refid="classwx_header_ctrl_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="22">
-        <label>wxHelpEvent</label>
-        <link refid="classwx_help_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="23">
-        <label>wxHtmlCellEvent</label>
-        <link refid="classwx_html_cell_event"/>
-        <childnode refid="7" relation="public-inheritance">
+        <childnode refid="25" relation="public-inheritance">
         </childnode>
       </node>
       <node id="24">
-        <label>wxHtmlLinkEvent</label>
-        <link refid="classwx_html_link_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="25">
         <label>wxHyperlinkEvent</label>
         <link refid="classwx_hyperlink_event"/>
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="74">
-        <label>wxIconizeEvent</label>
-        <link refid="classwx_iconize_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="75">
-        <label>wxIdleEvent</label>
-        <link refid="classwx_idle_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="76">
-        <label>wxInitDialogEvent</label>
-        <link refid="classwx_init_dialog_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="77">
-        <label>wxJoystickEvent</label>
-        <link refid="classwx_joystick_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="78">
-        <label>wxKeyEvent</label>
-        <link refid="classwx_key_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="35">
-        <label>wxListEvent</label>
-        <link refid="classwx_list_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="68">
-        <label>wxLongPressEvent</label>
-        <link refid="classwx_long_press_event"/>
-        <childnode refid="67" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="79">
-        <label>wxMaximizeEvent</label>
-        <link refid="classwx_maximize_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="36">
-        <label>wxMediaEvent</label>
-        <link refid="classwx_media_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="80">
-        <label>wxMenuEvent</label>
-        <link refid="classwx_menu_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="81">
-        <label>wxMouseCaptureChangedEvent</label>
-        <link refid="classwx_mouse_capture_changed_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="82">
-        <label>wxMouseCaptureLostEvent</label>
-        <link refid="classwx_mouse_capture_lost_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="83">
-        <label>wxMouseEvent</label>
-        <link refid="classwx_mouse_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="84">
-        <label>wxMoveEvent</label>
-        <link refid="classwx_move_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="85">
-        <label>wxNavigationKeyEvent</label>
-        <link refid="classwx_navigation_key_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>wxNotifyEvent</label>
-        <link refid="classwx_notify_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-      </node>
-      <node id="86">
-        <label>wxPaintEvent</label>
-        <link refid="classwx_paint_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="87">
-        <label>wxPaletteChangedEvent</label>
-        <link refid="classwx_palette_changed_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="69">
-        <label>wxPanGestureEvent</label>
-        <link refid="classwx_pan_gesture_event"/>
-        <childnode refid="67" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="88">
-        <label>wxPowerEvent</label>
-        <link refid="classwx_power_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="70">
-        <label>wxPressAndTapEvent</label>
-        <link refid="classwx_press_and_tap_event"/>
-        <childnode refid="67" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="89">
-        <label>wxProcessEvent</label>
-        <link refid="classwx_process_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="46">
-        <label>wxPropertyGridEvent</label>
-        <link refid="classwx_property_grid_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="90">
-        <label>wxQueryLayoutInfoEvent</label>
-        <link refid="classwx_query_layout_info_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="91">
-        <label>wxQueryNewPaletteEvent</label>
-        <link refid="classwx_query_new_palette_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="37">
-        <label>wxRibbonBarEvent</label>
-        <link refid="classwx_ribbon_bar_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="47">
-        <label>wxRibbonButtonBarEvent</label>
-        <link refid="classwx_ribbon_button_bar_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="48">
-        <label>wxRibbonGalleryEvent</label>
-        <link refid="classwx_ribbon_gallery_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="49">
-        <label>wxRibbonPanelEvent</label>
-        <link refid="classwx_ribbon_panel_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="50">
         <label>wxRibbonToolBarEvent</label>
         <link refid="classwx_ribbon_tool_bar_event"/>
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="38">
-        <label>wxRichTextEvent</label>
-        <link refid="classwx_rich_text_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="71">
-        <label>wxRotateGestureEvent</label>
-        <link refid="classwx_rotate_gesture_event"/>
-        <childnode refid="67" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="51">
-        <label>wxSashEvent</label>
-        <link refid="classwx_sash_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="52">
-        <label>wxScrollEvent</label>
-        <link refid="classwx_scroll_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="92">
-        <label>wxScrollWinEvent</label>
-        <link refid="classwx_scroll_win_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="93">
-        <label>wxSetCursorEvent</label>
-        <link refid="classwx_set_cursor_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="94">
-        <label>wxShowEvent</label>
-        <link refid="classwx_show_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="95">
-        <label>wxSizeEvent</label>
-        <link refid="classwx_size_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="96">
-        <label>wxSocketEvent</label>
-        <link refid="classwx_socket_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="39">
-        <label>wxSpinDoubleEvent</label>
-        <link refid="classwx_spin_double_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="40">
-        <label>wxSpinEvent</label>
-        <link refid="classwx_spin_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="41">
-        <label>wxSplitterEvent</label>
-        <link refid="classwx_splitter_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="53">
-        <label>wxStyledTextEvent</label>
-        <link refid="classwx_styled_text_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="97">
-        <label>wxSysColourChangedEvent</label>
-        <link refid="classwx_sys_colour_changed_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="98">
-        <label>wxTaskBarIconEvent</label>
-        <link refid="classwx_task_bar_icon_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="54">
-        <label>wxTextUrlEvent</label>
-        <link refid="classwx_text_url_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="99">
-        <label>wxThreadEvent</label>
-        <link refid="classwx_thread_event"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="100">
-        <label>wxTimerEvent</label>
-        <link refid="classwx_timer_event"/>
+      <node id="78">
+        <label>wxNavigationKeyEvent</label>
+        <link refid="classwx_navigation_key_event"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="42">
-        <label>wxTreeEvent</label>
-        <link refid="classwx_tree_event"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="43">
         <label>wxTreeListEvent</label>
         <link refid="classwx_tree_list_event"/>
-        <childnode refid="26" relation="public-inheritance">
+        <childnode refid="25" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="72">
-        <label>wxTwoFingerTapEvent</label>
-        <link refid="classwx_two_finger_tap_event"/>
-        <childnode refid="67" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="55">
-        <label>wxUpdateUIEvent</label>
-        <link refid="classwx_update_u_i_event"/>
+      <node id="18">
+        <label>wxFindDialogEvent</label>
+        <link refid="classwx_find_dialog_event"/>
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="101">
-        <label>wxWebRequestEvent</label>
-        <link refid="classwx_web_request_event"/>
+      <node id="81">
+        <label>wxPowerEvent</label>
+        <link refid="classwx_power_event"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="44">
-        <label>wxWebViewEvent</label>
-        <link refid="classwx_web_view_event"/>
-        <childnode refid="26" relation="public-inheritance">
+      <node id="84">
+        <label>wxQueryNewPaletteEvent</label>
+        <link refid="classwx_query_new_palette_event"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="56">
-        <label>wxWindowCreateEvent</label>
-        <link refid="classwx_window_create_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="57">
-        <label>wxWindowDestroyEvent</label>
-        <link refid="classwx_window_destroy_event"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="58">
+      <node id="60">
         <label>wxWindowModalDialogEvent</label>
         <link refid="classwx_window_modal_dialog_event"/>
         <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="45">
-        <label>wxWizardEvent</label>
-        <link refid="classwx_wizard_event"/>
-        <childnode refid="26" relation="public-inheritance">
+      <node id="35">
+        <label>wxMediaEvent</label>
+        <link refid="classwx_media_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>wxListEvent</label>
+        <link refid="classwx_list_event"/>
+        <childnode refid="25" relation="public-inheritance">
         </childnode>
       </node>
       <node id="73">
-        <label>wxZoomGestureEvent</label>
-        <link refid="classwx_zoom_gesture_event"/>
-        <childnode refid="67" relation="public-inheritance">
+        <label>wxMenuEvent</label>
+        <link refid="classwx_menu_event"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
+      <node id="66">
+        <label>wxFocusEvent</label>
+        <link refid="classwx_focus_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>wxBookCtrlEvent</label>
+        <link refid="classwx_book_ctrl_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>wxPaletteChangedEvent</label>
+        <link refid="classwx_palette_changed_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxCalculateLayoutEvent</label>
+        <link refid="classwx_calculate_layout_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>wxSplitterEvent</label>
+        <link refid="classwx_splitter_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>wxActiveXEvent</label>
+        <link refid="classwx_active_x_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>wxInitDialogEvent</label>
+        <link refid="classwx_init_dialog_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>wxRibbonPanelEvent</label>
+        <link refid="classwx_ribbon_panel_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>wxWizardEvent</label>
+        <link refid="classwx_wizard_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>wxSpinDoubleEvent</label>
+        <link refid="classwx_spin_double_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>wxDropFilesEvent</label>
+        <link refid="classwx_drop_files_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>wxDateEvent</label>
+        <link refid="classwx_date_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>wxFontPickerEvent</label>
+        <link refid="classwx_font_picker_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>wxGridEditorCreatedEvent</label>
+        <link refid="classwx_grid_editor_created_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>wxTextUrlEvent</label>
+        <link refid="classwx_text_url_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>wxColourPickerEvent</label>
+        <link refid="classwx_colour_picker_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>wxSashEvent</label>
+        <link refid="classwx_sash_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>wxGridEvent</label>
+        <link refid="classwx_grid_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>wxWebViewEvent</label>
+        <link refid="classwx_web_view_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>wxTimerEvent</label>
+        <link refid="classwx_timer_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>wxRibbonGalleryEvent</label>
+        <link refid="classwx_ribbon_gallery_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>wxNotifyEvent</label>
+        <link refid="classwx_notify_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>wxChildFocusEvent</label>
+        <link refid="classwx_child_focus_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>wxStyledTextEvent</label>
+        <link refid="classwx_styled_text_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>wxGridRangeSelectEvent</label>
+        <link refid="classwx_grid_range_select_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>wxMouseCaptureChangedEvent</label>
+        <link refid="classwx_mouse_capture_changed_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>wxSpinEvent</label>
+        <link refid="classwx_spin_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>wxCalendarEvent</label>
+        <link refid="classwx_calendar_event"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>wxMouseEvent</label>
+        <link refid="classwx_mouse_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>wxWindowCreateEvent</label>
+        <link refid="classwx_window_create_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>wxIdleEvent</label>
+        <link refid="classwx_idle_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>wxSizeEvent</label>
+        <link refid="classwx_size_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>wxAuiToolBarEvent</label>
+        <link refid="classwx_aui_tool_bar_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>wxWebKitNewWindowEvent</label>
+        <link refid="classwx_web_kit_new_window_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>wxIconizeEvent</label>
+        <link refid="classwx_iconize_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>wxWebKitStateChangedEvent</label>
+        <link refid="classwx_web_kit_state_changed_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>wxHeaderCtrlEvent</label>
+        <link refid="classwx_header_ctrl_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>wxSetCursorEvent</label>
+        <link refid="classwx_set_cursor_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>wxEraseEvent</label>
+        <link refid="classwx_erase_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>wxAuiNotebookEvent</label>
+        <link refid="classwx_aui_notebook_event"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>wxPropertyGridEvent</label>
+        <link refid="classwx_property_grid_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>wxCollapsiblePaneEvent</label>
+        <link refid="classwx_collapsible_pane_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>wxTaskBarIconEvent</label>
+        <link refid="classwx_task_bar_icon_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>wxRichTextEvent</label>
+        <link refid="classwx_rich_text_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>wxTreeEvent</label>
+        <link refid="classwx_tree_event"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>wxFileSystemWatcherEvent</label>
+        <link refid="classwx_file_system_watcher_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>wxQueryLayoutInfoEvent</label>
+        <link refid="classwx_query_layout_info_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>wxMaximizeEvent</label>
+        <link refid="classwx_maximize_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="1">
         <label>wxEvent</label>
         <link refid="classwx_event"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="55">
+        <label>wxWebKitBeforeLoadEvent</label>
+        <link refid="classwx_web_kit_before_load_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxAuiManagerEvent</label>
+        <link refid="classwx_aui_manager_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>wxDialUpEvent</label>
+        <link refid="classwx_dial_up_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>wxMouseCaptureLostEvent</label>
+        <link refid="classwx_mouse_capture_lost_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>wxProcessEvent</label>
+        <link refid="classwx_process_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxActivateEvent</label>
+        <link refid="classwx_activate_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>wxFileCtrlEvent</label>
+        <link refid="classwx_file_ctrl_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>wxHelpEvent</label>
+        <link refid="classwx_help_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>wxShowEvent</label>
+        <link refid="classwx_show_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>wxJoystickEvent</label>
+        <link refid="classwx_joystick_event"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>wxWindowDestroyEvent</label>
+        <link refid="classwx_window_destroy_event"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -1035,24 +978,30 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="92" column="1" bodyfile="interface/wx/event.h" bodystart="93" bodyend="273"/>
+    <location file="interface/wx/event.h" line="93" column="1" bodyfile="interface/wx/event.h" bodystart="92" bodyend="273"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxEvent</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxEvent</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxEvent</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxEvent</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxEvent</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_event_1a26878097a702e8d0368da150125d4158" prot="public" virt="pure-virtual"><scope>wxEvent</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxEvent</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxEvent</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxEvent</scope><name>GetClassInfo</name></member>
       <member refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131" prot="public" virt="virtual"><scope>wxEvent</scope><name>GetEventCategory</name></member>
-      <member refid="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>GetEventObject</name></member>
+      <member refid="classwx_event_1a424a4ffaaaf95164d8952ef9ab2ef444" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>GetEventObject</name></member>
       <member refid="classwx_event_1a01c89719ef6241a6e612a313a259c1c2" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>GetEventType</name></member>
-      <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>GetEventUserData</name></member>
+      <member refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>GetEventUserData</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>GetId</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>GetRefData</name></member>
       <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>GetSkipped</name></member>
       <member refid="classwx_event_1a48662230971127737d2500cef7be549d" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>GetTimestamp</name></member>
       <member refid="classwx_event_1a31f6a4377d6d36964b8eae4e56ec43e0" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>IsCommandEvent</name></member>
@@ -1061,7 +1010,7 @@
       <member refid="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" virt="non-virtual"><scope>wxEvent</scope><name>m_propagationLevel</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxEvent</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>Ref</name></member>
       <member refid="classwx_event_1a0acb5c75f6e67b8822ad8ba3c5bdc4fe" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>ResumePropagation</name></member>
       <member refid="classwx_event_1a3460217d04c36393ab868ba453fde13d" prot="public" virt="non-virtual"><scope>wxEvent</scope><name>SetEventObject</name></member>

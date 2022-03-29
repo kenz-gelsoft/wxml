@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_cmndlg" kind="page">
     <compoundname>overview_cmndlg</compoundname>
     <title>Common Dialogs</title>
@@ -61,14 +61,6 @@
         <reference>overview_cmndlg_1overview_cmndlg_password</reference>
     </tocsect>
       <tocsect>
-        <name>wxNumberEntryDialog Overview</name>
-        <reference>overview_cmndlg_1overview_cmndlg_numeric</reference>
-    </tocsect>
-      <tocsect>
-        <name>wxCredentialEntryDialog Overview</name>
-        <reference>overview_cmndlg_1overview_cmndlg_cred</reference>
-    </tocsect>
-      <tocsect>
         <name>wxMessageDialog Overview</name>
         <reference>overview_cmndlg_1overview_cmndlg_msg</reference>
     </tocsect>
@@ -82,11 +74,9 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>Common dialog classes and functions encapsulate commonly-needed dialog box requirements. </para>
     </briefdescription>
     <detaileddescription>
-<para>Common dialog classes and functions encapsulate commonly-needed dialog box requirements.</para>
-<para>They are all &apos;modal&apos;, grabbing the flow of control until the user dismisses the dialog, to make them easy to use within an application.</para>
+<para>Common dialog classes and functions encapsulate commonly-needed dialog box requirements. They are all &apos;modal&apos;, grabbing the flow of control until the user dismisses the dialog, to make them easy to use within an application.</para>
 <para>Some dialogs have both platform-dependent and platform-independent implementations, so that if underlying windowing systems do not provide the required functionality, the generic classes and functions can stand in. For example, under MS Windows, <ref refid="classwx_colour_dialog" kindref="compound">wxColourDialog</ref> uses the standard colour selector. There is also an equivalent called wxGenericColourDialog for other platforms, and a macro defines <ref refid="classwx_colour_dialog" kindref="compound">wxColourDialog</ref> to be the same as wxGenericColourDialog on non-MS Windows platforms. However, under MS Windows, the generic dialog can also be used, for testing or other purposes.</para>
 <para><simplesect kind="see"><para><ref refid="group__group__class__cmndlg" kindref="compound">Common Dialogs</ref></para>
 </simplesect>
@@ -101,25 +91,25 @@
 </sect2>
 <sect2 id="overview_cmndlg_1overview_cmndlg_colour_generic">
 <title>The Generic Colour Selector</title>
-<para>Under non-MS Windows platforms, the colour selector is a simulation of most of the features of the MS Windows selector. Two palettes of 48 standard and 16 custom colours are presented, with the right-hand area containing three or four sliders for the user to select a colour from red, green, blue and opacity (optionally) components. This colour may be added to the custom colour palette, and will replace either the currently selected custom colour, or the first one in the palette if none is selected. The RGB or ARGB colour sliders are not optional in the generic colour selector. The generic colour selector is also available under MS Windows; use the name wxGenericColourDialog.</para>
+<para>Under non-MS Windows platforms, the colour selector is a simulation of most of the features of the MS Windows selector. Two palettes of 48 standard and 16 custom colours are presented, with the right-hand area containing three sliders for the user to select a colour from red, green and blue components. This colour may be added to the custom colour palette, and will replace either the currently selected custom colour, or the first one in the palette if none is selected. The RGB colour sliders are not optional in the generic colour selector. The generic colour selector is also available under MS Windows; use the name wxGenericColourDialog.</para>
 </sect2>
 <sect2 id="overview_cmndlg_1overview_cmndlg_colour_example">
 <title>Example</title>
 <para>In the samples/dialogs directory, there is an example of using the <ref refid="classwx_colour_dialog" kindref="compound">wxColourDialog</ref> class. Here is an excerpt, which sets various parameters of a <ref refid="classwx_colour_data" kindref="compound">wxColourData</ref> object, including a grey scale for the custom colours. If the user did not cancel the dialog, the application retrieves the selected colour and uses it to set the background of a window.</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_colour_data" kindref="compound">wxColourData</ref><sp/>data;</highlight></codeline>
-<codeline><highlight class="normal">data.<ref refid="classwx_colour_data_1a2e5e80d982cbcb17cac113a72efef2bf" kindref="member">SetChooseFull</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>16;<sp/>i++)</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxColourData<sp/>data;</highlight></codeline>
+<codeline><highlight class="normal">data.SetChooseFull(true);</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>16;<sp/>i++)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_colour" kindref="compound">wxColour</ref><sp/>colour(i*16,<sp/>i*16,<sp/>i*16);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>data.<ref refid="classwx_colour_data_1afff3c5561456c17bcf6329a81dcfc716" kindref="member">SetCustomColour</ref>(i,<sp/>colour);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxColour<sp/>colour(i*16,<sp/>i*16,<sp/>i*16);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>data.SetCustomColour(i,<sp/>colour);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_colour_dialog" kindref="compound">wxColourDialog</ref><sp/>dialog(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;data);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dialog.ShowModal()<sp/>==<sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbbaeeb1bdf97306d7f0fdffb62c8af3d02f" kindref="member">wxID_OK</ref>)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxColourDialog<sp/>dialog(this,<sp/>&amp;data);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(dialog.ShowModal()<sp/>==<sp/>wxID_OK)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_colour_data" kindref="compound">wxColourData</ref><sp/>retData<sp/>=<sp/>dialog.GetColourData();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_colour" kindref="compound">wxColour</ref><sp/>col<sp/>=<sp/>retData.<ref refid="classwx_colour_data_1a1e9b73d93d5e49627faa8ce926318606" kindref="member">GetColour</ref>();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_brush" kindref="compound">wxBrush</ref><sp/>brush(col,<sp/><ref refid="brush_8h_1aa8a41c365a383f785e379812dfd367efad15f5a6c2ede88289ad608d3eb4c82d3" kindref="member">wxBRUSHSTYLE_SOLID</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxColourData<sp/>retData<sp/>=<sp/>dialog.GetColourData();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxColour<sp/>col<sp/>=<sp/>retData.GetColour();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxBrush<sp/>brush(col,<sp/>wxSOLID);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>myWindow-&gt;SetBackground(brush);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>myWindow-&gt;Clear();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>myWindow-&gt;Refresh();</highlight></codeline>
@@ -142,16 +132,16 @@
 <sect2 id="overview_cmndlg_1overview_cmndlg_font_example">
 <title>Example</title>
 <para>In the samples/dialogs directory, there is an example of using the <ref refid="classwx_font_dialog" kindref="compound">wxFontDialog</ref> class. The application uses the returned font and colour for drawing text on a canvas. Here is an excerpt:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_font_data" kindref="compound">wxFontData</ref><sp/>data;</highlight></codeline>
-<codeline><highlight class="normal">data.<ref refid="classwx_font_data_1a24fd79c0a3eb6764cc7d525acba9aaeb" kindref="member">SetInitialFont</ref>(canvasFont);</highlight></codeline>
-<codeline><highlight class="normal">data.<ref refid="classwx_font_data_1a52e4308bf17d933b5b2948f6eb469608" kindref="member">SetColour</ref>(canvasTextColour);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_font_dialog" kindref="compound">wxFontDialog</ref><sp/>dialog(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;data);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dialog.ShowModal()<sp/>==<sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbbaeeb1bdf97306d7f0fdffb62c8af3d02f" kindref="member">wxID_OK</ref>)</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxFontData<sp/>data;</highlight></codeline>
+<codeline><highlight class="normal">data.SetInitialFont(canvasFont);</highlight></codeline>
+<codeline><highlight class="normal">data.SetColour(canvasTextColour);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxFontDialog<sp/>dialog(this,<sp/>&amp;data);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(dialog.ShowModal()<sp/>==<sp/>wxID_OK)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_font_data" kindref="compound">wxFontData</ref><sp/>retData<sp/>=<sp/>dialog.GetFontData();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>canvasFont<sp/>=<sp/>retData.<ref refid="classwx_font_data_1a066dead81cc01854df744ba711ac606e" kindref="member">GetChosenFont</ref>();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>canvasTextColour<sp/>=<sp/>retData.<ref refid="classwx_font_data_1ab64b3bc54a2c518d2124f93197646ff8" kindref="member">GetColour</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxFontData<sp/>retData<sp/>=<sp/>dialog.GetFontData();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>canvasFont<sp/>=<sp/>retData.GetChosenFont();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>canvasTextColour<sp/>=<sp/>retData.GetColour();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>myWindow-&gt;Refresh();</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
@@ -188,16 +178,6 @@
 <para>Classes: <ref refid="classwx_password_entry_dialog" kindref="compound">wxPasswordEntryDialog</ref></para>
 <para>This is a dialog with a password entry field. The value that the user entered is obtained using <ref refid="classwx_text_entry_dialog_1ae9fb8eb071f15a9aba096470f2fd09c8" kindref="member">wxTextEntryDialog::GetValue()</ref>.</para>
 </sect1>
-<sect1 id="overview_cmndlg_1overview_cmndlg_numeric">
-<title>wxNumberEntryDialog Overview</title>
-<para>Classes: <ref refid="classwx_number_entry_dialog" kindref="compound">wxNumberEntryDialog</ref></para>
-<para>This is a dialog with a numeric entry field. The value that the user entered is obtained using <ref refid="classwx_number_entry_dialog_1aefb7a8fdccb643da680265d028a9385d" kindref="member">wxNumberEntryDialog::GetValue()</ref>.</para>
-</sect1>
-<sect1 id="overview_cmndlg_1overview_cmndlg_cred">
-<title>wxCredentialEntryDialog Overview</title>
-<para>Classes: <ref refid="classwx_credential_entry_dialog" kindref="compound">wxCredentialEntryDialog</ref></para>
-<para>This is a dialog with user and password entry fields. The values that the user entered are obtained using wxCredentialEntryDialog::GetUser() and wxCredentialEntryDialog::GetPassword().</para>
-</sect1>
 <sect1 id="overview_cmndlg_1overview_cmndlg_msg">
 <title>wxMessageDialog Overview</title>
 <para>Classes: <ref refid="classwx_message_dialog" kindref="compound">wxMessageDialog</ref></para>
@@ -215,6 +195,5 @@
 <para>This dialog shows a list of choices, plus OK and (optionally) Cancel. The user can select one or more of them. </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/commondialogs.h"/>
   </compounddef>
 </doxygen>

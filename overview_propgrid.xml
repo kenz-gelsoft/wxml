@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_propgrid" kind="page">
     <compoundname>overview_propgrid</compoundname>
     <title>wxPropertyGrid Overview</title>
@@ -168,11 +168,9 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> is a specialized grid for editing properties - in other words name = value pairs. </para>
     </briefdescription>
     <detaileddescription>
-<para><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> is a specialized grid for editing properties - in other words name = value pairs.</para>
-<para>List of ready-to-use property classes include strings, numbers, flag sets, fonts, colours and many others. It is possible, for example, to categorize properties, set up a complete tree-hierarchy, add more than two columns, and set arbitrary per-property attributes.</para>
+<para><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> is a specialized grid for editing properties - in other words name = value pairs. List of ready-to-use property classes include strings, numbers, flag sets, fonts, colours and many others. It is possible, for example, to categorize properties, set up a complete tree-hierarchy, add more than two columns, and set arbitrary per-property attributes.</para>
 <para>As this version of <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> has some backward-incompatible changes from version 1.4, everybody who need to maintain custom property classes should carefully read final section in <ref refid="overview_propgrid_1propgrid_compat" kindref="member">Changes from wxPropertyGrid 1.4</ref>.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref>, <ref refid="classwx_property_grid_event" kindref="compound">wxPropertyGridEvent</ref>, <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref>, <ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref>, <ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref></para>
 </simplesect>
@@ -180,107 +178,107 @@
 <sect1 id="overview_propgrid_1propgrid_basics">
 <title>Creating and Populating wxPropertyGrid</title>
 <para>As seen here, <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> is constructed in the same way as other wxWidgets controls:</para>
-<para><programlisting><codeline><highlight class="comment">//<sp/>Necessary<sp/>header<sp/>file</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="interface_2wx_2propgrid_2propgrid_8h" kindref="compound">wx/propgrid/propgrid.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//<sp/>Necessary<sp/>header<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;wx/propgrid/propgrid.h&gt;</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">...</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Assumes<sp/>code<sp/>is<sp/>in<sp/>frame/dialog<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Construct<sp/>wxPropertyGrid<sp/>control</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref>*<sp/>pg<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/></highlight><highlight class="comment">//<sp/>parent</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PGID,<sp/></highlight><highlight class="comment">//<sp/>id</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="gdicmn_8h_1af5a90c753eaf3d3e3e5068a19ec3c1d0" kindref="member">wxDefaultPosition</ref>,<sp/></highlight><highlight class="comment">//<sp/>position</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="gdicmn_8h_1a33a012cdb075e9f78c93f63bec2dc27b" kindref="member">wxDefaultSize</ref>,<sp/></highlight><highlight class="comment">//<sp/>size</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Here<sp/>are<sp/>just<sp/>some<sp/>of<sp/>the<sp/>supported<sp/>window<sp/>styles</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2propgrid_2propgrid_8h_1a967b646b15085e115051d83a65ffdfe8a6bc5847c59e582bb9c3910ccb54d8635" kindref="member">wxPG_AUTO_SORT</ref><sp/>|<sp/></highlight><highlight class="comment">//<sp/>Automatic<sp/>sorting<sp/>after<sp/>items<sp/>added</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2propgrid_2propgrid_8h_1a967b646b15085e115051d83a65ffdfe8a998b9d55c606adb1010be7438286e3c5" kindref="member">wxPG_SPLITTER_AUTO_CENTER</ref><sp/>|<sp/></highlight><highlight class="comment">//<sp/>Automatically<sp/>center<sp/>splitter<sp/>until<sp/>user<sp/>manually<sp/>adjusts<sp/>it</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>style</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2propgrid_2propgrid_8h_1acf768b936525faa42392f653a3296eb4" kindref="member">wxPG_DEFAULT_STYLE</ref><sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Window<sp/>style<sp/>flags<sp/>are<sp/>at<sp/>premium,<sp/>so<sp/>some<sp/>less<sp/>often<sp/>needed<sp/>ones<sp/>are</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>available<sp/>as<sp/>extra<sp/>window<sp/>styles<sp/>(wxPG_EX_xxx)<sp/>which<sp/>must<sp/>be<sp/>set<sp/>using</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>SetExtraStyle<sp/>member<sp/>function.<sp/>wxPG_EX_HELP_AS_TOOLTIPS,<sp/>for<sp/>instance,</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>allows<sp/>displaying<sp/>help<sp/>strings<sp/>as<sp/>tool<sp/>tips.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;<ref refid="classwx_window_1ae9655f7c35ce7ac89cac2f6c0054b103" kindref="member">SetExtraStyle</ref>(<sp/><ref refid="interface_2wx_2propgrid_2propgrid_8h_1aeebee6f1621b080999ea22a5b76b00a6aab51ec531320af974c83f1af88dd14b1" kindref="member">wxPG_EX_HELP_AS_TOOLTIPS</ref><sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Assumes<sp/>code<sp/>is<sp/>in<sp/>frame/dialog<sp/>constructor</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Construct<sp/>wxPropertyGrid<sp/>control</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxPropertyGrid*<sp/>pg<sp/>=<sp/>new<sp/>wxPropertyGrid(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this,<sp/>//<sp/>parent</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PGID,<sp/>//<sp/>id</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxDefaultPosition,<sp/>//<sp/>position</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxDefaultSize,<sp/>//<sp/>size</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Here<sp/>are<sp/>just<sp/>some<sp/>of<sp/>the<sp/>supported<sp/>window<sp/>styles</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_AUTO_SORT<sp/>|<sp/>//<sp/>Automatic<sp/>sorting<sp/>after<sp/>items<sp/>added</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_SPLITTER_AUTO_CENTER<sp/>|<sp/>//<sp/>Automatically<sp/>center<sp/>splitter<sp/>until<sp/>user<sp/>manually<sp/>adjusts<sp/>it</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Default<sp/>style</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_DEFAULT_STYLE<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Window<sp/>style<sp/>flags<sp/>are<sp/>at<sp/>premium,<sp/>so<sp/>some<sp/>less<sp/>often<sp/>needed<sp/>ones<sp/>are</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>available<sp/>as<sp/>extra<sp/>window<sp/>styles<sp/>(wxPG_EX_xxx)<sp/>which<sp/>must<sp/>be<sp/>set<sp/>using</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>SetExtraStyle<sp/>member<sp/>function.<sp/>wxPG_EX_HELP_AS_TOOLTIPS,<sp/>for<sp/>instance,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>allows<sp/>displaying<sp/>help<sp/>strings<sp/>as<sp/>tool<sp/>tips.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;SetExtraStyle(<sp/>wxPG_EX_HELP_AS_TOOLTIPS<sp/>);</highlight></codeline>
 </programlisting></para>
 <para>(for complete list of new window styles, see <ref refid="interface_2wx_2propgrid_2propgrid_8h_1propgrid_window_styles" kindref="member">wxPropertyGrid Window Styles</ref>)</para>
 <para><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> is usually populated with lines like this:</para>
-<para><programlisting><codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_string_property" kindref="compound">wxStringProperty</ref>(</highlight><highlight class="stringliteral">&quot;Label&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Name&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Initial<sp/>Value&quot;</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxStringProperty(&quot;Label&quot;,<sp/>&quot;Name&quot;,<sp/>&quot;Initial<sp/>Value&quot;)<sp/>);</highlight></codeline>
 </programlisting></para>
 <para>Naturally, <ref refid="classwx_string_property" kindref="compound">wxStringProperty</ref> is a property class. Only the first function argument (label) is mandatory. Second one, name, defaults to label and, third, the initial value, to default value. If constant wxPG_LABEL is used as the name argument, then the label is automatically used as a name as well (this is more efficient than manually defining both as the same). Use of empty name is discouraged and will sometimes result in run-time error. Note that all property class constructors have quite similar constructor argument list.</para>
 <para>To demonstrate other common property classes, here&apos;s another code snippet:</para>
-<para><programlisting><codeline><highlight class="comment">//<sp/>Add<sp/>int<sp/>property</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_int_property" kindref="compound">wxIntProperty</ref>(</highlight><highlight class="stringliteral">&quot;IntProperty&quot;</highlight><highlight class="normal">,<sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,<sp/>12345678)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Add<sp/>float<sp/>property<sp/>(value<sp/>type<sp/>is<sp/>actually<sp/>double)</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_float_property" kindref="compound">wxFloatProperty</ref>(</highlight><highlight class="stringliteral">&quot;FloatProperty&quot;</highlight><highlight class="normal">,<sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,<sp/>12345.678)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Add<sp/>a<sp/>bool<sp/>property</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_bool_property" kindref="compound">wxBoolProperty</ref>(</highlight><highlight class="stringliteral">&quot;BoolProperty&quot;</highlight><highlight class="normal">,<sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>A<sp/>string<sp/>property<sp/>that<sp/>can<sp/>be<sp/>edited<sp/>in<sp/>a<sp/>separate<sp/>editor<sp/>dialog.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_long_string_property" kindref="compound">wxLongStringProperty</ref>(</highlight><highlight class="stringliteral">&quot;LongStringProperty&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;This<sp/>is<sp/>much<sp/>longer<sp/>string<sp/>than<sp/>the<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;first<sp/>one.<sp/>Edit<sp/>it<sp/>by<sp/>clicking<sp/>the<sp/>button.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>String<sp/>editor<sp/>with<sp/>dir<sp/>selector<sp/>button.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_dir_property" kindref="compound">wxDirProperty</ref>(</highlight><highlight class="stringliteral">&quot;DirProperty&quot;</highlight><highlight class="normal">,<sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,<sp/>::<ref refid="utils_8h_1a18db911e93361ebd5bbfb0d5136ddf5b" kindref="member">wxGetUserHome</ref>())<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>wxArrayStringProperty<sp/>embeds<sp/>a<sp/>wxArrayString.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_array_string_property" kindref="compound">wxArrayStringProperty</ref>(</highlight><highlight class="stringliteral">&quot;Label<sp/>of<sp/>ArrayStringProperty&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;NameOfArrayStringProp&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>A<sp/>file<sp/>selector<sp/>property.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_file_property" kindref="compound">wxFileProperty</ref>(</highlight><highlight class="stringliteral">&quot;FileProperty&quot;</highlight><highlight class="normal">,<sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,<sp/><ref refid="interface_2wx_2string_8h_1a9a321d587166a30017b608dd2d234033" kindref="member">wxEmptyString</ref>)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Extra:<sp/>set<sp/>wild<sp/>card<sp/>for<sp/>file<sp/>property<sp/>(format<sp/>same<sp/>as<sp/>in<sp/>wxFileDialog).</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a129a37f9d87a2a08516772de9860432d" kindref="member">SetPropertyAttribute</ref>(<sp/></highlight><highlight class="stringliteral">&quot;FileProperty&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="property_8h_1a1817e1bea592d9cda7a330ea3a25f851" kindref="member">wxPG_FILE_WILDCARD</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;All<sp/>files<sp/>(*.*)|*.*&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//<sp/>Add<sp/>int<sp/>property</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxIntProperty(&quot;IntProperty&quot;,<sp/>wxPG_LABEL,<sp/>12345678)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Add<sp/>float<sp/>property<sp/>(value<sp/>type<sp/>is<sp/>actually<sp/>double)</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxFloatProperty(&quot;FloatProperty&quot;,<sp/>wxPG_LABEL,<sp/>12345.678)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Add<sp/>a<sp/>bool<sp/>property</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxBoolProperty(&quot;BoolProperty&quot;,<sp/>wxPG_LABEL,<sp/>false)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>A<sp/>string<sp/>property<sp/>that<sp/>can<sp/>be<sp/>edited<sp/>in<sp/>a<sp/>separate<sp/>editor<sp/>dialog.</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxLongStringProperty(&quot;LongStringProperty&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;This<sp/>is<sp/>much<sp/>longer<sp/>string<sp/>than<sp/>the<sp/>&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;first<sp/>one.<sp/>Edit<sp/>it<sp/>by<sp/>clicking<sp/>the<sp/>button.&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>String<sp/>editor<sp/>with<sp/>dir<sp/>selector<sp/>button.</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxDirProperty(&quot;DirProperty&quot;,<sp/>wxPG_LABEL,<sp/>::wxGetUserHome())<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>wxArrayStringProperty<sp/>embeds<sp/>a<sp/>wxArrayString.</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxArrayStringProperty(&quot;Label<sp/>of<sp/>ArrayStringProperty&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NameOfArrayStringProp&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>A<sp/>file<sp/>selector<sp/>property.</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxFileProperty(&quot;FileProperty&quot;,<sp/>wxPG_LABEL,<sp/>wxEmptyString)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Extra:<sp/>set<sp/>wild<sp/>card<sp/>for<sp/>file<sp/>property<sp/>(format<sp/>same<sp/>as<sp/>in<sp/>wxFileDialog).</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;SetPropertyAttribute(<sp/>&quot;FileProperty&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_FILE_WILDCARD,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;All<sp/>files<sp/>(*.*)|*.*&quot;<sp/>);</highlight></codeline>
 </programlisting></para>
 <para>Operations on properties are usually done by directly calling <ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>&apos;s or <ref refid="classwx_property_grid_interface" kindref="compound">wxPropertyGridInterface</ref>&apos;s member functions. <ref refid="classwx_property_grid_interface" kindref="compound">wxPropertyGridInterface</ref> is an abstract base class for property containers such as <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref>, <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref>, and <ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref>. Note however that <ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>&apos;s member functions generally do not refresh the grid.</para>
 <para><ref refid="classwx_property_grid_interface" kindref="compound">wxPropertyGridInterface</ref>&apos;s property operation member functions , such as SetPropertyValue() and DisableProperty(), all accept a special wxPGPropArg id argument, using which you can refer to properties either by their pointer (for performance) or by their name (for convenience). For instance:</para>
-<para><programlisting><codeline><highlight class="comment">//<sp/>Add<sp/>a<sp/>file<sp/>selector<sp/>property.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>*<sp/>prop<sp/>=<sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_file_property" kindref="compound">wxFileProperty</ref>(</highlight><highlight class="stringliteral">&quot;FileProperty&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2string_8h_1a9a321d587166a30017b608dd2d234033" kindref="member">wxEmptyString</ref>)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Valid:<sp/>Set<sp/>wild<sp/>card<sp/>by<sp/>name</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a129a37f9d87a2a08516772de9860432d" kindref="member">SetPropertyAttribute</ref>(<sp/></highlight><highlight class="stringliteral">&quot;FileProperty&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="property_8h_1a1817e1bea592d9cda7a330ea3a25f851" kindref="member">wxPG_FILE_WILDCARD</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;All<sp/>files<sp/>(*.*)|*.*&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Also<sp/>Valid:<sp/>Set<sp/>wild<sp/>card<sp/>by<sp/>property<sp/>pointer</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a129a37f9d87a2a08516772de9860432d" kindref="member">SetPropertyAttribute</ref>(<sp/>prop,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="property_8h_1a1817e1bea592d9cda7a330ea3a25f851" kindref="member">wxPG_FILE_WILDCARD</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;All<sp/>files<sp/>(*.*)|*.*&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//<sp/>Add<sp/>a<sp/>file<sp/>selector<sp/>property.</highlight></codeline>
+<codeline><highlight class="normal">wxPGProperty*<sp/>prop<sp/>=<sp/>pg-&gt;Append(<sp/>new<sp/>wxFileProperty(&quot;FileProperty&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxEmptyString)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Valid:<sp/>Set<sp/>wild<sp/>card<sp/>by<sp/>name</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;SetPropertyAttribute(<sp/>&quot;FileProperty&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_FILE_WILDCARD,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;All<sp/>files<sp/>(*.*)|*.*&quot;<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Also<sp/>Valid:<sp/>Set<sp/>wild<sp/>card<sp/>by<sp/>property<sp/>pointer</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;SetPropertyAttribute(<sp/>prop,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_FILE_WILDCARD,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;All<sp/>files<sp/>(*.*)|*.*&quot;<sp/>);</highlight></codeline>
 </programlisting></para>
-<para>Using pointer is faster, since it doesn&apos;t require hash map lookup. Anyway, you can always get property pointer (wxPGProperty*) as return value from Append() or Insert(), or by calling <ref refid="classwx_property_grid_interface_1a89769670f290c83992b931d686dfe78d" kindref="member">wxPropertyGridInterface::GetPropertyByName()</ref> or just plain GetProperty().</para>
+<para>Using pointer is faster, since it doesn&apos;t require hash map lookup. Anyway, you can always get property pointer (wxPGProperty*) as return value from Append() or Insert(), or by calling <ref refid="classwx_property_grid_interface_1a6bea310e4c1e93bd889111be00d7f49a" kindref="member">wxPropertyGridInterface::GetPropertyByName()</ref> or just plain GetProperty().</para>
 </sect1>
 <sect1 id="overview_propgrid_1propgrid_categories">
 <title>Categories</title>
 <para><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> has a hierarchic property storage and display model, which allows property categories to hold child properties and even other categories. Other than that, from the programmer&apos;s point of view, categories can be treated exactly the same as &quot;other&quot; properties. For example, despite its name, GetPropertyByName() also returns a category by name. Note however that sometimes the label of a property category may be referred as caption (for example, there is <ref refid="classwx_property_grid_1a690cc9643f94225f38720c336789c7d4" kindref="member">wxPropertyGrid::SetCaptionTextColour()</ref> method that sets text colour of property category labels).</para>
-<para>When category is added at the top (i.e. root) level of the hierarchy, it becomes a <emphasis>current category</emphasis>. This means that all other (non-category) properties after it are automatically appended to it. You may add properties to specific categories by using <ref refid="classwx_property_grid_interface_1a56fec31d497b18e5f13728afc1a38f73" kindref="member">wxPropertyGridInterface::Insert</ref> or <ref refid="classwx_property_grid_interface_1a7e225cbdadd06b7a1470351d4e15e7bb" kindref="member">wxPropertyGridInterface::AppendIn</ref>.</para>
+<para>When category is added at the top (i.e. root) level of the hierarchy, it becomes a <emphasis>current category</emphasis>. This means that all other (non-category) properties after it are automatically appended to it. You may add properties to specific categories by using <ref refid="classwx_property_grid_interface_1aed2f5e12acc0bc460c2295ac1564b735" kindref="member">wxPropertyGridInterface::Insert</ref> or <ref refid="classwx_property_grid_interface_1a7ae5812ea47c050f981aec0b8ccbe83e" kindref="member">wxPropertyGridInterface::AppendIn</ref>.</para>
 <para>Category code sample:</para>
-<para><programlisting><codeline><highlight class="comment">//<sp/>One<sp/>way<sp/>to<sp/>add<sp/>category<sp/>(similar<sp/>to<sp/>how<sp/>other<sp/>properties<sp/>are<sp/>added)</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_property_category" kindref="compound">wxPropertyCategory</ref>(</highlight><highlight class="stringliteral">&quot;Main&quot;</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>All<sp/>these<sp/>are<sp/>added<sp/>to<sp/>&quot;Main&quot;<sp/>category</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_string_property" kindref="compound">wxStringProperty</ref>(</highlight><highlight class="stringliteral">&quot;Name&quot;</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_int_property" kindref="compound">wxIntProperty</ref>(</highlight><highlight class="stringliteral">&quot;Age&quot;</highlight><highlight class="normal">,<ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,25)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_int_property" kindref="compound">wxIntProperty</ref>(</highlight><highlight class="stringliteral">&quot;Height&quot;</highlight><highlight class="normal">,<ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,180)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_int_property" kindref="compound">wxIntProperty</ref>(</highlight><highlight class="stringliteral">&quot;Weight&quot;</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Another<sp/>one</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_property_category" kindref="compound">wxPropertyCategory</ref>(</highlight><highlight class="stringliteral">&quot;Attributes&quot;</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>All<sp/>these<sp/>are<sp/>added<sp/>to<sp/>&quot;Attributes&quot;<sp/>category</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_int_property" kindref="compound">wxIntProperty</ref>(</highlight><highlight class="stringliteral">&quot;Intelligence&quot;</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_int_property" kindref="compound">wxIntProperty</ref>(</highlight><highlight class="stringliteral">&quot;Agility&quot;</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_int_property" kindref="compound">wxIntProperty</ref>(</highlight><highlight class="stringliteral">&quot;Strength&quot;</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//<sp/>One<sp/>way<sp/>to<sp/>add<sp/>category<sp/>(similar<sp/>to<sp/>how<sp/>other<sp/>properties<sp/>are<sp/>added)</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxPropertyCategory(&quot;Main&quot;)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>All<sp/>these<sp/>are<sp/>added<sp/>to<sp/>&quot;Main&quot;<sp/>category</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxStringProperty(&quot;Name&quot;)<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxIntProperty(&quot;Age&quot;,wxPG_LABEL,25)<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxIntProperty(&quot;Height&quot;,wxPG_LABEL,180)<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxIntProperty(&quot;Weight&quot;)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Another<sp/>one</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxPropertyCategory(&quot;Attributes&quot;)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>All<sp/>these<sp/>are<sp/>added<sp/>to<sp/>&quot;Attributes&quot;<sp/>category</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxIntProperty(&quot;Intelligence&quot;)<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxIntProperty(&quot;Agility&quot;)<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxIntProperty(&quot;Strength&quot;)<sp/>);</highlight></codeline>
 </programlisting></para>
 </sect1>
 <sect1 id="overview_propgrid_1propgrid_parentprops">
@@ -294,39 +292,39 @@
 </para>
 </simplesect>
 Sample:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>*<sp/>carProp<sp/>=<sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_string_property" kindref="compound">wxStringProperty</ref>(</highlight><highlight class="stringliteral">&quot;Car&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;composed&gt;&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a7e225cbdadd06b7a1470351d4e15e7bb" kindref="member">AppendIn</ref>(carProp,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_string_property" kindref="compound">wxStringProperty</ref>(</highlight><highlight class="stringliteral">&quot;Model&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Lamborghini<sp/>Diablo<sp/>SV&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a7e225cbdadd06b7a1470351d4e15e7bb" kindref="member">AppendIn</ref>(carProp,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_int_property" kindref="compound">wxIntProperty</ref>(</highlight><highlight class="stringliteral">&quot;Engine<sp/>Size<sp/>(cc)&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxPGProperty*<sp/>carProp<sp/>=<sp/>pg-&gt;Append(new<sp/>wxStringProperty(&quot;Car&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&lt;composed&gt;&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">pg-&gt;AppendIn(carProp,<sp/>new<sp/>wxStringProperty(&quot;Model&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Lamborghini<sp/>Diablo<sp/>SV&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">pg-&gt;AppendIn(carProp,<sp/>new<sp/>wxIntProperty(&quot;Engine<sp/>Size<sp/>(cc)&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5707)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>*<sp/>speedsProp<sp/>=<sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a7e225cbdadd06b7a1470351d4e15e7bb" kindref="member">AppendIn</ref>(carProp,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_string_property" kindref="compound">wxStringProperty</ref>(</highlight><highlight class="stringliteral">&quot;Speeds&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;composed&gt;&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a7e225cbdadd06b7a1470351d4e15e7bb" kindref="member">AppendIn</ref>(<sp/>speedsProp,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_int_property" kindref="compound">wxIntProperty</ref>(</highlight><highlight class="stringliteral">&quot;Max.<sp/>Speed<sp/>(mph)&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,290)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a7e225cbdadd06b7a1470351d4e15e7bb" kindref="member">AppendIn</ref>(<sp/>speedsProp,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_float_property" kindref="compound">wxFloatProperty</ref>(</highlight><highlight class="stringliteral">&quot;0-100<sp/>mph<sp/>(sec)&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,3.9)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a7e225cbdadd06b7a1470351d4e15e7bb" kindref="member">AppendIn</ref>(<sp/>speedsProp,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_float_property" kindref="compound">wxFloatProperty</ref>(</highlight><highlight class="stringliteral">&quot;1/4<sp/>mile<sp/>(sec)&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,8.6)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>how<sp/>child<sp/>property<sp/>can<sp/>be<sp/>referred<sp/>to<sp/>by<sp/>name</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1aa652e127ce0c9d4e80821cbdcfe4983c" kindref="member">SetPropertyValue</ref>(<sp/></highlight><highlight class="stringliteral">&quot;Car.Speeds.Max.<sp/>Speed<sp/>(mph)&quot;</highlight><highlight class="normal">,<sp/>300<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a7e225cbdadd06b7a1470351d4e15e7bb" kindref="member">AppendIn</ref>(carProp,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_int_property" kindref="compound">wxIntProperty</ref>(</highlight><highlight class="stringliteral">&quot;Price<sp/>($)&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxPGProperty*<sp/>speedsProp<sp/>=<sp/>pg-&gt;AppendIn(carProp,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new<sp/>wxStringProperty(&quot;Speeds&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&lt;composed&gt;&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">pg-&gt;AppendIn(<sp/>speedsProp,<sp/>new<sp/>wxIntProperty(&quot;Max.<sp/>Speed<sp/>(mph)&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,290)<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;AppendIn(<sp/>speedsProp,<sp/>new<sp/>wxFloatProperty(&quot;0-100<sp/>mph<sp/>(sec)&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,3.9)<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;AppendIn(<sp/>speedsProp,<sp/>new<sp/>wxFloatProperty(&quot;1/4<sp/>mile<sp/>(sec)&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,8.6)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>This<sp/>is<sp/>how<sp/>child<sp/>property<sp/>can<sp/>be<sp/>referred<sp/>to<sp/>by<sp/>name</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;SetPropertyValue(<sp/>&quot;Car.Speeds.Max.<sp/>Speed<sp/>(mph)&quot;,<sp/>300<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">pg-&gt;AppendIn(carProp,<sp/>new<sp/>wxIntProperty(&quot;Price<sp/>($)&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>300000)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Displayed<sp/>value<sp/>of<sp/>&quot;Car&quot;<sp/>property<sp/>is<sp/>now<sp/>very<sp/>close<sp/>to<sp/>this:</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>&quot;Lamborghini<sp/>Diablo<sp/>SV;<sp/>5707<sp/>[300;<sp/>3.9;<sp/>8.6]<sp/>300000&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Displayed<sp/>value<sp/>of<sp/>&quot;Car&quot;<sp/>property<sp/>is<sp/>now<sp/>very<sp/>close<sp/>to<sp/>this:</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>&quot;Lamborghini<sp/>Diablo<sp/>SV;<sp/>5707<sp/>[300;<sp/>3.9;<sp/>8.6]<sp/>300000&quot;</highlight></codeline>
 </programlisting></para>
 </sect1>
 <sect1 id="overview_propgrid_1propgrid_enumandflags">
@@ -340,158 +338,158 @@ Sample:</para>
 </listitem></itemizedlist>
 </para>
 <para>A very simple example:</para>
-<para><programlisting><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Using<sp/>wxArrayString</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_array_string" kindref="compound">wxArrayString</ref><sp/>arrDiet;</highlight></codeline>
-<codeline><highlight class="normal">arrDiet.<ref refid="classwx_array_string_1af06b61455118d83a24183c3a9f6854b1" kindref="member">Add</ref>(</highlight><highlight class="stringliteral">&quot;Herbivore&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal">arrDiet.<ref refid="classwx_array_string_1af06b61455118d83a24183c3a9f6854b1" kindref="member">Add</ref>(</highlight><highlight class="stringliteral">&quot;Carnivore&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal">arrDiet.<ref refid="classwx_array_string_1af06b61455118d83a24183c3a9f6854b1" kindref="member">Add</ref>(</highlight><highlight class="stringliteral">&quot;Omnivore&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_enum_property" kindref="compound">wxEnumProperty</ref>(</highlight><highlight class="stringliteral">&quot;Diet&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Using<sp/>wxArrayString</highlight></codeline>
+<codeline><highlight class="normal">//</highlight></codeline>
+<codeline><highlight class="normal">wxArrayString<sp/>arrDiet;</highlight></codeline>
+<codeline><highlight class="normal">arr.Add(&quot;Herbivore&quot;);</highlight></codeline>
+<codeline><highlight class="normal">arr.Add(&quot;Carnivore&quot;);</highlight></codeline>
+<codeline><highlight class="normal">arr.Add(&quot;Omnivore&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxEnumProperty(&quot;Diet&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arrDiet)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Using<sp/>wxChar*<sp/>array</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref>*<sp/>arrayDiet[]<sp/>=</highlight></codeline>
-<codeline><highlight class="normal">{<sp/><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;Herbivore&quot;</highlight><highlight class="normal">),<sp/><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;Carnivore&quot;</highlight><highlight class="normal">),<sp/><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;Omnivore&quot;</highlight><highlight class="normal">),<sp/>NULL<sp/>};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_enum_property" kindref="compound">wxEnumProperty</ref>(</highlight><highlight class="stringliteral">&quot;Diet&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Using<sp/>wxChar*<sp/>array</highlight></codeline>
+<codeline><highlight class="normal">//</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>wxChar*<sp/>arrayDiet[]<sp/>=</highlight></codeline>
+<codeline><highlight class="normal">{<sp/>wxT(&quot;Herbivore&quot;),<sp/>wxT(&quot;Carnivore&quot;),<sp/>wxT(&quot;Omnivore&quot;),<sp/>NULL<sp/>};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxEnumProperty(&quot;Diet&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arrayDiet)<sp/>);</highlight></codeline>
 </programlisting></para>
 <para>Here&apos;s extended example using values as well:</para>
-<para><programlisting><codeline><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Using<sp/>wxArrayString<sp/>and<sp/>wxArrayInt</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_array_string" kindref="compound">wxArrayString</ref><sp/>arrDiet;</highlight></codeline>
-<codeline><highlight class="normal">arrDiet.<ref refid="classwx_array_string_1af06b61455118d83a24183c3a9f6854b1" kindref="member">Add</ref>(</highlight><highlight class="stringliteral">&quot;Herbivore&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal">arrDiet.<ref refid="classwx_array_string_1af06b61455118d83a24183c3a9f6854b1" kindref="member">Add</ref>(</highlight><highlight class="stringliteral">&quot;Carnivore&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal">arrDiet.<ref refid="classwx_array_string_1af06b61455118d83a24183c3a9f6854b1" kindref="member">Add</ref>(</highlight><highlight class="stringliteral">&quot;Omnivore&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="dynarray_8h_1add87f199292e36ee87efd6d7f0d4ee66" kindref="member">wxArrayInt</ref><sp/>arrIds;</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Using<sp/>wxArrayString<sp/>and<sp/>wxArrayInt</highlight></codeline>
+<codeline><highlight class="normal">//</highlight></codeline>
+<codeline><highlight class="normal">wxArrayString<sp/>arrDiet;</highlight></codeline>
+<codeline><highlight class="normal">arr.Add(&quot;Herbivore&quot;);</highlight></codeline>
+<codeline><highlight class="normal">arr.Add(&quot;Carnivore&quot;);</highlight></codeline>
+<codeline><highlight class="normal">arr.Add(&quot;Omnivore&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxArrayInt<sp/>arrIds;</highlight></codeline>
 <codeline><highlight class="normal">arrIds.Add(40);</highlight></codeline>
 <codeline><highlight class="normal">arrIds.Add(45);</highlight></codeline>
 <codeline><highlight class="normal">arrIds.Add(50);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Note<sp/>that<sp/>the<sp/>initial<sp/>value<sp/>(the<sp/>last<sp/>argument)<sp/>is<sp/>the<sp/>actual<sp/>value,</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>not<sp/>index<sp/>or<sp/>anything<sp/>like<sp/>that.<sp/>Thus,<sp/>our<sp/>value<sp/>selects<sp/>&quot;Omnivore&quot;.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_enum_property" kindref="compound">wxEnumProperty</ref>(</highlight><highlight class="stringliteral">&quot;Diet&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Note<sp/>that<sp/>the<sp/>initial<sp/>value<sp/>(the<sp/>last<sp/>argument)<sp/>is<sp/>the<sp/>actual<sp/>value,</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>not<sp/>index<sp/>or<sp/>anything<sp/>like<sp/>that.<sp/>Thus,<sp/>our<sp/>value<sp/>selects<sp/>&quot;Omnivore&quot;.</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxEnumProperty(&quot;Diet&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arrDiet,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arrIds,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>50));</highlight></codeline>
 </programlisting></para>
 <para><ref refid="classwx_p_g_choices" kindref="compound">wxPGChoices</ref> is a class where <ref refid="classwx_enum_property" kindref="compound">wxEnumProperty</ref>, and other properties which require storage for list of items, actually stores strings and values. It is used to facilitate reference counting, and therefore recommended way of adding items when multiple properties share the same set.</para>
 <para>You can use <ref refid="classwx_p_g_choices" kindref="compound">wxPGChoices</ref> directly as well, filling it and then passing it to the constructor. In fact, if you wish to display bitmaps next to labels, your best choice is to use this approach.</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_p_g_choices" kindref="compound">wxPGChoices</ref><sp/>chs;</highlight></codeline>
-<codeline><highlight class="normal">chs.<ref refid="classwx_p_g_choices_1a709537c345b19a72bfc081c38096953a" kindref="member">Add</ref>(</highlight><highlight class="stringliteral">&quot;Herbivore&quot;</highlight><highlight class="normal">,<sp/>40);</highlight></codeline>
-<codeline><highlight class="normal">chs.<ref refid="classwx_p_g_choices_1a709537c345b19a72bfc081c38096953a" kindref="member">Add</ref>(</highlight><highlight class="stringliteral">&quot;Carnivore&quot;</highlight><highlight class="normal">,<sp/>45);</highlight></codeline>
-<codeline><highlight class="normal">chs.<ref refid="classwx_p_g_choices_1a709537c345b19a72bfc081c38096953a" kindref="member">Add</ref>(</highlight><highlight class="stringliteral">&quot;Omnivore&quot;</highlight><highlight class="normal">,<sp/>50);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Let&apos;s<sp/>add<sp/>an<sp/>item<sp/>with<sp/>bitmap,<sp/>too</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">chs.<ref refid="classwx_p_g_choices_1a709537c345b19a72bfc081c38096953a" kindref="member">Add</ref>(</highlight><highlight class="stringliteral">&quot;None<sp/>of<sp/>the<sp/>above&quot;</highlight><highlight class="normal">,<sp/><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>(),<sp/>60);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_enum_property" kindref="compound">wxEnumProperty</ref>(</highlight><highlight class="stringliteral">&quot;Primary<sp/>Diet&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxPGChoices<sp/>chs;</highlight></codeline>
+<codeline><highlight class="normal">chs.Add(&quot;Herbivore&quot;,<sp/>40);</highlight></codeline>
+<codeline><highlight class="normal">chs.Add(&quot;Carnivore&quot;,<sp/>45);</highlight></codeline>
+<codeline><highlight class="normal">chs.Add(&quot;Omnivore&quot;,<sp/>50);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Let&apos;s<sp/>add<sp/>an<sp/>item<sp/>with<sp/>bitmap,<sp/>too</highlight></codeline>
+<codeline><highlight class="normal">chs.Add(&quot;None<sp/>of<sp/>the<sp/>above&quot;,<sp/>wxBitmap(),<sp/>60);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxEnumProperty(&quot;Primary<sp/>Diet&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chs)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Add<sp/>same<sp/>choices<sp/>to<sp/>another<sp/>property<sp/>as<sp/>well<sp/>-<sp/>this<sp/>is<sp/>efficient<sp/>due</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>to<sp/>reference<sp/>counting</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_enum_property" kindref="compound">wxEnumProperty</ref>(</highlight><highlight class="stringliteral">&quot;Secondary<sp/>Diet&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Add<sp/>same<sp/>choices<sp/>to<sp/>another<sp/>property<sp/>as<sp/>well<sp/>-<sp/>this<sp/>is<sp/>efficient<sp/>due</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>to<sp/>reference<sp/>counting</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxEnumProperty(&quot;Secondary<sp/>Diet&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>chs)<sp/>);</highlight></codeline>
 </programlisting></para>
 <para>You can later change choices of property by using <ref refid="classwx_p_g_property_1ab58afbdcd83f0626f44d152127038a89" kindref="member">wxPGProperty::AddChoice()</ref>, <ref refid="classwx_p_g_property_1ae9f9995783eeaf5320cb0c71482cbbc8" kindref="member">wxPGProperty::InsertChoice()</ref>, <ref refid="classwx_p_g_property_1a137f1b7ea16f1f18fcc3e50ec107da1f" kindref="member">wxPGProperty::DeleteChoice()</ref>, and <ref refid="classwx_p_g_property_1a7275467270d2c7ac3f847f4d1b6a1194" kindref="member">wxPGProperty::SetChoices()</ref>.</para>
 <para><bold><ref refid="classwx_edit_enum_property" kindref="compound">wxEditEnumProperty</ref></bold> works exactly like <ref refid="classwx_enum_property" kindref="compound">wxEnumProperty</ref>, except is uses non-read-only combo box as default editor, and value is stored as string when it is not any of the choices.</para>
 <para><ref refid="classwx_flags_property" kindref="compound">wxFlagsProperty</ref> has similar construction:</para>
-<para><programlisting><codeline><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref>*<sp/>flags_prop_labels[]<sp/>=<sp/>{<sp/><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;wxICONIZE&quot;</highlight><highlight class="normal">),</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;wxCAPTION&quot;</highlight><highlight class="normal">),<sp/><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;wxMINIMIZE_BOX&quot;</highlight><highlight class="normal">),<sp/><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;wxMAXIMIZE_BOX&quot;</highlight><highlight class="normal">),<sp/>NULL<sp/>};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>this<sp/>value<sp/>array<sp/>would<sp/>be<sp/>optional<sp/>if<sp/>values<sp/>matched<sp/>string<sp/>indexes</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>flags_prop_values[]<sp/>=<sp/>{<sp/><ref refid="defs_8h_1a8dd8a3b1da393539bbf97740cf8e15a9" kindref="member">wxICONIZE</ref>,<sp/><ref refid="defs_8h_1ab9dd38fb28514dc86647c9bab14a5abe" kindref="member">wxCAPTION</ref>,<sp/><ref refid="defs_8h_1a58a06afb75f2d7eaf75678be07cd1bb9" kindref="member">wxMINIMIZE_BOX</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="defs_8h_1a8968324afeca5856872724521f199e04" kindref="member">wxMAXIMIZE_BOX</ref><sp/>};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_flags_property" kindref="compound">wxFlagsProperty</ref>(</highlight><highlight class="stringliteral">&quot;Window<sp/>Style&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">const<sp/>wxChar*<sp/>flags_prop_labels[]<sp/>=<sp/>{<sp/>wxT(&quot;wxICONIZE&quot;),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxT(&quot;wxCAPTION&quot;),<sp/>wxT(&quot;wxMINIMIZE_BOX&quot;),<sp/>wxT(&quot;wxMAXIMIZE_BOX&quot;),<sp/>NULL<sp/>};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>this<sp/>value<sp/>array<sp/>would<sp/>be<sp/>optional<sp/>if<sp/>values<sp/>matched<sp/>string<sp/>indexes</highlight></codeline>
+<codeline><highlight class="normal">long<sp/>flags_prop_values[]<sp/>=<sp/>{<sp/>wxICONIZE,<sp/>wxCAPTION,<sp/>wxMINIMIZE_BOX,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxMAXIMIZE_BOX<sp/>};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(<sp/>new<sp/>wxFlagsProperty(&quot;Window<sp/>Style&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags_prop_labels,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags_prop_values,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="toplevel_8h_1ab3ad2777e5178344fa798ec8fd8e95e2" kindref="member">wxDEFAULT_FRAME_STYLE</ref>)<sp/>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxDEFAULT_FRAME_STYLE)<sp/>);</highlight></codeline>
 </programlisting></para>
 <para><ref refid="classwx_flags_property" kindref="compound">wxFlagsProperty</ref> can use <ref refid="classwx_p_g_choices" kindref="compound">wxPGChoices</ref> just the same way as <ref refid="classwx_enum_property" kindref="compound">wxEnumProperty</ref> <bold>Note:</bold> When changing &quot;choices&quot; (ie. flag labels) of <ref refid="classwx_flags_property" kindref="compound">wxFlagsProperty</ref>, you will need to use <ref refid="classwx_p_g_property_1a7275467270d2c7ac3f847f4d1b6a1194" kindref="member">wxPGProperty::SetChoices()</ref> to replace all choices at once - otherwise implicit child properties will not get updated properly.</para>
 </sect1>
 <sect1 id="overview_propgrid_1propgrid_advprops">
 <title>Specialized Properties</title>
 <para>This section describes the use of less often needed property classes. To use them, you have to include &lt;<ref refid="advprops_8h" kindref="compound">wx/propgrid/advprops.h</ref>&gt;.</para>
-<para><programlisting><codeline><highlight class="comment">//<sp/>Necessary<sp/>extra<sp/>header<sp/>file</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="advprops_8h" kindref="compound">wx/propgrid/advprops.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//<sp/>Necessary<sp/>extra<sp/>header<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;wx/propgrid/advprops.h&gt;</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">...</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Date<sp/>property.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_date_property" kindref="compound">wxDateProperty</ref>(</highlight><highlight class="stringliteral">&quot;MyDateProperty&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_date_time_1a6e6c37a0414bb4831e2cc03b37f498a2" kindref="member">wxDateTime::Now</ref>())<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Image<sp/>file<sp/>property.<sp/>Wild<sp/>card<sp/>is<sp/>auto-generated<sp/>from<sp/>available</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>image<sp/>handlers,<sp/>so<sp/>it<sp/>is<sp/>not<sp/>set<sp/>this<sp/>time.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_image_file_property" kindref="compound">wxImageFileProperty</ref>(</highlight><highlight class="stringliteral">&quot;Label<sp/>of<sp/>ImageFileProperty&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;NameOfImageFileProp&quot;</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Font<sp/>property<sp/>has<sp/>sub-properties.<sp/>Note<sp/>that<sp/>we<sp/>give<sp/>window&apos;s<sp/>font<sp/>as</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>initial<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_font_property" kindref="compound">wxFontProperty</ref>(</highlight><highlight class="stringliteral">&quot;Font&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Date<sp/>property.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;Append(<sp/>new<sp/>wxDateProperty(&quot;MyDateProperty&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxDateTime::Now())<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Image<sp/>file<sp/>property.<sp/>Wild<sp/>card<sp/>is<sp/>auto-generated<sp/>from<sp/>available</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>image<sp/>handlers,<sp/>so<sp/>it<sp/>is<sp/>not<sp/>set<sp/>this<sp/>time.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;Append(<sp/>new<sp/>wxImageFileProperty(&quot;Label<sp/>of<sp/>ImageFileProperty&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NameOfImageFileProp&quot;)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Font<sp/>property<sp/>has<sp/>sub-properties.<sp/>Note<sp/>that<sp/>we<sp/>give<sp/>window&apos;s<sp/>font<sp/>as</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>initial<sp/>value.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;Append(<sp/>new<sp/>wxFontProperty(&quot;Font&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GetFont())<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Colour<sp/>property<sp/>with<sp/>arbitrary<sp/>colour.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_colour_property" kindref="compound">wxColourProperty</ref>(</highlight><highlight class="stringliteral">&quot;My<sp/>Colour<sp/>1&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_colour" kindref="compound">wxColour</ref>(242,109,0)<sp/>)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>System<sp/>colour<sp/>property.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_system_colour_property" kindref="compound">wxSystemColourProperty</ref>(</highlight><highlight class="stringliteral">&quot;My<sp/>SysColour<sp/>1&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_system_settings_1ab252414b60f16a233bc17df2a19bd804" kindref="member">wxSystemSettings::GetColour</ref>(<ref refid="settings_8h_1a44ad26cbd8d579d1b7eff7015c8bd24ba4a6145d1d56adfaa209f03df43a34f63" kindref="member">wxSYS_COLOUR_WINDOW</ref>))<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>System<sp/>colour<sp/>property<sp/>with<sp/>custom<sp/>colour.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_system_colour_property" kindref="compound">wxSystemColourProperty</ref>(</highlight><highlight class="stringliteral">&quot;My<sp/>SysColour<sp/>2&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_colour" kindref="compound">wxColour</ref>(0,200,160)<sp/>)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cursor<sp/>property</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_cursor_property" kindref="compound">wxCursorProperty</ref>(</highlight><highlight class="stringliteral">&quot;My<sp/>Cursor&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="gdicmn_8h_1ae668769c0de48b50d4695b279c7c41b2a97a7a0012654ded652421164575f960b" kindref="member">wxCURSOR_ARROW</ref>));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Colour<sp/>property<sp/>with<sp/>arbitrary<sp/>colour.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;Append(<sp/>new<sp/>wxColourProperty(&quot;My<sp/>Colour<sp/>1&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxColour(242,109,0)<sp/>)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>System<sp/>colour<sp/>property.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;Append(<sp/>new<sp/>wxSystemColourProperty(&quot;My<sp/>SysColour<sp/>1&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW))<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>System<sp/>colour<sp/>property<sp/>with<sp/>custom<sp/>colour.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;Append(<sp/>new<sp/>wxSystemColourProperty(&quot;My<sp/>SysColour<sp/>2&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxColour(0,200,160)<sp/>)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Cursor<sp/>property</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pg-&gt;Append(<sp/>new<sp/>wxCursorProperty(&quot;My<sp/>Cursor&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_LABEL,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxCURSOR_ARROW));</highlight></codeline>
 </programlisting></para>
 </sect1>
 <sect1 id="overview_propgrid_1propgrid_processingvalues">
 <title>Processing Property Values</title>
 <para>Properties store their values internally as <ref refid="classwx_variant" kindref="compound">wxVariant</ref>, but is also possible to obtain them as <ref refid="classwx_any" kindref="compound">wxAny</ref>, using implicit conversion. You can get property values with <ref refid="classwx_p_g_property_1a73b4c8073f032d17e246aaf40382953c" kindref="member">wxPGProperty::GetValue()</ref> and <ref refid="classwx_property_grid_interface_1aa1164652240e4b157ce5250769af537e" kindref="member">wxPropertyGridInterface::GetPropertyValue()</ref>.</para>
 <para>Below is a code example which handles wxEVT_PG_CHANGED event:</para>
-<para><programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyWindowClass::OnPropertyGridChanged(<ref refid="classwx_property_grid_event" kindref="compound">wxPropertyGridEvent</ref>&amp;<sp/>event)</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">void<sp/>MyWindowClass::OnPropertyGridChanged(wxPropertyGridEvent&amp;<sp/>event)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>*<sp/></highlight><highlight class="keyword">property</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.GetProperty();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>nothing<sp/>if<sp/>event<sp/>did<sp/>not<sp/>have<sp/>associated<sp/>property</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!property<sp/>)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GetValue()<sp/>returns<sp/>wxVariant,<sp/>but<sp/>it<sp/>is<sp/>converted<sp/>transparently<sp/>to</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wxAny</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_any" kindref="compound">wxAny</ref><sp/>value<sp/>=<sp/></highlight><highlight class="keyword">property</highlight><highlight class="normal">-&gt;GetValue();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Also,<sp/>handle<sp/>the<sp/>case<sp/>where<sp/>property<sp/>value<sp/>is<sp/>unspecified</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>value.<ref refid="classwx_any_1a81cb4de204073c2c95dd32bb1addacfa" kindref="member">IsNull</ref>()<sp/>)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Handle<sp/>changes<sp/>in<sp/>values,<sp/>as<sp/>needed</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>property-&gt;GetName()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;MyStringProperty&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OnMyStringPropertyChanged(value.<ref refid="classwx_any_1a890cd022f86ae75a46bb01592ff6eea2" kindref="member">As</ref>&lt;<ref refid="classwx_string" kindref="compound">wxString</ref>&gt;());</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>property-&gt;GetName()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;MyColourProperty&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OnMyColourPropertyChanged(value.<ref refid="classwx_any_1a890cd022f86ae75a46bb01592ff6eea2" kindref="member">As</ref>&lt;<ref refid="classwx_colour" kindref="compound">wxColour</ref>&gt;());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxPGProperty*<sp/>property<sp/>=<sp/>event.GetProperty();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Do<sp/>nothing<sp/>if<sp/>event<sp/>did<sp/>not<sp/>have<sp/>associated<sp/>property</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>!property<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>GetValue()<sp/>returns<sp/>wxVariant,<sp/>but<sp/>it<sp/>is<sp/>converted<sp/>transparently<sp/>to</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>wxAny</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxAny<sp/>value<sp/>=<sp/>property-&gt;GetValue();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Also,<sp/>handle<sp/>the<sp/>case<sp/>where<sp/>property<sp/>value<sp/>is<sp/>unspecified</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>value.IsNull()<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Handle<sp/>changes<sp/>in<sp/>values,<sp/>as<sp/>needed</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>property-&gt;GetName()<sp/>==<sp/>&quot;MyStringProperty&quot;<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OnMyStringPropertyChanged(value.As&lt;wxString&gt;());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(<sp/>property-&gt;GetName()<sp/>==<sp/>&quot;MyColourProperty&quot;<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OnMyColourPropertyChanged(value.As&lt;wxColour&gt;());</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>You can get a string-representation of property&apos;s value using <ref refid="classwx_p_g_property_1a22451b135458443be5e1c6cfde72a515" kindref="member">wxPGProperty::GetValueAsString()</ref> or <ref refid="classwx_property_grid_interface_1a1f7a2cb0532030f919a4200ffc60bcf8" kindref="member">wxPropertyGridInterface::GetPropertyValueAsString()</ref>. This particular function is very safe to use with any kind of property.</para>
@@ -502,48 +500,48 @@ Note that in some cases property value can be Null variant, which means that pro
 <sect1 id="overview_propgrid_1propgrid_iterating">
 <title>Iterating through a property container</title>
 <para>You can use somewhat STL&apos;ish iterator classes to iterate through the grid. Here is a simple example of forward iterating through all individual properties (not categories nor private child properties that are normally &apos;transparent&apos; to application code):</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_property_grid_iterator" kindref="compound">wxPropertyGridIterator</ref><sp/>it;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>it<sp/>=<sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a41ab8661411082563c8191f614f91007" kindref="member">GetIterator</ref>();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!it.<ref refid="classwx_property_grid_iterator_base_1a24d736ab34e4cd308e073767fe129371" kindref="member">AtEnd</ref>();</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxPropertyGridIterator<sp/>it;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">for<sp/>(<sp/>it<sp/>=<sp/>pg-&gt;GetIterator();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!it.AtEnd();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>it++<sp/>)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>*<sp/>p<sp/>=<sp/>*it;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>something<sp/>with<sp/>the<sp/>property</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxPGProperty*<sp/>p<sp/>=<sp/>*it;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Do<sp/>something<sp/>with<sp/>the<sp/>property</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>As expected there is also a const iterator:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_property_grid_const_iterator" kindref="compound">wxPropertyGridConstIterator</ref><sp/>it;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>it<sp/>=<sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a41ab8661411082563c8191f614f91007" kindref="member">GetIterator</ref>();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!it.<ref refid="classwx_property_grid_iterator_base_1a24d736ab34e4cd308e073767fe129371" kindref="member">AtEnd</ref>();</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxPropertyGridConstIterator<sp/>it;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">for<sp/>(<sp/>it<sp/>=<sp/>pg-&gt;GetIterator();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!it.AtEnd();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>it++<sp/>)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>*<sp/>p<sp/>=<sp/>*it;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>something<sp/>with<sp/>the<sp/>property</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>wxPGProperty*<sp/>p<sp/>=<sp/>*it;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Do<sp/>something<sp/>with<sp/>the<sp/>property</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>You can give some arguments to GetIterator to determine which properties get automatically filtered out. For complete list of options, see <ref refid="propgridpagestate_8h_1propgrid_iterator_flags" kindref="member">wxPropertyGridIterator Flags</ref>. GetIterator() also accepts other arguments. See <ref refid="classwx_property_grid_interface_1a41ab8661411082563c8191f614f91007" kindref="member">wxPropertyGridInterface::GetIterator()</ref> for details.</para>
 <para>This example reverse-iterates through all visible items:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_property_grid_iterator" kindref="compound">wxPropertyGridIterator</ref><sp/>it;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>it<sp/>=<sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1a41ab8661411082563c8191f614f91007" kindref="member">GetIterator</ref>(<ref refid="propgridpagestate_8h_1a307ba26bf1eeb9d76108893f4f723b0aaafca9ed41c9420c5efb18b7e519928e5" kindref="member">wxPG_ITERATE_VISIBLE</ref>,<sp/><ref refid="defs_8h_1ac0f30319732dcceda470516918ff3556a17bc9a3dbb6e30a2418601aa5e30019b" kindref="member">wxBOTTOM</ref>);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!it.<ref refid="classwx_property_grid_iterator_base_1a24d736ab34e4cd308e073767fe129371" kindref="member">AtEnd</ref>();</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxPropertyGridIterator<sp/>it;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">for<sp/>(<sp/>it<sp/>=<sp/>pg-&gt;GetIterator(wxPG_ITERATE_VISIBLE,<sp/>wxBOTTOM);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!it.AtEnd();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>it--<sp/>)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>*<sp/>p<sp/>=<sp/>*it;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>something<sp/>with<sp/>the<sp/>property</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxPGProperty*<sp/>p<sp/>=<sp/>*it;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Do<sp/>something<sp/>with<sp/>the<sp/>property</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>GetIterator() only works with <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> and the individual pages of <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref>. In order to iterate through an arbitrary property container (such as entire <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref>), you need to use <ref refid="classwx_property_grid_interface_1a3cee9947d2bab8255d0e3233b7894504" kindref="member">wxPropertyGridInterface::GetVIterator()</ref>. Note however that this virtual iterator is limited to forward iteration.</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_p_g_v_iterator" kindref="compound">wxPGVIterator</ref><sp/>it;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>it<sp/>=<sp/>manager-&gt;GetVIterator(<ref refid="propgridpagestate_8h_1a307ba26bf1eeb9d76108893f4f723b0aacc6979a5992fc69a76cd8c1ce5f844e5" kindref="member">wxPG_ITERATE_ALL</ref>);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!it.<ref refid="classwx_p_g_v_iterator_1af1532169f68b9032fe2347c02525a575" kindref="member">AtEnd</ref>();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>it.<ref refid="classwx_p_g_v_iterator_1aa44ee191f93c15bc4a0d510b9723be2f" kindref="member">Next</ref>()<sp/>)</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxPGVIterator<sp/>it;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">for<sp/>(<sp/>it<sp/>=<sp/>manager-&gt;GetVIterator(wxPG_ITERATE_ALL);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>!it.AtEnd();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>it.Next()<sp/>)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>*<sp/>p<sp/>=<sp/>it.<ref refid="classwx_p_g_v_iterator_1ac86e682cdaf71062b28e8aca2dcafd82" kindref="member">GetProperty</ref>();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>something<sp/>with<sp/>the<sp/>property</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxPGProperty*<sp/>p<sp/>=<sp/>it.GetProperty();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Do<sp/>something<sp/>with<sp/>the<sp/>property</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 </sect1>
@@ -552,23 +550,23 @@ Note that in some cases property value can be Null variant, which means that pro
 <sect2 id="overview_propgrid_1propgrid_fromvariants">
 <title>Populating from List of wxVariants</title>
 <para>Example of populating an empty <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> from a values stored in an arbitrary list of wxVariants.</para>
-<para><programlisting><codeline><highlight class="comment">//<sp/>This<sp/>is<sp/>a<sp/>static<sp/>method<sp/>that<sp/>initializes<sp/>*all*<sp/>built-in<sp/>type<sp/>handlers</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>available,<sp/>including<sp/>those<sp/>for<sp/>wxColour<sp/>and<sp/>wxFont.<sp/>Refers<sp/>to<sp/>*all*</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>included<sp/>properties,<sp/>so<sp/>when<sp/>compiling<sp/>with<sp/>static<sp/>library,<sp/>this</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>method<sp/>may<sp/>increase<sp/>the<sp/>executable<sp/>size<sp/>noticeably.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a38bd0419a578467da07d01aef288848d" kindref="member">InitAllTypeHandlers</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>contents<sp/>of<sp/>the<sp/>grid<sp/>as<sp/>a<sp/>wxVariant<sp/>list</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_variant" kindref="compound">wxVariant</ref><sp/>all_values<sp/>=<sp/>pg-&gt;<ref refid="classwx_property_grid_interface_1ad3b171468f2b3999b98c44be4be5b45d" kindref="member">GetPropertyValues</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Populate<sp/>the<sp/>list<sp/>with<sp/>values.<sp/>If<sp/>a<sp/>property<sp/>with<sp/>appropriate</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>name<sp/>is<sp/>not<sp/>found,<sp/>it<sp/>is<sp/>created<sp/>according<sp/>to<sp/>the<sp/>type<sp/>of<sp/>variant.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a85caa9196b0278e844df1af5f12c800b" kindref="member">SetPropertyValues</ref>(<sp/>my_list_variant<sp/>);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//<sp/>This<sp/>is<sp/>a<sp/>static<sp/>method<sp/>that<sp/>initializes<sp/>*all*<sp/>built-in<sp/>type<sp/>handlers</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>available,<sp/>including<sp/>those<sp/>for<sp/>wxColour<sp/>and<sp/>wxFont.<sp/>Refers<sp/>to<sp/>*all*</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>included<sp/>properties,<sp/>so<sp/>when<sp/>compiling<sp/>with<sp/>static<sp/>library,<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>method<sp/>may<sp/>increase<sp/>the<sp/>executable<sp/>size<sp/>noticeably.</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;InitAllTypeHandlers();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Get<sp/>contents<sp/>of<sp/>the<sp/>grid<sp/>as<sp/>a<sp/>wxVariant<sp/>list</highlight></codeline>
+<codeline><highlight class="normal">wxVariant<sp/>all_values<sp/>=<sp/>pg-&gt;GetPropertyValues();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Populate<sp/>the<sp/>list<sp/>with<sp/>values.<sp/>If<sp/>a<sp/>property<sp/>with<sp/>appropriate</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>name<sp/>is<sp/>not<sp/>found,<sp/>it<sp/>is<sp/>created<sp/>according<sp/>to<sp/>the<sp/>type<sp/>of<sp/>variant.</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;SetPropertyValues(<sp/>my_list_variant<sp/>);</highlight></codeline>
 </programlisting></para>
 </sect2>
 <sect2 id="overview_propgrid_1propgrid_fromfile">
 <title>Loading Population from a Text-based Storage</title>
-<para>Class <ref refid="classwx_property_grid_populator" kindref="compound">wxPropertyGridPopulator</ref> may be helpful when writing code that loads properties from a text-source. In fact, the <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> xrc-handler (which may not be currently included in wxWidgets, but probably will be in near future) uses it.</para>
+<para>Class wxPropertyGridPopulator may be helpful when writing code that loads properties from a text-source. In fact, the <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> xrc-handler (which may not be currently included in wxWidgets, but probably will be in near future) uses it.</para>
 </sect2>
 <sect2 id="overview_propgrid_1editablestate">
 <title>Saving and Restoring User-Editable State</title>
@@ -579,26 +577,26 @@ Note that in some cases property value can be Null variant, which means that pro
 <title>Event Handling</title>
 <para>Probably the most important event is the Changed event which occurs when value of any property is changed by the user. Use EVT_PG_CHANGED(id,func) in your event table to use it.</para>
 <para>For complete list of event types, see <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> class reference.</para>
-<para>However, one type of event that might need focused attention is EVT_PG_CHANGING, which occurs just prior property value is being changed by user. You can acquire pending value using <ref refid="classwx_property_grid_event_1a9296dde2e753199f8f543345ff916e34" kindref="member">wxPropertyGridEvent::GetValue()</ref>, and if it is not acceptable, call <ref refid="classwx_property_grid_event_1a5e35bf2aeaad48147c0270e9b04426c8" kindref="member">wxPropertyGridEvent::Veto()</ref> to prevent the value change from taking place.</para>
-<para><programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyForm::OnPropertyGridChanging(<sp/><ref refid="classwx_property_grid_event" kindref="compound">wxPropertyGridEvent</ref>&amp;<sp/>event<sp/>)</highlight></codeline>
+<para>However, one type of event that might need focused attention is EVT_PG_CHANGING, which occurs just prior property value is being changed by user. You can acquire pending value using wxPropertyGridEvent::GetValue(), and if it is not acceptable, call <ref refid="classwx_property_grid_event_1a5e35bf2aeaad48147c0270e9b04426c8" kindref="member">wxPropertyGridEvent::Veto()</ref> to prevent the value change from taking place.</para>
+<para><programlisting><codeline><highlight class="normal">void<sp/>MyForm::OnPropertyGridChanging(<sp/>wxPropertyGridEvent&amp;<sp/>event<sp/>)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>*<sp/></highlight><highlight class="keyword">property</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.GetProperty();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>property<sp/>==<sp/>m_pWatchThisProperty<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxPGProperty*<sp/>property<sp/>=<sp/>event.GetProperty();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>property<sp/>==<sp/>m_pWatchThisProperty<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GetValue()<sp/>returns<sp/>the<sp/>pending<sp/>value,<sp/>but<sp/>is<sp/>only</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>supported<sp/>by<sp/>wxEVT_PG_CHANGING.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>event.<ref refid="classwx_property_grid_event_1a9296dde2e753199f8f543345ff916e34" kindref="member">GetValue</ref>().<ref refid="classwx_variant_1a0fd9ab6f2fce536167d6c13698d8e059" kindref="member">GetString</ref>()<sp/>==<sp/>g_pThisTextIsNotAllowed<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>GetValue()<sp/>returns<sp/>the<sp/>pending<sp/>value,<sp/>but<sp/>is<sp/>only</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>supported<sp/>by<sp/>wxEVT_PG_CHANGING.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>event.GetValue().GetString()<sp/>==<sp/>g_pThisTextIsNotAllowed<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Veto();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.Veto();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="remark"><para>On Child Property Event Handling<itemizedlist>
 <listitem><para>For properties which have private, implicit children (<ref refid="classwx_font_property" kindref="compound">wxFontProperty</ref> and <ref refid="classwx_flags_property" kindref="compound">wxFlagsProperty</ref>), events occur for the main parent property only. For other properties events occur for the children themselves. See <ref refid="overview_propgrid_1propgrid_parentprops" kindref="member">Tree-like Property Structure</ref>.</para>
-</listitem><listitem><para>When property&apos;s child gets changed, you can use <ref refid="classwx_property_grid_event_1afcd79af458e3b08966307615e1c0b299" kindref="member">wxPropertyGridEvent::GetMainParent()</ref> to obtain its topmost non-category parent (useful, if you have deeply nested properties).</para>
+</listitem><listitem><para>When property&apos;s child gets changed, you can use <ref refid="classwx_property_grid_event_1a076bb8cf871e8c922fa289edef25650a" kindref="member">wxPropertyGridEvent::GetMainParent()</ref> to obtain its topmost non-category parent (useful, if you have deeply nested properties).</para>
 </listitem></itemizedlist>
 </para>
 </simplesect>
@@ -615,29 +613,29 @@ Note that in some cases property value can be Null variant, which means that pro
 <para>There are various ways to make sure user enters only correct values. First, you can use wxValidators similar to as you would with ordinary controls. Use <ref refid="classwx_property_grid_interface_1ad83fe8ad87751101316345a14133c45f" kindref="member">wxPropertyGridInterface::SetPropertyValidator()</ref> to assign <ref refid="classwx_validator" kindref="compound">wxValidator</ref> to property.</para>
 <para>Second, you can subclass a property and override <ref refid="classwx_p_g_property_1a80725226865ed42a95fef88860f59e61" kindref="member">wxPGProperty::ValidateValue()</ref>, or handle wxEVT_PG_CHANGING for the same effect. Both of these ways do not actually prevent user from temporarily entering invalid text, but they do give you an opportunity to warn the user and block changed value from being committed in a property.</para>
 <para>Various validation failure options can be controlled globally with <ref refid="classwx_property_grid_interface_1ade72c97a047aa409dc7429010f640bb6" kindref="member">wxPropertyGrid::SetValidationFailureBehavior()</ref>, or on an event basis by calling wxEvent::SetValidationFailureBehavior(). Here&apos;s a code snippet of how to handle wxEVT_PG_CHANGING, and to set custom failure behaviour and message.</para>
-<para><programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyFrame::OnPropertyGridChanging(<ref refid="classwx_property_grid_event" kindref="compound">wxPropertyGridEvent</ref>&amp;<sp/>event)</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">void<sp/>MyFrame::OnPropertyGridChanging(wxPropertyGridEvent&amp;<sp/>event)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>*<sp/></highlight><highlight class="keyword">property</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.GetProperty();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>You<sp/>must<sp/>use<sp/>wxPropertyGridEvent::GetValue()<sp/>to<sp/>access</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>value<sp/>to<sp/>be<sp/>validated.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_variant" kindref="compound">wxVariant</ref><sp/>pendingValue<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.GetValue();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>property-&gt;GetName()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;Font&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxPGProperty*<sp/>property<sp/>=<sp/>event.GetProperty();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>You<sp/>must<sp/>use<sp/>wxPropertyGridEvent::GetValue()<sp/>to<sp/>access</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>the<sp/>value<sp/>to<sp/>be<sp/>validated.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxVariant<sp/>pendingValue<sp/>=<sp/>event.GetValue();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>property-&gt;GetName()<sp/>==<sp/>&quot;Font&quot;<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Make<sp/>sure<sp/>value<sp/>is<sp/>not<sp/>unspecified</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!pendingValue.<ref refid="classwx_variant_1a8f15089b1ae74d1e47b1ea2d6dfb057a" kindref="member">IsNull</ref>()<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Make<sp/>sure<sp/>value<sp/>is<sp/>not<sp/>unspecified</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>!pendingValue.IsNull()<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_font" kindref="compound">wxFont</ref><sp/>font;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxFont<sp/>font;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>font<sp/>&lt;&lt;<sp/>pendingValue;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Let&apos;s<sp/>just<sp/>allow<sp/>Arial<sp/>font</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>font.<ref refid="classwx_font_1a589ad627e9594e5dfeabdd5c063dc01d" kindref="member">GetFaceName</ref>()<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;Arial&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Let&apos;s<sp/>just<sp/>allow<sp/>Arial<sp/>font</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>font.GetFaceName()<sp/>!=<sp/>&quot;Arial&quot;<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Veto();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.SetValidationFailureBehavior(<ref refid="interface_2wx_2propgrid_2propgrid_8h_1a509a11f37ea5e56864e257cde913035ead2d679dfb2b9d9b7b3a0bedd130599c7" kindref="member">wxPG_VFB_STAY_IN_PROPERTY</ref><sp/>|</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2propgrid_2propgrid_8h_1a509a11f37ea5e56864e257cde913035ea8a5434967b7ab365106699c8b8eb729b" kindref="member">wxPG_VFB_BEEP</ref><sp/>|</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2propgrid_2propgrid_8h_1a509a11f37ea5e56864e257cde913035ea80db248a442ffa85dd5155d7eb325129" kindref="member">wxPG_VFB_SHOW_MESSAGEBOX</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.Veto();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.SetValidationFailureBehavior(wxPG_VFB_STAY_IN_PROPERTY<sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_VFB_BEEP<sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPG_VFB_SHOW_MESSAGEBOX);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -654,19 +652,19 @@ Note that in some cases property value can be Null variant, which means that pro
 <para>There is probably one preference for keyboard handling for every developer out there, and as a conveniency control <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> tries to cater for that. By the default arrow keys are used for navigating between properties, and TAB key is used to move focus between the property editor and the first column. When the focus is in the editor, arrow keys usually no longer work for navigation since they are consumed by the editor.</para>
 <para>There are mainly two functions which you can use this customize things, <ref refid="classwx_property_grid_1af19463a573440f6bc928ceaa60a1e5e6" kindref="member">wxPropertyGrid::AddActionTrigger()</ref> and <ref refid="classwx_property_grid_1a51ca791689c92a604e4b840c055cfc5d" kindref="member">wxPropertyGrid::DedicateKey()</ref>. First one can be used to set a navigation event to occur on a specific key press and the second is used to divert a key from property editors, making it possible for the grid to use keys normally consumed by the focused editors.</para>
 <para>For example, let&apos;s say you want to have an ENTER-based editing scheme. That is, editor is focused on ENTER press and the next property is selected when the user finishes editing and presses ENTER again. Code like this would accomplish the task:</para>
-<para><programlisting><codeline><highlight class="comment">//<sp/>Have<sp/>property<sp/>editor<sp/>focus<sp/>on<sp/>Enter</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">propgrid-&gt;AddActionTrigger(<sp/><ref refid="interface_2wx_2propgrid_2propgrid_8h_1a241dc2408e56a31edee6739e9b101b0aae9909d01fad9d6f803805212e1cbadd2" kindref="member">wxPG_ACTION_EDIT</ref>,<sp/><ref refid="defs_8h_1a41c4609211685cff198618963ec8f77daa097c8ff56f206c7df25f7e011e43e41" kindref="member">WXK_RETURN</ref><sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Have<sp/>Enter<sp/>work<sp/>as<sp/>action<sp/>trigger<sp/>even<sp/>when<sp/>editor<sp/>is<sp/>focused</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">propgrid-&gt;DedicateKey(<sp/><ref refid="defs_8h_1a41c4609211685cff198618963ec8f77daa097c8ff56f206c7df25f7e011e43e41" kindref="member">WXK_RETURN</ref><sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Let<sp/>Enter<sp/>also<sp/>navigate<sp/>to<sp/>the<sp/>next<sp/>property</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">propgrid-&gt;AddActionTrigger(<sp/><ref refid="interface_2wx_2propgrid_2propgrid_8h_1a241dc2408e56a31edee6739e9b101b0aa44d7740b93df1d29a130cddacdaefe0e" kindref="member">wxPG_ACTION_NEXT_PROPERTY</ref>,<sp/><ref refid="defs_8h_1a41c4609211685cff198618963ec8f77daa097c8ff56f206c7df25f7e011e43e41" kindref="member">WXK_RETURN</ref><sp/>);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//<sp/>Have<sp/>property<sp/>editor<sp/>focus<sp/>on<sp/>Enter</highlight></codeline>
+<codeline><highlight class="normal">propgrid-&gt;AddActionTrigger(<sp/>wxPG_ACTION_EDIT,<sp/>WXK_RETURN<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Have<sp/>Enter<sp/>work<sp/>as<sp/>action<sp/>trigger<sp/>even<sp/>when<sp/>editor<sp/>is<sp/>focused</highlight></codeline>
+<codeline><highlight class="normal">propgrid-&gt;DedicateKey(<sp/>WXK_RETURN<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Let<sp/>Enter<sp/>also<sp/>navigate<sp/>to<sp/>the<sp/>next<sp/>property</highlight></codeline>
+<codeline><highlight class="normal">propgrid-&gt;AddActionTrigger(<sp/>wxPG_ACTION_NEXT_PROPERTY,<sp/>WXK_RETURN<sp/>);</highlight></codeline>
 </programlisting></para>
 <para>wxPG_ACTION_EDIT is prioritized above wxPG_ACTION_NEXT_PROPERTY so that the above code can work without conflicts. For a complete list of available actions, see <ref refid="interface_2wx_2propgrid_2propgrid_8h_1propgrid_keyboard_actions" kindref="member">wxPropertyGrid Action Identifiers</ref>.</para>
 <para>Here&apos;s another trick. Normally the up and down cursor keys are consumed by the focused <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> editor and as such can&apos;t be used for navigating between properties when that editor is focused. However, using DedicateKey() we can change this so that instead of the cursor keys moving the caret inside the <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>, they navigate between adjacent properties. As such:</para>
-<para><programlisting><codeline><highlight class="normal">propgrid-&gt;DedicateKey(<ref refid="defs_8h_1a41c4609211685cff198618963ec8f77dad2f4d3fb6940f1c959d2487fd96a9ba6" kindref="member">WXK_UP</ref>);</highlight></codeline>
-<codeline><highlight class="normal">propgrid-&gt;DedicateKey(<ref refid="defs_8h_1a41c4609211685cff198618963ec8f77da821b236b6e3cf28b0a958aa98647f1df" kindref="member">WXK_DOWN</ref>);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">propgrid-&gt;DedicateKey(WXK_UP);</highlight></codeline>
+<codeline><highlight class="normal">propgrid-&gt;DedicateKey(WXK_DOWN);</highlight></codeline>
 </programlisting></para>
 </sect1>
 <sect1 id="overview_propgrid_1propgrid_customizing">
@@ -680,9 +678,9 @@ Note that in some cases property value can be Null variant, which means that pro
 <title>Setting Property&apos;s Editor Control(s)</title>
 <para>You can set editor control (or controls, in case of a control and button), of any property using <ref refid="classwx_property_grid_interface_1aff961af9dd2787fb97f510ea5ce46407" kindref="member">wxPropertyGrid::SetPropertyEditor</ref>. Editors are passed as wxPGEditor_EditorName, and valid built-in EditorNames are TextCtrl, Choice, ComboBox, CheckBox, TextCtrlAndButton, ChoiceAndButton, SpinCtrl, and DatePickerCtrl. Two last mentioned ones require call to static member function <ref refid="classwx_property_grid_interface_1a330dc911b08378e967955f8a6a938612" kindref="member">wxPropertyGrid::RegisterAdditionalEditors()</ref>.</para>
 <para>Following example changes <ref refid="classwx_colour_property" kindref="compound">wxColourProperty</ref>&apos;s editor from default Choice to TextCtrlAndButton. <ref refid="classwx_colour_property" kindref="compound">wxColourProperty</ref> has its internal event handling set up so that button click events of the button will be used to trigger colour selection dialog.</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref>*<sp/>colProp<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_colour_property" kindref="compound">wxColourProperty</ref>(</highlight><highlight class="stringliteral">&quot;Text<sp/>Colour&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(colProp);</highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1aff961af9dd2787fb97f510ea5ce46407" kindref="member">SetPropertyEditor</ref>(colProp,<sp/><ref refid="editors_8h_1a83dbb62c2d7b6768b6b95f17e22b9e36" kindref="member">wxPGEditor_TextCtrlAndButton</ref>);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxPGProperty*<sp/>colProp<sp/>=<sp/>new<sp/>wxColourProperty(&quot;Text<sp/>Colour&quot;);</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;Append(colProp);</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;SetPropertyEditor(colProp,<sp/>wxPGEditor_TextCtrlAndButton);</highlight></codeline>
 </programlisting></para>
 <para>Naturally, creating and setting custom editor classes is a possibility as well. For more information, see <ref refid="classwx_p_g_editor" kindref="compound">wxPGEditor</ref> class reference.</para>
 </sect2>
@@ -696,7 +694,7 @@ Note that in some cases property value can be Null variant, which means that pro
 </sect2>
 <sect2 id="overview_propgrid_1propgrid_customeventhandling">
 <title>Handling Events Passed from Properties</title>
-<para><computeroutput>wxEVT_BUTTON:</computeroutput> Occurs when editor button click is not handled by the property itself (as is the case, for example, if you set property&apos;s editor to TextCtrlAndButton from the original TextCtrl).</para>
+<para><bold>wxEVT_COMMAND_BUTTON_CLICKED </bold>(corresponds to event table macro EVT_BUTTON): Occurs when editor button click is not handled by the property itself (as is the case, for example, if you set property&apos;s editor to TextCtrlAndButton from the original TextCtrl).</para>
 </sect2>
 <sect2 id="overview_propgrid_1propgrid_attributes">
 <title>Property Attributes</title>
@@ -710,7 +708,7 @@ Note that in some cases property value can be Null variant, which means that pro
 <para><ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref> is an efficient multi-page version of <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref>, which can optionally have tool bar for mode and page selection, and a help text box. For more information, see <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref> class reference.</para>
 <sect2 id="overview_propgrid_1propgrid_propgridpage">
 <title>wxPropertyGridPage</title>
-<para><ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> is holder of properties for one page in manager. It is derived from <ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref>, so you can subclass it to process page-specific property grid events. Hand over your page instance in <ref refid="classwx_property_grid_manager_1a7d117fc47f7abaf6af097a3ca56662fe" kindref="member">wxPropertyGridManager::AddPage()</ref>.</para>
+<para><ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> is holder of properties for one page in manager. It is derived from <ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref>, so you can subclass it to process page-specific property grid events. Hand over your page instance in <ref refid="classwx_property_grid_manager_1aea73aeb92bf18ba189198820f5341f7c" kindref="member">wxPropertyGridManager::AddPage()</ref>.</para>
 <para>Please note that the <ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> itself only sports subset of <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> API (but unlike manager, this include item iteration). Naturally it inherits from <ref refid="classwx_property_grid_interface" kindref="compound">wxPropertyGridInterface</ref>.</para>
 <para>For more information, see <ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> class reference.</para>
 </sect2>
@@ -720,9 +718,9 @@ Note that in some cases property value can be Null variant, which means that pro
 <para>Few things to note:</para>
 <para><itemizedlist>
 <listitem><para>Only a small percentage of member functions are virtual. If you need more, just e-mail to wx-dev mailing list.</para>
-</listitem><listitem><para>Data manipulation is done in <ref refid="classwx_property_grid_page_state" kindref="compound">wxPropertyGridPageState</ref> class. So, instead of overriding <ref refid="classwx_property_grid_interface_1a56fec31d497b18e5f13728afc1a38f73" kindref="member">wxPropertyGrid::Insert()</ref>, you&apos;ll probably want to override <ref refid="classwx_property_grid_page_state_1a57d3cd538b2965d9e03a5de6bcef7fd8" kindref="member">wxPropertyGridPageState::DoInsert()</ref>. See header file for details.</para>
-</listitem><listitem><para>Override wxPropertyGrid::CreateState() to instantiate your derivate <ref refid="classwx_property_grid_page_state" kindref="compound">wxPropertyGridPageState</ref>. For <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref>, you&apos;ll need to subclass <ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> instead (since it is derived from <ref refid="classwx_property_grid_page_state" kindref="compound">wxPropertyGridPageState</ref>), and hand over instances in <ref refid="classwx_property_grid_manager_1a7d117fc47f7abaf6af097a3ca56662fe" kindref="member">wxPropertyGridManager::AddPage()</ref> calls.</para>
-</listitem><listitem><para>You can use a derivate <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> with manager by overriding <ref refid="classwx_property_grid_manager_1a40cd6f856d195d0a7abfb249f1393611" kindref="member">wxPropertyGridManager::CreatePropertyGrid()</ref> member function.</para>
+</listitem><listitem><para>Data manipulation is done in <ref refid="classwx_property_grid_page_state" kindref="compound">wxPropertyGridPageState</ref> class. So, instead of overriding <ref refid="classwx_property_grid_interface_1aed2f5e12acc0bc460c2295ac1564b735" kindref="member">wxPropertyGrid::Insert()</ref>, you&apos;ll probably want to override <ref refid="classwx_property_grid_page_state_1a0e6f17db76e2067217320b26219fd035" kindref="member">wxPropertyGridPageState::DoInsert()</ref>. See header file for details.</para>
+</listitem><listitem><para>Override wxPropertyGrid::CreateState() to instantiate your derivate <ref refid="classwx_property_grid_page_state" kindref="compound">wxPropertyGridPageState</ref>. For <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref>, you&apos;ll need to subclass <ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> instead (since it is derived from <ref refid="classwx_property_grid_page_state" kindref="compound">wxPropertyGridPageState</ref>), and hand over instances in <ref refid="classwx_property_grid_manager_1aea73aeb92bf18ba189198820f5341f7c" kindref="member">wxPropertyGridManager::AddPage()</ref> calls.</para>
+</listitem><listitem><para>You can use a derivate <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> with manager by overriding <ref refid="classwx_property_grid_manager_1abe77c8406df90455a4281a405d9ae064" kindref="member">wxPropertyGridManager::CreatePropertyGrid()</ref> member function.</para>
 </listitem></itemizedlist>
 </para>
 </sect1>
@@ -739,12 +737,15 @@ Note that in some cases property value can be Null variant, which means that pro
 <sect2 id="overview_propgrid_1propgrid_boolproperty">
 <title>wxBoolProperty</title>
 <para>There are few points about <ref refid="classwx_bool_property" kindref="compound">wxBoolProperty</ref> that require further discussion:<itemizedlist>
-<listitem><para><ref refid="classwx_bool_property" kindref="compound">wxBoolProperty</ref> can be shown as either normal combo box or as a check box. Property attribute wxPG_BOOL_USE_CHECKBOX is used to change this. For example, if you have a <ref refid="classwx_flags_property" kindref="compound">wxFlagsProperty</ref>, you can set its all items to use check box using the following: <programlisting><codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a129a37f9d87a2a08516772de9860432d" kindref="member">SetPropertyAttribute</ref>(</highlight><highlight class="stringliteral">&quot;MyFlagsProperty&quot;</highlight><highlight class="normal">,<sp/><ref refid="property_8h_1a9e92f4867bf9fbc7c71779c74d18ccd1" kindref="member">wxPG_BOOL_USE_CHECKBOX</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/><ref refid="propgriddefs_8h_1a77bb7880e3ea2359f13566eff2a1478cac9c20676ced7bcd3ecbd227bdc3f70da" kindref="member">wxPG_RECURSE</ref>);</highlight></codeline>
+<listitem><para><ref refid="classwx_bool_property" kindref="compound">wxBoolProperty</ref> can be shown as either normal combo box or as a check box. Property attribute wxPG_BOOL_USE_CHECKBOX is used to change this. For example, if you have a <ref refid="classwx_flags_property" kindref="compound">wxFlagsProperty</ref>, you can set its all items to use check box using the following: <programlisting><codeline><highlight class="normal">pg-&gt;SetPropertyAttribute(&quot;MyFlagsProperty&quot;,<sp/>wxPG_BOOL_USE_CHECKBOX,<sp/>true,<sp/>wxPG_RECURSE);</highlight></codeline>
 </programlisting></para>
 <para>Following will set all individual bool properties in your control to use check box:</para>
-<para><programlisting><codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a9ae755985b70254e3e8a27a629c3fead" kindref="member">SetPropertyAttributeAll</ref>(<ref refid="property_8h_1a9e92f4867bf9fbc7c71779c74d18ccd1" kindref="member">wxPG_BOOL_USE_CHECKBOX</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+</listitem></itemizedlist>
+</para>
+<para><programlisting><codeline><highlight class="normal">pg-&gt;SetPropertyAttributeAll(wxPG_BOOL_USE_CHECKBOX,<sp/>true);</highlight></codeline>
 </programlisting></para>
-</listitem><listitem><para>Default item names for <ref refid="classwx_bool_property" kindref="compound">wxBoolProperty</ref> are [&quot;False&quot;, &quot;True&quot;]. This can be changed using static function <ref refid="classwx_property_grid_interface_1ac02e6f40e5c5138a40c99a4f7b98100b" kindref="member">wxPropertyGrid::SetBoolChoices</ref>(trueChoice, falseChoice).</para>
+<para><itemizedlist>
+<listitem><para>Default item names for <ref refid="classwx_bool_property" kindref="compound">wxBoolProperty</ref> are [&quot;False&quot;, &quot;True&quot;]. This can be changed using static function <ref refid="classwx_property_grid_interface_1ac02e6f40e5c5138a40c99a4f7b98100b" kindref="member">wxPropertyGrid::SetBoolChoices</ref>(trueChoice, falseChoice).</para>
 </listitem></itemizedlist>
 </para>
 </sect2>
@@ -796,12 +797,12 @@ Note that in some cases property value can be Null variant, which means that pro
 </listitem><listitem><para>Various <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref> page-related functions now return pointer to the page object instead of index.</para>
 </listitem><listitem><para>wxArrayEditorDialog used by <ref refid="classwx_array_string_property" kindref="compound">wxArrayStringProperty</ref> and some sample properties has been renamed to <ref refid="classwx_p_g_array_editor_dialog" kindref="compound">wxPGArrayEditorDialog</ref>. Also, it now uses <ref refid="classwx_editable_list_box" kindref="compound">wxEditableListBox</ref> for editing.</para>
 </listitem><listitem><para>Instead of calling wxPropertyGrid::SetButtonShortcut(), use wxPropertyGrid::SetActionTrigger(wxPG_ACTION_PRESS_BUTTON).</para>
-</listitem><listitem><para><ref refid="classwx_p_g_property_1a098b53632035ccff8352ca8ad5cf6d07" kindref="member">wxPGProperty::GetCell()</ref> now returns a reference. AcquireCell() was removed.</para>
+</listitem><listitem><para><ref refid="classwx_p_g_property_1ab8ae1b21e93fda9e560fcb5ec2f50bb2" kindref="member">wxPGProperty::GetCell()</ref> now returns a reference. AcquireCell() was removed.</para>
 </listitem><listitem><para>wxPGMultiButton::FinalizePosition() has been renamed to Finalize(), and it has slightly different argument list.</para>
 </listitem><listitem><para>wxPropertyGridEvent::HasProperty() is removed. You can use GetProperty() as immediate replacement when checking if event has a property.</para>
 </listitem><listitem><para>&quot;InlineHelp&quot; property has been replaced with &quot;Hint&quot;.</para>
 </listitem><listitem><para>wxPropertyGrid::CanClose() has been removed. Call <ref refid="classwx_property_grid_interface_1a7718a5497b7e5211d847b5a8134bc2ab" kindref="member">wxPropertyGridInterface::EditorValidate()</ref> instead.</para>
-</listitem><listitem><para>wxPGProperty::SetFlag() has been moved to private API. This was done to underline the fact that it was not the preferred method to change a property&apos;s state since it never had any desired side-effects. ChangeFlag() still exists for those who really need to achieve the same effect.</para>
+</listitem><listitem><para><ref refid="classwx_p_g_property_1af8d8afe130e96785eab7f37ea07e326e" kindref="member">wxPGProperty::SetFlag()</ref> has been moved to private API. This was done to underline the fact that it was not the preferred method to change a property&apos;s state since it never had any desired side-effects. ChangeFlag() still exists for those who really need to achieve the same effect.</para>
 </listitem><listitem><para><ref refid="classwx_array_string_property" kindref="compound">wxArrayStringProperty</ref> default delimiter is now comma (&apos;,&apos;), and it can be changed by setting the new &quot;Delimiter&quot; attribute.</para>
 </listitem></itemizedlist>
 </para>
@@ -821,6 +822,5 @@ Note that in some cases property value can be Null variant, which means that pro
 </sect2>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/propgrid.h"/>
   </compounddef>
 </doxygen>

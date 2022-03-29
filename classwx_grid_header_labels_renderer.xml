@@ -1,68 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
-  <compounddef id="classwx_grid_header_labels_renderer" kind="class" language="C++" prot="public" abstract="yes">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classwx_grid_header_labels_renderer" kind="class" language="C++" prot="public">
     <compoundname>wxGridHeaderLabelsRenderer</compoundname>
+    <basecompoundref refid="classwx_grid_corner_header_renderer" prot="public" virt="non-virtual">wxGridCornerHeaderRenderer</basecompoundref>
     <derivedcompoundref refid="classwx_grid_column_header_renderer" prot="public" virt="non-virtual">wxGridColumnHeaderRenderer</derivedcompoundref>
-    <derivedcompoundref refid="classwx_grid_corner_header_renderer" prot="public" virt="non-virtual">wxGridCornerHeaderRenderer</derivedcompoundref>
     <derivedcompoundref refid="classwx_grid_row_header_renderer" prot="public" virt="non-virtual">wxGridRowHeaderRenderer</derivedcompoundref>
     <includes local="no">wx/grid.h</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classwx_grid_header_labels_renderer_1ae79986d2dfa5a180589b4dcca784cbb4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
-        <type>void</type>
-        <definition>virtual void wxGridHeaderLabelsRenderer::DrawBorder</definition>
-        <argsstring>(const wxGrid &amp;grid, wxDC &amp;dc, wxRect &amp;rect) const =0</argsstring>
-        <name>DrawBorder</name>
-        <reimplementedby refid="classwx_grid_row_header_renderer_default_1a8bbfb9e992fad15feed66a50d6ed6b37">DrawBorder</reimplementedby>
-        <reimplementedby refid="classwx_grid_column_header_renderer_default_1ad7f191cdea657bb4a98c08ce05a4457c">DrawBorder</reimplementedby>
-        <reimplementedby refid="classwx_grid_corner_header_renderer_default_1ae66310b740d2ee151f72b68cd20d6d10">DrawBorder</reimplementedby>
-        <param>
-          <type>const <ref refid="classwx_grid" kindref="compound">wxGrid</ref> &amp;</type>
-          <declname>grid</declname>
-        </param>
-        <param>
-          <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> &amp;</type>
-          <declname>dc</declname>
-        </param>
-        <param>
-          <type><ref refid="classwx_rect" kindref="compound">wxRect</ref> &amp;</type>
-          <declname>rect</declname>
-        </param>
-        <briefdescription>
-<para>Called by the grid to draw the border around the cell header. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This method is responsible for drawing the border inside the given <emphasis>rect</emphasis> and adjusting the rectangle size to correspond to the area inside the border, i.e. usually call <ref refid="classwx_rect_1a7dd9f04d878b3a3a8c07e0731ebd8064" kindref="member">wxRect::Deflate()</ref> to account for the border width.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>grid</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The grid whose header cell window is being drawn. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>dc</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The device context to use for drawing. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>rect</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Input/output parameter which contains the border rectangle on input and should be updated to contain the area inside the border on function return. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/grid.h" line="1566" column="18"/>
-      </memberdef>
       <memberdef kind="function" id="classwx_grid_header_labels_renderer_1ad890e22eaf0a14ed5d11e55304cd60e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxGridHeaderLabelsRenderer::DrawLabel</definition>
@@ -100,68 +44,75 @@
 <para>Called by the grid to draw the specified label. </para>
         </briefdescription>
         <detaileddescription>
-<para>Notice that the <ref refid="classwx_grid_header_labels_renderer_1ae79986d2dfa5a180589b4dcca784cbb4" kindref="member">DrawBorder()</ref> method is called before this one.</para>
+<para>Notice that the base class <ref refid="classwx_grid_corner_header_renderer_1ae645864cfd4fe4be47522b2151ee2e45" kindref="member">DrawBorder()</ref> method is called before this one.</para>
 <para>The default implementation uses <ref refid="classwx_grid_1a33a924a9a9ceb87d2b871217c68ec7de" kindref="member">wxGrid::GetLabelTextColour()</ref> and <ref refid="classwx_grid_1af41cce5f668d203cd9cd5f0690d6614d" kindref="member">wxGrid::GetLabelFont()</ref> to draw the label. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/grid.h" line="1578" column="18"/>
+        <location file="interface/wx/grid.h" line="1047" column="18"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Base class for header cells renderers. </para>
+<para>Common base class for row and column headers renderers. </para>
     </briefdescription>
     <detaileddescription>
-<para>A cell renderer can be used to draw the text of a cell&apos;s label, and/or the border around it.</para>
-<para><simplesect kind="since"><para>2.9.1 </para>
+<para><simplesect kind="see"><para><ref refid="classwx_grid_column_header_renderer" kindref="compound">wxGridColumnHeaderRenderer</ref>, <ref refid="classwx_grid_row_header_renderer" kindref="compound">wxGridRowHeaderRenderer</ref></para>
+</simplesect>
+<simplesect kind="since"><para>2.9.1 </para>
 </simplesect>
 </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="1">
+        <label>wxGridHeaderLabelsRenderer</label>
+        <link refid="classwx_grid_header_labels_renderer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
+        <label>wxGridCornerHeaderRenderer</label>
+        <link refid="classwx_grid_corner_header_renderer"/>
+      </node>
+      <node id="3">
         <label>wxGridColumnHeaderRenderer</label>
         <link refid="classwx_grid_column_header_renderer"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>wxGridColumnHeaderRendererDefault</label>
-        <link refid="classwx_grid_column_header_renderer_default"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>wxGridCornerHeaderRenderer</label>
-        <link refid="classwx_grid_corner_header_renderer"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="5">
-        <label>wxGridCornerHeaderRendererDefault</label>
-        <link refid="classwx_grid_corner_header_renderer_default"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>wxGridHeaderLabelsRenderer</label>
-        <link refid="classwx_grid_header_labels_renderer"/>
-      </node>
-      <node id="6">
         <label>wxGridRowHeaderRenderer</label>
         <link refid="classwx_grid_row_header_renderer"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7">
+      <node id="6">
         <label>wxGridRowHeaderRendererDefault</label>
         <link refid="classwx_grid_row_header_renderer_default"/>
-        <childnode refid="6" relation="public-inheritance">
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxGridColumnHeaderRendererDefault</label>
+        <link refid="classwx_grid_column_header_renderer_default"/>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="interface/wx/grid.h" line="1546" column="1" bodyfile="interface/wx/grid.h" bodystart="1547" bodyend="1585"/>
+    <collaborationgraph>
+      <node id="1">
+        <label>wxGridHeaderLabelsRenderer</label>
+        <link refid="classwx_grid_header_labels_renderer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxGridCornerHeaderRenderer</label>
+        <link refid="classwx_grid_corner_header_renderer"/>
+      </node>
+    </collaborationgraph>
+    <location file="interface/wx/grid.h" line="1036" column="1" bodyfile="interface/wx/grid.h" bodystart="1035" bodyend="1054"/>
     <listofallmembers>
-      <member refid="classwx_grid_header_labels_renderer_1ae79986d2dfa5a180589b4dcca784cbb4" prot="public" virt="pure-virtual"><scope>wxGridHeaderLabelsRenderer</scope><name>DrawBorder</name></member>
+      <member refid="classwx_grid_corner_header_renderer_1ae645864cfd4fe4be47522b2151ee2e45" prot="public" virt="pure-virtual"><scope>wxGridHeaderLabelsRenderer</scope><name>DrawBorder</name></member>
       <member refid="classwx_grid_header_labels_renderer_1ad890e22eaf0a14ed5d11e55304cd60e4" prot="public" virt="virtual"><scope>wxGridHeaderLabelsRenderer</scope><name>DrawLabel</name></member>
     </listofallmembers>
   </compounddef>

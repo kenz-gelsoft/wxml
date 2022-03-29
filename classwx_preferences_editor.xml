@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_preferences_editor" kind="class" language="C++" prot="public">
     <compoundname>wxPreferencesEditor</compoundname>
     <includes local="no">wx/preferences.h</includes>
@@ -118,44 +118,30 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classwx_preferences_editor_1a7345475a70fab9c99ff3ea6984c8c574" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_preferences_editor_1aab8c4d9dfd585acbecdc92f5ddd8432b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>static bool wxPreferencesEditor::ShouldApplyChangesImmediately</definition>
-        <argsstring>()</argsstring>
+        <argsstring>() static bool ShownModally()</argsstring>
         <name>ShouldApplyChangesImmediately</name>
         <briefdescription>
 <para>Returns whether changes to values in preferences pages should be applied immediately or only when the user clicks the OK button. </para>
         </briefdescription>
         <detaileddescription>
-<para>Currently, changes are applied immediately on macOS and GTK+.</para>
-<para>The preprocessor macro <computeroutput>wxHAS_PREF_EDITOR_APPLY_IMMEDIATELY</computeroutput> is defined in this case as well. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/preferences.h" line="98" column="17"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_preferences_editor_1a744201ef6aa0962c06d4d733cc3cada4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>static bool wxPreferencesEditor::ShownModally</definition>
-        <argsstring>()</argsstring>
-        <name>ShownModally</name>
-        <briefdescription>
-<para>Returns whether the preferences dialog is shown modally. </para>
-        </briefdescription>
-        <detaileddescription>
+<para>Currently, changes are applied immediately on OS X and GTK+.</para>
+<para>The preprocessor macro <computeroutput>wxHAS_PREF_EDITOR_APPLY_IMMEDIATELY</computeroutput> is defined in this case as well. Returns whether the preferences dialog is shown modally.</para>
 <para>If this method returns false, as it currently does in wxGTK and wxOSX, <ref refid="classwx_preferences_editor_1a626cdcd775e6e1150901d64b63c34819" kindref="member">Show()</ref> simply makes the dialog visible and returns immediately. If it returns true, as it does in wxMSW and under the other platforms, then the dialog is shown modally, i.e. <ref refid="classwx_preferences_editor_1a626cdcd775e6e1150901d64b63c34819" kindref="member">Show()</ref> blocks until the user dismisses it.</para>
 <para>Notice that it isn&apos;t necessary to test the return value of this method to use this class normally, its interface is designed to work in both cases. However it can sometimes be necessary to call it if the program needs to handle modal dialogs specially, e.g. perhaps to block some periodic background update operation while a modal dialog is shown. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/preferences.h" line="115" column="17"/>
+        <location file="interface/wx/preferences.h" line="98" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Manage preferences dialog. </para>
     </briefdescription>
     <detaileddescription>
-<para>This class encapsulates the differences <ndash/> both in appearance and behaviour <ndash/> between preferences dialogs on different platforms. In particular, macOS preferences look very different from the typical notebook control used on other platforms, and both macOS and GTK+ preferences windows are modeless unlike Windows options dialogs that are typically modal.</para>
+<para>This class encapsulates the differences <ndash/> both in appearance and behaviour <ndash/> between preferences dialogs on different platforms. In particular, OS X preferences look very different from the typical notebook control used on other platforms, and both OS X and GTK+ preferences windows are modeless unlike Windows options dialogs that are typically modal.</para>
 <para><ref refid="classwx_preferences_editor" kindref="compound">wxPreferencesEditor</ref> is able to hide the differences by hiding the creation of preferences window from the API. Instead, you create an instance of <ref refid="classwx_preferences_editor" kindref="compound">wxPreferencesEditor</ref> and add page descriptions in the form of <ref refid="classwx_preferences_page" kindref="compound">wxPreferencesPage</ref> using its <ref refid="classwx_preferences_editor_1a3f5102fccc200964eb2ea4890b334c29" kindref="member">AddPage()</ref> method. After setting up the editor object, you must call <ref refid="classwx_preferences_editor_1a626cdcd775e6e1150901d64b63c34819" kindref="member">Show()</ref> to present preferences to the user.</para>
 <para><simplesect kind="note"><para>Notice that this class is not derived from <ref refid="classwx_window" kindref="compound">wxWindow</ref> and hence doesn&apos;t represent a window, even if its <ref refid="classwx_preferences_editor_1a626cdcd775e6e1150901d64b63c34819" kindref="member">Show()</ref> method does create one internally.</para>
 </simplesect>
@@ -166,13 +152,12 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/preferences.h" line="33" column="1" bodyfile="interface/wx/preferences.h" bodystart="34" bodyend="116"/>
+    <location file="interface/wx/preferences.h" line="34" column="1" bodyfile="interface/wx/preferences.h" bodystart="33" bodyend="116"/>
     <listofallmembers>
       <member refid="classwx_preferences_editor_1a3f5102fccc200964eb2ea4890b334c29" prot="public" virt="non-virtual"><scope>wxPreferencesEditor</scope><name>AddPage</name></member>
       <member refid="classwx_preferences_editor_1acdecd2b18a9d3171e04cdc561848635b" prot="public" virt="non-virtual"><scope>wxPreferencesEditor</scope><name>Dismiss</name></member>
-      <member refid="classwx_preferences_editor_1a7345475a70fab9c99ff3ea6984c8c574" prot="public" virt="non-virtual"><scope>wxPreferencesEditor</scope><name>ShouldApplyChangesImmediately</name></member>
+      <member refid="classwx_preferences_editor_1aab8c4d9dfd585acbecdc92f5ddd8432b" prot="public" virt="non-virtual"><scope>wxPreferencesEditor</scope><name>ShouldApplyChangesImmediately</name></member>
       <member refid="classwx_preferences_editor_1a626cdcd775e6e1150901d64b63c34819" prot="public" virt="virtual"><scope>wxPreferencesEditor</scope><name>Show</name></member>
-      <member refid="classwx_preferences_editor_1a744201ef6aa0962c06d4d733cc3cada4" prot="public" virt="non-virtual"><scope>wxPreferencesEditor</scope><name>ShownModally</name></member>
       <member refid="classwx_preferences_editor_1a763bc5d60aef3ebf4ee296fb14634de3" prot="public" virt="non-virtual"><scope>wxPreferencesEditor</scope><name>wxPreferencesEditor</name></member>
       <member refid="classwx_preferences_editor_1aeea552f6dab4f2a6402e122a9866386a" prot="public" virt="non-virtual"><scope>wxPreferencesEditor</scope><name>~wxPreferencesEditor</name></member>
     </listofallmembers>

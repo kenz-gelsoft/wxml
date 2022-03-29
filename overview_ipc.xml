@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_ipc" kind="page">
     <compoundname>overview_ipc</compoundname>
     <title>Interprocess Communication</title>
@@ -18,11 +18,9 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>wxWidgets has a number of different classes to help with interprocess communication and network programming. </para>
     </briefdescription>
     <detaileddescription>
-<para>wxWidgets has a number of different classes to help with interprocess communication and network programming.</para>
-<para>This section only discusses one family of classes <ndash/> the DDE-like protocol <ndash/> but here&apos;s a list of other useful classes:</para>
+<para>wxWidgets has a number of different classes to help with interprocess communication and network programming. This section only discusses one family of classes <ndash/> the DDE-like protocol <ndash/> but here&apos;s a list of other useful classes:</para>
 <para><itemizedlist>
 <listitem><para><ref refid="classwx_socket_event" kindref="compound">wxSocketEvent</ref>, <ref refid="classwx_socket_base" kindref="compound">wxSocketBase</ref>, <ref refid="classwx_socket_client" kindref="compound">wxSocketClient</ref>, <ref refid="classwx_socket_server" kindref="compound">wxSocketServer</ref> - Classes for the low-level TCP/IP API. </para>
 </listitem>
@@ -42,7 +40,7 @@ wxWidgets&apos; DDE-like protocol is a high-level protocol based on Windows DDE.
 <listitem><para><ref refid="classwx_connection" kindref="compound">wxConnection</ref> - This represents the connection from the client to the server. Both the client and the server use an instance of this class, one per connection. Most DDE transactions operate on this object.</para>
 </listitem>
 </itemizedlist>
-Messages between applications are usually identified by three variables: connection object, topic name and item name. A data string is a fourth element of some messages. To create a connection (a conversation in Windows parlance), the client application uses <ref refid="classwx_client_1ab41e1011d52137754194635e4b4f5035" kindref="member">wxClient::MakeConnection</ref> to send a message to the server object, with a string service name to identify the server and a topic name to identify the topic for the duration of the connection. Under Unix, the service name may be either an integer port identifier in which case an Internet domain socket will be used for the communications or a valid file name (which shouldn&apos;t exist and will be deleted afterwards) in which case a Unix domain socket is created.</para>
+Messages between applications are usually identified by three variables: connection object, topic name and item name. A data string is a fourth element of some messages. To create a connection (a conversation in Windows parlance), the client application uses <ref refid="classwx_client_1a6ca1cef89e834a724d34edf9872f545d" kindref="member">wxClient::MakeConnection</ref> to send a message to the server object, with a string service name to identify the server and a topic name to identify the topic for the duration of the connection. Under Unix, the service name may be either an integer port identifier in which case an Internet domain socket will be used for the communications or a valid file name (which shouldn&apos;t exist and will be deleted afterwards) in which case a Unix domain socket is created.</para>
 <para><bold>SECURITY NOTE:</bold> Using Internet domain sockets is extremely insecure for IPC as there is absolutely no access control for them, use Unix domain sockets whenever possible!</para>
 <para>The server then responds and either vetoes the connection or allows it. If allowed, both the server and client objects create <ref refid="classwx_connection" kindref="compound">wxConnection</ref> objects which persist until the connection is closed. The connection object is then used for sending and receiving subsequent messages between client and server - overriding virtual functions in your class derived from <ref refid="classwx_connection" kindref="compound">wxConnection</ref> allows you to handle the DDE messages.</para>
 <para>To create a working server, the programmer must:</para>
@@ -62,7 +60,7 @@ To create a working client, the programmer must:</para>
 </listitem>
 <listitem><para>Create an instance of your client object. </para>
 </listitem>
-<listitem><para>When appropriate, create a new connection using <ref refid="classwx_client_1ab41e1011d52137754194635e4b4f5035" kindref="member">wxClient::MakeConnection</ref>, with arguments host name (processed in Unix only, use &apos;localhost&apos; for local computer), service name, and topic name for this connection. The client object will call OnMakeConnection to create a connection object of the derived class if the connection is successful. </para>
+<listitem><para>When appropriate, create a new connection using <ref refid="classwx_client_1a6ca1cef89e834a724d34edf9872f545d" kindref="member">wxClient::MakeConnection</ref>, with arguments host name (processed in Unix only, use &apos;localhost&apos; for local computer), service name, and topic name for this connection. The client object will call OnMakeConnection to create a connection object of the derived class if the connection is successful. </para>
 </listitem>
 <listitem><para>Use the <ref refid="classwx_connection" kindref="compound">wxConnection</ref> member functions to send messages to the server.</para>
 </listitem>
@@ -90,52 +88,51 @@ The default data type is wxCF_TEXT (ASCII text), and the default data size is th
 <sect1 id="overview_ipc_1overview_ipc_dde">
 <title>More DDE Details</title>
 <para>A <ref refid="classwx_client" kindref="compound">wxClient</ref> object initiates the client part of a client-server DDE-like (Dynamic Data Exchange) conversation (available in both Windows and Unix).</para>
-<para>To create a client which can communicate with a suitable server, you need to derive a class from <ref refid="classwx_connection" kindref="compound">wxConnection</ref> and another from <ref refid="classwx_client" kindref="compound">wxClient</ref>. The custom <ref refid="classwx_connection" kindref="compound">wxConnection</ref> class will receive communications in a &apos;conversation&apos; with a server. and the custom <ref refid="classwx_server" kindref="compound">wxServer</ref> is required so that a user-overridden <ref refid="classwx_client_1a789d235c6b00df9f80094c769c04d4bc" kindref="member">wxClient::OnMakeConnection</ref> member can return a <ref refid="classwx_connection" kindref="compound">wxConnection</ref> of the required class, when a connection is made.</para>
+<para>To create a client which can communicate with a suitable server, you need to derive a class from <ref refid="classwx_connection" kindref="compound">wxConnection</ref> and another from <ref refid="classwx_client" kindref="compound">wxClient</ref>. The custom <ref refid="classwx_connection" kindref="compound">wxConnection</ref> class will receive communications in a &apos;conversation&apos; with a server. and the custom <ref refid="classwx_server" kindref="compound">wxServer</ref> is required so that a user-overridden <ref refid="classwx_client_1a71328614681f8f50de8a561b5dcfbbde" kindref="member">wxClient::OnMakeConnection</ref> member can return a <ref refid="classwx_connection" kindref="compound">wxConnection</ref> of the required class, when a connection is made.</para>
 <para>For example:</para>
-<para><programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyConnection:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_connection" kindref="compound">wxConnection</ref></highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">class<sp/>MyConnection:<sp/>public<sp/>wxConnection</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyConnection(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)::<ref refid="classwx_connection" kindref="compound">wxConnection</ref>()<sp/>{<sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>~MyConnection(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{<sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classwx_connection_1a9dddf8014802c9643378b9bdb34bfc48" kindref="member">OnAdvise</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_string" kindref="compound">wxString</ref>&amp;<sp/>topic,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_string" kindref="compound">wxString</ref>&amp;<sp/>item,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*data,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size,<sp/><ref refid="ipcbase_8h_1a95e8d5059caf54ddbaabdaf8224fe3f2" kindref="member">wxIPCFormat</ref><sp/>format)</highlight></codeline>
+<codeline><highlight class="normal">public:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyConnection(void)::wxConnection()<sp/>{<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>~MyConnection(void)<sp/>{<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>OnAdvise(const<sp/>wxString&amp;<sp/>topic,<sp/>const<sp/>wxString&amp;<sp/>item,<sp/>char<sp/>*data,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>size,<sp/>wxIPCFormat<sp/>format)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="msgdlg_8h_1a193c64ed4802e379799cdb42de252647" kindref="member">wxMessageBox</ref>(topic,<sp/>data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxMessageBox(topic,<sp/>data);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyClient:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_client" kindref="compound">wxClient</ref></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">class<sp/>MyClient:<sp/>public<sp/>wxClient</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyClient(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{<sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_connection_base" kindref="compound">wxConnectionBase</ref>*<sp/><ref refid="classwx_client_1a789d235c6b00df9f80094c769c04d4bc" kindref="member">OnMakeConnection</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">public:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyClient(void)<sp/>{<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxConnectionBase*<sp/>OnMakeConnection(void)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyConnection;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>new<sp/>MyConnection;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
 </programlisting></para>
 <para>Here, <emphasis>MyConnection</emphasis> will respond to OnAdvise messages sent by the server by displaying a message box.</para>
-<para>When the client application starts, it must create an instance of the derived <ref refid="classwx_client" kindref="compound">wxClient</ref>. In the following, command line arguments are used to pass the host name (the name of the machine the server is running on) and the server name (identifying the server process). Calling <ref refid="classwx_client_1ab41e1011d52137754194635e4b4f5035" kindref="member">wxClient::MakeConnection</ref> implicitly creates an instance of <emphasis>MyConnection</emphasis> if the request for a connection is accepted, and the client then requests an <emphasis>Advise</emphasis> loop from the server (an Advise loop is where the server calls the client when data has changed).</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>server<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;4242&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>hostName;</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="utils_8h_1a25dd53a4a5aab23305b8e4e9c5ff730b" kindref="member">wxGetHostName</ref>(hostName);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Create<sp/>a<sp/>new<sp/>client</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">MyClient<sp/>*client<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyClient;</highlight></codeline>
-<codeline><highlight class="normal">connection<sp/>=<sp/>(MyConnection<sp/>*)client-&gt;MakeConnection(hostName,<sp/>server,<sp/></highlight><highlight class="stringliteral">&quot;IPC<sp/>TEST&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!connection)</highlight></codeline>
+<para>When the client application starts, it must create an instance of the derived <ref refid="classwx_client" kindref="compound">wxClient</ref>. In the following, command line arguments are used to pass the host name (the name of the machine the server is running on) and the server name (identifying the server process). Calling <ref refid="classwx_client_1a6ca1cef89e834a724d34edf9872f545d" kindref="member">wxClient::MakeConnection</ref> implicitly creates an instance of <emphasis>MyConnection</emphasis> if the request for a connection is accepted, and the client then requests an <emphasis>Advise</emphasis> loop from the server (an Advise loop is where the server calls the client when data has changed).</para>
+<para><programlisting><codeline><highlight class="normal">wxString<sp/>server<sp/>=<sp/>&quot;4242&quot;;</highlight></codeline>
+<codeline><highlight class="normal">wxString<sp/>hostName;</highlight></codeline>
+<codeline><highlight class="normal">wxGetHostName(hostName);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Create<sp/>a<sp/>new<sp/>client</highlight></codeline>
+<codeline><highlight class="normal">MyClient<sp/>*client<sp/>=<sp/>new<sp/>MyClient;</highlight></codeline>
+<codeline><highlight class="normal">connection<sp/>=<sp/>(MyConnection<sp/>*)client-&gt;MakeConnection(hostName,<sp/>server,<sp/>&quot;IPC<sp/>TEST&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(!connection)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="msgdlg_8h_1a193c64ed4802e379799cdb42de252647" kindref="member">wxMessageBox</ref>(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>make<sp/>connection<sp/>to<sp/>server&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Client<sp/>Demo<sp/>Error&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxMessageBox(&quot;Failed<sp/>to<sp/>make<sp/>connection<sp/>to<sp/>server&quot;,<sp/>&quot;Client<sp/>Demo<sp/>Error&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>NULL;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">connection-&gt;StartAdvise(</highlight><highlight class="stringliteral">&quot;Item&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">connection-&gt;StartAdvise(&quot;Item&quot;);</highlight></codeline>
 </programlisting> </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/ipc.h"/>
   </compounddef>
 </doxygen>

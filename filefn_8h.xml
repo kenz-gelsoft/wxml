@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="filefn_8h" kind="file" language="C++">
     <compoundname>filefn.h</compoundname>
     <innerclass refid="classwx_path_list" prot="public">wxPathList</innerclass>
@@ -200,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="350" column="1" bodyfile="interface/wx/filefn.h" bodystart="351" bodyend="395"/>
+        <location file="interface/wx/filefn.h" line="371" column="1" bodyfile="interface/wx/filefn.h" bodystart="370" bodyend="415"/>
       </memberdef>
       <memberdef kind="enum" id="filefn_8h_1ae3981f8632f0391e5c852bf62eb982b0" prot="public" static="no" strong="no">
         <type></type>
@@ -239,7 +239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="468" column="1" bodyfile="interface/wx/filefn.h" bodystart="469" bodyend="473"/>
+        <location file="interface/wx/filefn.h" line="489" column="1" bodyfile="interface/wx/filefn.h" bodystart="488" bodyend="493"/>
       </memberdef>
       <memberdef kind="enum" id="filefn_8h_1a68af15575db590aaa874d40a1073809d" prot="public" static="no" strong="no">
         <type></type>
@@ -286,7 +286,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="482" column="1" bodyfile="interface/wx/filefn.h" bodystart="483" bodyend="488"/>
+        <location file="interface/wx/filefn.h" line="503" column="1" bodyfile="interface/wx/filefn.h" bodystart="502" bodyend="508"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -324,6 +324,43 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="filefn_8h_1ab94c2e0044fd40d901ac250be547d0da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxGetDiskSpace</definition>
+        <argsstring>(const wxString &amp;path, wxLongLong total=NULL, wxLongLong free=NULL)</argsstring>
+        <name>wxGetDiskSpace</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type><ref refid="classwx_long_long" kindref="compound">wxLongLong</ref></type>
+          <declname>total</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type><ref refid="classwx_long_long" kindref="compound">wxLongLong</ref></type>
+          <declname>free</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+<para>This function returns the total number of bytes and number of free bytes on the disk containing the directory <emphasis>path</emphasis> (it should exist). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Both <emphasis>total</emphasis> and <emphasis>free</emphasis> parameters may be NULL if the corresponding information is not needed.</para>
+<para><simplesect kind="since"><para>2.3.2</para>
+</simplesect>
+<simplesect kind="note"><para>The generic Unix implementation depends on the system having the <computeroutput>statfs()</computeroutput> or <computeroutput>statvfs()</computeroutput> function.</para>
+</simplesect>
+<simplesect kind="return"><para>true on success, false if an error occurred (for example, the directory doesn’t exist).</para>
+</simplesect>
+Include file:<linebreak/>
+ <verbatim>#include &lt;wx/filefn.h&gt; </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/filefn.h" line="148" column="6" declfile="interface/wx/filefn.h" declline="148" declcolumn="6"/>
+      </memberdef>
       <memberdef kind="function" id="filefn_8h_1a26e222d4250fd4cab65f03fc89b7ec45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxGetOSDirectory</definition>
@@ -338,7 +375,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="138" column="10" declfile="interface/wx/filefn.h" declline="138" declcolumn="10"/>
+        <location file="interface/wx/filefn.h" line="158" column="10" declfile="interface/wx/filefn.h" declline="158" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a499c49ff35d9a9b6cff8cbbdba46b322" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -370,7 +407,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="154" column="5" declfile="interface/wx/filefn.h" declline="154" declcolumn="5"/>
+        <location file="interface/wx/filefn.h" line="174" column="5" declfile="interface/wx/filefn.h" declline="174" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a42358e18253927c01bfc5f48e6778075" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -385,14 +422,14 @@
 <para>Converts a DOS to a Unix filename by replacing backslashes with forward slashes. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000017"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Construct a <ref refid="classwx_file_name" kindref="compound">wxFileName</ref> with wxPATH_DOS and then use wxFileName::GetFullPath(wxPATH_UNIX) instead.</para>
+<para><xrefsect id="deprecated_1_deprecated000012"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Construct a <ref refid="classwx_file_name" kindref="compound">wxFileName</ref> with wxPATH_DOS and then use wxFileName::GetFullPath(wxPATH_UNIX) instead.</para>
 </xrefdescription></xrefsect></para>
 <para>Include file:<linebreak/>
  <verbatim>#include &lt;wx/filefn.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="168" column="6" declfile="interface/wx/filefn.h" declline="168" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="188" column="6" declfile="interface/wx/filefn.h" declline="188" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1aae581d4a5d5a334a0e10ed53470312be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -407,14 +444,14 @@
 <para>Converts a Unix to a DOS filename by replacing forward slashes with backslashes. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000018"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Construct a <ref refid="classwx_file_name" kindref="compound">wxFileName</ref> with wxPATH_UNIX and then use wxFileName::GetFullPath(wxPATH_DOS) instead.</para>
+<para><xrefsect id="deprecated_1_deprecated000013"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Construct a <ref refid="classwx_file_name" kindref="compound">wxFileName</ref> with wxPATH_UNIX and then use wxFileName::GetFullPath(wxPATH_DOS) instead.</para>
 </xrefdescription></xrefsect></para>
 <para>Include file:<linebreak/>
  <verbatim>#include &lt;wx/filefn.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="180" column="6" declfile="interface/wx/filefn.h" declline="180" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="200" column="6" declfile="interface/wx/filefn.h" declline="200" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a3e960a6805631320fede18bf1176f278" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -434,7 +471,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="187" column="6" declfile="interface/wx/filefn.h" declline="187" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="207" column="6" declfile="interface/wx/filefn.h" declline="207" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a3ab12077f51f54497b7ce829a4339326" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -460,7 +497,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000019"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is obsolete, please use <ref refid="classwx_file_name_1a4f06c2499ce10643e41175405b93e61c" kindref="member">wxFileName::SplitPath()</ref> instead.</para>
+<para><xrefsect id="deprecated_1_deprecated000014"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is obsolete, please use <ref refid="classwx_file_name_1a4f06c2499ce10643e41175405b93e61c" kindref="member">wxFileName::SplitPath()</ref> instead.</para>
 </xrefdescription></xrefsect></para>
 <para>This function splits a full file name into components: the path (including possible disk/drive specification under Windows), the base name, and the extension. Any of the output parameters (<emphasis>path</emphasis>, <emphasis>name</emphasis> or <emphasis>ext</emphasis>) may be NULL if you are not interested in the value of a particular component.</para>
 <para><ref refid="filefn_8h_1a3ab12077f51f54497b7ce829a4339326" kindref="member">wxSplitPath()</ref> will correctly handle filenames with both DOS and Unix path separators under Windows, however it will not consider backslashes as path separators under Unix (where backslash is a valid character in a filename).</para>
@@ -471,7 +508,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="212" column="6" declfile="interface/wx/filefn.h" declline="212" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="232" column="6" declfile="interface/wx/filefn.h" declline="232" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a45ff442ed00090a09401fc1c93a5747e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>time_t</type>
@@ -492,20 +529,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="225" column="8" declfile="interface/wx/filefn.h" declline="225" declcolumn="8"/>
+        <location file="interface/wx/filefn.h" line="245" column="8" declfile="interface/wx/filefn.h" declline="245" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="filefn_8h_1a31089b9ed0c803685f31b577c880969d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="filefn_8h_1a599c484cd4deea8fed7275a9a7e0a11c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool wxRenameFile</definition>
-        <argsstring>(const wxString &amp;oldpath, const wxString &amp;newpath, bool overwrite=true)</argsstring>
+        <argsstring>(const wxString &amp;file1, const wxString &amp;file2, bool overwrite=true)</argsstring>
         <name>wxRenameFile</name>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>oldpath</declname>
+          <declname>file1</declname>
         </param>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>newpath</declname>
+          <declname>file2</declname>
         </param>
         <param>
           <type>bool</type>
@@ -513,29 +550,29 @@
           <defval>true</defval>
         </param>
         <briefdescription>
-<para>Renames <emphasis>oldpath</emphasis> to <emphasis>newpath</emphasis>, returning true if successful. </para>
+<para>Renames <emphasis>file1</emphasis> to <emphasis>file2</emphasis>, returning true if successful. </para>
         </briefdescription>
         <detaileddescription>
-<para>If <emphasis>newpath</emphasis> is a directory, <emphasis>oldpath</emphasis> is moved into it (<emphasis>overwrite</emphasis> is ignored in this case). Otherwise, if <emphasis>newpath</emphasis> is an existing file, it is overwritten if <emphasis>overwrite</emphasis> is true (default) and the function fails if <emphasis>overwrite</emphasis> is false.</para>
+<para>If <emphasis>file2</emphasis> is a directory, <emphasis>file1</emphasis> is moved into it (<emphasis>overwrite</emphasis> is ignored in this case). Otherwise, if <emphasis>file2</emphasis> is an existing file, it is overwritten if <emphasis>overwrite</emphasis> is true (default) and the function fails if <emphasis>overwrite</emphasis> is false.</para>
 <para>Include file:<linebreak/>
  <verbatim>#include &lt;wx/filefn.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="237" column="6" declfile="interface/wx/filefn.h" declline="237" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="257" column="6" declfile="interface/wx/filefn.h" declline="257" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="filefn_8h_1ada240afaef0f7eb5d8704b22d9ade85d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="filefn_8h_1a65ec867ed441231ed2ba67b3bb5ee4e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool wxCopyFile</definition>
-        <argsstring>(const wxString &amp;src, const wxString &amp;dest, bool overwrite=true)</argsstring>
+        <argsstring>(const wxString &amp;file1, const wxString &amp;file2, bool overwrite=true)</argsstring>
         <name>wxCopyFile</name>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>src</declname>
+          <declname>file1</declname>
         </param>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>dest</declname>
+          <declname>file2</declname>
         </param>
         <param>
           <type>bool</type>
@@ -543,7 +580,7 @@
           <defval>true</defval>
         </param>
         <briefdescription>
-<para>Copies <emphasis>src</emphasis> to <emphasis>dest</emphasis>, returning true if successful. </para>
+<para>Copies <emphasis>file1</emphasis> to <emphasis>file2</emphasis>, returning true if successful. </para>
         </briefdescription>
         <detaileddescription>
 <para>If <emphasis>overwrite</emphasis> parameter is true (default), the destination file is overwritten if it exists, but if <emphasis>overwrite</emphasis> is false, the functions fails in this case.</para>
@@ -553,7 +590,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="250" column="6" declfile="interface/wx/filefn.h" declline="250" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="270" column="6" declfile="interface/wx/filefn.h" declline="270" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a72d2e4ef03d51c0d59c2cb788462d600" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -573,7 +610,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="259" column="6" declfile="interface/wx/filefn.h" declline="259" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="279" column="6" declfile="interface/wx/filefn.h" declline="279" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a0d499f5b09fb2b6e381bddff181dba17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -603,7 +640,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="270" column="6" declfile="interface/wx/filefn.h" declline="270" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="290" column="6" declfile="interface/wx/filefn.h" declline="290" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a139aabab52fdd09c37716662d6a47110" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -623,7 +660,7 @@ Include file:<linebreak/>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000020"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is deprecated, use <ref refid="filefn_8h_1ab0cc6ceca11d23f61cba353c01eeac06" kindref="member">wxGetCwd()</ref> instead.</para>
+<para><xrefsect id="deprecated_1_deprecated000015"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is deprecated, use <ref refid="filefn_8h_1ab0cc6ceca11d23f61cba353c01eeac06" kindref="member">wxGetCwd()</ref> instead.</para>
 </xrefdescription></xrefsect></para>
 <para>Copies the current working directory into the buffer if supplied, or copies the working directory into new storage (which you must delete yourself) if the buffer is NULL.</para>
 <para><emphasis>sz</emphasis> is the size of the buffer if supplied.</para>
@@ -632,7 +669,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="285" column="10" declfile="interface/wx/filefn.h" declline="285" declcolumn="10"/>
+        <location file="interface/wx/filefn.h" line="305" column="10" declfile="interface/wx/filefn.h" declline="305" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a5a4bc3ac5b1952c29416335daa9ba0dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -652,7 +689,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="292" column="10" declfile="interface/wx/filefn.h" declline="292" declcolumn="10"/>
+        <location file="interface/wx/filefn.h" line="312" column="10" declfile="interface/wx/filefn.h" declline="312" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1ac3789ec7318ad36e403f32bb8269d001" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -674,7 +711,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="301" column="6" declfile="interface/wx/filefn.h" declline="301" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="321" column="6" declfile="interface/wx/filefn.h" declline="321" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1aa80bce04d491b7e27cc3e78cab979ed8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -694,7 +731,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="309" column="6" declfile="interface/wx/filefn.h" declline="309" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="329" column="6" declfile="interface/wx/filefn.h" declline="329" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1ab0cc6ceca11d23f61cba353c01eeac06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -710,7 +747,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="316" column="10" declfile="interface/wx/filefn.h" declline="316" declcolumn="10"/>
+        <location file="interface/wx/filefn.h" line="336" column="10" declfile="interface/wx/filefn.h" declline="336" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a315b861f905ae6b3915faa79526a198e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -731,27 +768,27 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="325" column="6" declfile="interface/wx/filefn.h" declline="325" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="345" column="6" declfile="interface/wx/filefn.h" declline="345" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="filefn_8h_1a78c175df6bd861093423a84f1016cbf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="filefn_8h_1a1f2c59b71636d40bafa3757fcf36cd67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool wxConcatFiles</definition>
-        <argsstring>(const wxString &amp;src1, const wxString &amp;src2, const wxString &amp;dest)</argsstring>
+        <argsstring>(const wxString &amp;file1, const wxString &amp;file2, const wxString &amp;file3)</argsstring>
         <name>wxConcatFiles</name>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>src1</declname>
+          <declname>file1</declname>
         </param>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>src2</declname>
+          <declname>file2</declname>
         </param>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>dest</declname>
+          <declname>file3</declname>
         </param>
         <briefdescription>
-<para>Concatenates <emphasis>src1</emphasis> and <emphasis>src2</emphasis> to <emphasis>dest</emphasis>, returning true if successful. </para>
+<para>Concatenates <emphasis>file1</emphasis> and <emphasis>file2</emphasis> to <emphasis>file3</emphasis>, returning true if successful. </para>
         </briefdescription>
         <detaileddescription>
 <para>Include file:<linebreak/>
@@ -759,7 +796,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="333" column="6" declfile="interface/wx/filefn.h" declline="333" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="353" column="6" declfile="interface/wx/filefn.h" declline="353" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a147f3601590c8c29a97d1101e03b2b90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -779,7 +816,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="342" column="6" declfile="interface/wx/filefn.h" declline="342" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="362" column="6" declfile="interface/wx/filefn.h" declline="362" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a3510d5cf8163eded5bae385ce758df57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -805,7 +842,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="405" column="6" declfile="interface/wx/filefn.h" declline="405" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="425" column="6" declfile="interface/wx/filefn.h" declline="425" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a9ae2276737ad4fe72ea96c5f2d9bbfd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -834,7 +871,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="420" column="6" declfile="interface/wx/filefn.h" declline="420" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="440" column="6" declfile="interface/wx/filefn.h" declline="440" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1abc2b3ae7f5c1f49034cc8577f00bc235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -851,7 +888,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="429" column="10" declfile="interface/wx/filefn.h" declline="429" declcolumn="10"/>
+        <location file="interface/wx/filefn.h" line="449" column="10" declfile="interface/wx/filefn.h" declline="449" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1ab136c4ed6c3d71262d12780b723479ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -889,7 +926,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="459" column="10" declfile="interface/wx/filefn.h" declline="459" declcolumn="10"/>
+        <location file="interface/wx/filefn.h" line="479" column="10" declfile="interface/wx/filefn.h" declline="479" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a4fd2489fadb203b1c4451f2642b3eb8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="filefn_8h_1a68af15575db590aaa874d40a1073809d" kindref="member">wxFileKind</ref></type>
@@ -910,7 +947,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="500" column="12" declfile="interface/wx/filefn.h" declline="500" declcolumn="12"/>
+        <location file="interface/wx/filefn.h" line="520" column="12" declfile="interface/wx/filefn.h" declline="520" declcolumn="12"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a749d8c7166598b5a82a7b638b0cb4d35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="filefn_8h_1a68af15575db590aaa874d40a1073809d" kindref="member">wxFileKind</ref></type>
@@ -927,7 +964,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="501" column="12" declfile="interface/wx/filefn.h" declline="501" declcolumn="12"/>
+        <location file="interface/wx/filefn.h" line="521" column="12" declfile="interface/wx/filefn.h" declline="521" declcolumn="12"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1a2414d8f9b3d08370551b0609eef5f0db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -941,7 +978,7 @@ Include file:<linebreak/>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000021"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is obsolete, please use <ref refid="classwx_file_name_1a4f06c2499ce10643e41175405b93e61c" kindref="member">wxFileName::SplitPath()</ref> instead.</para>
+<para><xrefsect id="deprecated_1_deprecated000016"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is obsolete, please use <ref refid="classwx_file_name_1a4f06c2499ce10643e41175405b93e61c" kindref="member">wxFileName::SplitPath()</ref> instead.</para>
 </xrefdescription></xrefsect></para>
 <para>Returns the filename for a full path. The second form returns a pointer to temporary storage that should not be deallocated.</para>
 <para>Include file:<linebreak/>
@@ -949,11 +986,11 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="515" column="10" declfile="interface/wx/filefn.h" declline="515" declcolumn="10"/>
+        <location file="interface/wx/filefn.h" line="535" column="10" declfile="interface/wx/filefn.h" declline="535" declcolumn="10"/>
       </memberdef>
-      <memberdef kind="function" id="filefn_8h_1af9e3c55432ea4d6933e6ee002472db0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="filefn_8h_1a0d16799305c79b72c1b62fce18734075" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
-        <definition>char * wxFileNameFromPath</definition>
+        <definition>char* wxFileNameFromPath</definition>
         <argsstring>(char *path)</argsstring>
         <name>wxFileNameFromPath</name>
         <param>
@@ -966,11 +1003,11 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="516" column="6" declfile="interface/wx/filefn.h" declline="516" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="536" column="6" declfile="interface/wx/filefn.h" declline="536" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="filefn_8h_1abdfe71e3356e02d8cb8e2c1e9d20cdde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="filefn_8h_1a550c9561a7a15c571cb8ddf79d233457" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
-        <definition>char * wxGetTempFileName</definition>
+        <definition>char* wxGetTempFileName</definition>
         <argsstring>(const wxString &amp;prefix, char *buf=NULL)</argsstring>
         <name>wxGetTempFileName</name>
         <param>
@@ -985,14 +1022,14 @@ Include file:<linebreak/>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000022"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is obsolete, please use <ref refid="classwx_file_name_1a416af84fddd624a3b457dbffbe174317" kindref="member">wxFileName::CreateTempFileName()</ref> instead.</para>
+<para><xrefsect id="deprecated_1_deprecated000017"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is obsolete, please use <ref refid="classwx_file_name_1a416af84fddd624a3b457dbffbe174317" kindref="member">wxFileName::CreateTempFileName()</ref> instead.</para>
 </xrefdescription></xrefsect></para>
 <para>Include file:<linebreak/>
  <verbatim>#include &lt;wx/filefn.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="527" column="6" declfile="interface/wx/filefn.h" declline="527" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="547" column="6" declfile="interface/wx/filefn.h" declline="547" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="filefn_8h_1ad57f5b539f70d723cff8b8b6084f0332" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1013,7 +1050,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filefn.h" line="528" column="6" declfile="interface/wx/filefn.h" declline="528" declcolumn="6"/>
+        <location file="interface/wx/filefn.h" line="548" column="6" declfile="interface/wx/filefn.h" declline="548" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

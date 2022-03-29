@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_backwardcompat" kind="page">
     <compoundname>overview_backwardcompat</compoundname>
     <title>Backwards Compatibility</title>
@@ -22,11 +22,9 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>Many of the GUIs and platforms supported by wxWidgets are continuously evolving, and some of the new platforms wxWidgets now supports were quite unimaginable even a few years ago. </para>
     </briefdescription>
     <detaileddescription>
-<para>Many of the GUIs and platforms supported by wxWidgets are continuously evolving, and some of the new platforms wxWidgets now supports were quite unimaginable even a few years ago.</para>
-<para>In this environment wxWidgets must also evolve in order to support these new features and platforms.</para>
+<para>Many of the GUIs and platforms supported by wxWidgets are continuously evolving, and some of the new platforms wxWidgets now supports were quite unimaginable even a few years ago. In this environment wxWidgets must also evolve in order to support these new features and platforms.</para>
 <para>However the goal of wxWidgets is not only to provide a consistent programming interface across many platforms, but also to provide an interface that is reasonably stable over time, to help protect its users from some of the uncertainty of the future.</para>
 <sect1 id="overview_backwardcompat_1overview_backwardcompat_versionnumbering">
 <title>The Version Numbering Scheme</title>
@@ -44,13 +42,13 @@
 <para>The converse is also true providing you avoid any new features not present in the earlier version. For example if you develop using 2.6.1 your program will compile fine with wxWidgets 2.8.0 providing you don&apos;t use any 2.8.1 specific features.</para>
 <para>For some platforms binary compatibility is also supported, see <ref refid="overview_backwardcompat_1overview_backwardcompat_libbincompat" kindref="member">Library Binary Compatibility</ref> below.</para>
 <para>Between minor versions, for example between 2.4.x, 2.6.x and 2.8.x, there will be some incompatibilities. Wherever possible the old way of doing something is kept alongside the new for a time wrapped inside:</para>
-<para><programlisting><codeline><highlight class="preprocessor">#if<sp/>WXWIN_COMPATIBILITY_2_6</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>deprecated<sp/>feature</highlight><highlight class="normal"></highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">#if<sp/>WXWIN_COMPATIBILITY_2_6</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>deprecated<sp/>feature</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
 <codeline><highlight class="normal">#endif</highlight></codeline>
 </programlisting></para>
 <para>By default the <computeroutput>WXWIN_COMPATIBILITY_X_X</computeroutput> macro is set to 1 for the previous stable branch, for example in 2.8.x, <computeroutput>WXWIN_COMPATIBILITY_2_6</computeroutput> = 1. For the next earlier stable branch the default is 0, so <computeroutput>WXWIN_COMPATIBILITY_2_4</computeroutput> = 0 for 2.8.x. Earlier than that, obsolete features are removed.</para>
-<para>These macros can be changed in <computeroutput>setup.h</computeroutput>. Or on UNIX-like systems you can set them using the <computeroutput>--disable-compat26</computeroutput> and <computeroutput>--enable-compat24</computeroutput> options to configure.</para>
+<para>These macros can be changed in <computeroutput>setup.h</computeroutput>. Or on UNIX-like systems you can set them using the <computeroutput><ndash/>disable-compat26</computeroutput> and <computeroutput><ndash/>enable-compat24</computeroutput> options to configure.</para>
 <para>They can be useful in two ways:</para>
 <para><itemizedlist>
 <listitem><para>Changing <computeroutput>WXWIN_COMPATIBILITY_2_6</computeroutput> to 0 can be useful to find uses of deprecated features in your program that should eventually be removed. </para>
@@ -63,7 +61,7 @@ A program requiring one of these macros to be 1 will become incompatible with so
 <sect1 id="overview_backwardcompat_1overview_backwardcompat_libbincompat">
 <title>Library Binary Compatibility</title>
 <para>For some platforms, releases from a stable branch are not only source level compatible but can also be binary compatible.</para>
-<para>Binary compatibility makes it possible to get the maximum benefit from using shared libraries, also known as dynamic link libraries (DLLs) on Windows or dynamic shared libraries on macOS.</para>
+<para>Binary compatibility makes it possible to get the maximum benefit from using shared libraries, also known as dynamic link libraries (DLLs) on Windows or dynamic shared libraries on OS X.</para>
 <para>For example, suppose several applications are installed on a system requiring wxWidgets 2.6.0, 2.6.1 and 2.6.2. Since 2.6.2 is backward compatible with the earlier versions, it should be enough to install just wxWidgets 2.6.2 shared libraries, and all the applications should be able to use them. If binary compatibility is not supported, then all the required versions 2.6.0, 2.6.1 and 2.6.2 must be installed side by side.</para>
 <para>Achieving this, without the user being required to have the source code and recompile everything, places many extra constraints on the changes that can be made within the stable branch. So it is not supported for all platforms, and not for all versions of wxWidgets. To date it has mainly been supported by wxGTK for UNIX-like platforms.</para>
 <para>Another practical consideration is that for binary compatibility to work, all the applications and libraries must have been compiled with compilers that are capable of producing compatible code; that is, they must use the same ABI (Application Binary Interface). Unfortunately most different C++ compilers do not produce code compatible with each other, and often even different versions of the same compiler are not compatible.</para>
@@ -77,6 +75,5 @@ A program requiring one of these macros to be 1 will become incompatible with so
 <para>Uses of <computeroutput>wxABI_VERSION</computeroutput> are stripped out of the wxWidgets sources when each new development branch is created. Therefore it is only useful to help achieve compatibility with earlier versions with the same major and even minor version numbers. It won&apos;t, for example, help you write code compatible with 2.6.x using wxWidgets 2.8.x. </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/backwardcompatibility.h"/>
   </compounddef>
 </doxygen>

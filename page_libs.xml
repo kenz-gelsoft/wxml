@@ -1,9 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="page_libs" kind="page">
     <compoundname>page_libs</compoundname>
     <title>Library List</title>
     <tableofcontents>
+      <tocsect>
+        <name>wxAdvanced</name>
+        <reference>page_libs_1page_libs_wxadv</reference>
+    </tocsect>
       <tocsect>
         <name>wxAui</name>
         <reference>page_libs_1page_libs_wxaui</reference>
@@ -66,11 +70,9 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>wxWidgets can be built either as a single large library (this is called a <emphasis>monolithic build</emphasis>) or as several smaller libraries (<emphasis>multilib build</emphasis>). </para>
     </briefdescription>
     <detaileddescription>
-<para>wxWidgets can be built either as a single large library (this is called a <emphasis>monolithic build</emphasis>) or as several smaller libraries (<emphasis>multilib build</emphasis>).</para>
-<para>Multilib build is the default.</para>
+<para>wxWidgets can be built either as a single large library (this is called a <emphasis>monolithic build</emphasis>) or as several smaller libraries (<emphasis>multilib build</emphasis>). Multilib build is the default.</para>
 <para>wxWidgets library is divided into libraries briefly described below. This diagram shows the dependencies between them:</para>
 <para><dot>
 digraph Dependencies
@@ -83,6 +85,7 @@ digraph Dependencies
     wxNet      [fillcolor = deepskyblue, URL = &quot;\ref page_libs_wxnet&quot;];
     wxXML      [fillcolor = deepskyblue, URL = &quot;\ref page_libs_wxxml&quot;];
 
+    wxAdvanced [fillcolor = green, URL = &quot;\ref page_libs_wxadv&quot;];
     wxAUI      [fillcolor = green, URL = &quot;\ref page_libs_wxaui&quot;];
     wxGL       [fillcolor = green, URL = &quot;\ref page_libs_wxgl&quot;];
     wxHTML     [fillcolor = green, URL = &quot;\ref page_libs_wxhtml&quot;];
@@ -99,28 +102,55 @@ digraph Dependencies
     wxNet -&gt; wxBase;
     wxXML -&gt; wxBase;
 
-    wxAUI -&gt; wxCore; wxAUI -&gt; wxHTML;
+    wxAdvanced -&gt; wxCore;
+    wxAUI -&gt; wxAdvanced; wxAUI -&gt; wxHTML;
     wxGL -&gt; wxCore;
     wxHTML -&gt; wxCore;
     wxMedia -&gt; wxCore;
-    wxPropertyGrid -&gt; wxCore;
+    wxPropertyGrid -&gt; wxAdvanced;
     wxQA -&gt; wxCore; wxQA -&gt; wxXML;
     wxRibbon -&gt; wxCore;
-    wxRichText -&gt; wxCore; wxRichText -&gt; wxHTML; wxRichText -&gt; wxXML;
+    wxRichText -&gt; wxAdvanced; wxRichText -&gt; wxHTML; wxRichText -&gt; wxXML;
     wxSTC -&gt; wxCore;
-    wxXRC -&gt; wxCore; wxXRC -&gt; wxHTML; wxXRC -&gt; wxXML;
+    wxXRC -&gt; wxAdvanced; wxXRC -&gt; wxHTML; wxXRC -&gt; wxXML;
     wxWebView -&gt; wxCore;
 }
 </dot>
 </para>
 <para>Please note that arrows indicate the &quot;depends from&quot; relation and that all blue libraries depend on the <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> library (i.e. they are non-GUI libraries), and all green libraries depend on the <ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> library (i.e. they are GUI libraries).</para>
-<para><simplesect kind="note"><para>Until wxWidgets 3.1.2 some core GUI classes were in a separate wxAdvanced library, but this library was merged into wxCore and, while it&apos;s still preserved as an empty library for compatibility, should be never used any longer and will disappear completely in the future.</para>
-</simplesect>
-</para>
+<sect1 id="page_libs_1page_libs_wxadv">
+<title>wxAdvanced</title>
+<para>Advanced or rarely used GUI classes:</para>
+<para><itemizedlist>
+<listitem><para><ref refid="classwx_calendar_ctrl" kindref="compound">wxCalendarCtrl</ref> </para>
+</listitem>
+<listitem><para><ref refid="classwx_grid" kindref="compound">wxGrid</ref> classes </para>
+</listitem>
+<listitem><para><ref refid="classwx_joystick" kindref="compound">wxJoystick</ref> </para>
+</listitem>
+<listitem><para><ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref> </para>
+</listitem>
+<listitem><para><ref refid="classwx_splash_screen" kindref="compound">wxSplashScreen</ref> </para>
+</listitem>
+<listitem><para><ref refid="classwx_task_bar_icon" kindref="compound">wxTaskBarIcon</ref> </para>
+</listitem>
+<listitem><para><ref refid="classwx_sound" kindref="compound">wxSound</ref> </para>
+</listitem>
+<listitem><para><ref refid="classwx_wizard" kindref="compound">wxWizard</ref> </para>
+</listitem>
+<listitem><para><ref refid="classwx_sash_layout_window" kindref="compound">wxSashLayoutWindow</ref> </para>
+</listitem>
+<listitem><para><ref refid="classwx_sash_window" kindref="compound">wxSashWindow</ref> </para>
+</listitem>
+<listitem><para>...others</para>
+</listitem>
+</itemizedlist>
+Requires <ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> and <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>.</para>
+</sect1>
 <sect1 id="page_libs_1page_libs_wxaui">
 <title>wxAui</title>
 <para>This contains the Advanced User Interface docking library.</para>
-<para>Requires <ref refid="page_libs_1page_libs_wxhtml" kindref="member">wxHTML</ref>, <ref refid="page_libs_1page_libs_wxxml" kindref="member">wxXML</ref>, <ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref>, <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>.</para>
+<para>Requires <ref refid="page_libs_1page_libs_wxadv" kindref="member">wxAdvanced</ref>, <ref refid="page_libs_1page_libs_wxhtml" kindref="member">wxHTML</ref>, <ref refid="page_libs_1page_libs_wxxml" kindref="member">wxXML</ref>, <ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref>, <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>.</para>
 </sect1>
 <sect1 id="page_libs_1page_libs_wxbase">
 <title>wxBase</title>
@@ -150,8 +180,6 @@ digraph Dependencies
 <title>wxNet</title>
 <para>Classes for network access:</para>
 <para><itemizedlist>
-<listitem><para><ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref> </para>
-</listitem>
 <listitem><para>wxSocket classes (<ref refid="classwx_socket_client" kindref="compound">wxSocketClient</ref>, <ref refid="classwx_socket_server" kindref="compound">wxSocketServer</ref> and related classes) </para>
 </listitem>
 <listitem><para><ref refid="classwx_socket_output_stream" kindref="compound">wxSocketOutputStream</ref> and <ref refid="classwx_socket_input_stream" kindref="compound">wxSocketInputStream</ref> </para>
@@ -168,7 +196,7 @@ Requires <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>.
 <sect1 id="page_libs_1page_libs_wxpropgrid">
 <title>wxPropertyGrid</title>
 <para>This contains the <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> control.</para>
-<para>Requires <ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref>, <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>.</para>
+<para>Requires <ref refid="page_libs_1page_libs_wxadv" kindref="member">wxAdvanced</ref>, <ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref>, <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>.</para>
 </sect1>
 <sect1 id="page_libs_1page_libs_wxqa">
 <title>wxQA</title>
@@ -183,7 +211,7 @@ Requires <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>.
 <sect1 id="page_libs_1page_libs_wxrichtext">
 <title>wxRichText</title>
 <para>This contains generic rich text control functionality.</para>
-<para>Requires <ref refid="page_libs_1page_libs_wxhtml" kindref="member">wxHTML</ref>, <ref refid="page_libs_1page_libs_wxxml" kindref="member">wxXML</ref>, <ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref>, <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>.</para>
+<para>Requires <ref refid="page_libs_1page_libs_wxadv" kindref="member">wxAdvanced</ref>, <ref refid="page_libs_1page_libs_wxhtml" kindref="member">wxHTML</ref>, <ref refid="page_libs_1page_libs_wxxml" kindref="member">wxXML</ref>, <ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref>, <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>.</para>
 </sect1>
 <sect1 id="page_libs_1page_libs_wxstc">
 <title>wxSTC</title>
@@ -203,9 +231,8 @@ Requires <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>.
 <sect1 id="page_libs_1page_libs_wxxrc">
 <title>wxXRC</title>
 <para>This library contains <ref refid="classwx_xml_resource" kindref="compound">wxXmlResource</ref> class that provides access to XML resource files in XRC format.</para>
-<para>Requires <ref refid="page_libs_1page_libs_wxhtml" kindref="member">wxHTML</ref>, <ref refid="page_libs_1page_libs_wxxml" kindref="member">wxXML</ref>, <ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref>, <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>. </para>
+<para>Requires <ref refid="page_libs_1page_libs_wxadv" kindref="member">wxAdvanced</ref>, <ref refid="page_libs_1page_libs_wxhtml" kindref="member">wxHTML</ref>, <ref refid="page_libs_1page_libs_wxxml" kindref="member">wxXML</ref>, <ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref>, <ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref>. </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/mainpages/libs.h"/>
   </compounddef>
 </doxygen>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_palette" kind="class" language="C++" prot="public">
     <compoundname>wxPalette</compoundname>
     <basecompoundref refid="classwx_g_d_i_object" prot="public" virt="non-virtual">wxGDIObject</basecompoundref>
@@ -105,7 +105,8 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<bold>wxPerl Note:</bold> In wxPerl this method takes as parameters 3 array references (they must be of the same length).  <simplesect kind="see"><para><ref refid="classwx_palette_1aeb040e229b732bc46dac0dc204f005f4" kindref="member">Create()</ref> </para>
+<bold>wxPerl Note:</bold> In wxPerl this method takes as parameters 3 array references (they must be of the same length).</para>
+<para><simplesect kind="see"><para><ref refid="classwx_palette_1aeb040e229b732bc46dac0dc204f005f4" kindref="member">Create()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -328,7 +329,8 @@
 </parameterlist>
 <simplesect kind="return"><para>true if the operation was successful.</para>
 </simplesect>
-<bold>wxPerl Note:</bold> In wxPerl this method takes only the <emphasis>pixel</emphasis> parameter and returns a 3-element list (or the empty list upon failure).  <simplesect kind="see"><para><ref refid="classwx_palette_1aded666172c65ee06f45c5a2c393dd1a9" kindref="member">GetPixel()</ref> </para>
+<bold>wxPerl Note:</bold> In wxPerl this method takes only the <emphasis>pixel</emphasis> parameter and returns a 3-element list (or the empty list upon failure).</para>
+<para><simplesect kind="see"><para><ref refid="classwx_palette_1aded666172c65ee06f45c5a2c393dd1a9" kindref="member">GetPixel()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -350,9 +352,9 @@
         </inbodydescription>
         <location file="interface/wx/palette.h" line="150" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_palette_1afcaaede41a5806d4df9deb72bc4f8842" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_palette_1a69ff271555dbb2ad5ed0950840137c62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_palette" kindref="compound">wxPalette</ref> &amp;</type>
-        <definition>wxPalette &amp; wxPalette::operator=</definition>
+        <definition>wxPalette&amp; wxPalette::operator=</definition>
         <argsstring>(const wxPalette &amp;palette)</argsstring>
         <name>operator=</name>
         <param>
@@ -370,10 +372,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A palette is a table that maps pixel values to RGB colours. </para>
     </briefdescription>
     <detaileddescription>
-<para>It allows the colours of a low-depth bitmap, for example, to be mapped to the available colours in a display. The notion of palettes is becoming more and more obsolete nowadays and only the MSW port is still using a native palette. All other ports use generic code which is basically just an array of colours.</para>
+<para>A palette is a table that maps pixel values to RGB colours. It allows the colours of a low-depth bitmap, for example, to be mapped to the available colours in a display. The notion of palettes is becoming more and more obsolete nowadays and only the MSW port is still using a native palette. All other ports use generic code which is basically just an array of colours.</para>
 <para>It is likely that in the future the only use for palettes within wxWidgets will be for representing colour indices from images (such as GIF or PNG). The image handlers for these formats have been modified to create a palette if there is such information in the original image file (usually 256 or less colour images). See <ref refid="classwx_image" kindref="compound">wxImage</ref> for more information.</para>
 <para><heading level="2"></heading>
 </para>
@@ -384,28 +385,28 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxGDIObject</label>
-        <link refid="classwx_g_d_i_object"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-      </node>
       <node id="1">
         <label>wxPalette</label>
         <link refid="classwx_palette"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
+      <node id="3">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
       <node id="2">
         <label>wxGDIObject</label>
         <link refid="classwx_g_d_i_object"/>
         <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>wxPalette</label>
+        <link refid="classwx_palette"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -415,35 +416,35 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="2">
+        <label>wxGDIObject</label>
+        <link refid="classwx_g_d_i_object"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
-      <node id="1">
-        <label>wxPalette</label>
-        <link refid="classwx_palette"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
     </collaborationgraph>
-    <location file="interface/wx/palette.h" line="32" column="1" bodyfile="interface/wx/palette.h" bodystart="33" bodyend="156"/>
+    <location file="interface/wx/palette.h" line="33" column="1" bodyfile="interface/wx/palette.h" bodystart="32" bodyend="156"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxPalette</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxPalette</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxPalette</scope><name>CloneRefData</name></member>
       <member refid="classwx_palette_1aeb040e229b732bc46dac0dc204f005f4" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>Create</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxPalette</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxPalette</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxPalette</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxPalette</scope><name>GetClassInfo</name></member>
       <member refid="classwx_palette_1ae0b3f8ee520fcaffcbe4a35b4cf56c88" prot="public" virt="virtual"><scope>wxPalette</scope><name>GetColoursCount</name></member>
       <member refid="classwx_palette_1aded666172c65ee06f45c5a2c393dd1a9" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>GetPixel</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>GetRefData</name></member>
       <member refid="classwx_palette_1aaf1aee2c29a18bc3c2087cab76c09418" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>GetRGB</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>IsKindOf</name></member>
       <member refid="classwx_palette_1a82713e81e9006f455513895e12546429" prot="public" virt="virtual"><scope>wxPalette</scope><name>IsOk</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxPalette</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>operator new</name></member>
-      <member refid="classwx_palette_1afcaaede41a5806d4df9deb72bc4f8842" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>operator=</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>operator new</name></member>
+      <member refid="classwx_palette_1a69ff271555dbb2ad5ed0950840137c62" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>operator=</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>Ref</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>SetRefData</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxPalette</scope><name>UnRef</name></member>

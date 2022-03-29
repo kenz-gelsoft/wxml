@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="init_8h" kind="file" language="C++">
     <compoundname>init.h</compoundname>
     <innerclass refid="classwx_initializer" prot="public">wxInitializer</innerclass>
@@ -59,15 +59,15 @@
         </briefdescription>
         <detaileddescription>
 <para>This is an additional overload of <ref refid="init_8h_1ac81f7fea72a17cc744d8c8785864c78a" kindref="member">wxEntryStart()</ref> provided under MSW only. It is meant to be called with the parameters passed to WinMain().</para>
-<para><simplesect kind="note"><para>The type of <emphasis>pCmdLine</emphasis> is <computeroutput>char</computeroutput> *, even in Unicode build.</para>
+<para><simplesect kind="note"><para>Under Windows CE platform, and only there, the type of <emphasis>pCmdLine</emphasis> is <computeroutput>wchar_t</computeroutput> *, otherwise it is <computeroutput>char</computeroutput> *, even in Unicode build.</para>
 </simplesect>
-Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor> </para>
+Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port. <onlyfor>wxmsw</onlyfor> </para>
 <para>Include file:<linebreak/>
  <verbatim>#include &lt;wx/init.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/init.h" line="75" column="6" declfile="interface/wx/init.h" declline="75" declcolumn="6"/>
+        <location file="interface/wx/init.h" line="76" column="6" declfile="interface/wx/init.h" declline="76" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="init_8h_1aca1c6e45c8241bb2b16bee8f09401bc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -83,7 +83,7 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/init.h" line="85" column="6" declfile="interface/wx/init.h" declline="85" declcolumn="6"/>
+        <location file="interface/wx/init.h" line="86" column="6" declfile="interface/wx/init.h" declline="86" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="init_8h_1a5f7f9359731d567d05c472caabcda979" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -110,7 +110,7 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/init.h" line="97" column="6" declfile="interface/wx/init.h" declline="97" declcolumn="6"/>
+        <location file="interface/wx/init.h" line="98" column="6" declfile="interface/wx/init.h" declline="98" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="init_8h_1a6aa1674945da924183f65de703aeafa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -127,7 +127,28 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/init.h" line="107" column="6" declfile="interface/wx/init.h" declline="107" declcolumn="6"/>
+        <location file="interface/wx/init.h" line="108" column="6" declfile="interface/wx/init.h" declline="108" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="init_8h_1a6b923aa6dc04b811e0112a55b291e569" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxMSWDisableSettingHighDPIAware</definition>
+        <argsstring>()</argsstring>
+        <name>wxMSWDisableSettingHighDPIAware</name>
+        <briefdescription>
+<para>Prevents wxWidgets from setting HighDPI awareness mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>wxEntry calls SetDPIProcessAware() early during initialization on Windows. To prevent this (e.g. because wx is embedded in native code and disabling DPI awareness in the manifest is not an option), call this function before* <ref refid="interface_2wx_2app_8h_1a7d3eefb35631a5d8dfce97eb17340b21" kindref="member">wxEntry()</ref> is called.</para>
+<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port. <onlyfor>wxmsw</onlyfor> </para>
+<para>Include file:<linebreak/>
+ <verbatim>#include &lt;wx/init.h&gt; </verbatim></para>
+<para><simplesect kind="since"><para>3.0.3, but only available in 3.0.x, not 3.1+ which doesn&apos;t make the SetDPIProcessAware() call anymore. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/init.h" line="125" column="6" declfile="interface/wx/init.h" declline="125" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_file_translations_loader" kind="class" language="C++" prot="public">
     <compoundname>wxFileTranslationsLoader</compoundname>
     <basecompoundref refid="classwx_translations_loader" prot="public" virt="non-virtual">wxTranslationsLoader</basecompoundref>
@@ -18,11 +18,11 @@
 <para>Add a prefix to the catalog lookup path: the message catalog files will be looked up under prefix/lang/LC_MESSAGES and prefix/lang directories (in this order). </para>
         </briefdescription>
         <detaileddescription>
-<para>This only applies to subsequent invocations of <ref refid="classwx_translations_1a90f932c8b64903768c5925bfc55d9783" kindref="member">wxTranslations::AddCatalog()</ref>. </para>
+<para>This only applies to subsequent invocations of <ref refid="classwx_translations_1a3074f9d91c92bd0ade9e6aea4affc652" kindref="member">wxTranslations::AddCatalog()</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/translation.h" line="353" column="17"/>
+        <location file="interface/wx/translation.h" line="362" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -30,7 +30,7 @@
     </briefdescription>
     <detaileddescription>
 <para>This finds catalogs in the filesystem, using the standard Unix layout. This is the default unless you change the loader with <ref refid="classwx_translations_1a45c81bf49c3645eebb2032a18fe37056" kindref="member">wxTranslations::SetLoader()</ref>.</para>
-<para>Catalogs are searched for in standard places (system locales directory, <computeroutput>LC_PATH</computeroutput> on Unix systems, Resources subdirectory of the application bundle on macOS, executable&apos;s directory on Windows), but you may also prepend additional directories to the search path with <ref refid="classwx_file_translations_loader_1aef1c18a8e931eaff259e0d1b84e4bd94" kindref="member">AddCatalogLookupPathPrefix()</ref>.</para>
+<para>Catalogs are searched for in standard places (system locales directory, <computeroutput>LC_PATH</computeroutput> on Unix systems, Resources subdirectory of the application bundle on OS X, executable&apos;s directory on Windows), but you may also prepend additional directories to the search path with <ref refid="classwx_file_translations_loader_1aef1c18a8e931eaff259e0d1b84e4bd94" kindref="member">AddCatalogLookupPathPrefix()</ref>.</para>
 <para><simplesect kind="since"><para>2.9.1 </para>
 </simplesect>
 </para>
@@ -59,11 +59,11 @@
         <link refid="classwx_translations_loader"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/translation.h" line="342" column="1" bodyfile="interface/wx/translation.h" bodystart="343" bodyend="354"/>
+    <location file="interface/wx/translation.h" line="352" column="1" bodyfile="interface/wx/translation.h" bodystart="351" bodyend="363"/>
     <listofallmembers>
       <member refid="classwx_file_translations_loader_1aef1c18a8e931eaff259e0d1b84e4bd94" prot="public" virt="non-virtual"><scope>wxFileTranslationsLoader</scope><name>AddCatalogLookupPathPrefix</name></member>
       <member refid="classwx_translations_loader_1aa02efbe41b86a4b3b8bc551a323b42fb" prot="public" virt="pure-virtual"><scope>wxFileTranslationsLoader</scope><name>GetAvailableTranslations</name></member>
-      <member refid="classwx_translations_loader_1a6996b403b935297c2adbd92212671a28" prot="public" virt="pure-virtual"><scope>wxFileTranslationsLoader</scope><name>LoadCatalog</name></member>
+      <member refid="classwx_translations_loader_1a7a7a55b049de7ecd7db63a613475a8ee" prot="public" virt="pure-virtual"><scope>wxFileTranslationsLoader</scope><name>LoadCatalog</name></member>
       <member refid="classwx_translations_loader_1ab5d87579eb5b0246a3290afdc288ef98" prot="public" virt="non-virtual"><scope>wxFileTranslationsLoader</scope><name>wxTranslationsLoader</name></member>
     </listofallmembers>
   </compounddef>

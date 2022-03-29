@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="persist_8h" kind="file" language="C++">
     <compoundname>persist.h</compoundname>
     <innerclass refid="classwx_persistence_manager" prot="public">wxPersistenceManager</innerclass>
     <innerclass refid="classwx_persistent_object" prot="public">wxPersistentObject</innerclass>
       <sectiondef kind="func">
-      <memberdef kind="function" id="persist_8h_1ad80ef91e22893e60106a0acd55c6aa9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="persist_8h_1a6dec2a72ae0c253d4637dcc73371c0c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
           </param>
         </templateparamlist>
         <type><ref refid="classwx_persistent_object" kindref="compound">wxPersistentObject</ref> *</type>
-        <definition>wxPersistentObject * wxCreatePersistentObject</definition>
+        <definition>wxPersistentObject* wxCreatePersistentObject</definition>
         <argsstring>(T *obj)</argsstring>
         <name>wxCreatePersistentObject</name>
         <param>
@@ -23,7 +23,7 @@
 <para>Function used to create the correct persistent adapter for the given type of objects. </para>
         </briefdescription>
         <detaileddescription>
-<para>To be precise, there is no such template function definition but there are overloads of <ref refid="persist_8h_1ad80ef91e22893e60106a0acd55c6aa9f" kindref="member">wxCreatePersistentObject()</ref> taking different object types for all wxWidgets classes supporting persistence. And you may also define your own overloads to integrate your custom classes with wxWidgets persistence framework.</para>
+<para>To be precise, there is no such template function definition but there are overloads of <ref refid="persist_8h_1a6dec2a72ae0c253d4637dcc73371c0c3" kindref="member">wxCreatePersistentObject()</ref> taking different object types for all wxWidgets classes supporting persistence. And you may also define your own overloads to integrate your custom classes with wxWidgets persistence framework.</para>
 <para><simplesect kind="see"><para><ref refid="overview_persistence_1persistence_defining" kindref="member">Defining Custom Persistent Windows</ref></para>
 </simplesect>
 Include file:<linebreak/>
@@ -31,7 +31,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/persist.h" line="329" column="20" declfile="interface/wx/persist.h" declline="329" declcolumn="20"/>
+        <location file="interface/wx/persist.h" line="325" column="20" declfile="interface/wx/persist.h" declline="325" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="persist_8h_1a1f903bc09a3ee6d8e6a54657a985573c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -56,7 +56,8 @@ Include file:<linebreak/>
 <para>A shorter synonym for <ref refid="classwx_persistence_manager_1a2d90794f76e46b357bcffc01be657f94" kindref="member">wxPersistenceManager::RegisterAndRestore()</ref>. </para>
         </briefdescription>
         <detaileddescription>
-<para>This function simply calls <ref refid="classwx_persistence_manager_1a2d90794f76e46b357bcffc01be657f94" kindref="member">wxPersistenceManager::RegisterAndRestore()</ref> but using it results in slightly shorter code as it calls <ref refid="classwx_persistence_manager_1a4a6a946bdd6dc862fb66db774a4b9de7" kindref="member">wxPersistenceManager::Get()</ref> internally. As an additional convenience, this function can also set the window name.</para>
+<para>This function simply calls <ref refid="classwx_persistence_manager_1a2d90794f76e46b357bcffc01be657f94" kindref="member">wxPersistenceManager::RegisterAndRestore()</ref> but using it results in slightly shorter code as it calls <ref refid="classwx_persistence_manager_1a1d594b5905ef1c7a11ccadf348325f5b" kindref="member">wxPersistenceManager::Get()</ref> internally. As an additional convenience, this function can also set the window name.</para>
+<para>For the implementation reasons, this function <emphasis>must</emphasis> be used instead of the template method when using Microsoft Visual C++ 6 compiler.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>obj</parametername>
@@ -83,7 +84,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/persist.h" line="352" column="6" declfile="interface/wx/persist.h" declline="352" declcolumn="6"/>
+        <location file="interface/wx/persist.h" line="351" column="6" declfile="interface/wx/persist.h" declline="351" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

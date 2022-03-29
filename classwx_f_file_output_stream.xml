@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_f_file_output_stream" kind="class" language="C++" prot="public">
     <compoundname>wxFFileOutputStream</compoundname>
     <basecompoundref refid="classwx_output_stream" prot="public" virt="non-virtual">wxOutputStream</basecompoundref>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/wfstream.h" line="126" column="5"/>
+        <location file="interface/wx/wfstream.h" line="78" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_f_file_output_stream_1aa8e3e1d6c03d45345a0e3de9e3ebe61d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/wfstream.h" line="132" column="5"/>
+        <location file="interface/wx/wfstream.h" line="84" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_f_file_output_stream_1a1bfd2dafc38198aa59ce17fc09844c0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/wfstream.h" line="137" column="5"/>
+        <location file="interface/wx/wfstream.h" line="89" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_f_file_output_stream_1a756f796425f0f69a37c4b00977d2721f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/wfstream.h" line="142" column="13"/>
+        <location file="interface/wx/wfstream.h" line="94" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_f_file_output_stream_1a731c6cea5f87dccbc775c9701a659727" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -96,11 +96,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/wfstream.h" line="147" column="10"/>
+        <location file="interface/wx/wfstream.h" line="99" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_f_file_output_stream_1a8b5076075afc0538ea4aea3232d5a170" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_f_file_output_stream_1ae8293c2cb63ac81049c5991107627289" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_f_file" kindref="compound">wxFFile</ref> *</type>
-        <definition>wxFFile * wxFFileOutputStream::GetFile</definition>
+        <definition>wxFFile* wxFFileOutputStream::GetFile</definition>
         <argsstring>() const</argsstring>
         <name>GetFile</name>
         <briefdescription>
@@ -113,14 +113,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/wfstream.h" line="153" column="13"/>
+        <location file="interface/wx/wfstream.h" line="105" column="13"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class represents data written to a file. </para>
     </briefdescription>
     <detaileddescription>
-<para>There are actually two such groups of classes: this one is based on <ref refid="classwx_f_file" kindref="compound">wxFFile</ref> whereas <ref refid="classwx_file_output_stream" kindref="compound">wxFileOutputStream</ref> is based in the <ref refid="classwx_file" kindref="compound">wxFile</ref> class.</para>
+<para>This class represents data written to a file. There are actually two such groups of classes: this one is based on <ref refid="classwx_f_file" kindref="compound">wxFFile</ref> whereas <ref refid="classwx_file_output_stream" kindref="compound">wxFileOutputStream</ref> is based in the <ref refid="classwx_file" kindref="compound">wxFile</ref> class.</para>
 <para>Note that <ref refid="classwx_output_stream_1ac898dd36e44e5f4785a6658f470e9752" kindref="member">wxOutputStream::SeekO()</ref> can seek beyond the end of the stream (file) and will thus not return <ref refid="filefn_8h_1ab184c7199d93541d22ae42e515cbbcb7" kindref="member">wxInvalidOffset</ref> for that.</para>
 <para><heading level="2"></heading>
 </para>
@@ -136,11 +135,9 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>wxFFileStream</label>
-        <link refid="classwx_f_file_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
+      <node id="3">
+        <label>wxStreamBase</label>
+        <link refid="classwx_stream_base"/>
       </node>
       <node id="2">
         <label>wxOutputStream</label>
@@ -148,9 +145,11 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>wxStreamBase</label>
-        <link refid="classwx_stream_base"/>
+      <node id="4">
+        <label>wxFFileStream</label>
+        <link refid="classwx_f_file_stream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -160,21 +159,21 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>wxStreamBase</label>
+        <link refid="classwx_stream_base"/>
+      </node>
       <node id="2">
         <label>wxOutputStream</label>
         <link refid="classwx_output_stream"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>wxStreamBase</label>
-        <link refid="classwx_stream_base"/>
-      </node>
     </collaborationgraph>
-    <location file="interface/wx/wfstream.h" line="117" column="1" bodyfile="interface/wx/wfstream.h" bodystart="118" bodyend="154"/>
+    <location file="interface/wx/wfstream.h" line="70" column="1" bodyfile="interface/wx/wfstream.h" bodystart="69" bodyend="106"/>
     <listofallmembers>
       <member refid="classwx_output_stream_1a1c306ce99990d525921f8f6ae8432083" prot="public" virt="virtual"><scope>wxFFileOutputStream</scope><name>Close</name></member>
-      <member refid="classwx_f_file_output_stream_1a8b5076075afc0538ea4aea3232d5a170" prot="public" virt="non-virtual"><scope>wxFFileOutputStream</scope><name>GetFile</name></member>
+      <member refid="classwx_f_file_output_stream_1ae8293c2cb63ac81049c5991107627289" prot="public" virt="non-virtual"><scope>wxFFileOutputStream</scope><name>GetFile</name></member>
       <member refid="classwx_stream_base_1a33440c8ea3f8df382adecd7d188a1662" prot="public" virt="non-virtual"><scope>wxFFileOutputStream</scope><name>GetLastError</name></member>
       <member refid="classwx_stream_base_1a052d67c85f63873fabb45ecd108ea615" prot="public" virt="virtual"><scope>wxFFileOutputStream</scope><name>GetLength</name></member>
       <member refid="classwx_stream_base_1aae8094702c3aee35c38e3e06e052479c" prot="public" virt="virtual"><scope>wxFFileOutputStream</scope><name>GetSize</name></member>
@@ -189,8 +188,8 @@
       <member refid="classwx_stream_base_1a52353ac42f72538b2022a84f416e5fe2" prot="public" virt="non-virtual"><scope>wxFFileOutputStream</scope><name>Reset</name></member>
       <member refid="classwx_output_stream_1ac898dd36e44e5f4785a6658f470e9752" prot="public" virt="virtual"><scope>wxFFileOutputStream</scope><name>SeekO</name></member>
       <member refid="classwx_output_stream_1a468208f94273630dcbdb0c692645e42c" prot="public" virt="virtual"><scope>wxFFileOutputStream</scope><name>TellO</name></member>
-      <member refid="classwx_output_stream_1afc577008c335756968530cdae4b05b34" prot="public" virt="virtual"><scope>wxFFileOutputStream</scope><name>Write</name></member>
-      <member refid="classwx_output_stream_1a7c7a356201ad354949a5a9cf3bf97d30" prot="public" virt="non-virtual"><scope>wxFFileOutputStream</scope><name>Write</name></member>
+      <member refid="classwx_output_stream_1a22154f02408431ffe8b1590407c3b011" prot="public" virt="virtual"><scope>wxFFileOutputStream</scope><name>Write</name></member>
+      <member refid="classwx_output_stream_1aacced095d3e9b19b4f6264d94c85cf8f" prot="public" virt="non-virtual"><scope>wxFFileOutputStream</scope><name>Write</name></member>
       <member refid="classwx_output_stream_1aa82aca41108fba5cebbba951c84431f0" prot="public" virt="non-virtual"><scope>wxFFileOutputStream</scope><name>WriteAll</name></member>
       <member refid="classwx_f_file_output_stream_1a3613b755db51381d19f1a795c2edf1d5" prot="public" virt="non-virtual"><scope>wxFFileOutputStream</scope><name>wxFFileOutputStream</name></member>
       <member refid="classwx_f_file_output_stream_1aa8e3e1d6c03d45345a0e3de9e3ebe61d" prot="public" virt="non-virtual"><scope>wxFFileOutputStream</scope><name>wxFFileOutputStream</name></member>

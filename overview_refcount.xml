@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_refcount" kind="page">
     <compoundname>overview_refcount</compoundname>
     <title>Reference Counting</title>
@@ -22,11 +22,9 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>Many wxWidgets objects use a technique known as <emphasis>reference counting</emphasis>, also known as <emphasis>copy on write</emphasis> (COW). </para>
     </briefdescription>
     <detaileddescription>
-<para>Many wxWidgets objects use a technique known as <emphasis>reference counting</emphasis>, also known as <emphasis>copy on write</emphasis> (COW).</para>
-<para>This means that when an object is assigned to another, no copying really takes place. Only the reference count on the shared object data is incremented and both objects share the same data (a very fast operation).</para>
+<para>Many wxWidgets objects use a technique known as <emphasis>reference counting</emphasis>, also known as <emphasis>copy on write</emphasis> (COW). This means that when an object is assigned to another, no copying really takes place. Only the reference count on the shared object data is incremented and both objects share the same data (a very fast operation).</para>
 <para>But as soon as one of the two (or more) objects is modified, the data has to be copied because the changes to one of the objects shouldn&apos;t be seen in the others. As data copying only happens when the object is written to, this is known as COW.</para>
 <para>What is important to understand is that all this happens absolutely transparently to the class users and that whether an object is shared or not is not seen from the outside of the class - in any case, the result of any operation on it is the same.</para>
 <sect1 id="overview_refcount_1overview_refcount_equality">
@@ -92,9 +90,9 @@ Note that the list above reports the objects which are reference counted in all 
 <para>Reference counting can be implemented easily using <ref refid="classwx_object" kindref="compound">wxObject</ref> or using the intermediate <ref refid="classwx_ref_counter" kindref="compound">wxRefCounter</ref> class directly. Alternatively, you can also use the <ref refid="classwx_object_data_ptr_3_01_t_01_4" kindref="compound">wxObjectDataPtr&lt;T&gt;</ref> template.</para>
 <para>First, derive a new class from <ref refid="classwx_ref_counter" kindref="compound">wxRefCounter</ref> (or <ref refid="classwx_object_ref_data" kindref="compound">wxObjectRefData</ref> when using a <ref refid="classwx_object" kindref="compound">wxObject</ref> derived class) and put the memory-consuming data in it.</para>
 <para>Then derive a new class from <ref refid="classwx_object" kindref="compound">wxObject</ref> and implement there the public interface which will be seen by the user of your class. You&apos;ll probably want to add a function to your class which does the cast from <ref refid="classwx_object_ref_data" kindref="compound">wxObjectRefData</ref> to your class-specific shared data. For example:</para>
-<para><programlisting><codeline><highlight class="normal">MyClassRefData*<sp/>GetData()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">MyClassRefData*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m_refData);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">MyClassRefData*<sp/>GetData()<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>wx_static_cast(MyClassRefData*,<sp/>m_refData);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>In fact, any time you need to read the data from your wxObject-derived class, you will need to call this function.</para>
@@ -103,6 +101,5 @@ Note that the list above reports the objects which are reference counted in all 
 </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/refcount.h"/>
   </compounddef>
 </doxygen>

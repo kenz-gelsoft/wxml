@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_activate_event" kind="class" language="C++" prot="public">
     <compoundname>wxActivateEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3091" column="5" bodyfile="interface/wx/event.h" bodystart="3092" bodyend="3097"/>
+        <location file="interface/wx/event.h" line="2987" column="1" bodyfile="interface/wx/event.h" bodystart="2986" bodyend="2992"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3102" column="5"/>
+        <location file="interface/wx/event.h" line="2997" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_activate_event_1a27c26e49ca21fca595e075343425b209" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3108" column="10"/>
+        <location file="interface/wx/event.h" line="3003" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_activate_event_1a05cc1552d0cf3bd90992a7738d100fcc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_activate_event_1ab612aed0b0c8e37279438fae68ee59f1" kindref="member">Reason</ref></type>
@@ -93,7 +93,7 @@
         <argsstring>() const</argsstring>
         <name>GetActivationReason</name>
         <briefdescription>
-<para>Allows checking if the window was activated by clicking it with the mouse or in some other way. </para>
+<para>Allows to check if the window was activated by clicking it with the mouse or in some other way. </para>
         </briefdescription>
         <detaileddescription>
 <para>This method is currently only implemented in wxMSW and returns <computeroutput>Reason_Mouse</computeroutput> there if the window was activated by a mouse click and <computeroutput>Reason_Unknown</computeroutput> if it was activated in any other way (e.g. from keyboard or programmatically).</para>
@@ -104,13 +104,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3123" column="12"/>
+        <location file="interface/wx/event.h" line="3018" column="12"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>An activate event is sent when a window or application is being activated or deactivated. </para>
     </briefdescription>
     <detaileddescription>
+<para>An activate event is sent when a window or application is being activated or deactivated.</para>
 <para><linebreak/>
 <heading level="2">Events using this class</heading>
 </para>
@@ -121,9 +121,7 @@
 <listitem><para>EVT_ACTIVATE_APP(func): Process a <computeroutput>wxEVT_ACTIVATE_APP</computeroutput> event. This event is received by the wxApp-derived instance only. </para>
 </listitem>
 <listitem><para>EVT_HIBERNATE(func): Process a hibernate event, supplying the member function. This event applies to <ref refid="classwx_app" kindref="compound">wxApp</ref> only, and only on Windows SmartPhone and PocketPC. It is generated when the system is low on memory; the application should free up as much memory as possible, and restore full working state when it receives a <computeroutput>wxEVT_ACTIVATE</computeroutput> or <computeroutput>wxEVT_ACTIVATE_APP</computeroutput> event. <linebreak/>
- <simplesect kind="note"><para>Until wxWidgets 3.1.0 activation events could be sent by wxMSW when the window was minimized. This reflected the native MSW behaviour but was often surprising and unexpected, so starting from 3.1.0 such events are not sent any more when the window is in the minimized state.</para>
-</simplesect>
-<heading level="2"></heading>
+ <heading level="2"></heading>
 </para>
 </listitem>
 </itemizedlist>
@@ -133,36 +131,24 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxActivateEvent</label>
-        <link refid="classwx_activate_event"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxEvent</label>
-        <link refid="classwx_event"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="1">
-        <label>wxActivateEvent</label>
-        <link refid="classwx_activate_event"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxEvent</label>
         <link refid="classwx_event"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="1">
+        <label>wxActivateEvent</label>
+        <link refid="classwx_activate_event"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -170,26 +156,38 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="2">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wxActivateEvent</label>
+        <link refid="classwx_activate_event"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="3081" column="1" bodyfile="interface/wx/event.h" bodystart="3082" bodyend="3124"/>
+    <location file="interface/wx/event.h" line="2977" column="1" bodyfile="interface/wx/event.h" bodystart="2976" bodyend="3019"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxActivateEvent</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxActivateEvent</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxActivateEvent</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxActivateEvent</scope><name>CreateRefData</name></member>
+      <member refid="classwx_event_1a26878097a702e8d0368da150125d4158" prot="public" virt="pure-virtual"><scope>wxActivateEvent</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxActivateEvent</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxActivateEvent</scope><name>CreateRefData</name></member>
       <member refid="classwx_activate_event_1a05cc1552d0cf3bd90992a7738d100fcc" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetActivationReason</name></member>
       <member refid="classwx_activate_event_1a27c26e49ca21fca595e075343425b209" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetActive</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxActivateEvent</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxActivateEvent</scope><name>GetClassInfo</name></member>
       <member refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131" prot="public" virt="virtual"><scope>wxActivateEvent</scope><name>GetEventCategory</name></member>
-      <member refid="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetEventObject</name></member>
+      <member refid="classwx_event_1a424a4ffaaaf95164d8952ef9ab2ef444" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetEventObject</name></member>
       <member refid="classwx_event_1a01c89719ef6241a6e612a313a259c1c2" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetEventType</name></member>
-      <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetEventUserData</name></member>
+      <member refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetEventUserData</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetId</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetRefData</name></member>
       <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetSkipped</name></member>
       <member refid="classwx_event_1a48662230971127737d2500cef7be549d" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>GetTimestamp</name></member>
       <member refid="classwx_event_1a31f6a4377d6d36964b8eae4e56ec43e0" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>IsCommandEvent</name></member>
@@ -198,7 +196,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" virt="non-virtual"><scope>wxActivateEvent</scope><name>m_propagationLevel</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxActivateEvent</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>operator new</name></member>
       <member refid="classwx_activate_event_1ab612aed0b0c8e37279438fae68ee59f1" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>Reason</name></member>
       <member refid="classwx_activate_event_1ab612aed0b0c8e37279438fae68ee59f1ac883a610e778359e41f645d5854aa91f" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>Reason_Mouse</name></member>
       <member refid="classwx_activate_event_1ab612aed0b0c8e37279438fae68ee59f1a1f9929ffd0adc6c804aa943afb2e211c" prot="public" virt="non-virtual"><scope>wxActivateEvent</scope><name>Reason_Unknown</name></member>

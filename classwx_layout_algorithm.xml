@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_layout_algorithm" kind="class" language="C++" prot="public">
     <compoundname>wxLayoutAlgorithm</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -107,10 +107,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref> implements layout of subwindows in MDI or SDI frames. </para>
     </briefdescription>
     <detaileddescription>
-<para>It sends a <ref refid="classwx_calculate_layout_event" kindref="compound">wxCalculateLayoutEvent</ref> event to children of the frame, asking them for information about their size. For MDI parent frames, the algorithm allocates the remaining space to the MDI client window (which contains the MDI child frames).</para>
+<para><ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref> implements layout of subwindows in MDI or SDI frames. It sends a <ref refid="classwx_calculate_layout_event" kindref="compound">wxCalculateLayoutEvent</ref> event to children of the frame, asking them for information about their size. For MDI parent frames, the algorithm allocates the remaining space to the MDI client window (which contains the MDI child frames).</para>
 <para>For SDI (normal) frames, a &apos;main&apos; window is specified as taking up the remaining space.</para>
 <para>Because the event system is used, this technique can be applied to any windows, which are not necessarily &apos;aware&apos; of the layout classes (no virtual functions in <ref refid="classwx_window" kindref="compound">wxWindow</ref> refer to <ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref> or its events). However, you may wish to use <ref refid="classwx_sash_layout_window" kindref="compound">wxSashLayoutWindow</ref> for your subwindows since this class provides handlers for the required events, and accessors to specify the desired size of the window. The sash behaviour in the base class can be used, optionally, to make the windows user-resizable.</para>
 <para><ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref> is typically used in IDE (integrated development environment) applications, where there are several resizable windows in addition to the MDI client window, or other primary editing window. Resizable windows might include toolbars, a project window, and a window for displaying error and warning messages.</para>
@@ -132,30 +131,24 @@
 </itemizedlist>
 <heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxadv" kindref="member">wxAdvanced</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
 <para><simplesect kind="see"><para><ref refid="classwx_sash_event" kindref="compound">wxSashEvent</ref>, <ref refid="classwx_sash_layout_window" kindref="compound">wxSashLayoutWindow</ref>, <ref refid="overview_events" kindref="compound">Events and Event Handling</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxLayoutAlgorithm</label>
-        <link refid="classwx_layout_algorithm"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="1">
         <label>wxLayoutAlgorithm</label>
         <link refid="classwx_layout_algorithm"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -163,18 +156,24 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxLayoutAlgorithm</label>
+        <link refid="classwx_layout_algorithm"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/laywin.h" line="110" column="1" bodyfile="interface/wx/laywin.h" bodystart="111" bodyend="145"/>
+    <location file="interface/wx/laywin.h" line="111" column="1" bodyfile="interface/wx/laywin.h" bodystart="110" bodyend="145"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxLayoutAlgorithm</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxLayoutAlgorithm</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxLayoutAlgorithm</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxLayoutAlgorithm</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxLayoutAlgorithm</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxLayoutAlgorithm</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>GetRefData</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>IsSameAs</name></member>
       <member refid="classwx_layout_algorithm_1aec4fbde5e0443135361f134509d6f256" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>LayoutFrame</name></member>
@@ -182,7 +181,7 @@
       <member refid="classwx_layout_algorithm_1a92a081ca21f6faeef4b19c0d248e972e" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>LayoutWindow</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>Ref</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>SetRefData</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxLayoutAlgorithm</scope><name>UnRef</name></member>

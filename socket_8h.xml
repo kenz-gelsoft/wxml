@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="socket_8h" kind="file" language="C++">
     <compoundname>socket.h</compoundname>
     <innerclass refid="classwx_i_paddress" prot="public">wxIPaddress</innerclass>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/socket.h" line="516" column="1" bodyfile="interface/wx/socket.h" bodystart="517" bodyend="528"/>
+        <location file="interface/wx/socket.h" line="511" column="1" bodyfile="interface/wx/socket.h" bodystart="510" bodyend="522"/>
       </memberdef>
       <memberdef kind="enum" id="socket_8h_1a2ec8996eecae7da1c5fa77c88a45a353" prot="public" static="no" strong="no">
         <type></type>
@@ -139,10 +139,9 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para><anchor id="socket_8h_1wxSocketEventFlags"/></para>
         </briefdescription>
         <detaileddescription>
-<para>wxSocket Event Flags.</para>
+<para><anchor id="socket_8h_1wxSocketEventFlags"/> wxSocket Event Flags.</para>
 <para>A brief note on how to use these events:</para>
 <para>The <bold>wxSOCKET_INPUT</bold> event will be issued whenever there is data available for reading. This will be the case if the input queue was empty and new data arrives, or if the application has read some data yet there is still more data available. This means that the application does not need to read all available data in response to a <bold>wxSOCKET_INPUT</bold> event, as more events will be produced as necessary.</para>
 <para>The <bold>wxSOCKET_OUTPUT</bold> event is issued when a socket is first connected with Connect() or accepted with Accept(). After that, new events will be generated only after an output operation fails with <bold>wxSOCKET_WOULDBLOCK</bold> and buffer space becomes available again. This means that the application should assume that it can write data to the socket until an <bold>wxSOCKET_WOULDBLOCK</bold> error occurs; after this, whenever the socket becomes writable again the application will be notified with another <bold>wxSOCKET_OUTPUT</bold> event.</para>
@@ -151,12 +150,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/socket.h" line="560" column="1" bodyfile="interface/wx/socket.h" bodystart="561" bodyend="567"/>
+        <location file="interface/wx/socket.h" line="555" column="1" bodyfile="interface/wx/socket.h" bodystart="554" bodyend="561"/>
       </memberdef>
-      <memberdef kind="enum" id="socket_8h_1a84627a72058502328269676b81780f89" prot="public" static="no" strong="no">
+      <memberdef kind="enum" id="socket_8h_1af3520ff6d43011872bab77edd27d4de3" prot="public" static="no" strong="no">
         <type></type>
-        <name>@46</name>
-        <enumvalue id="socket_8h_1a84627a72058502328269676b81780f89aeb1d7a7c69cad4340559486c04d2336c" prot="public">
+        <name>@47</name>
+        <enumvalue id="socket_8h_1af3520ff6d43011872bab77edd27d4de3aeb1d7a7c69cad4340559486c04d2336c" prot="public">
           <name>wxSOCKET_NONE</name>
           <initializer>= 0</initializer>
           <briefdescription>
@@ -165,7 +164,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="socket_8h_1a84627a72058502328269676b81780f89af929a3050e69ff9d3a2dd93795ba2273" prot="public">
+        <enumvalue id="socket_8h_1af3520ff6d43011872bab77edd27d4de3af929a3050e69ff9d3a2dd93795ba2273" prot="public">
           <name>wxSOCKET_NOWAIT</name>
           <initializer>= 1</initializer>
           <briefdescription>
@@ -174,7 +173,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="socket_8h_1a84627a72058502328269676b81780f89aea93cf511bb913dfc17571dd29a2de22" prot="public">
+        <enumvalue id="socket_8h_1af3520ff6d43011872bab77edd27d4de3aea93cf511bb913dfc17571dd29a2de22" prot="public">
           <name>wxSOCKET_WAITALL</name>
           <initializer>= 2</initializer>
           <briefdescription>
@@ -183,7 +182,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="socket_8h_1a84627a72058502328269676b81780f89a5736b2f6fb724b2082d861e5a87e1547" prot="public">
+        <enumvalue id="socket_8h_1af3520ff6d43011872bab77edd27d4de3a5736b2f6fb724b2082d861e5a87e1547" prot="public">
           <name>wxSOCKET_BLOCK</name>
           <initializer>= 4</initializer>
           <briefdescription>
@@ -192,7 +191,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="socket_8h_1a84627a72058502328269676b81780f89a181fcaf757a6eb4e219a4c9cd473663b" prot="public">
+        <enumvalue id="socket_8h_1af3520ff6d43011872bab77edd27d4de3a181fcaf757a6eb4e219a4c9cd473663b" prot="public">
           <name>wxSOCKET_REUSEADDR</name>
           <initializer>= 8</initializer>
           <briefdescription>
@@ -201,7 +200,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="socket_8h_1a84627a72058502328269676b81780f89a680d618e39c20b6003bb99d1f0a3443f" prot="public">
+        <enumvalue id="socket_8h_1af3520ff6d43011872bab77edd27d4de3a680d618e39c20b6003bb99d1f0a3443f" prot="public">
           <name>wxSOCKET_BROADCAST</name>
           <initializer>= 16</initializer>
           <briefdescription>
@@ -210,7 +209,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="socket_8h_1a84627a72058502328269676b81780f89a2e119a9b0fa2926953a941ff6421e886" prot="public">
+        <enumvalue id="socket_8h_1af3520ff6d43011872bab77edd27d4de3a2e119a9b0fa2926953a941ff6421e886" prot="public">
           <name>wxSOCKET_NOBIND</name>
           <initializer>= 32</initializer>
           <briefdescription>
@@ -219,7 +218,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="socket_8h_1a84627a72058502328269676b81780f89a0fa0e48f2069e4b6bd09eb3f1e0b7624" prot="public">
+        <enumvalue id="socket_8h_1af3520ff6d43011872bab77edd27d4de3a0fa0e48f2069e4b6bd09eb3f1e0b7624" prot="public">
           <name>wxSOCKET_NOWAIT_READ</name>
           <initializer>= 64</initializer>
           <briefdescription>
@@ -228,7 +227,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="socket_8h_1a84627a72058502328269676b81780f89a9a6420537512593d795a52cf7efa320a" prot="public">
+        <enumvalue id="socket_8h_1af3520ff6d43011872bab77edd27d4de3a9a6420537512593d795a52cf7efa320a" prot="public">
           <name>wxSOCKET_WAITALL_READ</name>
           <initializer>= 128</initializer>
           <briefdescription>
@@ -237,7 +236,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="socket_8h_1a84627a72058502328269676b81780f89aa8090113b9d1c1b31ce61863aaf5db52" prot="public">
+        <enumvalue id="socket_8h_1af3520ff6d43011872bab77edd27d4de3aa8090113b9d1c1b31ce61863aaf5db52" prot="public">
           <name>wxSOCKET_NOWAIT_WRITE</name>
           <initializer>= 256</initializer>
           <briefdescription>
@@ -246,7 +245,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="socket_8h_1a84627a72058502328269676b81780f89aaa40cccf6be9104f8287491e5f4b93e1" prot="public">
+        <enumvalue id="socket_8h_1af3520ff6d43011872bab77edd27d4de3aaa40cccf6be9104f8287491e5f4b93e1" prot="public">
           <name>wxSOCKET_WAITALL_WRITE</name>
           <initializer>= 512</initializer>
           <briefdescription>
@@ -256,22 +255,21 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para><anchor id="socket_8h_1wxSocketFlags"/></para>
         </briefdescription>
         <detaileddescription>
-<para>wxSocket Flags.</para>
+<para><anchor id="socket_8h_1wxSocketFlags"/> wxSocket Flags.</para>
 <para>A brief overview on how to use these flags follows.</para>
 <para>If no flag is specified (this is the same as <bold>wxSOCKET_NONE</bold>), IO calls will return after some data has been read or written, even when the transfer might not be complete. This is the same as issuing exactly one blocking low-level call to <bold>recv()</bold> or <bold>send()</bold>. Note that <emphasis>blocking</emphasis> here refers to when the function returns, not to whether the GUI blocks during this time.</para>
 <para>If <bold>wxSOCKET_NOWAIT</bold> is specified, IO calls will return immediately. Read operations will retrieve only available data. Write operations will write as much data as possible, depending on how much space is available in the output buffer. This is the same as issuing exactly one nonblocking low-level call to <bold>recv()</bold> or <bold>send()</bold>. Note that <emphasis>nonblocking</emphasis> here refers to when the function returns, not to whether the GUI blocks during this time. Also note that this flag impacts both Read and Write operations. If it is desired to control Read independently of Write, for example you want no wait on Read(), but you do want to wait on Write(), then use wxSOCKET_NOWAIT_READ and wxSOCKET_NOWAIT_WRITE.</para>
 <para>If <bold>wxSOCKET_NOWAIT_READ</bold> (this flag is new since wxWidgets 2.9.5) is specified, Read operations will return immediately. Read operations will retrieve only available data. This is the same as issuing exactly one nonblocking low-level call to <bold>recv()</bold>. Note that <emphasis>nonblocking</emphasis> here refers to when the function returns, not to whether the GUI blocks during this time. This flag should not be enabled if ReadMsg() is going to be used (it will be ignored), if you do then thread-safety may be at risk. Note that wxSOCKET_NOWAIT_READ impacts only Read operations and does not impact Write operations, allowing Read and Write operations to be set differently.</para>
-<para>If <bold>wxSOCKET_NOWAIT_WRITE</bold> (this flag is new since wxWidgets 2.9.5) is specified, Write operations will return immediately. Write operations will write as much data as possible, depending on how much space is available in the output buffer. This is the same as issuing exactly one nonblocking low-level call to <bold>send()</bold>. Note that <emphasis>nonblocking</emphasis> here refers to when the function returns, not to whether the GUI blocks during this time. This flag should not be enabled if WriteMsg() is going to be used (it will be ignored), if you use it then thread safety may be at risk. Note that wxSOCKET_NOWAIT_WRITE impacts only Write operations and does not impact Read operations, allowing Read and Write operations to be set differently.</para>
+<para>If <bold>wxSOCKET_NOWAIT_WRITE</bold> (this flag is new since wxWidgets 2.9.5) is specified, Write operations will return immediately. Write operations will write as much data as possible, depending on how much space is available in the output buffer. This is the same as issuing exactly one nonblocking low-level call to <bold>send()</bold>. Note that <emphasis>nonblocking</emphasis> here refers to when the function returns, not to whether the GUI blocks during this time. This flag should not be enabled if WriteMsg() is going to be used (it will be ignored), if you use it then thread safety may be at risk. Note that wxSOCKET_NOWAIT_WRITE impacts only Write operations and does not impact Write operations, allowing Read and Write operations to be set differently.</para>
 <para>If <bold>wxSOCKET_WAITALL</bold> is specified, IO calls won&apos;t return until ALL the data has been read or written (or until an error occurs), blocking if necessary, and issuing several low level calls if necessary. This is the same as having a loop which makes as many blocking low-level calls to <bold>recv()</bold> or <bold>send()</bold> as needed so as to transfer all the data. Note that <emphasis>blocking</emphasis> here refers to when the function returns, not to whether the GUI blocks during this time. Note that wxSOCKET_WAITALL impacts both Read and Write operations. If you desire to wait for all on just Read operations, but not on Write operations, (or vice versa), use wxSOCKET_WAITALL_READ or wxSOCKET_WAITALL_WRITE.</para>
 <para>If <bold>wxSOCKET_WAITALL_READ</bold> (this flag is new since wxWidgets 2.9.5) is specified, Read operations won&apos;t return until ALL the data has been read (or until an error occurs), blocking if necessary, and issuing several low level calls if necessary. This is the same as having a loop which makes as many blocking low-level calls to <bold>recv()</bold> as needed so as to transfer all the data. Note that <emphasis>blocking</emphasis> here refers to when the function returns, not to whether the GUI blocks during this time. Note that wxSOCKET_WAITALL_READ only has an impact on Read operations, and has no impact on Write operations, allowing Read and Write operations to have different settings.</para>
 <para>If <bold>wxSOCKET_WAITALL_WRITE</bold> (this flag is new since wxWidgets 2.9.5) is specified, Write() and WriteMsg() calls won&apos;t return until ALL the data has been written (or until an error occurs), blocking if necessary, and issuing several low level calls if necessary. This is the same as having a loop which makes as many blocking low-level calls to <bold>send()</bold> as needed so as to transfer all the data. Note that <emphasis>blocking</emphasis> here refers to when the function returns, not to whether the GUI blocks during this time. Note that wxSOCKET_WAITALL_WRITE only has an impact on Write operations, and has no impact on Read operations, allowing Read and Write operations to have different settings.</para>
 <para>The <bold>wxSOCKET_BLOCK</bold> flag controls whether the GUI blocks during IO operations. If this flag is specified, the socket will not yield during IO calls, so the GUI will remain blocked until the operation completes. If it is not used, then the application must take extra care to avoid unwanted reentrance.</para>
 <para>The <bold>wxSOCKET_REUSEADDR</bold> flag controls the use of the <bold>SO_REUSEADDR</bold> standard <bold>setsockopt()</bold> flag. This flag allows the socket to bind to a port that is already in use. This is mostly used on UNIX-based systems to allow rapid starting and stopping of a server, otherwise you may have to wait several minutes for the port to become available.</para>
 <para><bold>wxSOCKET_REUSEADDR</bold> can also be used with socket clients to (re)bind to a particular local port for an outgoing connection. This option can have surprising platform dependent behaviour, so check the documentation for your platform&apos;s implementation of setsockopt().</para>
-<para>Note that on BSD-based systems(e.g. macOS), use of <bold>wxSOCKET_REUSEADDR</bold> implies <bold>SO_REUSEPORT</bold> in addition to <bold>SO_REUSEADDR</bold> to be consistent with Windows.</para>
+<para>Note that on BSD-based systems(e.g. Mac OS X), use of <bold>wxSOCKET_REUSEADDR</bold> implies <bold>SO_REUSEPORT</bold> in addition to <bold>SO_REUSEADDR</bold> to be consistent with Windows.</para>
 <para>The <bold>wxSOCKET_BROADCAST</bold> flag controls the use of the <bold>SO_BROADCAST</bold> standard <bold>setsockopt()</bold> flag. This flag allows the socket to use the broadcast address, and is generally used in conjunction with <bold>wxSOCKET_NOBIND</bold> and <ref refid="classwx_i_paddress_1a84d58d990e0931616c6842ce103e2000" kindref="member">wxIPaddress::BroadcastAddress()</ref>.</para>
 <para>So:<itemizedlist>
 <listitem><para><bold>wxSOCKET_NONE</bold> will try to read at least SOME data, no matter how much.</para>
@@ -284,7 +282,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/socket.h" line="687" column="1" bodyfile="interface/wx/socket.h" bodystart="688" bodyend="702"/>
+        <location file="interface/wx/socket.h" line="682" column="1" bodyfile="interface/wx/socket.h" bodystart="681" bodyend="696"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">

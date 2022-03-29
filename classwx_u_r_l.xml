@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_u_r_l" kind="class" language="C++" prot="public">
     <compoundname>wxURL</compoundname>
     <basecompoundref refid="classwx_u_r_i" prot="public" virt="non-virtual">wxURI</basecompoundref>
@@ -65,9 +65,9 @@
         </inbodydescription>
         <location file="interface/wx/url.h" line="63" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_u_r_l_1aa1f12ee60801a20d1470c5a3ef0bae8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_u_r_l_1a6974f1d2c13a6ef721e2b93c84e5e376" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> *</type>
-        <definition>wxInputStream * wxURL::GetInputStream</definition>
+        <definition>wxInputStream* wxURL::GetInputStream</definition>
         <argsstring>()</argsstring>
         <name>GetInputStream</name>
         <briefdescription>
@@ -77,13 +77,13 @@
 <para>You can use all but seek functionality of wxStream. Seek isn&apos;t available on all streams. For example, HTTP or FTP streams don&apos;t deal with it.</para>
 <para>Note that this method is somewhat deprecated, all future wxWidgets applications should use <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref> instead.</para>
 <para>Example:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_u_r_l" kindref="compound">wxURL</ref><sp/>url(</highlight><highlight class="stringliteral">&quot;http://a.host/a.dir/a.file&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(url.GetError()<sp/>==<sp/><ref refid="url_8h_1a96577e618caa0aa92dc39403bc3d5d81a4845be36309c1c3b66bdc23e678ff260" kindref="member">wxURL_NOERR</ref>)</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxURL<sp/>url(&quot;http://a.host/a.dir/a.file&quot;);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(url.GetError()<sp/>==<sp/>wxURL_NOERR)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref><sp/>*in_stream;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxInputStream<sp/>*in_stream;</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>in_stream<sp/>=<sp/>url.GetInputStream();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Then,<sp/>you<sp/>can<sp/>use<sp/>all<sp/>IO<sp/>calls<sp/>of<sp/>in_stream<sp/>(See<sp/>wxStream)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Then,<sp/>you<sp/>can<sp/>use<sp/>all<sp/>IO<sp/>calls<sp/>of<sp/>in_stream<sp/>(See<sp/>wxStream)</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para>Returns the initialized stream. You will have to delete it yourself.</para>
@@ -96,9 +96,9 @@
         </inbodydescription>
         <location file="interface/wx/url.h" line="91" column="19"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_u_r_l_1a06fb9b44c1102b5bef019088e4b12d97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_u_r_l_1a7ddfecfb1e7d44c571c5db67b21e6330" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_protocol" kindref="compound">wxProtocol</ref> &amp;</type>
-        <definition>wxProtocol &amp; wxURL::GetProtocol</definition>
+        <definition>wxProtocol&amp; wxURL::GetProtocol</definition>
         <argsstring>()</argsstring>
         <name>GetProtocol</name>
         <briefdescription>
@@ -198,10 +198,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_u_r_l" kindref="compound">wxURL</ref> is a specialization of <ref refid="classwx_u_r_i" kindref="compound">wxURI</ref> for parsing URLs. </para>
     </briefdescription>
     <detaileddescription>
-<para>Please look at <ref refid="classwx_u_r_i" kindref="compound">wxURI</ref> documentation for more info about the functions you can use to retrieve the various parts of the URL (scheme, server, port, etc).</para>
+<para><ref refid="classwx_u_r_l" kindref="compound">wxURL</ref> is a specialization of <ref refid="classwx_u_r_i" kindref="compound">wxURI</ref> for parsing URLs. Please look at <ref refid="classwx_u_r_i" kindref="compound">wxURI</ref> documentation for more info about the functions you can use to retrieve the various parts of the URL (scheme, server, port, etc).</para>
 <para>Supports standard assignment operators, copy constructors, and comparison operators.</para>
 <para><heading level="2"></heading>
 </para>
@@ -236,10 +235,6 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="4">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
-      </node>
       <node id="2">
         <label>wxURI</label>
         <link refid="classwx_u_r_i"/>
@@ -252,30 +247,34 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="4">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/url.h" line="36" column="1" bodyfile="interface/wx/url.h" bodystart="37" bodyend="127"/>
+    <location file="interface/wx/url.h" line="37" column="1" bodyfile="interface/wx/url.h" bodystart="36" bodyend="127"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxURL</scope><name>AllocExclusive</name></member>
       <member refid="classwx_u_r_i_1ae7c8e951cec8652be0c43a523d32adb2" prot="public" virt="non-virtual"><scope>wxURL</scope><name>BuildUnescapedURI</name></member>
       <member refid="classwx_u_r_i_1a5ca2430cd857d4d2d33b2b28cc215377" prot="public" virt="non-virtual"><scope>wxURL</scope><name>BuildURI</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxURL</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxURL</scope><name>CloneRefData</name></member>
       <member refid="classwx_u_r_i_1a1b65a25fea50ceb7dd07083c5d6b540d" prot="public" virt="non-virtual"><scope>wxURL</scope><name>Create</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxURL</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxURL</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxURL</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxURL</scope><name>GetClassInfo</name></member>
       <member refid="classwx_u_r_l_1a6fd14e028eaa607018451e92ba9efe3d" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetError</name></member>
-      <member refid="classwx_u_r_i_1abade0a01a8482291d05073731c80c794" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetFragment</name></member>
+      <member refid="classwx_u_r_i_1a72958d39c2e7cf3bfbc003825a33415b" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetFragment</name></member>
       <member refid="classwx_u_r_i_1a35b6b1f69727af8d3402c62497fa05ed" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetHostType</name></member>
-      <member refid="classwx_u_r_l_1aa1f12ee60801a20d1470c5a3ef0bae8d" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetInputStream</name></member>
+      <member refid="classwx_u_r_l_1a6974f1d2c13a6ef721e2b93c84e5e376" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetInputStream</name></member>
       <member refid="classwx_u_r_i_1ad6362a05aa663690d57b8eb29a0d914f" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetPassword</name></member>
-      <member refid="classwx_u_r_i_1abe54e851c6507afbced55c3071e149ab" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetPath</name></member>
-      <member refid="classwx_u_r_i_1a5ded2bed3096114d8468ef318c6591c2" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetPort</name></member>
-      <member refid="classwx_u_r_l_1a06fb9b44c1102b5bef019088e4b12d97" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetProtocol</name></member>
-      <member refid="classwx_u_r_i_1a239dc089bd9087cd905236ec56893011" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetQuery</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetRefData</name></member>
-      <member refid="classwx_u_r_i_1a9fb0b559466ffe437884640c79d55f16" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetScheme</name></member>
-      <member refid="classwx_u_r_i_1a4acdfa543492330c97bb246f2fddab83" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetServer</name></member>
+      <member refid="classwx_u_r_i_1a7d1558c2c48e0d51b2266a03caa19935" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetPath</name></member>
+      <member refid="classwx_u_r_i_1a54fc3d85d6a611fd46f140d94a3e4b05" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetPort</name></member>
+      <member refid="classwx_u_r_l_1a7ddfecfb1e7d44c571c5db67b21e6330" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetProtocol</name></member>
+      <member refid="classwx_u_r_i_1a8539070460b82d18ab60991627100228" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetQuery</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetRefData</name></member>
+      <member refid="classwx_u_r_i_1ab490f6a61439da7963bd6cdb3f422bfc" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetScheme</name></member>
+      <member refid="classwx_u_r_i_1a5a6ec384af61c22e7a2c50bff5a4aa4c" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetServer</name></member>
       <member refid="classwx_u_r_i_1a1438fc7ed7cab4d7675b3d4b75af070a" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetUser</name></member>
-      <member refid="classwx_u_r_i_1af9e3c14656565ab4a0829c3c11796279" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetUserInfo</name></member>
+      <member refid="classwx_u_r_i_1a041ed892a266a16e505d565effc0c9af" prot="public" virt="non-virtual"><scope>wxURL</scope><name>GetUserInfo</name></member>
       <member refid="classwx_u_r_i_1a3faa9c9609647aee2c8dd4d1fc84135a" prot="public" virt="non-virtual"><scope>wxURL</scope><name>HasFragment</name></member>
       <member refid="classwx_u_r_i_1add46e0521e43dfed642e5328544b5767" prot="public" virt="non-virtual"><scope>wxURL</scope><name>HasPath</name></member>
       <member refid="classwx_u_r_i_1a8d27a0569fd384ecf25d9226861bcd25" prot="public" virt="non-virtual"><scope>wxURL</scope><name>HasPort</name></member>
@@ -289,7 +288,7 @@
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxURL</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxURL</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxURL</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxURL</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxURL</scope><name>operator new</name></member>
       <member refid="classwx_u_r_i_1a770ed686bb28cde7be55bcc07283ace6" prot="public" virt="non-virtual"><scope>wxURL</scope><name>operator==</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxURL</scope><name>Ref</name></member>
       <member refid="classwx_u_r_i_1aba4590d36eb2c9f1ead9e92f4ef31c70" prot="public" virt="non-virtual"><scope>wxURL</scope><name>Resolve</name></member>

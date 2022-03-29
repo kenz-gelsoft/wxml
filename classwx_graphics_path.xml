@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_graphics_path" kind="class" language="C++" prot="public">
     <compoundname>wxGraphicsPath</compoundname>
     <basecompoundref refid="classwx_graphics_object" prot="public" virt="non-virtual">wxGraphicsObject</basecompoundref>
@@ -39,13 +39,11 @@
         </briefdescription>
         <detaileddescription>
 <para>The circle is defined by the coordinates of its centre (<emphasis>x</emphasis>, <emphasis>y</emphasis>) or <emphasis>c</emphasis> and its radius <emphasis>r</emphasis>. The arc goes from the starting angle <emphasis>startAngle</emphasis> to <emphasis>endAngle</emphasis> either clockwise or counter-clockwise depending on the value of <emphasis>clockwise</emphasis> argument.</para>
-<para>The angles are measured in radians but, contrary to the usual mathematical convention, are always <emphasis>clockwise</emphasis> from the horizontal axis.</para>
-<para>If for clockwise arc <emphasis>endAngle</emphasis> is less than <emphasis>startAngle</emphasis> it will be progressively increased by 2*pi until it is greater than <emphasis>startAngle</emphasis>. If for counter-clockwise arc <emphasis>endAngle</emphasis> is greater than <emphasis>startAngle</emphasis> it will be progressively decreased by 2*pi until it is less than <emphasis>startAngle</emphasis>.</para>
-<para>If there is a current point set, an initial line segment will be added to the path to connect the current point to the beginning of the arc. </para>
+<para>The angles are measured in radians but, contrary to the usual mathematical convention, are always <emphasis>clockwise</emphasis> from the horizontal axis. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="45" column="18"/>
+        <location file="interface/wx/graphics.h" line="36" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a335b31fbf77fcbec0fde6d057022d784" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -78,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="48" column="10"/>
+        <location file="interface/wx/graphics.h" line="39" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1acb1c90212eb13f75d7a73a1444cbd852" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -106,15 +104,13 @@
           <declname>r</declname>
         </param>
         <briefdescription>
-<para>Adds an arc (of a circle with radius <emphasis>r</emphasis>) that is tangent to the line connecting current point and (<emphasis>x1</emphasis>, <emphasis>y1</emphasis>) and to the line connecting (<emphasis>x1</emphasis>, <emphasis>y1</emphasis>) and (<emphasis>x2</emphasis>, <emphasis>y2</emphasis>). </para>
+<para>Appends a an arc to two tangents connecting (current) to (<emphasis>x1</emphasis>,<emphasis>y1</emphasis>) and (<emphasis>x1</emphasis>,<emphasis>y1</emphasis>) to (<emphasis>x2</emphasis>,<emphasis>y2</emphasis>), also a straight line from (current) to (<emphasis>x1</emphasis>,<emphasis>y1</emphasis>). </para>
         </briefdescription>
         <detaileddescription>
-<para>If the current point and the starting point of the arc are different, a straight line connecting these points is also appended. If there is no current point before the call to <ref refid="classwx_graphics_path_1acb1c90212eb13f75d7a73a1444cbd852" kindref="member">AddArcToPoint()</ref> this function will behave as if preceded by a call to MoveToPoint(0, 0). After this call the current point will be at the ending point of the arc. <image type="html" name="drawing-addarctopoint.png"></image>
- </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="64" column="18"/>
+        <location file="interface/wx/graphics.h" line="48" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a1dedee16234c079524b51db8e0395f68" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -137,11 +133,10 @@
 <para>Appends a circle around (<emphasis>x</emphasis>,<emphasis>y</emphasis>) with radius <emphasis>r</emphasis> as a new closed subpath. </para>
         </briefdescription>
         <detaileddescription>
-<para>After this call the current point will be at (<emphasis>x+<emphasis>r</emphasis>,</emphasis> <emphasis>y</emphasis>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="72" column="18"/>
+        <location file="interface/wx/graphics.h" line="55" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a206bb3c137a11e2cd98ab454478448a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -176,11 +171,10 @@
 <para>Adds a cubic bezier curve from the current point, using two control points and an end point. </para>
         </briefdescription>
         <detaileddescription>
-<para>If there is no current point before the call to <ref refid="classwx_graphics_path_1a206bb3c137a11e2cd98ab454478448a0" kindref="member">AddCurveToPoint()</ref> this function will behave as if preceded by a call to MoveToPoint(<emphasis>cx1</emphasis>, <emphasis>cy1</emphasis>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="81" column="18"/>
+        <location file="interface/wx/graphics.h" line="61" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a513c48b6ef2cee88b57b09d19af641ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -203,11 +197,10 @@
 <para>Adds a cubic bezier curve from the current point, using two control points and an end point. </para>
         </briefdescription>
         <detaileddescription>
-<para>If there is no current point before the call to <ref refid="classwx_graphics_path_1a206bb3c137a11e2cd98ab454478448a0" kindref="member">AddCurveToPoint()</ref> this function will behave as if preceded by a call to MoveToPoint(<emphasis>c1</emphasis>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="90" column="10"/>
+        <location file="interface/wx/graphics.h" line="68" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a30dd31df80ae28c98aa04df9ed35baff" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -231,14 +224,13 @@
           <declname>h</declname>
         </param>
         <briefdescription>
-<para>Appends an ellipse fitting into the passed in rectangle as a new closed subpath. </para>
+<para>Appends an ellipse fitting into the passed in rectangle. </para>
         </briefdescription>
         <detaileddescription>
-<para>After this call the current point will be at (<emphasis>x+<emphasis>w</emphasis>,</emphasis> <emphasis>y+<emphasis>h/2</emphasis>)</emphasis>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="99" column="18"/>
+        <location file="interface/wx/graphics.h" line="75" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1abd69d09ad6fe10af99a675ac79d2717a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -257,11 +249,10 @@
 <para>Adds a straight line from the current point to (<emphasis>x</emphasis>,<emphasis>y</emphasis>). </para>
         </briefdescription>
         <detaileddescription>
-<para>If current point is not yet set before the call to <ref refid="classwx_graphics_path_1abd69d09ad6fe10af99a675ac79d2717a" kindref="member">AddLineToPoint()</ref> this function will behave as <ref refid="classwx_graphics_path_1a62c899479b6bd2105507317a1246978e" kindref="member">MoveToPoint()</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="106" column="18"/>
+        <location file="interface/wx/graphics.h" line="80" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a3df39365090cffcd4b86ec2987833a29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -276,11 +267,10 @@
 <para>Adds a straight line from the current point to <emphasis>p</emphasis>. </para>
         </briefdescription>
         <detaileddescription>
-<para>If current point is not yet set before the call to <ref refid="classwx_graphics_path_1abd69d09ad6fe10af99a675ac79d2717a" kindref="member">AddLineToPoint()</ref> this function will behave as <ref refid="classwx_graphics_path_1a62c899479b6bd2105507317a1246978e" kindref="member">MoveToPoint()</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="112" column="10"/>
+        <location file="interface/wx/graphics.h" line="84" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1ab1d0507f094a4f65df8d1a8e0a40dba9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -292,14 +282,13 @@
           <declname>path</declname>
         </param>
         <briefdescription>
-<para>Adds another path onto the current path. </para>
+<para>Adds another path. </para>
         </briefdescription>
         <detaileddescription>
-<para>After this call the current point will be at the added path&apos;s current point. For Direct2D the path being appended shouldn&apos;t contain a started non-empty subpath when this function is called. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="120" column="18"/>
+        <location file="interface/wx/graphics.h" line="89" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a8d9b5140dc3bc067f37b57eda2847399" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -326,11 +315,10 @@
 <para>Adds a quadratic bezier curve from the current point, using a control point and an end point. </para>
         </briefdescription>
         <detaileddescription>
-<para>If there is no current point before the call to <ref refid="classwx_graphics_path_1a8d9b5140dc3bc067f37b57eda2847399" kindref="member">AddQuadCurveToPoint()</ref> this function will behave as if preceded by a call to MoveToPoint(<emphasis>cx</emphasis>, <emphasis>cy</emphasis>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="129" column="18"/>
+        <location file="interface/wx/graphics.h" line="95" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1ac257fef3393f29b2705438fdc08b28a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -357,11 +345,10 @@
 <para>Appends a rectangle as a new closed subpath. </para>
         </briefdescription>
         <detaileddescription>
-<para>After this call the current point will be at (<emphasis>x</emphasis>, <emphasis>y</emphasis>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="136" column="18"/>
+        <location file="interface/wx/graphics.h" line="101" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a8926037ec4e4a774222d1dadaf4dae3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -392,11 +379,10 @@
 <para>Appends a rounded rectangle as a new closed subpath. </para>
         </briefdescription>
         <detaileddescription>
-<para>If <emphasis>radius</emphasis> equals 0 this function will behave as <ref refid="classwx_graphics_path_1ac257fef3393f29b2705438fdc08b28a0" kindref="member">AddRectangle()</ref>, otherwise after this call the current point will be at (<emphasis>x+<emphasis>w</emphasis>,</emphasis> <emphasis>y+<emphasis>h/2</emphasis>)</emphasis>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="144" column="18"/>
+        <location file="interface/wx/graphics.h" line="106" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a93ee08b5acd2a2aa82dceb4bbd9cc819" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -407,11 +393,10 @@
 <para>Closes the current sub-path. </para>
         </briefdescription>
         <detaileddescription>
-<para>After this call the current point will be at the joined endpoint of the sub-path. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="151" column="18"/>
+        <location file="interface/wx/graphics.h" line="112" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a810bb1a3b2db610f4f8c6e1d643ed52e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -436,7 +421,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="156" column="10"/>
+        <location file="interface/wx/graphics.h" line="117" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a9459417fa99f08ecc8253ee26229bc6d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -465,7 +450,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="161" column="18"/>
+        <location file="interface/wx/graphics.h" line="122" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a3d9b925fb6bf995bb61847ed446039ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_rect2_d_double" kindref="compound">wxRect2DDouble</ref></type>
@@ -479,7 +464,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="168" column="20"/>
+        <location file="interface/wx/graphics.h" line="129" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1aada0b73af79007e1d018c05d2dc75538" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -509,7 +494,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="173" column="18"/>
+        <location file="interface/wx/graphics.h" line="134" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a5544ac944d9d6b1f094ecba8c512508f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -531,7 +516,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="179" column="18"/>
+        <location file="interface/wx/graphics.h" line="140" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1aaff4f7b64eda349bd6a72a7a70935af0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point2_d_double" kindref="compound">wxPoint2DDouble</ref></type>
@@ -545,11 +530,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="183" column="21"/>
+        <location file="interface/wx/graphics.h" line="144" column="21"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_graphics_path_1a2368804660d6324f2a8d56324b4aaf90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_graphics_path_1a8b82b8f931b149b37cbb735edeb0404b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void *</type>
-        <definition>virtual void * wxGraphicsPath::GetNativePath</definition>
+        <definition>virtual void* wxGraphicsPath::GetNativePath</definition>
         <argsstring>() const</argsstring>
         <name>GetNativePath</name>
         <briefdescription>
@@ -559,7 +544,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="189" column="18"/>
+        <location file="interface/wx/graphics.h" line="150" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a62c899479b6bd2105507317a1246978e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -581,7 +566,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="194" column="18"/>
+        <location file="interface/wx/graphics.h" line="155" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a42a800a76412ad4ae2eb276ba4016f37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -599,7 +584,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="198" column="10"/>
+        <location file="interface/wx/graphics.h" line="159" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a6a6a766853d1e57678c2d54e2eea490d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -614,11 +599,10 @@
 <para>Transforms each point of this path by the matrix. </para>
         </briefdescription>
         <detaileddescription>
-<para>For Direct2D the current path shouldn&apos;t contain a started non-empty subpath when this function is called. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="205" column="18"/>
+        <location file="interface/wx/graphics.h" line="164" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_path_1a060e3ef3670852aa8a4b80da06ed5a6c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -630,44 +614,29 @@
           <declname>p</declname>
         </param>
         <briefdescription>
-<para>Gives back the native path returned by <ref refid="classwx_graphics_path_1a2368804660d6324f2a8d56324b4aaf90" kindref="member">GetNativePath()</ref> because there might be some deallocations necessary (e.g. </para>
+<para>Gives back the native path returned by <ref refid="classwx_graphics_path_1a8b82b8f931b149b37cbb735edeb0404b" kindref="member">GetNativePath()</ref> because there might be some deallocations necessary (e.g. </para>
         </briefdescription>
         <detaileddescription>
-<para>on cairo the native path returned by <ref refid="classwx_graphics_path_1a2368804660d6324f2a8d56324b4aaf90" kindref="member">GetNativePath()</ref> is newly allocated each time). </para>
+<para>on cairo the native path returned by <ref refid="classwx_graphics_path_1a8b82b8f931b149b37cbb735edeb0404b" kindref="member">GetNativePath()</ref> is newly allocated each time). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="212" column="18"/>
+        <location file="interface/wx/graphics.h" line="171" column="18"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A <ref refid="classwx_graphics_path" kindref="compound">wxGraphicsPath</ref> is a native representation of a geometric path. </para>
     </briefdescription>
     <detaileddescription>
-<para>The contents are specific and private to the respective renderer. Instances are reference counted and can therefore be assigned as usual. The only way to get a valid instance is by using <ref refid="classwx_graphics_context_1acf166e67b5a0b02e418e46d39123e0ca" kindref="member">wxGraphicsContext::CreatePath()</ref> or <ref refid="classwx_graphics_renderer_1acdaf5505ed3833c4cb76112d001b8717" kindref="member">wxGraphicsRenderer::CreatePath()</ref>.</para>
+<para>A <ref refid="classwx_graphics_path" kindref="compound">wxGraphicsPath</ref> is a native representation of a geometric path. The contents are specific and private to the respective renderer. Instances are reference counted and can therefore be assigned as usual. The only way to get a valid instance is by using <ref refid="classwx_graphics_context_1acf166e67b5a0b02e418e46d39123e0ca" kindref="member">wxGraphicsContext::CreatePath()</ref> or <ref refid="classwx_graphics_renderer_1acdaf5505ed3833c4cb76112d001b8717" kindref="member">wxGraphicsRenderer::CreatePath()</ref>.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxGraphicsObject</label>
-        <link refid="classwx_graphics_object"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>wxGraphicsPath</label>
-        <link refid="classwx_graphics_path"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="2">
         <label>wxGraphicsObject</label>
         <link refid="classwx_graphics_object"/>
@@ -680,6 +649,8 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -687,12 +658,24 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="2">
+        <label>wxGraphicsObject</label>
+        <link refid="classwx_graphics_object"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wxGraphicsPath</label>
+        <link refid="classwx_graphics_path"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/graphics.h" line="20" column="1" bodyfile="interface/wx/graphics.h" bodystart="21" bodyend="213"/>
+    <location file="interface/wx/graphics.h" line="21" column="1" bodyfile="interface/wx/graphics.h" bodystart="20" bodyend="172"/>
     <listofallmembers>
       <member refid="classwx_graphics_path_1a42dfa8d02729f00b4171f2bf83e16dbe" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>AddArc</name></member>
       <member refid="classwx_graphics_path_1a335b31fbf77fcbec0fde6d057022d784" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>AddArc</name></member>
@@ -708,19 +691,19 @@
       <member refid="classwx_graphics_path_1ac257fef3393f29b2705438fdc08b28a0" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>AddRectangle</name></member>
       <member refid="classwx_graphics_path_1a8926037ec4e4a774222d1dadaf4dae3a" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>AddRoundedRectangle</name></member>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxGraphicsPath</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxGraphicsPath</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxGraphicsPath</scope><name>CloneRefData</name></member>
       <member refid="classwx_graphics_path_1a93ee08b5acd2a2aa82dceb4bbd9cc819" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>CloseSubpath</name></member>
       <member refid="classwx_graphics_path_1a810bb1a3b2db610f4f8c6e1d643ed52e" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>Contains</name></member>
       <member refid="classwx_graphics_path_1a9459417fa99f08ecc8253ee26229bc6d" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>Contains</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxGraphicsPath</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxGraphicsPath</scope><name>CreateRefData</name></member>
       <member refid="classwx_graphics_path_1a3d9b925fb6bf995bb61847ed446039ca" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>GetBox</name></member>
       <member refid="classwx_graphics_path_1aada0b73af79007e1d018c05d2dc75538" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>GetBox</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>GetClassInfo</name></member>
       <member refid="classwx_graphics_path_1a5544ac944d9d6b1f094ecba8c512508f" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>GetCurrentPoint</name></member>
       <member refid="classwx_graphics_path_1aaff4f7b64eda349bd6a72a7a70935af0" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>GetCurrentPoint</name></member>
-      <member refid="classwx_graphics_path_1a2368804660d6324f2a8d56324b4aaf90" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>GetNativePath</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>GetRefData</name></member>
-      <member refid="classwx_graphics_object_1a0c39cbf592f20ac90b3718d399210e1e" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>GetRenderer</name></member>
+      <member refid="classwx_graphics_path_1a8b82b8f931b149b37cbb735edeb0404b" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>GetNativePath</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>GetRefData</name></member>
+      <member refid="classwx_graphics_object_1a7b43981ec6a6502c8112edb4d8020f8b" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>GetRenderer</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>IsKindOf</name></member>
       <member refid="classwx_graphics_object_1a217fe7a511a2a20f4a39089329e5b6e5" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>IsNull</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>IsSameAs</name></member>
@@ -728,7 +711,7 @@
       <member refid="classwx_graphics_path_1a62c899479b6bd2105507317a1246978e" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>MoveToPoint</name></member>
       <member refid="classwx_graphics_path_1a42a800a76412ad4ae2eb276ba4016f37" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>MoveToPoint</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>Ref</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxGraphicsPath</scope><name>SetRefData</name></member>
       <member refid="classwx_graphics_path_1a6a6a766853d1e57678c2d54e2eea490d" prot="public" virt="virtual"><scope>wxGraphicsPath</scope><name>Transform</name></member>

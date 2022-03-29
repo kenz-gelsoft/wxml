@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_help_provider" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxHelpProvider</compoundname>
     <derivedcompoundref refid="classwx_simple_help_provider" prot="public" virt="non-virtual">wxSimpleHelpProvider</derivedcompoundref>
@@ -19,13 +19,13 @@
         </inbodydescription>
         <location file="interface/wx/cshelp.h" line="30" column="13"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_help_provider_1a6180120faf45bccd45d8e6fa05567b1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_help_provider_1ae4b53b23804a04ce2c4eb93c17e4e8c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxHelpProvider::AddHelp</definition>
-        <argsstring>(wxWindow *window, const wxString &amp;text)</argsstring>
+        <argsstring>(wxWindowBase *window, const wxString &amp;text)</argsstring>
         <name>AddHelp</name>
         <param>
-          <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <type>wxWindowBase *</type>
           <declname>window</declname>
         </param>
         <param>
@@ -61,7 +61,7 @@
 <para>Associates the text with the given ID. </para>
         </briefdescription>
         <detaileddescription>
-<para>This help text will be shown for all windows with ID <emphasis>id</emphasis>, unless they have more specific help text associated using the other <ref refid="classwx_help_provider_1a6180120faf45bccd45d8e6fa05567b1a" kindref="member">AddHelp()</ref> prototype. May be used to set the same help string for all Cancel buttons in the application, for example.</para>
+<para>This help text will be shown for all windows with ID <emphasis>id</emphasis>, unless they have more specific help text associated using the other <ref refid="classwx_help_provider_1ae4b53b23804a04ce2c4eb93c17e4e8c6" kindref="member">AddHelp()</ref> prototype. May be used to set the same help string for all Cancel buttons in the application, for example.</para>
 <para><simplesect kind="remark"><para>Although all help providers have these functions to allow making <ref refid="classwx_window_1a4c1a2cbc7363237b3a7c70af4e702c72" kindref="member">wxWindow::SetHelpText()</ref> work, not all of them implement the functions. </para>
 </simplesect>
 </para>
@@ -70,13 +70,13 @@
         </inbodydescription>
         <location file="interface/wx/cshelp.h" line="53" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_help_provider_1a8fa3f99ffd0cc1fbaecf53d9bb202950" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_help_provider_1a8a3ced6995edd8bfc856070d9c1ece8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>virtual wxString wxHelpProvider::GetHelp</definition>
-        <argsstring>(const wxWindow *window)=0</argsstring>
+        <argsstring>(const wxWindowBase *window)=0</argsstring>
         <name>GetHelp</name>
         <param>
-          <type>const <ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <type>const wxWindowBase *</type>
           <declname>window</declname>
         </param>
         <briefdescription>
@@ -89,13 +89,13 @@
         </inbodydescription>
         <location file="interface/wx/cshelp.h" line="68" column="22"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_help_provider_1a250f082e91fd2acabab6f6e068065cf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_help_provider_1af41c1502690ee6d62c421014903e6adf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxHelpProvider::RemoveHelp</definition>
-        <argsstring>(wxWindow *window)</argsstring>
+        <argsstring>(wxWindowBase *window)</argsstring>
         <name>RemoveHelp</name>
         <param>
-          <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <type>wxWindowBase *</type>
           <declname>window</declname>
         </param>
         <briefdescription>
@@ -108,32 +108,32 @@
         </inbodydescription>
         <location file="interface/wx/cshelp.h" line="76" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_help_provider_1afe0e4cd5d01f2a3e8e69ce576ac3f036" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_help_provider_1a7a5559d236d746371d12851fe6dce591" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxHelpProvider::ShowHelp</definition>
-        <argsstring>(wxWindow *window)</argsstring>
+        <argsstring>(wxWindowBase *window)</argsstring>
         <name>ShowHelp</name>
         <param>
-          <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <type>wxWindowBase *</type>
           <declname>window</declname>
         </param>
         <briefdescription>
 <para>Shows help for the given window. </para>
         </briefdescription>
         <detaileddescription>
-<para>Override this function if the help doesn&apos;t depend on the exact position inside the window, otherwise you need to override <ref refid="classwx_help_provider_1a967766c5ac820581f807a28f21137352" kindref="member">ShowHelpAtPoint()</ref>. Returns true if help was shown, or false if no help was available for this window. </para>
+<para>Override this function if the help doesn&apos;t depend on the exact position inside the window, otherwise you need to override <ref refid="classwx_help_provider_1a5e67cbd17663ad9b7d0c8f407762a0bd" kindref="member">ShowHelpAtPoint()</ref>. Returns true if help was shown, or false if no help was available for this window. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/cshelp.h" line="93" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_help_provider_1a967766c5ac820581f807a28f21137352" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_help_provider_1a5e67cbd17663ad9b7d0c8f407762a0bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxHelpProvider::ShowHelpAtPoint</definition>
-        <argsstring>(wxWindow *window, const wxPoint &amp;point, wxHelpEvent::Origin origin)</argsstring>
+        <argsstring>(wxWindowBase *window, const wxPoint &amp;point, wxHelpEvent::Origin origin)</argsstring>
         <name>ShowHelpAtPoint</name>
         <param>
-          <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <type>wxWindowBase *</type>
           <declname>window</declname>
         </param>
         <param>
@@ -145,7 +145,7 @@
           <declname>origin</declname>
         </param>
         <briefdescription>
-<para>This function may be overridden to show help for the window when it should depend on the position inside the window, By default this method forwards to <ref refid="classwx_help_provider_1afe0e4cd5d01f2a3e8e69ce576ac3f036" kindref="member">ShowHelp()</ref>, so it is enough to only implement the latter if the help doesn&apos;t depend on the position. </para>
+<para>This function may be overridden to show help for the window when it should depend on the position inside the window, By default this method forwards to <ref refid="classwx_help_provider_1a7a5559d236d746371d12851fe6dce591" kindref="member">ShowHelp()</ref>, so it is enough to only implement the latter if the help doesn&apos;t depend on the position. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -185,24 +185,24 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classwx_help_provider_1a60e22877b80c27ee894aa42191ad92b3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_help_provider_1a4ca308e7efb71f50bed602c31faed1d8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_help_provider" kindref="compound">wxHelpProvider</ref> *</type>
-        <definition>static wxHelpProvider * wxHelpProvider::Get</definition>
+        <definition>static wxHelpProvider* wxHelpProvider::Get</definition>
         <argsstring>()</argsstring>
         <name>Get</name>
         <briefdescription>
 <para>Returns pointer to help provider instance. </para>
         </briefdescription>
         <detaileddescription>
-<para>Unlike some other classes, the help provider is not created on demand. This must be explicitly done by the application using <ref refid="classwx_help_provider_1ad03d457f88ccf32f295618c83d09973c" kindref="member">Set()</ref>. </para>
+<para>Unlike some other classes, the help provider is not created on demand. This must be explicitly done by the application using <ref refid="classwx_help_provider_1ae706d7d7bcc79ae894c021706670311c" kindref="member">Set()</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/cshelp.h" line="61" column="27"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_help_provider_1ad03d457f88ccf32f295618c83d09973c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_help_provider_1ae706d7d7bcc79ae894c021706670311c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_help_provider" kindref="compound">wxHelpProvider</ref> *</type>
-        <definition>static wxHelpProvider * wxHelpProvider::Set</definition>
+        <definition>static wxHelpProvider* wxHelpProvider::Set</definition>
         <argsstring>(wxHelpProvider *helpProvider)</argsstring>
         <name>Set</name>
         <param>
@@ -223,10 +223,10 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_help_provider" kindref="compound">wxHelpProvider</ref> is an abstract class used by a program implementing context-sensitive help to show the help text for the given window. </para>
     </briefdescription>
     <detaileddescription>
-<para>The current help provider must be explicitly set by the application using <ref refid="classwx_help_provider_1ad03d457f88ccf32f295618c83d09973c" kindref="member">Set()</ref>.</para>
+<para><ref refid="classwx_help_provider" kindref="compound">wxHelpProvider</ref> is an abstract class used by a program implementing context-sensitive help to show the help text for the given window.</para>
+<para>The current help provider must be explicitly set by the application using <ref refid="classwx_help_provider_1ae706d7d7bcc79ae894c021706670311c" kindref="member">Set()</ref>.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
@@ -235,12 +235,6 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>wxHelpControllerHelpProvider</label>
-        <link refid="classwx_help_controller_help_provider"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="1">
         <label>wxHelpProvider</label>
         <link refid="classwx_help_provider"/>
@@ -251,17 +245,23 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>wxHelpControllerHelpProvider</label>
+        <link refid="classwx_help_controller_help_provider"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
     </inheritancegraph>
-    <location file="interface/wx/cshelp.h" line="24" column="1" bodyfile="interface/wx/cshelp.h" bodystart="25" bodyend="115"/>
+    <location file="interface/wx/cshelp.h" line="25" column="1" bodyfile="interface/wx/cshelp.h" bodystart="24" bodyend="115"/>
     <listofallmembers>
-      <member refid="classwx_help_provider_1a6180120faf45bccd45d8e6fa05567b1a" prot="public" virt="virtual"><scope>wxHelpProvider</scope><name>AddHelp</name></member>
+      <member refid="classwx_help_provider_1ae4b53b23804a04ce2c4eb93c17e4e8c6" prot="public" virt="virtual"><scope>wxHelpProvider</scope><name>AddHelp</name></member>
       <member refid="classwx_help_provider_1afcfbc0885cd60700d2b7f8fe66ebcc17" prot="public" virt="virtual"><scope>wxHelpProvider</scope><name>AddHelp</name></member>
-      <member refid="classwx_help_provider_1a60e22877b80c27ee894aa42191ad92b3" prot="public" virt="non-virtual"><scope>wxHelpProvider</scope><name>Get</name></member>
-      <member refid="classwx_help_provider_1a8fa3f99ffd0cc1fbaecf53d9bb202950" prot="public" virt="pure-virtual"><scope>wxHelpProvider</scope><name>GetHelp</name></member>
-      <member refid="classwx_help_provider_1a250f082e91fd2acabab6f6e068065cf1" prot="public" virt="virtual"><scope>wxHelpProvider</scope><name>RemoveHelp</name></member>
-      <member refid="classwx_help_provider_1ad03d457f88ccf32f295618c83d09973c" prot="public" virt="non-virtual"><scope>wxHelpProvider</scope><name>Set</name></member>
-      <member refid="classwx_help_provider_1afe0e4cd5d01f2a3e8e69ce576ac3f036" prot="public" virt="virtual"><scope>wxHelpProvider</scope><name>ShowHelp</name></member>
-      <member refid="classwx_help_provider_1a967766c5ac820581f807a28f21137352" prot="public" virt="virtual"><scope>wxHelpProvider</scope><name>ShowHelpAtPoint</name></member>
+      <member refid="classwx_help_provider_1a4ca308e7efb71f50bed602c31faed1d8" prot="public" virt="non-virtual"><scope>wxHelpProvider</scope><name>Get</name></member>
+      <member refid="classwx_help_provider_1a8a3ced6995edd8bfc856070d9c1ece8d" prot="public" virt="pure-virtual"><scope>wxHelpProvider</scope><name>GetHelp</name></member>
+      <member refid="classwx_help_provider_1af41c1502690ee6d62c421014903e6adf" prot="public" virt="virtual"><scope>wxHelpProvider</scope><name>RemoveHelp</name></member>
+      <member refid="classwx_help_provider_1ae706d7d7bcc79ae894c021706670311c" prot="public" virt="non-virtual"><scope>wxHelpProvider</scope><name>Set</name></member>
+      <member refid="classwx_help_provider_1a7a5559d236d746371d12851fe6dce591" prot="public" virt="virtual"><scope>wxHelpProvider</scope><name>ShowHelp</name></member>
+      <member refid="classwx_help_provider_1a5e67cbd17663ad9b7d0c8f407762a0bd" prot="public" virt="virtual"><scope>wxHelpProvider</scope><name>ShowHelpAtPoint</name></member>
       <member refid="classwx_help_provider_1a7bdefa89e55d140528baa8d493b5685a" prot="public" virt="virtual"><scope>wxHelpProvider</scope><name>~wxHelpProvider</name></member>
     </listofallmembers>
   </compounddef>

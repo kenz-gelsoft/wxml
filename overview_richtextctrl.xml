@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_richtextctrl" kind="page">
     <compoundname>overview_richtextctrl</compoundname>
     <title>wxRichTextCtrl Overview</title>
@@ -52,15 +52,13 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para><ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref> provides a generic implementation of a rich text editor that can handle different character styles, paragraph formatting, and images. </para>
     </briefdescription>
     <detaileddescription>
-<para><ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref> provides a generic implementation of a rich text editor that can handle different character styles, paragraph formatting, and images.</para>
-<para>It&apos;s aimed at editing &apos;natural&apos; language text - if you need an editor that supports code editing, <ref refid="classwx_styled_text_ctrl" kindref="compound">wxStyledTextCtrl</ref> is a better choice.</para>
+<para><ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref> provides a generic implementation of a rich text editor that can handle different character styles, paragraph formatting, and images. It&apos;s aimed at editing &apos;natural&apos; language text - if you need an editor that supports code editing, <ref refid="classwx_styled_text_ctrl" kindref="compound">wxStyledTextCtrl</ref> is a better choice.</para>
 <para>Despite its name, it cannot currently read or write RTF (rich text format) files. Instead, it uses its own XML format, and can also read and write plain text. In future we expect to provide RTF or OpenDocument file capabilities. Custom file formats can be supported by creating additional file handlers and registering them with the control.</para>
 <para><ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref> is largely compatible with the <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> API, but extends it where necessary. The control can be used where the native rich text capabilities of <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> are not adequate (this is particularly true on Windows) and where more direct access to the content representation is required. It is difficult and inefficient to read the style information in a <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>, whereas this information is readily available in <ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref>. Since it&apos;s written in pure wxWidgets, any customizations you make to <ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref> will be reflected on all platforms.</para>
 <para><ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref> supports basic printing via the easy-to-use <ref refid="classwx_rich_text_printing" kindref="compound">wxRichTextPrinting</ref> class. Creating applications with simple word processing features is simplified with the inclusion of <ref refid="classwx_rich_text_formatting_dialog" kindref="compound">wxRichTextFormattingDialog</ref>, a tabbed dialog allowing interactive tailoring of paragraph and character styling. Also provided is the multi-purpose dialog <ref refid="classwx_rich_text_style_organiser_dialog" kindref="compound">wxRichTextStyleOrganiserDialog</ref> that can be used for managing style definitions, browsing styles and applying them, or selecting list styles with a renumber option.</para>
-<para>There are a few disadvantages to using <ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref>. It is not native, so does not behave exactly as a native <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>, although common editing conventions are followed. Users may miss the built-in spelling correction on macOS, or any special character input that may be provided by the native control. It would also be a poor choice if intended users rely on screen readers that would be not work well with non-native text input implementation. You might mitigate this by providing the choice between <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> and <ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref>, with fewer features in the former case.</para>
+<para>There are a few disadvantages to using <ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref>. It is not native, so does not behave exactly as a native <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>, although common editing conventions are followed. Users may miss the built-in spelling correction on Mac OS X, or any special character input that may be provided by the native control. It would also be a poor choice if intended users rely on screen readers that would be not work well with non-native text input implementation. You might mitigate this by providing the choice between <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> and <ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref>, with fewer features in the former case.</para>
 <para>A good way to understand <ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref>&apos;s capabilities is to compile and run the sample, <computeroutput>samples/richtext</computeroutput>, and browse the code.</para>
 <sect1 id="overview_richtextctrl_1overview_richtextctrl_classes">
 <title>Related Classes</title>
@@ -75,142 +73,142 @@
 <sect1 id="overview_richtextctrl_1overview_richtextctrl_example">
 <title>Code Example</title>
 <para>The following code is an example taken from the sample, and adds text and styles to a rich text control programmatically.</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref>*<sp/>richTextCtrl<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>splitter,<sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbba1f375b01ea03a713bbb7e32a36a2589c" kindref="member">wxID_ANY</ref>,<sp/><ref refid="interface_2wx_2string_8h_1a9a321d587166a30017b608dd2d234033" kindref="member">wxEmptyString</ref>,<sp/><ref refid="gdicmn_8h_1af5a90c753eaf3d3e3e5068a19ec3c1d0" kindref="member">wxDefaultPosition</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_size" kindref="compound">wxSize</ref>(200,<sp/>200),<sp/><ref refid="defs_8h_1a78a1371cbc8c3b8bb36f27b9d3c47ba9" kindref="member">wxVSCROLL</ref><sp/>|<sp/><ref refid="defs_8h_1a138eed616dd15fd021e8cc838e26d589" kindref="member">wxHSCROLL</ref><sp/>|<sp/><ref refid="defs_8h_1af63c94dff4e3f25a3c5e9d2874456edfaefc06a089c4d7317026613fd8bdf3e22" kindref="member">wxBORDER_NONE</ref><sp/>|<sp/><ref refid="defs_8h_1a9fefaef352af381851b2b78eb5979a95" kindref="member">wxWANTS_CHARS</ref>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_font" kindref="compound">wxFont</ref><sp/>textFont<sp/>=<sp/><ref refid="classwx_font" kindref="compound">wxFont</ref>(12,<sp/>wxROMAN,<sp/>wxNORMAL,<sp/>wxNORMAL);</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_font" kindref="compound">wxFont</ref><sp/>boldFont<sp/>=<sp/><ref refid="classwx_font" kindref="compound">wxFont</ref>(12,<sp/>wxROMAN,<sp/>wxNORMAL,<sp/>wxBOLD);</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_font" kindref="compound">wxFont</ref><sp/>italicFont<sp/>=<sp/><ref refid="classwx_font" kindref="compound">wxFont</ref>(12,<sp/>wxROMAN,<sp/>wxITALIC,<sp/>wxNORMAL);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_font" kindref="compound">wxFont</ref><sp/>font(12,<sp/>wxROMAN,<sp/>wxNORMAL,<sp/>wxNORMAL);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxRichTextCtrl*<sp/>richTextCtrl<sp/>=<sp/>new<sp/>wxRichTextCtrl(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>splitter,<sp/>wxID_ANY,<sp/>wxEmptyString,<sp/>wxDefaultPosition,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxSize(200,<sp/>200),<sp/>wxVSCROLL<sp/>|<sp/>wxHSCROLL<sp/>|<sp/>wxBORDER_NONE<sp/>|<sp/>wxWANTS_CHARS);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxFont<sp/>textFont<sp/>=<sp/>wxFont(12,<sp/>wxROMAN,<sp/>wxNORMAL,<sp/>wxNORMAL);</highlight></codeline>
+<codeline><highlight class="normal">wxFont<sp/>boldFont<sp/>=<sp/>wxFont(12,<sp/>wxROMAN,<sp/>wxNORMAL,<sp/>wxBOLD);</highlight></codeline>
+<codeline><highlight class="normal">wxFont<sp/>italicFont<sp/>=<sp/>wxFont(12,<sp/>wxROMAN,<sp/>wxITALIC,<sp/>wxNORMAL);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxFont<sp/>font(12,<sp/>wxROMAN,<sp/>wxNORMAL,<sp/>wxNORMAL);</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">m_richTextCtrl-&gt;SetFont(font);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref>&amp;<sp/>r<sp/>=<sp/>richTextCtrl;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a307060a7027047925188e1088f68c884" kindref="member">BeginSuppressUndo</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1af7c2d1c0b33b6875df176a876c011583" kindref="member">BeginParagraphSpacing</ref>(0,<sp/>20);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1ae1f6f09dad00eb28d01c652826977f5f" kindref="member">BeginAlignment</ref>(<ref refid="textctrl_8h_1acf93ad4eb51199602dc2af60ca78b4e5a44f21beb45aab0d65e987023f2edfbcf" kindref="member">wxTEXT_ALIGNMENT_CENTRE</ref>);</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a002052b559e3816c112ab338e9747f0c" kindref="member">BeginBold</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1ac6a91a68493f2b00cbdc018992f0be7a" kindref="member">BeginFontSize</ref>(14);</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;Welcome<sp/>to<sp/>wxRichTextCtrl,<sp/>a<sp/>wxWidgets<sp/>control<sp/>for<sp/>editing<sp/>and<sp/>presenting<sp/>styled<sp/>text<sp/>and<sp/>images&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a90de1fbcf177563f610617ba69ead0ea" kindref="member">EndFontSize</ref>();</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1ae0b04f3a15482a58d3fdfd0257bd7d48" kindref="member">BeginItalic</ref>();</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;by<sp/>Julian<sp/>Smart&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a63ecaab126a52f72fc4cbf05bbf22ec5" kindref="member">EndItalic</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a9adc96400a3f4573d8d2e3a78acd6b74" kindref="member">EndBold</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a1315611c0741d03e852ee26eba3a9d94" kindref="member">WriteImage</ref>(<ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>(zebra_xpm));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a9a41c8bf160e2b06b5b6f22c64c2211f" kindref="member">EndAlignment</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;What<sp/>can<sp/>you<sp/>do<sp/>with<sp/>this<sp/>thing?<sp/>&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a1315611c0741d03e852ee26eba3a9d94" kindref="member">WriteImage</ref>(<ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>(smiley_xpm));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>Well,<sp/>you<sp/>can<sp/>change<sp/>text<sp/>&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a59618fdff1032e843d47a05b21c23d93" kindref="member">BeginTextColour</ref>(<ref refid="classwx_colour" kindref="compound">wxColour</ref>(255,<sp/>0,<sp/>0));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;colour,<sp/>like<sp/>this<sp/>red<sp/>bit.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a789792f7bf805aff5eaef8efcf2e75f0" kindref="member">EndTextColour</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a59618fdff1032e843d47a05b21c23d93" kindref="member">BeginTextColour</ref>(<ref refid="classwx_colour" kindref="compound">wxColour</ref>(0,<sp/>0,<sp/>255));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>And<sp/>this<sp/>blue<sp/>bit.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a789792f7bf805aff5eaef8efcf2e75f0" kindref="member">EndTextColour</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>Naturally<sp/>you<sp/>can<sp/>make<sp/>things<sp/>&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a002052b559e3816c112ab338e9747f0c" kindref="member">BeginBold</ref>();</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;bold<sp/>&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a9adc96400a3f4573d8d2e3a78acd6b74" kindref="member">EndBold</ref>();</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1ae0b04f3a15482a58d3fdfd0257bd7d48" kindref="member">BeginItalic</ref>();</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;or<sp/>italic<sp/>&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a63ecaab126a52f72fc4cbf05bbf22ec5" kindref="member">EndItalic</ref>();</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a333b2e675617ed2299cf91e7c0dbd0d8" kindref="member">BeginUnderline</ref>();</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;or<sp/>underlined.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a9f44e85782c447e6eb4e82fd877ead15" kindref="member">EndUnderline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1ac6a91a68493f2b00cbdc018992f0be7a" kindref="member">BeginFontSize</ref>(14);</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>Different<sp/>font<sp/>sizes<sp/>on<sp/>the<sp/>same<sp/>line<sp/>is<sp/>allowed,<sp/>too.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a90de1fbcf177563f610617ba69ead0ea" kindref="member">EndFontSize</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>Next<sp/>we&apos;ll<sp/>show<sp/>an<sp/>indented<sp/>paragraph.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1aa287dc84fa062b8b8f33e26d8050d9fc" kindref="member">BeginLeftIndent</ref>(60);</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;Indented<sp/>paragraph.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a53111d236d0db253c809320e9657a7d4" kindref="member">EndLeftIndent</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;Next,<sp/>we&apos;ll<sp/>show<sp/>a<sp/>first-line<sp/>indent,<sp/>achieved<sp/>using<sp/>BeginLeftIndent(100,<sp/>-40).&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1aa287dc84fa062b8b8f33e26d8050d9fc" kindref="member">BeginLeftIndent</ref>(100,<sp/>-40);</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;It<sp/>was<sp/>in<sp/>January,<sp/>the<sp/>most<sp/>down-trodden<sp/>month<sp/>of<sp/>an<sp/>Edinburgh<sp/>winter.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a53111d236d0db253c809320e9657a7d4" kindref="member">EndLeftIndent</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;Numbered<sp/>bullets<sp/>are<sp/>possible,<sp/>again<sp/>using<sp/>subindents:&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a320aa0d999e75bda7673914a66474512" kindref="member">BeginNumberedBullet</ref>(1,<sp/>100,<sp/>60);</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;This<sp/>is<sp/>my<sp/>first<sp/>item.<sp/>Note<sp/>that<sp/>wxRichTextCtrl<sp/>doesn&apos;t<sp/>automatically<sp/>do<sp/>numbering,<sp/>but<sp/>this<sp/>will<sp/>be<sp/>added<sp/>later.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1ae4b1394329c35c980d0fcded6b5155b5" kindref="member">EndNumberedBullet</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a320aa0d999e75bda7673914a66474512" kindref="member">BeginNumberedBullet</ref>(2,<sp/>100,<sp/>60);</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;This<sp/>is<sp/>my<sp/>second<sp/>item.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1ae4b1394329c35c980d0fcded6b5155b5" kindref="member">EndNumberedBullet</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;The<sp/>following<sp/>paragraph<sp/>is<sp/>right-indented:&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1acf0f84f0ef18618009f4d20ebcda8096" kindref="member">BeginRightIndent</ref>(200);</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;It<sp/>was<sp/>in<sp/>January,<sp/>the<sp/>most<sp/>down-trodden<sp/>month<sp/>of<sp/>an<sp/>Edinburgh<sp/>winter.<sp/>An<sp/>attractive<sp/>woman<sp/>came<sp/>into<sp/>the<sp/>cafe,<sp/>which<sp/>is<sp/>nothing<sp/>remarkable.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a42c4ef3ba8b2fc76a7425de0d9d0a798" kindref="member">EndRightIndent</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="dynarray_8h_1add87f199292e36ee87efd6d7f0d4ee66" kindref="member">wxArrayInt</ref><sp/>tabs;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxRichTextCtrl&amp;<sp/>r<sp/>=<sp/>richTextCtrl;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginSuppressUndo();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginParagraphSpacing(0,<sp/>20);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginAlignment(wxTEXT_ALIGNMENT_CENTRE);</highlight></codeline>
+<codeline><highlight class="normal">r.BeginBold();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginFontSize(14);</highlight></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;Welcome<sp/>to<sp/>wxRichTextCtrl,<sp/>a<sp/>wxWidgets<sp/>control<sp/>for<sp/>editing<sp/>and<sp/>presenting<sp/>styled<sp/>text<sp/>and<sp/>images&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndFontSize();</highlight></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginItalic();</highlight></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;by<sp/>Julian<sp/>Smart&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndItalic();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.EndBold();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline><highlight class="normal">r.WriteImage(wxBitmap(zebra_xpm));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.EndAlignment();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;What<sp/>can<sp/>you<sp/>do<sp/>with<sp/>this<sp/>thing?<sp/>&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.WriteImage(wxBitmap(smiley_xpm));</highlight></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;<sp/>Well,<sp/>you<sp/>can<sp/>change<sp/>text<sp/>&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginTextColour(wxColour(255,<sp/>0,<sp/>0));</highlight></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;colour,<sp/>like<sp/>this<sp/>red<sp/>bit.&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndTextColour();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginTextColour(wxColour(0,<sp/>0,<sp/>255));</highlight></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;<sp/>And<sp/>this<sp/>blue<sp/>bit.&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndTextColour();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;<sp/>Naturally<sp/>you<sp/>can<sp/>make<sp/>things<sp/>&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.BeginBold();</highlight></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;bold<sp/>&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndBold();</highlight></codeline>
+<codeline><highlight class="normal">r.BeginItalic();</highlight></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;or<sp/>italic<sp/>&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndItalic();</highlight></codeline>
+<codeline><highlight class="normal">r.BeginUnderline();</highlight></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;or<sp/>underlined.&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndUnderline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginFontSize(14);</highlight></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;<sp/>Different<sp/>font<sp/>sizes<sp/>on<sp/>the<sp/>same<sp/>line<sp/>is<sp/>allowed,<sp/>too.&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndFontSize();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;<sp/>Next<sp/>we&apos;ll<sp/>show<sp/>an<sp/>indented<sp/>paragraph.&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginLeftIndent(60);</highlight></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;Indented<sp/>paragraph.&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndLeftIndent();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;Next,<sp/>we&apos;ll<sp/>show<sp/>a<sp/>first-line<sp/>indent,<sp/>achieved<sp/>using<sp/>BeginLeftIndent(100,<sp/>-40).&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginLeftIndent(100,<sp/>-40);</highlight></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;It<sp/>was<sp/>in<sp/>January,<sp/>the<sp/>most<sp/>down-trodden<sp/>month<sp/>of<sp/>an<sp/>Edinburgh<sp/>winter.&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndLeftIndent();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;Numbered<sp/>bullets<sp/>are<sp/>possible,<sp/>again<sp/>using<sp/>subindents:&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginNumberedBullet(1,<sp/>100,<sp/>60);</highlight></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;This<sp/>is<sp/>my<sp/>first<sp/>item.<sp/>Note<sp/>that<sp/>wxRichTextCtrl<sp/>doesn&apos;t<sp/>automatically<sp/>do<sp/>numbering,<sp/>but<sp/>this<sp/>will<sp/>be<sp/>added<sp/>later.&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndNumberedBullet();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginNumberedBullet(2,<sp/>100,<sp/>60);</highlight></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;This<sp/>is<sp/>my<sp/>second<sp/>item.&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndNumberedBullet();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;The<sp/>following<sp/>paragraph<sp/>is<sp/>right-indented:&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginRightIndent(200);</highlight></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;It<sp/>was<sp/>in<sp/>January,<sp/>the<sp/>most<sp/>down-trodden<sp/>month<sp/>of<sp/>an<sp/>Edinburgh<sp/>winter.<sp/>An<sp/>attractive<sp/>woman<sp/>came<sp/>into<sp/>the<sp/>cafe,<sp/>which<sp/>is<sp/>nothing<sp/>remarkable.&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndRightIndent();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxArrayInt<sp/>tabs;</highlight></codeline>
 <codeline><highlight class="normal">tabs.Add(400);</highlight></codeline>
 <codeline><highlight class="normal">tabs.Add(600);</highlight></codeline>
 <codeline><highlight class="normal">tabs.Add(800);</highlight></codeline>
 <codeline><highlight class="normal">tabs.Add(1000);</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_text_attr" kindref="compound">wxTextAttr</ref><sp/>attr;</highlight></codeline>
-<codeline><highlight class="normal">attr.<ref refid="classwx_text_attr_1a315ebbc5a41840a0777a7716fc19f5f0" kindref="member">SetFlags</ref>(<ref refid="textctrl_8h_1a5544b853914845e9d6453501951d60c2a15c4756ed27d78788e60f53121f4aef5" kindref="member">wxTEXT_ATTR_TABS</ref>);</highlight></codeline>
-<codeline><highlight class="normal">attr.<ref refid="classwx_text_attr_1ad21e66c498c5a60e3603d71938b8c772" kindref="member">SetTabs</ref>(tabs);</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a6397391edcc22594e92f046f2d99a06f" kindref="member">SetDefaultStyle</ref>(attr);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;This<sp/>line<sp/>contains<sp/>tabs:\tFirst<sp/>tab\tSecond<sp/>tab\tThird<sp/>tab&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;Other<sp/>notable<sp/>features<sp/>of<sp/>wxRichTextCtrl<sp/>include:&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1afb7a6b5794ba2081c17a04a0811f56b4" kindref="member">BeginSymbolBullet</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal">),<sp/>100,<sp/>60);</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a5016a69296d7a9f42f5562d0a7b46332" kindref="member">Newline</ref>();</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;Compatibility<sp/>with<sp/>wxTextCtrl<sp/>API&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a47edd72f17682bdacbf0f91ab43d9e0f" kindref="member">EndSymbolBullet</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a083b9d2b3a04f192080e143897b4bf89" kindref="member">WriteText</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;Note:<sp/>this<sp/>sample<sp/>content<sp/>was<sp/>generated<sp/>programmatically<sp/>from<sp/>within<sp/>the<sp/>MyFrame<sp/>constructor<sp/>in<sp/>the<sp/>demo.<sp/>The<sp/>images<sp/>were<sp/>loaded<sp/>from<sp/>inline<sp/>XPMs.<sp/>Enjoy<sp/>wxRichTextCtrl!&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">r.<ref refid="classwx_rich_text_ctrl_1a1e6f7ac3c1ee26d49abcc9408e9a3e5c" kindref="member">EndSuppressUndo</ref>();</highlight></codeline>
+<codeline><highlight class="normal">wxTextAttr<sp/>attr;</highlight></codeline>
+<codeline><highlight class="normal">attr.SetFlags(wxTEXT_ATTR_TABS);</highlight></codeline>
+<codeline><highlight class="normal">attr.SetTabs(tabs);</highlight></codeline>
+<codeline><highlight class="normal">r.SetDefaultStyle(attr);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;This<sp/>line<sp/>contains<sp/>tabs:\tFirst<sp/>tab\tSecond<sp/>tab\tThird<sp/>tab&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;Other<sp/>notable<sp/>features<sp/>of<sp/>wxRichTextCtrl<sp/>include:&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.BeginSymbolBullet(wxT(&apos;*&apos;),<sp/>100,<sp/>60);</highlight></codeline>
+<codeline><highlight class="normal">r.Newline();</highlight></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;Compatibility<sp/>with<sp/>wxTextCtrl<sp/>API&quot;));</highlight></codeline>
+<codeline><highlight class="normal">r.EndSymbolBullet();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.WriteText(wxT(&quot;Note:<sp/>this<sp/>sample<sp/>content<sp/>was<sp/>generated<sp/>programmatically<sp/>from<sp/>within<sp/>the<sp/>MyFrame<sp/>constructor<sp/>in<sp/>the<sp/>demo.<sp/>The<sp/>images<sp/>were<sp/>loaded<sp/>from<sp/>inline<sp/>XPMs.<sp/>Enjoy<sp/>wxRichTextCtrl!&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">r.EndSuppressUndo();</highlight></codeline>
 </programlisting></para>
 </sect1>
 <sect1 id="overview_richtextctrl_1overview_richtextctrl_starting">
@@ -283,7 +281,7 @@ It&apos;s great to be able to change arbitrary attributes in a <ref refid="class
 <title>Nested Objects</title>
 <para><ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref> supports nested objects such as text boxes and tables. To achieve compatibility with the existing API, there is the concept of <emphasis>object</emphasis> <emphasis>focus</emphasis>. When the user clicks on a nested text box, the object focus is set to that container object so all keyboard input and API functions apply to that container. The application can change the focus using wxRichTextCtrl::SetObjectFocus. Call this function with a <computeroutput>null</computeroutput> parameter to set the focus back to the top-level object.</para>
 <para>An event will be sent to the control when the focus changes.</para>
-<para>When the user clicks on the control, <ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref> determines which container to set as the current object focus by calling the found container&apos;s overridden <ref refid="classwx_rich_text_object_1a66588efdeeb790bc6738aeeeb1f3367d" kindref="member">wxRichTextObject::AcceptsFocus</ref> function. For example, although a table is a container, it must not itself be the object focus because there is no text editing at the table level. Instead, a cell within the table must accept the focus.</para>
+<para>When the user clicks on the control, <ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref> determines which container to set as the current object focus by calling the found container&apos;s overrided <ref refid="classwx_rich_text_object_1a66588efdeeb790bc6738aeeeb1f3367d" kindref="member">wxRichTextObject::AcceptsFocus</ref> function. For example, although a table is a container, it must not itself be the object focus because there is no text editing at the table level. Instead, a cell within the table must accept the focus.</para>
 <para>Since with nested objects it is not possible to represent a section with merely a start position and an end position, the class <ref refid="classwx_rich_text_selection" kindref="compound">wxRichTextSelection</ref> is provided which stores multiple ranges (for non-contiguous selections such as table cells) and a pointer to the container object in question. You can pass <ref refid="classwx_rich_text_selection" kindref="compound">wxRichTextSelection</ref> to <ref refid="classwx_rich_text_ctrl_1a6c03432e13fb42c87df867f18252e10e" kindref="member">wxRichTextCtrl::SetSelection</ref> or get an instance of it from <ref refid="classwx_rich_text_ctrl_1a3310d0907b30bb0e98a9ea8968aa48d6" kindref="member">wxRichTextCtrl::GetSelection</ref>.</para>
 <para>When selecting multiple objects, such as cell tables, the <ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref> dragging handler code calls the function <ref refid="classwx_rich_text_object_1a88a6d9038361e944d6a0595e2cb6e3e5" kindref="member">wxRichTextObject::HandlesChildSelections</ref> to determine whether the children can be individual selections. Currently only table cells can be multiply-selected in this way.</para>
 </sect1>
@@ -332,10 +330,9 @@ It&apos;s great to be able to change arbitrary attributes in a <ref refid="class
 <listitem><para>scaling: either everything scaled, or rendering using a custom reference point size and an optional dimension scale</para>
 </listitem>
 </itemizedlist>
-There are also things that could be done to take advantage of the underlying text capabilities of the platform; higher-level text formatting APIs are available on some platforms, such as macOS, and some of translation from high level to low level <ref refid="classwx_d_c" kindref="compound">wxDC</ref> API is unnecessary. However this would require additions to the wxWidgets API. </para>
+There are also things that could be done to take advantage of the underlying text capabilities of the platform; higher-level text formatting APIs are available on some platforms, such as Mac OS X, and some of translation from high level to low level <ref refid="classwx_d_c" kindref="compound">wxDC</ref> API is unnecessary. However this would require additions to the wxWidgets API. </para>
 </sect2>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/richtextctrl.h"/>
   </compounddef>
 </doxygen>

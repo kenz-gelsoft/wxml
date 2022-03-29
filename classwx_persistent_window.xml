@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_persistent_window" kind="class" language="C++" prot="public">
     <compoundname>wxPersistentWindow</compoundname>
     <basecompoundref refid="classwx_persistent_object" prot="public" virt="non-virtual">wxPersistentObject</basecompoundref>
@@ -39,15 +39,15 @@
 <para>Constructor for a persistent window object. </para>
         </briefdescription>
         <detaileddescription>
-<para>The constructor uses <ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">wxEvtHandler::Bind()</ref> to catch <ref refid="classwx_window_destroy_event" kindref="compound">wxWindowDestroyEvent</ref> generated when the window is destroyed and call <ref refid="classwx_persistence_manager_1ab8a9b090b5f84df7b6a765fed78d4820" kindref="member">wxPersistenceManager::SaveAndUnregister()</ref> when this happens. This ensures that the window properties are saved and that this object itself is deleted when the window is. </para>
+<para>The constructor uses <ref refid="classwx_evt_handler_1a78719e8b82c9f9c6e4056b3449df1943" kindref="member">wxEvtHandler::Connect()</ref> to catch <ref refid="classwx_window_destroy_event" kindref="compound">wxWindowDestroyEvent</ref> generated when the window is destroyed and call <ref refid="classwx_persistence_manager_1ab8a9b090b5f84df7b6a765fed78d4820" kindref="member">wxPersistenceManager::SaveAndUnregister()</ref> when this happens. This ensures that the window properties are saved and that this object itself is deleted when the window is. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/persist/window.h" line="37" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_persistent_window_1afb9107b4d035d6768e8d6ccdf472e2ce" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classwx_persistent_window_1a4c351429beca46124779663e17311d70" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classwx_persistent_window_1aae880a18a0619852354e0c416474d066" kindref="member">WindowType</ref> *</type>
-        <definition>WindowType * wxPersistentWindow&lt; T &gt;::Get</definition>
+        <definition>WindowType* wxPersistentWindow&lt; T &gt;::Get</definition>
         <argsstring>() const</argsstring>
         <name>Get</name>
         <briefdescription>
@@ -82,40 +82,40 @@
 <para>Compared to <ref refid="classwx_persistent_object" kindref="compound">wxPersistentObject</ref> this class does three things:<itemizedlist>
 <listitem><para>Most importantly, <ref refid="classwx_persistent_window" kindref="compound">wxPersistentWindow</ref> catches <ref refid="classwx_window_destroy_event" kindref="compound">wxWindowDestroyEvent</ref> generated when the window is destroyed and saves its properties automatically when it happens.</para>
 </listitem><listitem><para>It implements <ref refid="classwx_persistent_window_1a261c7aef57887305fc94eba8c2661ff0" kindref="member">GetName()</ref> using <ref refid="classwx_window_1a93b9ec7d9eaf152c17f3bf2698551ef4" kindref="member">wxWindow::GetName()</ref> so that the derived classes don&apos;t need to do it.</para>
-</listitem><listitem><para>It adds a convenient <ref refid="classwx_persistent_window_1afb9107b4d035d6768e8d6ccdf472e2ce" kindref="member">wxPersistentWindow::Get()</ref> accessor returning the window object of the correct type. </para>
+</listitem><listitem><para>It adds a convenient <ref refid="classwx_persistent_window_1a4c351429beca46124779663e17311d70" kindref="member">wxPersistentWindow::Get()</ref> accessor returning the window object of the correct type. </para>
 </listitem></itemizedlist>
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxPersistentObject</label>
-        <link refid="classwx_persistent_object"/>
-      </node>
       <node id="1">
         <label>wxPersistentWindow&lt; T &gt;</label>
         <link refid="classwx_persistent_window"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>wxPersistentObject</label>
+        <link refid="classwx_persistent_object"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>wxPersistentObject</label>
-        <link refid="classwx_persistent_object"/>
-      </node>
       <node id="1">
         <label>wxPersistentWindow&lt; T &gt;</label>
         <link refid="classwx_persistent_window"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>wxPersistentObject</label>
+        <link refid="classwx_persistent_object"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/persist/window.h" line="22" column="1" bodyfile="interface/wx/persist/window.h" bodystart="23" bodyend="50"/>
+    <location file="interface/wx/persist/window.h" line="23" column="1" bodyfile="interface/wx/persist/window.h" bodystart="22" bodyend="50"/>
     <listofallmembers>
-      <member refid="classwx_persistent_window_1afb9107b4d035d6768e8d6ccdf472e2ce" prot="public" virt="non-virtual"><scope>wxPersistentWindow</scope><name>Get</name></member>
+      <member refid="classwx_persistent_window_1a4c351429beca46124779663e17311d70" prot="public" virt="non-virtual"><scope>wxPersistentWindow</scope><name>Get</name></member>
       <member refid="classwx_persistent_object_1a53d730bbfe3fdf57c9c553987f1096f8" prot="public" virt="pure-virtual"><scope>wxPersistentWindow</scope><name>GetKind</name></member>
       <member refid="classwx_persistent_window_1a261c7aef57887305fc94eba8c2661ff0" prot="public" virt="virtual"><scope>wxPersistentWindow</scope><name>GetName</name></member>
-      <member refid="classwx_persistent_object_1a99ae23e272e916edc3e1f747be8228bf" prot="public" virt="non-virtual"><scope>wxPersistentWindow</scope><name>GetObject</name></member>
+      <member refid="classwx_persistent_object_1a0b0fbd22151149d2c45aca62c2c738bf" prot="public" virt="non-virtual"><scope>wxPersistentWindow</scope><name>GetObject</name></member>
       <member refid="classwx_persistent_object_1a04f9a557b8dd17c60c83cb29102e093e" prot="public" virt="pure-virtual"><scope>wxPersistentWindow</scope><name>Restore</name></member>
       <member refid="classwx_persistent_object_1a7dd10ed5914be1d60f9104f0a80bafe5" prot="protected" virt="non-virtual"><scope>wxPersistentWindow</scope><name>RestoreValue</name></member>
       <member refid="classwx_persistent_object_1a93e351e08f224fbe7a2ab110458ba9cc" prot="public" virt="pure-virtual"><scope>wxPersistentWindow</scope><name>Save</name></member>

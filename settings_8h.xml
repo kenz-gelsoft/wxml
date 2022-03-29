@@ -1,8 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="settings_8h" kind="file" language="C++">
     <compoundname>settings.h</compoundname>
-    <innerclass refid="classwx_system_appearance" prot="public">wxSystemAppearance</innerclass>
     <innerclass refid="classwx_system_settings" prot="public">wxSystemSettings</innerclass>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="settings_8h_1ac542cdc9950a6cf3b7a42f7e77ada05b" prot="public" static="no" strong="no">
@@ -45,7 +44,7 @@
         <enumvalue id="settings_8h_1ac542cdc9950a6cf3b7a42f7e77ada05bac9bb83524681ce0d5a757853fe5eb8e4" prot="public">
           <name>wxSYS_DEVICE_DEFAULT_FONT</name>
           <briefdescription>
-<para>Device-dependent font. </para>
+<para>Device-dependent font (Windows NT and later only). </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -67,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/settings.h" line="16" column="1" bodyfile="interface/wx/settings.h" bodystart="17" bodyend="40"/>
+        <location file="interface/wx/settings.h" line="17" column="1" bodyfile="interface/wx/settings.h" bodystart="16" bodyend="40"/>
       </memberdef>
       <memberdef kind="enum" id="settings_8h_1a44ad26cbd8d579d1b7eff7015c8bd24b" prot="public" static="no" strong="no">
         <type></type>
@@ -227,7 +226,7 @@
         <enumvalue id="settings_8h_1a44ad26cbd8d579d1b7eff7015c8bd24ba69be02131f9e34206574f4cd6ca8953d" prot="public">
           <name>wxSYS_COLOUR_INACTIVECAPTIONTEXT</name>
           <briefdescription>
-<para>Colour of the text in inactive captions. </para>
+<para>Colour of the text in active captions. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -291,19 +290,19 @@
         <enumvalue id="settings_8h_1a44ad26cbd8d579d1b7eff7015c8bd24bac52e747cf0f66e55ac80d2772695b1a4" prot="public">
           <name>wxSYS_COLOUR_GRADIENTACTIVECAPTION</name>
           <briefdescription>
-<para>Right side colour in the colour gradient of an active window&apos;s title bar. </para>
+<para>Right side colour in the color gradient of an active window&apos;s title bar. </para>
           </briefdescription>
           <detaileddescription>
-<para><computeroutput>wxSYS_COLOUR_ACTIVECAPTION</computeroutput> specifies the left side colour. </para>
+<para><computeroutput>wxSYS_COLOUR_ACTIVECAPTION</computeroutput> specifies the left side color. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="settings_8h_1a44ad26cbd8d579d1b7eff7015c8bd24bacd0a1c840d7761a9ac9465e163b8ddfb" prot="public">
           <name>wxSYS_COLOUR_GRADIENTINACTIVECAPTION</name>
           <briefdescription>
-<para>Right side colour in the colour gradient of an inactive window&apos;s title bar. </para>
+<para>Right side colour in the color gradient of an inactive window&apos;s title bar. </para>
           </briefdescription>
           <detaileddescription>
-<para><computeroutput>wxSYS_COLOUR_INACTIVECAPTION</computeroutput> specifies the left side colour. </para>
+<para><computeroutput>wxSYS_COLOUR_INACTIVECAPTION</computeroutput> specifies the left side color. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="settings_8h_1a44ad26cbd8d579d1b7eff7015c8bd24ba6df98d638e9540ce92b22bbc13002ea7" prot="public">
@@ -321,7 +320,7 @@
 <para>The background colour for the menu bar when menus appear as flat menus. </para>
           </briefdescription>
           <detaileddescription>
-<para>However, <computeroutput>wxSYS_COLOUR_MENU</computeroutput> continues to specify the background colour of the menu popup. </para>
+<para>However, <computeroutput>wxSYS_COLOUR_MENU</computeroutput> continues to specify the background color of the menu popup. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="settings_8h_1a44ad26cbd8d579d1b7eff7015c8bd24baf404638957ddcc2e9764dcf36b275901" prot="public">
@@ -421,7 +420,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/settings.h" line="50" column="1" bodyfile="interface/wx/settings.h" bodystart="51" bodyend="148"/>
+        <location file="interface/wx/settings.h" line="51" column="1" bodyfile="interface/wx/settings.h" bodystart="50" bodyend="148"/>
       </memberdef>
       <memberdef kind="enum" id="settings_8h_1a0f2b19d7a3717cdbef5a04cb05ab8f26" prot="public" static="no" strong="no">
         <type></type>
@@ -730,42 +729,6 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="settings_8h_1a0f2b19d7a3717cdbef5a04cb05ab8f26a80ffd2fedebccafff8ca51e27dd1fd2b" prot="public">
-          <name>wxSYS_CARET_ON_MSEC</name>
-          <briefdescription>
-<para>Time, in milliseconds, for how long a blinking caret should stay visible during a single blink cycle before it disappears. </para>
-          </briefdescription>
-          <detaileddescription>
-<para>If this value is zero, caret should be visible all the time instead of blinking. If the value is negative, the platform does not support the user setting.</para>
-<para><simplesect kind="since"><para>3.1.1 </para>
-</simplesect>
-</para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="settings_8h_1a0f2b19d7a3717cdbef5a04cb05ab8f26a14d4501d2994b60d6f1a76d408609e59" prot="public">
-          <name>wxSYS_CARET_OFF_MSEC</name>
-          <briefdescription>
-<para>Time, in milliseconds, for how long a blinking caret should stay invisible during a single blink cycle before it reappears. </para>
-          </briefdescription>
-          <detaileddescription>
-<para>If this value is zero, caret should be visible all the time instead of blinking. If the value is negative, the platform does not support the user setting.</para>
-<para><simplesect kind="since"><para>3.1.1 </para>
-</simplesect>
-</para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="settings_8h_1a0f2b19d7a3717cdbef5a04cb05ab8f26a29df36a9439196ece070e3b390bb5147" prot="public">
-          <name>wxSYS_CARET_TIMEOUT_MSEC</name>
-          <briefdescription>
-<para>Time, in milliseconds, for how long a caret should blink after a user interaction. </para>
-          </briefdescription>
-          <detaileddescription>
-<para>After this timeout has expired, the caret should stay continuously visible until the user interacts with the caret again (for example by entering, deleting or cutting text). If this value is negative, carets should blink forever; if it is zero, carets should not blink at all.</para>
-<para><simplesect kind="since"><para>3.1.1 </para>
-</simplesect>
-</para>
-          </detaileddescription>
-        </enumvalue>
         <briefdescription>
 <para>Possible values for <ref refid="classwx_system_settings_1aa18e3b5794dc4193c4b0668d28d4933a" kindref="member">wxSystemSettings::GetMetric()</ref> index parameter. </para>
         </briefdescription>
@@ -773,7 +736,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/settings.h" line="153" column="1" bodyfile="interface/wx/settings.h" bodystart="154" bodyend="231"/>
+        <location file="interface/wx/settings.h" line="154" column="1" bodyfile="interface/wx/settings.h" bodystart="153" bodyend="195"/>
       </memberdef>
       <memberdef kind="enum" id="settings_8h_1afc464d07a27e1c7ebf406a1321167bf5" prot="public" static="no" strong="no">
         <type></type>
@@ -807,7 +770,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/settings.h" line="236" column="1" bodyfile="interface/wx/settings.h" bodystart="237" bodyend="241"/>
+        <location file="interface/wx/settings.h" line="201" column="1" bodyfile="interface/wx/settings.h" bodystart="200" bodyend="205"/>
       </memberdef>
       <memberdef kind="enum" id="settings_8h_1a805b469950075040f8fc4925d6507419" prot="public" static="no" strong="no">
         <type></type>
@@ -861,7 +824,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/settings.h" line="246" column="1" bodyfile="interface/wx/settings.h" bodystart="247" bodyend="254"/>
+        <location file="interface/wx/settings.h" line="211" column="1" bodyfile="interface/wx/settings.h" bodystart="210" bodyend="218"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

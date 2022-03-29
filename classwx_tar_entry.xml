@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_tar_entry" kind="class" language="C++" prot="public">
     <compoundname>wxTarEntry</compoundname>
     <basecompoundref refid="classwx_archive_entry" prot="public" virt="non-virtual">wxArchiveEntry</basecompoundref>
@@ -451,11 +451,11 @@
         </inbodydescription>
         <location file="interface/wx/tarstrm.h" line="387" column="14"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_tar_entry_1adda70faa73afada46350b0531b7de2b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_tar_entry_1a5e185aac56eba9244f216eb2f43e68cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_tar_entry" kindref="compound">wxTarEntry</ref> &amp;</type>
-        <definition>wxTarEntry &amp; wxTarEntry::operator=</definition>
+        <definition>wxTarEntry&amp; wxTarEntry::operator operator=</definition>
         <argsstring>(const wxTarEntry &amp;entry)</argsstring>
-        <name>operator=</name>
+        <name>operator operator=</name>
         <param>
           <type>const <ref refid="classwx_tar_entry" kindref="compound">wxTarEntry</ref> &amp;</type>
           <declname>entry</declname>
@@ -502,9 +502,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Holds the meta-data for an entry in a tar. </para>
     </briefdescription>
     <detaileddescription>
+<para>Holds the meta-data for an entry in a tar.</para>
 <sect1 id="classwx_tar_entry_1tarentry_fields">
 <title>Field availability</title>
 <para>The tar format stores all the meta-data for an entry ahead of its data, therefore GetNextEntry() always returns a fully populated <ref refid="classwx_tar_entry" kindref="compound">wxTarEntry</ref> object, both when reading from seekable and non-seekable streams.</para>
@@ -548,25 +548,25 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="4">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
-      </node>
       <node id="1">
         <label>wxTarEntry</label>
         <link refid="classwx_tar_entry"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="4">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/tarstrm.h" line="255" column="1" bodyfile="interface/wx/tarstrm.h" bodystart="256" bodyend="404"/>
+    <location file="interface/wx/tarstrm.h" line="256" column="1" bodyfile="interface/wx/tarstrm.h" bodystart="255" bodyend="404"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxTarEntry</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_archive_entry_1a5cfd37bff3fd0cbe2d9aaa2597de9b7c" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxTarEntry</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxTarEntry</scope><name>CreateRefData</name></member>
+      <member refid="classwx_archive_entry_1a050464c6e0be5d7fbcf0f7a1e5acd3f5" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxTarEntry</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxTarEntry</scope><name>CreateRefData</name></member>
       <member refid="classwx_tar_entry_1ad6f6a3d4b48b25718c23d9c2d90a9c7e" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>GetAccessTime</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxTarEntry</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxTarEntry</scope><name>GetClassInfo</name></member>
       <member refid="classwx_tar_entry_1a3925b70fa0b9438ce32a4cf33be55944" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>GetCreateTime</name></member>
       <member refid="classwx_archive_entry_1acb1e2dd308429c6afba02ec6d24c43f3" prot="public" virt="pure-virtual"><scope>wxTarEntry</scope><name>GetDateTime</name></member>
       <member refid="classwx_tar_entry_1ab05c8e99f728532fd1702ab786d9210d" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>GetDevMajor</name></member>
@@ -580,7 +580,7 @@
       <member refid="classwx_tar_entry_1a9a64f9b99f4c41464660b15e932126a9" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>GetMode</name></member>
       <member refid="classwx_archive_entry_1a7f7c8fc858136626dcdf1865e646cef9" prot="public" virt="pure-virtual"><scope>wxTarEntry</scope><name>GetName</name></member>
       <member refid="classwx_archive_entry_1ab36942e9cbadced7476b4bceb21b7e08" prot="public" virt="pure-virtual"><scope>wxTarEntry</scope><name>GetOffset</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>GetRefData</name></member>
       <member refid="classwx_tar_entry_1a521dda6a657aff6e16d80ede50e4d792" prot="public" virt="virtual"><scope>wxTarEntry</scope><name>GetSize</name></member>
       <member refid="classwx_tar_entry_1a7838e66739cb285b43fad592a2841b3f" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>GetTypeFlag</name></member>
       <member refid="classwx_tar_entry_1ab57bae13d98dcbe7b3e757385f0fbe2f" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>GetUserId</name></member>
@@ -591,8 +591,8 @@
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxTarEntry</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>operator new</name></member>
-      <member refid="classwx_tar_entry_1adda70faa73afada46350b0531b7de2b8" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>operator=</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>operator new</name></member>
+      <member refid="classwx_tar_entry_1a5e185aac56eba9244f216eb2f43e68cf" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>operator operator=</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>Ref</name></member>
       <member refid="classwx_tar_entry_1a2f6fca990f94df6a66a764dee5109580" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>SetAccessTime</name></member>
       <member refid="classwx_tar_entry_1a2a5b595d3398bb2ea041ad991a47ea04" prot="public" virt="non-virtual"><scope>wxTarEntry</scope><name>SetCreateTime</name></member>

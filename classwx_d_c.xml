@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_d_c" kind="class" language="C++" prot="public">
     <compoundname>wxDC</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -9,8 +9,8 @@
     <derivedcompoundref refid="classwx_mirror_d_c" prot="public" virt="non-virtual">wxMirrorDC</derivedcompoundref>
     <derivedcompoundref refid="classwx_post_script_d_c" prot="public" virt="non-virtual">wxPostScriptDC</derivedcompoundref>
     <derivedcompoundref refid="classwx_printer_d_c" prot="public" virt="non-virtual">wxPrinterDC</derivedcompoundref>
-    <derivedcompoundref refid="classwx_s_v_g_file_d_c" prot="public" virt="non-virtual">wxSVGFileDC</derivedcompoundref>
     <derivedcompoundref refid="classwx_screen_d_c" prot="public" virt="non-virtual">wxScreenDC</derivedcompoundref>
+    <derivedcompoundref refid="classwx_s_v_g_file_d_c" prot="public" virt="non-virtual">wxSVGFileDC</derivedcompoundref>
     <derivedcompoundref refid="classwx_window_d_c" prot="public" virt="non-virtual">wxWindowDC</derivedcompoundref>
     <includes local="no">wx/dc.h</includes>
       <sectiondef kind="user-defined">
@@ -28,13 +28,10 @@
 <para>Convert <emphasis>device</emphasis> X coordinate to logical coordinate, using the current mapping mode, user scale factor, device origin and axis orientation. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>Affine transformation applied to the coordinate system with <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> is not taken into account. </para>
-</simplesect>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="213" column="13"/>
+        <location file="interface/wx/dc.h" line="198" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a173351b84f5c8ef0952d39e49021a84e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -49,14 +46,11 @@
 <para>Convert <emphasis>device</emphasis> X coordinate to relative logical coordinate, using the current mapping mode and user scale factor but ignoring the axis orientation. </para>
         </briefdescription>
         <detaileddescription>
-<para>Use this for converting a horizontal distance like for example a width.</para>
-<para><simplesect kind="note"><para>Affine transformation applied to the coordinate system with <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> is not taken into account. </para>
-</simplesect>
-</para>
+<para>Use this for converting a width, for example. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="224" column="13"/>
+        <location file="interface/wx/dc.h" line="205" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1af669c71c68fb759927ec2e5721a6793e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -71,13 +65,10 @@
 <para>Converts <emphasis>device</emphasis> Y coordinate to logical coordinate, using the current mapping mode, user scale factor, device origin and axis orientation. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>Affine transformation applied to the coordinate system with <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> is not taken into account. </para>
-</simplesect>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="233" column="13"/>
+        <location file="interface/wx/dc.h" line="211" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a13fe5057e20314f2d383907719b278b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -92,14 +83,11 @@
 <para>Convert <emphasis>device</emphasis> Y coordinate to relative logical coordinate, using the current mapping mode and user scale factor but ignoring the axis orientation. </para>
         </briefdescription>
         <detaileddescription>
-<para>Use this for converting a vertical distance like for example a height.</para>
-<para><simplesect kind="note"><para>Affine transformation applied to the coordinate system with <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> is not taken into account. </para>
-</simplesect>
-</para>
+<para>Use this for converting a height, for example. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="244" column="13"/>
+        <location file="interface/wx/dc.h" line="218" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ace891d047e6f95d8f4d3a83475ab228e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -114,13 +102,10 @@
 <para>Converts logical X coordinate to device coordinate, using the current mapping mode, user scale factor, device origin and axis orientation. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>Affine transformation applied to the coordinate system with <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> is not taken into account. </para>
-</simplesect>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="253" column="13"/>
+        <location file="interface/wx/dc.h" line="224" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a68bac9e6f4bb21a3a38250c977bf2e5e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -135,14 +120,11 @@
 <para>Converts logical X coordinate to relative device coordinate, using the current mapping mode and user scale factor but ignoring the axis orientation. </para>
         </briefdescription>
         <detaileddescription>
-<para>Use this for converting a horizontal distance like for example a width.</para>
-<para><simplesect kind="note"><para>Affine transformation applied to the coordinate system with <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> is not taken into account. </para>
-</simplesect>
-</para>
+<para>Use this for converting a width, for example. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="264" column="13"/>
+        <location file="interface/wx/dc.h" line="231" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a373fbecf8b5fe2391d858150f94f8154" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -157,13 +139,10 @@
 <para>Converts logical Y coordinate to device coordinate, using the current mapping mode, user scale factor, device origin and axis orientation. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>Affine transformation applied to the coordinate system with <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> is not taken into account. </para>
-</simplesect>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="273" column="13"/>
+        <location file="interface/wx/dc.h" line="237" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1af9d891f58f39682fdd49c5aa5fc57ff2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -178,200 +157,11 @@
 <para>Converts logical Y coordinate to relative device coordinate, using the current mapping mode and user scale factor but ignoring the axis orientation. </para>
         </briefdescription>
         <detaileddescription>
-<para>Use this for converting a vertical distance like for example a height.</para>
-<para><simplesect kind="note"><para>Affine transformation applied to the coordinate system with <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> is not taken into account. </para>
-</simplesect>
-</para>
+<para>Use this for converting a height, for example. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="284" column="13"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1ae8cd3da121a3ed9a9759d2e76d544165" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
-        <definition>wxPoint wxDC::DeviceToLogical</definition>
-        <argsstring>(wxCoord x, wxCoord y) const</argsstring>
-        <name>DeviceToLogical</name>
-        <param>
-          <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
-          <declname>x</declname>
-        </param>
-        <param>
-          <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
-          <declname>y</declname>
-        </param>
-        <briefdescription>
-<para>Converts device (<emphasis>x</emphasis>, <emphasis>y</emphasis>) coordinates to logical coordinates taking into account all applied transformations like the current mapping mode, scale factors, device origin, axes orientation, affine transformation. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dc.h" line="294" column="13"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1ae8097d0ed3b03f2a76597f797d382e20" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
-        <definition>wxPoint wxDC::DeviceToLogical</definition>
-        <argsstring>(const wxPoint &amp;pt) const</argsstring>
-        <name>DeviceToLogical</name>
-        <param>
-          <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
-          <declname>pt</declname>
-        </param>
-        <briefdescription>
-<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dc.h" line="301" column="13"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a2b00b767c72f50b9926c25c7e0507e86" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
-        <definition>wxSize wxDC::DeviceToLogicalRel</definition>
-        <argsstring>(int x, int y) const</argsstring>
-        <name>DeviceToLogicalRel</name>
-        <param>
-          <type>int</type>
-          <declname>x</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>y</declname>
-        </param>
-        <briefdescription>
-<para>Converts device <emphasis>x</emphasis>, <emphasis>y</emphasis> coordinates to relative logical coordinates taking into account all applied transformations like the current mapping mode, scale factors, affine transformation. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Use this for converting distances like e.g. width and height.</para>
-<para><simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dc.h" line="311" column="12"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a1244cd725789bf0acdaac7302f6c8ce3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
-        <definition>wxSize wxDC::DeviceToLogicalRel</definition>
-        <argsstring>(const wxSize &amp;dim) const</argsstring>
-        <name>DeviceToLogicalRel</name>
-        <param>
-          <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
-          <declname>dim</declname>
-        </param>
-        <briefdescription>
-<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dc.h" line="318" column="12"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a683615521ce8c9d9291d319a752f159a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
-        <definition>wxPoint wxDC::LogicalToDevice</definition>
-        <argsstring>(wxCoord x, wxCoord y) const</argsstring>
-        <name>LogicalToDevice</name>
-        <param>
-          <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
-          <declname>x</declname>
-        </param>
-        <param>
-          <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
-          <declname>y</declname>
-        </param>
-        <briefdescription>
-<para>Converts logical (<emphasis>x</emphasis>, <emphasis>y</emphasis>) coordinates to device coordinates taking into account all applied transformations like the current mapping mode, scale factors, device origin, axes orientation, affine transformation. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dc.h" line="328" column="13"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a482af66a591bb42868c48c2137db5e5a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
-        <definition>wxPoint wxDC::LogicalToDevice</definition>
-        <argsstring>(const wxPoint &amp;pt) const</argsstring>
-        <name>LogicalToDevice</name>
-        <param>
-          <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
-          <declname>pt</declname>
-        </param>
-        <briefdescription>
-<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dc.h" line="335" column="13"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1ace81a88211420b1c18405d258d66ee4f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
-        <definition>wxSize wxDC::LogicalToDeviceRel</definition>
-        <argsstring>(int x, int y) const</argsstring>
-        <name>LogicalToDeviceRel</name>
-        <param>
-          <type>int</type>
-          <declname>x</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>y</declname>
-        </param>
-        <briefdescription>
-<para>Converts logical <emphasis>x</emphasis>, <emphasis>y</emphasis> coordinates to relative device coordinates taking into account all applied transformations like the current mapping mode, scale factors, affine transformation. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Use this for converting distances like e.g. width and height.</para>
-<para><simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dc.h" line="345" column="12"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1ac1ce1dfb6f8e3e2e0391584de9d0314c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
-        <definition>wxSize wxDC::LogicalToDeviceRel</definition>
-        <argsstring>(const wxSize &amp;dim) const</argsstring>
-        <name>LogicalToDeviceRel</name>
-        <param>
-          <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
-          <declname>dim</declname>
-        </param>
-        <briefdescription>
-<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dc.h" line="352" column="12"/>
+        <location file="interface/wx/dc.h" line="244" column="13"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -385,12 +175,10 @@
 <para>Clears the device context using the current background brush. </para>
         </briefdescription>
         <detaileddescription>
-<para>Note that <ref refid="classwx_d_c_1ad0139f6542f619244b80d4db7f685f86" kindref="member">SetBackground()</ref> method must be used to set the brush used by <ref refid="classwx_d_c_1acf301dfd75b0f31d969ecb9daec21e85" kindref="member">Clear()</ref>, the brush used for filling the shapes set by <ref refid="classwx_d_c_1a13978b2624116987a59ff729c4f81a96" kindref="member">SetBrush()</ref> is ignored by it.</para>
-<para>If no background brush was set, solid white brush is used to clear the device context. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="373" column="10"/>
+        <location file="interface/wx/dc.h" line="258" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a348f8cd1ba0ffcf62b8145628b0a5492" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -433,7 +221,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="394" column="10"/>
+        <location file="interface/wx/dc.h" line="279" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1abe49b852e96ff500ef6333bfc044890f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -459,7 +247,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="400" column="10"/>
+        <location file="interface/wx/dc.h" line="285" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1af982eb2d3b10c5617ef3559d51a1defc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -487,7 +275,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>Draw a bitmap on the device context at the specified point. </para>
         </briefdescription>
         <detaileddescription>
-<para>If <emphasis>useMask</emphasis> is true and the bitmap has a transparency mask, the bitmap will be drawn transparently.</para>
+<para>If <emphasis>transparent</emphasis> is true and the bitmap has a transparency mask, the bitmap will be drawn transparently.</para>
 <para>When drawing a mono-bitmap, the current text foreground colour will be used to draw the foreground of the bitmap (all bits set to 1), and the current text background colour to draw the background (all bits set to 0).</para>
 <para><simplesect kind="see"><para><ref refid="classwx_d_c_1aeac811df9a1688ce875117f3049849d6" kindref="member">SetTextForeground()</ref>, <ref refid="classwx_d_c_1a3ed22bd0a0b835d4d085261bb022766b" kindref="member">SetTextBackground()</ref>, <ref refid="classwx_memory_d_c" kindref="compound">wxMemoryDC</ref> </para>
 </simplesect>
@@ -495,7 +283,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="414" column="10"/>
+        <location file="interface/wx/dc.h" line="299" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a9449053951eceeb7984125cd4a694fd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -522,7 +310,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="420" column="10"/>
+        <location file="interface/wx/dc.h" line="305" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a8ad34eda4c0b75ca905d466c6328fe91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -552,7 +340,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="426" column="10"/>
+        <location file="interface/wx/dc.h" line="311" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a14fe0d838374721e98d6254cdd1484a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -570,7 +358,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="431" column="10"/>
+        <location file="interface/wx/dc.h" line="316" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a62fd1c810d532e53a25e3b2e6fd621f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -599,7 +387,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="438" column="10"/>
+        <location file="interface/wx/dc.h" line="323" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a560192c6dcb33c5bde404f3647234657" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -621,7 +409,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="443" column="10"/>
+        <location file="interface/wx/dc.h" line="328" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a340697f08f5fd08d9db383ffcef642c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -655,7 +443,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="452" column="10"/>
+        <location file="interface/wx/dc.h" line="337" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a8a7a8478797c599e91125168669a5f36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -677,7 +465,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="457" column="10"/>
+        <location file="interface/wx/dc.h" line="342" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a637167c299d7e58832cf9c71f6f64fd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -695,7 +483,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="462" column="10"/>
+        <location file="interface/wx/dc.h" line="347" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a821e0b82707ca0379273cca67913da06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -733,13 +521,12 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>The current pen is used for drawing the arc and the current brush is used for drawing the pie.</para>
 <para><emphasis>x</emphasis> and <emphasis>y</emphasis> specify the x and y coordinates of the upper-left corner of the rectangle that contains the ellipse.</para>
 <para><emphasis>width</emphasis> and <emphasis>height</emphasis> specify the width and height of the rectangle that contains the ellipse.</para>
-<para><emphasis>start</emphasis> and <emphasis>end</emphasis> specify the end points of the arc relative to the three-o&apos;clock position from the center of the rectangle. Angles are specified in degrees with 0 degree angle corresponding to the positive horizontal axis (3 o&apos;clock) direction.</para>
-<para>Independently of whether <emphasis>start</emphasis> is greater than or less than <emphasis>end</emphasis>, the arc is drawn in the counter-clockwise direction. Also, if <emphasis>start</emphasis> is equal to <emphasis>end</emphasis>, a complete ellipse is drawn.</para>
+<para><emphasis>start</emphasis> and <emphasis>end</emphasis> specify the start and end of the arc relative to the three-o&apos;clock position from the center of the rectangle. Angles are specified in degrees with 0 degree angle corresponding to the positive horizontal axis (3 o&apos;clock) direction. Positive values mean counter-clockwise motion. If <emphasis>start</emphasis> is equal to <emphasis>end</emphasis>, a complete ellipse will be drawn.</para>
 <para>Notice that unlike <ref refid="classwx_d_c_1a348f8cd1ba0ffcf62b8145628b0a5492" kindref="member">DrawArc()</ref>, this function does not draw the lines to the arc ends, even when using non-transparent brush. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="486" column="10"/>
+        <location file="interface/wx/dc.h" line="369" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a5f18a7aee18b69c8721aec67ea0a3532" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -769,7 +556,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="492" column="10"/>
+        <location file="interface/wx/dc.h" line="375" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a890d011a03308a28039d4940dd04264e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -796,7 +583,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="500" column="10"/>
+        <location file="interface/wx/dc.h" line="383" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a5719d8c36a03d1679828c5d89d33dd67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -818,7 +605,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="505" column="10"/>
+        <location file="interface/wx/dc.h" line="388" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ae28d7aa2e17a850f4ca15c042a870152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -859,7 +646,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="513" column="10"/>
+        <location file="interface/wx/dc.h" line="396" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a9e4ddef5a10fdcee96ff9ef2fded9ee3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -891,7 +678,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="521" column="10"/>
+        <location file="interface/wx/dc.h" line="404" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a12f2c236d4d320acec0bc6fe20e8399d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -922,7 +709,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="531" column="10"/>
+        <location file="interface/wx/dc.h" line="414" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a34f84b8b73cf782e6d9ab0f629598b6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -944,7 +731,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="536" column="10"/>
+        <location file="interface/wx/dc.h" line="419" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1abae438499fdfdc102e7be7629e8f8c46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -975,11 +762,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </briefdescription>
         <detaileddescription>
 <para>The current pen is used for drawing the lines.</para>
-<para><bold>wxPerl Note:</bold> Not supported by wxPerl.  </para>
+<para><bold>wxPerl Note:</bold> Not supported by wxPerl. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="546" column="10"/>
+        <location file="interface/wx/dc.h" line="429" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a23cbb356e46890c99fcb5304d077f888" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1005,11 +792,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </briefdescription>
         <detaileddescription>
 <para>The programmer is responsible for deleting the list of points.</para>
-<para><bold>wxPerl Note:</bold> The wxPerl version of this method accepts as its first parameter a reference to an array of <ref refid="classwx_point" kindref="compound">wxPoint</ref> objects.  </para>
+<para><bold>wxPerl Note:</bold> The wxPerl version of this method accepts as its first parameter a reference to an array of <ref refid="classwx_point" kindref="compound">wxPoint</ref> objects. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="559" column="10"/>
+        <location file="interface/wx/dc.h" line="442" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a8380aab866e8f3947e0898cf08969d9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1032,7 +819,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="566" column="10"/>
+        <location file="interface/wx/dc.h" line="449" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a9b75ad987adc0c01d13c34db101b3539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1050,7 +837,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="571" column="10"/>
+        <location file="interface/wx/dc.h" line="454" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a86e50a20fa6b634b9ce590ce8a900e1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1088,11 +875,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>The first and last points are automatically closed.</para>
 <para>The last argument specifies the fill rule: <bold>wxODDEVEN_RULE</bold> (the default) or <bold>wxWINDING_RULE</bold>.</para>
 <para>The current pen is used for drawing the outline, and the current brush for filling the shape. Using a transparent brush suppresses filling.</para>
-<para><bold>wxPerl Note:</bold> Not supported by wxPerl.  </para>
+<para><bold>wxPerl Note:</bold> Not supported by wxPerl. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="588" column="10"/>
+        <location file="interface/wx/dc.h" line="471" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a6e5808ba5b740f0d4df5da02b05ce5ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1126,11 +913,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>The last argument specifies the fill rule: <bold>wxODDEVEN_RULE</bold> (the default) or <bold>wxWINDING_RULE</bold>.</para>
 <para>The current pen is used for drawing the outline, and the current brush for filling the shape. Using a transparent brush suppresses filling.</para>
 <para>The programmer is responsible for deleting the list of points.</para>
-<para><bold>wxPerl Note:</bold> The wxPerl version of this method accepts as its first parameter a reference to an array of <ref refid="classwx_point" kindref="compound">wxPoint</ref> objects.  </para>
+<para><bold>wxPerl Note:</bold> The wxPerl version of this method accepts as its first parameter a reference to an array of <ref refid="classwx_point" kindref="compound">wxPoint</ref> objects. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="610" column="10"/>
+        <location file="interface/wx/dc.h" line="493" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ae760da96008debe42e18195d8ac8df3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1178,7 +965,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="637" column="10"/>
+        <location file="interface/wx/dc.h" line="520" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a918b9ae3447a2fc13f4c38c628a45c01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1202,15 +989,14 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
           <declname>height</declname>
         </param>
         <briefdescription>
-<para>Draws a rectangle with the given corner coordinate and size. </para>
+<para>Draws a rectangle with the given top left corner, and with the given size. </para>
         </briefdescription>
         <detaileddescription>
-<para>Normally, <emphasis>x</emphasis> and <emphasis>y</emphasis> specify the top left corner coordinates and both <emphasis>width</emphasis> and <emphasis>height</emphasis> are positive, however they are also allowed to be negative, in which case the corresponding corner coordinate refers to the right or bottom corner instead.</para>
 <para>The current pen is used for the outline and the current brush for filling the shape. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="652" column="10"/>
+        <location file="interface/wx/dc.h" line="529" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a5499c7359d84871343e4875902c06a69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1232,7 +1018,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="657" column="10"/>
+        <location file="interface/wx/dc.h" line="534" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ae0a8c6fe2eb45f6f03339b049db6b2b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1250,7 +1036,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="662" column="10"/>
+        <location file="interface/wx/dc.h" line="539" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1aae5aff11939d5c55ab5c50987e4f2521" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1277,8 +1063,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>Draws the text rotated by <emphasis>angle</emphasis> degrees (positive angles are counterclockwise; the full angle is 360 degrees). </para>
         </briefdescription>
         <detaileddescription>
-<para>Notice that, as with <ref refid="classwx_d_c_1a11d35ce34fccb57b0efc7dc91168660b" kindref="member">DrawText()</ref>, the <emphasis>text</emphasis> can contain multiple lines separated by the new line (<computeroutput>&apos;\n&apos;</computeroutput>) characters.</para>
-<para><simplesect kind="note"><para>Under MSW only TrueType fonts can be drawn by this function. In particular, a font different from <computeroutput>wxNORMAL_FONT</computeroutput> should be used as the latter is not a TrueType font. <computeroutput>wxSWISS_FONT</computeroutput> is an example of a font which is.</para>
+<para><simplesect kind="note"><para>Under Win9x only TrueType fonts can be drawn by this function. In particular, a font different from <computeroutput>wxNORMAL_FONT</computeroutput> should be used as the latter is not a TrueType font. <computeroutput>wxSWISS_FONT</computeroutput> is an example of a font which is.</para>
 </simplesect>
 <simplesect kind="see"><para><ref refid="classwx_d_c_1a11d35ce34fccb57b0efc7dc91168660b" kindref="member">DrawText()</ref> </para>
 </simplesect>
@@ -1286,7 +1071,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="678" column="10"/>
+        <location file="interface/wx/dc.h" line="552" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a791bc8502da484f1d3163e360cf91e8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1312,7 +1097,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="684" column="10"/>
+        <location file="interface/wx/dc.h" line="558" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a94db29e2a40a16dc19ac852d05cd65b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1348,7 +1133,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="700" column="10"/>
+        <location file="interface/wx/dc.h" line="574" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a9e4b8ab031042016d434606eb7744c9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1374,7 +1159,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="706" column="10"/>
+        <location file="interface/wx/dc.h" line="580" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a926fb2251b9185e58f15c41f680aaf2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1396,7 +1181,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="712" column="10"/>
+        <location file="interface/wx/dc.h" line="586" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ad72d38c75ac6b3f80c1f957dd94089fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1416,11 +1201,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>Draws a spline between all given points using the current pen. </para>
         </briefdescription>
         <detaileddescription>
-<para><bold>wxPerl Note:</bold> Not supported by wxPerl.  </para>
+<para><bold>wxPerl Note:</bold> Not supported by wxPerl. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="721" column="10"/>
+        <location file="interface/wx/dc.h" line="595" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1aacfb4bab651f9eb572e42cd2870c40c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1435,11 +1220,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
         </briefdescription>
         <detaileddescription>
-<para><bold>wxPerl Note:</bold> The wxPerl version of this method accepts as its first parameter a reference to an array of <ref refid="classwx_point" kindref="compound">wxPoint</ref> objects.  </para>
+<para><bold>wxPerl Note:</bold> The wxPerl version of this method accepts as its first parameter a reference to an array of <ref refid="classwx_point" kindref="compound">wxPoint</ref> objects. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="733" column="10"/>
+        <location file="interface/wx/dc.h" line="607" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a60c358ff3cfbf2b6f6d1918b527de98a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1474,11 +1259,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
         </briefdescription>
         <detaileddescription>
-<para><bold>wxPerl Note:</bold> Not supported by wxPerl.  </para>
+<para><bold>wxPerl Note:</bold> Not supported by wxPerl. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="743" column="10"/>
+        <location file="interface/wx/dc.h" line="617" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a11d35ce34fccb57b0efc7dc91168660b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1509,7 +1294,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="762" column="10"/>
+        <location file="interface/wx/dc.h" line="636" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a17f5674c449449b730c63f773534d721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1531,7 +1316,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="767" column="10"/>
+        <location file="interface/wx/dc.h" line="641" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a323802ed579056fce98220f5d1778076" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1561,7 +1346,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="779" column="10"/>
+        <location file="interface/wx/dc.h" line="653" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a2f0cd1850aefeda55b25cf56d55ac495" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1595,7 +1380,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="794" column="10"/>
+        <location file="interface/wx/dc.h" line="668" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a9cfbde2fcde06ffacf323f3a9dd1b020" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1627,7 +1412,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="807" column="10"/>
+        <location file="interface/wx/dc.h" line="681" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1af510e22ffc274d3d3b29659941f2b5a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1671,7 +1456,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="836" column="10"/>
+        <location file="interface/wx/dc.h" line="710" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1aa3ad38fdcd0e731af94bd9c3189e72e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1698,7 +1483,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="842" column="10"/>
+        <location file="interface/wx/dc.h" line="716" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1af8bab4cd7ffc3050974236a32afa1e1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1721,7 +1506,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="850" column="10"/>
+        <location file="interface/wx/dc.h" line="724" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ad5ad1b17105668a9cba6f4f6cc902a02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1739,7 +1524,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="855" column="10"/>
+        <location file="interface/wx/dc.h" line="729" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -1759,11 +1544,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="870" column="10"/>
+        <location file="interface/wx/dc.h" line="744" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a866cebe05c603892235701239f8dbd65" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool wxDC::GetClippingBox</definition>
+      <memberdef kind="function" id="classwx_d_c_1aa157370fdda0890acfb41ec85eb4a227" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxDC::GetClippingBox</definition>
         <argsstring>(wxCoord *x, wxCoord *y, wxCoord *width, wxCoord *height) const</argsstring>
         <name>GetClippingBox</name>
         <param>
@@ -1786,67 +1571,10 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>Gets the rectangle surrounding the current clipping region. </para>
         </briefdescription>
         <detaileddescription>
-<para>If no clipping region is set this function returns the extent of the device context.</para>
-<para><simplesect kind="remark"><para>Clipping region is given in logical coordinates.</para>
-</simplesect>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>x</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>If non-NULL, filled in with the logical horizontal coordinate of the top left corner of the clipping region if the function returns true or 0 otherwise. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>y</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>If non-NULL, filled in with the logical vertical coordinate of the top left corner of the clipping region if the function returns true or 0 otherwise. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>width</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>If non-NULL, filled in with the width of the clipping region if the function returns true or the device context width otherwise. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>height</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>If non-NULL, filled in with the height of the clipping region if the function returns true or the device context height otherwise. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>true if there is a clipping region or false if there is no active clipping region (note that this return value is available only since wxWidgets 3.1.2, this function didn&apos;t return anything in the previous versions). </para>
-</simplesect>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="897" column="10"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a5a379f8f932a5d7d2e05f0820932f444" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool wxDC::GetClippingBox</definition>
-        <argsstring>(wxRect &amp;rect) const</argsstring>
-        <name>GetClippingBox</name>
-        <param>
-          <type><ref refid="classwx_rect" kindref="compound">wxRect</ref> &amp;</type>
-          <declname>rect</declname>
-        </param>
-        <briefdescription>
-<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dc.h" line="902" column="10"/>
+        <location file="interface/wx/dc.h" line="749" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a21ce8b27db0da5d68b8571d0ff39114b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1874,21 +1602,15 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </briefdescription>
         <detaileddescription>
 <para>The clipping region is an area to which drawing is restricted. Possible uses for the clipping region are for clipping text or for speeding up window redraws when only a known area of the screen is damaged.</para>
-<para><simplesect kind="remark"><para><itemizedlist>
-<listitem><para>Clipping region should be given in logical coordinates.</para>
-</listitem><listitem><para>Calling this function can only make the clipping region smaller, never larger.</para>
-</listitem><listitem><para>You need to call <ref refid="classwx_d_c_1ae0b0fc593c4559b9ac70e121bd28e3b4" kindref="member">DestroyClippingRegion()</ref> first if you want to set the clipping region exactly to the region specified.</para>
-</listitem><listitem><para>If resulting clipping region is empty, then all drawing on the DC is clipped out (all changes made by drawing operations are masked out).</para>
-</listitem></itemizedlist>
-</para>
-</simplesect>
-<simplesect kind="see"><para><ref refid="classwx_d_c_1ae0b0fc593c4559b9ac70e121bd28e3b4" kindref="member">DestroyClippingRegion()</ref>, <ref refid="classwx_region" kindref="compound">wxRegion</ref> </para>
+<para>Notice that you need to call <ref refid="classwx_d_c_1ae0b0fc593c4559b9ac70e121bd28e3b4" kindref="member">DestroyClippingRegion()</ref> if you want to set the clipping region exactly to the region specified.</para>
+<para>Also note that if the clipping region is empty, any previously set clipping region is destroyed, i.e. it is equivalent to calling <ref refid="classwx_d_c_1ae0b0fc593c4559b9ac70e121bd28e3b4" kindref="member">DestroyClippingRegion()</ref>, and not to clipping out all drawing on the DC as might be expected.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_d_c_1ae0b0fc593c4559b9ac70e121bd28e3b4" kindref="member">DestroyClippingRegion()</ref>, <ref refid="classwx_region" kindref="compound">wxRegion</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="927" column="10"/>
+        <location file="interface/wx/dc.h" line="770" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a800f7ca2a4a7588ff68d808eb06191e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1910,7 +1632,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="932" column="10"/>
+        <location file="interface/wx/dc.h" line="775" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a9a397f713db57f7999b5851a5b25dd84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1928,7 +1650,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="937" column="10"/>
+        <location file="interface/wx/dc.h" line="780" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a382a46c105ebad94e848e74e9cc0b4b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1947,7 +1669,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="945" column="10"/>
+        <location file="interface/wx/dc.h" line="788" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -1964,7 +1686,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="958" column="13"/>
+        <location file="interface/wx/dc.h" line="801" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a3079e3786b0d9160462e15cfe61422c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -1978,7 +1700,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="963" column="13"/>
+        <location file="interface/wx/dc.h" line="806" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ae55ab5ce3194add52406f0f15009920c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structwx_font_metrics" kindref="compound">wxFontMetrics</ref></type>
@@ -1989,7 +1711,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>Returns the various font characteristics. </para>
         </briefdescription>
         <detaileddescription>
-<para>This method allows retrieving some of the font characteristics not returned by <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">GetTextExtent()</ref>, notably internal leading and average character width.</para>
+<para>This method allows to retrieve some of the font characteristics not returned by <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">GetTextExtent()</ref>, notably internal leading and average character width.</para>
 <para>Currently this method returns correct results only under wxMSW, in the other ports the internal leading will always be 0 and the average character width will be computed as the width of the character &apos;x&apos;.</para>
 <para><simplesect kind="since"><para>2.9.2 </para>
 </simplesect>
@@ -1997,7 +1719,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="978" column="19"/>
+        <location file="interface/wx/dc.h" line="821" column="19"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a3f59fa4cc99e7f8c84b945373d986a45" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2033,16 +1755,16 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para><emphasis>string</emphasis> is the text string to measure, <emphasis>heightLine</emphasis>, if non NULL, is where to store the height of a single line.</para>
 <para>The text extent is set in the given <emphasis>w</emphasis> and <emphasis>h</emphasis> pointers.</para>
 <para>If the optional parameter <emphasis>font</emphasis> is specified and valid, then it is used for the text extent calculation, otherwise the currently selected font is used.</para>
-<para>If <emphasis>string</emphasis> is empty, its horizontal extent is 0 but, for convenience when using this function for allocating enough space for a possibly multi-line string, its vertical extent is the same as the height of an empty line of text. Please note that this behaviour differs from that of <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">GetTextExtent()</ref>.</para>
 <para><simplesect kind="note"><para>This function works with both single-line and multi-line strings.</para>
 </simplesect>
-<bold>wxPerl Note:</bold> In wxPerl this method is implemented as GetMultiLineTextExtent(string, font = undef) returning a 3-element list (width, height, line_height)  <simplesect kind="see"><para><ref refid="classwx_font" kindref="compound">wxFont</ref>, <ref refid="classwx_d_c_1afab18239d707cd403235b36a987171a8" kindref="member">SetFont()</ref>, <ref refid="classwx_d_c_1a9caf42966be72457715b3188fe285220" kindref="member">GetPartialTextExtents()</ref>, <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">GetTextExtent()</ref> </para>
+<bold>wxPerl Note:</bold> In wxPerl this method is implemented as GetMultiLineTextExtent(string, font = undef) returning a 3-element list (width, height, line_height)</para>
+<para><simplesect kind="see"><para><ref refid="classwx_font" kindref="compound">wxFont</ref>, <ref refid="classwx_d_c_1afab18239d707cd403235b36a987171a8" kindref="member">SetFont()</ref>, <ref refid="classwx_d_c_1a9caf42966be72457715b3188fe285220" kindref="member">GetPartialTextExtents()</ref>, <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">GetTextExtent()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1007" column="10"/>
+        <location file="interface/wx/dc.h" line="844" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a827892cc43071baaad813cbddbba021b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -2057,18 +1779,19 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>Gets the dimensions of the string using the currently selected font. </para>
         </briefdescription>
         <detaileddescription>
-<para><emphasis>string</emphasis> is the text string to measure.</para>
+<para><emphasis>string</emphasis> is the text string to measure, <emphasis>heightLine</emphasis>, if non NULL, is where to store the height of a single line.</para>
 <para><simplesect kind="return"><para>The text extent as a <ref refid="classwx_size" kindref="compound">wxSize</ref> object.</para>
 </simplesect>
 <simplesect kind="note"><para>This function works with both single-line and multi-line strings.</para>
 </simplesect>
-<bold>wxPerl Note:</bold> Not supported by wxPerl.  <simplesect kind="see"><para><ref refid="classwx_font" kindref="compound">wxFont</ref>, <ref refid="classwx_d_c_1afab18239d707cd403235b36a987171a8" kindref="member">SetFont()</ref>, <ref refid="classwx_d_c_1a9caf42966be72457715b3188fe285220" kindref="member">GetPartialTextExtents()</ref>, <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">GetTextExtent()</ref> </para>
+<bold>wxPerl Note:</bold> Not supported by wxPerl.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_font" kindref="compound">wxFont</ref>, <ref refid="classwx_d_c_1afab18239d707cd403235b36a987171a8" kindref="member">SetFont()</ref>, <ref refid="classwx_d_c_1a9caf42966be72457715b3188fe285220" kindref="member">GetPartialTextExtents()</ref>, <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">GetTextExtent()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1025" column="12"/>
+        <location file="interface/wx/dc.h" line="863" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a9caf42966be72457715b3188fe285220" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2088,13 +1811,14 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </briefdescription>
         <detaileddescription>
 <para>The generic version simply builds a running total of the widths of each character using <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">GetTextExtent()</ref>, however if the various platforms have a native API function that is faster or more accurate than the generic implementation then it should be used instead.</para>
-<para><bold>wxPerl Note:</bold> In wxPerl this method only takes the <emphasis>text</emphasis> parameter and returns the widths as a list of integers.  <simplesect kind="see"><para><ref refid="classwx_d_c_1a3f59fa4cc99e7f8c84b945373d986a45" kindref="member">GetMultiLineTextExtent()</ref>, <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">GetTextExtent()</ref> </para>
+<para><bold>wxPerl Note:</bold> In wxPerl this method only takes the <emphasis>text</emphasis> parameter and returns the widths as a list of integers.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_d_c_1a3f59fa4cc99e7f8c84b945373d986a45" kindref="member">GetMultiLineTextExtent()</ref>, <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">GetTextExtent()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1042" column="10"/>
+        <location file="interface/wx/dc.h" line="880" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2135,16 +1859,16 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para><emphasis>string</emphasis> is the text string to measure, <emphasis>descent</emphasis> is the dimension from the baseline of the font to the bottom of the descender, and <emphasis>externalLeading</emphasis> is any extra vertical space added to the font by the font designer (usually is zero).</para>
 <para>The text extent is returned in <emphasis>w</emphasis> and <emphasis>h</emphasis> pointers or as a <ref refid="classwx_size" kindref="compound">wxSize</ref> object depending on which version of this function is used.</para>
 <para>If the optional parameter <emphasis>font</emphasis> is specified and valid, then it is used for the text extent calculation. Otherwise the currently selected font is.</para>
-<para>If <emphasis>string</emphasis> is empty, its extent is 0 in both directions, as expected.</para>
 <para><simplesect kind="note"><para>This function only works with single-line strings.</para>
 </simplesect>
-<bold>wxPerl Note:</bold> In wxPerl this method is implemented as GetTextExtent(string, font = undef) returning a 4-element list (width, height, descent, externalLeading)  <simplesect kind="see"><para><ref refid="classwx_font" kindref="compound">wxFont</ref>, <ref refid="classwx_d_c_1afab18239d707cd403235b36a987171a8" kindref="member">SetFont()</ref>, <ref refid="classwx_d_c_1a9caf42966be72457715b3188fe285220" kindref="member">GetPartialTextExtents()</ref>, <ref refid="classwx_d_c_1a3f59fa4cc99e7f8c84b945373d986a45" kindref="member">GetMultiLineTextExtent()</ref> </para>
+<bold>wxPerl Note:</bold> In wxPerl this method is implemented as GetTextExtent(string, font = undef) returning a 4-element list (width, height, descent, externalLeading)</para>
+<para><simplesect kind="see"><para><ref refid="classwx_font" kindref="compound">wxFont</ref>, <ref refid="classwx_d_c_1afab18239d707cd403235b36a987171a8" kindref="member">SetFont()</ref>, <ref refid="classwx_d_c_1a9caf42966be72457715b3188fe285220" kindref="member">GetPartialTextExtents()</ref>, <ref refid="classwx_d_c_1a3f59fa4cc99e7f8c84b945373d986a45" kindref="member">GetMultiLineTextExtent()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1072" column="10"/>
+        <location file="interface/wx/dc.h" line="908" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a1f9b9b72ba8c88c1217b6210af4c22c6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -2159,11 +1883,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
 <para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
         </briefdescription>
         <detaileddescription>
-<para><bold>wxPerl Note:</bold> Not supported by wxPerl.  </para>
+<para><bold>wxPerl Note:</bold> Not supported by wxPerl. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1085" column="12"/>
+        <location file="interface/wx/dc.h" line="921" column="12"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -2174,7 +1898,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         <argsstring>() const</argsstring>
         <name>GetBackgroundMode</name>
         <briefdescription>
-<para>Returns the current background mode: <computeroutput>wxBRUSHSTYLE_SOLID</computeroutput> or <computeroutput>wxBRUSHSTYLE_TRANSPARENT</computeroutput>. </para>
+<para>Returns the current background mode: <computeroutput>wxSOLID</computeroutput> or <computeroutput>wxTRANSPARENT</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="classwx_d_c_1a86c405ae265e6fdb4e393c4c9ada73c0" kindref="member">SetBackgroundMode()</ref> </para>
@@ -2183,11 +1907,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1100" column="9"/>
+        <location file="interface/wx/dc.h" line="936" column="9"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a159ff92c61d4886e52d688ac4cb1128b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_d_c_1aa2a9561d0783d2891fab3f34fd1e3021" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_font" kindref="compound">wxFont</ref> &amp;</type>
-        <definition>const wxFont &amp; wxDC::GetFont</definition>
+        <definition>const wxFont&amp; wxDC::GetFont</definition>
         <argsstring>() const</argsstring>
         <name>GetFont</name>
         <briefdescription>
@@ -2198,7 +1922,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1109" column="18"/>
+        <location file="interface/wx/dc.h" line="945" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a69139fe0c3b10e077a5ad4e9a8860b7f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="intl_8h_1a7e30efec05ef9b40b1750ac046400c81" kindref="member">wxLayoutDirection</ref></type>
@@ -2216,11 +1940,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1119" column="23"/>
+        <location file="interface/wx/dc.h" line="955" column="23"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a9252db582396706072cc1e107eed401d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_d_c_1a7d0015e6e8e62e1e207bb38873b0e0b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
-        <definition>const wxColour &amp; wxDC::GetTextBackground</definition>
+        <definition>const wxColour&amp; wxDC::GetTextBackground</definition>
         <argsstring>() const</argsstring>
         <name>GetTextBackground</name>
         <briefdescription>
@@ -2233,11 +1957,11 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1126" column="20"/>
+        <location file="interface/wx/dc.h" line="962" column="20"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a6ce1f3e3beaf3af14bbff878b670b597" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_d_c_1aa36f1f4cd4594c9735ca91638f42fe28" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
-        <definition>const wxColour &amp; wxDC::GetTextForeground</definition>
+        <definition>const wxColour&amp; wxDC::GetTextForeground</definition>
         <argsstring>() const</argsstring>
         <name>GetTextForeground</name>
         <briefdescription>
@@ -2250,7 +1974,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1133" column="20"/>
+        <location file="interface/wx/dc.h" line="969" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a86c405ae265e6fdb4e393c4c9ada73c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2262,25 +1986,14 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
           <declname>mode</declname>
         </param>
         <briefdescription>
-<para>Change the current background mode. </para>
+<para><emphasis>mode</emphasis> may be one of <computeroutput>wxSOLID</computeroutput> and <computeroutput>wxTRANSPARENT</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>This setting determines whether text will be drawn with a background colour or not.</para>
-<para>Default is <computeroutput>wxBRUSHSTYLE_TRANSPARENT</computeroutput>, i.e. text background is not drawn.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>mode</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>one of <computeroutput>wxBRUSHSTYLE_SOLID</computeroutput> and <computeroutput>wxBRUSHSTYLE_TRANSPARENT</computeroutput>. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
+<para>This setting determines whether text will be drawn with a background colour or not. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1146" column="10"/>
+        <location file="interface/wx/dc.h" line="977" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1afab18239d707cd403235b36a987171a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2302,7 +2015,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1157" column="10"/>
+        <location file="interface/wx/dc.h" line="988" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a3ed22bd0a0b835d4d085261bb022766b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2320,7 +2033,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1162" column="10"/>
+        <location file="interface/wx/dc.h" line="993" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1aeac811df9a1688ce875117f3049849d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2341,7 +2054,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1170" column="10"/>
+        <location file="interface/wx/dc.h" line="1001" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a16196571f402cabf506619e8bf9f1586" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2371,7 +2084,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1181" column="10"/>
+        <location file="interface/wx/dc.h" line="1012" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -2399,7 +2112,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1197" column="10"/>
+        <location file="interface/wx/dc.h" line="1028" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a0021372eada83e1fa73a5364100377fc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -2413,7 +2126,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1202" column="13"/>
+        <location file="interface/wx/dc.h" line="1033" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a6484caea9b032fc399f900e46deb6be3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -2427,7 +2140,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1207" column="13"/>
+        <location file="interface/wx/dc.h" line="1038" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a8f205424c5badc4f76b77aa71887f5ff" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -2441,7 +2154,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1212" column="13"/>
+        <location file="interface/wx/dc.h" line="1043" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a74abb8dd4308d7594e8d7a234d19e04f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
@@ -2455,7 +2168,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1217" column="13"/>
+        <location file="interface/wx/dc.h" line="1048" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a35ed8c0c64315ec85588142d44f83af8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2472,7 +2185,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1225" column="10"/>
+        <location file="interface/wx/dc.h" line="1056" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -2494,7 +2207,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1239" column="10"/>
+        <location file="interface/wx/dc.h" line="1070" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a94c855ceb9f2fd5dcd1cf61396c13576" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2508,7 +2221,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1244" column="10"/>
+        <location file="interface/wx/dc.h" line="1075" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a95a506a0153d24dc352577161d45081c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2522,7 +2235,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1249" column="10"/>
+        <location file="interface/wx/dc.h" line="1080" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a3867f84557ecaf68bfeacffea74e8902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2536,7 +2249,7 @@ The arc drawn is an arc of the circle centered at (<emphasis>xc</emphasis>, <emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1254" column="10"/>
+        <location file="interface/wx/dc.h" line="1085" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -2718,7 +2431,7 @@ This sequence of operations ensures that the source&apos;s transparent area need
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1333" column="10"/>
+        <location file="interface/wx/dc.h" line="1164" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a82801167a35e747218c49aa2161ae4bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -2785,7 +2498,7 @@ This sequence of operations ensures that the source&apos;s transparent area need
 <para>Copy from a source DC to this DC possibly changing the scale. </para>
         </briefdescription>
         <detaileddescription>
-<para>Unlike <ref refid="classwx_d_c_1a12bed94a15136b9080683f4151042a34" kindref="member">Blit()</ref>, this method allows specifying different source and destination region sizes, meaning that it can stretch or shrink it while copying. The same can be achieved by changing the scale of the source or target DC but calling this method is simpler and can also be more efficient if the platform provides a native implementation of it.</para>
+<para>Unlike <ref refid="classwx_d_c_1a12bed94a15136b9080683f4151042a34" kindref="member">Blit()</ref>, this method allows to specify different source and destination region sizes, meaning that it can stretch or shrink it while copying. The same can be achieved by changing the scale of the source or target DC but calling this method is simpler and can also be more efficient if the platform provides a native implementation of it.</para>
 <para>The meaning of its other parameters is the same as with <ref refid="classwx_d_c_1a12bed94a15136b9080683f4151042a34" kindref="member">Blit()</ref>, in particular all source coordinates are interpreted using the source DC coordinate system, i.e. are affected by its scale, origin translation and axis direction.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -2923,14 +2636,14 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1416" column="10"/>
+        <location file="interface/wx/dc.h" line="1247" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
       <header>Background/foreground brush and pen</header>
-      <memberdef kind="function" id="classwx_d_c_1adfd305c5b5bc597f6c976fe511d30d08" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_d_c_1a7322eb1e64eb276f5cca9aa21d3cefe4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_brush" kindref="compound">wxBrush</ref> &amp;</type>
-        <definition>const wxBrush &amp; wxDC::GetBackground</definition>
+        <definition>const wxBrush&amp; wxDC::GetBackground</definition>
         <argsstring>() const</argsstring>
         <name>GetBackground</name>
         <briefdescription>
@@ -2943,11 +2656,11 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1437" column="19"/>
+        <location file="interface/wx/dc.h" line="1268" column="19"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a2c7a9220abfcd672bf9b0839aef6e874" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_d_c_1a9bf13abd52b398ddf3096b2bd65824d3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_brush" kindref="compound">wxBrush</ref> &amp;</type>
-        <definition>const wxBrush &amp; wxDC::GetBrush</definition>
+        <definition>const wxBrush&amp; wxDC::GetBrush</definition>
         <argsstring>() const</argsstring>
         <name>GetBrush</name>
         <briefdescription>
@@ -2960,11 +2673,11 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1444" column="19"/>
+        <location file="interface/wx/dc.h" line="1275" column="19"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1ae291e9cfc453e26d6fc6bb1762dfe6fb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_d_c_1a04592fedab03caa91cabc34d22451b5f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_pen" kindref="compound">wxPen</ref> &amp;</type>
-        <definition>const wxPen &amp; wxDC::GetPen</definition>
+        <definition>const wxPen&amp; wxDC::GetPen</definition>
         <argsstring>() const</argsstring>
         <name>GetPen</name>
         <briefdescription>
@@ -2977,7 +2690,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1451" column="17"/>
+        <location file="interface/wx/dc.h" line="1282" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ad0139f6542f619244b80d4db7f685f86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2995,7 +2708,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1456" column="10"/>
+        <location file="interface/wx/dc.h" line="1287" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a13978b2624116987a59ff729c4f81a96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3017,7 +2730,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1468" column="10"/>
+        <location file="interface/wx/dc.h" line="1299" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a0d229733fbc83c7e4c483c0714d090b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3039,7 +2752,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1480" column="10"/>
+        <location file="interface/wx/dc.h" line="1311" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ad1258b299c3a92344f1bdedbb7fc3acc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3074,7 +2787,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1497" column="10"/>
+        <location file="interface/wx/dc.h" line="1328" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a798700d907980c88c717e86a4a06e924" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -3091,7 +2804,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1504" column="9"/>
+        <location file="interface/wx/dc.h" line="1335" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a1ce47e2939c15b7290540a4ca1736eb5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
@@ -3108,7 +2821,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1511" column="13"/>
+        <location file="interface/wx/dc.h" line="1342" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1af0a85cc17b43c8db59a3172ded90cb79" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="interface_2wx_2dc_8h_1a07398221a1f9dfecf424c90c5c777d54" kindref="member">wxRasterOperationMode</ref></type>
@@ -3125,7 +2838,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1518" column="27"/>
+        <location file="interface/wx/dc.h" line="1349" column="27"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a42171f00a80eff7e88204f92c36f1f6f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="interface_2wx_2dc_8h_1a5a641b839b9ac2ff94514d0596f6e20a" kindref="member">wxMappingMode</ref></type>
@@ -3142,7 +2855,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1525" column="19"/>
+        <location file="interface/wx/dc.h" line="1356" column="19"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1abe0f8a22ec58783bd728f01e493040d1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -3165,7 +2878,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
 <para>Gets in <emphasis>colour</emphasis> the colour at the specified location. </para>
         </briefdescription>
         <detaileddescription>
-<para>This method isn&apos;t available for <ref refid="classwx_post_script_d_c" kindref="compound">wxPostScriptDC</ref> or <ref refid="classwx_metafile_d_c" kindref="compound">wxMetafileDC</ref> nor for any DC in wxOSX port and simply returns false there.</para>
+<para>Not available for <ref refid="classwx_post_script_d_c" kindref="compound">wxPostScriptDC</ref> or <ref refid="classwx_metafile_d_c" kindref="compound">wxMetafileDC</ref>.</para>
 <para><simplesect kind="note"><para>Setting a pixel can be done using <ref refid="classwx_d_c_1a8380aab866e8f3947e0898cf08969d9f" kindref="member">DrawPoint()</ref>.</para>
 </simplesect>
 <simplesect kind="note"><para>This method shouldn&apos;t be used with <ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref> as accessing the DC while drawing can result in unexpected results, notably in wxGTK. </para>
@@ -3174,7 +2887,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1538" column="10"/>
+        <location file="interface/wx/dc.h" line="1367" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a5e5a7832177ceceee0b5c35d146a1d6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -3188,7 +2901,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1543" column="12"/>
+        <location file="interface/wx/dc.h" line="1372" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1aee6d97d655f20039745b5f6fb43a2d51" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3209,21 +2922,21 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         <detaileddescription>
 <para>It can be used to scale graphics to fit the page.</para>
 <para>For example, if <emphasis>maxX</emphasis> and <emphasis>maxY</emphasis> represent the maximum horizontal and vertical &apos;pixel&apos; values used in your application, the following code will scale the graphic to fit on the printer page:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref><sp/>w,<sp/>h;</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxCoord<sp/>w,<sp/>h;</highlight></codeline>
 <codeline><highlight class="normal">dc.GetSize(&amp;w,<sp/>&amp;h);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scaleX<sp/>=<sp/>(double)(maxX<sp/>/<sp/>w);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scaleY<sp/>=<sp/>(double)(maxY<sp/>/<sp/>h);</highlight></codeline>
+<codeline><highlight class="normal">double<sp/>scaleX<sp/>=<sp/>(double)(maxX<sp/>/<sp/>w);</highlight></codeline>
+<codeline><highlight class="normal">double<sp/>scaleY<sp/>=<sp/>(double)(maxY<sp/>/<sp/>h);</highlight></codeline>
 <codeline><highlight class="normal">dc.SetUserScale(min(scaleX,<sp/>scaleY),min(scaleX,<sp/>scaleY));</highlight></codeline>
 </programlisting></para>
 <para><bold>wxPerl Note:</bold> In wxPerl there are two methods instead of a single overloaded method:<itemizedlist>
 <listitem><para><ref refid="classwx_d_c_1aee6d97d655f20039745b5f6fb43a2d51" kindref="member">GetSize()</ref>: returns a Wx::Size object.</para>
-</listitem><listitem><para>GetSizeWH(): returns a 2-element list (width, height).  </para>
+</listitem><listitem><para>GetSizeWH(): returns a 2-element list (width, height). </para>
 </listitem></itemizedlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1568" column="10"/>
+        <location file="interface/wx/dc.h" line="1397" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a27377e56df8a908085a3f8f5ef772303" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -3237,7 +2950,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1573" column="12"/>
+        <location file="interface/wx/dc.h" line="1402" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a33e35c892ed21eb3d512598753c080e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3259,7 +2972,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1578" column="10"/>
+        <location file="interface/wx/dc.h" line="1407" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1adb021c4bd833267efc58956487262082" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -3273,7 +2986,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1583" column="12"/>
+        <location file="interface/wx/dc.h" line="1412" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a711601938dff67d42ec45b61b4d13db3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3292,13 +3005,14 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
 <para>Gets the current user scale factor. </para>
         </briefdescription>
         <detaileddescription>
-<para><bold>wxPerl Note:</bold> In wxPerl this method takes no arguments and return a two element array (x, y).  <simplesect kind="see"><para><ref refid="classwx_d_c_1a190e43cf66ef402aa67f759d20f22eb0" kindref="member">SetUserScale()</ref> </para>
+<para><bold>wxPerl Note:</bold> In wxPerl this method takes no arguments and return a two element array (x, y).</para>
+<para><simplesect kind="see"><para><ref refid="classwx_d_c_1a190e43cf66ef402aa67f759d20f22eb0" kindref="member">SetUserScale()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1595" column="10"/>
+        <location file="interface/wx/dc.h" line="1424" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1af00c59870ef918f0647b53f52bc29d6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -3312,7 +3026,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1600" column="10"/>
+        <location file="interface/wx/dc.h" line="1429" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a1ada4defde484280fb24c4c47d24e0e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3353,7 +3067,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1614" column="10"/>
+        <location file="interface/wx/dc.h" line="1443" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a0a1c7d7d07d1faf3f7b89698bde769f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3376,7 +3090,7 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1621" column="10"/>
+        <location file="interface/wx/dc.h" line="1450" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1aae8adce8cf260bf703b8e76784bd577d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3391,15 +3105,13 @@ There is partial support for <ref refid="classwx_d_c_1a12bed94a15136b9080683f415
 <para>Sets the current logical function for the device context. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>This function is not fully supported in all ports, due to the limitations of the underlying drawing model. Notably, <computeroutput>wxINVERT</computeroutput> which was commonly used for drawing rubber bands or other moving outlines in the past, is not, and will not, be supported by wxGTK3 and wxMac. The suggested alternative is to draw temporarily objects normally and refresh the (affected part of the) window to remove them later.</para>
-</simplesect>
-It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colour, or source device context if using <ref refid="classwx_d_c_1a12bed94a15136b9080683f4151042a34" kindref="member">Blit()</ref>) combines with a <emphasis>destination</emphasis> pixel in the current device context. Text drawing is not affected by this function.</para>
+<para>It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colour, or source device context if using <ref refid="classwx_d_c_1a12bed94a15136b9080683f4151042a34" kindref="member">Blit()</ref>) combines with a <emphasis>destination</emphasis> pixel in the current device context. Text drawing is not affected by this function.</para>
 <para>See <ref refid="interface_2wx_2dc_8h_1a07398221a1f9dfecf424c90c5c777d54" kindref="member">wxRasterOperationMode</ref> enumeration values for more info.</para>
-<para>The default is <computeroutput>wxCOPY</computeroutput>, which simply draws with the current colour. The others combine the current colour and the background using a logical operation. </para>
+<para>The default is <computeroutput>wxCOPY</computeroutput>, which simply draws with the current colour. The others combine the current colour and the background using a logical operation. <computeroutput>wxINVERT</computeroutput> is commonly used for drawing rubber bands or moving outlines, since drawing twice reverts to the original colour. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1644" column="10"/>
+        <location file="interface/wx/dc.h" line="1466" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1aa07ef94e2f3af5b64345c3f94333e86e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3420,7 +3132,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1661" column="10"/>
+        <location file="interface/wx/dc.h" line="1483" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1afc58b0f4653159e713377d38c84a120f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3442,7 +3154,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1671" column="10"/>
+        <location file="interface/wx/dc.h" line="1493" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a190e43cf66ef402aa67f759d20f22eb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3464,7 +3176,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1677" column="10"/>
+        <location file="interface/wx/dc.h" line="1499" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -3480,14 +3192,14 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
 <para>Check if the use of transformation matrix is supported by the current system. </para>
         </briefdescription>
         <detaileddescription>
-<para>This function returns true for MSW and GTK+ 3 platforms and since 3.1.1 also for <ref refid="classwx_g_c_d_c" kindref="compound">wxGCDC</ref> in all ports.</para>
+<para>Currently this function always returns false for non-MSW platforms and may return false for old (Windows 9x/ME) Windows systems. Normally support for the transformation matrix is always available in any relatively recent Windows versions.</para>
 <para><simplesect kind="since"><para>2.9.2 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1697" column="10"/>
+        <location file="interface/wx/dc.h" line="1521" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -3509,7 +3221,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1709" column="10"/>
+        <location file="interface/wx/dc.h" line="1533" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ac50798a205d501ac7124bcdd9f67c760" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_affine_matrix2_d" kindref="compound">wxAffineMatrix2D</ref></type>
@@ -3527,7 +3239,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1718" column="22"/>
+        <location file="interface/wx/dc.h" line="1542" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a41a9a4f616da21afdcad0fe1585ca066" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3544,7 +3256,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1725" column="10"/>
+        <location file="interface/wx/dc.h" line="1549" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -3561,7 +3273,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1738" column="10"/>
+        <location file="interface/wx/dc.h" line="1562" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1aa933c630eb41e2e9d78324a95f4118b5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -3575,11 +3287,11 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1743" column="10"/>
+        <location file="interface/wx/dc.h" line="1567" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a11f58bc271d3bd10f45d6f1fd5300eb8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_d_c_1ad7be3a69e1266da242827d40b88c72a5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
-        <definition>void * wxDC::GetHandle</definition>
+        <definition>void* wxDC::GetHandle</definition>
         <argsstring>() const</argsstring>
         <name>GetHandle</name>
         <briefdescription>
@@ -3587,14 +3299,14 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </briefdescription>
         <detaileddescription>
 <para>(Not all of them do.)</para>
-<para>For example, on Windows the return value is an HDC, on macOS it is a CGContextRef and on wxGTK it will be a GdkDrawable. If the DC is a <ref refid="classwx_g_c_d_c" kindref="compound">wxGCDC</ref> then the return value will be the value returned from <ref refid="classwx_graphics_context_1a530df82b84aa33456bf5d24990a2e031" kindref="member">wxGraphicsContext::GetNativeContext</ref>. A value of NULL is returned if the DC does not have anything that fits the handle concept.</para>
+<para>For example, on Windows the return value is an HDC, on OSX it is a CGContextRef and on wxGTK it will be a GdkDrawable. If the DC is a <ref refid="classwx_g_c_d_c" kindref="compound">wxGCDC</ref> then the return value will be the value returned from <ref refid="classwx_graphics_context_1a4db645a38a60204b2fe91ab891038908" kindref="member">wxGraphicsContext::GetNativeContext</ref>. A value of NULL is returned if the DC does not have anything that fits the handle concept.</para>
 <para><simplesect kind="since"><para>2.9.5 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1760" column="10"/>
+        <location file="interface/wx/dc.h" line="1584" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ad29258b841e124462aa74a5581526e9e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref></type>
@@ -3613,7 +3325,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1766" column="14"/>
+        <location file="interface/wx/dc.h" line="1590" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1aae1c728cdd2f43601f876b7d67067a39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3636,7 +3348,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1776" column="10"/>
+        <location file="interface/wx/dc.h" line="1600" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1ab6a2a41a573b659dc2331c387bab4d16" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3658,7 +3370,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1781" column="10"/>
+        <location file="interface/wx/dc.h" line="1605" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a4ce7dda4ff2f3ece524b8d538b346b6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3683,7 +3395,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1788" column="10"/>
+        <location file="interface/wx/dc.h" line="1612" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1a4acfbc9623a3c441e22f5257f9516fc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -3708,7 +3420,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1796" column="10"/>
+        <location file="interface/wx/dc.h" line="1620" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_d_c_1aebaa077e6b083daf17dfdb35dbe87823" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
@@ -3722,51 +3434,14 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dc.h" line="1797" column="13"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1a5e837724cf289516f37790d5f8c20844" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
-        <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
-        <definition>virtual wxGraphicsContext * wxDC::GetGraphicsContext</definition>
-        <argsstring>() const</argsstring>
-        <name>GetGraphicsContext</name>
-        <reimplementedby refid="classwx_g_c_d_c_1ad81e12e46b7d0110f9b6cebce38f7c1d">GetGraphicsContext</reimplementedby>
-        <briefdescription>
-<para>If supported by the platform and the <emphasis><ref refid="classwx_d_c" kindref="compound">wxDC</ref></emphasis> implementation, this method will return the <emphasis><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref></emphasis> associated with the DC. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Otherwise NULL is returned. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dc.h" line="1805" column="31"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_d_c_1ac4414e973766f48689f8094fef9bf487" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type>void</type>
-        <definition>virtual void wxDC::SetGraphicsContext</definition>
-        <argsstring>(wxGraphicsContext *ctx)</argsstring>
-        <name>SetGraphicsContext</name>
-        <reimplementedby refid="classwx_g_c_d_c_1a6fb11327fd40e9432a9f2619478b6315">SetGraphicsContext</reimplementedby>
-        <param>
-          <type><ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> *</type>
-          <declname>ctx</declname>
-        </param>
-        <briefdescription>
-<para>Associate a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> with the DC. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Ignored if not supported by the specific <emphasis><ref refid="classwx_d_c" kindref="compound">wxDC</ref></emphasis> implementation. It is unlikely that this will need to be used in application code. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dc.h" line="1812" column="18"/>
+        <location file="interface/wx/dc.h" line="1621" column="13"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A <ref refid="classwx_d_c" kindref="compound">wxDC</ref> is a <emphasis>&quot;device context&quot;</emphasis> onto which graphics and text can be drawn. </para>
     </briefdescription>
     <detaileddescription>
-<para>It is intended to represent different output devices and offers a common abstract API for drawing on any of them.</para>
-<para>wxWidgets offers an alternative drawing API based on the modern drawing backends GDI+, CoreGraphics, Cairo and Direct2D. See <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref>, <ref refid="classwx_graphics_renderer" kindref="compound">wxGraphicsRenderer</ref> and related classes. There is also a <ref refid="classwx_g_c_d_c" kindref="compound">wxGCDC</ref> linking the APIs by offering the <ref refid="classwx_d_c" kindref="compound">wxDC</ref> API on top of a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref>.</para>
+<para>A <ref refid="classwx_d_c" kindref="compound">wxDC</ref> is a <emphasis>&quot;device context&quot;</emphasis> onto which graphics and text can be drawn. It is intended to represent different output devices and offers a common abstract API for drawing on any of them.</para>
+<para>wxWidgets offers an alternative drawing API based on the modern drawing backends GDI+, CoreGraphics and Cairo. See <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref>, <ref refid="classwx_graphics_renderer" kindref="compound">wxGraphicsRenderer</ref> and related classes. There is also a <ref refid="classwx_g_c_d_c" kindref="compound">wxGCDC</ref> linking the APIs by offering the <ref refid="classwx_d_c" kindref="compound">wxDC</ref> API on top of a <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref>.</para>
 <para><ref refid="classwx_d_c" kindref="compound">wxDC</ref> is an abstract base class and cannot be created directly. Use <ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref>, <ref refid="classwx_client_d_c" kindref="compound">wxClientDC</ref>, <ref refid="classwx_window_d_c" kindref="compound">wxWindowDC</ref>, <ref refid="classwx_screen_d_c" kindref="compound">wxScreenDC</ref>, <ref refid="classwx_memory_d_c" kindref="compound">wxMemoryDC</ref> or <ref refid="classwx_printer_d_c" kindref="compound">wxPrinterDC</ref>. Notice that device contexts which are associated with windows (i.e. <ref refid="classwx_client_d_c" kindref="compound">wxClientDC</ref>, <ref refid="classwx_window_d_c" kindref="compound">wxWindowDC</ref> and <ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref>) use the window font and colours by default (starting with wxWidgets 2.9.0) but the other device context classes use system-default values so you always must set the appropriate fonts and colours before using them.</para>
 <para>In addition to the versions of the methods documented below, there are also versions which accept single <ref refid="classwx_point" kindref="compound">wxPoint</ref> parameter instead of the two wxCoord ones or <ref refid="classwx_point" kindref="compound">wxPoint</ref> and <ref refid="classwx_size" kindref="compound">wxSize</ref> instead of the four wxCoord parameters.</para>
 <para>Beginning with wxWidgets 2.9.0 the entire <ref refid="classwx_d_c" kindref="compound">wxDC</ref> code has been reorganized. All platform dependent code (actually all drawing code) has been moved into backend classes which derive from a common wxDCImpl class. The user-visible classes such as <ref refid="classwx_client_d_c" kindref="compound">wxClientDC</ref> and <ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref> merely forward all calls to the backend implementation.</para>
@@ -3775,55 +3450,30 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
 <para>In the <ref refid="classwx_d_c" kindref="compound">wxDC</ref> context there is a distinction between <emphasis>logical</emphasis> units and <emphasis>device</emphasis> units.</para>
 <para><bold>Device</bold> units are the units native to the particular device; e.g. for a screen, a device unit is a <emphasis>pixel</emphasis>. For a printer, the device unit is defined by the resolution of the printer (usually given in <computeroutput>DPI:</computeroutput> dot-per-inch).</para>
 <para>All <ref refid="classwx_d_c" kindref="compound">wxDC</ref> functions use instead <bold>logical</bold> units, unless where explicitly stated. Logical units are arbitrary units mapped to device units using the current mapping mode (see <ref refid="classwx_d_c_1aa07ef94e2f3af5b64345c3f94333e86e" kindref="member">wxDC::SetMapMode</ref>).</para>
-<para>This mechanism allows reusing the same code which prints on e.g. a window on the screen to print on e.g. a paper.</para>
+<para>This mechanism allows to reuse the same code which prints on e.g. a window on the screen to print on e.g. a paper.</para>
 </sect1>
 <sect1 id="classwx_d_c_1dc_alpha_support">
 <title>Support for Transparency / Alpha Channel</title>
-<para>In general <ref refid="classwx_d_c" kindref="compound">wxDC</ref> methods don&apos;t support alpha transparency and the alpha component of <ref refid="classwx_colour" kindref="compound">wxColour</ref> is simply ignored and you need to use <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> for full transparency support. There are, however, a few exceptions: first, under macOS and GTK+ 3 colours with alpha channel are supported in all the normal wxDC-derived classes as they use <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> internally. Second, under all platforms <ref refid="classwx_s_v_g_file_d_c" kindref="compound">wxSVGFileDC</ref> also fully supports alpha channel. In both of these cases the instances of <ref refid="classwx_pen" kindref="compound">wxPen</ref> or <ref refid="classwx_brush" kindref="compound">wxBrush</ref> that are built from <ref refid="classwx_colour" kindref="compound">wxColour</ref> use the colour&apos;s alpha values when stroking or filling.</para>
+<para>In general <ref refid="classwx_d_c" kindref="compound">wxDC</ref> methods don&apos;t support alpha transparency and the alpha component of <ref refid="classwx_colour" kindref="compound">wxColour</ref> is simply ignored and you need to use <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> for full transparency support. There are, however, a few exceptions: first, under Mac OS X colours with alpha channel are supported in all the normal wxDC-derived classes as they use <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref> internally. Second, under all platforms <ref refid="classwx_s_v_g_file_d_c" kindref="compound">wxSVGFileDC</ref> also fully supports alpha channel. In both of these cases the instances of <ref refid="classwx_pen" kindref="compound">wxPen</ref> or <ref refid="classwx_brush" kindref="compound">wxBrush</ref> that are built from <ref refid="classwx_colour" kindref="compound">wxColour</ref> use the colour&apos;s alpha values when stroking or filling.</para>
 </sect1>
-<sect1 id="classwx_d_c_1dc_transform_support">
-<title>Support for Transformation Matrix</title>
-<para>On some platforms (currently under MSW, GTK+ 3, macOS) <ref refid="classwx_d_c" kindref="compound">wxDC</ref> has support for applying an arbitrary affine transformation matrix to its coordinate system (since 3.1.1 this feature is also supported by <ref refid="classwx_g_c_d_c" kindref="compound">wxGCDC</ref> in all ports). Call <ref refid="classwx_d_c_1a02b3bde61bfa924e984a9381c69698c1" kindref="member">CanUseTransformMatrix()</ref> to check if this support is available and then call <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> if it is. If the transformation matrix is not supported, <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> always simply returns <computeroutput>false</computeroutput> and doesn&apos;t do anything.</para>
-<para>This feature is only available when <computeroutput>wxUSE_DC_TRANSFORM_MATRIX</computeroutput> build option is enabled.</para>
+<sect1 id="classwx_d_c_1Support">
+<title>for Transformation Matrix</title>
+<para>On some platforms (currently only under MSW and only on Windows NT, i.e. not Windows 9x/ME, systems) <ref refid="classwx_d_c" kindref="compound">wxDC</ref> has support for applying an arbitrary affine transformation matrix to its coordinate system. Call <ref refid="classwx_d_c_1a02b3bde61bfa924e984a9381c69698c1" kindref="member">CanUseTransformMatrix()</ref> to check if this support is available and then call <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> if it is. If the transformation matrix is not supported, <ref refid="classwx_d_c_1a6e3243fcb5d194ef5637f4bda11a49c3" kindref="member">SetTransformMatrix()</ref> always simply returns false and doesn&apos;t do anything.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ , \ &lt;/&gt;&lt;/&gt;</para>
 <para><simplesect kind="see"><para><ref refid="overview_dc" kindref="compound">Device Contexts</ref>, <ref refid="classwx_graphics_context" kindref="compound">wxGraphicsContext</ref>, <ref refid="classwx_d_c_font_changer" kindref="compound">wxDCFontChanger</ref>, <ref refid="classwx_d_c_text_colour_changer" kindref="compound">wxDCTextColourChanger</ref>, <ref refid="classwx_d_c_pen_changer" kindref="compound">wxDCPenChanger</ref>, <ref refid="classwx_d_c_brush_changer" kindref="compound">wxDCBrushChanger</ref>, <ref refid="classwx_d_c_clipper" kindref="compound">wxDCClipper</ref></para>
 </simplesect>
-<xrefsect id="todo_1_todo000014"><xreftitle>Todo</xreftitle><xrefdescription><para>Precise definition of default/initial state. </para>
+<xrefsect id="todo_1_todo000015"><xreftitle>Todo</xreftitle><xrefdescription><para>Precise definition of default/initial state. </para>
 <para>Pixelwise definition of operations (e.g. last point of a line not drawn). </para>
 </xrefdescription></xrefsect></para>
 </sect1>
     </detaileddescription>
     <inheritancegraph>
-      <node id="7">
-        <label>wxAutoBufferedPaintDC</label>
-        <link refid="classwx_auto_buffered_paint_d_c"/>
-        <childnode refid="6" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>wxBufferedDC</label>
-        <link refid="classwx_buffered_d_c"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>wxBufferedPaintDC</label>
-        <link refid="classwx_buffered_paint_d_c"/>
-        <childnode refid="5" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>wxClientDC</label>
-        <link refid="classwx_client_d_c"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>wxDC</label>
-        <link refid="classwx_d_c"/>
-        <childnode refid="2" relation="public-inheritance">
+      <node id="12">
+        <label>wxScreenDC</label>
+        <link refid="classwx_screen_d_c"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -3832,55 +3482,13 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>wxMemoryDC</label>
-        <link refid="classwx_memory_d_c"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>wxMetafileDC</label>
-        <link refid="classwx_metafile_d_c"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>wxMirrorDC</label>
-        <link refid="classwx_mirror_d_c"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-      <node id="16">
-        <label>wxPaintDC</label>
-        <link refid="classwx_paint_d_c"/>
-        <childnode refid="15" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>wxPostScriptDC</label>
-        <link refid="classwx_post_script_d_c"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>wxPrinterDC</label>
-        <link refid="classwx_printer_d_c"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>wxSVGFileDC</label>
-        <link refid="classwx_s_v_g_file_d_c"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>wxScreenDC</label>
-        <link refid="classwx_screen_d_c"/>
+      <node id="4">
+        <label>wxMemoryDC</label>
+        <link refid="classwx_memory_d_c"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -3890,14 +3498,74 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
+      <node id="6">
+        <label>wxBufferedPaintDC</label>
+        <link refid="classwx_buffered_paint_d_c"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxBufferedDC</label>
+        <link refid="classwx_buffered_d_c"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>wxClientDC</label>
+        <link refid="classwx_client_d_c"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>wxPrinterDC</label>
+        <link refid="classwx_printer_d_c"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>wxMetafileDC</label>
+        <link refid="classwx_metafile_d_c"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="1">
         <label>wxDC</label>
         <link refid="classwx_d_c"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="9">
+        <label>wxMirrorDC</label>
+        <link refid="classwx_mirror_d_c"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>wxSVGFileDC</label>
+        <link refid="classwx_s_v_g_file_d_c"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>wxPostScriptDC</label>
+        <link refid="classwx_post_script_d_c"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>wxAutoBufferedPaintDC</label>
+        <link refid="classwx_auto_buffered_paint_d_c"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>wxPaintDC</label>
+        <link refid="classwx_paint_d_c"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -3905,12 +3573,18 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxDC</label>
+        <link refid="classwx_d_c"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/dc.h" line="198" column="1" bodyfile="interface/wx/dc.h" bodystart="199" bodyend="1814"/>
+    <location file="interface/wx/dc.h" line="187" column="1" bodyfile="interface/wx/dc.h" bodystart="186" bodyend="1623"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxDC</scope><name>AllocExclusive</name></member>
       <member refid="classwx_d_c_1a12bed94a15136b9080683f4151042a34" prot="public" virt="non-virtual"><scope>wxDC</scope><name>Blit</name></member>
@@ -3919,16 +3593,12 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
       <member refid="classwx_d_c_1aa933c630eb41e2e9d78324a95f4118b5" prot="public" virt="non-virtual"><scope>wxDC</scope><name>CanGetTextExtent</name></member>
       <member refid="classwx_d_c_1a02b3bde61bfa924e984a9381c69698c1" prot="public" virt="non-virtual"><scope>wxDC</scope><name>CanUseTransformMatrix</name></member>
       <member refid="classwx_d_c_1acf301dfd75b0f31d969ecb9daec21e85" prot="public" virt="non-virtual"><scope>wxDC</scope><name>Clear</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxDC</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxDC</scope><name>CloneRefData</name></member>
       <member refid="classwx_d_c_1ad1258b299c3a92344f1bdedbb7fc3acc" prot="public" virt="non-virtual"><scope>wxDC</scope><name>CopyAttributes</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxDC</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxDC</scope><name>CreateRefData</name></member>
       <member refid="classwx_d_c_1af8bab4cd7ffc3050974236a32afa1e1d" prot="public" virt="non-virtual"><scope>wxDC</scope><name>CrossHair</name></member>
       <member refid="classwx_d_c_1ad5ad1b17105668a9cba6f4f6cc902a02" prot="public" virt="non-virtual"><scope>wxDC</scope><name>CrossHair</name></member>
       <member refid="classwx_d_c_1ae0b0fc593c4559b9ac70e121bd28e3b4" prot="public" virt="non-virtual"><scope>wxDC</scope><name>DestroyClippingRegion</name></member>
-      <member refid="classwx_d_c_1ae8cd3da121a3ed9a9759d2e76d544165" prot="public" virt="non-virtual"><scope>wxDC</scope><name>DeviceToLogical</name></member>
-      <member refid="classwx_d_c_1ae8097d0ed3b03f2a76597f797d382e20" prot="public" virt="non-virtual"><scope>wxDC</scope><name>DeviceToLogical</name></member>
-      <member refid="classwx_d_c_1a2b00b767c72f50b9926c25c7e0507e86" prot="public" virt="non-virtual"><scope>wxDC</scope><name>DeviceToLogicalRel</name></member>
-      <member refid="classwx_d_c_1a1244cd725789bf0acdaac7302f6c8ce3" prot="public" virt="non-virtual"><scope>wxDC</scope><name>DeviceToLogicalRel</name></member>
       <member refid="classwx_d_c_1a17971d3a2e3834f5b261aedd493ae08e" prot="public" virt="non-virtual"><scope>wxDC</scope><name>DeviceToLogicalX</name></member>
       <member refid="classwx_d_c_1a173351b84f5c8ef0952d39e49021a84e" prot="public" virt="non-virtual"><scope>wxDC</scope><name>DeviceToLogicalXRel</name></member>
       <member refid="classwx_d_c_1af669c71c68fb759927ec2e5721a6793e" prot="public" virt="non-virtual"><scope>wxDC</scope><name>DeviceToLogicalY</name></member>
@@ -3977,20 +3647,18 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
       <member refid="classwx_d_c_1af510e22ffc274d3d3b29659941f2b5a9" prot="public" virt="non-virtual"><scope>wxDC</scope><name>FloodFill</name></member>
       <member refid="classwx_d_c_1aa3ad38fdcd0e731af94bd9c3189e72e9" prot="public" virt="non-virtual"><scope>wxDC</scope><name>FloodFill</name></member>
       <member refid="classwx_d_c_1ad29258b841e124462aa74a5581526e9e" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetAsBitmap</name></member>
-      <member refid="classwx_d_c_1adfd305c5b5bc597f6c976fe511d30d08" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetBackground</name></member>
+      <member refid="classwx_d_c_1a7322eb1e64eb276f5cca9aa21d3cefe4" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetBackground</name></member>
       <member refid="classwx_d_c_1ae4f34b8c09b8f7af5c848906ead10e64" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetBackgroundMode</name></member>
-      <member refid="classwx_d_c_1a2c7a9220abfcd672bf9b0839aef6e874" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetBrush</name></member>
+      <member refid="classwx_d_c_1a9bf13abd52b398ddf3096b2bd65824d3" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetBrush</name></member>
       <member refid="classwx_d_c_1a426166f27052b98dffcee07b6d743098" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetCharHeight</name></member>
       <member refid="classwx_d_c_1a3079e3786b0d9160462e15cfe61422c4" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetCharWidth</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxDC</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_d_c_1a866cebe05c603892235701239f8dbd65" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetClippingBox</name></member>
-      <member refid="classwx_d_c_1a5a379f8f932a5d7d2e05f0820932f444" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetClippingBox</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxDC</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_d_c_1aa157370fdda0890acfb41ec85eb4a227" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetClippingBox</name></member>
       <member refid="classwx_d_c_1a798700d907980c88c717e86a4a06e924" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetDepth</name></member>
       <member refid="classwx_d_c_1a1ce47e2939c15b7290540a4ca1736eb5" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetDeviceOrigin</name></member>
-      <member refid="classwx_d_c_1a159ff92c61d4886e52d688ac4cb1128b" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetFont</name></member>
+      <member refid="classwx_d_c_1aa2a9561d0783d2891fab3f34fd1e3021" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetFont</name></member>
       <member refid="classwx_d_c_1ae55ab5ce3194add52406f0f15009920c" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetFontMetrics</name></member>
-      <member refid="classwx_d_c_1a5e837724cf289516f37790d5f8c20844" prot="public" virt="virtual"><scope>wxDC</scope><name>GetGraphicsContext</name></member>
-      <member refid="classwx_d_c_1a11f58bc271d3bd10f45d6f1fd5300eb8" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetHandle</name></member>
+      <member refid="classwx_d_c_1ad7be3a69e1266da242827d40b88c72a5" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetHandle</name></member>
       <member refid="classwx_d_c_1a69139fe0c3b10e077a5ad4e9a8860b7f" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetLayoutDirection</name></member>
       <member refid="classwx_d_c_1af0a85cc17b43c8db59a3172ded90cb79" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetLogicalFunction</name></member>
       <member refid="classwx_d_c_1a4acfbc9623a3c441e22f5257f9516fc0" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetLogicalOrigin</name></member>
@@ -4000,18 +3668,18 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
       <member refid="classwx_d_c_1a3f59fa4cc99e7f8c84b945373d986a45" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetMultiLineTextExtent</name></member>
       <member refid="classwx_d_c_1a827892cc43071baaad813cbddbba021b" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetMultiLineTextExtent</name></member>
       <member refid="classwx_d_c_1a9caf42966be72457715b3188fe285220" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetPartialTextExtents</name></member>
-      <member refid="classwx_d_c_1ae291e9cfc453e26d6fc6bb1762dfe6fb" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetPen</name></member>
+      <member refid="classwx_d_c_1a04592fedab03caa91cabc34d22451b5f" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetPen</name></member>
       <member refid="classwx_d_c_1abe0f8a22ec58783bd728f01e493040d1" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetPixel</name></member>
       <member refid="classwx_d_c_1a5e5a7832177ceceee0b5c35d146a1d6a" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetPPI</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetRefData</name></member>
       <member refid="classwx_d_c_1aee6d97d655f20039745b5f6fb43a2d51" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetSize</name></member>
       <member refid="classwx_d_c_1a27377e56df8a908085a3f8f5ef772303" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetSize</name></member>
       <member refid="classwx_d_c_1a33e35c892ed21eb3d512598753c080e2" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetSizeMM</name></member>
       <member refid="classwx_d_c_1adb021c4bd833267efc58956487262082" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetSizeMM</name></member>
-      <member refid="classwx_d_c_1a9252db582396706072cc1e107eed401d" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetTextBackground</name></member>
+      <member refid="classwx_d_c_1a7d0015e6e8e62e1e207bb38873b0e0b7" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetTextBackground</name></member>
       <member refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetTextExtent</name></member>
       <member refid="classwx_d_c_1a1f9b9b72ba8c88c1217b6210af4c22c6" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetTextExtent</name></member>
-      <member refid="classwx_d_c_1a6ce1f3e3beaf3af14bbff878b670b597" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetTextForeground</name></member>
+      <member refid="classwx_d_c_1aa36f1f4cd4594c9735ca91638f42fe28" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetTextForeground</name></member>
       <member refid="classwx_d_c_1ac50798a205d501ac7124bcdd9f67c760" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetTransformMatrix</name></member>
       <member refid="classwx_d_c_1a711601938dff67d42ec45b61b4d13db3" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GetUserScale</name></member>
       <member refid="classwx_d_c_1a323802ed579056fce98220f5d1778076" prot="public" virt="non-virtual"><scope>wxDC</scope><name>GradientFillConcentric</name></member>
@@ -4020,10 +3688,6 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxDC</scope><name>IsKindOf</name></member>
       <member refid="classwx_d_c_1af00c59870ef918f0647b53f52bc29d6a" prot="public" virt="non-virtual"><scope>wxDC</scope><name>IsOk</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxDC</scope><name>IsSameAs</name></member>
-      <member refid="classwx_d_c_1a683615521ce8c9d9291d319a752f159a" prot="public" virt="non-virtual"><scope>wxDC</scope><name>LogicalToDevice</name></member>
-      <member refid="classwx_d_c_1a482af66a591bb42868c48c2137db5e5a" prot="public" virt="non-virtual"><scope>wxDC</scope><name>LogicalToDevice</name></member>
-      <member refid="classwx_d_c_1ace81a88211420b1c18405d258d66ee4f" prot="public" virt="non-virtual"><scope>wxDC</scope><name>LogicalToDeviceRel</name></member>
-      <member refid="classwx_d_c_1ac1ce1dfb6f8e3e2e0391584de9d0314c" prot="public" virt="non-virtual"><scope>wxDC</scope><name>LogicalToDeviceRel</name></member>
       <member refid="classwx_d_c_1ace891d047e6f95d8f4d3a83475ab228e" prot="public" virt="non-virtual"><scope>wxDC</scope><name>LogicalToDeviceX</name></member>
       <member refid="classwx_d_c_1a68bac9e6f4bb21a3a38250c977bf2e5e" prot="public" virt="non-virtual"><scope>wxDC</scope><name>LogicalToDeviceXRel</name></member>
       <member refid="classwx_d_c_1a373fbecf8b5fe2391d858150f94f8154" prot="public" virt="non-virtual"><scope>wxDC</scope><name>LogicalToDeviceY</name></member>
@@ -4034,7 +3698,7 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
       <member refid="classwx_d_c_1a8f205424c5badc4f76b77aa71887f5ff" prot="public" virt="non-virtual"><scope>wxDC</scope><name>MinX</name></member>
       <member refid="classwx_d_c_1a74abb8dd4308d7594e8d7a234d19e04f" prot="public" virt="non-virtual"><scope>wxDC</scope><name>MinY</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxDC</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxDC</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxDC</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxDC</scope><name>Ref</name></member>
       <member refid="classwx_d_c_1a35ed8c0c64315ec85588142d44f83af8" prot="public" virt="non-virtual"><scope>wxDC</scope><name>ResetBoundingBox</name></member>
       <member refid="classwx_d_c_1a41a9a4f616da21afdcad0fe1585ca066" prot="public" virt="non-virtual"><scope>wxDC</scope><name>ResetTransformMatrix</name></member>
@@ -4048,7 +3712,6 @@ It determines how a <emphasis>source</emphasis> pixel (from a pen or brush colou
       <member refid="classwx_d_c_1a382a46c105ebad94e848e74e9cc0b4b1" prot="public" virt="non-virtual"><scope>wxDC</scope><name>SetDeviceClippingRegion</name></member>
       <member refid="classwx_d_c_1a0a1c7d7d07d1faf3f7b89698bde769f3" prot="public" virt="non-virtual"><scope>wxDC</scope><name>SetDeviceOrigin</name></member>
       <member refid="classwx_d_c_1afab18239d707cd403235b36a987171a8" prot="public" virt="non-virtual"><scope>wxDC</scope><name>SetFont</name></member>
-      <member refid="classwx_d_c_1ac4414e973766f48689f8094fef9bf487" prot="public" virt="virtual"><scope>wxDC</scope><name>SetGraphicsContext</name></member>
       <member refid="classwx_d_c_1a16196571f402cabf506619e8bf9f1586" prot="public" virt="non-virtual"><scope>wxDC</scope><name>SetLayoutDirection</name></member>
       <member refid="classwx_d_c_1aae8adce8cf260bf703b8e76784bd577d" prot="public" virt="non-virtual"><scope>wxDC</scope><name>SetLogicalFunction</name></member>
       <member refid="classwx_d_c_1a4ce7dda4ff2f3ece524b8d538b346b6f" prot="public" virt="non-virtual"><scope>wxDC</scope><name>SetLogicalOrigin</name></member>

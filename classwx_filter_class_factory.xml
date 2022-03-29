@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_filter_class_factory" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxFilterClassFactory</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -29,9 +29,9 @@
         </inbodydescription>
         <location file="interface/wx/stream.h" line="865" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_filter_class_factory_1a6dbd06fa7530a154127e69c0c1fc60eb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_filter_class_factory_1a0b6fa811a762e7860e68bc7cd7e31e81" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_filter_class_factory" kindref="compound">wxFilterClassFactory</ref> *</type>
-        <definition>const wxFilterClassFactory * wxFilterClassFactory::GetNext</definition>
+        <definition>const wxFilterClassFactory* wxFilterClassFactory::GetNext</definition>
         <argsstring>() const</argsstring>
         <name>GetNext</name>
         <briefdescription>
@@ -51,16 +51,16 @@
 <para>Returns the <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref> protocol supported by this factory. </para>
         </briefdescription>
         <detaileddescription>
-<para>Equivalent to <programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref>(*<ref refid="classwx_filter_class_factory_1a3efed9cae37e1f4b800e7e066a51c0d6" kindref="member">GetProtocols</ref>())<sp/></highlight></codeline>
+<para>Equivalent to<programlisting><codeline><highlight class="normal">wxString(*GetProtocols())<sp/></highlight></codeline>
 </programlisting>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/stream.h" line="906" column="14"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_filter_class_factory_1a3efed9cae37e1f4b800e7e066a51c0d6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
-        <type>const <ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref> *const *</type>
-        <definition>virtual const wxChar *const  * wxFilterClassFactory::GetProtocols</definition>
+      <memberdef kind="function" id="classwx_filter_class_factory_1a6a94c7e3ab639d435ed854224347e239" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const <ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref> *const  *</type>
+        <definition>virtual const wxChar* const* wxFilterClassFactory::GetProtocols</definition>
         <argsstring>(wxStreamProtocolType type=wxSTREAM_PROTOCOL) const =0</argsstring>
         <name>GetProtocols</name>
         <param>
@@ -74,20 +74,20 @@
         <detaileddescription>
 <para>It does not give away ownership of the array or strings.</para>
 <para>For example, to list the file extensions a factory supports:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>list;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*p;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(p<sp/>=<sp/>factory-&gt;GetProtocols(<ref refid="interface_2wx_2stream_8h_1af43964582cc2e87658bf792727dceff8a6a7551247424d0c62b240da47daee204" kindref="member">wxSTREAM_FILEEXT</ref>);<sp/>*p;<sp/>p++)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>list<sp/>&lt;&lt;<sp/>*p<sp/>&lt;&lt;<sp/><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxString<sp/>list;</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>wxChar<sp/>*const<sp/>*p;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">for<sp/>(p<sp/>=<sp/>factory-&gt;GetProtocols(wxSTREAM_FILEEXT);<sp/>*p;<sp/>p++)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>list<sp/>&lt;&lt;<sp/>*p<sp/>&lt;&lt;<sp/>wxT(&quot;\n&quot;);</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/stream.h" line="923" column="33"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_filter_class_factory_1ad0cc47f6eeb3a16423d9ac54ee7d19c7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_filter_class_factory_1a8e6dae81ce0b876db269f74b299b5132" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_filter_input_stream" kindref="compound">wxFilterInputStream</ref> *</type>
-        <definition>virtual wxFilterInputStream * wxFilterClassFactory::NewStream</definition>
+        <definition>virtual wxFilterInputStream* wxFilterClassFactory::NewStream</definition>
         <argsstring>(wxInputStream &amp;stream) const =0</argsstring>
         <name>NewStream</name>
         <param>
@@ -104,9 +104,9 @@
         </inbodydescription>
         <location file="interface/wx/stream.h" line="932" column="34"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_filter_class_factory_1a2b1ea9177e9c6b9b5fd777fe6c1a9119" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_filter_class_factory_1ab623f008dd9b9ae1c84fc3d25597c5e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_filter_output_stream" kindref="compound">wxFilterOutputStream</ref> *</type>
-        <definition>virtual wxFilterOutputStream * wxFilterClassFactory::NewStream</definition>
+        <definition>virtual wxFilterOutputStream* wxFilterClassFactory::NewStream</definition>
         <argsstring>(wxOutputStream &amp;stream) const =0</argsstring>
         <name>NewStream</name>
         <param>
@@ -121,9 +121,9 @@
         </inbodydescription>
         <location file="interface/wx/stream.h" line="933" column="34"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_filter_class_factory_1a04156c45c2a4b88a35f27e9e19296edd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_filter_class_factory_1a7e044c88499700024abd14d87480b6dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_filter_input_stream" kindref="compound">wxFilterInputStream</ref> *</type>
-        <definition>virtual wxFilterInputStream * wxFilterClassFactory::NewStream</definition>
+        <definition>virtual wxFilterInputStream* wxFilterClassFactory::NewStream</definition>
         <argsstring>(wxInputStream *stream) const =0</argsstring>
         <name>NewStream</name>
         <param>
@@ -138,9 +138,9 @@
         </inbodydescription>
         <location file="interface/wx/stream.h" line="934" column="34"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_filter_class_factory_1a1be77e3a1255997559f98a2958bb3300" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_filter_class_factory_1a9fb9a9a7f629579760f8535bc9f194e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_filter_output_stream" kindref="compound">wxFilterOutputStream</ref> *</type>
-        <definition>virtual wxFilterOutputStream * wxFilterClassFactory::NewStream</definition>
+        <definition>virtual wxFilterOutputStream* wxFilterClassFactory::NewStream</definition>
         <argsstring>(wxOutputStream *stream) const =0</argsstring>
         <name>NewStream</name>
         <param>
@@ -179,7 +179,7 @@
         <argsstring>()</argsstring>
         <name>PushFront</name>
         <briefdescription>
-<para>Adds this class factory to the list returned by <ref refid="classwx_filter_class_factory_1a1060ab2348ed6654e63b10556e9b454b" kindref="member">GetFirst()</ref>/GetNext(). </para>
+<para>Adds this class factory to the list returned by <ref refid="classwx_filter_class_factory_1a215d8ac7d40509cca70c94462c8e9da4" kindref="member">GetFirst()</ref>/GetNext(). </para>
         </briefdescription>
         <detaileddescription>
 <para>It is not necessary to do this to use the filter streams. It is usually used when implementing streams, typically the implementation will add a static instance of its factory class.</para>
@@ -196,7 +196,7 @@
         <argsstring>()</argsstring>
         <name>Remove</name>
         <briefdescription>
-<para>Removes this class factory from the list returned by <ref refid="classwx_filter_class_factory_1a1060ab2348ed6654e63b10556e9b454b" kindref="member">GetFirst()</ref>/GetNext(). </para>
+<para>Removes this class factory from the list returned by <ref refid="classwx_filter_class_factory_1a215d8ac7d40509cca70c94462c8e9da4" kindref="member">GetFirst()</ref>/GetNext(). </para>
         </briefdescription>
         <detaileddescription>
 <para>Removing from the list isn&apos;t a thread safe operation so can&apos;t be done when other threads are running that will be using the list.</para>
@@ -208,9 +208,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classwx_filter_class_factory_1a5c1e0da8d1e6b2a993c049a8e2c6449c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_filter_class_factory_1a689a3e8a0ea3bd8678f020cfb723f54f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_filter_class_factory" kindref="compound">wxFilterClassFactory</ref> *</type>
-        <definition>static const wxFilterClassFactory * wxFilterClassFactory::Find</definition>
+        <definition>static const wxFilterClassFactory* wxFilterClassFactory::Find</definition>
         <argsstring>(const wxString &amp;protocol, wxStreamProtocolType type=wxSTREAM_PROTOCOL)</argsstring>
         <name>Find</name>
         <param>
@@ -233,9 +233,9 @@
         </inbodydescription>
         <location file="interface/wx/stream.h" line="877" column="39"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_filter_class_factory_1a1060ab2348ed6654e63b10556e9b454b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_filter_class_factory_1a215d8ac7d40509cca70c94462c8e9da4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_filter_class_factory" kindref="compound">wxFilterClassFactory</ref> *</type>
-        <definition>static const wxFilterClassFactory * wxFilterClassFactory::GetFirst</definition>
+        <definition>static const wxFilterClassFactory* wxFilterClassFactory::GetFirst</definition>
         <argsstring>()</argsstring>
         <name>GetFirst</name>
         <briefdescription>
@@ -243,15 +243,15 @@
         </briefdescription>
         <detaileddescription>
 <para>For example, to list them:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>list;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_filter_class_factory" kindref="compound">wxFilterClassFactory</ref><sp/>*factory<sp/>=<sp/><ref refid="classwx_filter_class_factory_1a1060ab2348ed6654e63b10556e9b454b" kindref="member">wxFilterClassFactory::GetFirst</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(factory)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>list<sp/>&lt;&lt;<sp/>factory-&gt;<ref refid="classwx_filter_class_factory_1a9ed58cae1aee3d369eda28abd65739c1" kindref="member">GetProtocol</ref>()<sp/>&lt;&lt;<sp/><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>factory<sp/>=<sp/>factory-&gt;<ref refid="classwx_filter_class_factory_1a6dbd06fa7530a154127e69c0c1fc60eb" kindref="member">GetNext</ref>();</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxString<sp/>list;</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>wxFilterClassFactory<sp/>*factory<sp/>=<sp/>wxFilterClassFactory::GetFirst();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">while<sp/>(factory)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>list<sp/>&lt;&lt;<sp/>factory-&gt;GetProtocol()<sp/>&lt;&lt;<sp/>wxT(&quot;\n&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>factory<sp/>=<sp/>factory-&gt;GetNext();</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
-<para><ref refid="classwx_filter_class_factory_1a1060ab2348ed6654e63b10556e9b454b" kindref="member">GetFirst()</ref>/GetNext() return a pointer to a factory or NULL if no more are available. They do not give away ownership of the factory. </para>
+<para><ref refid="classwx_filter_class_factory_1a215d8ac7d40509cca70c94462c8e9da4" kindref="member">GetFirst()</ref>/GetNext() return a pointer to a factory or NULL if no more are available. They do not give away ownership of the factory. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -259,15 +259,15 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Allows the creation of filter streams to handle compression formats such as gzip and bzip2. </para>
     </briefdescription>
     <detaileddescription>
+<para>Allows the creation of filter streams to handle compression formats such as gzip and bzip2.</para>
 <para>For example, given a filename you can search for a factory that will handle it and create a stream to decompress it:</para>
-<para><programlisting><codeline><highlight class="normal">factory<sp/>=<sp/><ref refid="classwx_filter_class_factory_1a5c1e0da8d1e6b2a993c049a8e2c6449c" kindref="member">wxFilterClassFactory::Find</ref>(filename,<sp/><ref refid="interface_2wx_2stream_8h_1af43964582cc2e87658bf792727dceff8a6a7551247424d0c62b240da47daee204" kindref="member">wxSTREAM_FILEEXT</ref>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(factory)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>stream<sp/>=<sp/>factory-&gt;NewStream(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_f_file_input_stream" kindref="compound">wxFFileInputStream</ref>(filename));</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">factory<sp/>=<sp/>wxFilterClassFactory::Find(filename,<sp/>wxSTREAM_FILEEXT);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(factory)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>stream<sp/>=<sp/>factory-&gt;NewStream(new<sp/>wxFFileInputStream(filename));</highlight></codeline>
 </programlisting></para>
-<para><ref refid="classwx_filter_class_factory_1a5c1e0da8d1e6b2a993c049a8e2c6449c" kindref="member">wxFilterClassFactory::Find</ref> can also search for a factory by MIME type, HTTP encoding or by <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref> protocol. The available factories can be enumerated using <ref refid="classwx_filter_class_factory_1a1060ab2348ed6654e63b10556e9b454b" kindref="member">wxFilterClassFactory::GetFirst()</ref> and <ref refid="classwx_filter_class_factory_1a6dbd06fa7530a154127e69c0c1fc60eb" kindref="member">wxFilterClassFactory::GetNext()</ref>.</para>
+<para><ref refid="classwx_filter_class_factory_1a689a3e8a0ea3bd8678f020cfb723f54f" kindref="member">wxFilterClassFactory::Find</ref> can also search for a factory by MIME type, HTTP encoding or by <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref> protocol. The available factories can be enumerated using <ref refid="classwx_filter_class_factory_1a215d8ac7d40509cca70c94462c8e9da4" kindref="member">wxFilterClassFactory::GetFirst()</ref> and <ref refid="classwx_filter_class_factory_1a0b6fa811a762e7860e68bc7cd7e31e81" kindref="member">wxFilterClassFactory::GetNext()</ref>.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
@@ -306,28 +306,28 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/stream.h" line="855" column="1" bodyfile="interface/wx/stream.h" bodystart="856" bodyend="967"/>
+    <location file="interface/wx/stream.h" line="856" column="1" bodyfile="interface/wx/stream.h" bodystart="855" bodyend="967"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>AllocExclusive</name></member>
       <member refid="classwx_filter_class_factory_1ae0f9c6de77f26e3eef4e6f37c6cab5b2" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>CanHandle</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxFilterClassFactory</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxFilterClassFactory</scope><name>CreateRefData</name></member>
-      <member refid="classwx_filter_class_factory_1a5c1e0da8d1e6b2a993c049a8e2c6449c" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>Find</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxFilterClassFactory</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_filter_class_factory_1a1060ab2348ed6654e63b10556e9b454b" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>GetFirst</name></member>
-      <member refid="classwx_filter_class_factory_1a6dbd06fa7530a154127e69c0c1fc60eb" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>GetNext</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxFilterClassFactory</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxFilterClassFactory</scope><name>CreateRefData</name></member>
+      <member refid="classwx_filter_class_factory_1a689a3e8a0ea3bd8678f020cfb723f54f" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>Find</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxFilterClassFactory</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_filter_class_factory_1a215d8ac7d40509cca70c94462c8e9da4" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>GetFirst</name></member>
+      <member refid="classwx_filter_class_factory_1a0b6fa811a762e7860e68bc7cd7e31e81" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>GetNext</name></member>
       <member refid="classwx_filter_class_factory_1a9ed58cae1aee3d369eda28abd65739c1" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>GetProtocol</name></member>
-      <member refid="classwx_filter_class_factory_1a3efed9cae37e1f4b800e7e066a51c0d6" prot="public" virt="pure-virtual"><scope>wxFilterClassFactory</scope><name>GetProtocols</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>GetRefData</name></member>
+      <member refid="classwx_filter_class_factory_1a6a94c7e3ab639d435ed854224347e239" prot="public" virt="pure-virtual"><scope>wxFilterClassFactory</scope><name>GetProtocols</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>GetRefData</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>m_refData</name></member>
-      <member refid="classwx_filter_class_factory_1ad0cc47f6eeb3a16423d9ac54ee7d19c7" prot="public" virt="pure-virtual"><scope>wxFilterClassFactory</scope><name>NewStream</name></member>
-      <member refid="classwx_filter_class_factory_1a2b1ea9177e9c6b9b5fd777fe6c1a9119" prot="public" virt="pure-virtual"><scope>wxFilterClassFactory</scope><name>NewStream</name></member>
-      <member refid="classwx_filter_class_factory_1a04156c45c2a4b88a35f27e9e19296edd" prot="public" virt="pure-virtual"><scope>wxFilterClassFactory</scope><name>NewStream</name></member>
-      <member refid="classwx_filter_class_factory_1a1be77e3a1255997559f98a2958bb3300" prot="public" virt="pure-virtual"><scope>wxFilterClassFactory</scope><name>NewStream</name></member>
+      <member refid="classwx_filter_class_factory_1a8e6dae81ce0b876db269f74b299b5132" prot="public" virt="pure-virtual"><scope>wxFilterClassFactory</scope><name>NewStream</name></member>
+      <member refid="classwx_filter_class_factory_1ab623f008dd9b9ae1c84fc3d25597c5e2" prot="public" virt="pure-virtual"><scope>wxFilterClassFactory</scope><name>NewStream</name></member>
+      <member refid="classwx_filter_class_factory_1a7e044c88499700024abd14d87480b6dc" prot="public" virt="pure-virtual"><scope>wxFilterClassFactory</scope><name>NewStream</name></member>
+      <member refid="classwx_filter_class_factory_1a9fb9a9a7f629579760f8535bc9f194e9" prot="public" virt="pure-virtual"><scope>wxFilterClassFactory</scope><name>NewStream</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>operator new</name></member>
       <member refid="classwx_filter_class_factory_1a4aebd8ef1a9e9e0b5f27ce9b3aee9c31" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>PopExtension</name></member>
       <member refid="classwx_filter_class_factory_1ab77910d8ef5facb85625edcaa2051ac3" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>PushFront</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxFilterClassFactory</scope><name>Ref</name></member>

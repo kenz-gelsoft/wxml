@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_show_event" kind="class" language="C++" prot="public">
     <compoundname>wxShowEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4624" column="5"/>
+        <location file="interface/wx/event.h" line="4187" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_show_event_1ab6ea5da561c6d5f19b5e06437c84fea1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4629" column="10"/>
+        <location file="interface/wx/event.h" line="4192" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_show_event_1a99b36934317d1c96cf30d8c97524a39b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4635" column="10"/>
+        <location file="interface/wx/event.h" line="4198" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_show_event_1a0b620f8f04b5dbc0b7e2a3e2a27e50dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -69,19 +69,19 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000015"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is deprecated in favour of <ref refid="classwx_show_event_1a99b36934317d1c96cf30d8c97524a39b" kindref="member">IsShown()</ref>. </para>
+<para><xrefsect id="deprecated_1_deprecated000010"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is deprecated in favour of <ref refid="classwx_show_event_1a99b36934317d1c96cf30d8c97524a39b" kindref="member">IsShown()</ref>.</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4640" column="10"/>
+        <location file="interface/wx/event.h" line="4203" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>An event being sent when the window is shown or hidden. </para>
     </briefdescription>
     <detaileddescription>
-<para>The event is triggered by calls to <ref refid="classwx_window_1a7fbc92ce240a8d4f6956b6e0276ef07f" kindref="member">wxWindow::Show()</ref>, and any user action showing a previously hidden window or vice versa (if allowed by the current platform and/or window manager). Notice that the event is not triggered when the application is iconized (minimized) or restored under wxMSW.</para>
+<para>An event being sent when the window is shown or hidden. The event is triggered by calls to <ref refid="classwx_window_1a7fbc92ce240a8d4f6956b6e0276ef07f" kindref="member">wxWindow::Show()</ref>, and any user action showing a previously hidden window or vice versa (if allowed by the current platform and/or window manager). Notice that the event is not triggered when the application is iconized (minimized) or restored under wxMSW.</para>
+<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref>, <ref refid="page_port_1page_port_wxgtk" kindref="member">wxGTK</ref>, <ref refid="page_port_1page_port_wxos2" kindref="member">wxOS2</ref> ports. <onlyfor>wxmsw,wxgtk,wxos2</onlyfor> </para>
 <para><linebreak/>
 <heading level="2">Events using this class</heading>
 </para>
@@ -98,15 +98,15 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
 </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
       <node id="2">
         <label>wxEvent</label>
         <link refid="classwx_event"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="3">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
       </node>
       <node id="1">
         <label>wxShowEvent</label>
@@ -116,17 +116,17 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>wxEvent</label>
-        <link refid="classwx_event"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
         <childnode refid="4" relation="usage">
           <edgelabel>m_refData</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">
@@ -140,19 +140,19 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="4618" column="1" bodyfile="interface/wx/event.h" bodystart="4619" bodyend="4641"/>
+    <location file="interface/wx/event.h" line="4182" column="1" bodyfile="interface/wx/event.h" bodystart="4181" bodyend="4204"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxShowEvent</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxShowEvent</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxShowEvent</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxShowEvent</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxShowEvent</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_event_1a26878097a702e8d0368da150125d4158" prot="public" virt="pure-virtual"><scope>wxShowEvent</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxShowEvent</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxShowEvent</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxShowEvent</scope><name>GetClassInfo</name></member>
       <member refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131" prot="public" virt="virtual"><scope>wxShowEvent</scope><name>GetEventCategory</name></member>
-      <member refid="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>GetEventObject</name></member>
+      <member refid="classwx_event_1a424a4ffaaaf95164d8952ef9ab2ef444" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>GetEventObject</name></member>
       <member refid="classwx_event_1a01c89719ef6241a6e612a313a259c1c2" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>GetEventType</name></member>
-      <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>GetEventUserData</name></member>
+      <member refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>GetEventUserData</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>GetId</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>GetRefData</name></member>
       <member refid="classwx_show_event_1a0b620f8f04b5dbc0b7e2a3e2a27e50dc" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>GetShow</name></member>
       <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>GetSkipped</name></member>
       <member refid="classwx_event_1a48662230971127737d2500cef7be549d" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>GetTimestamp</name></member>
@@ -163,7 +163,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" virt="non-virtual"><scope>wxShowEvent</scope><name>m_propagationLevel</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxShowEvent</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>Ref</name></member>
       <member refid="classwx_event_1a0acb5c75f6e67b8822ad8ba3c5bdc4fe" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>ResumePropagation</name></member>
       <member refid="classwx_event_1a3460217d04c36393ab868ba453fde13d" prot="public" virt="non-virtual"><scope>wxShowEvent</scope><name>SetEventObject</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_fs" kind="page">
     <compoundname>overview_fs</compoundname>
     <title>wxFileSystem Overview</title>
@@ -26,11 +26,9 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>The wxHTML library uses a <bold>virtual</bold> file system mechanism similar to the one used in Midnight Commander, Dos Navigator, FAR or almost any modern file manager. </para>
     </briefdescription>
     <detaileddescription>
-<para>The wxHTML library uses a <bold>virtual</bold> file system mechanism similar to the one used in Midnight Commander, Dos Navigator, FAR or almost any modern file manager.</para>
-<para>It allows the user to access data stored in archives as if they were ordinary files. On-the-fly generated files that exist only in memory are also supported.</para>
+<para>The wxHTML library uses a <bold>virtual</bold> file system mechanism similar to the one used in Midnight Commander, Dos Navigator, FAR or almost any modern file manager. It allows the user to access data stored in archives as if they were ordinary files. On-the-fly generated files that exist only in memory are also supported.</para>
 <sect1 id="overview_fs_1overview_fs_classes">
 <title>Classes</title>
 <para>Three classes are used in order to provide virtual file systems mechanism:</para>
@@ -50,7 +48,7 @@
 <para><itemizedlist>
 <listitem><para><bold>protocol</bold> - handler can recognize if it is able to open a file by checking its protocol. Examples are &quot;http&quot;, &quot;file&quot; or &quot;ftp&quot;. </para>
 </listitem>
-<listitem><para><bold>right location</bold> - is the name of file within the protocol. In &quot;https://www.wxwidgets.org/index.html&quot; the right location is &quot;//www.wxwidgets.org/index.html&quot;. </para>
+<listitem><para><bold>right location</bold> - is the name of file within the protocol. In &quot;http://www.wxwidgets.org/index.html&quot; the right location is &quot;//www.wxwidgets.org/index.html&quot;. </para>
 </listitem>
 <listitem><para><bold>anchor</bold> - an anchor is optional and is usually not present. In &quot;index.htm#chapter2&quot; the anchor is &quot;chapter2&quot;. </para>
 </listitem>
@@ -83,18 +81,17 @@ In addition, <ref refid="classwx_file_system" kindref="compound">wxFileSystem</r
 <sect1 id="overview_fs_1overview_fs_init">
 <title>Initializing file system handlers</title>
 <para>Use <ref refid="classwx_file_system_1a442d841b2baa5a0eb83c3a985b1e3119" kindref="member">wxFileSystem::AddHandler</ref> to initialize a handler, for example:</para>
-<para><programlisting><codeline><highlight class="preprocessor">#include<sp/>&lt;<ref refid="fs__mem_8h" kindref="compound">wx/fs_mem.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;wx/fs_mem.h&gt;</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">...</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">bool<sp/>MyApp::OnInit()</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_file_system_1a442d841b2baa5a0eb83c3a985b1e3119" kindref="member">wxFileSystem::AddHandler</ref>(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_memory_f_s_handler" kindref="compound">wxMemoryFSHandler</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxFileSystem::AddHandler(new<sp/>wxMemoryFSHandler);</highlight></codeline>
 <codeline><highlight class="normal">...</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/filesystem.h"/>
   </compounddef>
 </doxygen>

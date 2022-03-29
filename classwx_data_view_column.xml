@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_data_view_column" kind="class" language="C++" prot="public">
     <compoundname>wxDataViewColumn</compoundname>
     <basecompoundref refid="classwx_settable_header_column" prot="public" virt="non-virtual">wxSettableHeaderColumn</basecompoundref>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2766" column="5"/>
+        <location file="interface/wx/dataview.h" line="2299" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_column_1a3a63c1a874e68ba998b271b4efd4d4e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -185,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2790" column="5"/>
+        <location file="interface/wx/dataview.h" line="2323" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_column_1a014d76ba96b8ce8a1c561d3213fd40b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned int</type>
@@ -199,11 +199,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2801" column="18"/>
+        <location file="interface/wx/dataview.h" line="2334" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_data_view_column_1adb8a72abe9b7a696c744d579f8a39f5f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_data_view_column_1ad05469d58a3b13e41a9fe0661828baa8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> *</type>
-        <definition>wxDataViewCtrl * wxDataViewColumn::GetOwner</definition>
+        <definition>wxDataViewCtrl* wxDataViewColumn::GetOwner</definition>
         <argsstring>() const</argsstring>
         <name>GetOwner</name>
         <briefdescription>
@@ -213,11 +213,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2806" column="20"/>
+        <location file="interface/wx/dataview.h" line="2339" column="20"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_data_view_column_1a03f763111d1790ef0f49044ed09f1bb4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_data_view_column_1aa8da7d179aa8679fafe5244afbfd7a39" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_data_view_renderer" kindref="compound">wxDataViewRenderer</ref> *</type>
-        <definition>wxDataViewRenderer * wxDataViewColumn::GetRenderer</definition>
+        <definition>wxDataViewRenderer* wxDataViewColumn::GetRenderer</definition>
         <argsstring>() const</argsstring>
         <name>GetRenderer</name>
         <briefdescription>
@@ -230,58 +230,55 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2813" column="24"/>
+        <location file="interface/wx/dataview.h" line="2346" column="24"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class represents a column in a <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref>. </para>
     </briefdescription>
     <detaileddescription>
-<para>One <ref refid="classwx_data_view_column" kindref="compound">wxDataViewColumn</ref> is bound to one column in the data model to which the <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> has been associated.</para>
+<para>This class represents a column in a <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref>. One <ref refid="classwx_data_view_column" kindref="compound">wxDataViewColumn</ref> is bound to one column in the data model to which the <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> has been associated.</para>
 <para>An instance of <ref refid="classwx_data_view_renderer" kindref="compound">wxDataViewRenderer</ref> is used by this class to render its data.</para>
-<para><simplesect kind="note"><para>In wxGTK, setting the width of the column doesn&apos;t happen immediately when <ref refid="classwx_settable_header_column_1aac89bf5d893ccf57c3e50e3d1acbebea" kindref="member">SetWidth()</ref> is called, but only slightly later and <ref refid="classwx_header_column_1a992a31984563a35b0222adf5a06b0a77" kindref="member">GetWidth()</ref> will return the old width (0 initially) until this happens. If the column widths are set before <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> is initially shown, they will only be effectively set when it becomes visible.</para>
-</simplesect>
-<heading level="2"></heading>
+<para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxadv" kindref="member">wxAdvanced</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxDataViewColumn</label>
-        <link refid="classwx_data_view_column"/>
-        <childnode refid="2" relation="public-inheritance">
+      <node id="2">
+        <label>wxSettableHeaderColumn</label>
+        <link refid="classwx_settable_header_column"/>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
         <label>wxHeaderColumn</label>
         <link refid="classwx_header_column"/>
       </node>
-      <node id="2">
-        <label>wxSettableHeaderColumn</label>
-        <link refid="classwx_settable_header_column"/>
-        <childnode refid="3" relation="public-inheritance">
+      <node id="1">
+        <label>wxDataViewColumn</label>
+        <link refid="classwx_data_view_column"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1">
-        <label>wxDataViewColumn</label>
-        <link refid="classwx_data_view_column"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>wxHeaderColumn</label>
-        <link refid="classwx_header_column"/>
-      </node>
       <node id="2">
         <label>wxSettableHeaderColumn</label>
         <link refid="classwx_settable_header_column"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>wxHeaderColumn</label>
+        <link refid="classwx_header_column"/>
+      </node>
+      <node id="1">
+        <label>wxDataViewColumn</label>
+        <link refid="classwx_data_view_column"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/dataview.h" line="2746" column="1" bodyfile="interface/wx/dataview.h" bodystart="2747" bodyend="2814"/>
+    <location file="interface/wx/dataview.h" line="2280" column="1" bodyfile="interface/wx/dataview.h" bodystart="2279" bodyend="2347"/>
     <listofallmembers>
       <member refid="classwx_settable_header_column_1ae4c0570355a3c4b712352457c925a7dd" prot="public" virt="non-virtual"><scope>wxDataViewColumn</scope><name>ChangeFlag</name></member>
       <member refid="classwx_settable_header_column_1afb2fa0ed8e8e729d16ff9fefe9e41a26" prot="public" virt="non-virtual"><scope>wxDataViewColumn</scope><name>ClearFlag</name></member>
@@ -290,8 +287,8 @@
       <member refid="classwx_header_column_1a5026f8cf3dde67ab2003da8ec8a892ab" prot="public" virt="pure-virtual"><scope>wxDataViewColumn</scope><name>GetFlags</name></member>
       <member refid="classwx_header_column_1a8a7c17e7f634570246b734cf2eb63fbb" prot="public" virt="pure-virtual"><scope>wxDataViewColumn</scope><name>GetMinWidth</name></member>
       <member refid="classwx_data_view_column_1a014d76ba96b8ce8a1c561d3213fd40b7" prot="public" virt="non-virtual"><scope>wxDataViewColumn</scope><name>GetModelColumn</name></member>
-      <member refid="classwx_data_view_column_1adb8a72abe9b7a696c744d579f8a39f5f" prot="public" virt="non-virtual"><scope>wxDataViewColumn</scope><name>GetOwner</name></member>
-      <member refid="classwx_data_view_column_1a03f763111d1790ef0f49044ed09f1bb4" prot="public" virt="non-virtual"><scope>wxDataViewColumn</scope><name>GetRenderer</name></member>
+      <member refid="classwx_data_view_column_1ad05469d58a3b13e41a9fe0661828baa8" prot="public" virt="non-virtual"><scope>wxDataViewColumn</scope><name>GetOwner</name></member>
+      <member refid="classwx_data_view_column_1aa8da7d179aa8679fafe5244afbfd7a39" prot="public" virt="non-virtual"><scope>wxDataViewColumn</scope><name>GetRenderer</name></member>
       <member refid="classwx_header_column_1a47d57c9babac44df16e1f5581156a3ce" prot="public" virt="pure-virtual"><scope>wxDataViewColumn</scope><name>GetTitle</name></member>
       <member refid="classwx_header_column_1a992a31984563a35b0222adf5a06b0a77" prot="public" virt="pure-virtual"><scope>wxDataViewColumn</scope><name>GetWidth</name></member>
       <member refid="classwx_header_column_1ad9ca1aaba092ae89b0e4efcacc243b12" prot="public" virt="non-virtual"><scope>wxDataViewColumn</scope><name>HasFlag</name></member>

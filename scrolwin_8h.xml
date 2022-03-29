@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="scrolwin_8h" kind="file" language="C++">
     <compoundname>scrolwin.h</compoundname>
     <innerclass refid="classwx_scrolled" prot="public">wxScrolled</innerclass>
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="11" column="1" bodyfile="interface/wx/scrolwin.h" bodystart="12" bodyend="16"/>
+        <location file="interface/wx/scrolwin.h" line="12" column="1" bodyfile="interface/wx/scrolwin.h" bodystart="11" bodyend="16"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="659" column="20" bodyfile="interface/wx/scrolwin.h" bodystart="659" bodyend="-1"/>
+        <location file="interface/wx/scrolwin.h" line="610" column="20" bodyfile="interface/wx/scrolwin.h" bodystart="610" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__group__class__miscwnd_1ga6b205af0f8759231eab11f15f7d4a098" prot="public" static="no">
         <type><ref refid="classwx_scrolled" kindref="compound">wxScrolled</ref>&lt; <ref refid="classwx_window" kindref="compound">wxWindow</ref> &gt;</type>
@@ -89,64 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="672" column="20" bodyfile="interface/wx/scrolwin.h" bodystart="672" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="func">
-      <memberdef kind="function" id="scrolwin_8h_1a83d578aba79c5b54372a7c53174c11a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool wxCreateScrolled</definition>
-        <argsstring>(T *self, wxWindow *parent, wxWindowID winid, const wxPoint &amp;pos, const wxSize &amp;size, long style, const wxString &amp;name)</argsstring>
-        <name>wxCreateScrolled</name>
-        <param>
-          <type>T *</type>
-          <declname>self</declname>
-        </param>
-        <param>
-          <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
-          <declname>parent</declname>
-        </param>
-        <param>
-          <type><ref refid="windowid_8h_1ae8091432cc2cb2485d45f2302fb51133" kindref="member">wxWindowID</ref></type>
-          <declname>winid</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
-          <declname>pos</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
-          <declname>size</declname>
-        </param>
-        <param>
-          <type>long</type>
-          <declname>style</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>name</declname>
-        </param>
-        <briefdescription>
-<para>Helper function which is called from <ref refid="classwx_scrolled_1a9f03bd3bcbb96c84f90c2482f58f075a" kindref="member">wxScrolled::Create()</ref> to actually create a scrolled window. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>By default it just passes the call to the base class Create(): <programlisting><codeline><highlight class="normal">self-&gt;Create(parent,<sp/>winid,<sp/>pos,<sp/>size,<sp/>style,<sp/>name);</highlight></codeline>
-</programlisting></para>
-<para>You should provide overloaded implementation of this function for the custom base class if this class is created in a different manner, like it is e.g. done for <ref refid="classwx_control" kindref="compound">wxControl</ref>: <programlisting><codeline><highlight class="normal">bool<sp/>wxCreateScrolled(wxControl*<sp/>self,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxWindow<sp/>*parent,<sp/>wxWindowID<sp/>winid,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>wxPoint&amp;<sp/>pos,<sp/>const<sp/>wxSize&amp;<sp/>size,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>long<sp/>style,<sp/>const<sp/>wxString&amp;<sp/>name)</highlight></codeline>
-<codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>return<sp/>self-&gt;Create(parent,<sp/>winid,<sp/>pos,<sp/>size,<sp/>style,<sp/>wxDefaultValidator,<sp/>name);</highlight></codeline>
-<codeline><highlight class="normal">}</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="since"><para>3.1.3 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="636" column="6" declfile="interface/wx/scrolwin.h" declline="636" declcolumn="6"/>
+        <location file="interface/wx/scrolwin.h" line="623" column="20" bodyfile="interface/wx/scrolwin.h" bodystart="623" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

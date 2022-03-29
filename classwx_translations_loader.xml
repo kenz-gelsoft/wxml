@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_translations_loader" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxTranslationsLoader</compoundname>
     <derivedcompoundref refid="classwx_file_translations_loader" prot="public" virt="non-virtual">wxFileTranslationsLoader</derivedcompoundref>
@@ -18,11 +18,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/translation.h" line="300" column="5"/>
+        <location file="interface/wx/translation.h" line="309" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_translations_loader_1a6996b403b935297c2adbd92212671a28" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_translations_loader_1a7a7a55b049de7ecd7db63a613475a8ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_msg_catalog" kindref="compound">wxMsgCatalog</ref> *</type>
-        <definition>virtual wxMsgCatalog * wxTranslationsLoader::LoadCatalog</definition>
+        <definition>virtual wxMsgCatalog* wxTranslationsLoader::LoadCatalog</definition>
         <argsstring>(const wxString &amp;domain, const wxString &amp;lang)=0</argsstring>
         <name>LoadCatalog</name>
         <param>
@@ -37,7 +37,7 @@
 <para>Called to load requested catalog. </para>
         </briefdescription>
         <detaileddescription>
-<para>If the catalog is found, <ref refid="classwx_translations_loader_1a6996b403b935297c2adbd92212671a28" kindref="member">LoadCatalog()</ref> should create <ref refid="classwx_msg_catalog" kindref="compound">wxMsgCatalog</ref> instance with its data and return it. The caller will take ownership of the catalog.</para>
+<para>If the catalog is found, <ref refid="classwx_translations_loader_1a7a7a55b049de7ecd7db63a613475a8ee" kindref="member">LoadCatalog()</ref> should create <ref refid="classwx_msg_catalog" kindref="compound">wxMsgCatalog</ref> instance with its data and return it. The caller will take ownership of the catalog.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>domain</parametername>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/translation.h" line="318" column="26"/>
+        <location file="interface/wx/translation.h" line="327" column="26"/>
       </memberdef>
       <memberdef kind="function" id="classwx_translations_loader_1aa02efbe41b86a4b3b8bc551a323b42fb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_array_string" kindref="compound">wxArrayString</ref></type>
@@ -79,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/translation.h" line="324" column="27"/>
+        <location file="interface/wx/translation.h" line="333" column="27"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -87,7 +87,7 @@
     </briefdescription>
     <detaileddescription>
 <para>This interface makes it possible to override wxWidgets&apos; default catalogs loading mechanism and load MO files from locations other than the filesystem (e.g. embed them in executable).</para>
-<para>Implementations must implement the <ref refid="classwx_translations_loader_1a6996b403b935297c2adbd92212671a28" kindref="member">LoadCatalog()</ref> method.</para>
+<para>Implementations must implement the <ref refid="classwx_translations_loader_1a7a7a55b049de7ecd7db63a613475a8ee" kindref="member">LoadCatalog()</ref> method.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_file_translations_loader" kindref="compound">wxFileTranslationsLoader</ref>, <ref refid="classwx_resource_translations_loader" kindref="compound">wxResourceTranslationsLoader</ref></para>
 </simplesect>
 <simplesect kind="since"><para>2.9.1 </para>
@@ -112,10 +112,10 @@
         <link refid="classwx_translations_loader"/>
       </node>
     </inheritancegraph>
-    <location file="interface/wx/translation.h" line="296" column="1" bodyfile="interface/wx/translation.h" bodystart="297" bodyend="325"/>
+    <location file="interface/wx/translation.h" line="306" column="1" bodyfile="interface/wx/translation.h" bodystart="305" bodyend="334"/>
     <listofallmembers>
       <member refid="classwx_translations_loader_1aa02efbe41b86a4b3b8bc551a323b42fb" prot="public" virt="pure-virtual"><scope>wxTranslationsLoader</scope><name>GetAvailableTranslations</name></member>
-      <member refid="classwx_translations_loader_1a6996b403b935297c2adbd92212671a28" prot="public" virt="pure-virtual"><scope>wxTranslationsLoader</scope><name>LoadCatalog</name></member>
+      <member refid="classwx_translations_loader_1a7a7a55b049de7ecd7db63a613475a8ee" prot="public" virt="pure-virtual"><scope>wxTranslationsLoader</scope><name>LoadCatalog</name></member>
       <member refid="classwx_translations_loader_1ab5d87579eb5b0246a3290afdc288ef98" prot="public" virt="non-virtual"><scope>wxTranslationsLoader</scope><name>wxTranslationsLoader</name></member>
     </listofallmembers>
   </compounddef>

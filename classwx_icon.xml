@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_icon" kind="class" language="C++" prot="public">
     <compoundname>wxIcon</compoundname>
     <basecompoundref refid="classwx_g_d_i_object" prot="public" virt="non-virtual">wxGDIObject</basecompoundref>
@@ -87,7 +87,8 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<bold>wxPerl Note:</bold> In wxPerl use Wx::Icon-&gt;newBits(bits, width, height, depth = -1);  Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref>, <ref refid="page_port_1page_port_wxosx" kindref="member">wxOSX/Cocoa</ref> ports.  <onlyfor>wxmsw,wxosx</onlyfor>  </para>
+<bold>wxPerl Note:</bold> In wxPerl use Wx::Icon-&gt;newBits(bits, width, height, depth = -1);</para>
+<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref>, <ref refid="page_port_1page_port_wxosx" kindref="member">wxOSX</ref> ports. <onlyfor>wxmsw,wxosx</onlyfor>  </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -107,23 +108,23 @@
         </briefdescription>
         <detaileddescription>
 <para>To use this constructor, you must first include an XPM file. For example, assuming that the file mybitmap.xpm contains an XPM array of character pointers called <emphasis>mybitmap:</emphasis> </para>
-<para><programlisting><codeline><highlight class="preprocessor">#include<sp/>&quot;mybitmap.xpm&quot;</highlight><highlight class="normal"></highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">#include<sp/>&quot;mybitmap.xpm&quot;</highlight></codeline>
 <codeline><highlight class="normal">...</highlight></codeline>
-<codeline><highlight class="normal">wxIcon<sp/>*icon<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_icon_1a1b832f41fcde273eaa4384d2e567aa90" kindref="member">wxIcon</ref>(mybitmap);</highlight></codeline>
+<codeline><highlight class="normal">wxIcon<sp/>*icon<sp/>=<sp/>new<sp/>wxIcon(mybitmap);</highlight></codeline>
 </programlisting></para>
 <para>A macro, wxICON, is available which creates an icon using an XPM on the appropriate platform, or an icon resource on Windows.</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_icon" kindref="compound">wxIcon</ref><sp/>icon(<ref refid="gdicmn_8h_1a1f22eefa44998cbeb8f018978cf5d375" kindref="member">wxICON</ref>(sample));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Equivalent<sp/>to:</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__WXGTK__)<sp/>||<sp/>defined(__WXMOTIF__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_icon" kindref="compound">wxIcon</ref><sp/>icon(sample_xpm);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__WXMSW__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_icon" kindref="compound">wxIcon</ref><sp/>icon(</highlight><highlight class="stringliteral">&quot;sample&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxIcon<sp/>icon(wxICON(sample));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Equivalent<sp/>to:</highlight></codeline>
+<codeline><highlight class="normal">#if<sp/>defined(__WXGTK__)<sp/>||<sp/>defined(__WXMOTIF__)</highlight></codeline>
+<codeline><highlight class="normal">wxIcon<sp/>icon(sample_xpm);</highlight></codeline>
+<codeline><highlight class="normal">#endif</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#if<sp/>defined(__WXMSW__)</highlight></codeline>
+<codeline><highlight class="normal">wxIcon<sp/>icon(&quot;sample&quot;);</highlight></codeline>
+<codeline><highlight class="normal">#endif</highlight></codeline>
 </programlisting></para>
-<para><bold>wxPerl Note:</bold> In wxPerl use Wx::Icon-&gt;newFromXPM(data).  </para>
+<para><bold>wxPerl Note:</bold> In wxPerl use Wx::Icon-&gt;newFromXPM(data). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -248,10 +249,10 @@
 <para>Attach a Windows icon handle. </para>
         </briefdescription>
         <detaileddescription>
-<para>This wxMSW-specific method allows assigning a native Windows <computeroutput>HICON</computeroutput> (which must be castes to <computeroutput>WXHICON</computeroutput> opaque handle type) to <ref refid="classwx_icon" kindref="compound">wxIcon</ref>. Notice that this means that the <computeroutput>HICON</computeroutput> will be destroyed by <ref refid="classwx_icon" kindref="compound">wxIcon</ref> when it is destroyed.</para>
+<para>This wxMSW-specific method allows to assign a native Windows <computeroutput>HICON</computeroutput> (which must be castes to <computeroutput>WXHICON</computeroutput> opaque handle type) to <ref refid="classwx_icon" kindref="compound">wxIcon</ref>. Notice that this means that the <computeroutput>HICON</computeroutput> will be destroyed by <ref refid="classwx_icon" kindref="compound">wxIcon</ref> when it is destroyed.</para>
 <para><simplesect kind="return"><para>true if successful.</para>
 </simplesect>
-Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor> </para>
+Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port. <onlyfor>wxmsw</onlyfor> </para>
 <para><simplesect kind="since"><para>2.9.5 </para>
 </simplesect>
 </para>
@@ -275,7 +276,7 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
         </briefdescription>
         <detaileddescription>
 <para>This method is available in <ref refid="classwx_icon" kindref="compound">wxIcon</ref> only under wxMSW, other ports only have it in <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>. You can always use <ref refid="classwx_image_1a19508d871909594b28243dda6dbfed67" kindref="member">wxImage::ConvertToDisabled()</ref> and create the icon from <ref refid="classwx_image" kindref="compound">wxImage</ref> manually however.</para>
-<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor> </para>
+<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port. <onlyfor>wxmsw</onlyfor> </para>
 <para><simplesect kind="since"><para>2.9.0 </para>
 </simplesect>
 </para>
@@ -522,9 +523,9 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
         </inbodydescription>
         <location file="interface/wx/icon.h" line="291" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_icon_1a57b915241cd7d10d797add341b07aa45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_icon_1a562aba599e3ba5a42b604d64e1d480b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_icon" kindref="compound">wxIcon</ref> &amp;</type>
-        <definition>wxIcon &amp; wxIcon::operator=</definition>
+        <definition>wxIcon&amp; wxIcon::operator=</definition>
         <argsstring>(const wxIcon &amp;icon)</argsstring>
         <name>operator=</name>
         <param>
@@ -552,9 +553,9 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>An icon is a small rectangular bitmap usually used for denoting a minimized application. </para>
     </briefdescription>
     <detaileddescription>
+<para>An icon is a small rectangular bitmap usually used for denoting a minimized application.</para>
 <para>It differs from a <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> in always having a mask associated with it for transparent drawing. On some platforms, icons and bitmaps are implemented identically, since there is no real distinction between a <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> with a mask and an icon; and there is no specific icon format on some platforms (X-based applications usually standardize on XPMs for small bitmaps and icons). However, some platforms (such as Windows) make the distinction, so a separate class is provided.</para>
 <para><simplesect kind="remark"><para>It is usually desirable to associate a pertinent icon with a frame. Icons can also be used for other purposes, for example with <ref refid="classwx_tree_ctrl" kindref="compound">wxTreeCtrl</ref> and <ref refid="classwx_list_ctrl" kindref="compound">wxListCtrl</ref>. Icons have different formats on different platforms therefore separate icons will usually be created for the different environments. Platform-specific methods for creating a <ref refid="classwx_icon" kindref="compound">wxIcon</ref> structure are catered for, and this is an occasion where conditional compilation will probably be required. Note that a new icon must be created for every time the icon is to be used for a new window. In Windows, the icon will not be reloaded if it has already been used. An icon allocated to a frame will be deleted when the frame is deleted. For more information please see <ref refid="overview_bitmap" kindref="compound">Bitmaps and Icons</ref>.</para>
 </simplesect>
@@ -562,17 +563,11 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
 <para>Predefined objects/pointers: <ref refid="icon_8h_1a953854798a8dfd400777318358dad5b6" kindref="member">wxNullIcon</ref></para>
-<para><simplesect kind="see"><para><ref refid="overview_bitmap" kindref="compound">Bitmaps and Icons</ref>, <ref refid="overview_bitmap_1overview_bitmap_supportedformats" kindref="member">Supported Bitmap File Formats</ref>, <ref refid="classwx_icon_bundle" kindref="compound">wxIconBundle</ref>, <ref refid="classwx_d_c_1a890d011a03308a28039d4940dd04264e" kindref="member">wxDC::DrawIcon</ref>, <ref refid="classwx_cursor" kindref="compound">wxCursor</ref> </para>
+<para><simplesect kind="see"><para><ref refid="overview_bitmap" kindref="compound">Bitmaps and Icons</ref>, <ref refid="overview_bitmap_1overview_bitmap_supportedformats" kindref="member">Supported Bitmap File Formats</ref>, <ref refid="classwx_d_c_1a890d011a03308a28039d4940dd04264e" kindref="member">wxDC::DrawIcon</ref>, <ref refid="classwx_cursor" kindref="compound">wxCursor</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxGDIObject</label>
-        <link refid="classwx_g_d_i_object"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="1">
         <label>wxIcon</label>
         <link refid="classwx_icon"/>
@@ -583,14 +578,14 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="2">
         <label>wxGDIObject</label>
         <link refid="classwx_g_d_i_object"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="1">
         <label>wxIcon</label>
         <link refid="classwx_icon"/>
@@ -604,23 +599,29 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="2">
+        <label>wxGDIObject</label>
+        <link refid="classwx_g_d_i_object"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/icon.h" line="52" column="1" bodyfile="interface/wx/icon.h" bodystart="53" bodyend="300"/>
+    <location file="interface/wx/icon.h" line="53" column="1" bodyfile="interface/wx/icon.h" bodystart="52" bodyend="300"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxIcon</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxIcon</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxIcon</scope><name>CloneRefData</name></member>
       <member refid="classwx_icon_1a51c8e3a7067bdb6c45edc9360aa37aa5" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>ConvertToDisabled</name></member>
       <member refid="classwx_icon_1aea0254e1fcd09977999799b5744a016c" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>CopyFromBitmap</name></member>
       <member refid="classwx_icon_1ad7d90d336899f254a05275b6c86d6b13" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>CreateFromHICON</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxIcon</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxIcon</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxIcon</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxIcon</scope><name>GetClassInfo</name></member>
       <member refid="classwx_icon_1a5074750955267dbf807a9fa5ca6cbf67" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>GetDepth</name></member>
       <member refid="classwx_icon_1a56832e71e9efb882d4cad7231d5f1ac7" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>GetHeight</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>GetRefData</name></member>
       <member refid="classwx_icon_1a84442d3fad645f79650ae53eca139a5f" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>GetWidth</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>IsKindOf</name></member>
       <member refid="classwx_icon_1a77cb179b5a1ab9985e9c0d540562f1a9" prot="public" virt="virtual"><scope>wxIcon</scope><name>IsOk</name></member>
@@ -628,8 +629,8 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
       <member refid="classwx_icon_1a753ecdd4f8d908f51fa0bbd848a613ee" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>LoadFile</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxIcon</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>operator new</name></member>
-      <member refid="classwx_icon_1a57b915241cd7d10d797add341b07aa45" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>operator=</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>operator new</name></member>
+      <member refid="classwx_icon_1a562aba599e3ba5a42b604d64e1d480b7" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>operator=</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>Ref</name></member>
       <member refid="classwx_icon_1ae2099848c41aa2031fe70649c9279816" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>SetDepth</name></member>
       <member refid="classwx_icon_1a5c5d857cd6fda4ecc05ba4820d4aa2fe" prot="public" virt="non-virtual"><scope>wxIcon</scope><name>SetHeight</name></member>

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_std_input_stream" kind="class" language="C++" prot="public">
     <compoundname>wxStdInputStream</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">std::istream</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">istream</basecompoundref>
     <includes local="no">wx/stdstream.h</includes>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classwx_std_input_stream_1a4ec5e7069dbdeff98fa83ed748e45da5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -33,7 +33,7 @@
         </inbodydescription>
         <location file="interface/wx/stdstream.h" line="100" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_std_input_stream_1afc65c4113ceb09b1a9e9487245e3be32" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_std_input_stream_1afc65c4113ceb09b1a9e9487245e3be32" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type></type>
         <definition>virtual wxStdInputStream::~wxStdInputStream</definition>
         <argsstring>()</argsstring>
@@ -45,29 +45,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/stdstream.h" line="105" column="13"/>
+        <location file="interface/wx/stdstream.h" line="105" column="13" bodyfile="interface/wx/stdstream.h" bodystart="105" bodyend="105"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_std_input_stream" kindref="compound">wxStdInputStream</ref> is a std::istream derived stream which reads from a <ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref>. </para>
     </briefdescription>
     <detaileddescription>
-<para>Example: <programlisting><codeline><highlight class="normal"><ref refid="classwx_f_file_input_stream" kindref="compound">wxFFileInputStream</ref><sp/>file(</highlight><highlight class="stringliteral">&quot;words.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_std_input_stream" kindref="compound">wxStdInputStream</ref><sp/>in(file);</highlight></codeline>
+<para><ref refid="classwx_std_input_stream" kindref="compound">wxStdInputStream</ref> is a std::istream derived stream which reads from a <ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref>.</para>
+<para>Example: <programlisting><codeline><highlight class="normal">wxFFileInputStream<sp/>file(&quot;words.txt&quot;);</highlight></codeline>
+<codeline><highlight class="normal">wxStdInputStream<sp/>in(file);</highlight></codeline>
 <codeline><highlight class="normal">std::vector&lt;std::string&gt;<sp/>words;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>read<sp/>words<sp/>from<sp/>words.txt</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>read<sp/>words<sp/>from<sp/>words.txt</highlight></codeline>
 <codeline><highlight class="normal">std::copy(std::istream_iterator&lt;std::string&gt;(in),</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::istream_iterator&lt;std::string&gt;(),</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::back_inserter(words));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>sort<sp/>and<sp/>remove<sp/>duplicates</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>sort<sp/>and<sp/>remove<sp/>duplicates</highlight></codeline>
 <codeline><highlight class="normal">std::sort(words.begin(),<sp/>words.end());</highlight></codeline>
 <codeline><highlight class="normal">words.resize(std::unique(words.begin(),<sp/>words.end())<sp/>-<sp/>words.begin());</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>print<sp/>words</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>print<sp/>words</highlight></codeline>
 <codeline><highlight class="normal">std::copy(words.begin(),<sp/>words.end(),</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream_iterator&lt;std::string&gt;(std::cout,<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream_iterator&lt;std::string&gt;(std::cout,<sp/>&quot;\n&quot;));</highlight></codeline>
 </programlisting></para>
 <para><heading level="2"></heading>
 </para>
@@ -98,7 +98,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/stdstream.h" line="90" column="1" bodyfile="interface/wx/stdstream.h" bodystart="91" bodyend="106"/>
+    <location file="interface/wx/stdstream.h" line="91" column="1" bodyfile="interface/wx/stdstream.h" bodystart="90" bodyend="106"/>
     <listofallmembers>
       <member refid="classwx_std_input_stream_1a4ec5e7069dbdeff98fa83ed748e45da5" prot="public" virt="non-virtual"><scope>wxStdInputStream</scope><name>wxStdInputStream</name></member>
       <member refid="classwx_std_input_stream_1afc65c4113ceb09b1a9e9487245e3be32" prot="public" virt="virtual"><scope>wxStdInputStream</scope><name>~wxStdInputStream</name></member>

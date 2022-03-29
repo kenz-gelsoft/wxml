@@ -1,24 +1,39 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_dir_property" kind="class" language="C++" prot="public">
     <compoundname>wxDirProperty</compoundname>
-    <basecompoundref refid="classwx_editor_dialog_property" prot="public" virt="non-virtual">wxEditorDialogProperty</basecompoundref>
+    <basecompoundref refid="classwx_long_string_property" prot="public" virt="non-virtual">wxLongStringProperty</basecompoundref>
     <includes local="no">wx/propgrid/props.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classwx_dir_property_1a232ee774fd0de778f08ae04d5dbf9d5d" prot="protected" static="no" mutable="no">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>wxString wxDirProperty::m_dlgMessage</definition>
+        <argsstring></argsstring>
+        <name>m_dlgMessage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/propgrid/props.h" line="625" column="17" bodyfile="interface/wx/propgrid/props.h" bodystart="625" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classwx_dir_property_1ac2ffd44ed793f106018df5bcc0e8319a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_dir_property_1a1d4edb565d185b09319fa81cb76b5597" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxDirProperty::wxDirProperty</definition>
-        <argsstring>(const wxString &amp;label=wxPG_LABEL, const wxString &amp;name=wxPG_LABEL, const wxString &amp;value=wxEmptyString)</argsstring>
+        <argsstring>(const wxString &amp;name=wxPG_LABEL, const wxString &amp;label=wxPG_LABEL, const wxString &amp;value=wxEmptyString)</argsstring>
         <name>wxDirProperty</name>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>label</declname>
-          <defval><ref refid="propgridiface_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref></defval>
+          <declname>name</declname>
+          <defval><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref></defval>
         </param>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>name</declname>
-          <defval><ref refid="propgridiface_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref></defval>
+          <declname>label</declname>
+          <defval><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref></defval>
         </param>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
@@ -31,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="691" column="5"/>
+        <location file="interface/wx/propgrid/props.h" line="614" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_dir_property_1a6912e60f360f96884b6adf10264ab0e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -44,194 +59,96 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="694" column="13"/>
+        <location file="interface/wx/propgrid/props.h" line="617" column="13"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_dir_property_1ab1874b983a6eb7f53424882f71c8d3e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
-        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
-        <definition>virtual wxString wxDirProperty::ValueToString</definition>
-        <argsstring>(wxVariant &amp;value, int argFlags=0) const</argsstring>
-        <name>ValueToString</name>
-        <reimplements refid="classwx_p_g_property_1abcbd43440a1ccc26955e06daeee26ab6">ValueToString</reimplements>
+      <memberdef kind="function" id="classwx_dir_property_1a36bdc92a78d49f504b6fabfd59837043" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool wxDirProperty::DoSetAttribute</definition>
+        <argsstring>(const wxString &amp;name, wxVariant &amp;value)</argsstring>
+        <name>DoSetAttribute</name>
+        <reimplements refid="classwx_p_g_property_1a7d355ae4bd55f00bc149e5416c39908c">DoSetAttribute</reimplements>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
         <param>
           <type><ref refid="classwx_variant" kindref="compound">wxVariant</ref> &amp;</type>
           <declname>value</declname>
         </param>
-        <param>
-          <type>int</type>
-          <declname>argFlags</declname>
-          <defval>0</defval>
-        </param>
         <briefdescription>
-<para>Converts property value into a text representation. </para>
+<para>Reimplement this member function to add special handling for attributes of this property. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>value</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Value to be converted. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>argFlags</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>If 0 (default value), then displayed string is returned. If <ref refid="propgriddefs_8h_1a2e574c079c342fab1960477005472503a4d2f6662f91eb24676207f36c722bdb3" kindref="member">wxPG_FULL_VALUE</ref> is set, returns complete, storable string value instead of displayable. If <ref refid="propgriddefs_8h_1a2e574c079c342fab1960477005472503a0cfbecf3b80aa76188b31a14c2d1aef1" kindref="member">wxPG_EDITABLE_VALUE</ref> is set, returns string value that must be editable in textctrl. If <ref refid="propgriddefs_8h_1a2e574c079c342fab1960477005472503ab85233518cebed1c724a3f5cf2f56e2a" kindref="member">wxPG_COMPOSITE_FRAGMENT</ref> is set, returns text that is appropriate to display as a part of string property&apos;s composite text representation.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="remark"><para>Default implementation calls <ref refid="classwx_p_g_property_1a8f9d8bc9c2c878177e617af5ca3d6690" kindref="member">GenerateComposedValue()</ref>. </para>
+<para><simplesect kind="return"><para>Return false to have the attribute automatically stored in m_attributes. Default implementation simply does that and nothing else.</para>
+</simplesect>
+<simplesect kind="remark"><para>To actually set property attribute values from the application, use <ref refid="classwx_p_g_property_1a418c1539969b7a0a9378a3411a5680a6" kindref="member">wxPGProperty::SetAttribute()</ref> instead. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="696" column="22"/>
+        <location file="interface/wx/propgrid/props.h" line="619" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_dir_property_1a5a3489ae8609d833c7c2f4130fe0d559" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
-        <type>bool</type>
-        <definition>virtual bool wxDirProperty::StringToValue</definition>
-        <argsstring>(wxVariant &amp;variant, const wxString &amp;text, int argFlags=0) const</argsstring>
-        <name>StringToValue</name>
-        <reimplements refid="classwx_p_g_property_1add4f9952c4b23a4b74e6bc82abe2951a">StringToValue</reimplements>
-        <param>
-          <type><ref refid="classwx_variant" kindref="compound">wxVariant</ref> &amp;</type>
-          <declname>variant</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>text</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>argFlags</declname>
-          <defval>0</defval>
-        </param>
-        <briefdescription>
-<para>Converts text into <ref refid="classwx_variant" kindref="compound">wxVariant</ref> value appropriate for this property. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>variant</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>On function entry this is the old value (should not be wxNullVariant in normal cases). Translated value must be assigned back to it.</para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>text</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Text to be translated into variant.</para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>argFlags</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>If <ref refid="propgriddefs_8h_1a2e574c079c342fab1960477005472503a4d2f6662f91eb24676207f36c722bdb3" kindref="member">wxPG_FULL_VALUE</ref> is set, returns complete, storable value instead of displayable one (they may be different). If <ref refid="propgriddefs_8h_1a2e574c079c342fab1960477005472503ab85233518cebed1c724a3f5cf2f56e2a" kindref="member">wxPG_COMPOSITE_FRAGMENT</ref> is set, text is interpreted as a part of composite property string value (as generated by <ref refid="classwx_dir_property_1ab1874b983a6eb7f53424882f71c8d3e4" kindref="member">ValueToString()</ref> called with this same flag).</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Returns true if resulting <ref refid="classwx_variant" kindref="compound">wxVariant</ref> value was different.</para>
-</simplesect>
-<simplesect kind="remark"><para>Default implementation converts semicolon delimited tokens into child values. Only works for properties with children.</para>
-</simplesect>
-You might want to take into account that m_value is Null variant if property value is unspecified (which is usually only case if you explicitly enabled that sort behaviour). </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="697" column="18"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_dir_property_1a2c3b31b25a2cdd6f7df50b94c65463a6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_dir_property_1a13c29fe7177af55e367f8065710496ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_validator" kindref="compound">wxValidator</ref> *</type>
-        <definition>virtual wxValidator * wxDirProperty::DoGetValidator</definition>
+        <definition>virtual wxValidator* wxDirProperty::DoGetValidator</definition>
         <argsstring>() const</argsstring>
         <name>DoGetValidator</name>
-        <reimplements refid="classwx_p_g_property_1af7bbc50c148931da2aba27d0103a2d26">DoGetValidator</reimplements>
+        <reimplements refid="classwx_p_g_property_1a9104d087b0a8002df8ca5f1dd01d6a9d">DoGetValidator</reimplements>
         <briefdescription>
 <para>Returns pointer to the <ref refid="classwx_validator" kindref="compound">wxValidator</ref> that should be used with the editor of this property (NULL for no validator). </para>
         </briefdescription>
         <detaileddescription>
 <para>Setting validator explicitly via SetPropertyValidator will override this.</para>
 <para>In most situations, code like this should work well (macros are used to maintain one actual validator instance, so on the second call the function exits within the first macro):</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_validator" kindref="compound">wxValidator</ref>*<sp/>wxMyPropertyClass::DoGetValidator<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxValidator*<sp/>wxMyPropertyClass::DoGetValidator<sp/>()<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>WX_PG_DOGETVALIDATOR_ENTRY()</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxMyValidator*<sp/>validator<sp/>=<sp/>new<sp/>wxMyValidator(...);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...<sp/>prepare<sp/>validator...</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>WX_PG_DOGETVALIDATOR_EXIT(validator)</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
-<para><simplesect kind="remark"><para>You can get common filename validator by returning <ref refid="classwx_file_property_1ae35bb2f8e404ea923a63601ba77a06c7" kindref="member">wxFileProperty::GetClassValidator()</ref>. <ref refid="classwx_dir_property" kindref="compound">wxDirProperty</ref>, for example, uses it. </para>
+<para><simplesect kind="remark"><para>You can get common filename validator by returning <ref refid="classwx_file_property_1aa5527eeddefed22d4da8619715d6ef57" kindref="member">wxFileProperty::GetClassValidator()</ref>. <ref refid="classwx_dir_property" kindref="compound">wxDirProperty</ref>, for example, uses it. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="699" column="25"/>
+        <location file="interface/wx/propgrid/props.h" line="620" column="25"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-func">
-      <memberdef kind="function" id="classwx_dir_property_1a3a4c1ceebda11b313c219839b3773fad" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_dir_property_1aa229cccde2f389950cb3cf1138b3f4eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
-        <definition>virtual bool wxDirProperty::DisplayEditorDialog</definition>
-        <argsstring>(wxPropertyGrid *pg, wxVariant &amp;value)</argsstring>
-        <name>DisplayEditorDialog</name>
-        <reimplements refid="classwx_editor_dialog_property_1a3a7f6b7ece9826e1f1ab50667802057f">DisplayEditorDialog</reimplements>
+        <definition>virtual bool wxDirProperty::OnButtonClick</definition>
+        <argsstring>(wxPropertyGrid *propGrid, wxString &amp;value)</argsstring>
+        <name>OnButtonClick</name>
+        <reimplements refid="classwx_long_string_property_1a6d3ffd6ab337a4ef75d7453521e55454">OnButtonClick</reimplements>
         <param>
           <type><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> *</type>
-          <declname>pg</declname>
+          <declname>propGrid</declname>
         </param>
         <param>
-          <type><ref refid="classwx_variant" kindref="compound">wxVariant</ref> &amp;</type>
+          <type><ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>value</declname>
         </param>
         <briefdescription>
-<para>Shows editor dialog. </para>
         </briefdescription>
         <detaileddescription>
-<para>Value to be edited should be read from <emphasis>value</emphasis>, and if dialog is not cancelled, it should be stored back and true should be returned.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>value</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Value to be edited.</para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>pg</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Property grid in which property is displayed.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Returns true if editor dialog was not cancelled and <emphasis>value</emphasis> was updated. </para>
-</simplesect>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="702" column="18"/>
+        <location file="interface/wx/propgrid/props.h" line="622" column="18"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Like <ref refid="classwx_long_string_property" kindref="compound">wxLongStringProperty</ref>, but the button triggers directory selector instead. </para>
     </briefdescription>
     <detaileddescription>
+<para>Like <ref refid="classwx_long_string_property" kindref="compound">wxLongStringProperty</ref>, but the button triggers dir selector instead.</para>
 <para><bold>Supported special attributes:</bold><itemizedlist>
-<listitem><para><ref refid="property_8h_1ae58cb03f05157b13a47e52a62e87e306" kindref="member">wxPG_DIALOG_TITLE</ref>: Sets a specific title for the file dialog (since 3.1.3). </para>
+<listitem><para>&quot;DialogMessage&quot;: Sets specific message in the dir selector. </para>
 </listitem></itemizedlist>
 </para>
     </detaileddescription>
@@ -242,37 +159,41 @@ You might want to take into account that m_value is Null variant if property val
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>wxEditorDialogProperty</label>
-        <link refid="classwx_editor_dialog_property"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-      </node>
       <node id="3">
         <label>wxPGProperty</label>
         <link refid="classwx_p_g_property"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="4">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
+      <node id="2">
+        <label>wxLongStringProperty</label>
+        <link refid="classwx_long_string_property"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="6">
+        <label>wxString</label>
+        <link refid="classwx_string"/>
+      </node>
       <node id="1">
         <label>wxDirProperty</label>
         <link refid="classwx_dir_property"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="2">
-        <label>wxEditorDialogProperty</label>
-        <link refid="classwx_editor_dialog_property"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
         <childnode refid="6" relation="usage">
-          <edgelabel>m_dlgTitle</edgelabel>
+          <edgelabel>m_dlgMessage</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxPGProperty</label>
+        <link refid="classwx_p_g_property"/>
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">
@@ -282,113 +203,96 @@ You might want to take into account that m_value is Null variant if property val
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="2">
+        <label>wxLongStringProperty</label>
+        <link refid="classwx_long_string_property"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="5">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
-      <node id="3">
-        <label>wxPGProperty</label>
-        <link refid="classwx_p_g_property"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>wxString</label>
-        <link refid="classwx_string"/>
-      </node>
     </collaborationgraph>
-    <location file="interface/wx/propgrid/props.h" line="688" column="1" bodyfile="interface/wx/propgrid/props.h" bodystart="689" bodyend="703"/>
+    <location file="interface/wx/propgrid/props.h" line="612" column="1" bodyfile="interface/wx/propgrid/props.h" bodystart="611" bodyend="626"/>
     <listofallmembers>
-      <member refid="classwx_p_g_property_1a4bee5df8f39b77eb6bb06007b6ab1c18" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>AdaptiveSetCell</name></member>
       <member refid="classwx_p_g_property_1a9b3e8f6de3b5181c59b9cbb3e57190aa" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>AdaptListToValue</name></member>
       <member refid="classwx_p_g_property_1a6797d35591eb3d6e63067d7d073c445f" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>AddChild</name></member>
       <member refid="classwx_p_g_property_1ab58afbdcd83f0626f44d152127038a89" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>AddChoice</name></member>
       <member refid="classwx_p_g_property_1abec97e799f836560d4f65c7c5fc97f6f" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>AddPrivateChild</name></member>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_p_g_property_1af9a1b53285b8ae15a0ba1e180cba5117" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>AppendChild</name></member>
+      <member refid="classwx_p_g_property_1a77549498512cfa99b3b3e2c4317d5b70" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>AppendChild</name></member>
       <member refid="classwx_p_g_property_1a820e92441533ff9993e1fdc4a2cf4edd" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>AreAllChildrenSpecified</name></member>
       <member refid="classwx_p_g_property_1abec412a241710b989f25b8e647b1f237" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>AreChildrenComponents</name></member>
       <member refid="classwx_p_g_property_1a8cebe6f162709ab46c878f9c4e7b53a4" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>ChangeFlag</name></member>
       <member refid="classwx_p_g_property_1ac9aab64d5c202eab40e17bff29e6b132" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>ChildChanged</name></member>
-      <member refid="classwx_p_g_property_1adda0bb9f93fad4a63631ec8470cc0432" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>ClearCells</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxDirProperty</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxDirProperty</scope><name>CreateRefData</name></member>
+      <member refid="classwx_p_g_property_1a2268814902bae1eb9e593c5e127001cb" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>ClearFlag</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxDirProperty</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxDirProperty</scope><name>CreateRefData</name></member>
       <member refid="classwx_p_g_property_1aa8d29e4896c228f93d14fe2420c99f36" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>DeleteChildren</name></member>
       <member refid="classwx_p_g_property_1a137f1b7ea16f1f18fcc3e50ec107da1f" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>DeleteChoice</name></member>
-      <member refid="classwx_dir_property_1a3a4c1ceebda11b313c219839b3773fad" prot="protected" virt="virtual"><scope>wxDirProperty</scope><name>DisplayEditorDialog</name></member>
-      <member refid="classwx_p_g_property_1a03f88e45e541d2c2eedae467b16b5463" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>DoAddChild</name></member>
+      <member refid="classwx_long_string_property_1a35c8193e28236c71dd1b92a6ed1db2bb" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>DisplayEditorDialog</name></member>
       <member refid="classwx_p_g_property_1a3630728011e4b973ae8173f235554fa3" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>DoGetAttribute</name></member>
-      <member refid="classwx_p_g_property_1a0c45936e5e65b19155773363a8457476" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>DoGetEditorClass</name></member>
-      <member refid="classwx_dir_property_1a2c3b31b25a2cdd6f7df50b94c65463a6" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>DoGetValidator</name></member>
+      <member refid="classwx_p_g_property_1a26f2c9e5945b426fc6188a82893ba8c0" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>DoGetEditorClass</name></member>
+      <member refid="classwx_dir_property_1a13c29fe7177af55e367f8065710496ca" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>DoGetValidator</name></member>
       <member refid="classwx_p_g_property_1af98ae209886b9e26afe2ee767433283a" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>DoGetValue</name></member>
-      <member refid="classwx_editor_dialog_property_1a2d5891509f84e4c2e8f16608a69d7f98" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>DoSetAttribute</name></member>
+      <member refid="classwx_dir_property_1a36bdc92a78d49f504b6fabfd59837043" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>DoSetAttribute</name></member>
       <member refid="classwx_p_g_property_1abcd8337b04de4934c15b81e4470c5919" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>Empty</name></member>
       <member refid="classwx_p_g_property_1aa024322106dfb1300ed68919c27dd1e1" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>Enable</name></member>
       <member refid="classwx_p_g_property_1a2993285be09f66ae59cdc2fbffe50296" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>EnableCommonValue</name></member>
-      <member refid="classwx_p_g_property_1a53232ba83030fa0cfd483595b916f883" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>EnsureCells</name></member>
       <member refid="classwx_p_g_property_1a68b0ae8aab37c387f5fc4b7e9c53968e" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>FlagType</name></member>
       <member refid="classwx_p_g_property_1a8f9d8bc9c2c878177e617af5ca3d6690" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GenerateComposedValue</name></member>
       <member refid="classwx_p_g_property_1a511ffede21ed4ddd266bb939fc4fd2b5" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetAttribute</name></member>
       <member refid="classwx_p_g_property_1a953b7b8018149b3512c90c5c4073c910" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetAttribute</name></member>
       <member refid="classwx_p_g_property_1a0b55052ad7668fdbe6eac6f7be16e377" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetAttributeAsDouble</name></member>
       <member refid="classwx_p_g_property_1a0ebc8b72bea31f5ab1f3ecdc28a269b8" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetAttributeAsLong</name></member>
-      <member refid="classwx_p_g_property_1afe75b8cf094671f63bef27b4b1bcfa1e" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetAttributes</name></member>
+      <member refid="classwx_p_g_property_1a1d042e1abf963cf7428fbe58e88de064" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetAttributes</name></member>
       <member refid="classwx_p_g_property_1a0c79a8fcf4f427ada0034f7d624aae1c" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetAttributesAsList</name></member>
-      <member refid="classwx_p_g_property_1a7395ea70e0aff64664792bcac2518cb0" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetBaseName</name></member>
-      <member refid="classwx_p_g_property_1a098b53632035ccff8352ca8ad5cf6d07" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetCell</name></member>
-      <member refid="classwx_p_g_property_1a214fa41fd82e53ef932f2c6e94e68dae" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetCell</name></member>
-      <member refid="classwx_p_g_property_1ab83d378b16cecdf06373488b5eb67b0b" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>GetCellRenderer</name></member>
+      <member refid="classwx_p_g_property_1a0711e2a8e3a2b67944fef2fcaff290fc" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetBaseName</name></member>
+      <member refid="classwx_p_g_property_1ab8ae1b21e93fda9e560fcb5ec2f50bb2" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetCell</name></member>
+      <member refid="classwx_p_g_property_1aca895baa1adfa0536d1b623595ad198b" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetCell</name></member>
+      <member refid="classwx_p_g_property_1a31ed47c81659af29631c07fa23ebca71" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>GetCellRenderer</name></member>
       <member refid="classwx_p_g_property_1ace3496a027a4a4052166e0c9a922e812" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetChildCount</name></member>
       <member refid="classwx_p_g_property_1a90c8a63fb00e68ad35e943a9c3786b5e" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetChildrenHeight</name></member>
-      <member refid="classwx_p_g_property_1a1b5b211c5865e6c86e5555732d3ace45" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetChoices</name></member>
+      <member refid="classwx_p_g_property_1a8ab7856557b6bf44681e3be004282da6" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetChoices</name></member>
       <member refid="classwx_p_g_property_1aeafc92d4f1fd5b8ebb60e623a064d4ee" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>GetChoiceSelection</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_p_g_property_1ae531c5da5b40803879b6fd0a1c23d7ee" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetClientData</name></member>
-      <member refid="classwx_p_g_property_1a60d309fb1feab6186179290afdb6d664" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetClientObject</name></member>
-      <member refid="classwx_p_g_property_1a2eab7f548d8f39df9203fc50d67b7a7a" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetColumnEditor</name></member>
-      <member refid="classwx_p_g_property_1af4c6228ed8728fe7ba45cf4d839a3369" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetCommonValue</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_p_g_property_1ac38963f074de805e307f1012f385ce43" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetClientData</name></member>
+      <member refid="classwx_p_g_property_1a060756aa2256fd6d7499712d7c958217" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetClientObject</name></member>
+      <member refid="classwx_p_g_property_1ae617f6f7a97062fdc11cf4bea2adfc1a" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetColumnEditor</name></member>
       <member refid="classwx_p_g_property_1a403487a876a6ba36baa19c8f8a46d625" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetDefaultValue</name></member>
-      <member refid="classwx_p_g_property_1a9a872ade3822824469d8a1f4a1257eca" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetDepth</name></member>
-      <member refid="classwx_p_g_property_1a146ab56ec20fcd53ea8448f3c8f7f071" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetDisplayedCommonValueCount</name></member>
       <member refid="classwx_p_g_property_1ae31034ab802c9aa8ae3523bc383e3cf9" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetDisplayedString</name></member>
-      <member refid="classwx_p_g_property_1ada9f02a4de50f8bc209c3c05101fd59a" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetEditorClass</name></member>
-      <member refid="classwx_editor_dialog_property_1a44d3ab9d275a5f5016343b3139375035" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>GetEditorDialog</name></member>
-      <member refid="classwx_p_g_property_1a38fa062a728ecc492ca8a4a7fdfc6527" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetFlagsAsString</name></member>
-      <member refid="classwx_p_g_property_1ac1e803893ab75218db30f90b3c5fff94" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetGrid</name></member>
-      <member refid="classwx_p_g_property_1a3b474fc194525ba7811f3c94817ceb9c" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetGridIfDisplayed</name></member>
-      <member refid="classwx_p_g_property_1a37340f612295b3d3be8114347a828bb9" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetHelpString</name></member>
-      <member refid="classwx_p_g_property_1a4a39e0af61e80cfa3f906f5d9b7bfc3e" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetHintText</name></member>
-      <member refid="classwx_p_g_property_1a4f8f0942b3053ea7ced7f49e4eb1b68d" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetImageOffset</name></member>
+      <member refid="classwx_p_g_property_1aecc6e38aaa04bcabc62ed9ecf41f664d" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetEditorClass</name></member>
+      <member refid="classwx_p_g_property_1ab30433bbf0c1cbd2a1b29fe06f16fba7" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>GetEditorDialog</name></member>
+      <member refid="classwx_p_g_property_1a5e6e96000479dfb6cf3a07dbf4a0bfa9" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetFlags</name></member>
+      <member refid="classwx_p_g_property_1abdc9814947a47582d15f414c76a751e3" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetGrid</name></member>
+      <member refid="classwx_p_g_property_1adc29820fd295163609d715d9ca92b2c3" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetGridIfDisplayed</name></member>
+      <member refid="classwx_p_g_property_1a2a511af65596ada405c991046e67a49d" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetHelpString</name></member>
       <member refid="classwx_p_g_property_1a006e2c4b775342663a458641d648cac1" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetIndexInParent</name></member>
-      <member refid="classwx_p_g_property_1a6030c4b252ff65a81d4d980cc7c7e415" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetItemAtY</name></member>
-      <member refid="classwx_p_g_property_1a22a9433969c26f9311d74d404b05dfe3" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetLabel</name></member>
-      <member refid="classwx_p_g_property_1a5417f2430c1df130bcbd1b4da7bace74" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetLastVisibleSubItem</name></member>
-      <member refid="classwx_p_g_property_1ae91c463be7d161a7960f73c50b07f992" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetMainParent</name></member>
+      <member refid="classwx_p_g_property_1a751af48e4efac32e66a605ae637da2c2" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetLabel</name></member>
+      <member refid="classwx_p_g_property_1a621dd697a7c71c877708929e1be02a44" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetLastVisibleSubItem</name></member>
+      <member refid="classwx_p_g_property_1afbe4820a3e1afa87d49a32eff6c56f8d" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetMainParent</name></member>
       <member refid="classwx_p_g_property_1afa1a0f2650c2485d1525f7368f0f5da6" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetMaxLength</name></member>
       <member refid="classwx_p_g_property_1a134ac2e2a4496efbcd4fdc798b6cbec9" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetName</name></member>
-      <member refid="classwx_p_g_property_1a68bd9455cded0941b763f6bd74da97a7" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetOrCreateCell</name></member>
-      <member refid="classwx_p_g_property_1ae88730efb5f3ce1c10bf4a47fdd092cf" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetParent</name></member>
-      <member refid="classwx_p_g_property_1aee036a49cc6bf58dd761a4d19db38f97" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetPropertyByName</name></member>
-      <member refid="classwx_p_g_property_1ae0144173c91a4eaabf898617b0ecb513" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>GetPropertyByNameWH</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetRefData</name></member>
-      <member refid="classwx_p_g_property_1a09fce3f85d58a7cf4ce0f3384ea8836f" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetValidator</name></member>
+      <member refid="classwx_p_g_property_1a5c3624606ec872e85fcba2e9d411475c" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetOrCreateCell</name></member>
+      <member refid="classwx_p_g_property_1a92f7c9e41281a60a81e5ae91f4ba8c66" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetParent</name></member>
+      <member refid="classwx_p_g_property_1a9e4ecd53a2ae4f689dfece3a5cc2b31e" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetPropertyByName</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetRefData</name></member>
+      <member refid="classwx_p_g_property_1a135cb0eb4fc184f82de8a08b8d2bb021" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetValidator</name></member>
       <member refid="classwx_p_g_property_1a73b4c8073f032d17e246aaf40382953c" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetValue</name></member>
       <member refid="classwx_p_g_property_1a22451b135458443be5e1c6cfde72a515" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>GetValueAsString</name></member>
-      <member refid="classwx_p_g_property_1a246bb94f3c7db833cf8e88206dc0505d" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetValueImage</name></member>
+      <member refid="classwx_p_g_property_1ab6cf62ca08bed0f17e1e536f396b1b6b" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetValueImage</name></member>
       <member refid="classwx_p_g_property_1a6e112857a11de630e43058c8ec0b8736" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetValueString</name></member>
       <member refid="classwx_p_g_property_1ab4d4e9f610b636da1a70fab937c27667" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetValueType</name></member>
       <member refid="classwx_p_g_property_1a101490b76e22689e502f10304ac02c31" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>GetY</name></member>
-      <member refid="classwx_p_g_property_1ac257008c8b2feeca214f77714d720691" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>HasFlag</name></member>
-      <member refid="classwx_p_g_property_1a8aba55ec32dc5928d697c376afa57a26" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>HasFlag</name></member>
-      <member refid="classwx_p_g_property_1ad4716bc201dac8b6fa0a7e17a98c9ad9" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>HasFlagsExact</name></member>
+      <member refid="classwx_p_g_property_1a7f4c78090df61b2af3d97ce9f48dccee" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>HasFlag</name></member>
       <member refid="classwx_p_g_property_1a145275065be0f14da5ac1ace24ec8ac9" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>HasVisibleChildren</name></member>
       <member refid="classwx_p_g_property_1ad1bd50c81626773176c5d951d0e34c60" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>Hide</name></member>
       <member refid="classwx_p_g_property_1a3779757f33d56444094b51c8b8ca15fb" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>Index</name></member>
-      <member refid="classwx_p_g_property_1a37884fc5e5110927cbba65224e5a8207" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>InsertChild</name></member>
+      <member refid="classwx_p_g_property_1a572697e79fd8785f3477cc7f8d72f5d5" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>InsertChild</name></member>
       <member refid="classwx_p_g_property_1ae9f9995783eeaf5320cb0c71482cbbc8" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>InsertChoice</name></member>
       <member refid="classwx_p_g_property_1a8cd8ff321c9134f55d7ad384746e2ffc" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>IntToValue</name></member>
       <member refid="classwx_p_g_property_1a9f24f3e96be8f7f614de0989ae0e60fd" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>IsCategory</name></member>
-      <member refid="classwx_p_g_property_1aa57b3d85dd39ea60fda6dcd74581f9cd" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>IsChildSelected</name></member>
       <member refid="classwx_p_g_property_1a1f934ed66b0a2f580153da89bad611b8" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>IsEnabled</name></member>
       <member refid="classwx_p_g_property_1ae5a6e37d373fa28d923cc91ce96a5507" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>IsExpanded</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>IsKindOf</name></member>
@@ -399,20 +303,18 @@ You might want to take into account that m_value is Null variant if property val
       <member refid="classwx_p_g_property_1a4febe5bbe4a4e59d0b79702af4da6079" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>IsTextEditable</name></member>
       <member refid="classwx_p_g_property_1af89d7625096a23c0b9df61e9545a4f60" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>IsValueUnspecified</name></member>
       <member refid="classwx_p_g_property_1a2a398ab92cc1257c30af358a55ad788a" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>IsVisible</name></member>
-      <member refid="classwx_p_g_property_1a1a1ad09fedb23f9a175392a9b9f0d544" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>Item</name></member>
-      <member refid="classwx_p_g_property_1a07e5e3296b48b85a1d877c882cf07bbe" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>Last</name></member>
+      <member refid="classwx_p_g_property_1a63583ebe6f4bc5e294892291457b6cf7" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>Item</name></member>
       <member refid="classwx_p_g_property_1a093e5515221abf705473e77897b5590c" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>m_clientData</name></member>
-      <member refid="classwx_editor_dialog_property_1ae8838598356041abfb480cdbd11bcb20" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>m_dlgStyle</name></member>
-      <member refid="classwx_editor_dialog_property_1add0f0d3d0dc2ffe52f91815d887dde0a" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>m_dlgTitle</name></member>
+      <member refid="classwx_dir_property_1a232ee774fd0de778f08ae04d5dbf9d5d" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>m_dlgMessage</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>m_refData</name></member>
+      <member refid="classwx_dir_property_1aa229cccde2f389950cb3cf1138b3f4eb" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>OnButtonClick</name></member>
       <member refid="classwx_p_g_property_1ad0b00df4a3916cb80adfa1227c70baf4" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>OnCustomPaint</name></member>
-      <member refid="classwx_p_g_property_1a16fbe26240bf47ab0a9a02d21781da73" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>OnEvent</name></member>
+      <member refid="classwx_long_string_property_1a943793a4d7dda211d6fc628a7790ccfa" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>OnEvent</name></member>
       <member refid="classwx_p_g_property_1a657720f3794b4bab1bb7658dc9aa905c" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>OnMeasureImage</name></member>
       <member refid="classwx_p_g_property_1ae5c4f47d3ff609d19346b994a9a25acb" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>OnSetValue</name></member>
       <member refid="classwx_p_g_property_1acbffb1a7f8dee530918ff74c5cb70363" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>OnValidationFailure</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>operator new</name></member>
-      <member refid="classwx_p_g_property_1a905f5ca0479004626e7670dbbebf8368" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>RecreateEditor</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>Ref</name></member>
       <member refid="classwx_p_g_property_1a167afcb85ed4d527e34567e32a0cc714" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>RefreshChildren</name></member>
       <member refid="classwx_p_g_property_1af154d4b9d070c594a75164a5482d6888" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>RefreshEditor</name></member>
@@ -425,14 +327,11 @@ You might want to take into account that m_value is Null variant if property val
       <member refid="classwx_p_g_property_1a4244276bf942fd52e1dd182535e7ba5d" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetChoiceSelection</name></member>
       <member refid="classwx_p_g_property_1aa27f45f58bbcd53802e6644db33aec83" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetClientData</name></member>
       <member refid="classwx_p_g_property_1ab35b3529f2b6afbc1ec02d2bbb187709" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetClientObject</name></member>
-      <member refid="classwx_p_g_property_1a588ce65663bca1c5cff81cd838a0c97a" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetCommonValue</name></member>
-      <member refid="classwx_p_g_property_1a455efa63ed851c7e95b00afaf45d0060" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetDefaultColours</name></member>
       <member refid="classwx_p_g_property_1a7722a2c503051fd6ef1477a9c0c081a4" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetDefaultValue</name></member>
       <member refid="classwx_p_g_property_1a2cd2e6f0b30a1ab789f9ea8b58226260" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetEditor</name></member>
       <member refid="classwx_p_g_property_1a90294ea6cae6cf504d032b46787bb6e4" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetEditor</name></member>
-      <member refid="classwx_p_g_property_1a13ea56970855a72cfbee4d190302d5d3" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetExpanded</name></member>
+      <member refid="classwx_p_g_property_1af8d8afe130e96785eab7f37ea07e326e" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>SetFlag</name></member>
       <member refid="classwx_p_g_property_1a02dd250ff0cfe074a8de9f8cd8643880" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetFlagRecursively</name></member>
-      <member refid="classwx_p_g_property_1aa0b458523923d5c753d07f59f382931e" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetFlagsFromString</name></member>
       <member refid="classwx_p_g_property_1a839af036b24fc35696f0ef3cb2b0670a" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetHelpString</name></member>
       <member refid="classwx_p_g_property_1a5acdc1db23a6e219de6619bc54e1a2e3" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetLabel</name></member>
       <member refid="classwx_p_g_property_1aa74671893440ce2a0f2a0e47ba897ad5" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetMaxLength</name></member>
@@ -444,26 +343,27 @@ You might want to take into account that m_value is Null variant if property val
       <member refid="classwx_p_g_property_1a9eb7d1f243c6fb993b3563c241b2ef4a" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetValidator</name></member>
       <member refid="classwx_p_g_property_1aa8e771a01a93fe94f87a449f430afa79" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetValue</name></member>
       <member refid="classwx_p_g_property_1a0b3351061910b91a954237735466ca88" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetValueFromInt</name></member>
-      <member refid="classwx_p_g_property_1a2e2d75f2a0345d5e4bd4d8445beae558" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetValueFromString</name></member>
+      <member refid="classwx_p_g_property_1a0fbb7142a10cfcf02bb45000ab4527cd" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetValueFromString</name></member>
       <member refid="classwx_p_g_property_1a5c5be1292d329945b0a24e33db485207" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetValueImage</name></member>
       <member refid="classwx_p_g_property_1ae3fbf828db909d9d03f3fd9577cf46b0" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetValueInEvent</name></member>
+      <member refid="classwx_p_g_property_1ae810565e96391346fd7913248f0642ab" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetValuePlain</name></member>
       <member refid="classwx_p_g_property_1a4e55506bbc49f0b7d447df71a00f2df6" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetValueToUnspecified</name></member>
       <member refid="classwx_p_g_property_1a46da7a139ba90c3852710f181280667d" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>SetWasModified</name></member>
-      <member refid="classwx_dir_property_1a5a3489ae8609d833c7c2f4130fe0d559" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>StringToValue</name></member>
+      <member refid="classwx_long_string_property_1a100f7d1221651682d8d04ab015e3474f" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>StringToValue</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>UnRef</name></member>
       <member refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>UnShare</name></member>
-      <member refid="classwx_p_g_property_1a95f695f24b72db7a8d381d102c77f532" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>UpdateParentValues</name></member>
+      <member refid="classwx_p_g_property_1a7b2f517388b0f0038354d5fd9f0bab43" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>UpdateParentValues</name></member>
       <member refid="classwx_p_g_property_1a11e1675d3a38ecce767e3417fad55a76" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>UsesAutoUnspecified</name></member>
       <member refid="classwx_p_g_property_1a80725226865ed42a95fef88860f59e61" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>ValidateValue</name></member>
-      <member refid="classwx_dir_property_1ab1874b983a6eb7f53424882f71c8d3e4" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>ValueToString</name></member>
-      <member refid="classwx_dir_property_1ac2ffd44ed793f106018df5bcc0e8319a" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>wxDirProperty</name></member>
-      <member refid="classwx_editor_dialog_property_1a6bedee0f409e58894ae2fa5e0804708d" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>wxEditorDialogProperty</name></member>
+      <member refid="classwx_long_string_property_1a9afd29b19944af09f19d33dfa62371db" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>ValueToString</name></member>
+      <member refid="classwx_dir_property_1a1d4edb565d185b09319fa81cb76b5597" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>wxDirProperty</name></member>
+      <member refid="classwx_long_string_property_1a9dcf5482f5fdf95deb7c2de1195d046c" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>wxLongStringProperty</name></member>
       <member refid="classwx_object_1acaa378363a28af421ab56ad7b46eadf0" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>wxObject</name></member>
       <member refid="classwx_object_1a4721b4dc9b7aff0f30904ba2ea3954cf" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>wxObject</name></member>
-      <member refid="classwx_p_g_property_1ade8edb58a7853a539664c77b2d9c9c81" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>wxPGProperty</name></member>
-      <member refid="classwx_p_g_property_1adde08613b47eda8e324483ac754e8920" prot="protected" virt="non-virtual"><scope>wxDirProperty</scope><name>wxPGProperty</name></member>
+      <member refid="classwx_p_g_property_1ade8edb58a7853a539664c77b2d9c9c81" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>wxPGProperty</name></member>
+      <member refid="classwx_p_g_property_1adde08613b47eda8e324483ac754e8920" prot="public" virt="non-virtual"><scope>wxDirProperty</scope><name>wxPGProperty</name></member>
       <member refid="classwx_dir_property_1a6912e60f360f96884b6adf10264ab0e1" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>~wxDirProperty</name></member>
-      <member refid="classwx_editor_dialog_property_1a7b66d1fc5746522f6c96e2cf1749ddd3" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>~wxEditorDialogProperty</name></member>
+      <member refid="classwx_long_string_property_1a66c1434fd038c3e832d869e33529d374" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>~wxLongStringProperty</name></member>
       <member refid="classwx_object_1a2a51aa8bfbab47ca2f051bcf84b3f35b" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>~wxObject</name></member>
       <member refid="classwx_p_g_property_1ac18fca1cac5343b510220929a4f6a0bc" prot="public" virt="virtual"><scope>wxDirProperty</scope><name>~wxPGProperty</name></member>
     </listofallmembers>

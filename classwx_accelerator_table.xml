@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_accelerator_table" kind="class" language="C++" prot="public">
     <compoundname>wxAcceleratorTable</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -54,7 +54,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<bold>wxPerl Note:</bold> The wxPerl constructor accepts a list of either Wx::AcceleratorEntry objects or references to 3-element arrays [flags, keyCode, cmd] , like the parameters of Wx::AcceleratorEntry::new.  </para>
+<bold>wxPerl Note:</bold> The wxPerl constructor accepts a list of either Wx::AcceleratorEntry objects or references to 3-element arrays [flags, keyCode, cmd] , like the parameters of Wx::AcceleratorEntry::new. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -73,7 +73,7 @@
 <para>Loads the accelerator table from a Windows resource (Windows only). </para>
         </briefdescription>
         <detaileddescription>
-<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor> </para>
+<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port. <onlyfor>wxmsw</onlyfor> </para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>resource</parametername>
@@ -120,18 +120,18 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>An accelerator table allows the application to specify a table of keyboard shortcuts for menu or button commands. </para>
     </briefdescription>
     <detaileddescription>
+<para>An accelerator table allows the application to specify a table of keyboard shortcuts for menu or button commands.</para>
 <para>The object <ref refid="accel_8h_1ad73e85397cbc1a674e32e3ab77d3ee34" kindref="member">wxNullAcceleratorTable</ref> is defined to be a table with no data, and is the initial accelerator table for a window.</para>
 <para>Example:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_accelerator_entry" kindref="compound">wxAcceleratorEntry</ref><sp/>entries[4];</highlight></codeline>
-<codeline><highlight class="normal">entries[0].<ref refid="classwx_accelerator_entry_1abaac10bba35d3e3c32f05761e0d19d1a" kindref="member">Set</ref>(<ref refid="accel_8h_1ae3253ea019602f79fde0d3195f507a9fa0b437c0885e352c31a14fd8fad8d6ae5" kindref="member">wxACCEL_CTRL</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">,<sp/>ID_NEW_WINDOW);</highlight></codeline>
-<codeline><highlight class="normal">entries[1].<ref refid="classwx_accelerator_entry_1abaac10bba35d3e3c32f05761e0d19d1a" kindref="member">Set</ref>(<ref refid="accel_8h_1ae3253ea019602f79fde0d3195f507a9fa0b437c0885e352c31a14fd8fad8d6ae5" kindref="member">wxACCEL_CTRL</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/></highlight><highlight class="charliteral">&apos;X&apos;</highlight><highlight class="normal">,<sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbba37f548d1211c664ede962e943baad4e5" kindref="member">wxID_EXIT</ref>);</highlight></codeline>
-<codeline><highlight class="normal">entries[2].<ref refid="classwx_accelerator_entry_1abaac10bba35d3e3c32f05761e0d19d1a" kindref="member">Set</ref>(<ref refid="accel_8h_1ae3253ea019602f79fde0d3195f507a9face856b44e375038aae5d3d6b06c618dc" kindref="member">wxACCEL_SHIFT</ref>,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/></highlight><highlight class="charliteral">&apos;A&apos;</highlight><highlight class="normal">,<sp/>ID_ABOUT);</highlight></codeline>
-<codeline><highlight class="normal">entries[3].<ref refid="classwx_accelerator_entry_1abaac10bba35d3e3c32f05761e0d19d1a" kindref="member">Set</ref>(<ref refid="accel_8h_1ae3253ea019602f79fde0d3195f507a9fa3b09967815d3cd3c82f048d05864c156" kindref="member">wxACCEL_NORMAL</ref>,<sp/><ref refid="defs_8h_1a41c4609211685cff198618963ec8f77da8519a7072da9e8928b324d315e6280a7" kindref="member">WXK_DELETE</ref>,<sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbbae615aae4ceb42c52dc0aadcd5bf2da81" kindref="member">wxID_CUT</ref>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_accelerator_table" kindref="compound">wxAcceleratorTable</ref><sp/>accel(4,<sp/>entries);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxAcceleratorEntry<sp/>entries[4];</highlight></codeline>
+<codeline><highlight class="normal">entries[0].Set(wxACCEL_CTRL,<sp/>(int)<sp/>&apos;N&apos;,<sp/>ID_NEW_WINDOW);</highlight></codeline>
+<codeline><highlight class="normal">entries[1].Set(wxACCEL_CTRL,<sp/>(int)<sp/>&apos;X&apos;,<sp/>wxID_EXIT);</highlight></codeline>
+<codeline><highlight class="normal">entries[2].Set(wxACCEL_SHIFT,<sp/>(int)<sp/>&apos;A&apos;,<sp/>ID_ABOUT);</highlight></codeline>
+<codeline><highlight class="normal">entries[3].Set(wxACCEL_NORMAL,<sp/>WXK_DELETE,<sp/>wxID_CUT);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxAcceleratorTable<sp/>accel(4,<sp/>entries);</highlight></codeline>
 <codeline><highlight class="normal">frame-&gt;SetAcceleratorTable(accel);</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="remark"><para>An accelerator takes precedence over normal processing and can be a convenient way to program some event handling. For example, you can use an accelerator table to enable a dialog with a multi-line text control to accept CTRL-Enter as meaning &apos;OK&apos;.</para>
@@ -145,24 +145,18 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxAcceleratorTable</label>
-        <link refid="classwx_accelerator_table"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="1">
         <label>wxAcceleratorTable</label>
         <link refid="classwx_accelerator_table"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -170,24 +164,30 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxAcceleratorTable</label>
+        <link refid="classwx_accelerator_table"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/accel.h" line="191" column="1" bodyfile="interface/wx/accel.h" bodystart="192" bodyend="236"/>
+    <location file="interface/wx/accel.h" line="192" column="1" bodyfile="interface/wx/accel.h" bodystart="191" bodyend="236"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxAcceleratorTable</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxAcceleratorTable</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxAcceleratorTable</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxAcceleratorTable</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxAcceleratorTable</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxAcceleratorTable</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>GetRefData</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>IsKindOf</name></member>
       <member refid="classwx_accelerator_table_1a9c28ef355e343ed963b3281f3897f622" prot="public" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>IsOk</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>Ref</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>SetRefData</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxAcceleratorTable</scope><name>UnRef</name></member>

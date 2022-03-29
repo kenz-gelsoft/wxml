@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_file_config" kind="class" language="C++" prot="public">
     <compoundname>wxFileConfig</compoundname>
     <basecompoundref refid="classwx_config_base" prot="public" virt="non-virtual">wxConfigBase</basecompoundref>
@@ -33,7 +33,7 @@
         <param>
           <type>long</type>
           <declname>style</declname>
-          <defval><ref refid="interface_2wx_2config_8h_1a385c44f6fb256e5716a2302a5b940388a2a23b2ec7fd6b2169ae2536cbce3ff64" kindref="member">wxCONFIG_USE_LOCAL_FILE</ref>|<ref refid="interface_2wx_2config_8h_1a385c44f6fb256e5716a2302a5b940388a85c4768e6a0c1989e9251c7405c546bc" kindref="member">wxCONFIG_USE_GLOBAL_FILE</ref></defval>
+          <defval><ref refid="interface_2wx_2config_8h_1ab04a0655cd1e3bcac5e8f48c18df1a57a2a23b2ec7fd6b2169ae2536cbce3ff64" kindref="member">wxCONFIG_USE_LOCAL_FILE</ref>|<ref refid="interface_2wx_2config_8h_1ab04a0655cd1e3bcac5e8f48c18df1a57a85c4768e6a0c1989e9251c7405c546bc" kindref="member">wxCONFIG_USE_GLOBAL_FILE</ref></defval>
         </param>
         <param>
           <type>const <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> &amp;</type>
@@ -44,7 +44,7 @@
 <para>Constructor allowing to choose the file names to use. </para>
         </briefdescription>
         <detaileddescription>
-<para>If <emphasis>localFilename</emphasis> and/or <emphasis>globalFilename</emphasis> are explicitly specified, they are used as the names of the user and system-wide configuration files (the latter is only read by the program while the former is read from and written to). Otherwise the behaviour depends on <emphasis>style</emphasis> parameter. If it includes <ref refid="interface_2wx_2config_8h_1a385c44f6fb256e5716a2302a5b940388a2a23b2ec7fd6b2169ae2536cbce3ff64" kindref="member">wxCONFIG_USE_LOCAL_FILE</ref>, then the local file name is constructed from the information in <emphasis>appName</emphasis> and <emphasis>vendorName</emphasis> arguments in a system-dependent way. If <ref refid="interface_2wx_2config_8h_1a385c44f6fb256e5716a2302a5b940388a85c4768e6a0c1989e9251c7405c546bc" kindref="member">wxCONFIG_USE_GLOBAL_FILE</ref> is not specified at all (and <emphasis>globalFilename</emphasis> is empty) then the system-wide file is not used at all. Otherwise its name and path are also constructed in the way appropriate for the current platform from the application and vendor names. </para>
+<para>If <emphasis>localFilename</emphasis> and/or <emphasis>globalFilename</emphasis> are explicitly specified, they are used as the names of the user and system-wide configuration files (the latter is only read by the program while the former is read from and written to). Otherwise the behaviour depends on <emphasis>style</emphasis> parameter. If it includes <ref refid="interface_2wx_2config_8h_1ab04a0655cd1e3bcac5e8f48c18df1a57a2a23b2ec7fd6b2169ae2536cbce3ff64" kindref="member">wxCONFIG_USE_LOCAL_FILE</ref>, then the local file name is constructed from the information in <emphasis>appName</emphasis> and <emphasis>vendorName</emphasis> arguments in a system-dependent way. If <ref refid="interface_2wx_2config_8h_1ab04a0655cd1e3bcac5e8f48c18df1a57a85c4768e6a0c1989e9251c7405c546bc" kindref="member">wxCONFIG_USE_GLOBAL_FILE</ref> is not specified at all (and <emphasis>globalFilename</emphasis> is empty) then the system-wide file is not used at all. Otherwise its name and path are also constructed in the way appropriate for the current platform from the application and vendor names. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -103,42 +103,6 @@
         </inbodydescription>
         <location file="interface/wx/fileconf.h" line="96" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_file_config_1a2f3cddb34e623aad19405bcd6060adb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void wxFileConfig::EnableAutoSave</definition>
-        <argsstring>()</argsstring>
-        <name>EnableAutoSave</name>
-        <briefdescription>
-<para>Enables saving data to the disk file when this object is destroyed. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This is the default behaviour and this function doesn&apos;t need to be called explicitly unless <ref refid="classwx_file_config_1af8c93013400e52dd7ea75be9aec25a9e" kindref="member">DisableAutoSave()</ref> had been previously called.</para>
-<para><simplesect kind="since"><para>3.1.3 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="106" column="10"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_file_config_1af8c93013400e52dd7ea75be9aec25a9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void wxFileConfig::DisableAutoSave</definition>
-        <argsstring>()</argsstring>
-        <name>DisableAutoSave</name>
-        <briefdescription>
-<para>Prevent this object from saving data to the disk file when it is destroyed. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>By default, changes to this object are only saved permanently when <ref refid="classwx_file_config_1a237986fb7e05f7e5404dec1941da308d" kindref="member">Flush()</ref> is explicitly called or when it is destroyed. If this method is called, <ref refid="classwx_file_config_1a237986fb7e05f7e5404dec1941da308d" kindref="member">Flush()</ref> won&apos;t be called automatically from the destructor, meaning that any non-explicitly-flushed changes will be lost.</para>
-<para><simplesect kind="since"><para>3.1.3 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="119" column="10"/>
-      </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a709b9d8592d746ca7a0d80abdf20ce95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxFileConfig::SetUmask</definition>
@@ -149,7 +113,7 @@
           <declname>mode</declname>
         </param>
         <briefdescription>
-<para>Allows setting the mode to be used for the config file creation. </para>
+<para>Allows to set the mode to be used for the config file creation. </para>
         </briefdescription>
         <detaileddescription>
 <para>For example, to create a config file which is not readable by other users (useful if it stores some sensitive information, such as passwords), you could use <computeroutput>SetUmask(0077)</computeroutput>.</para>
@@ -160,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="130" column="10"/>
+        <location file="interface/wx/fileconf.h" line="107" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1ac2b05e8f651d7390e3c340e5c7feea0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -183,14 +147,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="133" column="16"/>
+        <location file="interface/wx/fileconf.h" line="110" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_file_config_1a75c6a1cf08cddd3376dc62610c279400" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_file_config_1afe8acd9e1156f1398f308f77284352e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-        <definition>virtual const wxString &amp; wxFileConfig::GetPath</definition>
+        <definition>virtual const wxString&amp; wxFileConfig::GetPath</definition>
         <argsstring>() const</argsstring>
         <name>GetPath</name>
-        <reimplements refid="classwx_config_base_1a36e42b9ffada7c3e86466b2b4e57f8bc">GetPath</reimplements>
+        <reimplements refid="classwx_config_base_1a2c76e8a110cecc4d89d3af1565044e15">GetPath</reimplements>
         <briefdescription>
 <para>Retrieve the current path (always as absolute path). </para>
         </briefdescription>
@@ -198,7 +162,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="134" column="26"/>
+        <location file="interface/wx/fileconf.h" line="111" column="26"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1aa0a82bdc1a523b9324a2233a8ac42c86" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -218,11 +182,11 @@
 <para>Gets the first group. </para>
         </briefdescription>
         <detaileddescription>
-<para><bold>wxPerl Note:</bold> In wxPerl this method takes no parameters and returns a 3-element list (continue_flag, string, index_for_getnextentry).  </para>
+<para><bold>wxPerl Note:</bold> In wxPerl this method takes no parameters and returns a 3-element list (continue_flag, string, index_for_getnextentry). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="136" column="16"/>
+        <location file="interface/wx/fileconf.h" line="113" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a1f8fd10b6f7ad744da343ee0af5b603a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -242,11 +206,11 @@
 <para>Gets the next group. </para>
         </briefdescription>
         <detaileddescription>
-<para><bold>wxPerl Note:</bold> In wxPerl this method only takes the <emphasis>index</emphasis> parameter and returns a 3-element list (continue_flag, string, index_for_getnextentry).  </para>
+<para><bold>wxPerl Note:</bold> In wxPerl this method only takes the <emphasis>index</emphasis> parameter and returns a 3-element list (continue_flag, string, index_for_getnextentry). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="137" column="16"/>
+        <location file="interface/wx/fileconf.h" line="114" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a731918aafd6b8f2552900aa79c60b48b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -266,11 +230,11 @@
 <para>Gets the first entry. </para>
         </briefdescription>
         <detaileddescription>
-<para><bold>wxPerl Note:</bold> In wxPerl this method takes no parameters and returns a 3-element list (continue_flag, string, index_for_getnextentry).  </para>
+<para><bold>wxPerl Note:</bold> In wxPerl this method takes no parameters and returns a 3-element list (continue_flag, string, index_for_getnextentry). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="138" column="16"/>
+        <location file="interface/wx/fileconf.h" line="115" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a2e28f5f742466f9f6a77cd8c8e4f5d62" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -290,11 +254,11 @@
 <para>Gets the next entry. </para>
         </briefdescription>
         <detaileddescription>
-<para><bold>wxPerl Note:</bold> In wxPerl this method only takes the <emphasis>index</emphasis> parameter and returns a 3-element list (continue_flag, string, index_for_getnextentry).  </para>
+<para><bold>wxPerl Note:</bold> In wxPerl this method only takes the <emphasis>index</emphasis> parameter and returns a 3-element list (continue_flag, string, index_for_getnextentry). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="139" column="16"/>
+        <location file="interface/wx/fileconf.h" line="116" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a11c6187c8a07a6e722dbb4b135d7eb51" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>size_t</type>
@@ -314,7 +278,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="141" column="18"/>
+        <location file="interface/wx/fileconf.h" line="118" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a132f34eca0d959b05e00477e983a045c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>size_t</type>
@@ -334,7 +298,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="142" column="18"/>
+        <location file="interface/wx/fileconf.h" line="119" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a0d3f43185ea086a7d17be0be2135efbb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -355,7 +319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="144" column="16"/>
+        <location file="interface/wx/fileconf.h" line="121" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a58afc69f93a1e7fa440a0b7fbdd2ad46" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -376,7 +340,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="145" column="16"/>
+        <location file="interface/wx/fileconf.h" line="122" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a237986fb7e05f7e5404dec1941da308d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -396,13 +360,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="147" column="16"/>
+        <location file="interface/wx/fileconf.h" line="124" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a562a1b81e23d70c1921c2139dcf5580d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxFileConfig::RenameEntry</definition>
         <argsstring>(const wxString &amp;oldName, const wxString &amp;newName)</argsstring>
         <name>RenameEntry</name>
+        <reimplements refid="classwx_config_base_1a1871d5f0aec990c1552242203c5ed0c4">RenameEntry</reimplements>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>oldName</declname>
@@ -412,18 +377,24 @@
           <declname>newName</declname>
         </param>
         <briefdescription>
+<para>Renames an entry in the current group. </para>
         </briefdescription>
         <detaileddescription>
+<para>The entries names (both the old and the new one) shouldn&apos;t contain backslashes, i.e. only simple names and not arbitrary paths are accepted by this function.</para>
+<para><simplesect kind="return"><para>false if <emphasis>oldName</emphasis> doesn&apos;t exist or if <emphasis>newName</emphasis> already exists. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="149" column="16"/>
+        <location file="interface/wx/fileconf.h" line="126" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a3827f9711a31782a2d4f1ea61e1ea592" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxFileConfig::RenameGroup</definition>
         <argsstring>(const wxString &amp;oldName, const wxString &amp;newName)</argsstring>
         <name>RenameGroup</name>
+        <reimplements refid="classwx_config_base_1a4f85e2947979146ccc77b42c15409834">RenameGroup</reimplements>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>oldName</declname>
@@ -433,64 +404,77 @@
           <declname>newName</declname>
         </param>
         <briefdescription>
+<para>Renames a subgroup of the current group. </para>
         </briefdescription>
         <detaileddescription>
+<para>The subgroup names (both the old and the new one) shouldn&apos;t contain backslashes, i.e. only simple names and not arbitrary paths are accepted by this function.</para>
+<para><simplesect kind="return"><para>false if <emphasis>oldName</emphasis> doesn&apos;t exist or if <emphasis>newName</emphasis> already exists. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="150" column="16"/>
+        <location file="interface/wx/fileconf.h" line="127" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1a120130d8a59bbdadf510b658b4d45952" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxFileConfig::DeleteEntry</definition>
         <argsstring>(const wxString &amp;key, bool bGroupIfEmptyAlso=true)</argsstring>
         <name>DeleteEntry</name>
+        <reimplements refid="classwx_config_base_1a4032a0432b4a7f956ec30dfc4f4b8593">DeleteEntry</reimplements>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>key</declname>
         </param>
         <param>
           <type>bool</type>
-          <declname>bGroupIfEmptyAlso</declname>
+          <declname>bDeleteGroupIfEmpty</declname>
           <defval>true</defval>
         </param>
         <briefdescription>
+<para>Deletes the specified entry and the group it belongs to if it was the last key in it and the second parameter is true. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="152" column="16"/>
+        <location file="interface/wx/fileconf.h" line="129" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1aed9b867b366bb656ddd3fdf3108e726d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxFileConfig::DeleteGroup</definition>
         <argsstring>(const wxString &amp;szKey)</argsstring>
         <name>DeleteGroup</name>
+        <reimplements refid="classwx_config_base_1ac66bcb140f09c8cb522d3117aa1aa0e7">DeleteGroup</reimplements>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>szKey</declname>
+          <declname>key</declname>
         </param>
         <briefdescription>
+<para>Delete the group (with all subgroups). </para>
         </briefdescription>
         <detaileddescription>
+<para>If the current path is under the group being deleted it is changed to its deepest still existing component. E.g. if the current path is <computeroutput>&quot;/A/B/C/D&quot;</computeroutput> and the group <computeroutput>C</computeroutput> is deleted, the path becomes <computeroutput>&quot;/A/B&quot;</computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="153" column="16"/>
+        <location file="interface/wx/fileconf.h" line="130" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_config_1aeb7cd89ccb242ed30506e63fd79ed82f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxFileConfig::DeleteAll</definition>
         <argsstring>()</argsstring>
         <name>DeleteAll</name>
+        <reimplements refid="classwx_config_base_1af2dd5ec6b56f89decf0e96b057c4846f">DeleteAll</reimplements>
         <briefdescription>
+<para>Delete the whole underlying object (disk file, registry key, ...). </para>
         </briefdescription>
         <detaileddescription>
+<para>Primarily for use by uninstallation routine. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fileconf.h" line="154" column="16"/>
+        <location file="interface/wx/fileconf.h" line="131" column="16"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -579,10 +563,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_file_config" kindref="compound">wxFileConfig</ref> implements <ref refid="classwx_config_base" kindref="compound">wxConfigBase</ref> interface for storing and retrieving configuration information using plain text files. </para>
     </briefdescription>
     <detaileddescription>
-<para>The files have a simple format reminiscent of Windows INI files with lines of the form <computeroutput>&quot;key = value&quot;</computeroutput> defining the keys and lines of special form <computeroutput>&quot;[group]&quot;</computeroutput> indicating the start of each group.</para>
+<para><ref refid="classwx_file_config" kindref="compound">wxFileConfig</ref> implements <ref refid="classwx_config_base" kindref="compound">wxConfigBase</ref> interface for storing and retrieving configuration information using plain text files. The files have a simple format reminiscent of Windows INI files with lines of the form <computeroutput>&quot;key = value&quot;</computeroutput> defining the keys and lines of special form <computeroutput>&quot;[group]&quot;</computeroutput> indicating the start of each group.</para>
 <para>This class is used by default for wxConfig on Unix platforms but may also be used explicitly if you want to use files and not the registry even under Windows.</para>
 <para><heading level="2"></heading>
 </para>
@@ -634,21 +617,22 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/fileconf.h" line="26" column="1" bodyfile="interface/wx/fileconf.h" bodystart="27" bodyend="155"/>
+    <location file="interface/wx/fileconf.h" line="27" column="1" bodyfile="interface/wx/fileconf.h" bodystart="26" bodyend="132"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxFileConfig</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxFileConfig</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxFileConfig</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxFileConfig</scope><name>CloneRefData</name></member>
+      <member refid="classwx_config_base_1aa7d633935adabe1bf11b5a028f8b3355" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Create</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxFileConfig</scope><name>CreateRefData</name></member>
       <member refid="classwx_file_config_1aeb7cd89ccb242ed30506e63fd79ed82f" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>DeleteAll</name></member>
       <member refid="classwx_file_config_1a120130d8a59bbdadf510b658b4d45952" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>DeleteEntry</name></member>
       <member refid="classwx_file_config_1aed9b867b366bb656ddd3fdf3108e726d" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>DeleteGroup</name></member>
-      <member refid="classwx_file_config_1af8c93013400e52dd7ea75be9aec25a9e" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>DisableAutoSave</name></member>
-      <member refid="classwx_file_config_1a2f3cddb34e623aad19405bcd6060adb9" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>EnableAutoSave</name></member>
+      <member refid="classwx_config_base_1a0e8ad0cb0c5b374a99b99ea6212e496b" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>DontCreateOnDemand</name></member>
       <member refid="classwx_config_base_1a499282208b4b9e90cbfe60de25745bc4" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>EntryType</name></member>
       <member refid="classwx_config_base_1adf827c37b0872f16ccc286c8678718b6" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Exists</name></member>
       <member refid="classwx_file_config_1a237986fb7e05f7e5404dec1941da308d" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>Flush</name></member>
+      <member refid="classwx_config_base_1a61bfb04c1c133190b3e851b252ed1c60" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Get</name></member>
       <member refid="classwx_config_base_1ac5b951ebb367a4bbc2ccebc045cb1591" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>GetAppName</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>GetClassInfo</name></member>
       <member refid="classwx_config_base_1a2fd2205a9bbcd9fe248dc43174117d59" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>GetEntryType</name></member>
       <member refid="classwx_file_config_1a731918aafd6b8f2552900aa79c60b48b" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>GetFirstEntry</name></member>
       <member refid="classwx_file_config_1aa0a82bdc1a523b9324a2233a8ac42c86" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>GetFirstGroup</name></member>
@@ -660,27 +644,44 @@
       <member refid="classwx_file_config_1a1f8fd10b6f7ad744da343ee0af5b603a" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>GetNextGroup</name></member>
       <member refid="classwx_file_config_1a11c6187c8a07a6e722dbb4b135d7eb51" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>GetNumberOfEntries</name></member>
       <member refid="classwx_file_config_1a132f34eca0d959b05e00477e983a045c" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>GetNumberOfGroups</name></member>
-      <member refid="classwx_file_config_1a75c6a1cf08cddd3376dc62610c279400" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>GetPath</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>GetRefData</name></member>
+      <member refid="classwx_file_config_1afe8acd9e1156f1398f308f77284352e2" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>GetPath</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>GetRefData</name></member>
       <member refid="classwx_config_base_1affb49e611d184a7c0d4a2ccde9452026" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>GetVendorName</name></member>
       <member refid="classwx_file_config_1a58afc69f93a1e7fa440a0b7fbdd2ad46" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>HasEntry</name></member>
       <member refid="classwx_file_config_1a0d3f43185ea086a7d17be0be2135efbb" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>HasGroup</name></member>
+      <member refid="classwx_config_base_1aab9d00f613c88574093082c394fb706d" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>IsExpandingEnvVars</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>IsKindOf</name></member>
+      <member refid="classwx_config_base_1aba4b4badd839e0af4a5b0c15692351a5" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>IsRecordingDefaults</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxFileConfig</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>operator new</name></member>
       <member refid="classwx_config_base_1a0fe9238f38e565f3218563c674e66161" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
       <member refid="classwx_config_base_1aa664f00931a8cbf4990c3aa4b6b1098c" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
       <member refid="classwx_config_base_1a1a593fc959d10854daa9dba04b6747ba" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
       <member refid="classwx_config_base_1a8655c70b311edf7d808e5babb565ab77" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
       <member refid="classwx_config_base_1a06fafffd5e7ac33927ba38cec18e30f0" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
-      <member refid="classwx_config_base_1a44b631c8f1e598b4d31d1cafe5fb3090" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
+      <member refid="classwx_config_base_1a09e29da759fd763f159334bd19bffd3d" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
+      <member refid="classwx_config_base_1a8441c70cfe5e56d40e84283c081e4073" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
+      <member refid="classwx_config_base_1a39c887dcf0861245e88ac9892faf23cf" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
+      <member refid="classwx_config_base_1a3e1ae84c1e9d076fcbcf78bf9ea9ee63" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
+      <member refid="classwx_config_base_1abd35ea62d3335d3ada07fe8c132839e6" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
+      <member refid="classwx_config_base_1af202773331d956a89eb2e8e725369b9e" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
+      <member refid="classwx_config_base_1a1bf0a08978ce2762903c9f2a65ee6e18" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
+      <member refid="classwx_config_base_1ae158d4ec48abb69e06c1e64c0a39218b" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
+      <member refid="classwx_config_base_1ace056b62faa3197aaa9b4210c25954fb" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Read</name></member>
+      <member refid="classwx_config_base_1ad74920f9fe36e57497bda2fe9b8fd879" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>ReadBool</name></member>
+      <member refid="classwx_config_base_1a5c2236796c64ff86d7e2aafa41de6dcc" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>ReadDouble</name></member>
+      <member refid="classwx_config_base_1abc1db67d6a39e3e14624f38d2878d79b" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>ReadLong</name></member>
+      <member refid="classwx_config_base_1ab4ecd16e102f04f125b9f0f943488933" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>ReadObject</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Ref</name></member>
       <member refid="classwx_file_config_1a562a1b81e23d70c1921c2139dcf5580d" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>RenameEntry</name></member>
       <member refid="classwx_file_config_1a3827f9711a31782a2d4f1ea61e1ea592" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>RenameGroup</name></member>
       <member refid="classwx_file_config_1a6220fdc0f07a7e36e559e58d29965337" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>Save</name></member>
+      <member refid="classwx_config_base_1a8e2ca739326f32379d6816522a5d1907" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Set</name></member>
+      <member refid="classwx_config_base_1a3a8c651d2bdde14e6248b0cd85062476" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>SetExpandEnvVars</name></member>
       <member refid="classwx_file_config_1ac2b05e8f651d7390e3c340e5c7feea0e" prot="public" virt="virtual"><scope>wxFileConfig</scope><name>SetPath</name></member>
+      <member refid="classwx_config_base_1a80bff71cc742251419ba499ce7b4da3c" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>SetRecordDefaults</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>SetRefData</name></member>
       <member refid="classwx_file_config_1a709b9d8592d746ca7a0d80abdf20ce95" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>SetUmask</name></member>
       <member refid="classwx_config_base_1a499282208b4b9e90cbfe60de25745bc4a5338e90a8c51020109928f3177c06caf" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Type_Boolean</name></member>
@@ -690,6 +691,12 @@
       <member refid="classwx_config_base_1a499282208b4b9e90cbfe60de25745bc4a186e69ade61db5ba7e5fc2366d2388fc" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Type_Unknown</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>UnRef</name></member>
       <member refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>UnShare</name></member>
+      <member refid="classwx_config_base_1ace24f1478e71ac309ecf1d9273f19ce3" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Write</name></member>
+      <member refid="classwx_config_base_1a052e7e5df90589f8094f860a9bdfd8a8" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Write</name></member>
+      <member refid="classwx_config_base_1a108d7427200466a240f8ea835e74db7b" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Write</name></member>
+      <member refid="classwx_config_base_1a97465083477038dc7d01e363c511f6cd" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Write</name></member>
+      <member refid="classwx_config_base_1a83efe80538c9f3e4056ae6d44d362f49" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Write</name></member>
+      <member refid="classwx_config_base_1a9ac693bd370a81d7fd0cad255869a041" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>Write</name></member>
       <member refid="classwx_config_base_1a7c3ce1f79df2837bc532c0ff551e7bac" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>wxConfigBase</name></member>
       <member refid="classwx_file_config_1a43f81c0b303155e84cecded7fc2f9a30" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>wxFileConfig</name></member>
       <member refid="classwx_file_config_1a98f3c3d151840d9e7dc821586c4c07e5" prot="public" virt="non-virtual"><scope>wxFileConfig</scope><name>wxFileConfig</name></member>

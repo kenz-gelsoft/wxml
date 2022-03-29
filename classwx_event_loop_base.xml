@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_event_loop_base" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxEventLoopBase</compoundname>
     <derivedcompoundref refid="classwx_g_u_i_event_loop" prot="public" virt="non-virtual">wxGUIEventLoop</derivedcompoundref>
@@ -124,7 +124,7 @@
         <detaileddescription>
 <para>Blocks until an event appears if there are none currently (use <ref refid="classwx_event_loop_base_1a69f9cb42c4105a5041854d3f93ec2e64" kindref="member">Pending()</ref> if this is not wanted).</para>
 <para>This can be used for programming event loops, e.g.</para>
-<para><programlisting><codeline><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(evtloop-&gt;Pending())</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">while<sp/>(evtloop-&gt;Pending())</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>evtloop-&gt;Dispatch();</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="return"><para>false if the event loop should stop and true otherwise.</para>
@@ -185,9 +185,9 @@
       </sectiondef>
       <sectiondef kind="user-defined">
       <header>Idle handling</header>
-      <memberdef kind="function" id="classwx_event_loop_base_1a3da3337fc2953b750e8543394a6eb9fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_event_loop_base_1a07b4fe866e5f267ca50709efb351f606" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
-        <definition>void wxEventLoopBase::WakeUpIdle</definition>
+        <definition>virtual void wxEventLoopBase::WakeUpIdle</definition>
         <argsstring>()</argsstring>
         <name>WakeUpIdle</name>
         <briefdescription>
@@ -197,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/evtloop.h" line="192" column="10"/>
+        <location file="interface/wx/evtloop.h" line="192" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_event_loop_base_1a5a6f47a392e5802e4d614b0dc398c6f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -245,14 +245,14 @@
 <para>Yields control to pending messages in the windowing system. </para>
         </briefdescription>
         <detaileddescription>
-<para>This can be useful, for example, when a time-consuming process writes to a text window. Without an occasional yield, the text window will not be updated properly, and on systems with cooperative multitasking, other processes will not respond.</para>
-<para>Caution should be exercised, however, since yielding may allow the user to perform actions which are not compatible with the current task. Disabling menu items or whole menus during processing can avoid unwanted reentrance of code: see <ref refid="interface_2wx_2app_8h_1a25abb4004fac0bcc0b937d93657c8cba" kindref="member">wxSafeYield</ref> for a better function.</para>
+<para>This can be useful, for example, when a time-consuming process writes to a text window. Without an occasional yield, the text window will not be updated properly, and on systems with cooperative multitasking, such as Windows 3.1 other processes will not respond.</para>
+<para>Caution should be exercised, however, since yielding may allow the user to perform actions which are not compatible with the current task. Disabling menu items or whole menus during processing can avoid unwanted reentrance of code: see <ref refid="interface_2wx_2app_8h_1a25abb4004fac0bcc0b937d93657c8cba" kindref="member">wxSafeYield</ref> for a better function. You can avoid unwanted reentrancies also using <ref refid="classwx_event_loop_base_1a5ba2f1296bb5d9bbd7a034ea38281adc" kindref="member">IsYielding()</ref>.</para>
 <para>Note that <ref refid="classwx_event_loop_base_1a43b540654cc046ecea5e1e497acd4189" kindref="member">Yield()</ref> will not flush the message logs. This is intentional as calling <ref refid="classwx_event_loop_base_1a43b540654cc046ecea5e1e497acd4189" kindref="member">Yield()</ref> is usually done to quickly update the screen and popping up a message box dialog may be undesirable. If you do wish to flush the log messages immediately (otherwise it will be done during the next idle loop iteration), call <ref refid="classwx_log_1ab0808092c4ec1d503e261d9d226d7e90" kindref="member">wxLog::FlushActive</ref>.</para>
-<para>If <emphasis>onlyIfNeeded</emphasis> parameter is true and the flow control is already inside <ref refid="classwx_event_loop_base_1a43b540654cc046ecea5e1e497acd4189" kindref="member">Yield()</ref>, i.e. <ref refid="classwx_event_loop_base_1a5ba2f1296bb5d9bbd7a034ea38281adc" kindref="member">IsYielding()</ref> returns true, the method just silently returns false and doesn&apos;t do anything. </para>
+<para>Calling <ref refid="classwx_event_loop_base_1a43b540654cc046ecea5e1e497acd4189" kindref="member">Yield()</ref> recursively is normally an error and an assert failure is raised in debug build if such situation is detected. However if the <emphasis>onlyIfNeeded</emphasis> parameter is true, the method will just silently return false instead. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/evtloop.h" line="238" column="10"/>
+        <location file="interface/wx/evtloop.h" line="240" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_event_loop_base_1afb5ed08160c7e6b1364170af6115af55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -276,7 +276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/evtloop.h" line="257" column="10"/>
+        <location file="interface/wx/evtloop.h" line="259" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_event_loop_base_1ab78274aef32137b0705f853781f1b91c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -298,7 +298,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/evtloop.h" line="266" column="18"/>
+        <location file="interface/wx/evtloop.h" line="268" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_event_loop_base_1aeb893bc6dbbf80f19925a9e108965669" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -313,13 +313,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/evtloop.h" line="279" column="18"/>
+        <location file="interface/wx/evtloop.h" line="281" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classwx_event_loop_base_1a41ad5046d03ffe03b52549854e56dbdf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_event_loop_base_1a2027e53527c15342c2e23c8217e82ca3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_event_loop_base" kindref="compound">wxEventLoopBase</ref> *</type>
-        <definition>static wxEventLoopBase * wxEventLoopBase::GetActive</definition>
+        <definition>static wxEventLoopBase* wxEventLoopBase::GetActive</definition>
         <argsstring>()</argsstring>
         <name>GetActive</name>
         <briefdescription>
@@ -370,11 +370,11 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Base class for all event loop implementations. </para>
     </briefdescription>
     <detaileddescription>
+<para>Base class for all event loop implementations.</para>
 <para>An event loop is a class which queries the queue of native events sent to the wxWidgets application and dispatches them to the appropriate wxEvtHandlers.</para>
-<para>An object of this class is created by <ref refid="classwx_app_traits_1a3354dea6067c8c92d222d50caa612fe9" kindref="member">wxAppTraits::CreateEventLoop()</ref> and used by <ref refid="classwx_app" kindref="compound">wxApp</ref> to run the main application event loop. Temporary event loops are usually created by <ref refid="classwx_dialog_1a6e078c3d0653f75ad3c34a37c0b54637" kindref="member">wxDialog::ShowModal()</ref>.</para>
+<para>An object of this class is created by <ref refid="classwx_app_traits_1a11205b08706b4d83bc83d0170511c909" kindref="member">wxAppTraits::CreateEventLoop()</ref> and used by <ref refid="classwx_app" kindref="compound">wxApp</ref> to run the main application event loop. Temporary event loops are usually created by <ref refid="classwx_dialog_1a6e078c3d0653f75ad3c34a37c0b54637" kindref="member">wxDialog::ShowModal()</ref>.</para>
 <para>You can create your own event loop if you need, provided that you restore the main event loop once yours is destroyed (see <ref refid="classwx_event_loop_activator" kindref="compound">wxEventLoopActivator</ref>).</para>
 <para>Notice that there can be more than one event loop at any given moment, e.g. an event handler called from the main loop can show a modal dialog, which starts its own loop resulting in two nested loops, with the modal dialog being the active one (its <ref refid="classwx_event_loop_base_1ab994e928bc72b41255226523dcca5680" kindref="member">IsRunning()</ref> returns true). And a handler for a button inside the modal dialog can, of course, create another modal dialog with its own event loop and so on. So in general event loops form a stack and only the event loop at the top of the stack is considered to be active. It is also the only loop that can be directly asked to terminate by calling <ref refid="classwx_event_loop_base_1a33c979a2f81d59cc340096a8a1dd49a5" kindref="member">Exit()</ref> (which is done by <ref refid="classwx_dialog_1a89b6085b05b63e98001311fafcfb21f0" kindref="member">wxDialog::EndModal()</ref>), an outer event loop can&apos;t be stopped while an inner one is still running. It is however possible to ask an outer event loop to terminate as soon as all its nested loops exit and the control returns back to it by using <ref refid="classwx_event_loop_base_1a77cccf1ec4e1fd1776d01585391bce44" kindref="member">ScheduleExit()</ref>.</para>
 <para><heading level="2"></heading>
@@ -396,12 +396,12 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="interface/wx/evtloop.h" line="43" column="1" bodyfile="interface/wx/evtloop.h" bodystart="44" bodyend="280"/>
+    <location file="interface/wx/evtloop.h" line="44" column="1" bodyfile="interface/wx/evtloop.h" bodystart="43" bodyend="282"/>
     <listofallmembers>
       <member refid="classwx_event_loop_base_1aa6f5e8cf5d07a6f9d2b99a4b64325b84" prot="public" virt="pure-virtual"><scope>wxEventLoopBase</scope><name>Dispatch</name></member>
       <member refid="classwx_event_loop_base_1ac150a90acfad227f2ce174139289d099" prot="public" virt="pure-virtual"><scope>wxEventLoopBase</scope><name>DispatchTimeout</name></member>
       <member refid="classwx_event_loop_base_1a33c979a2f81d59cc340096a8a1dd49a5" prot="public" virt="virtual"><scope>wxEventLoopBase</scope><name>Exit</name></member>
-      <member refid="classwx_event_loop_base_1a41ad5046d03ffe03b52549854e56dbdf" prot="public" virt="non-virtual"><scope>wxEventLoopBase</scope><name>GetActive</name></member>
+      <member refid="classwx_event_loop_base_1a2027e53527c15342c2e23c8217e82ca3" prot="public" virt="non-virtual"><scope>wxEventLoopBase</scope><name>GetActive</name></member>
       <member refid="classwx_event_loop_base_1ab78274aef32137b0705f853781f1b91c" prot="public" virt="virtual"><scope>wxEventLoopBase</scope><name>IsEventAllowedInsideYield</name></member>
       <member refid="classwx_event_loop_base_1ace2a6a43211e30db88ea34d05339706a" prot="public" virt="non-virtual"><scope>wxEventLoopBase</scope><name>IsMain</name></member>
       <member refid="classwx_event_loop_base_1a7ff7e2e300c0cc2af6e6c8f40eb1f36c" prot="public" virt="virtual"><scope>wxEventLoopBase</scope><name>IsOk</name></member>
@@ -414,7 +414,7 @@
       <member refid="classwx_event_loop_base_1a77cccf1ec4e1fd1776d01585391bce44" prot="public" virt="pure-virtual"><scope>wxEventLoopBase</scope><name>ScheduleExit</name></member>
       <member refid="classwx_event_loop_base_1a23646c8c2bdf2def39c856ac8ec250d8" prot="public" virt="non-virtual"><scope>wxEventLoopBase</scope><name>SetActive</name></member>
       <member refid="classwx_event_loop_base_1a96d41f8277d23fd9a4a5a0dfe3084120" prot="public" virt="pure-virtual"><scope>wxEventLoopBase</scope><name>WakeUp</name></member>
-      <member refid="classwx_event_loop_base_1a3da3337fc2953b750e8543394a6eb9fc" prot="public" virt="non-virtual"><scope>wxEventLoopBase</scope><name>WakeUpIdle</name></member>
+      <member refid="classwx_event_loop_base_1a07b4fe866e5f267ca50709efb351f606" prot="public" virt="virtual"><scope>wxEventLoopBase</scope><name>WakeUpIdle</name></member>
       <member refid="classwx_event_loop_base_1a43b540654cc046ecea5e1e497acd4189" prot="public" virt="non-virtual"><scope>wxEventLoopBase</scope><name>Yield</name></member>
       <member refid="classwx_event_loop_base_1afb5ed08160c7e6b1364170af6115af55" prot="public" virt="non-virtual"><scope>wxEventLoopBase</scope><name>YieldFor</name></member>
     </listofallmembers>

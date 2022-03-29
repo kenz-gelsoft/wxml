@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_tool_tip" kind="class" language="C++" prot="public">
     <compoundname>wxToolTip</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -37,9 +37,9 @@
         </inbodydescription>
         <location file="interface/wx/tooltip.h" line="39" column="14"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_tool_tip_1ae4d4fd80f826f57582a5174074f06d85" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_tool_tip_1afb4891709bab9e60d6cf968edb58e200" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
-        <definition>wxWindow * wxToolTip::GetWindow</definition>
+        <definition>wxWindow* wxToolTip::GetWindow</definition>
         <argsstring>() const</argsstring>
         <name>GetWindow</name>
         <briefdescription>
@@ -126,7 +126,7 @@
 <para>Set the delay after which the tooltip appears. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>May not be supported on all platforms. </para>
+<para><simplesect kind="note"><para>May not be supported on all platforms (eg. wxCocoa). </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -180,27 +180,33 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class holds information about a tooltip associated with a window (see <ref refid="classwx_window_1a81a9fb74e3c6c7f4416e882f5e589b8c" kindref="member">wxWindow::SetToolTip()</ref>). </para>
     </briefdescription>
     <detaileddescription>
+<para>This class holds information about a tooltip associated with a window (see <ref refid="classwx_window_1a81a9fb74e3c6c7f4416e882f5e589b8c" kindref="member">wxWindow::SetToolTip()</ref>).</para>
 <para>The four static methods, <ref refid="classwx_tool_tip_1a527208d12631dfb3e6dea71011b887d6" kindref="member">wxToolTip::Enable()</ref>, <ref refid="classwx_tool_tip_1a5db5357f084afef9c4602baf0cb89105" kindref="member">wxToolTip::SetDelay()</ref> <ref refid="classwx_tool_tip_1a6e947da99007aa96e2bd351c8ed08a21" kindref="member">wxToolTip::SetAutoPop()</ref> and <ref refid="classwx_tool_tip_1a10e1eb761dca8e28583250265aa22ad3" kindref="member">wxToolTip::SetReshow()</ref> can be used to globally alter tooltips behaviour.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-      </node>
       <node id="1">
         <label>wxToolTip</label>
         <link refid="classwx_tool_tip"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="1">
+        <label>wxToolTip</label>
+        <link refid="classwx_tool_tip"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -212,28 +218,22 @@
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
-      <node id="1">
-        <label>wxToolTip</label>
-        <link refid="classwx_tool_tip"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
     </collaborationgraph>
-    <location file="interface/wx/tooltip.h" line="21" column="1" bodyfile="interface/wx/tooltip.h" bodystart="22" bodyend="87"/>
+    <location file="interface/wx/tooltip.h" line="22" column="1" bodyfile="interface/wx/tooltip.h" bodystart="21" bodyend="87"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxToolTip</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxToolTip</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxToolTip</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxToolTip</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxToolTip</scope><name>CreateRefData</name></member>
       <member refid="classwx_tool_tip_1a527208d12631dfb3e6dea71011b887d6" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>Enable</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxToolTip</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxToolTip</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>GetRefData</name></member>
       <member refid="classwx_tool_tip_1a74c26e6d9078fb678c5e9fb0ac129816" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>GetTip</name></member>
-      <member refid="classwx_tool_tip_1ae4d4fd80f826f57582a5174074f06d85" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>GetWindow</name></member>
+      <member refid="classwx_tool_tip_1afb4891709bab9e60d6cf968edb58e200" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>GetWindow</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxToolTip</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>Ref</name></member>
       <member refid="classwx_tool_tip_1a6e947da99007aa96e2bd351c8ed08a21" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>SetAutoPop</name></member>
       <member refid="classwx_tool_tip_1a5db5357f084afef9c4602baf0cb89105" prot="public" virt="non-virtual"><scope>wxToolTip</scope><name>SetDelay</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_socket_event" kind="class" language="C++" prot="public">
     <compoundname>wxSocketEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -22,11 +22,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/socket.h" line="492" column="5"/>
+        <location file="interface/wx/socket.h" line="486" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_socket_event_1a48eb9ec9c0002177399dc999c911beaa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_socket_event_1a69cf2a823329df28f107d5bf8812b37c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
-        <definition>void * wxSocketEvent::GetClientData</definition>
+        <definition>void* wxSocketEvent::GetClientData</definition>
         <argsstring>() const</argsstring>
         <name>GetClientData</name>
         <briefdescription>
@@ -36,11 +36,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/socket.h" line="498" column="10"/>
+        <location file="interface/wx/socket.h" line="492" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_socket_event_1a0872e1763886f5176def9ff1c02d772c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_socket_event_1acadf867c5a3cf43bb18b2102bff88136" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_socket_base" kindref="compound">wxSocketBase</ref> *</type>
-        <definition>wxSocketBase * wxSocketEvent::GetSocket</definition>
+        <definition>wxSocketBase* wxSocketEvent::GetSocket</definition>
         <argsstring>() const</argsstring>
         <name>GetSocket</name>
         <briefdescription>
@@ -51,7 +51,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/socket.h" line="504" column="18"/>
+        <location file="interface/wx/socket.h" line="498" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_socket_event_1adbb9e6e39fd0e1e6a9274312e0ff726a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>wxSocketNotify</type>
@@ -65,14 +65,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/socket.h" line="509" column="20"/>
+        <location file="interface/wx/socket.h" line="503" column="20"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This event class contains information about socket events. </para>
     </briefdescription>
     <detaileddescription>
-<para>This kind of events are sent to the event handler specified with <ref refid="classwx_socket_base_1a09819e56d36638fb6b45bf3dd7ea8742" kindref="member">wxSocketBase::SetEventHandler</ref>.</para>
+<para>This event class contains information about socket events. This kind of events are sent to the event handler specified with <ref refid="classwx_socket_base_1a09819e56d36638fb6b45bf3dd7ea8742" kindref="member">wxSocketBase::SetEventHandler</ref>.</para>
 <para><linebreak/>
 <heading level="2">Events using this class</heading>
 </para>
@@ -89,28 +88,28 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxEvent</label>
-        <link refid="classwx_event"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-      </node>
       <node id="1">
         <label>wxSocketEvent</label>
         <link refid="classwx_socket_event"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
+      <node id="3">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
       <node id="2">
         <label>wxEvent</label>
         <link refid="classwx_event"/>
         <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>wxSocketEvent</label>
+        <link refid="classwx_socket_event"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -120,33 +119,33 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="2">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
-      <node id="1">
-        <label>wxSocketEvent</label>
-        <link refid="classwx_socket_event"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
     </collaborationgraph>
-    <location file="interface/wx/socket.h" line="486" column="1" bodyfile="interface/wx/socket.h" bodystart="487" bodyend="510"/>
+    <location file="interface/wx/socket.h" line="481" column="1" bodyfile="interface/wx/socket.h" bodystart="480" bodyend="504"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxSocketEvent</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxSocketEvent</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxSocketEvent</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxSocketEvent</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxSocketEvent</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_socket_event_1a48eb9ec9c0002177399dc999c911beaa" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetClientData</name></member>
+      <member refid="classwx_event_1a26878097a702e8d0368da150125d4158" prot="public" virt="pure-virtual"><scope>wxSocketEvent</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxSocketEvent</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxSocketEvent</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxSocketEvent</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_socket_event_1a69cf2a823329df28f107d5bf8812b37c" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetClientData</name></member>
       <member refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131" prot="public" virt="virtual"><scope>wxSocketEvent</scope><name>GetEventCategory</name></member>
-      <member refid="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetEventObject</name></member>
+      <member refid="classwx_event_1a424a4ffaaaf95164d8952ef9ab2ef444" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetEventObject</name></member>
       <member refid="classwx_event_1a01c89719ef6241a6e612a313a259c1c2" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetEventType</name></member>
-      <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetEventUserData</name></member>
+      <member refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetEventUserData</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetId</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetRefData</name></member>
       <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetSkipped</name></member>
-      <member refid="classwx_socket_event_1a0872e1763886f5176def9ff1c02d772c" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetSocket</name></member>
+      <member refid="classwx_socket_event_1acadf867c5a3cf43bb18b2102bff88136" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetSocket</name></member>
       <member refid="classwx_socket_event_1adbb9e6e39fd0e1e6a9274312e0ff726a" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetSocketEvent</name></member>
       <member refid="classwx_event_1a48662230971127737d2500cef7be549d" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>GetTimestamp</name></member>
       <member refid="classwx_event_1a31f6a4377d6d36964b8eae4e56ec43e0" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>IsCommandEvent</name></member>
@@ -155,7 +154,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" virt="non-virtual"><scope>wxSocketEvent</scope><name>m_propagationLevel</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxSocketEvent</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>Ref</name></member>
       <member refid="classwx_event_1a0acb5c75f6e67b8822ad8ba3c5bdc4fe" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>ResumePropagation</name></member>
       <member refid="classwx_event_1a3460217d04c36393ab868ba453fde13d" prot="public" virt="non-virtual"><scope>wxSocketEvent</scope><name>SetEventObject</name></member>

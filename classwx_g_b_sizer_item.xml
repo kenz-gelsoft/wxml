@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_g_b_sizer_item" kind="class" language="C++" prot="public">
     <compoundname>wxGBSizerItem</compoundname>
     <basecompoundref refid="classwx_sizer_item" prot="public" virt="non-virtual">wxSizerItem</basecompoundref>
@@ -305,9 +305,9 @@
         </inbodydescription>
         <location file="interface/wx/gbsizer.h" line="300" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_g_b_sizer_item_1a50efa3c582e175880242aa00c87ec1d4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_g_b_sizer_item_1aa6713064b31cbb0d0f6d81136fdcf162" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_grid_bag_sizer" kindref="compound">wxGridBagSizer</ref> *</type>
-        <definition>wxGridBagSizer * wxGBSizerItem::GetGBSizer</definition>
+        <definition>wxGridBagSizer* wxGBSizerItem::GetGBSizer</definition>
         <argsstring>() const</argsstring>
         <name>GetGBSizer</name>
         <briefdescription>
@@ -337,24 +337,23 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>The <ref refid="classwx_g_b_sizer_item" kindref="compound">wxGBSizerItem</ref> class is used by the <ref refid="classwx_grid_bag_sizer" kindref="compound">wxGridBagSizer</ref> for tracking the items in the sizer. </para>
     </briefdescription>
     <detaileddescription>
-<para>It adds grid position and spanning information to the normal <ref refid="classwx_sizer_item" kindref="compound">wxSizerItem</ref> by adding <ref refid="classwx_g_b_position" kindref="compound">wxGBPosition</ref> and <ref refid="classwx_g_b_span" kindref="compound">wxGBSpan</ref> attributes. Most of the time you will not need to use a <ref refid="classwx_g_b_sizer_item" kindref="compound">wxGBSizerItem</ref> directly in your code, but there are a couple of cases where it is handy.</para>
+<para>The <ref refid="classwx_g_b_sizer_item" kindref="compound">wxGBSizerItem</ref> class is used by the <ref refid="classwx_grid_bag_sizer" kindref="compound">wxGridBagSizer</ref> for tracking the items in the sizer. It adds grid position and spanning information to the normal <ref refid="classwx_sizer_item" kindref="compound">wxSizerItem</ref> by adding <ref refid="classwx_g_b_position" kindref="compound">wxGBPosition</ref> and <ref refid="classwx_g_b_span" kindref="compound">wxGBSpan</ref> attributes. Most of the time you will not need to use a <ref refid="classwx_g_b_sizer_item" kindref="compound">wxGBSizerItem</ref> directly in your code, but there are a couple of cases where it is handy.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
       <node id="1">
         <label>wxGBSizerItem</label>
         <link refid="classwx_g_b_sizer_item"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="3">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
       </node>
       <node id="2">
         <label>wxSizerItem</label>
@@ -364,12 +363,6 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1">
-        <label>wxGBSizerItem</label>
-        <link refid="classwx_g_b_sizer_item"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -377,9 +370,11 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="4">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
+      <node id="1">
+        <label>wxGBSizerItem</label>
+        <link refid="classwx_g_b_sizer_item"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="2">
         <label>wxSizerItem</label>
@@ -387,8 +382,12 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="4">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/gbsizer.h" line="234" column="1" bodyfile="interface/wx/gbsizer.h" bodystart="235" bodyend="305"/>
+    <location file="interface/wx/gbsizer.h" line="235" column="1" bodyfile="interface/wx/gbsizer.h" bodystart="234" bodyend="305"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxGBSizerItem</scope><name>AllocExclusive</name></member>
       <member refid="classwx_sizer_item_1adfbb98b4173df43be52d9c25d4f842b4" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>AssignSizer</name></member>
@@ -396,15 +395,15 @@
       <member refid="classwx_sizer_item_1ac558c9e0615222292ba798963bb65286" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>AssignSpacer</name></member>
       <member refid="classwx_sizer_item_1a4dbc6292038eb7de978be98f8a4f802e" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>AssignWindow</name></member>
       <member refid="classwx_sizer_item_1adcb05eea89effd217d5f3431e6064c36" prot="public" virt="virtual"><scope>wxGBSizerItem</scope><name>CalcMin</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxGBSizerItem</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxGBSizerItem</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxGBSizerItem</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxGBSizerItem</scope><name>CreateRefData</name></member>
       <member refid="classwx_sizer_item_1aa1bc12b256f01f8faee2b046415e4e82" prot="public" virt="virtual"><scope>wxGBSizerItem</scope><name>DeleteWindows</name></member>
       <member refid="classwx_sizer_item_1a0b6971d562afba609a310828fdc53f03" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>DetachSizer</name></member>
       <member refid="classwx_sizer_item_1a3b66f4ee5135370877029422eafc474e" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetBorder</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxGBSizerItem</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxGBSizerItem</scope><name>GetClassInfo</name></member>
       <member refid="classwx_g_b_sizer_item_1a6dfe180960c6d1eb5674de93bacefb66" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetEndPos</name></member>
       <member refid="classwx_sizer_item_1a5a99cd5eb590c452319bdc50c34f8c27" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetFlag</name></member>
-      <member refid="classwx_g_b_sizer_item_1a50efa3c582e175880242aa00c87ec1d4" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetGBSizer</name></member>
+      <member refid="classwx_g_b_sizer_item_1aa6713064b31cbb0d0f6d81136fdcf162" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetGBSizer</name></member>
       <member refid="classwx_sizer_item_1a5a6a93ac781afdc146ae1b333624365d" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetId</name></member>
       <member refid="classwx_sizer_item_1a310c33e0cd867e6ef4f825c0595ad797" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetMinSize</name></member>
       <member refid="classwx_g_b_sizer_item_1af5be00a78fb32915745922bf5ec51d79" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetPos</name></member>
@@ -413,14 +412,14 @@
       <member refid="classwx_sizer_item_1ad7db692d3831769a6a5c36dc0ee8e9f4" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetProportion</name></member>
       <member refid="classwx_sizer_item_1a2e060228f2e3da23671126e1f43b5c17" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetRatio</name></member>
       <member refid="classwx_sizer_item_1a3c3a8e59193eb64cb6cf1e120c9ed544" prot="public" virt="virtual"><scope>wxGBSizerItem</scope><name>GetRect</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetRefData</name></member>
       <member refid="classwx_sizer_item_1a6323e61953ac01ea0953cb4e8e2cc89d" prot="public" virt="virtual"><scope>wxGBSizerItem</scope><name>GetSize</name></member>
-      <member refid="classwx_sizer_item_1a36f107f2c1298471facd1e040f3ac7e8" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetSizer</name></member>
+      <member refid="classwx_sizer_item_1a9f7a6a9e1c7dabf8b01d41f35ab10bca" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetSizer</name></member>
       <member refid="classwx_sizer_item_1a7026dd9e204575696f13950e313e52d2" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetSpacer</name></member>
       <member refid="classwx_g_b_sizer_item_1ae649df760cf1575af568a80320941879" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetSpan</name></member>
       <member refid="classwx_g_b_sizer_item_1a8cc525dab810c15ac3c62d969bfb2fe5" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetSpan</name></member>
-      <member refid="classwx_sizer_item_1a54c2cebf0aba71694eefe2a39759f1e2" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetUserData</name></member>
-      <member refid="classwx_sizer_item_1a641c636f23a6671c5675d2aa65b8ed8c" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetWindow</name></member>
+      <member refid="classwx_sizer_item_1a65d6bba195291f69596f87a92a22809f" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetUserData</name></member>
+      <member refid="classwx_sizer_item_1ad7e6f3b9e4a9d6e0e21517421c87e3d4" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>GetWindow</name></member>
       <member refid="classwx_g_b_sizer_item_1a53bb94f29fef93966cd960c644408cac" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>Intersects</name></member>
       <member refid="classwx_g_b_sizer_item_1ada5e2355bc74010eed74e24fa21a9836" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>Intersects</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>IsKindOf</name></member>
@@ -431,7 +430,7 @@
       <member refid="classwx_sizer_item_1affa6c39cb63b2a6c7552919530d09729" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>IsWindow</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxGBSizerItem</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>Ref</name></member>
       <member refid="classwx_sizer_item_1af007095393ea60c2c2431e65ffe639db" prot="public" virt="non-virtual"><scope>wxGBSizerItem</scope><name>SetBorder</name></member>
       <member refid="classwx_sizer_item_1a4fc9c5889185d1c06665f47112663a75" prot="public" virt="virtual"><scope>wxGBSizerItem</scope><name>SetDimension</name></member>

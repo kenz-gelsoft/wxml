@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_d_d_e_client" kind="class" language="C++" prot="public">
     <compoundname>wxDDEClient</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -19,9 +19,9 @@
         </inbodydescription>
         <location file="interface/wx/dde.h" line="235" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_d_d_e_client_1a2b31e58e8788c5ecf592980b55701927" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_d_d_e_client_1a5d0f1d6d23eb7a55b7ff39300f5a9fbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_connection_base" kindref="compound">wxConnectionBase</ref> *</type>
-        <definition>wxConnectionBase * wxDDEClient::MakeConnection</definition>
+        <definition>wxConnectionBase* wxDDEClient::MakeConnection</definition>
         <argsstring>(const wxString &amp;host, const wxString &amp;service, const wxString &amp;topic)</argsstring>
         <name>MakeConnection</name>
         <param>
@@ -41,19 +41,19 @@
         </briefdescription>
         <detaileddescription>
 <para>If the server allows a connection, a <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> object will be returned.</para>
-<para>The type of <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> returned can be altered by overriding the <ref refid="classwx_d_d_e_client_1ad6dbec27b91a25a56419a3bccfcb9a2e" kindref="member">OnMakeConnection()</ref> member to return your own derived connection object. </para>
+<para>The type of <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> returned can be altered by overriding the <ref refid="classwx_d_d_e_client_1a286079977cd233d29497507fd04d71c0" kindref="member">OnMakeConnection()</ref> member to return your own derived connection object. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/dde.h" line="246" column="22"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_d_d_e_client_1ad6dbec27b91a25a56419a3bccfcb9a2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_d_d_e_client_1a286079977cd233d29497507fd04d71c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_connection_base" kindref="compound">wxConnectionBase</ref> *</type>
-        <definition>wxConnectionBase * wxDDEClient::OnMakeConnection</definition>
+        <definition>wxConnectionBase* wxDDEClient::OnMakeConnection</definition>
         <argsstring>()</argsstring>
         <name>OnMakeConnection</name>
         <briefdescription>
-<para>The type of <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> returned from a <ref refid="classwx_d_d_e_client_1a2b31e58e8788c5ecf592980b55701927" kindref="member">MakeConnection()</ref> call can be altered by deriving the <ref refid="classwx_d_d_e_client_1ad6dbec27b91a25a56419a3bccfcb9a2e" kindref="member">OnMakeConnection()</ref> member to return your own derived connection object. </para>
+<para>The type of <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> returned from a <ref refid="classwx_d_d_e_client_1a5d0f1d6d23eb7a55b7ff39300f5a9fbe" kindref="member">MakeConnection()</ref> call can be altered by deriving the <ref refid="classwx_d_d_e_client_1a286079977cd233d29497507fd04d71c0" kindref="member">OnMakeConnection()</ref> member to return your own derived connection object. </para>
         </briefdescription>
         <detaileddescription>
 <para>By default, a <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> object is returned.</para>
@@ -84,37 +84,31 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A <ref refid="classwx_d_d_e_client" kindref="compound">wxDDEClient</ref> object represents the client part of a client-server DDE (Dynamic Data Exchange) conversation. </para>
     </briefdescription>
     <detaileddescription>
-<para>To create a client which can communicate with a suitable server, you need to derive a class from <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> and another from <ref refid="classwx_d_d_e_client" kindref="compound">wxDDEClient</ref>. The custom <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> class will intercept communications in a &quot;conversation&quot; with a server, and the custom <ref refid="classwx_d_d_e_server" kindref="compound">wxDDEServer</ref> is required so that a user-overridden <ref refid="classwx_d_d_e_client_1ad6dbec27b91a25a56419a3bccfcb9a2e" kindref="member">OnMakeConnection()</ref> member can return a <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> of the required class, when a connection is made.</para>
+<para>A <ref refid="classwx_d_d_e_client" kindref="compound">wxDDEClient</ref> object represents the client part of a client-server DDE (Dynamic Data Exchange) conversation.</para>
+<para>To create a client which can communicate with a suitable server, you need to derive a class from <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> and another from <ref refid="classwx_d_d_e_client" kindref="compound">wxDDEClient</ref>. The custom <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> class will intercept communications in a &quot;conversation&quot; with a server, and the custom <ref refid="classwx_d_d_e_server" kindref="compound">wxDDEServer</ref> is required so that a user-overridden <ref refid="classwx_d_d_e_client_1a286079977cd233d29497507fd04d71c0" kindref="member">OnMakeConnection()</ref> member can return a <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> of the required class, when a connection is made.</para>
 <para>This DDE-based implementation is available on Windows only, but a platform-independent, socket-based version of this API is available using <ref refid="classwx_t_c_p_client" kindref="compound">wxTCPClient</ref>.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor> </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port. <onlyfor>wxmsw</onlyfor> </para>
 <para><simplesect kind="see"><para><ref refid="classwx_d_d_e_server" kindref="compound">wxDDEServer</ref>, <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref>, <ref refid="overview_ipc" kindref="compound">Interprocess Communication</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxDDEClient</label>
-        <link refid="classwx_d_d_e_client"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="1">
         <label>wxDDEClient</label>
         <link refid="classwx_d_d_e_client"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -122,25 +116,31 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxDDEClient</label>
+        <link refid="classwx_d_d_e_client"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/dde.h" line="229" column="1" bodyfile="interface/wx/dde.h" bodystart="230" bodyend="268"/>
+    <location file="interface/wx/dde.h" line="230" column="1" bodyfile="interface/wx/dde.h" bodystart="229" bodyend="268"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxDDEClient</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxDDEClient</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxDDEClient</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxDDEClient</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxDDEClient</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxDDEClient</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxDDEClient</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>GetRefData</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxDDEClient</scope><name>m_refData</name></member>
-      <member refid="classwx_d_d_e_client_1a2b31e58e8788c5ecf592980b55701927" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>MakeConnection</name></member>
-      <member refid="classwx_d_d_e_client_1ad6dbec27b91a25a56419a3bccfcb9a2e" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>OnMakeConnection</name></member>
+      <member refid="classwx_d_d_e_client_1a5d0f1d6d23eb7a55b7ff39300f5a9fbe" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>MakeConnection</name></member>
+      <member refid="classwx_d_d_e_client_1a286079977cd233d29497507fd04d71c0" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>OnMakeConnection</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>Ref</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>SetRefData</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxDDEClient</scope><name>UnRef</name></member>

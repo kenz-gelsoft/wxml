@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_splitterwindow" kind="page">
     <compoundname>overview_splitterwindow</compoundname>
     <title>wxSplitterWindow Overview</title>
@@ -29,48 +29,47 @@
 <sect1 id="overview_splitterwindow_1overview_splitterwindow_example">
 <title>Example</title>
 <para>The following fragment shows how to create a splitter window, creating two subwindows and hiding one of them.</para>
-<para><programlisting><codeline><highlight class="normal">splitter<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_splitter_window" kindref="compound">wxSplitterWindow</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>-1,<sp/><ref refid="classwx_point" kindref="compound">wxPoint</ref>(0,<sp/>0),</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_size" kindref="compound">wxSize</ref>(400,<sp/>400),<sp/><ref refid="splitter_8h_1a2ed822e3d8affe4727f294271377c425" kindref="member">wxSP_3D</ref>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">leftWindow<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyWindow(splitter);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">splitter<sp/>=<sp/>new<sp/>wxSplitterWindow(this,<sp/>-1,<sp/>wxPoint(0,<sp/>0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxSize(400,<sp/>400),<sp/>wxSP_3D);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">leftWindow<sp/>=<sp/>new<sp/>MyWindow(splitter);</highlight></codeline>
 <codeline><highlight class="normal">leftWindow-&gt;SetScrollbars(20,<sp/>20,<sp/>50,<sp/>50);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">rightWindow<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyWindow(splitter);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">rightWindow<sp/>=<sp/>new<sp/>MyWindow(splitter);</highlight></codeline>
 <codeline><highlight class="normal">rightWindow-&gt;SetScrollbars(20,<sp/>20,<sp/>50,<sp/>50);</highlight></codeline>
-<codeline><highlight class="normal">rightWindow-&gt;Show(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">rightWindow-&gt;Show(false);</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">splitter-&gt;Initialize(leftWindow);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>this<sp/>to<sp/>prevent<sp/>unsplitting</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>splitter-&gt;SetMinimumPaneSize(20);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Set<sp/>this<sp/>to<sp/>prevent<sp/>unsplitting</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>splitter-&gt;SetMinimumPaneSize(20);</highlight></codeline>
 </programlisting></para>
 <para>The next fragment shows how the splitter window can be manipulated after creation.</para>
-<para><programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyFrame::OnSplitVertical(<ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>&amp;<sp/>event)</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">void<sp/>MyFrame::OnSplitVertical(wxCommandEvent&amp;<sp/>event)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>splitter-&gt;IsSplit()<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>splitter-&gt;IsSplit()<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>splitter-&gt;Unsplit();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>leftWindow-&gt;Show(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rightWindow-&gt;Show(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>leftWindow-&gt;Show(true);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rightWindow-&gt;Show(true);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>splitter-&gt;SplitVertically(<sp/>leftWindow,<sp/>rightWindow<sp/>);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyFrame::OnSplitHorizontal(<ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>&amp;<sp/>event)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>MyFrame::OnSplitHorizontal(wxCommandEvent&amp;<sp/>event)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>splitter-&gt;IsSplit()<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>splitter-&gt;IsSplit()<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>splitter-&gt;Unsplit();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>leftWindow-&gt;Show(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rightWindow-&gt;Show(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>leftWindow-&gt;Show(true);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rightWindow-&gt;Show(true);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>splitter-&gt;SplitHorizontally(<sp/>leftWindow,<sp/>rightWindow<sp/>);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyFrame::OnUnsplit(<ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>&amp;<sp/>event)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>MyFrame::OnUnsplit(wxCommandEvent&amp;<sp/>event)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>splitter-&gt;IsSplit()<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>splitter-&gt;IsSplit()<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>splitter-&gt;Unsplit();</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/splitterwindow.h"/>
   </compounddef>
 </doxygen>

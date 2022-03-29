@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_data_input_stream" kind="class" language="C++" prot="public">
     <compoundname>wxDataInputStream</compoundname>
     <includes local="no">wx/datstrm.h</includes>
@@ -80,9 +80,9 @@
         </inbodydescription>
         <location file="interface/wx/datstrm.h" line="276" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_data_input_stream_1ada3248a2b761ef31cf9b3cdcad7eab24" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_data_input_stream_1aa286467b0da50211ed5f863e321f9898" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> *</type>
-        <definition>wxMBConv * wxDataInputStream::GetConv</definition>
+        <definition>wxMBConv* wxDataInputStream::GetConv</definition>
         <argsstring>() const</argsstring>
         <name>GetConv</name>
         <briefdescription>
@@ -400,22 +400,22 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class provides functions that read binary data types in a portable way. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class provides functions that read binary data types in a portable way.</para>
 <para>Please see <ref refid="classwx_data_output_stream" kindref="compound">wxDataOutputStream</ref> for the discussion of the format expected by this stream on input, notably for the floating point values.</para>
 <para>If you want to read data from text files (or streams) use <ref refid="classwx_text_input_stream" kindref="compound">wxTextInputStream</ref> instead.</para>
 <para>The &quot;&gt;&gt;&quot; operator is overloaded and you can use this class like a standard C++ iostream. Note, however, that the arguments are the fixed size types wxUint32, wxInt32 etc and on a typical 32-bit computer, none of these match to the &quot;long&quot; type (wxInt32 is defined as signed int on 32-bit architectures) so that you cannot use long. To avoid problems (here and elsewhere), make use of the wxInt32, wxUint32, etc types.</para>
 <para>For example:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_file_input_stream" kindref="compound">wxFileInputStream</ref><sp/>input(<sp/></highlight><highlight class="stringliteral">&quot;mytext.dat&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_data_input_stream" kindref="compound">wxDataInputStream</ref><sp/>store(<sp/>input<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="defs_8h_1aad88e290b822df511ad8025ee2e45263" kindref="member">wxUint8</ref><sp/>i1;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>f2;</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>line;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">store<sp/>&gt;&gt;<sp/>i1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>a<sp/>8<sp/>bit<sp/>integer.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">store<sp/>&gt;&gt;<sp/>i1<sp/>&gt;&gt;<sp/>f2;<sp/></highlight><highlight class="comment">//<sp/>read<sp/>a<sp/>8<sp/>bit<sp/>integer<sp/>followed<sp/>by<sp/>float.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">store<sp/>&gt;&gt;<sp/>line;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>a<sp/>text<sp/>line</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxFileInputStream<sp/>input(<sp/>&quot;mytext.dat&quot;<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">wxDataInputStream<sp/>store(<sp/>input<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">wxUint8<sp/>i1;</highlight></codeline>
+<codeline><highlight class="normal">float<sp/>f2;</highlight></codeline>
+<codeline><highlight class="normal">wxString<sp/>line;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">store<sp/>&gt;&gt;<sp/>i1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>read<sp/>a<sp/>8<sp/>bit<sp/>integer.</highlight></codeline>
+<codeline><highlight class="normal">store<sp/>&gt;&gt;<sp/>i1<sp/>&gt;&gt;<sp/>f2;<sp/>//<sp/>read<sp/>a<sp/>8<sp/>bit<sp/>integer<sp/>followed<sp/>by<sp/>float.</highlight></codeline>
+<codeline><highlight class="normal">store<sp/>&gt;&gt;<sp/>line;<sp/><sp/><sp/><sp/><sp/>//<sp/>read<sp/>a<sp/>text<sp/>line</highlight></codeline>
 </programlisting></para>
 <para><heading level="2"></heading>
 </para>
@@ -424,10 +424,10 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/datstrm.h" line="246" column="1" bodyfile="interface/wx/datstrm.h" bodystart="247" bodyend="417"/>
+    <location file="interface/wx/datstrm.h" line="247" column="1" bodyfile="interface/wx/datstrm.h" bodystart="246" bodyend="417"/>
     <listofallmembers>
       <member refid="classwx_data_input_stream_1ad88bdb3fd5085080ea7c917181aa64cf" prot="public" virt="non-virtual"><scope>wxDataInputStream</scope><name>BigEndianOrdered</name></member>
-      <member refid="classwx_data_input_stream_1ada3248a2b761ef31cf9b3cdcad7eab24" prot="public" virt="non-virtual"><scope>wxDataInputStream</scope><name>GetConv</name></member>
+      <member refid="classwx_data_input_stream_1aa286467b0da50211ed5f863e321f9898" prot="public" virt="non-virtual"><scope>wxDataInputStream</scope><name>GetConv</name></member>
       <member refid="classwx_data_input_stream_1acc017dd5ce709595fcb04252e88433fe" prot="public" virt="non-virtual"><scope>wxDataInputStream</scope><name>Read16</name></member>
       <member refid="classwx_data_input_stream_1a95db79be24f8abe37cec5897f2bb5d0d" prot="public" virt="non-virtual"><scope>wxDataInputStream</scope><name>Read16</name></member>
       <member refid="classwx_data_input_stream_1a2e29749280c5e1e7a24e821bc244c926" prot="public" virt="non-virtual"><scope>wxDataInputStream</scope><name>Read32</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_printer" kind="class" language="C++" prot="public">
     <compoundname>wxPrinter</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -28,9 +28,9 @@
         </inbodydescription>
         <location file="interface/wx/print.h" line="462" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_printer_1a28dba5e48c2de1a92aa45afb6cab2885" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_printer_1ab2d2734c9650a68fdf3f99677ec823b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_print_abort_dialog" kindref="compound">wxPrintAbortDialog</ref> *</type>
-        <definition>virtual wxPrintAbortDialog * wxPrinter::CreateAbortWindow</definition>
+        <definition>virtual wxPrintAbortDialog* wxPrinter::CreateAbortWindow</definition>
         <argsstring>(wxWindow *parent, wxPrintout *printout)</argsstring>
         <name>CreateAbortWindow</name>
         <param>
@@ -64,9 +64,9 @@
         </inbodydescription>
         <location file="interface/wx/print.h" line="472" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_printer_1a5148947812d67af9c8decae3e067589c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_printer_1a1f87e0aacd0ce126a05372bcaca7264d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_print_dialog_data" kindref="compound">wxPrintDialogData</ref> &amp;</type>
-        <definition>virtual wxPrintDialogData &amp; wxPrinter::GetPrintDialogData</definition>
+        <definition>virtual wxPrintDialogData&amp; wxPrinter::GetPrintDialogData</definition>
         <argsstring>() const</argsstring>
         <name>GetPrintDialogData</name>
         <briefdescription>
@@ -107,9 +107,9 @@
         </inbodydescription>
         <location file="interface/wx/print.h" line="505" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_printer_1a940852159fd0683de4b7d34cefe3de48" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_printer_1a1a893200eb6e52b642b372e5dd41f5e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> *</type>
-        <definition>virtual wxDC * wxPrinter::PrintDialog</definition>
+        <definition>virtual wxDC* wxPrinter::PrintDialog</definition>
         <argsstring>(wxWindow *parent)</argsstring>
         <name>PrintDialog</name>
         <param>
@@ -168,8 +168,9 @@
 <para>Invokes the print setup dialog. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000058"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The setup dialog is obsolete, though retained for backward compatibility. </para>
-</xrefdescription></xrefsect></para>
+<para><simplesect kind="remark"><para>The setup dialog is obsolete from Windows 95, though retained for backward compatibility. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -186,7 +187,7 @@
 <para>Return last error. </para>
         </briefdescription>
         <detaileddescription>
-<para>Valid after calling <ref refid="classwx_printer_1a59e6d69be017dfa033e116bdf749bab3" kindref="member">Print()</ref>, <ref refid="classwx_printer_1a940852159fd0683de4b7d34cefe3de48" kindref="member">PrintDialog()</ref> or <ref refid="classwx_print_preview_1a65fef323ded88669f88d4c77520f0797" kindref="member">wxPrintPreview::Print()</ref>.</para>
+<para>Valid after calling <ref refid="classwx_printer_1a59e6d69be017dfa033e116bdf749bab3" kindref="member">Print()</ref>, <ref refid="classwx_printer_1a1a893200eb6e52b642b372e5dd41f5e9" kindref="member">PrintDialog()</ref> or <ref refid="classwx_print_preview_1a65fef323ded88669f88d4c77520f0797" kindref="member">wxPrintPreview::Print()</ref>.</para>
 <para>These functions set last error to <computeroutput>wxPRINTER_NO_ERROR</computeroutput> if no error happened.</para>
 <para>Returned value is one of the following:</para>
 <para><table rows="3" cols="2"><row>
@@ -210,9 +211,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class represents the Windows or PostScript printer, and is the vehicle through which printing may be launched by an application. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class represents the Windows or PostScript printer, and is the vehicle through which printing may be launched by an application.</para>
 <para>Printing can also be achieved through using of lower functions and classes, but this and associated classes provide a more convenient and general method of printing.</para>
 <para><heading level="2"></heading>
 </para>
@@ -222,18 +223,24 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-      </node>
       <node id="1">
         <label>wxPrinter</label>
         <link refid="classwx_printer"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="1">
+        <label>wxPrinter</label>
+        <link refid="classwx_printer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -245,31 +252,25 @@
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
-      <node id="1">
-        <label>wxPrinter</label>
-        <link refid="classwx_printer"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
     </collaborationgraph>
-    <location file="interface/wx/print.h" line="451" column="1" bodyfile="interface/wx/print.h" bodystart="452" bodyend="534"/>
+    <location file="interface/wx/print.h" line="452" column="1" bodyfile="interface/wx/print.h" bodystart="451" bodyend="534"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxPrinter</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxPrinter</scope><name>CloneRefData</name></member>
-      <member refid="classwx_printer_1a28dba5e48c2de1a92aa45afb6cab2885" prot="public" virt="virtual"><scope>wxPrinter</scope><name>CreateAbortWindow</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxPrinter</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxPrinter</scope><name>CloneRefData</name></member>
+      <member refid="classwx_printer_1ab2d2734c9650a68fdf3f99677ec823b9" prot="public" virt="virtual"><scope>wxPrinter</scope><name>CreateAbortWindow</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxPrinter</scope><name>CreateRefData</name></member>
       <member refid="classwx_printer_1a7a3eaad9c9c976f2ee0a29bc1db92c42" prot="public" virt="non-virtual"><scope>wxPrinter</scope><name>GetAbort</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxPrinter</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxPrinter</scope><name>GetClassInfo</name></member>
       <member refid="classwx_printer_1ac050c7cdfa1d43dee1617c298980624c" prot="public" virt="non-virtual"><scope>wxPrinter</scope><name>GetLastError</name></member>
-      <member refid="classwx_printer_1a5148947812d67af9c8decae3e067589c" prot="public" virt="virtual"><scope>wxPrinter</scope><name>GetPrintDialogData</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxPrinter</scope><name>GetRefData</name></member>
+      <member refid="classwx_printer_1a1f87e0aacd0ce126a05372bcaca7264d" prot="public" virt="virtual"><scope>wxPrinter</scope><name>GetPrintDialogData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxPrinter</scope><name>GetRefData</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxPrinter</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxPrinter</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxPrinter</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxPrinter</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxPrinter</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxPrinter</scope><name>operator new</name></member>
       <member refid="classwx_printer_1a59e6d69be017dfa033e116bdf749bab3" prot="public" virt="virtual"><scope>wxPrinter</scope><name>Print</name></member>
-      <member refid="classwx_printer_1a940852159fd0683de4b7d34cefe3de48" prot="public" virt="virtual"><scope>wxPrinter</scope><name>PrintDialog</name></member>
+      <member refid="classwx_printer_1a1a893200eb6e52b642b372e5dd41f5e9" prot="public" virt="virtual"><scope>wxPrinter</scope><name>PrintDialog</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxPrinter</scope><name>Ref</name></member>
       <member refid="classwx_printer_1a11fd8880287b8ed11b153294d4d9afee" prot="public" virt="virtual"><scope>wxPrinter</scope><name>ReportError</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxPrinter</scope><name>SetRefData</name></member>

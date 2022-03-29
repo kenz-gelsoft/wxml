@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_doc_manager" kind="class" language="C++" prot="public">
     <compoundname>wxDocManager</compoundname>
     <basecompoundref refid="classwx_evt_handler" prot="public" virt="non-virtual">wxEvtHandler</basecompoundref>
@@ -227,9 +227,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="393" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1aa8ec13d47f22106198a0ea5e599e1564" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a0ca25c5c549fc98c7fe91b8f81243610" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> *</type>
-        <definition>wxDocTemplate * wxDocManager::FindTemplate</definition>
+        <definition>wxDocTemplate* wxDocManager::FindTemplate</definition>
         <argsstring>(const wxClassInfo *classinfo)</argsstring>
         <name>FindTemplate</name>
         <param>
@@ -240,9 +240,9 @@
 <para>Search for a particular document template. </para>
         </briefdescription>
         <detaileddescription>
-<para>Example: <programlisting><codeline><highlight class="comment">//<sp/>creating<sp/>a<sp/>document<sp/>instance<sp/>of<sp/>the<sp/>specified<sp/>document<sp/>type:</highlight><highlight class="normal"></highlight></codeline>
+<para>Example: <programlisting><codeline><highlight class="normal">//<sp/>creating<sp/>a<sp/>document<sp/>instance<sp/>of<sp/>the<sp/>specified<sp/>document<sp/>type:</highlight></codeline>
 <codeline><highlight class="normal">m_doc<sp/>=<sp/>(MyDoc*)docManager-&gt;FindTemplate(CLASSINFO(MyDoc))-&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_doc_manager_1a42788c344bbaabc9951f21a8c7d51798" kindref="member">CreateDocument</ref>(<ref refid="interface_2wx_2string_8h_1a9a321d587166a30017b608dd2d234033" kindref="member">wxEmptyString</ref>,<sp/>wxDOC_SILENT);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CreateDocument(wxEmptyString,<sp/>wxDOC_SILENT);</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -263,9 +263,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="414" column="19"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a72e8d5ceed983358e158cb1bd2f48f35" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a6b9fdd10616136b33200776cc778e868" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_document" kindref="compound">wxDocument</ref> *</type>
-        <definition>wxDocument * wxDocManager::FindDocumentByPath</definition>
+        <definition>wxDocument* wxDocManager::FindDocumentByPath</definition>
         <argsstring>(const wxString &amp;path) const</argsstring>
         <name>FindDocumentByPath</name>
         <param>
@@ -361,9 +361,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="451" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a42788c344bbaabc9951f21a8c7d51798" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a9464ff43bbb7095ce5fdb2fa60633698" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_document" kindref="compound">wxDocument</ref> *</type>
-        <definition>virtual wxDocument * wxDocManager::CreateDocument</definition>
+        <definition>virtual wxDocument* wxDocManager::CreateDocument</definition>
         <argsstring>(const wxString &amp;path, long flags=0)</argsstring>
         <name>CreateDocument</name>
         <param>
@@ -407,24 +407,24 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="489" column="24"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1aec51d3a1f6a9b66e8b19658778d9d8a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1ac58dfe84ad7680963f3e39b33a31ce8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_document" kindref="compound">wxDocument</ref> *</type>
-        <definition>wxDocument * wxDocManager::CreateNewDocument</definition>
+        <definition>wxDocument* wxDocManager::CreateNewDocument</definition>
         <argsstring>()</argsstring>
         <name>CreateNewDocument</name>
         <briefdescription>
 <para>Creates an empty new document. </para>
         </briefdescription>
         <detaileddescription>
-<para>This is equivalent to calling <ref refid="classwx_doc_manager_1a42788c344bbaabc9951f21a8c7d51798" kindref="member">CreateDocument()</ref> with <computeroutput>wxDOC_NEW</computeroutput> flags and without the file name. </para>
+<para>This is equivalent to calling <ref refid="classwx_doc_manager_1a9464ff43bbb7095ce5fdb2fa60633698" kindref="member">CreateDocument()</ref> with <computeroutput>wxDOC_NEW</computeroutput> flags and without the file name. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/docview.h" line="497" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a44d2946c75aba8d6010257cd22ae522b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1ac310efd148042ce530164b05f3181e15" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_view" kindref="compound">wxView</ref> *</type>
-        <definition>virtual wxView * wxDocManager::CreateView</definition>
+        <definition>virtual wxView* wxDocManager::CreateView</definition>
         <argsstring>(wxDocument *doc, long flags=0)</argsstring>
         <name>CreateView</name>
         <param>
@@ -579,9 +579,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="550" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1ad811d3e80024e3d39076d5a24f2c7d77" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1aaf361d4aa2701e7ba5203a5ad4a4381e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> *</type>
-        <definition>virtual wxDocTemplate * wxDocManager::FindTemplateForPath</definition>
+        <definition>virtual wxDocTemplate* wxDocManager::FindTemplateForPath</definition>
         <argsstring>(const wxString &amp;path)</argsstring>
         <name>FindTemplateForPath</name>
         <param>
@@ -598,16 +598,16 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="557" column="27"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a3f5114af64b79a640a60a0dff5676a00" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a82c158a96438d2b47089bab391c30678" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_view" kindref="compound">wxView</ref> *</type>
-        <definition>wxView * wxDocManager::GetAnyUsableView</definition>
+        <definition>wxView* wxDocManager::GetAnyUsableView</definition>
         <argsstring>() const</argsstring>
         <name>GetAnyUsableView</name>
         <briefdescription>
 <para>Returns the view to apply a user command to. </para>
         </briefdescription>
         <detaileddescription>
-<para>This method tries to find the view that the user wants to interact with. It returns the same view as <ref refid="classwx_doc_manager_1a7c639858a9b706340164787b33f6d586" kindref="member">GetCurrentDocument()</ref> if there is any currently active view but falls back to the first view of the first document if there is no active view.</para>
+<para>This method tries to find the view that the user wants to interact with. It returns the same view as <ref refid="classwx_doc_manager_1a1999456788b9f2e548ffc35be63e6ea2" kindref="member">GetCurrentDocument()</ref> if there is any currently active view but falls back to the first view of the first document if there is no active view.</para>
 <para><simplesect kind="since"><para>2.9.5 </para>
 </simplesect>
 </para>
@@ -616,9 +616,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="569" column="12"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a7c639858a9b706340164787b33f6d586" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a1999456788b9f2e548ffc35be63e6ea2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_document" kindref="compound">wxDocument</ref> *</type>
-        <definition>wxDocument * wxDocManager::GetCurrentDocument</definition>
+        <definition>wxDocument* wxDocManager::GetCurrentDocument</definition>
         <argsstring>() const</argsstring>
         <name>GetCurrentDocument</name>
         <briefdescription>
@@ -630,9 +630,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="575" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a4c8053a85d7377fbd41fbdc126d8396f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a4071832d644c511ff378df1f97cffa35" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_view" kindref="compound">wxView</ref> *</type>
-        <definition>virtual wxView * wxDocManager::GetCurrentView</definition>
+        <definition>virtual wxView* wxDocManager::GetCurrentView</definition>
         <argsstring>() const</argsstring>
         <name>GetCurrentView</name>
         <briefdescription>
@@ -640,7 +640,7 @@
         </briefdescription>
         <detaileddescription>
 <para>This method can return NULL if no view is currently active.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_doc_manager_1a3f5114af64b79a640a60a0dff5676a00" kindref="member">GetAnyUsableView()</ref> </para>
+<para><simplesect kind="see"><para><ref refid="classwx_doc_manager_1a82c158a96438d2b47089bab391c30678" kindref="member">GetAnyUsableView()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -682,9 +682,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="598" column="25"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a432700bb7956088a7d3c240dca7aa4d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a33fe107c6ed635a35537175801d2d568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>wxList &amp;</type>
-        <definition>wxList &amp; wxDocManager::GetDocuments</definition>
+        <definition>wxList&amp; wxDocManager::GetDocuments</definition>
         <argsstring>()</argsstring>
         <name>GetDocuments</name>
         <briefdescription>
@@ -696,9 +696,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="603" column="12"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a4cd5ceb61a15f11a8fdfbbaa0de53939" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a0bb24db2f7c559f731abc44182ccd47b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_file_history" kindref="compound">wxFileHistory</ref> *</type>
-        <definition>virtual wxFileHistory * wxDocManager::GetFileHistory</definition>
+        <definition>virtual wxFileHistory* wxDocManager::GetFileHistory</definition>
         <argsstring>() const</argsstring>
         <name>GetFileHistory</name>
         <briefdescription>
@@ -753,9 +753,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="624" column="9"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a084334673a43810d58d902255e46d07f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a40ba3f17cc19345113af74b8d5b930aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>wxList &amp;</type>
-        <definition>wxList &amp; wxDocManager::GetTemplates</definition>
+        <definition>wxList&amp; wxDocManager::GetTemplates</definition>
         <argsstring>()</argsstring>
         <name>GetTemplates</name>
         <briefdescription>
@@ -773,10 +773,10 @@
         <argsstring>()</argsstring>
         <name>Initialize</name>
         <briefdescription>
-<para>Initializes data; currently just calls <ref refid="classwx_doc_manager_1a175db0433b23c2c79c735ad93275a072" kindref="member">OnCreateFileHistory()</ref>. </para>
+<para>Initializes data; currently just calls <ref refid="classwx_doc_manager_1acd5c4aeea419763d29e639d5175393ef" kindref="member">OnCreateFileHistory()</ref>. </para>
         </briefdescription>
         <detaileddescription>
-<para>Some data cannot always be initialized in the constructor because the programmer must be given the opportunity to override functionality. If <ref refid="classwx_doc_manager_1a175db0433b23c2c79c735ad93275a072" kindref="member">OnCreateFileHistory()</ref> was called from the constructor, an overridden virtual <ref refid="classwx_doc_manager_1a175db0433b23c2c79c735ad93275a072" kindref="member">OnCreateFileHistory()</ref> would not be called due to C++&apos;s &apos;interesting&apos; constructor semantics. In fact <ref refid="classwx_doc_manager_1aad5ab5dc2ed2512242294ddc51734f69" kindref="member">Initialize()</ref> <emphasis>is</emphasis> called from the <ref refid="classwx_doc_manager" kindref="compound">wxDocManager</ref> constructor, but this can be vetoed by passing false to the second argument, allowing the derived class&apos;s constructor to call <ref refid="classwx_doc_manager_1aad5ab5dc2ed2512242294ddc51734f69" kindref="member">Initialize()</ref>, possibly calling a different <ref refid="classwx_doc_manager_1a175db0433b23c2c79c735ad93275a072" kindref="member">OnCreateFileHistory()</ref> from the default.</para>
+<para>Some data cannot always be initialized in the constructor because the programmer must be given the opportunity to override functionality. If <ref refid="classwx_doc_manager_1acd5c4aeea419763d29e639d5175393ef" kindref="member">OnCreateFileHistory()</ref> was called from the constructor, an overridden virtual <ref refid="classwx_doc_manager_1acd5c4aeea419763d29e639d5175393ef" kindref="member">OnCreateFileHistory()</ref> would not be called due to C++&apos;s &apos;interesting&apos; constructor semantics. In fact <ref refid="classwx_doc_manager_1aad5ab5dc2ed2512242294ddc51734f69" kindref="member">Initialize()</ref> <emphasis>is</emphasis> called from the <ref refid="classwx_doc_manager" kindref="compound">wxDocManager</ref> constructor, but this can be vetoed by passing false to the second argument, allowing the derived class&apos;s constructor to call <ref refid="classwx_doc_manager_1aad5ab5dc2ed2512242294ddc51734f69" kindref="member">Initialize()</ref>, possibly calling a different <ref refid="classwx_doc_manager_1acd5c4aeea419763d29e639d5175393ef" kindref="member">OnCreateFileHistory()</ref> from the default.</para>
 <para>The bottom line: if you&apos;re not deriving from <ref refid="classwx_doc_manager_1aad5ab5dc2ed2512242294ddc51734f69" kindref="member">Initialize()</ref>, forget it and construct <ref refid="classwx_doc_manager" kindref="compound">wxDocManager</ref> with no arguments. </para>
         </detaileddescription>
         <inbodydescription>
@@ -798,9 +798,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="655" column="22"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a175db0433b23c2c79c735ad93275a072" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1acd5c4aeea419763d29e639d5175393ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_file_history" kindref="compound">wxFileHistory</ref> *</type>
-        <definition>virtual wxFileHistory * wxDocManager::OnCreateFileHistory</definition>
+        <definition>virtual wxFileHistory* wxDocManager::OnCreateFileHistory</definition>
         <argsstring>()</argsstring>
         <name>OnCreateFileHistory</name>
         <briefdescription>
@@ -957,9 +957,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="704" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a6204c7b99b4875722bdba6c491ab6d89" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a453a23981a95bcee042f6e23bd762c7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> *</type>
-        <definition>virtual wxDocTemplate * wxDocManager::SelectDocumentPath</definition>
+        <definition>virtual wxDocTemplate* wxDocManager::SelectDocumentPath</definition>
         <argsstring>(wxDocTemplate **templates, int noTemplates, wxString &amp;path, long flags, bool save=false)</argsstring>
         <name>SelectDocumentPath</name>
         <param>
@@ -989,18 +989,18 @@
         <detaileddescription>
 <para>The <ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> corresponding to the selected file&apos;s extension is returned.</para>
 <para>On other platforms, if there is more than one document template a choice list is popped up, followed by a file selector.</para>
-<para>This function is used in <ref refid="classwx_doc_manager_1a42788c344bbaabc9951f21a8c7d51798" kindref="member">CreateDocument()</ref>.</para>
-<para><bold>wxPerl Note:</bold> In wxPerl <emphasis>templates</emphasis> is a reference to a list of templates. If you override this method in your document manager it must return two values, e.g.:</para>
-<para><programlisting><codeline><highlight class="normal">(doctemplate,<sp/>path)<sp/>=<sp/>My::DocManager-&gt;<ref refid="classwx_doc_manager_1a6204c7b99b4875722bdba6c491ab6d89" kindref="member">SelectDocumentPath</ref>(...);</highlight></codeline>
-</programlisting>  </para>
+<para>This function is used in <ref refid="classwx_doc_manager_1a9464ff43bbb7095ce5fdb2fa60633698" kindref="member">CreateDocument()</ref>.</para>
+<para><bold>wxPerl Note:</bold> In wxPerl <emphasis>templates</emphasis> is a reference to a list of templates. If you override this method in your document manager it must return two values, eg:</para>
+<para><programlisting><codeline><highlight class="normal">(doctemplate,<sp/>path)<sp/>=<sp/>My::DocManager-&gt;SelectDocumentPath(...);</highlight></codeline>
+</programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/docview.h" line="726" column="27"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1aeefc08e547f0e759a0e3d27fba135db0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a586af3eeede5ca5ee4ec82005c3004b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> *</type>
-        <definition>virtual wxDocTemplate * wxDocManager::SelectDocumentType</definition>
+        <definition>virtual wxDocTemplate* wxDocManager::SelectDocumentType</definition>
         <argsstring>(wxDocTemplate **templates, int noTemplates, bool sort=false)</argsstring>
         <name>SelectDocumentType</name>
         <param>
@@ -1020,7 +1020,7 @@
 <para>Returns a document template by asking the user (if there is more than one template). </para>
         </briefdescription>
         <detaileddescription>
-<para>This function is used in <ref refid="classwx_doc_manager_1a42788c344bbaabc9951f21a8c7d51798" kindref="member">CreateDocument()</ref>.</para>
+<para>This function is used in <ref refid="classwx_doc_manager_1a9464ff43bbb7095ce5fdb2fa60633698" kindref="member">CreateDocument()</ref>.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>templates</parametername>
@@ -1046,15 +1046,15 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<bold>wxPerl Note:</bold> In wxPerl <emphasis>templates</emphasis> is a reference to a list of templates.  </para>
+<bold>wxPerl Note:</bold> In wxPerl <emphasis>templates</emphasis> is a reference to a list of templates. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/docview.h" line="749" column="27"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1aadb69bcb00c3d321a1158c27d0f166d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1aa2dd732f2b17e1556e7a7ea237d27c4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> *</type>
-        <definition>virtual wxDocTemplate * wxDocManager::SelectViewType</definition>
+        <definition>virtual wxDocTemplate* wxDocManager::SelectViewType</definition>
         <argsstring>(wxDocTemplate **templates, int noTemplates, bool sort=false)</argsstring>
         <name>SelectViewType</name>
         <param>
@@ -1074,7 +1074,7 @@
 <para>Returns a document template by asking the user (if there is more than one template), displaying a list of valid views. </para>
         </briefdescription>
         <detaileddescription>
-<para>This function is used in <ref refid="classwx_doc_manager_1a44d2946c75aba8d6010257cd22ae522b" kindref="member">CreateView()</ref>. The dialog normally will not appear because the array of templates only contains those relevant to the document in question, and often there will only be one such.</para>
+<para>This function is used in <ref refid="classwx_doc_manager_1ac310efd148042ce530164b05f3181e15" kindref="member">CreateView()</ref>. The dialog normally will not appear because the array of templates only contains those relevant to the document in question, and often there will only be one such.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>templates</parametername>
@@ -1100,7 +1100,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<bold>wxPerl Note:</bold> In wxPerl <emphasis>templates</emphasis> is a reference to a list of templates.  </para>
+<bold>wxPerl Note:</bold> In wxPerl <emphasis>templates</emphasis> is a reference to a list of templates. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1191,9 +1191,9 @@
         </inbodydescription>
         <location file="interface/wx/docview.h" line="824" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_doc_manager_1a50054c34f494ff1f9b58371b56cbc3df" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_doc_manager_1a568bc3771ca2aad96333efa294ec4f45" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_preview_frame" kindref="compound">wxPreviewFrame</ref> *</type>
-        <definition>virtual wxPreviewFrame * wxDocManager::CreatePreviewFrame</definition>
+        <definition>virtual wxPreviewFrame* wxDocManager::CreatePreviewFrame</definition>
         <argsstring>(wxPrintPreviewBase *preview, wxWindow *parent, const wxString &amp;title)</argsstring>
         <name>CreatePreviewFrame</name>
         <param>
@@ -1250,9 +1250,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>The <ref refid="classwx_doc_manager" kindref="compound">wxDocManager</ref> class is part of the document/view framework supported by wxWidgets, and cooperates with the <ref refid="classwx_view" kindref="compound">wxView</ref>, <ref refid="classwx_document" kindref="compound">wxDocument</ref> and <ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> classes. </para>
     </briefdescription>
     <detaileddescription>
+<para>The <ref refid="classwx_doc_manager" kindref="compound">wxDocManager</ref> class is part of the document/view framework supported by wxWidgets, and cooperates with the <ref refid="classwx_view" kindref="compound">wxView</ref>, <ref refid="classwx_document" kindref="compound">wxDocument</ref> and <ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> classes.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
@@ -1261,11 +1261,9 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxDocManager</label>
-        <link refid="classwx_doc_manager"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
+      <node id="3">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
       </node>
       <node id="2">
         <label>wxEvtHandler</label>
@@ -1275,24 +1273,132 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-      </node>
       <node id="4">
         <label>wxTrackable</label>
         <link refid="classwx_trackable"/>
       </node>
+      <node id="1">
+        <label>wxDocManager</label>
+        <link refid="classwx_doc_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="11">
+      <node id="9">
+        <label>wxString</label>
+        <link refid="classwx_string"/>
+      </node>
+      <node id="10">
         <label>wxClassInfo</label>
         <link refid="classwx_class_info"/>
       </node>
-      <node id="8">
+      <node id="11">
         <label>wxCommandProcessor</label>
         <link refid="classwx_command_processor"/>
         <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>wxDocTemplate</label>
+        <link refid="classwx_doc_template"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_documentManager</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_defaultExt</edgelabel>
+          <edgelabel>m_directory</edgelabel>
+          <edgelabel>m_viewTypeName</edgelabel>
+          <edgelabel>m_docTypeName</edgelabel>
+          <edgelabel>m_description</edgelabel>
+          <edgelabel>m_fileFilter</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>m_docClassInfo</edgelabel>
+          <edgelabel>m_viewClassInfo</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>wxNonOwnedWindow</label>
+        <link refid="classwx_non_owned_window"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_refData</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>wxView</label>
+        <link refid="classwx_view"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_viewDocument</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_viewTypeName</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>m_viewFrame</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxEvtHandler</label>
+        <link refid="classwx_evt_handler"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxTrackable</label>
+        <link refid="classwx_trackable"/>
+      </node>
+      <node id="15">
+        <label>wxWindow</label>
+        <link refid="classwx_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>wxDocument</label>
+        <link refid="classwx_document"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_documentTemplate</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>m_commandProcessor</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_documentTypeName</edgelabel>
+          <edgelabel>m_documentTitle</edgelabel>
+          <edgelabel>m_documentFile</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>wxFrame</label>
+        <link refid="classwx_frame"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>wxFileHistory</label>
+        <link refid="classwx_file_history"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>wxTopLevelWindow</label>
+        <link refid="classwx_top_level_window"/>
+        <childnode refid="14" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
@@ -1310,118 +1416,12 @@
           <edgelabel>m_lastDirectory</edgelabel>
         </childnode>
       </node>
-      <node id="10">
-        <label>wxDocTemplate</label>
-        <link refid="classwx_doc_template"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-        <childnode refid="9" relation="usage">
-          <edgelabel>m_defaultExt</edgelabel>
-          <edgelabel>m_description</edgelabel>
-          <edgelabel>m_directory</edgelabel>
-          <edgelabel>m_docTypeName</edgelabel>
-          <edgelabel>m_fileFilter</edgelabel>
-          <edgelabel>m_viewTypeName</edgelabel>
-        </childnode>
-        <childnode refid="11" relation="usage">
-          <edgelabel>m_docClassInfo</edgelabel>
-          <edgelabel>m_viewClassInfo</edgelabel>
-        </childnode>
-        <childnode refid="10" relation="usage">
-          <edgelabel>m_documentManager</edgelabel>
-        </childnode>
-      </node>
-      <node id="7">
-        <label>wxDocument</label>
-        <link refid="classwx_document"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-        <childnode refid="8" relation="usage">
-          <edgelabel>m_commandProcessor</edgelabel>
-        </childnode>
-        <childnode refid="9" relation="usage">
-          <edgelabel>m_documentFile</edgelabel>
-          <edgelabel>m_documentTitle</edgelabel>
-          <edgelabel>m_documentTypeName</edgelabel>
-        </childnode>
-        <childnode refid="10" relation="usage">
-          <edgelabel>m_documentTemplate</edgelabel>
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxEvtHandler</label>
-        <link refid="classwx_evt_handler"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-        <childnode refid="5" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>wxFileHistory</label>
-        <link refid="classwx_file_history"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>wxFrame</label>
-        <link refid="classwx_frame"/>
-        <childnode refid="13" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>wxNonOwnedWindow</label>
-        <link refid="classwx_non_owned_window"/>
-        <childnode refid="15" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-        <childnode refid="4" relation="usage">
-          <edgelabel>m_refData</edgelabel>
-        </childnode>
-      </node>
       <node id="4">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
-      <node id="9">
-        <label>wxString</label>
-        <link refid="classwx_string"/>
-      </node>
-      <node id="13">
-        <label>wxTopLevelWindow</label>
-        <link refid="classwx_top_level_window"/>
-        <childnode refid="14" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>wxTrackable</label>
-        <link refid="classwx_trackable"/>
-      </node>
-      <node id="6">
-        <label>wxView</label>
-        <link refid="classwx_view"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>m_viewDocument</edgelabel>
-        </childnode>
-        <childnode refid="12" relation="usage">
-          <edgelabel>m_viewFrame</edgelabel>
-        </childnode>
-        <childnode refid="9" relation="usage">
-          <edgelabel>m_viewTypeName</edgelabel>
-        </childnode>
-      </node>
-      <node id="15">
-        <label>wxWindow</label>
-        <link refid="classwx_window"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
     </collaborationgraph>
-    <location file="interface/wx/docview.h" line="349" column="1" bodyfile="interface/wx/docview.h" bodystart="350" bodyend="877"/>
+    <location file="interface/wx/docview.h" line="350" column="1" bodyfile="interface/wx/docview.h" bodystart="349" bodyend="877"/>
     <listofallmembers>
       <member refid="classwx_doc_manager_1a1237f26cc76304e91d688b7e61f0257d" prot="public" virt="virtual"><scope>wxDocManager</scope><name>ActivateView</name></member>
       <member refid="classwx_doc_manager_1a02bad2ca9eb31a174534b3bae88350ba" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>AddDocument</name></member>
@@ -1434,17 +1434,17 @@
       <member refid="classwx_evt_handler_1a03cc68ca201fb79c7e837919025be71a" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>Bind</name></member>
       <member refid="classwx_evt_handler_1a63c7351618fd77330d80a250b3719519" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>CallAfter</name></member>
       <member refid="classwx_evt_handler_1a910416e4d0b1f38cec02213b8a0c6a12" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>CallAfter</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxDocManager</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxDocManager</scope><name>CloneRefData</name></member>
       <member refid="classwx_doc_manager_1aabcec782cdfea3b1d650aacda968f381" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>CloseDocument</name></member>
       <member refid="classwx_doc_manager_1a6eea69a3cb02fd2b6c7f30680e589c56" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>CloseDocuments</name></member>
       <member refid="classwx_evt_handler_1a78719e8b82c9f9c6e4056b3449df1943" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>Connect</name></member>
       <member refid="classwx_evt_handler_1a1e8b5fc4c7e7f6d32d40bc00d4108ba4" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>Connect</name></member>
       <member refid="classwx_evt_handler_1aa290d9b67348e74c1da8497955a4e35c" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>Connect</name></member>
-      <member refid="classwx_doc_manager_1a42788c344bbaabc9951f21a8c7d51798" prot="public" virt="virtual"><scope>wxDocManager</scope><name>CreateDocument</name></member>
-      <member refid="classwx_doc_manager_1aec51d3a1f6a9b66e8b19658778d9d8a6" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>CreateNewDocument</name></member>
-      <member refid="classwx_doc_manager_1a50054c34f494ff1f9b58371b56cbc3df" prot="protected" virt="virtual"><scope>wxDocManager</scope><name>CreatePreviewFrame</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxDocManager</scope><name>CreateRefData</name></member>
-      <member refid="classwx_doc_manager_1a44d2946c75aba8d6010257cd22ae522b" prot="public" virt="virtual"><scope>wxDocManager</scope><name>CreateView</name></member>
+      <member refid="classwx_doc_manager_1a9464ff43bbb7095ce5fdb2fa60633698" prot="public" virt="virtual"><scope>wxDocManager</scope><name>CreateDocument</name></member>
+      <member refid="classwx_doc_manager_1ac58dfe84ad7680963f3e39b33a31ce8b" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>CreateNewDocument</name></member>
+      <member refid="classwx_doc_manager_1a568bc3771ca2aad96333efa294ec4f45" prot="protected" virt="virtual"><scope>wxDocManager</scope><name>CreatePreviewFrame</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxDocManager</scope><name>CreateRefData</name></member>
+      <member refid="classwx_doc_manager_1ac310efd148042ce530164b05f3181e15" prot="public" virt="virtual"><scope>wxDocManager</scope><name>CreateView</name></member>
       <member refid="classwx_evt_handler_1a6e7f9cf4ebd0623c1d94979855d096f8" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>DeletePendingEvents</name></member>
       <member refid="classwx_doc_manager_1a5430bc73e121af9d4b6d4b260487d4e5" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>DisassociateTemplate</name></member>
       <member refid="classwx_evt_handler_1a13061cf0ed01ac10a804ac057ef4bdbc" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>Disconnect</name></member>
@@ -1456,26 +1456,26 @@
       <member refid="classwx_doc_manager_1a9da3af3734ee5abd93ca871189f32ccc" prot="public" virt="virtual"><scope>wxDocManager</scope><name>FileHistoryRemoveMenu</name></member>
       <member refid="classwx_doc_manager_1a056887aa9ffe2044294a5a85b7d4e84c" prot="public" virt="virtual"><scope>wxDocManager</scope><name>FileHistorySave</name></member>
       <member refid="classwx_doc_manager_1a24e5bb879e1a092f3885574c5b41c69e" prot="public" virt="virtual"><scope>wxDocManager</scope><name>FileHistoryUseMenu</name></member>
-      <member refid="classwx_doc_manager_1a72e8d5ceed983358e158cb1bd2f48f35" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>FindDocumentByPath</name></member>
-      <member refid="classwx_doc_manager_1aa8ec13d47f22106198a0ea5e599e1564" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>FindTemplate</name></member>
-      <member refid="classwx_doc_manager_1ad811d3e80024e3d39076d5a24f2c7d77" prot="public" virt="virtual"><scope>wxDocManager</scope><name>FindTemplateForPath</name></member>
-      <member refid="classwx_doc_manager_1a3f5114af64b79a640a60a0dff5676a00" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetAnyUsableView</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxDocManager</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_evt_handler_1a62baf87cabf4dd2c9ecce3ee5e1e9f61" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetClientData</name></member>
-      <member refid="classwx_evt_handler_1a537d17d644e48bc1735c4dd28b8b8c04" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetClientObject</name></member>
-      <member refid="classwx_doc_manager_1a7c639858a9b706340164787b33f6d586" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetCurrentDocument</name></member>
-      <member refid="classwx_doc_manager_1a4c8053a85d7377fbd41fbdc126d8396f" prot="public" virt="virtual"><scope>wxDocManager</scope><name>GetCurrentView</name></member>
-      <member refid="classwx_doc_manager_1a432700bb7956088a7d3c240dca7aa4d9" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetDocuments</name></member>
+      <member refid="classwx_doc_manager_1a6b9fdd10616136b33200776cc778e868" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>FindDocumentByPath</name></member>
+      <member refid="classwx_doc_manager_1a0ca25c5c549fc98c7fe91b8f81243610" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>FindTemplate</name></member>
+      <member refid="classwx_doc_manager_1aaf361d4aa2701e7ba5203a5ad4a4381e" prot="public" virt="virtual"><scope>wxDocManager</scope><name>FindTemplateForPath</name></member>
+      <member refid="classwx_doc_manager_1a82c158a96438d2b47089bab391c30678" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetAnyUsableView</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxDocManager</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_evt_handler_1a291bc92c1bea8abfff276a8e333d46db" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetClientData</name></member>
+      <member refid="classwx_evt_handler_1a371742bda1686e82065f3a1f2acb31c8" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetClientObject</name></member>
+      <member refid="classwx_doc_manager_1a1999456788b9f2e548ffc35be63e6ea2" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetCurrentDocument</name></member>
+      <member refid="classwx_doc_manager_1a4071832d644c511ff378df1f97cffa35" prot="public" virt="virtual"><scope>wxDocManager</scope><name>GetCurrentView</name></member>
+      <member refid="classwx_doc_manager_1a33fe107c6ed635a35537175801d2d568" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetDocuments</name></member>
       <member refid="classwx_doc_manager_1a2195f8cf65c3bb0e2447ae6dae0bad4c" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetDocumentsVector</name></member>
       <member refid="classwx_evt_handler_1a7742d81c5eb7849a0ad75b9de8575153" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetEvtHandlerEnabled</name></member>
-      <member refid="classwx_doc_manager_1a4cd5ceb61a15f11a8fdfbbaa0de53939" prot="public" virt="virtual"><scope>wxDocManager</scope><name>GetFileHistory</name></member>
+      <member refid="classwx_doc_manager_1a0bb24db2f7c559f731abc44182ccd47b" prot="public" virt="virtual"><scope>wxDocManager</scope><name>GetFileHistory</name></member>
       <member refid="classwx_doc_manager_1a1ff4e0f342a7c3a4946b52748fda917b" prot="public" virt="virtual"><scope>wxDocManager</scope><name>GetHistoryFilesCount</name></member>
       <member refid="classwx_doc_manager_1ad7dcbb80645ffa31ff5f11c17d33dd8f" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetLastDirectory</name></member>
       <member refid="classwx_doc_manager_1aa8ab1252be03ff20b01454c6ef14e213" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetMaxDocsOpen</name></member>
-      <member refid="classwx_evt_handler_1a6de721ad9f331826a5c925d6008116e5" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetNextHandler</name></member>
-      <member refid="classwx_evt_handler_1abbf9904ea5108b816f5f4faab1a33db9" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetPreviousHandler</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetRefData</name></member>
-      <member refid="classwx_doc_manager_1a084334673a43810d58d902255e46d07f" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetTemplates</name></member>
+      <member refid="classwx_evt_handler_1addedbed1c9f970c2b1e2893a42805b6a" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetNextHandler</name></member>
+      <member refid="classwx_evt_handler_1a69bfde9623d89eb91e363c53616e4587" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetPreviousHandler</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetRefData</name></member>
+      <member refid="classwx_doc_manager_1a40ba3f17cc19345113af74b8d5b930aa" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetTemplates</name></member>
       <member refid="classwx_doc_manager_1a58b95aaba107d9ef2f3be9218e85865f" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>GetTemplatesVector</name></member>
       <member refid="classwx_doc_manager_1aad5ab5dc2ed2512242294ddc51734f69" prot="public" virt="virtual"><scope>wxDocManager</scope><name>Initialize</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>IsKindOf</name></member>
@@ -1489,7 +1489,7 @@
       <member refid="classwx_doc_manager_1a8b91f7952f8143dc806ca0e1dc240142" prot="protected" virt="non-virtual"><scope>wxDocManager</scope><name>m_maxDocsOpen</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxDocManager</scope><name>m_refData</name></member>
       <member refid="classwx_doc_manager_1a10a40637ffd9c2405d38f4bc97ba3a6e" prot="public" virt="virtual"><scope>wxDocManager</scope><name>MakeNewDocumentName</name></member>
-      <member refid="classwx_doc_manager_1a175db0433b23c2c79c735ad93275a072" prot="public" virt="virtual"><scope>wxDocManager</scope><name>OnCreateFileHistory</name></member>
+      <member refid="classwx_doc_manager_1acd5c4aeea419763d29e639d5175393ef" prot="public" virt="virtual"><scope>wxDocManager</scope><name>OnCreateFileHistory</name></member>
       <member refid="classwx_doc_manager_1aecffaef11daea95c4eb69f9ebe77e426" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>OnFileClose</name></member>
       <member refid="classwx_doc_manager_1aa184ba2aab97c9509e87a6cdac984ab2" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>OnFileCloseAll</name></member>
       <member refid="classwx_doc_manager_1a50d0f6bb37a60209f6261cf92fbcf9d4" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>OnFileNew</name></member>
@@ -1499,7 +1499,7 @@
       <member refid="classwx_doc_manager_1a4fc96aaf4f2bb4fe31bcf5f3f3430f19" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>OnFileSaveAs</name></member>
       <member refid="classwx_doc_manager_1a6a208f634ec643628c1d13fe296d49ca" prot="protected" virt="virtual"><scope>wxDocManager</scope><name>OnMRUFileNotExist</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>operator new</name></member>
       <member refid="classwx_evt_handler_1a65968dd27f3aac7718f2dd6b2ddd5a08" prot="public" virt="virtual"><scope>wxDocManager</scope><name>ProcessEvent</name></member>
       <member refid="classwx_evt_handler_1ac0f5d2cb29a04c1f7f82eb6b351f79fb" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>ProcessEventLocally</name></member>
       <member refid="classwx_evt_handler_1a6f643dbdcf8e914ae1c8b70dd305e6f2" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>ProcessPendingEvents</name></member>
@@ -1508,9 +1508,10 @@
       <member refid="classwx_doc_manager_1a7d61d24aac99f3f6dbba6d0fb49dad4d" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>RemoveDocument</name></member>
       <member refid="classwx_evt_handler_1a67a57b759c447b121bf70a7c9804c8f2" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>RemoveFilter</name></member>
       <member refid="classwx_evt_handler_1a8205cb1a5a00d8b550b3ead22266b16b" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>SafelyProcessEvent</name></member>
-      <member refid="classwx_doc_manager_1a6204c7b99b4875722bdba6c491ab6d89" prot="public" virt="virtual"><scope>wxDocManager</scope><name>SelectDocumentPath</name></member>
-      <member refid="classwx_doc_manager_1aeefc08e547f0e759a0e3d27fba135db0" prot="public" virt="virtual"><scope>wxDocManager</scope><name>SelectDocumentType</name></member>
-      <member refid="classwx_doc_manager_1aadb69bcb00c3d321a1158c27d0f166d6" prot="public" virt="virtual"><scope>wxDocManager</scope><name>SelectViewType</name></member>
+      <member refid="classwx_evt_handler_1a3c07426130d2868a5ae7fa918a251f49" prot="public" virt="virtual"><scope>wxDocManager</scope><name>SearchEventTable</name></member>
+      <member refid="classwx_doc_manager_1a453a23981a95bcee042f6e23bd762c7a" prot="public" virt="virtual"><scope>wxDocManager</scope><name>SelectDocumentPath</name></member>
+      <member refid="classwx_doc_manager_1a586af3eeede5ca5ee4ec82005c3004b0" prot="public" virt="virtual"><scope>wxDocManager</scope><name>SelectDocumentType</name></member>
+      <member refid="classwx_doc_manager_1aa2dd732f2b17e1556e7a7ea237d27c4d" prot="public" virt="virtual"><scope>wxDocManager</scope><name>SelectViewType</name></member>
       <member refid="classwx_evt_handler_1a82c74f2cebfa02cb3c1563d459c872bf" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>SetClientData</name></member>
       <member refid="classwx_evt_handler_1af1e33a06087b8b2ddc43c7d15a91b326" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>SetClientObject</name></member>
       <member refid="classwx_evt_handler_1a7388ae19c8657e5656471b658c320036" prot="public" virt="non-virtual"><scope>wxDocManager</scope><name>SetEvtHandlerEnabled</name></member>

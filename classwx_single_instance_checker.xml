@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_single_instance_checker" kind="class" language="C++" prot="public">
     <compoundname>wxSingleInstanceChecker</compoundname>
     <includes local="no">wx/snglinst.h</includes>
@@ -140,34 +140,34 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_single_instance_checker" kindref="compound">wxSingleInstanceChecker</ref> class allows checking that only a single instance of a program is running. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classwx_single_instance_checker" kindref="compound">wxSingleInstanceChecker</ref> class allows to check that only a single instance of a program is running.</para>
 <para>To do it, you should create an object of this class. As long as this object is alive, calls to <ref refid="classwx_single_instance_checker_1a90869872d5a1468dd2f56ee20a46d9ed" kindref="member">wxSingleInstanceChecker::IsAnotherRunning</ref> from other processes will return true.</para>
 <para>As the object should have the life span as big as possible, it makes sense to create it either as a global or in <ref refid="classwx_app_console_1a99953775a2fd83fa2456e390779afe15" kindref="member">wxApp::OnInit</ref>. For example:</para>
-<para><programlisting><codeline><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>MyApp::OnInit()</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">bool<sp/>MyApp::OnInit()</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>m_checker<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_single_instance_checker_1ab5a56ad3ace10afc97d1c1608e40ef0c" kindref="member">wxSingleInstanceChecker</ref>;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>m_checker-&gt;IsAnotherRunning()<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>m_checker<sp/>=<sp/>new<sp/>wxSingleInstanceChecker;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>m_checker-&gt;IsAnotherRunning()<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2log_8h_1a0dd3c633f990f794e76065c9a7af4c87" kindref="member">wxLogError</ref>(<ref refid="translation_8h_1a63ac344fa98fcb51cef18e5a9b8a916d" kindref="member">_</ref>(</highlight><highlight class="stringliteral">&quot;Another<sp/>program<sp/>instance<sp/>is<sp/>already<sp/>running,<sp/>aborting.&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>m_checker;<sp/></highlight><highlight class="comment">//<sp/>OnExit()<sp/>won&apos;t<sp/>be<sp/>called<sp/>if<sp/>we<sp/>return<sp/>false</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxLogError(_(&quot;Another<sp/>program<sp/>instance<sp/>is<sp/>already<sp/>running,<sp/>aborting.&quot;));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delete<sp/>m_checker;<sp/>//<sp/>OnExit()<sp/>won&apos;t<sp/>be<sp/>called<sp/>if<sp/>we<sp/>return<sp/>false</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_checker<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>false;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...<sp/>more<sp/>initializations<sp/>...</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>true;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MyApp::OnExit()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int<sp/>MyApp::OnExit()</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>m_checker;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>delete<sp/>m_checker;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>Note that by default <ref refid="classwx_single_instance_checker_1a3cfc2177b3271480415c138e2edb5833" kindref="member">wxSingleInstanceChecker::CreateDefault()</ref> is used to create the checker meaning that it will be initialized differently for different users and thus will allow different users to run the application concurrently which is usually the required behaviour. However if only a single instance of a program should be running system-wide, you need to call <ref refid="classwx_single_instance_checker_1aa69725041ea6c0479f65f6b468a42f1e" kindref="member">Create()</ref> with a custom name which does <emphasis>not</emphasis> include <ref refid="utils_8h_1ab1ebfcd4741550d6f7aa6f8a8952f4f3" kindref="member">wxGetUserId()</ref>.</para>
@@ -176,7 +176,7 @@
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
-    <location file="interface/wx/snglinst.h" line="62" column="1" bodyfile="interface/wx/snglinst.h" bodystart="63" bodyend="145"/>
+    <location file="interface/wx/snglinst.h" line="63" column="1" bodyfile="interface/wx/snglinst.h" bodystart="62" bodyend="145"/>
     <listofallmembers>
       <member refid="classwx_single_instance_checker_1aa69725041ea6c0479f65f6b468a42f1e" prot="public" virt="non-virtual"><scope>wxSingleInstanceChecker</scope><name>Create</name></member>
       <member refid="classwx_single_instance_checker_1a3cfc2177b3271480415c138e2edb5833" prot="public" virt="non-virtual"><scope>wxSingleInstanceChecker</scope><name>CreateDefault</name></member>

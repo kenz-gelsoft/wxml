@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_process" kind="class" language="C++" prot="public">
     <compoundname>wxProcess</compoundname>
     <basecompoundref refid="classwx_evt_handler" prot="public" virt="non-virtual">wxEvtHandler</basecompoundref>
@@ -59,7 +59,7 @@
           <declname>flags</declname>
         </param>
         <briefdescription>
-<para>Creates an object without any associated parent (and hence no id neither) but allows specifying the <emphasis>flags</emphasis> which can have the value of <computeroutput>wxPROCESS_DEFAULT</computeroutput> or <computeroutput>wxPROCESS_REDIRECT</computeroutput>. </para>
+<para>Creates an object without any associated parent (and hence no id neither) but allows to specify the <emphasis>flags</emphasis> which can have the value of <computeroutput>wxPROCESS_DEFAULT</computeroutput> or <computeroutput>wxPROCESS_REDIRECT</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
 <para>Specifying the former value has no particular effect while using the latter one is equivalent to calling <ref refid="classwx_process_1a9d1fc94d98e373c26dbb128516c2c348" kindref="member">Redirect()</ref>. </para>
@@ -82,25 +82,6 @@
         </inbodydescription>
         <location file="interface/wx/process.h" line="81" column="13"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_process_1ac0ce93666301832a6e9e948d6c607304" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool wxProcess::Activate</definition>
-        <argsstring>() const</argsstring>
-        <name>Activate</name>
-        <briefdescription>
-<para>Activates a GUI process by bringing up its main window to the front. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This is a convenient method which tries to bring this process to the users attention.</para>
-<para>Currently this is implemented in wxMSW only and simply returns false under the other platforms. Notice that this function can also return false under MSW if, for example, the process doesn&apos;t have any windows.</para>
-<para><simplesect kind="since"><para>3.1.0 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/process.h" line="95" column="10"/>
-      </memberdef>
       <memberdef kind="function" id="classwx_process_1a95ae8a212eb29a2cb927577491ecc2b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxProcess::CloseOutput</definition>
@@ -111,11 +92,11 @@
         </briefdescription>
         <detaileddescription>
 <para>This function can be used to indicate to the child process that there is no more data to be read - usually, a filter program will only terminate when the input stream is closed.</para>
-<para>Notice that <ref refid="classwx_process_1aebcdca57421deed0eb451361c0d9d43a" kindref="member">GetOutputStream()</ref> will return NULL after the output stream is closed. </para>
+<para>Notice that <ref refid="classwx_process_1ac59367dbafbc8f0076e899781b2ad9dd" kindref="member">GetOutputStream()</ref> will return NULL after the output stream is closed. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="108" column="10"/>
+        <location file="interface/wx/process.h" line="94" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_process_1a19cdb21f39fd9f758c7e3661426bcf9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -132,11 +113,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="126" column="10"/>
+        <location file="interface/wx/process.h" line="112" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_process_1aa29a0318745110f667233ea8a8141f37" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_process_1ad42a7a5949356a655a8c2a5f6d218b08" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> *</type>
-        <definition>wxInputStream * wxProcess::GetErrorStream</definition>
+        <definition>wxInputStream* wxProcess::GetErrorStream</definition>
         <argsstring>() const</argsstring>
         <name>GetErrorStream</name>
         <briefdescription>
@@ -146,11 +127,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="139" column="19"/>
+        <location file="interface/wx/process.h" line="125" column="19"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_process_1a7a3cbc66e66927151fe1b660bf3d7917" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_process_1ab199307fcfea3b3e1d3e4ad504d46125" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> *</type>
-        <definition>wxInputStream * wxProcess::GetInputStream</definition>
+        <definition>wxInputStream* wxProcess::GetInputStream</definition>
         <argsstring>() const</argsstring>
         <name>GetInputStream</name>
         <briefdescription>
@@ -164,11 +145,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="147" column="19"/>
+        <location file="interface/wx/process.h" line="133" column="19"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_process_1aebcdca57421deed0eb451361c0d9d43a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_process_1ac59367dbafbc8f0076e899781b2ad9dd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> *</type>
-        <definition>wxOutputStream * wxProcess::GetOutputStream</definition>
+        <definition>wxOutputStream* wxProcess::GetOutputStream</definition>
         <argsstring>() const</argsstring>
         <name>GetOutputStream</name>
         <briefdescription>
@@ -182,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="157" column="20"/>
+        <location file="interface/wx/process.h" line="143" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classwx_process_1a240c79c74f46395eaedb5b433c21373e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>long</type>
@@ -190,13 +171,13 @@
         <argsstring>() const</argsstring>
         <name>GetPid</name>
         <briefdescription>
-<para>Returns the process ID of the process launched by <ref refid="classwx_process_1ac3d80d5a0589d7c1ed28342954eb5b7c" kindref="member">Open()</ref> or set by <ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref> (if you passed this <ref refid="classwx_process" kindref="compound">wxProcess</ref> as argument). </para>
+<para>Returns the process ID of the process launched by <ref refid="classwx_process_1a0d09a7c187b13c28be3b9ff3f6b38cdd" kindref="member">Open()</ref> or set by <ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref> (if you passed this <ref refid="classwx_process" kindref="compound">wxProcess</ref> as argument). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="163" column="10"/>
+        <location file="interface/wx/process.h" line="149" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_process_1a112feed7b1df503ac295d41b99f5a5c3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -213,7 +194,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="171" column="10"/>
+        <location file="interface/wx/process.h" line="157" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_process_1af75b0f4b79b137375ca3ba1820680e45" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -224,14 +205,14 @@
 <para>Returns true if there is data to be read on the child process standard output stream. </para>
         </briefdescription>
         <detaileddescription>
-<para>This allows writing simple (and extremely inefficient) polling-based code waiting for a better mechanism in future wxWidgets versions. See the <ref refid="page_samples_1page_samples_exec" kindref="member">exec sample</ref> for an example of using this function.</para>
+<para>This allows to write simple (and extremely inefficient) polling-based code waiting for a better mechanism in future wxWidgets versions. See the <ref refid="page_samples_1page_samples_exec" kindref="member">exec sample</ref> for an example of using this function.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_process_1aa33aada043accc46853d1b0ad21ccc1d" kindref="member">IsInputOpened()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="184" column="10"/>
+        <location file="interface/wx/process.h" line="170" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_process_1aa33aada043accc46853d1b0ad21ccc1d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -245,7 +226,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="189" column="10"/>
+        <location file="interface/wx/process.h" line="175" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_process_1aa378b7e705c9191431cad51a81581836" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -287,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="222" column="18"/>
+        <location file="interface/wx/process.h" line="208" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_process_1a9d1fc94d98e373c26dbb128516c2c348" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -298,11 +279,11 @@
 <para>Turns on redirection. </para>
         </briefdescription>
         <detaileddescription>
-<para><ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref> will try to open a couple of pipes to catch the subprocess stdio. The caught input stream is returned by <ref refid="classwx_process_1aebcdca57421deed0eb451361c0d9d43a" kindref="member">GetOutputStream()</ref> as a non-seekable stream. The caught output stream is returned by <ref refid="classwx_process_1a7a3cbc66e66927151fe1b660bf3d7917" kindref="member">GetInputStream()</ref> as a non-seekable stream. </para>
+<para><ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref> will try to open a couple of pipes to catch the subprocess stdio. The caught input stream is returned by <ref refid="classwx_process_1ac59367dbafbc8f0076e899781b2ad9dd" kindref="member">GetOutputStream()</ref> as a non-seekable stream. The caught output stream is returned by <ref refid="classwx_process_1ab199307fcfea3b3e1d3e4ad504d46125" kindref="member">GetInputStream()</ref> as a non-seekable stream. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="258" column="10"/>
+        <location file="interface/wx/process.h" line="244" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_process_1a59e51410a3b420e82a1f9a342d7a50ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -330,7 +311,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="272" column="10"/>
+        <location file="interface/wx/process.h" line="258" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -353,7 +334,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="133" column="17"/>
+        <location file="interface/wx/process.h" line="119" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_process_1a6b3ff71a9d026d93600add4cbb72a172" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="utils_8h_1af9655b6ab587e0a65ad6f63eb32d814f" kindref="member">wxKillError</ref></type>
@@ -388,11 +369,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="208" column="24"/>
+        <location file="interface/wx/process.h" line="194" column="24"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_process_1ac3d80d5a0589d7c1ed28342954eb5b7c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_process_1a0d09a7c187b13c28be3b9ff3f6b38cdd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_process" kindref="compound">wxProcess</ref> *</type>
-        <definition>static wxProcess * wxProcess::Open</definition>
+        <definition>static wxProcess* wxProcess::Open</definition>
         <argsstring>(const wxString &amp;cmd, int flags=wxEXEC_ASYNC)</argsstring>
         <name>Open</name>
         <param>
@@ -402,7 +383,7 @@
         <param>
           <type>int</type>
           <declname>flags</declname>
-          <defval><ref refid="utils_8h_1a900dca9b26de42491763226e12dcd47ba457bddfa2a7ce4927358680893910cc8" kindref="member">wxEXEC_ASYNC</ref></defval>
+          <defval><ref refid="utils_8h_1a1be3860693af99a6c1da72580097294ca457bddfa2a7ce4927358680893910cc8" kindref="member">wxEXEC_ASYNC</ref></defval>
         </param>
         <briefdescription>
 <para>This static method replaces the standard <computeroutput>popen()</computeroutput> function: it launches the process specified by the <emphasis>cmd</emphasis> parameter and returns the <ref refid="classwx_process" kindref="compound">wxProcess</ref> object which can be used to retrieve the streams connected to the standard input, output and error output of the child process. </para>
@@ -436,17 +417,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/process.h" line="248" column="22"/>
+        <location file="interface/wx/process.h" line="234" column="22"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>The objects of this class are used in conjunction with the <ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref> function. </para>
     </briefdescription>
     <detaileddescription>
-<para>When a <ref refid="classwx_process" kindref="compound">wxProcess</ref> object is passed to <ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref>, its <ref refid="classwx_process_1aa378b7e705c9191431cad51a81581836" kindref="member">OnTerminate()</ref> virtual method is called when the process terminates. This allows the program to be (asynchronously) notified about the process termination and also retrieve its exit status which is unavailable from <ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref> in the case of asynchronous execution.</para>
+<para>The objects of this class are used in conjunction with the <ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref> function. When a <ref refid="classwx_process" kindref="compound">wxProcess</ref> object is passed to <ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref>, its <ref refid="classwx_process_1aa378b7e705c9191431cad51a81581836" kindref="member">OnTerminate()</ref> virtual method is called when the process terminates. This allows the program to be (asynchronously) notified about the process termination and also retrieve its exit status which is unavailable from <ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref> in the case of asynchronous execution.</para>
 <para><simplesect kind="note"><para>If the <computeroutput>wxEVT_END_PROCESS</computeroutput> event sent after termination is processed by the parent, then it is responsible for deleting the <ref refid="classwx_process" kindref="compound">wxProcess</ref> object which sent it. However, if it is not processed, the object will <bold>delete itself</bold> and so the library users should only delete those objects whose notifications have been processed (and call <ref refid="classwx_process_1a19cdb21f39fd9f758c7e3661426bcf9f" kindref="member">wxProcess::Detach</ref> for others). This also means that unless you&apos;re going to process the <computeroutput>wxEVT_END_PROCESS</computeroutput> event, you <bold>must</bold> allocate the <ref refid="classwx_process" kindref="compound">wxProcess</ref> class on the heap.</para>
 </simplesect>
-<ref refid="classwx_process" kindref="compound">wxProcess</ref> also supports IO redirection of the child process. For this, you have to call its <ref refid="classwx_process_1a9d1fc94d98e373c26dbb128516c2c348" kindref="member">Redirect()</ref> method before passing it to <ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref>. If the child process was launched successfully, <ref refid="classwx_process_1a7a3cbc66e66927151fe1b660bf3d7917" kindref="member">GetInputStream()</ref>, <ref refid="classwx_process_1aebcdca57421deed0eb451361c0d9d43a" kindref="member">GetOutputStream()</ref> and <ref refid="classwx_process_1aa29a0318745110f667233ea8a8141f37" kindref="member">GetErrorStream()</ref> can then be used to retrieve the streams corresponding to the child process standard output, input and error output respectively.</para>
+<ref refid="classwx_process" kindref="compound">wxProcess</ref> also supports IO redirection of the child process. For this, you have to call its <ref refid="classwx_process_1a9d1fc94d98e373c26dbb128516c2c348" kindref="member">Redirect()</ref> method before passing it to <ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref>. If the child process was launched successfully, <ref refid="classwx_process_1ab199307fcfea3b3e1d3e4ad504d46125" kindref="member">GetInputStream()</ref>, <ref refid="classwx_process_1ac59367dbafbc8f0076e899781b2ad9dd" kindref="member">GetOutputStream()</ref> and <ref refid="classwx_process_1ad42a7a5949356a655a8c2a5f6d218b08" kindref="member">GetErrorStream()</ref> can then be used to retrieve the streams corresponding to the child process standard output, input and error output respectively.</para>
 <para><linebreak/>
 <heading level="2">Events emitted by this class</heading>
 </para>
@@ -458,11 +438,22 @@
 </listitem>
 </itemizedlist>
 Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
-<para><bold>wxPerl Note:</bold> In wxPerl this class has an additional <computeroutput>Destroy</computeroutput> method, for explicit destruction.  <simplesect kind="see"><para><ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref>, <ref refid="page_samples_1page_samples_exec" kindref="member">External Program Execution Sample</ref> </para>
+<para><bold>wxPerl Note:</bold> In wxPerl this class has an additional <computeroutput>Destroy</computeroutput> method, for explicit destruction.</para>
+<para><simplesect kind="see"><para><ref refid="utils_8h_1aa276e9e676e26bafeec3141b73399b33" kindref="member">wxExecute()</ref>, <ref refid="page_samples_1page_samples_exec" kindref="member">External Program Execution Sample</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
+      <node id="1">
+        <label>wxProcess</label>
+        <link refid="classwx_process"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
         <label>wxEvtHandler</label>
         <link refid="classwx_evt_handler"/>
@@ -471,9 +462,18 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="4">
+        <label>wxTrackable</label>
+        <link refid="classwx_trackable"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_refData</edgelabel>
+        </childnode>
       </node>
       <node id="1">
         <label>wxProcess</label>
@@ -481,12 +481,6 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>wxTrackable</label>
-        <link refid="classwx_trackable"/>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="2">
         <label>wxEvtHandler</label>
         <link refid="classwx_evt_handler"/>
@@ -495,31 +489,17 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-        <childnode refid="4" relation="usage">
-          <edgelabel>m_refData</edgelabel>
-        </childnode>
+      <node id="5">
+        <label>wxTrackable</label>
+        <link refid="classwx_trackable"/>
       </node>
       <node id="4">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
-      <node id="1">
-        <label>wxProcess</label>
-        <link refid="classwx_process"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>wxTrackable</label>
-        <link refid="classwx_trackable"/>
-      </node>
     </collaborationgraph>
-    <location file="interface/wx/process.h" line="49" column="1" bodyfile="interface/wx/process.h" bodystart="50" bodyend="273"/>
+    <location file="interface/wx/process.h" line="50" column="1" bodyfile="interface/wx/process.h" bodystart="49" bodyend="259"/>
     <listofallmembers>
-      <member refid="classwx_process_1ac0ce93666301832a6e9e948d6c607304" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Activate</name></member>
       <member refid="classwx_evt_handler_1a7dc3c701781f4044372049de5004137e" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>AddFilter</name></member>
       <member refid="classwx_evt_handler_1a0737c6d2cbcd5ded4b1ecdd53ed0def3" prot="public" virt="virtual"><scope>wxProcess</scope><name>AddPendingEvent</name></member>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxProcess</scope><name>AllocExclusive</name></member>
@@ -527,29 +507,29 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_evt_handler_1a03cc68ca201fb79c7e837919025be71a" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Bind</name></member>
       <member refid="classwx_evt_handler_1a63c7351618fd77330d80a250b3719519" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>CallAfter</name></member>
       <member refid="classwx_evt_handler_1a910416e4d0b1f38cec02213b8a0c6a12" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>CallAfter</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxProcess</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxProcess</scope><name>CloneRefData</name></member>
       <member refid="classwx_process_1a95ae8a212eb29a2cb927577491ecc2b4" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>CloseOutput</name></member>
       <member refid="classwx_evt_handler_1a78719e8b82c9f9c6e4056b3449df1943" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Connect</name></member>
       <member refid="classwx_evt_handler_1a1e8b5fc4c7e7f6d32d40bc00d4108ba4" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Connect</name></member>
       <member refid="classwx_evt_handler_1aa290d9b67348e74c1da8497955a4e35c" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Connect</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxProcess</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxProcess</scope><name>CreateRefData</name></member>
       <member refid="classwx_evt_handler_1a6e7f9cf4ebd0623c1d94979855d096f8" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>DeletePendingEvents</name></member>
       <member refid="classwx_process_1a19cdb21f39fd9f758c7e3661426bcf9f" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Detach</name></member>
       <member refid="classwx_evt_handler_1a13061cf0ed01ac10a804ac057ef4bdbc" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Disconnect</name></member>
       <member refid="classwx_evt_handler_1a2f171e19444b9c4034c5e11f24fa9c91" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Disconnect</name></member>
       <member refid="classwx_evt_handler_1a16a6f823853e4b74b43dd9a2cf3abee6" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Disconnect</name></member>
       <member refid="classwx_process_1a3c81aa4ef5b6b76018e245f0b004f51b" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Exists</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxProcess</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_evt_handler_1a62baf87cabf4dd2c9ecce3ee5e1e9f61" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetClientData</name></member>
-      <member refid="classwx_evt_handler_1a537d17d644e48bc1735c4dd28b8b8c04" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetClientObject</name></member>
-      <member refid="classwx_process_1aa29a0318745110f667233ea8a8141f37" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetErrorStream</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxProcess</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_evt_handler_1a291bc92c1bea8abfff276a8e333d46db" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetClientData</name></member>
+      <member refid="classwx_evt_handler_1a371742bda1686e82065f3a1f2acb31c8" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetClientObject</name></member>
+      <member refid="classwx_process_1ad42a7a5949356a655a8c2a5f6d218b08" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetErrorStream</name></member>
       <member refid="classwx_evt_handler_1a7742d81c5eb7849a0ad75b9de8575153" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetEvtHandlerEnabled</name></member>
-      <member refid="classwx_process_1a7a3cbc66e66927151fe1b660bf3d7917" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetInputStream</name></member>
-      <member refid="classwx_evt_handler_1a6de721ad9f331826a5c925d6008116e5" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetNextHandler</name></member>
-      <member refid="classwx_process_1aebcdca57421deed0eb451361c0d9d43a" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetOutputStream</name></member>
+      <member refid="classwx_process_1ab199307fcfea3b3e1d3e4ad504d46125" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetInputStream</name></member>
+      <member refid="classwx_evt_handler_1addedbed1c9f970c2b1e2893a42805b6a" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetNextHandler</name></member>
+      <member refid="classwx_process_1ac59367dbafbc8f0076e899781b2ad9dd" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetOutputStream</name></member>
       <member refid="classwx_process_1a240c79c74f46395eaedb5b433c21373e" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetPid</name></member>
-      <member refid="classwx_evt_handler_1abbf9904ea5108b816f5f4faab1a33db9" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetPreviousHandler</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetRefData</name></member>
+      <member refid="classwx_evt_handler_1a69bfde9623d89eb91e363c53616e4587" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetPreviousHandler</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>GetRefData</name></member>
       <member refid="classwx_process_1a112feed7b1df503ac295d41b99f5a5c3" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>IsErrorAvailable</name></member>
       <member refid="classwx_process_1af75b0f4b79b137375ca3ba1820680e45" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>IsInputAvailable</name></member>
       <member refid="classwx_process_1aa33aada043accc46853d1b0ad21ccc1d" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>IsInputOpened</name></member>
@@ -559,9 +539,9 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_process_1a6b3ff71a9d026d93600add4cbb72a172" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Kill</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxProcess</scope><name>m_refData</name></member>
       <member refid="classwx_process_1aa378b7e705c9191431cad51a81581836" prot="public" virt="virtual"><scope>wxProcess</scope><name>OnTerminate</name></member>
-      <member refid="classwx_process_1ac3d80d5a0589d7c1ed28342954eb5b7c" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Open</name></member>
+      <member refid="classwx_process_1a0d09a7c187b13c28be3b9ff3f6b38cdd" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Open</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>operator new</name></member>
       <member refid="classwx_evt_handler_1a65968dd27f3aac7718f2dd6b2ddd5a08" prot="public" virt="virtual"><scope>wxProcess</scope><name>ProcessEvent</name></member>
       <member refid="classwx_evt_handler_1ac0f5d2cb29a04c1f7f82eb6b351f79fb" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>ProcessEventLocally</name></member>
       <member refid="classwx_evt_handler_1a6f643dbdcf8e914ae1c8b70dd305e6f2" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>ProcessPendingEvents</name></member>
@@ -570,6 +550,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>Ref</name></member>
       <member refid="classwx_evt_handler_1a67a57b759c447b121bf70a7c9804c8f2" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>RemoveFilter</name></member>
       <member refid="classwx_evt_handler_1a8205cb1a5a00d8b550b3ead22266b16b" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>SafelyProcessEvent</name></member>
+      <member refid="classwx_evt_handler_1a3c07426130d2868a5ae7fa918a251f49" prot="public" virt="virtual"><scope>wxProcess</scope><name>SearchEventTable</name></member>
       <member refid="classwx_evt_handler_1a82c74f2cebfa02cb3c1563d459c872bf" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>SetClientData</name></member>
       <member refid="classwx_evt_handler_1af1e33a06087b8b2ddc43c7d15a91b326" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>SetClientObject</name></member>
       <member refid="classwx_evt_handler_1a7388ae19c8657e5656471b658c320036" prot="public" virt="non-virtual"><scope>wxProcess</scope><name>SetEvtHandlerEnabled</name></member>

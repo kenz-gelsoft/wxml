@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_critical_section_locker" kind="class" language="C++" prot="public">
     <compoundname>wxCriticalSectionLocker</compoundname>
     <includes local="no">wx/thread.h</includes>
@@ -20,7 +20,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="267" column="5"/>
+        <location file="interface/wx/thread.h" line="265" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_critical_section_locker_1a74e6eff6391e4f4ee8c0eeb77cfd95e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -34,33 +34,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="272" column="5"/>
+        <location file="interface/wx/thread.h" line="270" column="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This is a small helper class to be used with <ref refid="classwx_critical_section" kindref="compound">wxCriticalSection</ref> objects. </para>
     </briefdescription>
     <detaileddescription>
+<para>This is a small helper class to be used with <ref refid="classwx_critical_section" kindref="compound">wxCriticalSection</ref> objects.</para>
 <para>A <ref refid="classwx_critical_section_locker" kindref="compound">wxCriticalSectionLocker</ref> enters the critical section in the constructor and leaves it in the destructor making it much more difficult to forget to leave a critical section (which, in general, will lead to serious and difficult to debug problems).</para>
 <para>Example of using it:</para>
-<para><programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Set<sp/>Foo()</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">void<sp/>Set<sp/>Foo()</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>gs_critSect<sp/>is<sp/>some<sp/>(global)<sp/>critical<sp/>section<sp/>guarding<sp/>access<sp/>to<sp/>the</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>object<sp/>&quot;foo&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_critical_section_locker" kindref="compound">wxCriticalSectionLocker</ref><sp/>locker(gs_critSect);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>...<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>gs_critSect<sp/>is<sp/>some<sp/>(global)<sp/>critical<sp/>section<sp/>guarding<sp/>access<sp/>to<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>object<sp/>&quot;foo&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxCriticalSectionLocker<sp/>locker(gs_critSect);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>...<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>something</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>do<sp/>something</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>something<sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>do<sp/>something<sp/>else</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>Without <ref refid="classwx_critical_section_locker" kindref="compound">wxCriticalSectionLocker</ref>, you would need to remember to manually leave the critical section before each <computeroutput>return</computeroutput>.</para>
@@ -71,7 +71,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/thread.h" line="260" column="1" bodyfile="interface/wx/thread.h" bodystart="261" bodyend="273"/>
+    <location file="interface/wx/thread.h" line="259" column="1" bodyfile="interface/wx/thread.h" bodystart="258" bodyend="271"/>
     <listofallmembers>
       <member refid="classwx_critical_section_locker_1a5a91c24edee0c85444ef0706e5b78694" prot="public" virt="non-virtual"><scope>wxCriticalSectionLocker</scope><name>wxCriticalSectionLocker</name></member>
       <member refid="classwx_critical_section_locker_1a74e6eff6391e4f4ee8c0eeb77cfd95e5" prot="public" virt="non-virtual"><scope>wxCriticalSectionLocker</scope><name>~wxCriticalSectionLocker</name></member>

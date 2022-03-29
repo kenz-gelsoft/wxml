@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_item_container_immutable" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxItemContainerImmutable</compoundname>
     <derivedcompoundref refid="classwx_item_container" prot="public" virt="non-virtual">wxItemContainer</derivedcompoundref>
@@ -12,10 +12,10 @@
         <definition>virtual void wxItemContainerImmutable::SetSelection</definition>
         <argsstring>(int n)=0</argsstring>
         <name>SetSelection</name>
-        <reimplementedby refid="classwx_choice_1a10096ed787d493c701e9348f8e34440f">SetSelection</reimplementedby>
-        <reimplementedby refid="classwx_combo_box_1a28ec184571590745a26a1be7fa2dfc72">SetSelection</reimplementedby>
         <reimplementedby refid="classwx_list_box_1a65fd7fd5e3b8e7451b225b581ead70b1">SetSelection</reimplementedby>
+        <reimplementedby refid="classwx_choice_1a10096ed787d493c701e9348f8e34440f">SetSelection</reimplementedby>
         <reimplementedby refid="classwx_radio_box_1acdfb1a4331a5fc9b62d57f94b90f70c9">SetSelection</reimplementedby>
+        <reimplementedby refid="classwx_combo_box_1a28ec184571590745a26a1be7fa2dfc72">SetSelection</reimplementedby>
         <param>
           <type>int</type>
           <declname>n</declname>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/ctrlsub.h" line="111" column="18"/>
+        <location file="interface/wx/ctrlsub.h" line="108" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_item_container_immutable_1a18a7cb1a652772d5cb8adc52be1efea0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>int</type>
@@ -48,8 +48,8 @@
         <argsstring>() const =0</argsstring>
         <name>GetSelection</name>
         <reimplementedby refid="classwx_choice_1a713b77e45738ebfd5ee069488b341b2e">GetSelection</reimplementedby>
-        <reimplementedby refid="classwx_combo_box_1af09521e44253cba53a4cbc862e046c89">GetSelection</reimplementedby>
         <reimplementedby refid="classwx_list_box_1aa1b1d4ae81777753780acbb581be172c">GetSelection</reimplementedby>
+        <reimplementedby refid="classwx_combo_box_1af09521e44253cba53a4cbc862e046c89">GetSelection</reimplementedby>
         <reimplementedby refid="classwx_radio_box_1ac70b5091a0a4d8560cb929dd62630edf">GetSelection</reimplementedby>
         <briefdescription>
 <para>Returns the index of the selected item or <computeroutput>wxNOT_FOUND</computeroutput> if no item is selected. </para>
@@ -57,13 +57,15 @@
         <detaileddescription>
 <para><simplesect kind="return"><para>The position of the current selection.</para>
 </simplesect>
+<simplesect kind="remark"><para>This method can be used with single selection list boxes only, you should use <ref refid="classwx_list_box_1a3035584e9c22b1192c67e8f02df45064" kindref="member">wxListBox::GetSelections()</ref> for the list boxes with wxLB_MULTIPLE style.</para>
+</simplesect>
 <simplesect kind="see"><para><ref refid="classwx_item_container_immutable_1aea97d8ee51e7af5e06befd5f8c9d793b" kindref="member">SetSelection()</ref>, <ref refid="classwx_item_container_immutable_1a32b63731332d90d7107ebfd949512ae5" kindref="member">GetStringSelection()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/ctrlsub.h" line="121" column="17"/>
+        <location file="interface/wx/ctrlsub.h" line="122" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_item_container_immutable_1afa3800ff87f00a47211c3ce206e7bc39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -95,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/ctrlsub.h" line="138" column="10"/>
+        <location file="interface/wx/ctrlsub.h" line="139" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_item_container_immutable_1a32b63731332d90d7107ebfd949512ae5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -113,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/ctrlsub.h" line="146" column="22"/>
+        <location file="interface/wx/ctrlsub.h" line="147" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_item_container_immutable_1abcc0d37a2a7f29d5c54cfa5252571d61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -131,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/ctrlsub.h" line="152" column="10"/>
+        <location file="interface/wx/ctrlsub.h" line="153" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -155,8 +157,8 @@
         <argsstring>() const =0</argsstring>
         <name>GetCount</name>
         <reimplementedby refid="classwx_choice_1aef4cd1c8957c610add122bb95506096d">GetCount</reimplementedby>
-        <reimplementedby refid="classwx_combo_box_1a8fb92281fdbae8ef380afbeee5a90991">GetCount</reimplementedby>
         <reimplementedby refid="classwx_list_box_1af809d7e697d1ce22a9046597bb9f0e0e">GetCount</reimplementedby>
+        <reimplementedby refid="classwx_combo_box_1a8fb92281fdbae8ef380afbeee5a90991">GetCount</reimplementedby>
         <reimplementedby refid="classwx_radio_box_1a309d4ed3ff91cf4dcc02072d1fa64c2d">GetCount</reimplementedby>
         <briefdescription>
 <para>Returns the number of items in the control. </para>
@@ -204,7 +206,6 @@
 <para>Returns the label of the item with the given index. </para>
         </briefdescription>
         <detaileddescription>
-<para>The index must be valid, i.e. less than the value returned by <ref refid="classwx_item_container_immutable_1a173bdb9c72977d524f524fcd02521f61" kindref="member">GetCount()</ref>, otherwise an assert is triggered. Notably, this function can&apos;t be called if the control is empty.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>n</parametername>
@@ -214,13 +215,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>The label of the item. </para>
+<simplesect kind="return"><para>The label of the item or an empty string if the position was invalid. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/ctrlsub.h" line="63" column="22"/>
+        <location file="interface/wx/ctrlsub.h" line="60" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_item_container_immutable_1ac6792c056bf3748f64419960d307d7c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_array_string" kindref="compound">wxArrayString</ref></type>
@@ -234,7 +235,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/ctrlsub.h" line="68" column="19"/>
+        <location file="interface/wx/ctrlsub.h" line="65" column="19"/>
       </memberdef>
       <memberdef kind="function" id="classwx_item_container_immutable_1a1daf356c330bac2d7a93c5b3de8fbabf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -278,7 +279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/ctrlsub.h" line="78" column="18"/>
+        <location file="interface/wx/ctrlsub.h" line="75" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_item_container_immutable_1a78519e3ea6a5fb47c27b337e21c99989" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>int</type>
@@ -325,13 +326,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/ctrlsub.h" line="91" column="17"/>
+        <location file="interface/wx/ctrlsub.h" line="88" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_item_container" kindref="compound">wxItemContainer</ref> defines an interface which is implemented by all controls which have string subitems each of which may be selected. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classwx_item_container" kindref="compound">wxItemContainer</ref> defines an interface which is implemented by all controls which have string subitems each of which may be selected.</para>
 <para>It is decomposed in <ref refid="classwx_item_container_immutable" kindref="compound">wxItemContainerImmutable</ref> which omits all methods adding/removing items and is used by <ref refid="classwx_radio_box" kindref="compound">wxRadioBox</ref> and <ref refid="classwx_item_container" kindref="compound">wxItemContainer</ref> itself.</para>
 <para>Note that this is not a control, it&apos;s a mixin interface that classes have to derive from in addition to <ref refid="classwx_control" kindref="compound">wxControl</ref> or <ref refid="classwx_window" kindref="compound">wxWindow</ref>.</para>
 <para>Examples: <ref refid="classwx_list_box" kindref="compound">wxListBox</ref>, <ref refid="classwx_check_list_box" kindref="compound">wxCheckListBox</ref>, <ref refid="classwx_choice" kindref="compound">wxChoice</ref> and <ref refid="classwx_combo_box" kindref="compound">wxComboBox</ref> (which implements an extended interface deriving from this one)</para>
@@ -343,16 +344,46 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="2">
+        <label>wxItemContainer</label>
+        <link refid="classwx_item_container"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>wxListBox</label>
+        <link refid="classwx_list_box"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>wxSimpleHtmlListBox</label>
+        <link refid="classwx_simple_html_list_box"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="6">
         <label>wxBitmapComboBox</label>
         <link refid="classwx_bitmap_combo_box"/>
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="13">
+        <label>wxRadioBox</label>
+        <link refid="classwx_radio_box"/>
+        <childnode refid="1" relation="private-inheritance">
+        </childnode>
+      </node>
       <node id="9">
         <label>wxCheckListBox</label>
         <link refid="classwx_check_list_box"/>
         <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>wxRearrangeList</label>
+        <link refid="classwx_rearrange_list"/>
+        <childnode refid="9" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -364,6 +395,12 @@
       <node id="5">
         <label>wxComboBox</label>
         <link refid="classwx_combo_box"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>wxOwnerDrawnComboBox</label>
+        <link refid="classwx_owner_drawn_combo_box"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
@@ -379,48 +416,12 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>wxItemContainer</label>
-        <link refid="classwx_item_container"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="1">
         <label>wxItemContainerImmutable</label>
         <link refid="classwx_item_container_immutable"/>
       </node>
-      <node id="8">
-        <label>wxListBox</label>
-        <link refid="classwx_list_box"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>wxOwnerDrawnComboBox</label>
-        <link refid="classwx_owner_drawn_combo_box"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>wxRadioBox</label>
-        <link refid="classwx_radio_box"/>
-        <childnode refid="1" relation="private-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>wxRearrangeList</label>
-        <link refid="classwx_rearrange_list"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>wxSimpleHtmlListBox</label>
-        <link refid="classwx_simple_html_list_box"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
     </inheritancegraph>
-    <location file="interface/wx/ctrlsub.h" line="29" column="1" bodyfile="interface/wx/ctrlsub.h" bodystart="30" bodyend="155"/>
+    <location file="interface/wx/ctrlsub.h" line="30" column="1" bodyfile="interface/wx/ctrlsub.h" bodystart="29" bodyend="156"/>
     <listofallmembers>
       <member refid="classwx_item_container_immutable_1a78519e3ea6a5fb47c27b337e21c99989" prot="public" virt="virtual"><scope>wxItemContainerImmutable</scope><name>FindString</name></member>
       <member refid="classwx_item_container_immutable_1a173bdb9c72977d524f524fcd02521f61" prot="public" virt="pure-virtual"><scope>wxItemContainerImmutable</scope><name>GetCount</name></member>

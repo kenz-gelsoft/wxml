@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_rich_text_x_m_l_handler" kind="class" language="C++" prot="public">
     <compoundname>wxRichTextXMLHandler</compoundname>
     <basecompoundref refid="classwx_rich_text_file_handler" prot="public" virt="non-virtual">wxRichTextFileHandler</basecompoundref>
@@ -205,9 +205,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A handler for loading and saving content in an XML format specific to <ref refid="classwx_rich_text_buffer" kindref="compound">wxRichTextBuffer</ref>. </para>
     </briefdescription>
     <detaileddescription>
+<para>A handler for loading and saving content in an XML format specific to <ref refid="classwx_rich_text_buffer" kindref="compound">wxRichTextBuffer</ref>.</para>
 <para>You can either add the handler to the buffer and load and save through the buffer or control API, or you can create an instance of the handler on the stack and call its functions directly.</para>
 <sect1 id="classwx_rich_text_x_m_l_handler_1richtextxmlhandler_flags">
 <title>Handler flags</title>
@@ -222,9 +222,11 @@
 </sect1>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
+      <node id="1">
+        <label>wxRichTextXMLHandler</label>
+        <link refid="classwx_rich_text_x_m_l_handler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="2">
         <label>wxRichTextFileHandler</label>
@@ -232,24 +234,21 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5">
+        <label>wxString</label>
+        <link refid="classwx_string"/>
+      </node>
       <node id="1">
         <label>wxRichTextXMLHandler</label>
         <link refid="classwx_rich_text_x_m_l_handler"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="3">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-        <childnode refid="4" relation="usage">
-          <edgelabel>m_refData</edgelabel>
-        </childnode>
-      </node>
-      <node id="4">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
       </node>
       <node id="2">
         <label>wxRichTextFileHandler</label>
@@ -262,35 +261,36 @@
           <edgelabel>m_name</edgelabel>
         </childnode>
       </node>
-      <node id="1">
-        <label>wxRichTextXMLHandler</label>
-        <link refid="classwx_rich_text_x_m_l_handler"/>
-        <childnode refid="2" relation="public-inheritance">
+      <node id="3">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="5">
-        <label>wxString</label>
-        <link refid="classwx_string"/>
+      <node id="4">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/richtext/richtextxml.h" line="31" column="1" bodyfile="interface/wx/richtext/richtextxml.h" bodystart="32" bodyend="83"/>
+    <location file="interface/wx/richtext/richtextxml.h" line="32" column="1" bodyfile="interface/wx/richtext/richtextxml.h" bodystart="31" bodyend="83"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>AllocExclusive</name></member>
       <member refid="classwx_rich_text_file_handler_1a89b3bf669d4b760a41e1d97e048851ee" prot="public" virt="virtual"><scope>wxRichTextXMLHandler</scope><name>CanHandle</name></member>
       <member refid="classwx_rich_text_x_m_l_handler_1a6f51de2acc81fd639dbc98a56e55f3f1" prot="public" virt="virtual"><scope>wxRichTextXMLHandler</scope><name>CanLoad</name></member>
       <member refid="classwx_rich_text_x_m_l_handler_1abef94be4e88e7e7d03a7f8c74513b555" prot="public" virt="virtual"><scope>wxRichTextXMLHandler</scope><name>CanSave</name></member>
       <member refid="classwx_rich_text_x_m_l_handler_1aac762d4205a4f5b64cf29119738e5f95" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>ClearNodeToClassMap</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxRichTextXMLHandler</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxRichTextXMLHandler</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxRichTextXMLHandler</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxRichTextXMLHandler</scope><name>CreateRefData</name></member>
       <member refid="classwx_rich_text_x_m_l_handler_1a355cba06c7e8d0f5296020a8ce27af26" prot="protected" virt="virtual"><scope>wxRichTextXMLHandler</scope><name>DoLoadFile</name></member>
       <member refid="classwx_rich_text_x_m_l_handler_1afbc34a2378e267afb05bf8e593695c0a" prot="protected" virt="virtual"><scope>wxRichTextXMLHandler</scope><name>DoSaveFile</name></member>
       <member refid="classwx_rich_text_x_m_l_handler_1a81d457a030ca1dff0390c794e7b620ce" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>ExportXML</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxRichTextXMLHandler</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_rich_text_file_handler_1ab8107a152d8010f979d8df64c9861d68" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>GetEncoding</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxRichTextXMLHandler</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_rich_text_file_handler_1a5e5d1560c790406c00981ed70c0c108a" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>GetEncoding</name></member>
       <member refid="classwx_rich_text_file_handler_1ab284a241c1a30c34283238d0b32b344c" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>GetExtension</name></member>
       <member refid="classwx_rich_text_file_handler_1acd57cbe10864aeca101094c9a858cfcc" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>GetFlags</name></member>
       <member refid="classwx_rich_text_file_handler_1a1e3b96a63ad2c00ecbfd579c1deeacce" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>GetName</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>GetRefData</name></member>
       <member refid="classwx_rich_text_file_handler_1adee80020c483471c10e1c83abc217b39" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>GetType</name></member>
       <member refid="classwx_rich_text_x_m_l_handler_1a9d9ce2046b69f2910e662e7f60952f86" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>ImportXML</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>IsKindOf</name></member>
@@ -306,7 +306,7 @@
       <member refid="classwx_rich_text_file_handler_1a262dbf7446f35720ebaadba74ecd9593" prot="protected" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>m_type</name></member>
       <member refid="classwx_rich_text_file_handler_1a73bf7d7c2dd7b29c1abc9333b9b68a77" prot="protected" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>m_visible</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>Ref</name></member>
       <member refid="classwx_rich_text_x_m_l_handler_1a1cfc97e7212697133660d61307831917" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>RegisterNodeName</name></member>
       <member refid="classwx_rich_text_file_handler_1a93f83b7d467c423bd243ab9eb4ddbaa4" prot="public" virt="non-virtual"><scope>wxRichTextXMLHandler</scope><name>SaveFile</name></member>

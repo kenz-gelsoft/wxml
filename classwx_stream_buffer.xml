@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_stream_buffer" kind="class" language="C++" prot="public">
     <compoundname>wxStreamBuffer</compoundname>
     <includes local="no">wx/stream.h</includes>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/stream.h" line="153" column="5" bodyfile="interface/wx/stream.h" bodystart="154" bodyend="158"/>
+        <location file="interface/wx/stream.h" line="154" column="1" bodyfile="interface/wx/stream.h" bodystart="153" bodyend="158"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -73,11 +73,11 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-One stream can have many stream buffers but only one is used internally to pass IO call (e.g. <ref refid="classwx_input_stream_1ae70ea89ff05940bc312216decde6237d" kindref="member">wxInputStream::Read()</ref> -&gt; <ref refid="classwx_stream_buffer_1a5c5772b548442c2a86c8f154c6b27dff" kindref="member">wxStreamBuffer::Read()</ref>), but you can call directly <ref refid="classwx_stream_buffer_1a5c5772b548442c2a86c8f154c6b27dff" kindref="member">wxStreamBuffer::Read</ref> without any problems. Note that all errors and messages linked to the stream are stored in the stream, not the stream buffers:</para>
+One stream can have many stream buffers but only one is used internally to pass IO call (e.g. <ref refid="classwx_input_stream_1a72f24d0f50c7f07bb68dedf5e8690f4e" kindref="member">wxInputStream::Read()</ref> -&gt; <ref refid="classwx_stream_buffer_1a5c5772b548442c2a86c8f154c6b27dff" kindref="member">wxStreamBuffer::Read()</ref>), but you can call directly <ref refid="classwx_stream_buffer_1a5c5772b548442c2a86c8f154c6b27dff" kindref="member">wxStreamBuffer::Read</ref> without any problems. Note that all errors and messages linked to the stream are stored in the stream, not the stream buffers:</para>
 <para><programlisting><codeline><highlight class="normal">streambuffer.Read(...);</highlight></codeline>
 <codeline><highlight class="normal">streambuffer2.Read(...);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>call<sp/>erases<sp/>previous<sp/>error<sp/>messages<sp/>set<sp/>by<sp/>&apos;streambuffer&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>assuming<sp/>that<sp/>both<sp/>instances<sp/>are<sp/>stream<sp/>buffers<sp/>for<sp/>the<sp/>same<sp/>stream</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>This<sp/>call<sp/>erases<sp/>previous<sp/>error<sp/>messages<sp/>set<sp/>by<sp/>&apos;streambuffer&apos;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>assuming<sp/>that<sp/>both<sp/>instances<sp/>are<sp/>stream<sp/>buffers<sp/>for<sp/>the<sp/>same<sp/>stream</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="see"><para><ref refid="classwx_stream_buffer_1a5981925c2323913c8bd252a2ad72bf7a" kindref="member">SetBufferIO()</ref> </para>
 </simplesect>
@@ -301,9 +301,9 @@ One stream can have many stream buffers but only one is used internally to pass 
         </inbodydescription>
         <location file="interface/wx/stream.h" line="276" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_stream_buffer_1a9233648e3a362d7b8babafe4f37c00b1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_stream_buffer_1a33393364fc1ff0821811aa586f1af146" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
-        <definition>void * wxStreamBuffer::GetBufferEnd</definition>
+        <definition>void* wxStreamBuffer::GetBufferEnd</definition>
         <argsstring>() const</argsstring>
         <name>GetBufferEnd</name>
         <briefdescription>
@@ -315,9 +315,9 @@ One stream can have many stream buffers but only one is used internally to pass 
         </inbodydescription>
         <location file="interface/wx/stream.h" line="281" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_stream_buffer_1a8887828d3f89cf66aa1e75fb0d5b0583" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_stream_buffer_1afd7b67dd75864acabb1cf267c5978319" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
-        <definition>void * wxStreamBuffer::GetBufferPos</definition>
+        <definition>void* wxStreamBuffer::GetBufferPos</definition>
         <argsstring>() const</argsstring>
         <name>GetBufferPos</name>
         <briefdescription>
@@ -343,9 +343,9 @@ One stream can have many stream buffers but only one is used internally to pass 
         </inbodydescription>
         <location file="interface/wx/stream.h" line="291" column="12"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_stream_buffer_1aee586f673ccc3ab365bf4b87e3f17c73" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_stream_buffer_1a61817da11abe687ce203b2bec94ff718" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
-        <definition>void * wxStreamBuffer::GetBufferStart</definition>
+        <definition>void* wxStreamBuffer::GetBufferStart</definition>
         <argsstring>() const</argsstring>
         <name>GetBufferStart</name>
         <briefdescription>
@@ -615,16 +615,16 @@ One stream can have many stream buffers but only one is used internally to pass 
         </inbodydescription>
         <location file="interface/wx/stream.h" line="411" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_stream_buffer_1ab30bdcc98a70178577b304ec43e1c110" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_stream_buffer_1ad717309ac785d320757386df2db02160" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_stream_base" kindref="compound">wxStreamBase</ref> *</type>
-        <definition>wxStreamBase * wxStreamBuffer::Stream</definition>
+        <definition>wxStreamBase* wxStreamBuffer::Stream</definition>
         <argsstring>()</argsstring>
         <name>Stream</name>
         <briefdescription>
 <para>Returns the parent stream of the stream buffer. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000080"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use GetStream() instead </para>
+<para><xrefsect id="deprecated_1_deprecated000053"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use GetStream() instead </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -709,9 +709,9 @@ One stream can have many stream buffers but only one is used internally to pass 
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_stream_buffer" kindref="compound">wxStreamBuffer</ref> is a cache manager for <ref refid="classwx_stream_base" kindref="compound">wxStreamBase</ref>: it manages a stream buffer linked to a stream. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classwx_stream_buffer" kindref="compound">wxStreamBuffer</ref> is a cache manager for <ref refid="classwx_stream_base" kindref="compound">wxStreamBase</ref>: it manages a stream buffer linked to a stream.</para>
 <para>Each stream always has one autoinitialized stream buffer, but you may attach more of them to the same stream.</para>
 <para><heading level="2"></heading>
 </para>
@@ -720,37 +720,37 @@ One stream can have many stream buffers but only one is used internally to pass 
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/stream.h" line="149" column="1" bodyfile="interface/wx/stream.h" bodystart="150" bodyend="448"/>
+    <location file="interface/wx/stream.h" line="150" column="1" bodyfile="interface/wx/stream.h" bodystart="149" bodyend="448"/>
     <listofallmembers>
       <member refid="classwx_stream_buffer_1a1b6333d99dc30ff865ff330b999e2dcc" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>BufMode</name></member>
       <member refid="classwx_stream_buffer_1a6501d9cb20e57b7d0f75144669b5246b" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>FillBuffer</name></member>
       <member refid="classwx_stream_buffer_1a2ac1132b1bf10d8f70321b87cce3fcd3" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>Fixed</name></member>
       <member refid="classwx_stream_buffer_1ac461ce80390382b799976c53ed93cbef" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>Flushable</name></member>
       <member refid="classwx_stream_buffer_1a789259c4af93129601253be26b39abde" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>FlushBuffer</name></member>
-      <member refid="classwx_stream_buffer_1a9233648e3a362d7b8babafe4f37c00b1" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>GetBufferEnd</name></member>
-      <member refid="classwx_stream_buffer_1a8887828d3f89cf66aa1e75fb0d5b0583" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>GetBufferPos</name></member>
+      <member refid="classwx_stream_buffer_1a33393364fc1ff0821811aa586f1af146" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>GetBufferEnd</name></member>
+      <member refid="classwx_stream_buffer_1afd7b67dd75864acabb1cf267c5978319" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>GetBufferPos</name></member>
       <member refid="classwx_stream_buffer_1afd8eeff225c08012e3ca4ecb1e092db8" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>GetBufferSize</name></member>
-      <member refid="classwx_stream_buffer_1aee586f673ccc3ab365bf4b87e3f17c73" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>GetBufferStart</name></member>
+      <member refid="classwx_stream_buffer_1a61817da11abe687ce203b2bec94ff718" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>GetBufferStart</name></member>
       <member refid="classwx_stream_buffer_1a70c6fa06647b6ffe62f01823b3b3b762" prot="public" virt="virtual"><scope>wxStreamBuffer</scope><name>GetChar</name></member>
       <member refid="classwx_stream_buffer_1a0d72df46cf154e22daaba85e7c56ca19" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>GetDataLeft</name></member>
       <member refid="classwx_stream_buffer_1ada2dfa120a17da3000875f80e99d7eaa" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>GetIntPosition</name></member>
       <member refid="classwx_stream_buffer_1a90482146d0855d32e6f9cc569fc0196f" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>GetLastAccess</name></member>
       <member refid="classwx_stream_buffer_1ae5f8ecfff22202601dfa3aefbe50e696" prot="public" virt="virtual"><scope>wxStreamBuffer</scope><name>PutChar</name></member>
+      <member refid="classwx_stream_buffer_1a1b6333d99dc30ff865ff330b999e2dcca93efc5286abe9db8c7763404aa835396" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>read</name></member>
       <member refid="classwx_stream_buffer_1a5c5772b548442c2a86c8f154c6b27dff" prot="public" virt="virtual"><scope>wxStreamBuffer</scope><name>Read</name></member>
       <member refid="classwx_stream_buffer_1ab1818a8153ca96aa706fd2d355908e91" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>Read</name></member>
-      <member refid="classwx_stream_buffer_1a1b6333d99dc30ff865ff330b999e2dcca93efc5286abe9db8c7763404aa835396" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>read</name></member>
       <member refid="classwx_stream_buffer_1a1b6333d99dc30ff865ff330b999e2dcca3eec51f36a60801cc8aa8e5d2393a17f" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>read_write</name></member>
       <member refid="classwx_stream_buffer_1a4cf308d2a1b6d3f1c89fd3720feaf17e" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>ResetBuffer</name></member>
       <member refid="classwx_stream_buffer_1aca1b47bbaf47adf0b6b458608a176c4f" prot="public" virt="virtual"><scope>wxStreamBuffer</scope><name>Seek</name></member>
       <member refid="classwx_stream_buffer_1a5981925c2323913c8bd252a2ad72bf7a" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>SetBufferIO</name></member>
       <member refid="classwx_stream_buffer_1ab62c5d757cd0f4b74748cc630f38bea4" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>SetBufferIO</name></member>
       <member refid="classwx_stream_buffer_1afddd13353c9bfc54871673563052bde6" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>SetIntPosition</name></member>
-      <member refid="classwx_stream_buffer_1ab30bdcc98a70178577b304ec43e1c110" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>Stream</name></member>
+      <member refid="classwx_stream_buffer_1ad717309ac785d320757386df2db02160" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>Stream</name></member>
       <member refid="classwx_stream_buffer_1a960f11f7c6518b11c3b2540d52a50dcb" prot="public" virt="virtual"><scope>wxStreamBuffer</scope><name>Tell</name></member>
       <member refid="classwx_stream_buffer_1a10875bdb145f030ee082ab26cab2c694" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>Truncate</name></member>
+      <member refid="classwx_stream_buffer_1a1b6333d99dc30ff865ff330b999e2dccafaa5f7ec649e934479215e28c410a6c4" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>write</name></member>
       <member refid="classwx_stream_buffer_1a8ad171d3434d7beea9c0163896d8359f" prot="public" virt="virtual"><scope>wxStreamBuffer</scope><name>Write</name></member>
       <member refid="classwx_stream_buffer_1a7d2d1ec4e66b7f9d19a109eb6fafa0c6" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>Write</name></member>
-      <member refid="classwx_stream_buffer_1a1b6333d99dc30ff865ff330b999e2dccafaa5f7ec649e934479215e28c410a6c4" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>write</name></member>
       <member refid="classwx_stream_buffer_1a860dcea1040d3b58d62bf8a97df9f360" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>wxStreamBuffer</name></member>
       <member refid="classwx_stream_buffer_1a57afda8e5aec964e93453324afb4cd4c" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>wxStreamBuffer</name></member>
       <member refid="classwx_stream_buffer_1a129a654b76af84c888671441736ef352" prot="public" virt="non-virtual"><scope>wxStreamBuffer</scope><name>wxStreamBuffer</name></member>

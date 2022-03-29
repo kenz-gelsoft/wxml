@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_ribbon_gallery_event" kind="class" language="C++" prot="public">
     <compoundname>wxRibbonGalleryEvent</compoundname>
     <basecompoundref refid="classwx_command_event" prot="public" virt="non-virtual">wxCommandEvent</basecompoundref>
@@ -39,9 +39,9 @@
         </inbodydescription>
         <location file="interface/wx/ribbon/gallery.h" line="274" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_ribbon_gallery_event_1a4fdabeecacb7c75b8141cd39fc545c45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_ribbon_gallery_event_1a5ad052a4169d0176f4477fd318a15804" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_ribbon_gallery" kindref="compound">wxRibbonGallery</ref> *</type>
-        <definition>wxRibbonGallery * wxRibbonGalleryEvent::GetGallery</definition>
+        <definition>wxRibbonGallery* wxRibbonGalleryEvent::GetGallery</definition>
         <argsstring>()</argsstring>
         <name>GetGallery</name>
         <briefdescription>
@@ -53,9 +53,9 @@
         </inbodydescription>
         <location file="interface/wx/ribbon/gallery.h" line="282" column="21"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_ribbon_gallery_event_1a8dbf8d634c24666586762fa010d6f142" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_ribbon_gallery_event_1a2959b9ad64ef7b5a79ff044028702407" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>wxRibbonGalleryItem *</type>
-        <definition>wxRibbonGalleryItem * wxRibbonGalleryEvent::GetGalleryItem</definition>
+        <definition>wxRibbonGalleryItem* wxRibbonGalleryEvent::GetGalleryItem</definition>
         <argsstring>()</argsstring>
         <name>GetGalleryItem</name>
         <briefdescription>
@@ -115,21 +115,15 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="4">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
       <node id="2">
         <label>wxCommandEvent</label>
         <link refid="classwx_command_event"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="3">
-        <label>wxEvent</label>
-        <link refid="classwx_event"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
       </node>
       <node id="1">
         <label>wxRibbonGalleryEvent</label>
@@ -137,20 +131,14 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="2">
-        <label>wxCommandEvent</label>
-        <link refid="classwx_command_event"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>wxEvent</label>
         <link refid="classwx_event"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="4">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -158,9 +146,11 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="5">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
+      <node id="2">
+        <label>wxCommandEvent</label>
+        <link refid="classwx_command_event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="1">
         <label>wxRibbonGalleryEvent</label>
@@ -168,26 +158,36 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/ribbon/gallery.h" line="268" column="1" bodyfile="interface/wx/ribbon/gallery.h" bodystart="269" bodyend="299"/>
+    <location file="interface/wx/ribbon/gallery.h" line="269" column="1" bodyfile="interface/wx/ribbon/gallery.h" bodystart="268" bodyend="299"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxRibbonGalleryEvent</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxRibbonGalleryEvent</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxRibbonGalleryEvent</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxRibbonGalleryEvent</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_command_event_1a3d41eef5b753ff2fd0b822bd1e0c6af9" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetClientData</name></member>
-      <member refid="classwx_command_event_1a48e7b34762b82cdc9d1b5d58d1e6a17f" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetClientObject</name></member>
+      <member refid="classwx_event_1a26878097a702e8d0368da150125d4158" prot="public" virt="pure-virtual"><scope>wxRibbonGalleryEvent</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxRibbonGalleryEvent</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxRibbonGalleryEvent</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxRibbonGalleryEvent</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_command_event_1a85c77819c73081dab3a43bfd2fe02e6a" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetClientData</name></member>
+      <member refid="classwx_command_event_1adab474dc431edb70a05f470ba1b18b08" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetClientObject</name></member>
       <member refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131" prot="public" virt="virtual"><scope>wxRibbonGalleryEvent</scope><name>GetEventCategory</name></member>
-      <member refid="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetEventObject</name></member>
+      <member refid="classwx_event_1a424a4ffaaaf95164d8952ef9ab2ef444" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetEventObject</name></member>
       <member refid="classwx_event_1a01c89719ef6241a6e612a313a259c1c2" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetEventType</name></member>
-      <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetEventUserData</name></member>
+      <member refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetEventUserData</name></member>
       <member refid="classwx_command_event_1abdba7c3e93f0dbf99f5382e60e7a461a" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetExtraLong</name></member>
-      <member refid="classwx_ribbon_gallery_event_1a4fdabeecacb7c75b8141cd39fc545c45" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetGallery</name></member>
-      <member refid="classwx_ribbon_gallery_event_1a8dbf8d634c24666586762fa010d6f142" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetGalleryItem</name></member>
+      <member refid="classwx_ribbon_gallery_event_1a5ad052a4169d0176f4477fd318a15804" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetGallery</name></member>
+      <member refid="classwx_ribbon_gallery_event_1a2959b9ad64ef7b5a79ff044028702407" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetGalleryItem</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetId</name></member>
       <member refid="classwx_command_event_1a24ad2aab26646c762ca3092a7ffd5ccd" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetInt</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetRefData</name></member>
       <member refid="classwx_command_event_1a93609c04b8fd7001259efb5d65645fe6" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetSelection</name></member>
       <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetSkipped</name></member>
       <member refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>GetString</name></member>
@@ -200,7 +200,7 @@
       <member refid="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>m_propagationLevel</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>Ref</name></member>
       <member refid="classwx_event_1a0acb5c75f6e67b8822ad8ba3c5bdc4fe" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>ResumePropagation</name></member>
       <member refid="classwx_command_event_1a1778d16766134e08cafcdb49b06855ce" prot="public" virt="non-virtual"><scope>wxRibbonGalleryEvent</scope><name>SetClientData</name></member>

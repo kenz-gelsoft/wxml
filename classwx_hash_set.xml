@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_hash_set" kind="class" language="C++" prot="public">
     <compoundname>wxHashSet</compoundname>
     <includes local="no">wx/hashset.h</includes>
@@ -271,89 +271,89 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This is a simple, type-safe, and reasonably efficient hash set class, whose interface is a subset of the interface of STL containers. </para>
     </briefdescription>
     <detaileddescription>
+<para>This is a simple, type-safe, and reasonably efficient hash set class, whose interface is a subset of the interface of STL containers.</para>
 <para>The interface is similar to std::tr1::hash_set or std::set classes but notice that, unlike std::set, the contents of a hash set is not sorted.</para>
-<para>Example: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyClass<sp/>{<sp/>...<sp/>};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>same,<sp/>with<sp/>MyClass*<sp/>keys<sp/>(only<sp/>uses<sp/>pointer<sp/>equality!)</highlight><highlight class="normal"></highlight></codeline>
+<para>Example: <programlisting><codeline><highlight class="normal">class<sp/>MyClass<sp/>{<sp/>...<sp/>};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>same,<sp/>with<sp/>MyClass*<sp/>keys<sp/>(only<sp/>uses<sp/>pointer<sp/>equality!)</highlight></codeline>
 <codeline><highlight class="normal">WX_DECLARE_HASH_SET(<sp/>MyClass*,<sp/>wxPointerHash,<sp/>wxPointerEqual,<sp/>MySet1<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>same,<sp/>with<sp/>int<sp/>keys</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">WX_DECLARE_HASH_SET(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>wxIntegerHash,<sp/>wxIntegerEqual,<sp/>MySet2<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>declare<sp/>a<sp/>hash<sp/>set<sp/>with<sp/>string<sp/>keys</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">WX_DECLARE_HASH_SET(<sp/><ref refid="classwx_string" kindref="compound">wxString</ref>,<sp/>wxStringHash,<sp/>wxStringEqual,<sp/>MySet3<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">//<sp/>same,<sp/>with<sp/>int<sp/>keys</highlight></codeline>
+<codeline><highlight class="normal">WX_DECLARE_HASH_SET(<sp/>int,<sp/>wxIntegerHash,<sp/>wxIntegerEqual,<sp/>MySet2<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>declare<sp/>a<sp/>hash<sp/>set<sp/>with<sp/>string<sp/>keys</highlight></codeline>
+<codeline><highlight class="normal">WX_DECLARE_HASH_SET(<sp/>wxString,<sp/>wxStringHash,<sp/>wxStringEqual,<sp/>MySet3<sp/>);</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">MySet1<sp/>h1;</highlight></codeline>
 <codeline><highlight class="normal">MySet2<sp/>h1;</highlight></codeline>
 <codeline><highlight class="normal">MySet3<sp/>h3;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>store<sp/>and<sp/>retrieve<sp/>values</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">h1.insert(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyClass(<sp/>1<sp/>)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">h3.insert(<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
-<codeline><highlight class="normal">h3.insert(<sp/></highlight><highlight class="stringliteral">&quot;bar&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
-<codeline><highlight class="normal">h3.insert(<sp/></highlight><highlight class="stringliteral">&quot;baz&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classwx_hash_set_1a7c2c59a6c60b3375884c88e16b2a3c6a" kindref="member">size</ref><sp/>=<sp/>h3.size();<sp/></highlight><highlight class="comment">//<sp/>now<sp/>is<sp/>three</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_foo<sp/>=<sp/>h3.find(<sp/></highlight><highlight class="stringliteral">&quot;foo&quot;</highlight><highlight class="normal"><sp/>)<sp/>!=<sp/>h3.end();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">h3.insert(<sp/></highlight><highlight class="stringliteral">&quot;bar&quot;</highlight><highlight class="normal"><sp/>);<sp/></highlight><highlight class="comment">//<sp/>still<sp/>has<sp/>size<sp/>three</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>iterate<sp/>over<sp/>all<sp/>the<sp/>elements<sp/>in<sp/>the<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>store<sp/>and<sp/>retrieve<sp/>values</highlight></codeline>
+<codeline><highlight class="normal">h1.insert(<sp/>new<sp/>MyClass(<sp/>1<sp/>)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">h3.insert(<sp/>&quot;foo&quot;<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">h3.insert(<sp/>&quot;bar&quot;<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">h3.insert(<sp/>&quot;baz&quot;<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int<sp/>size<sp/>=<sp/>h3.size();<sp/>//<sp/>now<sp/>is<sp/>three</highlight></codeline>
+<codeline><highlight class="normal">bool<sp/>has_foo<sp/>=<sp/>h3.find(<sp/>&quot;foo&quot;<sp/>)<sp/>!=<sp/>h3.end();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">h3.insert(<sp/>&quot;bar&quot;<sp/>);<sp/>//<sp/>still<sp/>has<sp/>size<sp/>three</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>iterate<sp/>over<sp/>all<sp/>the<sp/>elements<sp/>in<sp/>the<sp/>class</highlight></codeline>
 <codeline><highlight class="normal">MySet3::iterator<sp/>it;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>it<sp/>=<sp/>h3.begin();<sp/>it<sp/>!=<sp/>h3.end();<sp/>++it<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">for(<sp/>it<sp/>=<sp/>h3.begin();<sp/>it<sp/>!=<sp/>h3.end();<sp/>++it<sp/>)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>key<sp/>=<sp/>*it;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>something<sp/>useful<sp/>with<sp/>key</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxString<sp/>key<sp/>=<sp/>*it;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>do<sp/>something<sp/>useful<sp/>with<sp/>key</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <sect1 id="classwx_hash_set_1hashset_declaringnew">
 <title>Declaring new hash set types</title>
-<para><programlisting><codeline><highlight class="normal">WX_DECLARE_HASH_SET(<sp/>KEY_T,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>type<sp/>of<sp/>the<sp/>keys</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HASH_T,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>hasher</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>KEY_EQ_T,<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>key<sp/>equality<sp/>predicate</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CLASSNAME);<sp/></highlight><highlight class="comment">//<sp/>name<sp/>of<sp/>the<sp/>class</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">WX_DECLARE_HASH_SET(<sp/>KEY_T,<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>type<sp/>of<sp/>the<sp/>keys</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HASH_T,<sp/><sp/><sp/><sp/><sp/>//<sp/>hasher</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>KEY_EQ_T,<sp/><sp/><sp/>//<sp/>key<sp/>equality<sp/>predicate</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CLASSNAME);<sp/>//<sp/>name<sp/>of<sp/>the<sp/>class</highlight></codeline>
 </programlisting> The HASH_T and KEY_EQ_T are the types used for the hashing function and key comparison. wxWidgets provides three predefined hashing functions: wxIntegerHash for integer types ( int, long, short, and their unsigned counterparts ), wxStringHash for strings ( <ref refid="classwx_string" kindref="compound">wxString</ref>, wxChar*, char* ), and wxPointerHash for any kind of pointer. Similarly three equality predicates: wxIntegerEqual, wxStringEqual, wxPointerEqual are provided. Using this you could declare a hash set using int values like this:</para>
-<para><programlisting><codeline><highlight class="normal">WX_DECLARE_HASH_SET(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">WX_DECLARE_HASH_SET(<sp/>int,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxIntegerHash,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxIntegerEqual,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MySet<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>using<sp/>a<sp/>user-defined<sp/>class<sp/>for<sp/>keys</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyKey<sp/>{<sp/>...<sp/>};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>hashing<sp/>function</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyKeyHash</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>using<sp/>an<sp/>user-defined<sp/>class<sp/>for<sp/>keys</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>MyKey<sp/>{<sp/>...<sp/>};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>hashing<sp/>function</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>MyKeyHash</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal">public:</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyKeyHash()<sp/>{<sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>operator()(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MyKey&amp;<sp/>k<sp/>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>compute<sp/>the<sp/>hash</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>unsigned<sp/>long<sp/>operator()(<sp/>const<sp/>MyKey&amp;<sp/>k<sp/>)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>compute<sp/>the<sp/>hash</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyKeyHash&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MyKeyHash&amp;)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyKeyHash&amp;<sp/>operator=(const<sp/>MyKeyHash&amp;)<sp/>{<sp/>return<sp/>*this;<sp/>}</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>comparison<sp/>operator</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyKeyEqual</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>comparison<sp/>operator</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>MyKeyEqual</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal">public:</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyKeyEqual()<sp/>{<sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator()(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MyKey&amp;<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MyKey&amp;<sp/>b<sp/>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>compare<sp/>for<sp/>equality</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/>operator()(<sp/>const<sp/>MyKey&amp;<sp/>a,<sp/>const<sp/>MyKey&amp;<sp/>b<sp/>)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>compare<sp/>for<sp/>equality</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyKeyEqual&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MyKeyEqual&amp;)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyKeyEqual&amp;<sp/>operator=(const<sp/>MyKeyEqual&amp;)<sp/>{<sp/>return<sp/>*this;<sp/>}</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">WX_DECLARE_HASH_SET(<sp/>MyKey,<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>type<sp/>of<sp/>the<sp/>keys</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MyKeyHash,<sp/><sp/></highlight><highlight class="comment">//<sp/>hasher</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MyKeyEqual,<sp/></highlight><highlight class="comment">//<sp/>key<sp/>equality<sp/>predicate</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CLASSNAME);<sp/></highlight><highlight class="comment">//<sp/>name<sp/>of<sp/>the<sp/>class</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">WX_DECLARE_HASH_SET(<sp/>MyKey,<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>type<sp/>of<sp/>the<sp/>keys</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MyKeyHash,<sp/><sp/>//<sp/>hasher</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MyKeyEqual,<sp/>//<sp/>key<sp/>equality<sp/>predicate</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CLASSNAME);<sp/>//<sp/>name<sp/>of<sp/>the<sp/>class</highlight></codeline>
 </programlisting></para>
 </sect1>
 <sect1 id="classwx_hash_set_1hashset_types">
@@ -372,13 +372,13 @@
 </sect1>
 <sect1 id="classwx_hash_set_1hashset_iter">
 <title>Iterators</title>
-<para>An iterator is similar to a pointer, and so you can use the usual pointer operations: ++it ( and it++ ) to move to the next element, *it to access the element pointed to, *it to access the value of the element pointed to. Hash sets provide forward only iterators, this means that you can&apos;t use --it, it + 3, it1 - it2.</para>
+<para>An iterator is similar to a pointer, and so you can use the usual pointer operations: ++it ( and it++ ) to move to the next element, *it to access the element pointed to, *it to access the value of the element pointed to. Hash sets provide forward only iterators, this means that you can&apos;t use <ndash/>it, it + 3, it1 - it2.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
 </sect1>
     </detaileddescription>
-    <location file="interface/wx/hashset.h" line="140" column="1" bodyfile="interface/wx/hashset.h" bodystart="141" bodyend="230"/>
+    <location file="interface/wx/hashset.h" line="141" column="1" bodyfile="interface/wx/hashset.h" bodystart="140" bodyend="230"/>
     <listofallmembers>
       <member refid="classwx_hash_set_1a4cf67f7a3ff7e5ebd0a4ae85660168eb" prot="public" virt="non-virtual"><scope>wxHashSet</scope><name>begin</name></member>
       <member refid="classwx_hash_set_1a215be550553feb0f0dc2da770c3a5ff7" prot="public" virt="non-virtual"><scope>wxHashSet</scope><name>begin</name></member>

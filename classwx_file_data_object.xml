@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_file_data_object" kind="class" language="C++" prot="public">
     <compoundname>wxFileDataObject</compoundname>
     <basecompoundref refid="classwx_data_object_simple" prot="public" virt="non-virtual">wxDataObjectSimple</basecompoundref>
@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataobj.h" line="810" column="5"/>
+        <location file="interface/wx/dataobj.h" line="776" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_file_data_object_1af2e24d5d093a189b1a410a7f862123ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -35,11 +35,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataobj.h" line="815" column="10"/>
+        <location file="interface/wx/dataobj.h" line="781" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_file_data_object_1a40727417bb94728bb759b63314138b5b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_file_data_object_1a8e831cbec5f3f6cb5ff2750974dd6620" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_array_string" kindref="compound">wxArrayString</ref> &amp;</type>
-        <definition>const wxArrayString &amp; wxFileDataObject::GetFilenames</definition>
+        <definition>const wxArrayString&amp; wxFileDataObject::GetFilenames</definition>
         <argsstring>() const</argsstring>
         <name>GetFilenames</name>
         <briefdescription>
@@ -49,15 +49,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataobj.h" line="820" column="25"/>
+        <location file="interface/wx/dataobj.h" line="786" column="25"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_file_data_object" kindref="compound">wxFileDataObject</ref> is a specialization of <ref refid="classwx_data_object" kindref="compound">wxDataObject</ref> for file names. </para>
     </briefdescription>
     <detaileddescription>
-<para>The program works with it just as if it were a list of absolute file names, but internally it uses the same format as Explorer and other compatible programs under Windows or GNOME/KDE file manager under Unix which makes it possible to receive files from them using this class.</para>
-<para><heading level="2"></heading>
+<para><ref refid="classwx_file_data_object" kindref="compound">wxFileDataObject</ref> is a specialization of <ref refid="classwx_data_object" kindref="compound">wxDataObject</ref> for file names. The program works with it just as if it were a list of absolute file names, but internally it uses the same format as Explorer and other compatible programs under Windows or GNOME/KDE filemanager under Unix which makes it possible to receive files from them using this class.</para>
+<para><simplesect kind="warning"><para>Under all non-Windows platforms this class is currently &quot;input-only&quot;, i.e. you can receive the files from another application, but copying (or dragging) file(s) from a wxWidgets application is not currently supported. PS: GTK2 should work as well.</para>
+</simplesect>
+<heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
 <para><simplesect kind="see"><para><ref refid="classwx_data_object" kindref="compound">wxDataObject</ref>, <ref refid="classwx_data_object_simple" kindref="compound">wxDataObjectSimple</ref>, <ref refid="classwx_text_data_object" kindref="compound">wxTextDataObject</ref>, <ref refid="classwx_bitmap_data_object" kindref="compound">wxBitmapDataObject</ref>, <ref refid="classwx_data_object" kindref="compound">wxDataObject</ref> </para>
@@ -69,16 +70,16 @@
         <label>wxDataObject</label>
         <link refid="classwx_data_object"/>
       </node>
-      <node id="2">
-        <label>wxDataObjectSimple</label>
-        <link refid="classwx_data_object_simple"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="1">
         <label>wxFileDataObject</label>
         <link refid="classwx_file_data_object"/>
         <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxDataObjectSimple</label>
+        <link refid="classwx_data_object_simple"/>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
@@ -87,20 +88,20 @@
         <label>wxDataObject</label>
         <link refid="classwx_data_object"/>
       </node>
-      <node id="2">
-        <label>wxDataObjectSimple</label>
-        <link refid="classwx_data_object_simple"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="1">
         <label>wxFileDataObject</label>
         <link refid="classwx_file_data_object"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>wxDataObjectSimple</label>
+        <link refid="classwx_data_object_simple"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/dataobj.h" line="804" column="1" bodyfile="interface/wx/dataobj.h" bodystart="805" bodyend="821"/>
+    <location file="interface/wx/dataobj.h" line="771" column="1" bodyfile="interface/wx/dataobj.h" bodystart="770" bodyend="787"/>
     <listofallmembers>
       <member refid="classwx_file_data_object_1af2e24d5d093a189b1a410a7f862123ba" prot="public" virt="non-virtual"><scope>wxFileDataObject</scope><name>AddFile</name></member>
       <member refid="classwx_data_object_1a7623fd02a6bef5dba7c96ff0a1a692efa1f94b69e55238c5470f85e252b5fd8df" prot="public" virt="non-virtual"><scope>wxFileDataObject</scope><name>Both</name></member>
@@ -111,8 +112,8 @@
       <member refid="classwx_data_object_1aa48761390b25d797d4cad393db752568" prot="public" virt="pure-virtual" ambiguityscope="wxDataObject::"><scope>wxFileDataObject</scope><name>GetDataHere</name></member>
       <member refid="classwx_data_object_simple_1a1188fa9b93e42d90a0710475d255eef3" prot="public" virt="virtual"><scope>wxFileDataObject</scope><name>GetDataSize</name></member>
       <member refid="classwx_data_object_1a10674c65e59f08ba318f942e410b8627" prot="public" virt="pure-virtual" ambiguityscope="wxDataObject::"><scope>wxFileDataObject</scope><name>GetDataSize</name></member>
-      <member refid="classwx_file_data_object_1a40727417bb94728bb759b63314138b5b" prot="public" virt="non-virtual"><scope>wxFileDataObject</scope><name>GetFilenames</name></member>
-      <member refid="classwx_data_object_simple_1a8c34f320fa1e863be6a4a5c67a4d7a24" prot="public" virt="non-virtual"><scope>wxFileDataObject</scope><name>GetFormat</name></member>
+      <member refid="classwx_file_data_object_1a8e831cbec5f3f6cb5ff2750974dd6620" prot="public" virt="non-virtual"><scope>wxFileDataObject</scope><name>GetFilenames</name></member>
+      <member refid="classwx_data_object_simple_1a77fd9a7b98ad483ea40fb5389c00bb75" prot="public" virt="non-virtual"><scope>wxFileDataObject</scope><name>GetFormat</name></member>
       <member refid="classwx_data_object_1a3f82815810bf4dcc34e1a5783c9b8a62" prot="public" virt="pure-virtual"><scope>wxFileDataObject</scope><name>GetFormatCount</name></member>
       <member refid="classwx_data_object_1a47570ed6123bbebec195a2b7f843103c" prot="public" virt="pure-virtual"><scope>wxFileDataObject</scope><name>GetPreferredFormat</name></member>
       <member refid="classwx_data_object_1ad974e869ebbc2a67e4d8793526022aca" prot="public" virt="non-virtual"><scope>wxFileDataObject</scope><name>IsSupported</name></member>

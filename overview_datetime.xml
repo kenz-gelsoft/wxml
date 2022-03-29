@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_datetime" kind="page">
     <compoundname>overview_datetime</compoundname>
     <title>Date and Time</title>
@@ -13,7 +13,7 @@
         <reference>overview_datetime_1overview_datetime_timespandiff</reference>
     </tocsect>
       <tocsect>
-        <name>Date Arithmetic</name>
+        <name>Date Arithmetics</name>
         <reference>overview_datetime_1overview_datetime_arithmetics</reference>
     </tocsect>
       <tocsect>
@@ -34,11 +34,9 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>wxWidgets provides a set of powerful classes to work with dates and times. </para>
     </briefdescription>
     <detaileddescription>
-<para>wxWidgets provides a set of powerful classes to work with dates and times.</para>
-<para>Some of the supported features of <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref> class are:</para>
+<para>wxWidgets provides a set of powerful classes to work with dates and times. Some of the supported features of <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref> class are:</para>
 <para><itemizedlist>
 <listitem><para>Wide range: the range of supported dates goes from about 4714 B.C. to some 480 million years in the future. </para>
 </listitem>
@@ -68,7 +66,7 @@ There are 3 main classes declared in <computeroutput><ref refid="interface_2wx_2
 <para>So, unless you plan to implement some kind of natural language parsing in the program, you should probably use <ref refid="classwx_time_span" kindref="compound">wxTimeSpan</ref> instead of <ref refid="classwx_date_span" kindref="compound">wxDateSpan</ref> (which is also more efficient). However, <ref refid="classwx_date_span" kindref="compound">wxDateSpan</ref> may be very useful in situations when you do need to understand what &apos;in a month&apos; means (of course, it is just <computeroutput><ref refid="classwx_date_time_1a6e6c37a0414bb4831e2cc03b37f498a2" kindref="member">wxDateTime::Now()</ref></computeroutput> + <ref refid="classwx_date_span_1a14e488e59083c754acfd96adf5a291d9" kindref="member">wxDateSpan::Month()</ref>).</para>
 </sect1>
 <sect1 id="overview_datetime_1overview_datetime_arithmetics">
-<title>Date Arithmetic</title>
+<title>Date Arithmetics</title>
 <para>Many different operations may be performed with the dates, however not all of them make sense. For example, multiplying a date by a number is an invalid operation, even though multiplying either of the time span classes by a number is perfectly valid.</para>
 <para>Here is what can be done:</para>
 <para><itemizedlist>
@@ -87,13 +85,13 @@ For all these operations there are corresponding global (overloaded) operators a
 <title>Time Zone Considerations</title>
 <para>Although the time is always stored internally in GMT, you will usually work in the local time zone. Because of this, all <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref> constructors and setters which take the broken down date assume that these values are for the local time zone. Thus, <computeroutput><ref refid="classwx_date_time" kindref="compound">wxDateTime(1, wxDateTime::Jan, 1970)</ref></computeroutput> will not correspond to the <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref> Epoch unless you happen to live in the UK. All methods returning the date components (year, month, day, hour, minute, second...) will also return the correct values for the local time zone by default, so, generally, doing the natural things will lead to natural and correct results.</para>
 <para>If you only want to do this, you may safely skip the rest of this section. However, if you want to work with different time zones, you should read it to the end.</para>
-<para>In this (rare) case, you are still limited to the local time zone when constructing <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref> objects, i.e. there is no way to construct a <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref> corresponding to the given date in, say, Pacific Standard Time. To do it, you will need to call <ref refid="classwx_date_time_1ac7c94044cece74f9e8b357204c460f5f" kindref="member">wxDateTime::ToTimezone</ref> or <ref refid="classwx_date_time_1a4782b88f89f129c7e8127716cf3df58b" kindref="member">wxDateTime::MakeTimezone</ref> methods to adjust the date for the target time zone. There are also special versions of these functions <ref refid="classwx_date_time_1a528886a6a80ec4490b2a16679c10a683" kindref="member">wxDateTime::ToUTC</ref> and <ref refid="classwx_date_time_1a6c2fdc74ad77726e164b8139fbf2eaf3" kindref="member">wxDateTime::MakeUTC</ref> for the most common case - when the date should be constructed in UTC.</para>
+<para>In this (rare) case, you are still limited to the local time zone when constructing <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref> objects, i.e. there is no way to construct a <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref> corresponding to the given date in, say, Pacific Standard Time. To do it, you will need to call <ref refid="classwx_date_time_1ac7c94044cece74f9e8b357204c460f5f" kindref="member">wxDateTime::ToTimezone</ref> or <ref refid="classwx_date_time_1ad6ce9eb1fb237eda8013695ebd531af1" kindref="member">wxDateTime::MakeTimezone</ref> methods to adjust the date for the target time zone. There are also special versions of these functions <ref refid="classwx_date_time_1a528886a6a80ec4490b2a16679c10a683" kindref="member">wxDateTime::ToUTC</ref> and <ref refid="classwx_date_time_1aa7e62cebf49c1c6b765e70ec19caedc0" kindref="member">wxDateTime::MakeUTC</ref> for the most common case - when the date should be constructed in UTC.</para>
 <para>You also can just retrieve the value for some time zone without converting the object to it first. For this you may pass TimeZone argument to any of the methods which are affected by the time zone (all methods getting date components and the date formatting ones, for example). In particular, the Format() family of methods accepts a TimeZone parameter and this allows to simply print time in any time zone.</para>
 <para>To see how to do it, the last issue to address is how to construct a TimeZone object which must be passed to all these methods. First of all, you may construct it manually by specifying the time zone offset in seconds from GMT, but usually you will just use one of the <ref refid="overview_datetime" kindref="compound">Date and Time</ref> and let the conversion constructor do the job.</para>
 <para>I.e. you would just write</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_date_time" kindref="compound">wxDateTime</ref><sp/>dt(...whatever...);</highlight></codeline>
-<codeline><highlight class="normal">wxPrintf(</highlight><highlight class="stringliteral">&quot;The<sp/>time<sp/>is<sp/>%s<sp/>in<sp/>local<sp/>time<sp/>zone&quot;</highlight><highlight class="normal">,<sp/>dt.FormatTime());</highlight></codeline>
-<codeline><highlight class="normal">wxPrintf(</highlight><highlight class="stringliteral">&quot;The<sp/>time<sp/>is<sp/>%s<sp/>in<sp/>GMT&quot;</highlight><highlight class="normal">,<sp/>dt.FormatTime(wxDateTime::GMT));</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxDateTime<sp/>dt(...whatever...);</highlight></codeline>
+<codeline><highlight class="normal">wxPrintf(&quot;The<sp/>time<sp/>is<sp/>%s<sp/>in<sp/>local<sp/>time<sp/>zone&quot;,<sp/>dt.FormatTime());</highlight></codeline>
+<codeline><highlight class="normal">wxPrintf(&quot;The<sp/>time<sp/>is<sp/>%s<sp/>in<sp/>GMT&quot;,<sp/>dt.FormatTime(wxDateTime::GMT));</highlight></codeline>
 </programlisting></para>
 </sect1>
 <sect1 id="overview_datetime_1overview_datetime_dst">
@@ -112,6 +110,5 @@ For all these operations there are corresponding global (overloaded) operators a
 <para>The old classes for date/time manipulations ported from wxWidgets version 1.xx are still included but are reimplemented in terms of <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref>. However, using them is strongly discouraged because they have a few quirks/bugs and were not &apos;Y2K&apos; compatible. </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/datetime.h"/>
   </compounddef>
 </doxygen>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_dialog" kind="page">
     <compoundname>overview_dialog</compoundname>
     <title>wxDialog Overview</title>
@@ -24,7 +24,6 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>Classes: <ref refid="classwx_dialog" kindref="compound">wxDialog</ref>, <ref refid="classwx_dialog_layout_adapter" kindref="compound">wxDialogLayoutAdapter</ref>. </para>
     </briefdescription>
     <detaileddescription>
 <para>Classes: <ref refid="classwx_dialog" kindref="compound">wxDialog</ref>, <ref refid="classwx_dialog_layout_adapter" kindref="compound">wxDialogLayoutAdapter</ref></para>
@@ -43,9 +42,9 @@ For a set of dialog convenience functions, including file selection, see <ref re
 <title>Automatic Scrolled Dialogs</title>
 <para>As an ever greater variety of mobile hardware comes to market, it becomes more imperative for wxWidgets applications to adapt to these platforms without putting too much burden on the programmer. One area where wxWidgets can help is in adapting dialogs for the lower resolution screens that inevitably accompany a smaller form factor. <ref refid="classwx_dialog" kindref="compound">wxDialog</ref> therefore supplies a global <ref refid="classwx_dialog_layout_adapter" kindref="compound">wxDialogLayoutAdapter</ref> class that implements automatic scrolling adaptation for most sizer-based custom dialogs.</para>
 <para>Many applications should therefore be able to adapt to small displays with little or no work, as far as dialogs are concerned. By default this adaptation is off. To switch scrolling adaptation on globally in your application, call the static function <ref refid="classwx_dialog_1a016cfd686f75bcfc5f7b6f127be74c7c" kindref="member">wxDialog::EnableLayoutAdaptation</ref> passing true. You can also adjust adaptation on a per-dialog basis by calling <ref refid="classwx_dialog_1a9f949c545ca70571cec8cd2fcbfc0991" kindref="member">wxDialog::SetLayoutAdaptationMode</ref> with one of <computeroutput>wxDIALOG_ADAPTATION_MODE_DEFAULT</computeroutput> (use the global setting), <computeroutput>wxDIALOG_ADAPTATION_MODE_ENABLED</computeroutput> or <computeroutput>wxDIALOG_ADAPTATION_MODE_DISABLED</computeroutput>.</para>
-<para>The last two modes override the global adaptation setting. With adaptation enabled, if the display size is too small for the dialog, wxWidgets (or rather the standard adapter class wxStandardDialogLayoutAdapter) will make part of the dialog scrolling, leaving standard buttons in a non-scrolling part at the bottom of the dialog. This is done as follows, in <ref refid="classwx_dialog_layout_adapter_1adb59c3238b594b88faa4aab892b9bdd8" kindref="member">wxDialogLayoutAdapter::DoLayoutAdaptation</ref> called from within <ref refid="classwx_dialog_1a2ebd5f386b355a0f65db44ce546b1b9e" kindref="member">wxDialog::Show</ref> or <ref refid="classwx_dialog_1a6e078c3d0653f75ad3c34a37c0b54637" kindref="member">wxDialog::ShowModal</ref>:</para>
+<para>The last two modes override the global adaptation setting. With adaptation enabled, if the display size is too small for the dialog, wxWidgets (or rather the standard adapter class wxStandardDialogLayoutAdapter) will make part of the dialog scrolling, leaving standard buttons in a non-scrolling part at the bottom of the dialog. This is done as follows, in <ref refid="classwx_dialog_layout_adapter_1adb59c3238b594b88faa4aab892b9bdd8" kindref="member">wxDialogLayoutAdapter::DoLayoutAdaptation</ref> called from within <ref refid="classwx_dialog_1ae8e5fa98d473b812b8d1c2f163b65c67" kindref="member">wxDialog::Show</ref> or <ref refid="classwx_dialog_1a6e078c3d0653f75ad3c34a37c0b54637" kindref="member">wxDialog::ShowModal</ref>:</para>
 <para><itemizedlist>
-<listitem><para>If <ref refid="classwx_dialog_1a7f1d8cf4b7041fe90f2ce61c4360a234" kindref="member">wxDialog::GetContentWindow</ref> returns a window derived from <ref refid="classwx_book_ctrl_base" kindref="compound">wxBookCtrlBase</ref>, the pages are made scrollable and no other adaptation is done. </para>
+<listitem><para>If <ref refid="classwx_dialog_1a8fe1486ef8d74bc800a4eab8e26c9976" kindref="member">wxDialog::GetContentWindow</ref> returns a window derived from <ref refid="classwx_book_ctrl_base" kindref="compound">wxBookCtrlBase</ref>, the pages are made scrollable and no other adaptation is done. </para>
 </listitem>
 <listitem><para>wxWidgets looks for a <ref refid="classwx_std_dialog_button_sizer" kindref="compound">wxStdDialogButtonSizer</ref> and uses it for the non-scrolling part. </para>
 </listitem>
@@ -61,7 +60,7 @@ For a set of dialog convenience functions, including file selection, see <ref re
 <title>Customising Scrolling Adaptation</title>
 <para>In addition to switching adaptation on and off globally and per dialog, you can choose how aggressively wxWidgets will search for standard buttons by setting <ref refid="classwx_dialog_1a9eaef1625f225bc25f8c92449d123a67" kindref="member">wxDialog::SetLayoutAdaptationLevel</ref>. By default, all the steps described above will be performed but by setting the level to 1, for example, you can choose to only look for <ref refid="classwx_std_dialog_button_sizer" kindref="compound">wxStdDialogButtonSizer</ref>.</para>
 <para>You can use <ref refid="classwx_dialog_1af3a75b9d24abe5c79d1bb5397c67b108" kindref="member">wxDialog::AddMainButtonId</ref> to add identifiers for buttons that should also be treated as standard buttons for the non-scrolling area.</para>
-<para>You can derive your own class from <ref refid="classwx_dialog_layout_adapter" kindref="compound">wxDialogLayoutAdapter</ref> or wxStandardDialogLayoutAdapter and call <ref refid="classwx_dialog_1a321e92831be659bbb6ddafe075d855d7" kindref="member">wxDialog::SetLayoutAdapter</ref>, deleting the old object that this function returns. Override the functions CanDoLayoutAdaptation and DoLayoutAdaptation to test for adaptation applicability and perform the adaptation.</para>
+<para>You can derive your own class from <ref refid="classwx_dialog_layout_adapter" kindref="compound">wxDialogLayoutAdapter</ref> or wxStandardDialogLayoutAdapter and call <ref refid="classwx_dialog_1a371e3d760ea9beb49b74c5ffee52a0ee" kindref="member">wxDialog::SetLayoutAdapter</ref>, deleting the old object that this function returns. Override the functions CanDoLayoutAdaptation and DoLayoutAdaptation to test for adaptation applicability and perform the adaptation.</para>
 <para>You can also override <ref refid="classwx_dialog_1a233dd280efa8ee93c61792e439904731" kindref="member">wxDialog::CanDoLayoutAdaptation</ref> and <ref refid="classwx_dialog_1a919613599a9e919913146e21d09b44c0" kindref="member">wxDialog::DoLayoutAdaptation</ref> in a class derived from <ref refid="classwx_dialog" kindref="compound">wxDialog</ref>.</para>
 </sect2>
 <sect2 id="overview_dialog_1overview_dialog_autoscrolling_fail">
@@ -89,18 +88,17 @@ You can help make sure that your dialogs will continue to function after adaptat
 </listitem>
 <listitem><para>using an intermediate sizer under the main sizer, a false top-level sizer that can be relied on to exist for the purposes of manipulating child sizers and windows; </para>
 </listitem>
-<listitem><para>overriding <ref refid="classwx_dialog_1a7f1d8cf4b7041fe90f2ce61c4360a234" kindref="member">wxDialog::GetContentWindow</ref> to return a book control if your dialog implements pages: wxWidgets will then only make the pages scrollable.</para>
+<listitem><para>overriding <ref refid="classwx_dialog_1a8fe1486ef8d74bc800a4eab8e26c9976" kindref="member">wxDialog::GetContentWindow</ref> to return a book control if your dialog implements pages: wxWidgets will then only make the pages scrollable.</para>
 </listitem>
 </itemizedlist>
 </para>
 </sect2>
 <sect2 id="overview_dialog_1overview_dialog_propertysheet">
 <title>wxPropertySheetDialog and wxWizard</title>
-<para>Adaptation for <ref refid="classwx_property_sheet_dialog" kindref="compound">wxPropertySheetDialog</ref> is always done by simply making the pages scrollable, since <ref refid="classwx_dialog_1a7f1d8cf4b7041fe90f2ce61c4360a234" kindref="member">wxDialog::GetContentWindow</ref> returns the dialog&apos;s book control and this is handled by the standard layout adapter.</para>
+<para>Adaptation for <ref refid="classwx_property_sheet_dialog" kindref="compound">wxPropertySheetDialog</ref> is always done by simply making the pages scrollable, since <ref refid="classwx_dialog_1a8fe1486ef8d74bc800a4eab8e26c9976" kindref="member">wxDialog::GetContentWindow</ref> returns the dialog&apos;s book control and this is handled by the standard layout adapter.</para>
 <para><ref refid="classwx_wizard" kindref="compound">wxWizard</ref> uses its own CanDoLayoutAdaptation and DoLayoutAdaptation functions rather than the global adapter: again, only the wizard pages are made scrollable. </para>
 </sect2>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/dialog.h"/>
   </compounddef>
 </doxygen>

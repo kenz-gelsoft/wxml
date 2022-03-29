@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_mutex" kind="class" language="C++" prot="public">
     <compoundname>wxMutex</compoundname>
     <includes local="no">wx/thread.h</includes>
@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="1649" column="5"/>
+        <location file="interface/wx/thread.h" line="1630" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_mutex_1aca15d3e1f04cf77b25b8a25a37c7281d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="1654" column="5"/>
+        <location file="interface/wx/thread.h" line="1635" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_mutex_1a5291e0e421262f420051390421ba0d09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="interface_2wx_2thread_8h_1ac8c1ee75d2a2da3be8eabc629f71c1a7" kindref="member">wxMutexError</ref></type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="1665" column="18"/>
+        <location file="interface/wx/thread.h" line="1646" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_mutex_1a1e22609b14aefe8a248b2e48bca51415" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="interface_2wx_2thread_8h_1ac8c1ee75d2a2da3be8eabc629f71c1a7" kindref="member">wxMutexError</ref></type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="1672" column="18"/>
+        <location file="interface/wx/thread.h" line="1653" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_mutex_1a4485a8234390d1adc69426337069602b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="interface_2wx_2thread_8h_1ac8c1ee75d2a2da3be8eabc629f71c1a7" kindref="member">wxMutexError</ref></type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="1679" column="18"/>
+        <location file="interface/wx/thread.h" line="1660" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_mutex_1aad45c7189e66d6d49eeaf1135ab24af7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="interface_2wx_2thread_8h_1ac8c1ee75d2a2da3be8eabc629f71c1a7" kindref="member">wxMutexError</ref></type>
@@ -110,55 +110,48 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="1686" column="18"/>
+        <location file="interface/wx/thread.h" line="1667" column="18"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A mutex object is a synchronization object whose state is set to signaled when it is not owned by any thread, and nonsignaled when it is owned. </para>
     </briefdescription>
     <detaileddescription>
-<para>Its name comes from its usefulness in coordinating mutually-exclusive access to a shared resource as only one thread at a time can own a mutex object.</para>
-<para><simplesect kind="note"><para>In C++11 programs, prefer using <computeroutput>std::mutex</computeroutput> to this class.</para>
-</simplesect>
-Mutexes may be recursive in the sense that a thread can lock a mutex which it had already locked before (instead of dead locking the entire process in this situation by starting to wait on a mutex which will never be released while the thread is waiting) but using them is not recommended under Unix and they are <bold>not</bold> recursive by default. The reason for this is that recursive mutexes are not supported by all Unix flavours and, worse, they cannot be used with <ref refid="classwx_condition" kindref="compound">wxCondition</ref>.</para>
+<para>A mutex object is a synchronization object whose state is set to signaled when it is not owned by any thread, and nonsignaled when it is owned. Its name comes from its usefulness in coordinating mutually-exclusive access to a shared resource as only one thread at a time can own a mutex object.</para>
+<para>Mutexes may be recursive in the sense that a thread can lock a mutex which it had already locked before (instead of dead locking the entire process in this situation by starting to wait on a mutex which will never be released while the thread is waiting) but using them is not recommended under Unix and they are <bold>not</bold> recursive by default. The reason for this is that recursive mutexes are not supported by all Unix flavours and, worse, they cannot be used with <ref refid="classwx_condition" kindref="compound">wxCondition</ref>.</para>
 <para>For example, when several threads use the data stored in the linked list, modifications to the list should only be allowed to one thread at a time because during a new node addition the list integrity is temporarily broken (this is also called <emphasis>program</emphasis> <emphasis>invariant</emphasis>).</para>
-<para><programlisting><codeline><highlight class="comment">//<sp/>this<sp/>variable<sp/>has<sp/>an<sp/>&quot;s_&quot;<sp/>prefix<sp/>because<sp/>it<sp/>is<sp/>static:<sp/>seeing<sp/>an<sp/>&quot;s_&quot;<sp/>in</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>a<sp/>multithreaded<sp/>program<sp/>is<sp/>in<sp/>general<sp/>a<sp/>good<sp/>sign<sp/>that<sp/>you<sp/>should<sp/>use<sp/>a</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>mutex<sp/>(or<sp/>a<sp/>critical<sp/>section)</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classwx_mutex" kindref="compound">wxMutex</ref><sp/>s_mutexProtectingTheGlobalData;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>we<sp/>store<sp/>some<sp/>numbers<sp/>in<sp/>this<sp/>global<sp/>array<sp/>which<sp/>is<sp/>presumably<sp/>used<sp/>by</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>several<sp/>threads<sp/>simultaneously</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="dynarray_8h_1add87f199292e36ee87efd6d7f0d4ee66" kindref="member">wxArrayInt</ref><sp/>s_data;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyThread::AddNewNode(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num)</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//<sp/>this<sp/>variable<sp/>has<sp/>an<sp/>&quot;s_&quot;<sp/>prefix<sp/>because<sp/>it<sp/>is<sp/>static:<sp/>seeing<sp/>an<sp/>&quot;s_&quot;<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>a<sp/>multithreaded<sp/>program<sp/>is<sp/>in<sp/>general<sp/>a<sp/>good<sp/>sign<sp/>that<sp/>you<sp/>should<sp/>use<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>mutex<sp/>(or<sp/>a<sp/>critical<sp/>section)</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>wxMutex<sp/>*s_mutexProtectingTheGlobalData;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>we<sp/>store<sp/>some<sp/>numbers<sp/>in<sp/>this<sp/>global<sp/>array<sp/>which<sp/>is<sp/>presumably<sp/>used<sp/>by</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>several<sp/>threads<sp/>simultaneously</highlight></codeline>
+<codeline><highlight class="normal">wxArrayInt<sp/>s_data;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>MyThread::AddNewNode(int<sp/>num)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ensure<sp/>that<sp/>no<sp/>other<sp/>thread<sp/>accesses<sp/>the<sp/>list</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note<sp/>that<sp/>using<sp/>Lock()<sp/>and<sp/>Unlock()<sp/>explicitly<sp/>is<sp/>not<sp/>recommended</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>and<sp/>only<sp/>done<sp/>here<sp/>for<sp/>illustrative<sp/>purposes,<sp/>prefer<sp/>to<sp/>use</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wxMutexLocker,<sp/>as<sp/>shown<sp/>below,<sp/>instead!</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>s_mutexProtectingTheGlobalData.<ref refid="classwx_mutex_1a5291e0e421262f420051390421ba0d09" kindref="member">Lock</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>ensure<sp/>that<sp/>no<sp/>other<sp/>thread<sp/>accesses<sp/>the<sp/>list</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>s_mutexProtectingTheGlobalList-&gt;Lock();</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>s_data.Add(num);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>s_mutexProtectingTheGlobaData.Unlock();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>s_mutexProtectingTheGlobalList-&gt;Unlock();</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>return<sp/>true<sp/>if<sp/>the<sp/>given<sp/>number<sp/>is<sp/>greater<sp/>than<sp/>all<sp/>array<sp/>elements</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>MyThread::IsGreater(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>return<sp/>true<sp/>if<sp/>the<sp/>given<sp/>number<sp/>is<sp/>greater<sp/>than<sp/>all<sp/>array<sp/>elements</highlight></codeline>
+<codeline><highlight class="normal">bool<sp/>MyThread::IsGreater(int<sp/>num)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>before<sp/>using<sp/>the<sp/>list<sp/>we<sp/>must<sp/>acquire<sp/>the<sp/>mutex</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_mutex_locker" kindref="compound">wxMutexLocker</ref><sp/>lock(s_mutexProtectingTheGlobalData);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>s_data.Count();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>0;<sp/>n<sp/>&lt;<sp/>count;<sp/>n++<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>before<sp/>using<sp/>the<sp/>list<sp/>we<sp/>must<sp/>acquire<sp/>the<sp/>mutex</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxMutexLocker<sp/>lock(s_mutexProtectingTheGlobalData);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>size_t<sp/>count<sp/>=<sp/>s_data.Count();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(<sp/>size_t<sp/>n<sp/>=<sp/>0;<sp/>n<sp/>&lt;<sp/>count;<sp/>n++<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>s_data[n]<sp/>&gt;<sp/>num<sp/>)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>s_data[n]<sp/>&gt;<sp/>num<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>false;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>true;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>Notice how <ref refid="classwx_mutex_locker" kindref="compound">wxMutexLocker</ref> was used in the second function to ensure that the mutex is unlocked in any case: whether the function returns true or false (because the destructor of the local object <emphasis>lock</emphasis> is always called). Using this class instead of directly using <ref refid="classwx_mutex" kindref="compound">wxMutex</ref> is, in general, safer and is even more so if your program uses C++ exceptions.</para>
@@ -169,7 +162,7 @@ Mutexes may be recursive in the sense that a thread can lock a mutex which it ha
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/thread.h" line="1643" column="1" bodyfile="interface/wx/thread.h" bodystart="1644" bodyend="1687"/>
+    <location file="interface/wx/thread.h" line="1625" column="1" bodyfile="interface/wx/thread.h" bodystart="1624" bodyend="1668"/>
     <listofallmembers>
       <member refid="classwx_mutex_1a5291e0e421262f420051390421ba0d09" prot="public" virt="non-virtual"><scope>wxMutex</scope><name>Lock</name></member>
       <member refid="classwx_mutex_1a1e22609b14aefe8a248b2e48bca51415" prot="public" virt="non-virtual"><scope>wxMutex</scope><name>LockTimeout</name></member>

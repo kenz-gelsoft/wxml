@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_query_layout_info_event" kind="class" language="C++" prot="public">
     <compoundname>wxQueryLayoutInfoEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -194,10 +194,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This event is sent when <ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref> wishes to get the size, orientation and alignment of a window. </para>
     </briefdescription>
     <detaileddescription>
-<para>More precisely, the event is sent by the OnCalculateLayout handler which is itself invoked by <ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref>.</para>
+<para>This event is sent when <ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref> wishes to get the size, orientation and alignment of a window. More precisely, the event is sent by the OnCalculateLayout handler which is itself invoked by <ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref>.</para>
 <para><linebreak/>
 <heading level="2">Events using this class</heading>
 </para>
@@ -208,18 +207,12 @@
 </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxadv" kindref="member">wxAdvanced</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
 <para><simplesect kind="see"><para><ref refid="classwx_calculate_layout_event" kindref="compound">wxCalculateLayoutEvent</ref>, <ref refid="classwx_sash_layout_window" kindref="compound">wxSashLayoutWindow</ref>, <ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref>. </para>
 </simplesect>
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxEvent</label>
-        <link refid="classwx_event"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -230,14 +223,14 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="2">
         <label>wxEvent</label>
         <link refid="classwx_event"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -245,33 +238,39 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="4">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
-      </node>
       <node id="1">
         <label>wxQueryLayoutInfoEvent</label>
         <link refid="classwx_query_layout_info_event"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/laywin.h" line="305" column="1" bodyfile="interface/wx/laywin.h" bodystart="306" bodyend="371"/>
+    <location file="interface/wx/laywin.h" line="306" column="1" bodyfile="interface/wx/laywin.h" bodystart="305" bodyend="371"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxQueryLayoutInfoEvent</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxQueryLayoutInfoEvent</scope><name>CreateRefData</name></member>
+      <member refid="classwx_event_1a26878097a702e8d0368da150125d4158" prot="public" virt="pure-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxQueryLayoutInfoEvent</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxQueryLayoutInfoEvent</scope><name>CreateRefData</name></member>
       <member refid="classwx_query_layout_info_event_1a0535ef2c7e80dd0d5dd5a913e9c0efa0" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetAlignment</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetClassInfo</name></member>
       <member refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131" prot="public" virt="virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetEventCategory</name></member>
-      <member refid="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetEventObject</name></member>
+      <member refid="classwx_event_1a424a4ffaaaf95164d8952ef9ab2ef444" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetEventObject</name></member>
       <member refid="classwx_event_1a01c89719ef6241a6e612a313a259c1c2" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetEventType</name></member>
-      <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetEventUserData</name></member>
+      <member refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetEventUserData</name></member>
       <member refid="classwx_query_layout_info_event_1a5473a15165e30136dbd3f37df3c56214" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetFlags</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetId</name></member>
       <member refid="classwx_query_layout_info_event_1ac81b192a70decf95f1689c3dd3bab406" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetOrientation</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetRefData</name></member>
       <member refid="classwx_query_layout_info_event_1ad21f4fce3a1843e868bf6dabf200e491" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetRequestedLength</name></member>
       <member refid="classwx_query_layout_info_event_1a6350973483b59a95f172f64926936c36" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetSize</name></member>
       <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>GetSkipped</name></member>
@@ -282,7 +281,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>m_propagationLevel</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>Ref</name></member>
       <member refid="classwx_event_1a0acb5c75f6e67b8822ad8ba3c5bdc4fe" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>ResumePropagation</name></member>
       <member refid="classwx_query_layout_info_event_1af64b80ffa35bcb89a4a3ffa2a08df1e7" prot="public" virt="non-virtual"><scope>wxQueryLayoutInfoEvent</scope><name>SetAlignment</name></member>

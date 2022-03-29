@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_drag_image" kind="class" language="C++" prot="public">
     <compoundname>wxDragImage</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -498,9 +498,9 @@ You can move the image either when the image is hidden or shown, but in general 
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class is used when you wish to drag an object on the screen, and a simple cursor is not enough. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class is used when you wish to drag an object on the screen, and a simple cursor is not enough.</para>
 <para>On Windows, the Win32 API is used to achieve smooth dragging. On other platforms, wxGenericDragImage is used. Applications may also prefer to use wxGenericDragImage on Windows, too.</para>
 <para>To use this class, when you wish to start dragging an image, create a <ref refid="classwx_drag_image" kindref="compound">wxDragImage</ref> object and store it somewhere you can access it as the drag progresses. Call <ref refid="classwx_drag_image_1a7af71929aec6994d903864ed95c7f7b6" kindref="member">BeginDrag()</ref> to start, and <ref refid="classwx_drag_image_1a481b3dbce5200247a46623431a99df13" kindref="member">EndDrag()</ref> to stop the drag. To move the image, initially call <ref refid="classwx_drag_image_1a53ba3036e7cf017d32a548e95d9072e3" kindref="member">Show()</ref> and then <ref refid="classwx_drag_image_1a51b7a0377bbdd79ad8d93c7bb1a67644" kindref="member">Move()</ref>. If you wish to update the screen contents during the drag (for example, highlight an item as in the dragimag sample), first call <ref refid="classwx_drag_image_1aeda0c97def022fc3cacbc879f053f93a" kindref="member">Hide()</ref>, update the screen, call <ref refid="classwx_drag_image_1a51b7a0377bbdd79ad8d93c7bb1a67644" kindref="member">Move()</ref>, and then call <ref refid="classwx_drag_image_1a53ba3036e7cf017d32a548e95d9072e3" kindref="member">Show()</ref>.</para>
 <para>You can drag within one window, or you can use full-screen dragging either across the whole screen, or just restricted to one area of the screen to save resources. If you want the user to drag between two windows, then you will need to use full-screen dragging.</para>
@@ -513,24 +513,18 @@ You can move the image either when the image is hidden or shown, but in general 
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxDragImage</label>
-        <link refid="classwx_drag_image"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="1">
         <label>wxDragImage</label>
         <link refid="classwx_drag_image"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -538,30 +532,36 @@ You can move the image either when the image is hidden or shown, but in general 
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxDragImage</label>
+        <link refid="classwx_drag_image"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/dragimag.h" line="39" column="1" bodyfile="interface/wx/dragimag.h" bodystart="40" bodyend="216"/>
+    <location file="interface/wx/dragimag.h" line="40" column="1" bodyfile="interface/wx/dragimag.h" bodystart="39" bodyend="216"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxDragImage</scope><name>AllocExclusive</name></member>
       <member refid="classwx_drag_image_1a7af71929aec6994d903864ed95c7f7b6" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>BeginDrag</name></member>
       <member refid="classwx_drag_image_1a351e1e0cdcd0ade8154aac60ae65484d" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>BeginDrag</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxDragImage</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxDragImage</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxDragImage</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxDragImage</scope><name>CreateRefData</name></member>
       <member refid="classwx_drag_image_1ae97fbe2de0826ae4e1cd69ea22e5c3d9" prot="public" virt="virtual"><scope>wxDragImage</scope><name>DoDrawImage</name></member>
       <member refid="classwx_drag_image_1a481b3dbce5200247a46623431a99df13" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>EndDrag</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxDragImage</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxDragImage</scope><name>GetClassInfo</name></member>
       <member refid="classwx_drag_image_1a1e239cc90d6d4756a804c46d1a9b022e" prot="public" virt="virtual"><scope>wxDragImage</scope><name>GetImageRect</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>GetRefData</name></member>
       <member refid="classwx_drag_image_1aeda0c97def022fc3cacbc879f053f93a" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>Hide</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxDragImage</scope><name>m_refData</name></member>
       <member refid="classwx_drag_image_1a51b7a0377bbdd79ad8d93c7bb1a67644" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>Move</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>Ref</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>SetRefData</name></member>
       <member refid="classwx_drag_image_1a53ba3036e7cf017d32a548e95d9072e3" prot="public" virt="non-virtual"><scope>wxDragImage</scope><name>Show</name></member>

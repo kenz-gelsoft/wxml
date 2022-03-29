@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="interface_2wx_2log_8h" kind="file" language="C++">
     <compoundname>log.h</compoundname>
     <innerclass refid="classwx_log_record_info" prot="public">wxLogRecordInfo</innerclass>
@@ -20,9 +20,9 @@
         <name>wxDISABLE_DEBUG_LOGGING_IN_RELEASE_BUILD</name>
         <param></param>
         <briefdescription>
-<para>Use this macro to disable logging at debug and trace levels in release build when not using <ref refid="interface_2wx_2app_8h_1a967aafaa261481fe2d2e1cf599e3e003" kindref="member">wxIMPLEMENT_APP()</ref>. </para>
         </briefdescription>
         <detaileddescription>
+<para>Use this macro to disable logging at debug and trace levels in release build when not using <ref refid="interface_2wx_2app_8h_1a967aafaa261481fe2d2e1cf599e3e003" kindref="member">wxIMPLEMENT_APP()</ref>.</para>
 <para><simplesect kind="see"><para><ref refid="interface_2wx_2app_8h_1a8db18cbe95b3b42c3017a8bf048b0839" kindref="member">wxDISABLE_DEBUG_SUPPORT()</ref>, <ref refid="debug_8h_1a96e17e1bb37bec44a6608d0521abe22e" kindref="member">wxDISABLE_ASSERTS_IN_RELEASE_BUILD()</ref>, <ref refid="overview_debugging" kindref="compound">Debugging</ref></para>
 </simplesect>
 <simplesect kind="since"><para>2.9.1</para>
@@ -32,7 +32,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1556" column="9" bodyfile="interface/wx/log.h" bodystart="1556" bodyend="-1"/>
+        <location file="interface/wx/log.h" line="1444" column="9" bodyfile="interface/wx/log.h" bodystart="1444" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -135,7 +135,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="14" column="1" bodyfile="interface/wx/log.h" bodystart="15" bodyend="27"/>
+        <location file="interface/wx/log.h" line="15" column="1" bodyfile="interface/wx/log.h" bodystart="14" bodyend="27"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -156,9 +156,9 @@ Include file:<linebreak/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="interface_2wx_2log_8h_1a5a17708615968fd4d950e6b086e06440" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool wxSafeShowMessage</definition>
+      <memberdef kind="function" id="interface_2wx_2log_8h_1a7156f908c948a90dc72514e4c2e7f4ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxSafeShowMessage</definition>
         <argsstring>(const wxString &amp;title, const wxString &amp;text)</argsstring>
         <name>wxSafeShowMessage</name>
         <param>
@@ -187,12 +187,10 @@ Include file:<linebreak/>
 <parametername>text</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The text to show to the user. </para>
+<para>The text to show to the user.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>true If a message box was actually shown or false if the message was logged to the console because there is no safe to show it currently (the return value is only available since wxWidgets 3.1.5, the function doesn&apos;t return anything in the previous versions).</para>
-</simplesect>
 <simplesect kind="see"><para><ref refid="interface_2wx_2log_8h_1a4ae39c06cbeaa5461cd1b5c293a31403" kindref="member">wxLogFatalError()</ref></para>
 </simplesect>
 Include file:<linebreak/>
@@ -200,7 +198,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1281" column="6" declfile="interface/wx/log.h" declline="1281" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1210" column="6" declfile="interface/wx/log.h" declline="1210" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1aec3640fa3b46c970ff0c86fe354e59ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned long</type>
@@ -212,45 +210,18 @@ Include file:<linebreak/>
         </briefdescription>
         <detaileddescription>
 <para>This function uses <computeroutput>errno</computeroutput> on Unix platforms and <computeroutput>GetLastError</computeroutput> under Win32.</para>
-<para><simplesect kind="see"><para><ref refid="interface_2wx_2log_8h_1a8016c3f9011c5a573c0021cdd4c69857" kindref="member">wxSysErrorMsgStr()</ref>, <ref refid="interface_2wx_2log_8h_1a28f01715af5aaf37caffdc5bc00fde3f" kindref="member">wxLogSysError()</ref></para>
+<para><simplesect kind="see"><para><ref refid="interface_2wx_2log_8h_1a281928cbfd83d3558148fa75795bd48a" kindref="member">wxSysErrorMsg()</ref>, <ref refid="interface_2wx_2log_8h_1a28f01715af5aaf37caffdc5bc00fde3f" kindref="member">wxLogSysError()</ref></para>
 </simplesect>
 Include file:<linebreak/>
  <verbatim>#include &lt;wx/log.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1291" column="15" declfile="interface/wx/log.h" declline="1291" declcolumn="15"/>
+        <location file="interface/wx/log.h" line="1220" column="15" declfile="interface/wx/log.h" declline="1220" declcolumn="15"/>
       </memberdef>
-      <memberdef kind="function" id="interface_2wx_2log_8h_1a8016c3f9011c5a573c0021cdd4c69857" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
-        <definition>wxString wxSysErrorMsgStr</definition>
-        <argsstring>(unsigned long errCode=0)</argsstring>
-        <name>wxSysErrorMsgStr</name>
-        <param>
-          <type>unsigned long</type>
-          <declname>errCode</declname>
-          <defval>0</defval>
-        </param>
-        <briefdescription>
-<para>Returns the error message corresponding to the given system error code. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>If <emphasis>errCode</emphasis> is 0 (default), the last error code (as returned by <ref refid="interface_2wx_2log_8h_1aec3640fa3b46c970ff0c86fe354e59ff" kindref="member">wxSysErrorCode()</ref>) is used.</para>
-<para>Use this function instead of <ref refid="interface_2wx_2log_8h_1a57b8ec16fd9dc95c8f3122392fb7b9bc" kindref="member">wxSysErrorMsg()</ref>, as the latter one is not thread-safe.</para>
-<para><simplesect kind="since"><para>3.1.0</para>
-</simplesect>
-<simplesect kind="see"><para><ref refid="interface_2wx_2log_8h_1aec3640fa3b46c970ff0c86fe354e59ff" kindref="member">wxSysErrorCode()</ref>, <ref refid="interface_2wx_2log_8h_1a28f01715af5aaf37caffdc5bc00fde3f" kindref="member">wxLogSysError()</ref></para>
-</simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/log.h&gt; </verbatim> </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/log.h" line="1307" column="10" declfile="interface/wx/log.h" declline="1307" declcolumn="10"/>
-      </memberdef>
-      <memberdef kind="function" id="interface_2wx_2log_8h_1a57b8ec16fd9dc95c8f3122392fb7b9bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="interface_2wx_2log_8h_1a281928cbfd83d3558148fa75795bd48a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref> *</type>
-        <definition>const wxChar * wxSysErrorMsg</definition>
+        <definition>const wxChar* wxSysErrorMsg</definition>
         <argsstring>(unsigned long errCode=0)</argsstring>
         <name>wxSysErrorMsg</name>
         <param>
@@ -263,7 +234,6 @@ Include file:<linebreak/>
         </briefdescription>
         <detaileddescription>
 <para>If <emphasis>errCode</emphasis> is 0 (default), the last error code (as returned by <ref refid="interface_2wx_2log_8h_1aec3640fa3b46c970ff0c86fe354e59ff" kindref="member">wxSysErrorCode()</ref>) is used.</para>
-<para>Use <ref refid="interface_2wx_2log_8h_1a8016c3f9011c5a573c0021cdd4c69857" kindref="member">wxSysErrorMsgStr()</ref> instead of this function especially in a multi-threaded application.</para>
 <para><simplesect kind="see"><para><ref refid="interface_2wx_2log_8h_1aec3640fa3b46c970ff0c86fe354e59ff" kindref="member">wxSysErrorCode()</ref>, <ref refid="interface_2wx_2log_8h_1a28f01715af5aaf37caffdc5bc00fde3f" kindref="member">wxLogSysError()</ref></para>
 </simplesect>
 Include file:<linebreak/>
@@ -271,7 +241,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1321" column="14" declfile="interface/wx/log.h" declline="1321" declcolumn="14"/>
+        <location file="interface/wx/log.h" line="1231" column="14" declfile="interface/wx/log.h" declline="1231" declcolumn="14"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1ac47036f8bd8f711bf4646418c71828a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -299,7 +269,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1333" column="6" declfile="interface/wx/log.h" declline="1333" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1243" column="6" declfile="interface/wx/log.h" declline="1243" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1af7fb6625d3aad758275121ed2d20808c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -324,7 +294,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1334" column="6" declfile="interface/wx/log.h" declline="1334" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1244" column="6" declfile="interface/wx/log.h" declline="1244" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a249358701f3c2d410088ddf7a61d8564" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -348,7 +318,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1345" column="6" declfile="interface/wx/log.h" declline="1345" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1255" column="6" declfile="interface/wx/log.h" declline="1255" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1af24c602f58052639c81ac6f9a8a50206" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -369,52 +339,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1346" column="6" declfile="interface/wx/log.h" declline="1346" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="interface_2wx_2log_8h_1adf3ee751bc5ecbbc6d73fa0ecf3217f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void wxLogInfo</definition>
-        <argsstring>(const char *formatString,...)</argsstring>
-        <name>wxLogInfo</name>
-        <param>
-          <type>const char *</type>
-          <declname>formatString</declname>
-        </param>
-        <param>
-          <type>...</type>
-        </param>
-        <briefdescription>
-<para>For low priority messages. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>They are handled in the same way as messages logged by <ref refid="interface_2wx_2log_8h_1a249358701f3c2d410088ddf7a61d8564" kindref="member">wxLogMessage()</ref> by the default logger but could be handled differently by the custom loggers.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/log.h&gt; </verbatim> </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/log.h" line="1359" column="6" declfile="interface/wx/log.h" declline="1359" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="interface_2wx_2log_8h_1a368201c63d4ccb6b89afbe00b1a2252b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void wxVLogInfo</definition>
-        <argsstring>(const char *formatString, va_list argPtr)</argsstring>
-        <name>wxVLogInfo</name>
-        <param>
-          <type>const char *</type>
-          <declname>formatString</declname>
-        </param>
-        <param>
-          <type>va_list</type>
-          <declname>argPtr</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/log.h" line="1360" column="6" declfile="interface/wx/log.h" declline="1360" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1256" column="6" declfile="interface/wx/log.h" declline="1256" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1af57b7e28ab76bacf10b3be044e8bd634" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -432,14 +357,13 @@ Include file:<linebreak/>
 <para>For verbose output. </para>
         </briefdescription>
         <detaileddescription>
-<para>Messages generated by these functions are suppressed by default, even if the log level is higher than <ref refid="interface_2wx_2log_8h_1aacf1e0ade132ca66e9414ee658c94887a7171d95ffbaae242a4d547f68cfeccea" kindref="member">wxLOG_Info</ref> and need to be explicitly activated by calling <ref refid="classwx_log_1a854c6f60a72ef046b4f54953287534e6" kindref="member">wxLog::SetVerbose()</ref>.</para>
-<para>Notice that this is done automatically by wxWidgets, unless the standard command line handling is overridden, if <computeroutput>--verbose</computeroutput> option is specified on the program command line, so using these functions provides a simple way of having some diagnostic messages not shown by default but which can be easily shown by the user if needed.</para>
+<para>Normally, it is suppressed, but might be activated if the user wishes to know more details about the program progress (another, but possibly confusing name for the same function could be <computeroutput>wxLogInfo</computeroutput>).</para>
 <para>Include file:<linebreak/>
  <verbatim>#include &lt;wx/log.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1380" column="6" declfile="interface/wx/log.h" declline="1380" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1268" column="6" declfile="interface/wx/log.h" declline="1268" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a6fdd51c170ae7c81341aa4e3ee1841ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -460,7 +384,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1381" column="6" declfile="interface/wx/log.h" declline="1381" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1269" column="6" declfile="interface/wx/log.h" declline="1269" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a0c2b19580ef6721508e6d69534b10e90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -483,7 +407,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1392" column="6" declfile="interface/wx/log.h" declline="1392" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1280" column="6" declfile="interface/wx/log.h" declline="1280" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a580ff3e0c308e8f05d2c71fdb5adeb09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -504,7 +428,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1393" column="6" declfile="interface/wx/log.h" declline="1393" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1281" column="6" declfile="interface/wx/log.h" declline="1281" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a4ae39c06cbeaa5461cd1b5c293a31403" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -528,7 +452,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1405" column="6" declfile="interface/wx/log.h" declline="1405" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1293" column="6" declfile="interface/wx/log.h" declline="1293" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1aa5e94fb56d124f4a0cb1110818e0eac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -549,7 +473,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1406" column="6" declfile="interface/wx/log.h" declline="1406" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1294" column="6" declfile="interface/wx/log.h" declline="1294" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a0dd3c633f990f794e76065c9a7af4c87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -573,7 +497,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1418" column="6" declfile="interface/wx/log.h" declline="1418" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1306" column="6" declfile="interface/wx/log.h" declline="1306" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1ab29663f34ac598748687e51b77155827" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -594,7 +518,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1419" column="6" declfile="interface/wx/log.h" declline="1419" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1307" column="6" declfile="interface/wx/log.h" declline="1307" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a947e317db477914c12b13c4534867ec9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -647,7 +571,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1455" column="6" declfile="interface/wx/log.h" declline="1455" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1343" column="6" declfile="interface/wx/log.h" declline="1343" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a61890f9e44dff168137195c6f2aefe72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -672,7 +596,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1456" column="6" declfile="interface/wx/log.h" declline="1456" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1344" column="6" declfile="interface/wx/log.h" declline="1344" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1ae28a46b220921cd87a6f75f0842294c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -695,7 +619,7 @@ Include file:<linebreak/>
         </briefdescription>
         <detaileddescription>
 <para>The reason for making it a separate function is that usually there are a lot of trace messages, so it might make sense to separate them from other debug messages.</para>
-<para><xrefsect id="deprecated_1_deprecated000035"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This version of <ref refid="interface_2wx_2log_8h_1a947e317db477914c12b13c4534867ec9" kindref="member">wxLogTrace()</ref> only logs the message if all the bits corresponding to the <emphasis>mask</emphasis> are set in the <ref refid="classwx_log" kindref="compound">wxLog</ref> trace mask which can be set by calling wxLog::SetTraceMask(). This version is less flexible than <ref refid="interface_2wx_2log_8h_1a947e317db477914c12b13c4534867ec9" kindref="member">wxLogTrace(const char*,const char*,...)</ref> because it doesn&apos;t allow defining the user trace masks easily. This is why it is deprecated in favour of using string trace masks.</para>
+<para><xrefsect id="deprecated_1_deprecated000027"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This version of <ref refid="interface_2wx_2log_8h_1a947e317db477914c12b13c4534867ec9" kindref="member">wxLogTrace()</ref> only logs the message if all the bits corresponding to the <emphasis>mask</emphasis> are set in the <ref refid="classwx_log" kindref="compound">wxLog</ref> trace mask which can be set by calling wxLog::SetTraceMask(). This version is less flexible than <ref refid="interface_2wx_2log_8h_1a947e317db477914c12b13c4534867ec9" kindref="member">wxLogTrace(const char*,const char*,...)</ref> because it doesn&apos;t allow defining the user trace masks easily. This is why it is deprecated in favour of using string trace masks.</para>
 </xrefdescription></xrefsect></para>
 <para>The following bitmasks are defined for wxTraceMask:</para>
 <para><table rows="5" cols="2"><row>
@@ -725,7 +649,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1487" column="6" declfile="interface/wx/log.h" declline="1487" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1375" column="6" declfile="interface/wx/log.h" declline="1375" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a4e9ae81531ebbdba35a989afe5f16bd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -750,7 +674,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1488" column="6" declfile="interface/wx/log.h" declline="1488" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1376" column="6" declfile="interface/wx/log.h" declline="1376" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a9c530ae20eb423744f90874d2c97d02b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -774,7 +698,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1500" column="6" declfile="interface/wx/log.h" declline="1500" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1388" column="6" declfile="interface/wx/log.h" declline="1388" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a3cc30f9f86cfadf7433ad8608c80ab13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -795,7 +719,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1501" column="6" declfile="interface/wx/log.h" declline="1501" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1389" column="6" declfile="interface/wx/log.h" declline="1389" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1ac241ed1e5d13c7a552f58307c7f16691" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -824,7 +748,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1515" column="6" declfile="interface/wx/log.h" declline="1515" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1403" column="6" declfile="interface/wx/log.h" declline="1403" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1aee20d65aac7d45f58b5a02c8dfbca441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -849,7 +773,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1516" column="6" declfile="interface/wx/log.h" declline="1516" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1404" column="6" declfile="interface/wx/log.h" declline="1404" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1adbec1e3fe9fea084a5ec8e6db40771c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -869,7 +793,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1517" column="6" declfile="interface/wx/log.h" declline="1517" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1405" column="6" declfile="interface/wx/log.h" declline="1405" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a8bd4574562557296dc6f090543933571" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -890,7 +814,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1518" column="6" declfile="interface/wx/log.h" declline="1518" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1406" column="6" declfile="interface/wx/log.h" declline="1406" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a28f01715af5aaf37caffdc5bc00fde3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -909,14 +833,14 @@ Include file:<linebreak/>
         </briefdescription>
         <detaileddescription>
 <para>It logs the specified message text as well as the last system error code (<emphasis>errno</emphasis> or <emphasis>GetLastError()</emphasis> depending on the platform) and the corresponding error message. The second form of this function takes the error code explicitly as the first argument.</para>
-<para><simplesect kind="see"><para><ref refid="interface_2wx_2log_8h_1aec3640fa3b46c970ff0c86fe354e59ff" kindref="member">wxSysErrorCode()</ref>, <ref refid="interface_2wx_2log_8h_1a8016c3f9011c5a573c0021cdd4c69857" kindref="member">wxSysErrorMsgStr()</ref></para>
+<para><simplesect kind="see"><para><ref refid="interface_2wx_2log_8h_1aec3640fa3b46c970ff0c86fe354e59ff" kindref="member">wxSysErrorCode()</ref>, <ref refid="interface_2wx_2log_8h_1a281928cbfd83d3558148fa75795bd48a" kindref="member">wxSysErrorMsg()</ref></para>
 </simplesect>
 Include file:<linebreak/>
  <verbatim>#include &lt;wx/log.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1535" column="6" declfile="interface/wx/log.h" declline="1535" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1423" column="6" declfile="interface/wx/log.h" declline="1423" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="interface_2wx_2log_8h_1a538567f50381dd09a5c91938dff7f3c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -937,7 +861,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="1536" column="6" declfile="interface/wx/log.h" declline="1536" declcolumn="6"/>
+        <location file="interface/wx/log.h" line="1424" column="6" declfile="interface/wx/log.h" declline="1424" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

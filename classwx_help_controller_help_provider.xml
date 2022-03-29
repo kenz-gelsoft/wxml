@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_help_controller_help_provider" kind="class" language="C++" prot="public">
     <compoundname>wxHelpControllerHelpProvider</compoundname>
     <basecompoundref refid="classwx_simple_help_provider" prot="public" virt="non-virtual">wxSimpleHelpProvider</basecompoundref>
@@ -25,9 +25,9 @@
         </inbodydescription>
         <location file="interface/wx/cshelp.h" line="145" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_help_controller_help_provider_1ab7c0316732f719b8c5164754adc0b899" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_help_controller_help_provider_1a2f529b7367cbee08f3e40994dfe85a09" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_help_controller_base" kindref="compound">wxHelpControllerBase</ref> *</type>
-        <definition>wxHelpControllerBase * wxHelpControllerHelpProvider::GetHelpController</definition>
+        <definition>wxHelpControllerBase* wxHelpControllerHelpProvider::GetHelpController</definition>
         <argsstring>() const</argsstring>
         <name>GetHelpController</name>
         <briefdescription>
@@ -59,10 +59,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_help_controller_help_provider" kindref="compound">wxHelpControllerHelpProvider</ref> is an implementation of <ref refid="classwx_help_provider" kindref="compound">wxHelpProvider</ref> which supports both context identifiers and plain text help strings. </para>
     </briefdescription>
     <detaileddescription>
-<para>If the help text is an integer, it is passed to <ref refid="classwx_help_controller_base_1a8ec7169cdc87678e2bbee7f1c6a8cdca" kindref="member">wxHelpController::DisplayContextPopup()</ref>. Otherwise, it shows the string in a tooltip as per <ref refid="classwx_simple_help_provider" kindref="compound">wxSimpleHelpProvider</ref>. If you use this with a wxCHMHelpController instance on windows, it will use the native style of tip window instead of <ref refid="classwx_tip_window" kindref="compound">wxTipWindow</ref>.</para>
+<para><ref refid="classwx_help_controller_help_provider" kindref="compound">wxHelpControllerHelpProvider</ref> is an implementation of <ref refid="classwx_help_provider" kindref="compound">wxHelpProvider</ref> which supports both context identifiers and plain text help strings. If the help text is an integer, it is passed to <ref refid="classwx_help_controller_base_1a8ec7169cdc87678e2bbee7f1c6a8cdca" kindref="member">wxHelpController::DisplayContextPopup()</ref>. Otherwise, it shows the string in a tooltip as per <ref refid="classwx_simple_help_provider" kindref="compound">wxSimpleHelpProvider</ref>. If you use this with a wxCHMHelpController instance on windows, it will use the native style of tip window instead of <ref refid="classwx_tip_window" kindref="compound">wxTipWindow</ref>.</para>
 <para>You can use the convenience function wxContextId() to convert an integer context id to a string for passing to <ref refid="classwx_window_1a4c1a2cbc7363237b3a7c70af4e702c72" kindref="member">wxWindow::SetHelpText()</ref>.</para>
 <para><heading level="2"></heading>
 </para>
@@ -72,12 +71,6 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxHelpControllerHelpProvider</label>
-        <link refid="classwx_help_controller_help_provider"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>wxHelpProvider</label>
         <link refid="classwx_help_provider"/>
@@ -86,16 +79,16 @@
         <label>wxSimpleHelpProvider</label>
         <link refid="classwx_simple_help_provider"/>
         <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wxHelpControllerHelpProvider</label>
+        <link refid="classwx_help_controller_help_provider"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1">
-        <label>wxHelpControllerHelpProvider</label>
-        <link refid="classwx_help_controller_help_provider"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>wxHelpProvider</label>
         <link refid="classwx_help_provider"/>
@@ -106,19 +99,25 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="1">
+        <label>wxHelpControllerHelpProvider</label>
+        <link refid="classwx_help_controller_help_provider"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/cshelp.h" line="138" column="1" bodyfile="interface/wx/cshelp.h" bodystart="139" bodyend="156"/>
+    <location file="interface/wx/cshelp.h" line="139" column="1" bodyfile="interface/wx/cshelp.h" bodystart="138" bodyend="156"/>
     <listofallmembers>
-      <member refid="classwx_help_provider_1a6180120faf45bccd45d8e6fa05567b1a" prot="public" virt="virtual"><scope>wxHelpControllerHelpProvider</scope><name>AddHelp</name></member>
+      <member refid="classwx_help_provider_1ae4b53b23804a04ce2c4eb93c17e4e8c6" prot="public" virt="virtual"><scope>wxHelpControllerHelpProvider</scope><name>AddHelp</name></member>
       <member refid="classwx_help_provider_1afcfbc0885cd60700d2b7f8fe66ebcc17" prot="public" virt="virtual"><scope>wxHelpControllerHelpProvider</scope><name>AddHelp</name></member>
-      <member refid="classwx_help_provider_1a60e22877b80c27ee894aa42191ad92b3" prot="public" virt="non-virtual"><scope>wxHelpControllerHelpProvider</scope><name>Get</name></member>
-      <member refid="classwx_help_provider_1a8fa3f99ffd0cc1fbaecf53d9bb202950" prot="public" virt="pure-virtual"><scope>wxHelpControllerHelpProvider</scope><name>GetHelp</name></member>
-      <member refid="classwx_help_controller_help_provider_1ab7c0316732f719b8c5164754adc0b899" prot="public" virt="non-virtual"><scope>wxHelpControllerHelpProvider</scope><name>GetHelpController</name></member>
-      <member refid="classwx_help_provider_1a250f082e91fd2acabab6f6e068065cf1" prot="public" virt="virtual"><scope>wxHelpControllerHelpProvider</scope><name>RemoveHelp</name></member>
-      <member refid="classwx_help_provider_1ad03d457f88ccf32f295618c83d09973c" prot="public" virt="non-virtual"><scope>wxHelpControllerHelpProvider</scope><name>Set</name></member>
+      <member refid="classwx_help_provider_1a4ca308e7efb71f50bed602c31faed1d8" prot="public" virt="non-virtual"><scope>wxHelpControllerHelpProvider</scope><name>Get</name></member>
+      <member refid="classwx_help_provider_1a8a3ced6995edd8bfc856070d9c1ece8d" prot="public" virt="pure-virtual"><scope>wxHelpControllerHelpProvider</scope><name>GetHelp</name></member>
+      <member refid="classwx_help_controller_help_provider_1a2f529b7367cbee08f3e40994dfe85a09" prot="public" virt="non-virtual"><scope>wxHelpControllerHelpProvider</scope><name>GetHelpController</name></member>
+      <member refid="classwx_help_provider_1af41c1502690ee6d62c421014903e6adf" prot="public" virt="virtual"><scope>wxHelpControllerHelpProvider</scope><name>RemoveHelp</name></member>
+      <member refid="classwx_help_provider_1ae706d7d7bcc79ae894c021706670311c" prot="public" virt="non-virtual"><scope>wxHelpControllerHelpProvider</scope><name>Set</name></member>
       <member refid="classwx_help_controller_help_provider_1a877916eb3fad13ad0af0d48f8ec39ce8" prot="public" virt="non-virtual"><scope>wxHelpControllerHelpProvider</scope><name>SetHelpController</name></member>
-      <member refid="classwx_help_provider_1afe0e4cd5d01f2a3e8e69ce576ac3f036" prot="public" virt="virtual"><scope>wxHelpControllerHelpProvider</scope><name>ShowHelp</name></member>
-      <member refid="classwx_help_provider_1a967766c5ac820581f807a28f21137352" prot="public" virt="virtual"><scope>wxHelpControllerHelpProvider</scope><name>ShowHelpAtPoint</name></member>
+      <member refid="classwx_help_provider_1a7a5559d236d746371d12851fe6dce591" prot="public" virt="virtual"><scope>wxHelpControllerHelpProvider</scope><name>ShowHelp</name></member>
+      <member refid="classwx_help_provider_1a5e67cbd17663ad9b7d0c8f407762a0bd" prot="public" virt="virtual"><scope>wxHelpControllerHelpProvider</scope><name>ShowHelpAtPoint</name></member>
       <member refid="classwx_help_controller_help_provider_1aa8df5163680df9555e0c9964b5bae576" prot="public" virt="non-virtual"><scope>wxHelpControllerHelpProvider</scope><name>wxHelpControllerHelpProvider</name></member>
       <member refid="classwx_help_provider_1a7bdefa89e55d140528baa8d493b5685a" prot="public" virt="virtual"><scope>wxHelpControllerHelpProvider</scope><name>~wxHelpProvider</name></member>
     </listofallmembers>

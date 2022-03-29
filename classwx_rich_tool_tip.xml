@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_rich_tool_tip" kind="class" language="C++" prot="public">
     <compoundname>wxRichToolTip</compoundname>
     <includes local="no">wx/richtooltip.h</includes>
@@ -201,17 +201,17 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Allows showing a tool tip with more customizations than <ref refid="classwx_tool_tip" kindref="compound">wxToolTip</ref>. </para>
+<para>Allows to show a tool tip with more customizations than <ref refid="classwx_tool_tip" kindref="compound">wxToolTip</ref>. </para>
     </briefdescription>
     <detaileddescription>
-<para>Using this class is very simple, to give a standard warning for a password text control if the password was entered correctly you could simply do: <programlisting><codeline><highlight class="normal"><ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>*<sp/>password<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>(...,<sp/><ref refid="textctrl_8h_1ac2d1d793510ce4ba2de4311c40dd211c" kindref="member">wxTE_PASSWORD</ref>);</highlight></codeline>
+<para>Using this class is very simple, to give a standard warning for a password text control if the password was entered correctly you could simply do: <programlisting><codeline><highlight class="normal">wxTextCtrl*<sp/>password<sp/>=<sp/>new<sp/>wxTextCtrl(...,<sp/>wxTE_PASSWORD);</highlight></codeline>
 <codeline><highlight class="normal">...</highlight></codeline>
-<codeline><highlight class="normal">wxRichToolTip<sp/>tip(</highlight><highlight class="stringliteral">&quot;Caps<sp/>Lock<sp/>is<sp/>on&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;You<sp/>might<sp/>have<sp/>made<sp/>an<sp/>error<sp/>in<sp/>your<sp/>password\n&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;entry<sp/>because<sp/>Caps<sp/>Lock<sp/>is<sp/>turned<sp/>on.\n&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Press<sp/>Caps<sp/>Lock<sp/>key<sp/>to<sp/>turn<sp/>it<sp/>off.&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal">tip.SetIcon(<ref refid="defs_8h_1a2b7290c6fea9862351d15a8f695147b5" kindref="member">wxICON_WARNING</ref>);</highlight></codeline>
+<codeline><highlight class="normal">wxRichToolTip<sp/>tip(&quot;Caps<sp/>Lock<sp/>is<sp/>on&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;You<sp/>might<sp/>have<sp/>made<sp/>an<sp/>error<sp/>in<sp/>your<sp/>password\n&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;entry<sp/>because<sp/>Caps<sp/>Lock<sp/>is<sp/>turned<sp/>on.\n&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;\n&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Press<sp/>Caps<sp/>Lock<sp/>key<sp/>to<sp/>turn<sp/>it<sp/>off.&quot;);</highlight></codeline>
+<codeline><highlight class="normal">tip.SetIcon(wxICON_WARNING);</highlight></codeline>
 <codeline><highlight class="normal">tip.ShowFor(password);</highlight></codeline>
 </programlisting></para>
 <para>Currently this class has generic implementation that can be used with any window and implements all the functionality but doesn&apos;t exactly match the appearance of the native tooltips (even though it makes some efforts to use the style most appropriate for the current platform) and a native MSW version which can be only used with text controls and doesn&apos;t provide as much in the way of customization. Because of this, it&apos;s inadvisable to customize the tooltips unnecessarily as doing this turns off auto-detection of the native style in the generic version and may prevent the native MSW version from being used at all.</para>
@@ -219,21 +219,21 @@
 <para>The images below show some examples of rich tooltips on different platforms, with various customizations applied.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly><linebreak/>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxadv" kindref="member">wxAdvanced</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; <linebreak/>
 <image type="html" name="appear-richtooltip-msw.png">wxMSW Appearance</image>
 <linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
+<linebreak/>
 <image type="html" name="appear-richtooltip-gtk.png">wxGTK Appearance</image>
 <linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
+<linebreak/>
 <image type="html" name="appear-richtooltip-mac.png">wxOSX Appearance</image>
 <linebreak/>
-<htmlonly>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
+</para>
 <para><simplesect kind="since"><para>2.9.3 </para>
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/richtooltip.h" line="93" column="1" bodyfile="interface/wx/richtooltip.h" bodystart="94" bodyend="205"/>
+    <location file="interface/wx/richtooltip.h" line="94" column="1" bodyfile="interface/wx/richtooltip.h" bodystart="93" bodyend="205"/>
     <listofallmembers>
       <member refid="classwx_rich_tool_tip_1abc2ac6aff7ca4404622b8e5a24a7d6df" prot="public" virt="non-virtual"><scope>wxRichToolTip</scope><name>SetBackgroundColour</name></member>
       <member refid="classwx_rich_tool_tip_1a51e540bf634f3e0fdd457f49abb11021" prot="public" virt="non-virtual"><scope>wxRichToolTip</scope><name>SetIcon</name></member>

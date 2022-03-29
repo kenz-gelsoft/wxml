@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_navigation_enabled" kind="class" language="C++" prot="public">
     <compoundname>wxNavigationEnabled</compoundname>
     <basecompoundref prot="public" virt="non-virtual">W</basecompoundref>
@@ -47,23 +47,23 @@
 <para>A helper class implementing TAB navigation among the window children. </para>
     </briefdescription>
     <detaileddescription>
-<para>This class contains the functionality needed to correctly implement TAB navigation among the children of the window. Its exact contents is not important and is intentionally not documented as the only way to use this class is to inherit from it instead of inheriting from the usual base class directly. For example, if some class needs to inherit from <ref refid="classwx_control" kindref="compound">wxControl</ref> but contains multiple sub-windows and needs to support keyboard navigation, it is enough to declare it in the following way: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyControlWithSubChildren<sp/>:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_navigation_enabled" kindref="compound">wxNavigationEnabled</ref>&lt;wxControl&gt;</highlight></codeline>
+<para>This class contains the functionality needed to correctly implement TAB navigation among the children of the window. Its exact contents is not important and is intentionally not documented as the only way to use this class is to inherit from it instead of inheriting from the usual base class directly. For example, if some class needs to inherit from <ref refid="classwx_control" kindref="compound">wxControl</ref> but contains multiple sub-windows and needs to support keyboard navigation, it is enough to declare it in the following way: <programlisting><codeline><highlight class="normal">class<sp/>MyControlWithSubChildren<sp/>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>public<sp/>wxNavigationEnabled&lt;wxControl&gt;</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Default<sp/>constructor<sp/>is<sp/>implemented<sp/>in<sp/>the<sp/>same<sp/>way<sp/>as<sp/>always.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">public:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Default<sp/>constructor<sp/>is<sp/>implemented<sp/>in<sp/>the<sp/>same<sp/>way<sp/>as<sp/>always.</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyControlWithSubChildren()<sp/>{<sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Non-default<sp/>constructor<sp/>can&apos;t<sp/>use<sp/>wxControl<sp/>ctor<sp/>any<sp/>more<sp/>as</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wxControl<sp/>is<sp/>not<sp/>its<sp/>direct<sp/>base<sp/>class,<sp/>but<sp/>it<sp/>can<sp/>use<sp/>Create().</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyControlWithSubChildren(<ref refid="classwx_window" kindref="compound">wxWindow</ref><sp/>*parent,<sp/><ref refid="windowid_8h_1ae8091432cc2cb2485d45f2302fb51133" kindref="member">wxWindowID</ref><sp/>winid)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Non-default<sp/>constructor<sp/>can&apos;t<sp/>use<sp/>wxControl<sp/>ctor<sp/>any<sp/>more<sp/>as</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>wxControl<sp/>is<sp/>not<sp/>its<sp/>direct<sp/>base<sp/>class,<sp/>but<sp/>it<sp/>can<sp/>use<sp/>Create().</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyControlWithSubChildren(wxWindow<sp/>*parent,<sp/>wxWindowID<sp/>winid)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_control_1abe23789c94c86907463a0e8434be822a" kindref="member">wxControl::Create</ref>(parent,<sp/>winid);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>More<sp/>creation<sp/>code...</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxControl::Create(parent,<sp/>winid);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>More<sp/>creation<sp/>code...</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Everything<sp/>else<sp/>as<sp/>usual<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Everything<sp/>else<sp/>as<sp/>usual<sp/>...</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
 </programlisting></para>
 <para><heading level="2"></heading>
@@ -95,7 +95,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/containr.h" line="46" column="1" bodyfile="interface/wx/containr.h" bodystart="47" bodyend="67"/>
+    <location file="interface/wx/containr.h" line="47" column="1" bodyfile="interface/wx/containr.h" bodystart="46" bodyend="67"/>
     <listofallmembers>
       <member refid="classwx_navigation_enabled_1a3a24d358148ca311606c826eb4ac881e" prot="public" virt="non-virtual"><scope>wxNavigationEnabled</scope><name>BaseWindowClass</name></member>
       <member refid="classwx_navigation_enabled_1a3fb711de11eeac2ad923a5ba0e9fec88" prot="public" virt="non-virtual"><scope>wxNavigationEnabled</scope><name>wxNavigationEnabled</name></member>

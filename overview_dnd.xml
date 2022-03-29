@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_dnd" kind="page">
     <compoundname>overview_dnd</compoundname>
     <title>Drag and Drop Overview</title>
@@ -14,11 +14,9 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>It may be noted that data transfer to and from the clipboard is quite similar to data transfer with drag and drop and the code to implement these two types is almost the same. </para>
     </briefdescription>
     <detaileddescription>
-<para>It may be noted that data transfer to and from the clipboard is quite similar to data transfer with drag and drop and the code to implement these two types is almost the same.</para>
-<para>In particular, both data transfer mechanisms store data in some kind of <ref refid="classwx_data_object" kindref="compound">wxDataObject</ref> and identify its format(s) using the <ref refid="classwx_data_format" kindref="compound">wxDataFormat</ref> class.</para>
+<para>It may be noted that data transfer to and from the clipboard is quite similar to data transfer with drag and drop and the code to implement these two types is almost the same. In particular, both data transfer mechanisms store data in some kind of <ref refid="classwx_data_object" kindref="compound">wxDataObject</ref> and identify its format(s) using the <ref refid="classwx_data_format" kindref="compound">wxDataFormat</ref> class.</para>
 <para>Note that <computeroutput>wxUSE_DRAG_AND_DROP</computeroutput> must be defined in <computeroutput>setup.h</computeroutput> in order to use drag and drop in wxWidgets.</para>
 <para><simplesect kind="see"><para><ref refid="overview_dataobject" kindref="compound">wxDataObject Overview</ref>, <ref refid="group__group__class__dnd" kindref="compound">Clipboard and Drag &amp; Drop</ref>, <ref refid="page_samples_1page_samples_dnd" kindref="member">Drag &amp; Drop Sample</ref></para>
 </simplesect>
@@ -27,27 +25,27 @@
 <title>Drop Source Requirements</title>
 <para>To be a <emphasis>&quot;drop source&quot;</emphasis>, i.e. to provide the data which may be dragged by the user elsewhere, you should implement the following steps:</para>
 <para><itemizedlist>
-<listitem><para><bold>Preparation:</bold> First of all, a data object must be created and initialized with the data you wish to drag. For example: <programlisting><codeline><highlight class="normal"><ref refid="classwx_text_data_object" kindref="compound">wxTextDataObject</ref><sp/>my_data(</highlight><highlight class="stringliteral">&quot;This<sp/>text<sp/>will<sp/>be<sp/>dragged.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<listitem><para><bold>Preparation:</bold> First of all, a data object must be created and initialized with the data you wish to drag. For example: <programlisting><codeline><highlight class="normal">wxTextDataObject<sp/>my_data(&quot;This<sp/>text<sp/>will<sp/>be<sp/>dragged.&quot;);</highlight></codeline>
 </programlisting> </para>
 </listitem>
-<listitem><para><bold>Drag start</bold>: To start the dragging process (typically in response to a mouse click) you must call <ref refid="classwx_drop_source_1a7053f3286614a78d0fd8c282c286778d" kindref="member">wxDropSource::DoDragDrop</ref> like this: <programlisting><codeline><highlight class="normal"><ref refid="classwx_drop_source" kindref="compound">wxDropSource</ref><sp/>dragSource(<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<listitem><para><bold>Drag start</bold>: To start the dragging process (typically in response to a mouse click) you must call <ref refid="classwx_drop_source_1a7053f3286614a78d0fd8c282c286778d" kindref="member">wxDropSource::DoDragDrop</ref> like this: <programlisting><codeline><highlight class="normal">wxDropSource<sp/>dragSource(<sp/>this<sp/>);</highlight></codeline>
 <codeline><highlight class="normal">dragSource.SetData(<sp/>my_data<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="interface_2wx_2dnd_8h_1adbd4b292582eebbc9a6ce3dee31c2afb" kindref="member">wxDragResult</ref><sp/>result<sp/>=<sp/>dragSource.DoDragDrop(<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline><highlight class="normal">wxDragResult<sp/>result<sp/>=<sp/>dragSource.DoDragDrop(<sp/>true<sp/>);</highlight></codeline>
 </programlisting> </para>
 </listitem>
 <listitem><para><bold>Dragging:</bold> The call to DoDragDrop() blocks the program until the user releases the mouse button (unless you override the <ref refid="classwx_drop_source_1a2b667de6f631839d4c4383f436726f7f" kindref="member">wxDropSource::GiveFeedback</ref> function to do something special). When the mouse moves in a window of a program which understands the same drag-and-drop protocol (any program under Windows or any program supporting the XDnD protocol under X Windows), the corresponding <ref refid="classwx_drop_target" kindref="compound">wxDropTarget</ref> methods are called - see below. </para>
 </listitem>
-<listitem><para><bold>Processing the result</bold>: DoDragDrop() returns an <emphasis>effect</emphasis> code which is one of the values of <computeroutput>wxDragResult</computeroutput> enum (explained in <ref refid="classwx_drop_target" kindref="compound">wxDropTarget</ref> page): <programlisting><codeline><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(result)</highlight></codeline>
+<listitem><para><bold>Processing the result</bold>: DoDragDrop() returns an <emphasis>effect</emphasis> code which is one of the values of <computeroutput>wxDragResult</computeroutput> enum (explained in <ref refid="classwx_drop_target" kindref="compound">wxDropTarget</ref> page): <programlisting><codeline><highlight class="normal">switch<sp/>(result)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="interface_2wx_2dnd_8h_1adbd4b292582eebbc9a6ce3dee31c2afba736c04c59caf8154a096e0d350492fc1" kindref="member">wxDragCopy</ref>:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>copy<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="interface_2wx_2dnd_8h_1adbd4b292582eebbc9a6ce3dee31c2afba8b2ba916ca49cc93ef34a5e20684d18e" kindref="member">wxDragMove</ref>:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>move<sp/>the<sp/>data</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>nothing</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>case<sp/>wxDragCopy:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>copy<sp/>the<sp/>data</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>case<sp/>wxDragMove:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>move<sp/>the<sp/>data</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>default:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>do<sp/>nothing</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 </listitem>
@@ -68,6 +66,5 @@
 </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/dnd.h"/>
   </compounddef>
 </doxygen>

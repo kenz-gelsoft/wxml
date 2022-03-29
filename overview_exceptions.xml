@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_exceptions" kind="page">
     <compoundname>overview_exceptions</compoundname>
     <title>C++ Exceptions</title>
@@ -9,20 +9,14 @@
         <reference>overview_exceptions_1overview_exceptions_strategies</reference>
     </tocsect>
       <tocsect>
-        <name>Handling Exception Inside wxYield()</name>
-        <reference>overview_exceptions_1overview_exceptions_store_rethrow</reference>
-    </tocsect>
-      <tocsect>
         <name>Technicalities</name>
         <reference>overview_exceptions_1overview_exceptions_tech</reference>
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>wxWidgets had been started long before the exceptions were introduced in C++ so it is not very surprising that it is not built around using them as some more modern C++ libraries are. </para>
     </briefdescription>
     <detaileddescription>
-<para>wxWidgets had been started long before the exceptions were introduced in C++ so it is not very surprising that it is not built around using them as some more modern C++ libraries are.</para>
-<para>For instance, the library doesn&apos;t throw exceptions to signal about the errors. Moreover, up to (and including) the version 2.4 of wxWidgets, even using the exceptions in the user code was dangerous because the library code wasn&apos;t exception-safe and so an exception propagating through it could result in memory and/or resource leaks, and also not very convenient.</para>
+<para>wxWidgets had been started long before the exceptions were introduced in C++ so it is not very surprising that it is not built around using them as some more modern C++ libraries are. For instance, the library doesn&apos;t throw exceptions to signal about the errors. Moreover, up to (and including) the version 2.4 of wxWidgets, even using the exceptions in the user code was dangerous because the library code wasn&apos;t exception-safe and so an exception propagating through it could result in memory and/or resource leaks, and also not very convenient.</para>
 <para>However the recent wxWidgets versions are exception-friendly. This means that while the library still doesn&apos;t use the exceptions by itself, it should be now safe to use the exceptions in the user code and the library tries to help you with this.</para>
 <sect1 id="overview_exceptions_1overview_exceptions_strategies">
 <title>Strategies for Exception Handling</title>
@@ -38,32 +32,12 @@
 </para>
 <para>In the first two cases you may decide whether you want to handle the exception and continue execution or to exit the program. In the last one the program is about to exit already so you can just try to save any unsaved data and notify the user about the problem (while being careful not to throw any more exceptions as otherwise <computeroutput>std::terminate()</computeroutput> will be called).</para>
 </sect1>
-<sect1 id="overview_exceptions_1overview_exceptions_store_rethrow">
-<title>Handling Exception Inside wxYield()</title>
-<para>In some, relatively rare cases, using <ref refid="classwx_app_console_1aca806b41cf74fd6166e4fb2e2708e9bf" kindref="member">wxApp::OnExceptionInMainLoop()</ref> may not be sufficiently flexible. The most common example is using automated GUI tests, when test failures are signaled by throwing an exception and these exceptions can&apos;t be caught in a single central method because their handling depends on the test logic, e.g. sometimes an exception is expected while at other times it is an actual error. Typically this results in writing code like the following:</para>
-<para><programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TestNewDocument()</highlight></codeline>
-<codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_u_i_action_simulator" kindref="compound">wxUIActionSimulator</ref><sp/>ui;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ui.<ref refid="classwx_u_i_action_simulator_1a573e464dc75d6168564a6372f6b9aa21" kindref="member">Char</ref>(</highlight><highlight class="charliteral">&apos;n&apos;</highlight><highlight class="normal">,<sp/><ref refid="defs_8h_1a5b81968ab866f5874cabc504490ae5cda08db85848fe8fa43b85ba115050384db" kindref="member">wxMOD_CONTROL</ref>);<sp/></highlight><highlight class="comment">//<sp/>simulate<sp/>creating<sp/>a<sp/>new<sp/>file</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Let<sp/>wxWidgets<sp/>dispatch<sp/>Ctrl+N<sp/>event,<sp/>invoke<sp/>the<sp/>handler<sp/>and<sp/>create<sp/>the</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>new<sp/>document.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2app_8h_1ac386c89a04e364afc07edce6d848c27a" kindref="member">wxYield</ref>();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(<sp/>...<sp/>)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Handle<sp/>exceptions<sp/>as<sp/>failure<sp/>in<sp/>the<sp/>new<sp/>document<sp/>creation<sp/>test.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal">}</highlight></codeline>
-</programlisting></para>
-<para>Unfortunately, by default this example only works when using a C++11 compiler because the exception can&apos;t be safely propagated back to the code handling it in <computeroutput>TestNewDocument()</computeroutput> through the system event dispatch functions which are not compatible with C++ exceptions and needs to be stored by wxWidgets when it is first caught and rethrown later, when it is safe to do it. And such storing and rethrowing of exceptions is only possible in C++11, so while everything just works if you do use C++11, there is an extra step if you are using C++98: In this case you need to override <ref refid="classwx_app_console_1ac96643e4a1b1320cdd75e4a7eac22abc" kindref="member">wxApp::StoreCurrentException()</ref> and <ref refid="classwx_app_console_1a2b04fb3d24e16cd4bcf7ca208ef0ef4c" kindref="member">wxApp::RethrowStoredException()</ref> to help wxWidgets to do this, please see the documentation of these functions for more details.</para>
-</sect1>
 <sect1 id="overview_exceptions_1overview_exceptions_tech">
 <title>Technicalities</title>
-<para>To use any kind of exception support in the library you need to build it with <computeroutput>wxUSE_EXCEPTIONS</computeroutput> set to 1. It is turned on by default but you may wish to check <computeroutput>include/wx/msw/setup.h</computeroutput> file under Windows or run <computeroutput>configure</computeroutput> with explicit <computeroutput>--enable-exceptions</computeroutput> argument under Unix.</para>
-<para>On the other hand, if you do not plan to use exceptions, setting this flag to 0 or using <computeroutput>--disable-exceptions</computeroutput> could result in a leaner and slightly faster library.</para>
+<para>To use any kind of exception support in the library you need to build it with <computeroutput>wxUSE_EXCEPTIONS</computeroutput> set to 1. It is turned on by default but you may wish to check <computeroutput>include/wx/msw/setup.h</computeroutput> file under Windows or run <computeroutput>configure</computeroutput> with explicit <computeroutput><ndash/>enable-exceptions</computeroutput> argument under Unix.</para>
+<para>On the other hand, if you do not plan to use exceptions, setting this flag to 0 or using <computeroutput><ndash/>disable-exceptions</computeroutput> could result in a leaner and slightly faster library.</para>
 <para>As for any other library feature, there is a sample (<computeroutput>except</computeroutput>) showing how to use it. Please look at its sources for further information. </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/exceptions.h"/>
   </compounddef>
 </doxygen>

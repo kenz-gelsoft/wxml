@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_tree_item_data" kind="class" language="C++" prot="public">
     <compoundname>wxTreeItemData</compoundname>
     <basecompoundref refid="classwx_client_data" prot="public" virt="non-virtual">wxClientData</basecompoundref>
@@ -16,7 +16,7 @@
         <detaileddescription>
 <para><bold>wxPerl Note:</bold> In wxPerl the constructor accepts a scalar as an optional parameter and stores it as client data; use<itemizedlist>
 <listitem><para>GetData() to retrieve the value.</para>
-</listitem><listitem><para>SetData(data) to set it.  </para>
+</listitem><listitem><para>SetData(data) to set it. </para>
 </listitem></itemizedlist>
 </para>
         </detaileddescription>
@@ -38,9 +38,9 @@
         </inbodydescription>
         <location file="interface/wx/treebase.h" line="81" column="13"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_tree_item_data_1ad29ad85ec3390e8900a3c3f5b2b22eb0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_tree_item_data_1a8b8e34bc27d17529d4735fca88c8aec9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_tree_item_id" kindref="compound">wxTreeItemId</ref> &amp;</type>
-        <definition>const wxTreeItemId &amp; wxTreeItemData::GetId</definition>
+        <definition>const wxTreeItemId&amp; wxTreeItemData::GetId</definition>
         <argsstring>() const</argsstring>
         <name>GetId</name>
         <briefdescription>
@@ -73,10 +73,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_tree_item_data" kindref="compound">wxTreeItemData</ref> is some (arbitrary) user class associated with some item. </para>
     </briefdescription>
     <detaileddescription>
-<para>The main advantage of having this class is that <ref refid="classwx_tree_item_data" kindref="compound">wxTreeItemData</ref> objects are destroyed automatically by the tree and, as this class has virtual destructor, it means that the memory and any other resources associated with a tree item will be automatically freed when it is deleted. Note that we don&apos;t use <ref refid="classwx_object" kindref="compound">wxObject</ref> as the base class for <ref refid="classwx_tree_item_data" kindref="compound">wxTreeItemData</ref> because the size of this class is critical: in many applications, each tree leaf will have <ref refid="classwx_tree_item_data" kindref="compound">wxTreeItemData</ref> associated with it and the number of leaves may be quite big.</para>
+<para><ref refid="classwx_tree_item_data" kindref="compound">wxTreeItemData</ref> is some (arbitrary) user class associated with some item. The main advantage of having this class is that <ref refid="classwx_tree_item_data" kindref="compound">wxTreeItemData</ref> objects are destroyed automatically by the tree and, as this class has virtual destructor, it means that the memory and any other resources associated with a tree item will be automatically freed when it is deleted. Note that we don&apos;t use <ref refid="classwx_object" kindref="compound">wxObject</ref> as the base class for <ref refid="classwx_tree_item_data" kindref="compound">wxTreeItemData</ref> because the size of this class is critical: in many applications, each tree leaf will have <ref refid="classwx_tree_item_data" kindref="compound">wxTreeItemData</ref> associated with it and the number of leaves may be quite big.</para>
 <para>Also please note that because the objects of this class are deleted by the tree using the operator <computeroutput>delete</computeroutput>, they must always be allocated on the heap using <computeroutput>new</computeroutput>.</para>
 <para><heading level="2"></heading>
 </para>
@@ -109,9 +108,9 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/treebase.h" line="63" column="1" bodyfile="interface/wx/treebase.h" bodystart="64" bodyend="98"/>
+    <location file="interface/wx/treebase.h" line="64" column="1" bodyfile="interface/wx/treebase.h" bodystart="63" bodyend="98"/>
     <listofallmembers>
-      <member refid="classwx_tree_item_data_1ad29ad85ec3390e8900a3c3f5b2b22eb0" prot="public" virt="non-virtual"><scope>wxTreeItemData</scope><name>GetId</name></member>
+      <member refid="classwx_tree_item_data_1a8b8e34bc27d17529d4735fca88c8aec9" prot="public" virt="non-virtual"><scope>wxTreeItemData</scope><name>GetId</name></member>
       <member refid="classwx_tree_item_data_1a527fa24ac4c80f1df25f51e24990ec44" prot="public" virt="non-virtual"><scope>wxTreeItemData</scope><name>SetId</name></member>
       <member refid="classwx_client_data_1acf0e79134d5fb8abd8a4a343c616e8d7" prot="public" virt="non-virtual"><scope>wxTreeItemData</scope><name>wxClientData</name></member>
       <member refid="classwx_tree_item_data_1a8ebdd1027310183289833bcbb18dba6a" prot="public" virt="non-virtual"><scope>wxTreeItemData</scope><name>wxTreeItemData</name></member>

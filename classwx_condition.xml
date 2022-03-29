@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_condition" kind="class" language="C++" prot="public">
     <compoundname>wxCondition</compoundname>
     <includes local="no">wx/thread.h</includes>
@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="115" column="5"/>
+        <location file="interface/wx/thread.h" line="113" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_condition_1a78c0da35a4bc0a611039b105ff839ea1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="122" column="5"/>
+        <location file="interface/wx/thread.h" line="120" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_condition_1af8ed8df7255aba60dcecba0bbe102fd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="interface_2wx_2thread_8h_1af963862ae0e1bd5cafe4039dccbbd81e" kindref="member">wxCondError</ref></type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="132" column="17"/>
+        <location file="interface/wx/thread.h" line="130" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_condition_1a00c15b75bbbf7574fa88ad1308a5f20c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="138" column="10"/>
+        <location file="interface/wx/thread.h" line="136" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_condition_1a9fa920a093abdadb19f40db82fbaedd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="interface_2wx_2thread_8h_1af963862ae0e1bd5cafe4039dccbbd81e" kindref="member">wxCondError</ref></type>
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="153" column="17"/>
+        <location file="interface/wx/thread.h" line="151" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_condition_1ad42af860d727aad40cf366eaab9da48d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="interface_2wx_2thread_8h_1af963862ae0e1bd5cafe4039dccbbd81e" kindref="member">wxCondError</ref></type>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="172" column="17"/>
+        <location file="interface/wx/thread.h" line="170" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_condition_1af7379efa6047603779717ec8fd4c95c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -129,15 +129,15 @@
         </briefdescription>
         <detaileddescription>
 <para>This is a convenience overload that may be used to ignore spurious awakenings while waiting for a specific condition to become true.</para>
-<para>Equivalent to <programlisting><codeline><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>!predicate()<sp/>)</highlight></codeline>
+<para>Equivalent to <programlisting><codeline><highlight class="normal">while<sp/>(<sp/>!predicate()<sp/>)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2thread_8h_1af963862ae0e1bd5cafe4039dccbbd81e" kindref="member">wxCondError</ref><sp/>e<sp/>=<sp/><ref refid="classwx_condition_1ad42af860d727aad40cf366eaab9da48d" kindref="member">Wait</ref>();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>e<sp/>!=<sp/><ref refid="interface_2wx_2thread_8h_1af963862ae0e1bd5cafe4039dccbbd81ea3f408e6093bb067917fb31ad567ad8e5" kindref="member">wxCOND_NO_ERROR</ref><sp/>)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>e;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxCondError<sp/>e<sp/>=<sp/>Wait();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>e<sp/>!=<sp/>wxCOND_NO_ERROR<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>e;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="interface_2wx_2thread_8h_1af963862ae0e1bd5cafe4039dccbbd81ea3f408e6093bb067917fb31ad567ad8e5" kindref="member">wxCOND_NO_ERROR</ref>;</highlight></codeline>
+<codeline><highlight class="normal">return<sp/>wxCOND_NO_ERROR;</highlight></codeline>
 </programlisting></para>
-<para>The predicate would typically be a C++11 lambda: <programlisting><codeline><highlight class="normal">condvar.Wait([]{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value<sp/>==<sp/>1;});</highlight></codeline>
+<para>The predicate would typically be a C++11 lambda: <programlisting><codeline><highlight class="normal">condvar.Wait([]{return<sp/>value<sp/>==<sp/>1;});</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="since"><para>3.0 </para>
 </simplesect>
@@ -145,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="199" column="17"/>
+        <location file="interface/wx/thread.h" line="197" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_condition_1a368e40158c732759fad60d46d292bd2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="interface_2wx_2thread_8h_1af963862ae0e1bd5cafe4039dccbbd81e" kindref="member">wxCondError</ref></type>
@@ -176,71 +176,68 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/thread.h" line="214" column="17"/>
+        <location file="interface/wx/thread.h" line="212" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_condition" kindref="compound">wxCondition</ref> variables correspond to pthread conditions or to Win32 event objects. </para>
     </briefdescription>
     <detaileddescription>
-<para>They may be used in a multithreaded application to wait until the given condition becomes true which happens when the condition becomes signaled.</para>
-<para><simplesect kind="note"><para>In C++11 programs, prefer using <computeroutput>std::condition</computeroutput> to this class.</para>
-</simplesect>
-For example, if a worker thread is doing some long task and another thread has to wait until it is finished, the latter thread will wait on the condition object and the worker thread will signal it on exit (this example is not perfect because in this particular case it would be much better to just <ref refid="classwx_thread_1ae492e82ab0da11cca59267e003df25ef" kindref="member">wxThread::Wait</ref> for the worker thread, but if there are several worker threads it already makes much more sense).</para>
+<para><ref refid="classwx_condition" kindref="compound">wxCondition</ref> variables correspond to pthread conditions or to Win32 event objects. They may be used in a multithreaded application to wait until the given condition becomes true which happens when the condition becomes signaled.</para>
+<para>For example, if a worker thread is doing some long task and another thread has to wait until it is finished, the latter thread will wait on the condition object and the worker thread will signal it on exit (this example is not perfect because in this particular case it would be much better to just <ref refid="classwx_thread_1a62ee778033013d3a4754b71b8cf2902e" kindref="member">wxThread::Wait</ref> for the worker thread, but if there are several worker threads it already makes much more sense).</para>
 <para>Note that a call to <ref refid="classwx_condition_1a9fa920a093abdadb19f40db82fbaedd4" kindref="member">wxCondition::Signal</ref> may happen before the other thread calls <ref refid="classwx_condition_1ad42af860d727aad40cf366eaab9da48d" kindref="member">wxCondition::Wait</ref> and, just as with the pthread conditions, the signal is then lost and so if you want to be sure that you don&apos;t miss it you must keep the mutex associated with the condition initially locked and lock it again before calling <ref refid="classwx_condition_1a9fa920a093abdadb19f40db82fbaedd4" kindref="member">wxCondition::Signal</ref>. Of course, this means that this call is going to block until <ref refid="classwx_condition_1ad42af860d727aad40cf366eaab9da48d" kindref="member">wxCondition::Wait</ref> is called by another thread.</para>
 <sect1 id="classwx_condition_1condition_example">
 <title>Example</title>
 <para>This example shows how a main thread may launch a worker thread which starts running and then waits until the main thread signals it to continue:</para>
-<para><programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MySignallingThread<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_thread" kindref="compound">wxThread</ref></highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">class<sp/>MySignallingThread<sp/>:<sp/>public<sp/>wxThread</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MySignallingThread(<ref refid="classwx_mutex" kindref="compound">wxMutex</ref><sp/>*mutex,<sp/><ref refid="classwx_condition" kindref="compound">wxCondition</ref><sp/>*condition)</highlight></codeline>
+<codeline><highlight class="normal">public:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MySignallingThread(wxMutex<sp/>*mutex,<sp/>wxCondition<sp/>*condition)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mutex<sp/>=<sp/>mutex;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_condition<sp/>=<sp/>condition;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>ExitCode<sp/>Entry()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>ExitCode<sp/>Entry()</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>our<sp/>job<sp/>...</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>tell<sp/>the<sp/>other(s)<sp/>thread(s)<sp/>that<sp/>we&apos;re<sp/>about<sp/>to<sp/>terminate:<sp/>we<sp/>must</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>lock<sp/>the<sp/>mutex<sp/>first<sp/>or<sp/>we<sp/>might<sp/>signal<sp/>the<sp/>condition<sp/>before<sp/>the</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>waiting<sp/>threads<sp/>start<sp/>waiting<sp/>on<sp/>it!</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_mutex_locker" kindref="compound">wxMutexLocker</ref><sp/>lock(*m_mutex);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_condition-&gt;Broadcast();<sp/></highlight><highlight class="comment">//<sp/>same<sp/>as<sp/>Signal()<sp/>here<sp/>--<sp/>one<sp/>waiter<sp/>only</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>do<sp/>our<sp/>job<sp/>...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>tell<sp/>the<sp/>other(s)<sp/>thread(s)<sp/>that<sp/>we&apos;re<sp/>about<sp/>to<sp/>terminate:<sp/>we<sp/>must</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>lock<sp/>the<sp/>mutex<sp/>first<sp/>or<sp/>we<sp/>might<sp/>signal<sp/>the<sp/>condition<sp/>before<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>waiting<sp/>threads<sp/>start<sp/>waiting<sp/>on<sp/>it!</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxMutexLocker<sp/>lock(*m_mutex);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_condition-&gt;Broadcast();<sp/>//<sp/>same<sp/>as<sp/>Signal()<sp/>here<sp/>--<sp/>one<sp/>waiter<sp/>only</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_condition" kindref="compound">wxCondition</ref><sp/>*m_condition;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_mutex" kindref="compound">wxMutex</ref><sp/>*m_mutex;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">private:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxCondition<sp/>*m_condition;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxMutex<sp/>*m_mutex;</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int<sp/>main()</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_mutex" kindref="compound">wxMutex</ref><sp/>mutex;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_condition" kindref="compound">wxCondition</ref><sp/>condition(mutex);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>mutex<sp/>should<sp/>be<sp/>initially<sp/>locked</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mutex.<ref refid="classwx_mutex_1a5291e0e421262f420051390421ba0d09" kindref="member">Lock</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>and<sp/>run<sp/>the<sp/>thread<sp/>but<sp/>notice<sp/>that<sp/>it<sp/>won&apos;t<sp/>be<sp/>able<sp/>to</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>exit<sp/>(and<sp/>signal<sp/>its<sp/>exit)<sp/>before<sp/>we<sp/>unlock<sp/>the<sp/>mutex<sp/>below</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MySignallingThread<sp/>*thread<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MySignallingThread(&amp;mutex,<sp/>&amp;condition);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxMutex<sp/>mutex;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxCondition<sp/>condition(mutex);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>the<sp/>mutex<sp/>should<sp/>be<sp/>initially<sp/>locked</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mutex.Lock();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>create<sp/>and<sp/>run<sp/>the<sp/>thread<sp/>but<sp/>notice<sp/>that<sp/>it<sp/>won&apos;t<sp/>be<sp/>able<sp/>to</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>exit<sp/>(and<sp/>signal<sp/>its<sp/>exit)<sp/>before<sp/>we<sp/>unlock<sp/>the<sp/>mutex<sp/>below</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MySignallingThread<sp/>*thread<sp/>=<sp/>new<sp/>MySignallingThread(&amp;mutex,<sp/>&amp;condition);</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>thread-&gt;Run();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wait<sp/>for<sp/>the<sp/>thread<sp/>termination:<sp/>Wait()<sp/>atomically<sp/>unlocks<sp/>the<sp/>mutex</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>which<sp/>allows<sp/>the<sp/>thread<sp/>to<sp/>continue<sp/>and<sp/>starts<sp/>waiting</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>wait<sp/>for<sp/>the<sp/>thread<sp/>termination:<sp/>Wait()<sp/>atomically<sp/>unlocks<sp/>the<sp/>mutex</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>which<sp/>allows<sp/>the<sp/>thread<sp/>to<sp/>continue<sp/>and<sp/>starts<sp/>waiting</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>condition.Wait();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>now<sp/>we<sp/>can<sp/>exit</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>now<sp/>we<sp/>can<sp/>exit</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
-<para>Of course, here it would be much better to simply use a joinable thread and call <ref refid="classwx_thread_1ae492e82ab0da11cca59267e003df25ef" kindref="member">wxThread::Wait</ref> on it, but this example does illustrate the importance of properly locking the mutex when using <ref refid="classwx_condition" kindref="compound">wxCondition</ref>.</para>
+<para>Of course, here it would be much better to simply use a joinable thread and call <ref refid="classwx_thread_1a62ee778033013d3a4754b71b8cf2902e" kindref="member">wxThread::Wait</ref> on it, but this example does illustrate the importance of properly locking the mutex when using <ref refid="classwx_condition" kindref="compound">wxCondition</ref>.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
@@ -249,7 +246,7 @@ For example, if a worker thread is doing some long task and another thread has t
 </para>
 </sect1>
     </detaileddescription>
-    <location file="interface/wx/thread.h" line="107" column="1" bodyfile="interface/wx/thread.h" bodystart="108" bodyend="215"/>
+    <location file="interface/wx/thread.h" line="106" column="1" bodyfile="interface/wx/thread.h" bodystart="105" bodyend="213"/>
     <listofallmembers>
       <member refid="classwx_condition_1af8ed8df7255aba60dcecba0bbe102fd4" prot="public" virt="non-virtual"><scope>wxCondition</scope><name>Broadcast</name></member>
       <member refid="classwx_condition_1a00c15b75bbbf7574fa88ad1308a5f20c" prot="public" virt="non-virtual"><scope>wxCondition</scope><name>IsOk</name></member>

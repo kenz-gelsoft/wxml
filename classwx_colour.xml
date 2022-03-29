@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_colour" kind="class" language="C++" prot="public">
     <compoundname>wxColour</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -198,16 +198,14 @@
         </briefdescription>
         <detaileddescription>
 <para>The supported flags are <computeroutput>wxC2S_NAME</computeroutput>, to obtain the colour name (e.g. <ref refid="classwx_colour" kindref="compound">wxColour(255,0,0)</ref> == &quot;red&quot;), <computeroutput>wxC2S_CSS_SYNTAX</computeroutput>, to obtain the colour in the &quot;rgb(r,g,b)&quot; or &quot;rgba(r,g,b,a)&quot; syntax (e.g. <ref refid="classwx_colour" kindref="compound">wxColour(255,0,0,85)</ref> == &quot;rgba(255,0,0,0.333)&quot;), and <computeroutput>wxC2S_HTML_SYNTAX</computeroutput>, to obtain the colour as &quot;#&quot; followed by 6 hexadecimal digits (e.g. <ref refid="classwx_colour" kindref="compound">wxColour(255,0,0)</ref> == &quot;#FF0000&quot;).</para>
-<para>This function returns empty string if the colour is not initialized (see <ref refid="classwx_colour_1a90921aeb085612b86fffb1507dbca461" kindref="member">IsOk()</ref>). Otherwise, the returned string is always non-empty, but the function asserts if the colour has alpha channel (i.e. is non opaque) but <computeroutput>wxC2S_CSS_SYNTAX</computeroutput> (which is the only one supporting alpha) is not specified in <emphasis>flags</emphasis>.</para>
-<para><simplesect kind="note"><para>For non-solid (i.e. non-RGB) colour this function returns &quot;rgb(??, ?? ??)&quot; or &quot;#??????&quot;.</para>
-</simplesect>
-<simplesect kind="since"><para>2.7.0 </para>
+<para>This function never fails and always returns a non-empty string but asserts if the colour has alpha channel (i.e. is non opaque) but <computeroutput>wxC2S_CSS_SYNTAX</computeroutput> (which is the only one supporting alpha) is not specified in flags.</para>
+<para><simplesect kind="since"><para>2.7.0 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="127" column="22"/>
+        <location file="interface/wx/colour.h" line="123" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1ac7d46c0479a74b63e67beba9c3f629c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -222,7 +220,7 @@
 <para>Sets the RGB or RGBA colour values from a single 32 bit value. </para>
         </briefdescription>
         <detaileddescription>
-<para>The arguments <emphasis>colRGB</emphasis> and <emphasis>colRGBA</emphasis> should be of the form 0x00BBGGRR and 0xAABBGGRR respectively where <computeroutput>0xRR</computeroutput>, <computeroutput>0xGG</computeroutput>, <computeroutput>0xBB</computeroutput> and <computeroutput>0xAA</computeroutput> are the values of the red, green, blue and alpha components.</para>
+<para>The arguments <emphasis>colRGB</emphasis> and <emphasis>colRGBA</emphasis> should be of the form 0x00BBGGRR and 0xAABBGGRR respectively where <computeroutput>0xRR</computeroutput>, <computeroutput>0xGG</computeroutput>, <computeroutput>0xBB</computeroutput> and <computeroutput>0xAA</computeroutput> are the values of the red, blue, green and alpha components.</para>
 <para>Notice the right-to-left order of components!</para>
 <para><simplesect kind="see"><para><ref refid="classwx_colour_1a90494a5b8c725e3f61a69d2a8ed1acd6" kindref="member">GetRGB()</ref>, <ref refid="classwx_colour_1a4fa82e86015fad4d50a1404bfb192857" kindref="member">GetRGBA()</ref></para>
 </simplesect>
@@ -232,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="143" column="10"/>
+        <location file="interface/wx/colour.h" line="139" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a940633aa9d78da10bf86cf6848364579" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -249,7 +247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="144" column="10"/>
+        <location file="interface/wx/colour.h" line="140" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a90494a5b8c725e3f61a69d2a8ed1acd6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1afdb12e5345c3fae4b537e813df9f02a3" kindref="member">wxUint32</ref></type>
@@ -268,7 +266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="161" column="14"/>
+        <location file="interface/wx/colour.h" line="157" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a4fa82e86015fad4d50a1404bfb192857" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1afdb12e5345c3fae4b537e813df9f02a3" kindref="member">wxUint32</ref></type>
@@ -281,26 +279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="162" column="14"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_colour_1a2e9b5da1063e8467a0eabc14d214e729" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>double</type>
-        <definition>double wxColour::GetLuminance</definition>
-        <argsstring>() const</argsstring>
-        <name>GetLuminance</name>
-        <briefdescription>
-<para>Return the perceived brightness of the colour. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This value is computed using the simple <programlisting><codeline><highlight class="normal">0.299*R<sp/>+<sp/>0.587*G<sp/>+<sp/>0.114*B<sp/></highlight></codeline>
-</programlisting> formula with the coefficients taken from the RGB to YIQ conversion formula and <computeroutput>R</computeroutput>, <computeroutput>G</computeroutput> and <computeroutput>B</computeroutput> being the values of the corresponding colour channels normalized to 0..1 range, so that the return value is 0 for black and 1 for white.</para>
-<para><simplesect kind="since"><para>3.1.3 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/colour.h" line="176" column="12"/>
+        <location file="interface/wx/colour.h" line="158" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a597cf50e61a6fd16dfb86e0809e4dbdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1adc7fafddfefae454021d2e0660c96487" kindref="member">wxIntPtr</ref></type>
@@ -315,7 +294,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="184" column="14"/>
+        <location file="interface/wx/colour.h" line="167" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a77f551868c82c8368dc2d16a902664f4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>unsigned char</type>
@@ -329,7 +308,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="189" column="27"/>
+        <location file="interface/wx/colour.h" line="172" column="27"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a90921aeb085612b86fffb1507dbca461" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -343,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="195" column="18"/>
+        <location file="interface/wx/colour.h" line="178" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1ab54b6ea1bd4f71a599b6b6bc6ee27eaa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>unsigned char</type>
@@ -357,25 +336,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="200" column="27"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_colour_1a33db79b6c89d81e0dccd240dd5e08005" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
-        <type>bool</type>
-        <definition>virtual bool wxColour::IsSolid</definition>
-        <argsstring>() const</argsstring>
-        <name>IsSolid</name>
-        <briefdescription>
-<para>Returns true if the color can be described using RGB values, i.e. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>is solid, false if it is a pattern (currently only possible on macOS)</para>
-<para><simplesect kind="since"><para>3.1.2 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/colour.h" line="208" column="18"/>
+        <location file="interface/wx/colour.h" line="183" column="27"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a362d7d0a873b770d6623d4cd547868a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -411,7 +372,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="224" column="10"/>
+        <location file="interface/wx/colour.h" line="200" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1aeb9a24555fadb810c68d1c072a977fb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -428,7 +389,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="227" column="10"/>
+        <location file="interface/wx/colour.h" line="203" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a08e9f56265647b8b5e1349b76eb728e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -445,7 +406,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="228" column="10"/>
+        <location file="interface/wx/colour.h" line="204" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a51b00aab940a72402cf55615d41dc394" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -457,17 +418,17 @@
           <declname>colour</declname>
         </param>
         <briefdescription>
-<para>Tests the inequality of two colours by comparing individual red, green, blue intensities and alpha values. </para>
+<para>Tests the inequality of two colours by comparing individual red, green, blue colours and alpha values. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="235" column="10"/>
+        <location file="interface/wx/colour.h" line="211" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_colour_1a776c1035ba66f054a4c3bf59af230c7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_colour_1a3626b79f7c04fb3877a7a69ba4b7086f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
-        <definition>wxColour &amp; wxColour::operator=</definition>
+        <definition>wxColour&amp; wxColour::operator=</definition>
         <argsstring>(const wxColour &amp;colour)</argsstring>
         <name>operator=</name>
         <param>
@@ -475,7 +436,7 @@
           <declname>colour</declname>
         </param>
         <briefdescription>
-<para>Assignment operator. </para>
+<para>Assignment operator, using a colour name to be found in the colour database. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="classwx_colour_database" kindref="compound">wxColourDatabase</ref> </para>
@@ -484,7 +445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="242" column="14"/>
+        <location file="interface/wx/colour.h" line="218" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a4654345d417971d8179ea802578eb47b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -496,17 +457,17 @@
           <declname>colour</declname>
         </param>
         <briefdescription>
-<para>Tests the equality of two colours by comparing individual red, green, blue intensities and alpha values. </para>
+<para>Tests the equality of two colours by comparing individual red, green, blue colours and alpha values. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="248" column="10"/>
+        <location file="interface/wx/colour.h" line="224" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_colour_1aec686df30ec38df8e4a67b2734288900" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_colour_1afcaf1a9e713d058ab624cef834557bb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
-        <definition>wxColour &amp; wxColour::MakeDisabled</definition>
+        <definition>wxColour&amp; wxColour::MakeDisabled</definition>
         <argsstring>(unsigned char brightness=255)</argsstring>
         <name>MakeDisabled</name>
         <param>
@@ -525,7 +486,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="269" column="14"/>
+        <location file="interface/wx/colour.h" line="245" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a61388288c2865b661933e393e641fe7c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_colour" kindref="compound">wxColour</ref></type>
@@ -546,7 +507,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="304" column="14"/>
+        <location file="interface/wx/colour.h" line="281" column="14"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -572,7 +533,7 @@
           <declname>on</declname>
         </param>
         <briefdescription>
-<para>Assigns the same value to <emphasis>r</emphasis>, <emphasis>g</emphasis>, <emphasis>b:</emphasis> 0 if <emphasis>on</emphasis> is <computeroutput>false</computeroutput>, 255 otherwise. </para>
+<para>Assign 0 or 255 to rgb out parameters. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="since"><para>2.9.0 </para>
@@ -581,7 +542,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="254" column="17"/>
+        <location file="interface/wx/colour.h" line="230" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1afc71a8208268eb8fa682e43524478c69" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -615,7 +576,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="260" column="17"/>
+        <location file="interface/wx/colour.h" line="236" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a45e74c88fdab10e07164abe02c1b011a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -644,7 +605,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="275" column="17"/>
+        <location file="interface/wx/colour.h" line="251" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a9020f882bba4f92bb68fcc7fd6d7cff4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -685,7 +646,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="283" column="17"/>
+        <location file="interface/wx/colour.h" line="259" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1a9674d4508549c1fbc983e5582fd86bed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned char</type>
@@ -714,7 +675,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="290" column="26"/>
+        <location file="interface/wx/colour.h" line="266" column="26"/>
       </memberdef>
       <memberdef kind="function" id="classwx_colour_1af225e6fafd00001ac3612aaf26fe5501" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -738,23 +699,22 @@
           <declname>ialpha</declname>
         </param>
         <briefdescription>
-<para>Utility function that simply darkens or lightens a color, based on the specified percentage <emphasis>ialpha</emphasis>. </para>
+<para><ref refid="classwx_colour_1af225e6fafd00001ac3612aaf26fe5501" kindref="member">ChangeLightness()</ref> is a utility function that simply darkens or lightens a color, based on the specified percentage ialpha of 0 would be completely black, 200 completely white an ialpha of 100 returns the same colour. </para>
         </briefdescription>
         <detaileddescription>
-<para><emphasis>ialpha</emphasis> of 0 would be make the color completely black, 200 completely white and 100 would not change the color. <simplesect kind="since"><para>2.9.0 </para>
+<para><simplesect kind="since"><para>2.9.0 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/colour.h" line="298" column="17"/>
+        <location file="interface/wx/colour.h" line="275" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A colour is an object representing a combination of Red, Green, and Blue (RGB) intensity values and an Alpha value, and is used to determine drawing colours. </para>
     </briefdescription>
     <detaileddescription>
-<para>See the entry for <ref refid="classwx_colour_database" kindref="compound">wxColourDatabase</ref> for how a pointer to a predefined, named colour may be returned instead of creating a new colour.</para>
+<para>A colour is an object representing a combination of Red, Green, and Blue (RGB) intensity values, and is used to determine drawing colours. See the entry for <ref refid="classwx_colour_database" kindref="compound">wxColourDatabase</ref> for how a pointer to a predefined, named colour may be returned instead of creating a new colour.</para>
 <para>Valid RGB values are in the range 0 to 255.</para>
 <para>You can retrieve the current system colour settings with <ref refid="classwx_system_settings" kindref="compound">wxSystemSettings</ref>.</para>
 <para><heading level="2"></heading>
@@ -778,24 +738,18 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxColour</label>
-        <link refid="classwx_colour"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="1">
         <label>wxColour</label>
         <link refid="classwx_colour"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -803,12 +757,18 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxColour</label>
+        <link refid="classwx_colour"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/colour.h" line="55" column="1" bodyfile="interface/wx/colour.h" bodystart="56" bodyend="305"/>
+    <location file="interface/wx/colour.h" line="56" column="1" bodyfile="interface/wx/colour.h" bodystart="55" bodyend="282"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxColour</scope><name>AllocExclusive</name></member>
       <member refid="classwx_colour_1a592932fee1ad3d7c74b9c9014a775605" prot="public" virt="virtual"><scope>wxColour</scope><name>Alpha</name></member>
@@ -816,30 +776,28 @@
       <member refid="classwx_colour_1a82c6afaa0feeb0f964ee33267e41e87c" prot="public" virt="virtual"><scope>wxColour</scope><name>Blue</name></member>
       <member refid="classwx_colour_1af225e6fafd00001ac3612aaf26fe5501" prot="public" virt="non-virtual"><scope>wxColour</scope><name>ChangeLightness</name></member>
       <member refid="classwx_colour_1a61388288c2865b661933e393e641fe7c" prot="public" virt="non-virtual"><scope>wxColour</scope><name>ChangeLightness</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxColour</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxColour</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxColour</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxColour</scope><name>CreateRefData</name></member>
       <member refid="classwx_colour_1a7fb83960cea726dc4a37560b03f4bed3" prot="public" virt="virtual"><scope>wxColour</scope><name>GetAsString</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxColour</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_colour_1a2e9b5da1063e8467a0eabc14d214e729" prot="public" virt="non-virtual"><scope>wxColour</scope><name>GetLuminance</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxColour</scope><name>GetClassInfo</name></member>
       <member refid="classwx_colour_1a597cf50e61a6fd16dfb86e0809e4dbdc" prot="public" virt="non-virtual"><scope>wxColour</scope><name>GetPixel</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxColour</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxColour</scope><name>GetRefData</name></member>
       <member refid="classwx_colour_1a90494a5b8c725e3f61a69d2a8ed1acd6" prot="public" virt="non-virtual"><scope>wxColour</scope><name>GetRGB</name></member>
       <member refid="classwx_colour_1a4fa82e86015fad4d50a1404bfb192857" prot="public" virt="non-virtual"><scope>wxColour</scope><name>GetRGBA</name></member>
       <member refid="classwx_colour_1a77f551868c82c8368dc2d16a902664f4" prot="public" virt="virtual"><scope>wxColour</scope><name>Green</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxColour</scope><name>IsKindOf</name></member>
       <member refid="classwx_colour_1a90921aeb085612b86fffb1507dbca461" prot="public" virt="virtual"><scope>wxColour</scope><name>IsOk</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxColour</scope><name>IsSameAs</name></member>
-      <member refid="classwx_colour_1a33db79b6c89d81e0dccd240dd5e08005" prot="public" virt="virtual"><scope>wxColour</scope><name>IsSolid</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxColour</scope><name>m_refData</name></member>
       <member refid="classwx_colour_1afc71a8208268eb8fa682e43524478c69" prot="public" virt="non-virtual"><scope>wxColour</scope><name>MakeDisabled</name></member>
-      <member refid="classwx_colour_1aec686df30ec38df8e4a67b2734288900" prot="public" virt="non-virtual"><scope>wxColour</scope><name>MakeDisabled</name></member>
+      <member refid="classwx_colour_1afcaf1a9e713d058ab624cef834557bb6" prot="public" virt="non-virtual"><scope>wxColour</scope><name>MakeDisabled</name></member>
       <member refid="classwx_colour_1a45e74c88fdab10e07164abe02c1b011a" prot="public" virt="non-virtual"><scope>wxColour</scope><name>MakeGrey</name></member>
       <member refid="classwx_colour_1a9020f882bba4f92bb68fcc7fd6d7cff4" prot="public" virt="non-virtual"><scope>wxColour</scope><name>MakeGrey</name></member>
       <member refid="classwx_colour_1a0ba8c496e7553e34643e53e70de57760" prot="public" virt="non-virtual"><scope>wxColour</scope><name>MakeMono</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxColour</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxColour</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxColour</scope><name>operator new</name></member>
       <member refid="classwx_colour_1a51b00aab940a72402cf55615d41dc394" prot="public" virt="non-virtual"><scope>wxColour</scope><name>operator!=</name></member>
-      <member refid="classwx_colour_1a776c1035ba66f054a4c3bf59af230c7b" prot="public" virt="non-virtual"><scope>wxColour</scope><name>operator=</name></member>
+      <member refid="classwx_colour_1a3626b79f7c04fb3877a7a69ba4b7086f" prot="public" virt="non-virtual"><scope>wxColour</scope><name>operator=</name></member>
       <member refid="classwx_colour_1a4654345d417971d8179ea802578eb47b" prot="public" virt="non-virtual"><scope>wxColour</scope><name>operator==</name></member>
       <member refid="classwx_colour_1ab54b6ea1bd4f71a599b6b6bc6ee27eaa" prot="public" virt="virtual"><scope>wxColour</scope><name>Red</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxColour</scope><name>Ref</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="valtext_8h" kind="file" language="C++">
     <compoundname>valtext.h</compoundname>
     <innerclass refid="classwx_text_validator" prot="public">wxTextValidator</innerclass>
@@ -47,13 +47,13 @@
 <para>Non-alphanumeric characters are filtered out. </para>
           </briefdescription>
           <detaileddescription>
-<para>Uses the wxWidgets wrapper for the standard CRT function <computeroutput>isalnum</computeroutput> (which is locale-dependent) on all characters of the string. Equivalent to wxFILTER_ALPHA combined with wxFILTER_DIGITS or wxFILTER_XDIGITS, or with both of them. </para>
+<para>Uses the wxWidgets wrapper for the standard CRT function <computeroutput>isalnum</computeroutput> (which is locale-dependent) on all characters of the string. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="valtext_8h_1aa02d29254d60e0c81f17696c9cecbd07a724e6e8a40da5bdef9ec2389da3ccebf" prot="public">
           <name>wxFILTER_DIGITS</name>
           <briefdescription>
-<para>Non-digit characters are filtered out. </para>
+<para>Non-numeric characters are filtered out. </para>
           </briefdescription>
           <detaileddescription>
 <para>Uses the wxWidgets wrapper for the standard CRT function <computeroutput>isdigit</computeroutput> (which is locale-dependent) on all characters of the string. </para>
@@ -80,10 +80,10 @@
         <enumvalue id="valtext_8h_1aa02d29254d60e0c81f17696c9cecbd07acb40805803b96882af40a830afbbc0f1" prot="public">
           <name>wxFILTER_INCLUDE_CHAR_LIST</name>
           <briefdescription>
-<para>Use an include char list. </para>
+<para>Use an include list. </para>
           </briefdescription>
           <detaileddescription>
-<para>Characters in the include char list will be allowed to be in the user input. See <ref refid="classwx_text_validator_1a73b9a9a92761b34503777381226d30a3" kindref="member">wxTextValidator::SetCharIncludes()</ref>. If this style is set with one or more of the following styles: wxFILTER_ASCII, wxFILTER_ALPHA, wxFILTER_ALPHANUMERIC, wxFILTER_DIGITS, wxFILTER_XDIGITS, wxFILTER_NUMERIC it just extends the character class denoted by the aforementioned styles with those specified in the include char list. If set alone, then the characters allowed to be in the user input are restricted to those, and only those, present in the include char list. </para>
+<para>The validator checks if each input character is in the list (one character per list element), complaining if not. See <ref refid="classwx_text_validator_1a73b9a9a92761b34503777381226d30a3" kindref="member">wxTextValidator::SetCharIncludes()</ref>. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="valtext_8h_1aa02d29254d60e0c81f17696c9cecbd07a0cd241d224d0a61b222cdbc0cab9ddfa" prot="public">
@@ -98,39 +98,21 @@
         <enumvalue id="valtext_8h_1aa02d29254d60e0c81f17696c9cecbd07a69d26118743b080adef55abf8d1b2931" prot="public">
           <name>wxFILTER_EXCLUDE_CHAR_LIST</name>
           <briefdescription>
-<para>Use an exclude char list. </para>
+<para>Use an exclude list. </para>
           </briefdescription>
           <detaileddescription>
-<para>Characters in the exclude char list won&apos;t be allowed to be in the user input. See <ref refid="classwx_text_validator_1a8a461648fd10e0ce15021e3d913f24d4" kindref="member">wxTextValidator::SetCharExcludes()</ref>. </para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="valtext_8h_1aa02d29254d60e0c81f17696c9cecbd07a9afaa0676fe5ed3eb7a0dc779c3878a7" prot="public">
-          <name>wxFILTER_XDIGITS</name>
-          <briefdescription>
-<para>Non-hexadecimal characters are filtered out. </para>
-          </briefdescription>
-          <detaileddescription>
-<para>Uses the wxWidgets wrapper for the standard CRT function <computeroutput>isxdigit</computeroutput> (which is locale-dependent) on all characters of the string. </para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="valtext_8h_1aa02d29254d60e0c81f17696c9cecbd07ac2e8e0324c07ed88d64370b2e361ddc6" prot="public">
-          <name>wxFILTER_SPACE</name>
-          <briefdescription>
-<para>A convenience flag for use with the other flags. </para>
-          </briefdescription>
-          <detaileddescription>
-<para>The space character is more often used with alphanumeric characters which makes setting a flag more easier than calling SetCharIncludes(&quot; &quot;) for that matter. </para>
+<para>The validator checks if each input character is in the list (one character per list element), complaining if it is. See <ref refid="classwx_text_validator_1a8a461648fd10e0ce15021e3d913f24d4" kindref="member">wxTextValidator::SetCharExcludes()</ref>. </para>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
 <para>Styles used by <ref refid="classwx_text_validator" kindref="compound">wxTextValidator</ref>. </para>
         </briefdescription>
         <detaileddescription>
-<para>Notice that wxFILTER_EXCLUDE[_CHAR]_LIST pair can be used to document the purpose of the validator only and are not enforced in the implementation of the <ref refid="classwx_text_validator" kindref="compound">wxTextValidator</ref>. Therefore, calling the corresponding member functions: <ref refid="classwx_text_validator" kindref="compound">wxTextValidator</ref>::{SetExcludes,SetCharExcludes}(), is enough to create the desired validator. </para>
+<para>Note that when you specify more styles in <ref refid="classwx_text_validator" kindref="compound">wxTextValidator</ref> the validation checks are performed in the order in which the styles of this enumeration are defined. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/valtext.h" line="18" column="1" bodyfile="interface/wx/valtext.h" bodystart="19" bodyend="88"/>
+        <location file="interface/wx/valtext.h" line="16" column="1" bodyfile="interface/wx/valtext.h" bodystart="15" bodyend="66"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

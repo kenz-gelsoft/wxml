@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_scrolled" kind="class" language="C++" prot="public">
     <compoundname>wxScrolled</compoundname>
     <basecompoundref prot="public" virt="non-virtual">T</basecompoundref>
@@ -25,7 +25,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="171" column="5"/>
+        <location file="interface/wx/scrolwin.h" line="168" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1ae68b98d2386b81f413e08cd5410401fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="195" column="5"/>
+        <location file="interface/wx/scrolwin.h" line="192" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a5beb86afd7eec414740ac5be2e80da33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -148,13 +148,14 @@
         </briefdescription>
         <detaileddescription>
 <para>For example, if a window is scrolled 10 pixels to the bottom, the device coordinates of the origin are (0, 0) (as always), but the logical coordinates are (0, 10) and so the call to CalcScrolledPosition(0, 10, xx, yy) will return 0 in yy.</para>
-<para><bold>wxPerl Note:</bold> In wxPerl this method takes two parameters and returns a 2-element list (xx, yy).  <simplesect kind="see"><para><ref refid="classwx_scrolled_1addb96196c8bc441934fb96c2b4e56a51" kindref="member">CalcUnscrolledPosition()</ref> </para>
+<para><bold>wxPerl Note:</bold> In wxPerl this method takes two parameters and returns a 2-element list (xx, yy).</para>
+<para><simplesect kind="see"><para><ref refid="classwx_scrolled_1addb96196c8bc441934fb96c2b4e56a51" kindref="member">CalcUnscrolledPosition()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="215" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="212" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a86022a8d18b370380754e0ff0a101003" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
@@ -171,7 +172,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="216" column="13"/>
+        <location file="interface/wx/scrolwin.h" line="213" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1addb96196c8bc441934fb96c2b4e56a51" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -199,13 +200,14 @@
         </briefdescription>
         <detaileddescription>
 <para>For example, if a window is scrolled 10 pixels to the bottom, the device coordinates of the origin are (0, 0) (as always), but the logical coordinates are (0, 10) and so the call to CalcUnscrolledPosition(0, 0, xx, yy) will return 10 in yy.</para>
-<para><bold>wxPerl Note:</bold> In wxPerl this method takes two parameters and returns a 2-element list (xx, yy).  <simplesect kind="see"><para><ref refid="classwx_scrolled_1a5beb86afd7eec414740ac5be2e80da33" kindref="member">CalcScrolledPosition()</ref> </para>
+<para><bold>wxPerl Note:</bold> In wxPerl this method takes two parameters and returns a 2-element list (xx, yy).</para>
+<para><simplesect kind="see"><para><ref refid="classwx_scrolled_1a5beb86afd7eec414740ac5be2e80da33" kindref="member">CalcScrolledPosition()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="232" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="229" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a538b168f093df93ced48d297b5599291" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
@@ -222,7 +224,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="233" column="13"/>
+        <location file="interface/wx/scrolwin.h" line="230" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a9f03bd3bcbb96c84f90c2482f58f075a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -262,14 +264,11 @@
 <para>Creates the window for two-step construction. </para>
         </briefdescription>
         <detaileddescription>
-<para>Derived classes should call or replace this function. If it is not replaced, bear in mind that it calls T::Create() through the global function <ref refid="scrolwin_8h_1a83d578aba79c5b54372a7c53174c11a3" kindref="member">wxCreateScrolled()</ref> so if T::Create() has a different signature than <ref refid="classwx_scrolled_1a9f03bd3bcbb96c84f90c2482f58f075a" kindref="member">wxScrolled::Create()</ref> you should implement overloaded <ref refid="scrolwin_8h_1a83d578aba79c5b54372a7c53174c11a3" kindref="member">wxCreateScrolled()</ref> which would call T::Create() in the correct manner.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_scrolled_1a01d0ecb5daa59ebb7a0806f16b7ac267" kindref="member">wxScrolled::wxScrolled()</ref> and <ref refid="scrolwin_8h_1a83d578aba79c5b54372a7c53174c11a3" kindref="member">wxCreateScrolled()</ref> for details. </para>
-</simplesect>
-</para>
+<para>Derived classes should call or replace this function. See <ref refid="classwx_scrolled_1a01d0ecb5daa59ebb7a0806f16b7ac267" kindref="member">wxScrolled::wxScrolled()</ref> for details. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="245" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="237" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a294b1585caef1c22f5ea1ac6a6787164" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -287,7 +286,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="265" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="257" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a96a2b41d3bcd07e28491de5f39f9c5cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -303,15 +302,15 @@
         </briefdescription>
         <detaileddescription>
 <para>It sets the device origin according to the current scroll position. <ref refid="classwx_scrolled_1a96a2b41d3bcd07e28491de5f39f9c5cb" kindref="member">DoPrepareDC()</ref> is called automatically within the default <computeroutput>wxEVT_PAINT</computeroutput> event handler, so your <ref refid="classwx_scrolled_1a52284d06a6160fb42b0899aedce2c880" kindref="member">OnDraw()</ref> override will be passed an already &apos;pre-scrolled&apos; device context. However, if you wish to draw from outside of <ref refid="classwx_scrolled_1a52284d06a6160fb42b0899aedce2c880" kindref="member">OnDraw()</ref> (e.g. from your own <computeroutput>wxEVT_PAINT</computeroutput> handler), you must call this function yourself.</para>
-<para>For example: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyWindow::OnEvent(<ref refid="classwx_mouse_event" kindref="compound">wxMouseEvent</ref>&amp;<sp/>event)</highlight></codeline>
+<para>For example: <programlisting><codeline><highlight class="normal">void<sp/>MyWindow::OnEvent(wxMouseEvent&amp;<sp/>event)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><ref refid="classwx_client_d_c" kindref="compound">wxClientDC</ref><sp/>dc(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><ref refid="classwx_scrolled_1a96a2b41d3bcd07e28491de5f39f9c5cb" kindref="member">DoPrepareDC</ref>(dc);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>dc.SetPen(*<ref refid="pen_8h_1a845a77278b675303c61858c18c2bb91b" kindref="member">wxBLACK_PEN</ref>);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/>y;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Position(&amp;x,<sp/>&amp;y);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xpos<sp/>&gt;<sp/>-1<sp/>&amp;&amp;<sp/>ypos<sp/>&gt;<sp/>-1<sp/>&amp;&amp;<sp/>event.<ref refid="classwx_mouse_event_1aa08074a2555618c63e2a53f38e56f18f" kindref="member">Dragging</ref>())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>wxClientDC<sp/>dc(this);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>DoPrepareDC(dc);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>dc.SetPen(*wxBLACK_PEN);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>float<sp/>x,<sp/>y;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>event.Position(&amp;x,<sp/>&amp;y);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>if<sp/>(xpos<sp/>&gt;<sp/>-1<sp/>&amp;&amp;<sp/>ypos<sp/>&gt;<sp/>-1<sp/>&amp;&amp;<sp/>event.Dragging())</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dc.DrawLine(xpos,<sp/>ypos,<sp/>x,<sp/>y);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
@@ -323,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="304" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="296" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1ac5a023517721a5ad5b891527b437dd61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -365,7 +364,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="324" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="316" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a8590337dc643a64437c56031cf5f2e71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -390,7 +389,6 @@
 </listitem><listitem><para>wxSHOW_SB_DEFAULT: To restore the default behaviour described above.</para>
 </listitem></itemizedlist>
 </para>
-<para>Note that the window must be created before calling this method.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>horz</parametername>
@@ -414,7 +412,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="352" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="342" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1ae57f966af767e2f99f486a3c45485370" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -451,13 +449,14 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<bold>wxPerl Note:</bold> In wxPerl this method takes no parameters and returns a 2-element list (xUnit, yUnit).  <simplesect kind="see"><para><ref refid="classwx_scrolled_1af5d940f364bb5097f20fee4a8e1210bb" kindref="member">SetScrollbars()</ref>, <ref refid="classwx_scrolled_1a9e993dd807f71f622765ccc68c60082b" kindref="member">GetVirtualSize()</ref> </para>
+<bold>wxPerl Note:</bold> In wxPerl this method takes no parameters and returns a 2-element list (xUnit, yUnit).</para>
+<para><simplesect kind="see"><para><ref refid="classwx_scrolled_1af5d940f364bb5097f20fee4a8e1210bb" kindref="member">SetScrollbars()</ref>, <ref refid="classwx_scrolled_1a9e993dd807f71f622765ccc68c60082b" kindref="member">GetVirtualSize()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="371" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="361" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a01d57d0b9b81537dc011e3e8b3f4b43d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -495,13 +494,14 @@
 </parameterlist>
 <simplesect kind="remark"><para>If either of the scrollbars is not at the home position, <emphasis>x</emphasis> and/or <emphasis>y</emphasis> will be greater than zero. Combined with <ref refid="classwx_window_1ad34d4bbd6d3064aa56e7a2cc3ee97be3" kindref="member">wxWindow::GetClientSize()</ref>, the application can use this function to efficiently redraw only the visible portion of the window. The positions are in logical scroll units, not pixels, so to convert to pixels you will have to multiply by the number of pixels per scroll increment.</para>
 </simplesect>
-<bold>wxPerl Note:</bold> In wxPerl this method takes no parameters and returns a 2-element list (x, y).  <simplesect kind="see"><para><ref refid="classwx_scrolled_1af5d940f364bb5097f20fee4a8e1210bb" kindref="member">SetScrollbars()</ref>, <ref refid="classwx_scrolled_1a601bcac37185a2d4a24164d065907f69" kindref="member">Scroll()</ref> </para>
+<bold>wxPerl Note:</bold> In wxPerl this method takes no parameters and returns a 2-element list (x, y).</para>
+<para><simplesect kind="see"><para><ref refid="classwx_scrolled_1af5d940f364bb5097f20fee4a8e1210bb" kindref="member">SetScrollbars()</ref>, <ref refid="classwx_scrolled_1a601bcac37185a2d4a24164d065907f69" kindref="member">Scroll()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="397" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="387" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a3ced29907b1e914f841f979f272277c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
@@ -515,7 +515,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="403" column="13"/>
+        <location file="interface/wx/scrolwin.h" line="393" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a9e993dd807f71f622765ccc68c60082b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -553,13 +553,14 @@
 </parameterlist>
 <simplesect kind="remark"><para>Use <ref refid="classwx_d_c_1a17971d3a2e3834f5b261aedd493ae08e" kindref="member">wxDC::DeviceToLogicalX()</ref> and <ref refid="classwx_d_c_1af669c71c68fb759927ec2e5721a6793e" kindref="member">wxDC::DeviceToLogicalY()</ref> to translate these units to logical units.</para>
 </simplesect>
-<bold>wxPerl Note:</bold> In wxPerl this method takes no parameters and returns a 2-element list (xUnit, yUnit).  <simplesect kind="see"><para><ref refid="classwx_scrolled_1af5d940f364bb5097f20fee4a8e1210bb" kindref="member">SetScrollbars()</ref>, <ref refid="classwx_scrolled_1ae57f966af767e2f99f486a3c45485370" kindref="member">GetScrollPixelsPerUnit()</ref> </para>
+<bold>wxPerl Note:</bold> In wxPerl this method takes no parameters and returns a 2-element list (xUnit, yUnit).</para>
+<para><simplesect kind="see"><para><ref refid="classwx_scrolled_1af5d940f364bb5097f20fee4a8e1210bb" kindref="member">SetScrollbars()</ref>, <ref refid="classwx_scrolled_1ae57f966af767e2f99f486a3c45485370" kindref="member">GetScrollPixelsPerUnit()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="425" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="415" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a7047e92206a6e62675560fc394d9f4f8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -573,7 +574,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="430" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="420" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a52284d06a6160fb42b0899aedce2c880" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -592,7 +593,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="441" column="18"/>
+        <location file="interface/wx/scrolwin.h" line="431" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1ab33dbfe88be5ede4b04de4dcec4830f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -611,7 +612,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="449" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="439" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a601bcac37185a2d4a24164d065907f69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -655,7 +656,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="467" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="457" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1affb3c1be4945c27b589439a1d47fbbb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -673,7 +674,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="472" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="462" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a76286e2efa55d0ba85d37106a44a9401" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -696,7 +697,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="478" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="468" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1af5d940f364bb5097f20fee4a8e1210bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -807,7 +808,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="525" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="515" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a117dc8edabb3e1250199eab089e4fa5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -827,11 +828,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="547" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="537" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_scrolled_1a94c9b5f2550ee37fdf4e09413b3098ea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_scrolled_1aa48e3a4731d7e4dea26e89e9015e295d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
-        <definition>wxWindow * wxScrolled&lt; T &gt;::GetTargetWindow</definition>
+        <definition>wxWindow* wxScrolled&lt; T &gt;::GetTargetWindow</definition>
         <argsstring>() const</argsstring>
         <name>GetTargetWindow</name>
         <briefdescription>
@@ -840,7 +841,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="548" column="14"/>
+        <location file="interface/wx/scrolwin.h" line="538" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1aee90a87e1b3f7f0f70a89e085c0d9928" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -857,7 +858,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="551" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="541" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1aa43a5283b564da82368b532b22971410" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_rect" kindref="compound">wxRect</ref></type>
@@ -870,7 +871,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="552" column="12"/>
+        <location file="interface/wx/scrolwin.h" line="542" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1ad41334fc7b0dcee5a53c97da4902d82a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -887,7 +888,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="554" column="9"/>
+        <location file="interface/wx/scrolwin.h" line="544" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1aa160351f31a0080784a00023947a06f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -908,7 +909,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="555" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="545" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a981d158543584d2c4721d9f86587ccc6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -925,7 +926,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="556" column="9"/>
+        <location file="interface/wx/scrolwin.h" line="546" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a5c8829d39d00ce53901a8b1a67d5d780" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -946,7 +947,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="557" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="547" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a89bb0a54dc59ec7af02e1d08b2c8ce83" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -959,7 +960,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="558" column="12"/>
+        <location file="interface/wx/scrolwin.h" line="548" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a359410c6a60604225d03a5a490cc357e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -972,7 +973,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="559" column="12"/>
+        <location file="interface/wx/scrolwin.h" line="549" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a5b5e335677055e4107903f7d5dad042f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -985,7 +986,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="561" column="18"/>
+        <location file="interface/wx/scrolwin.h" line="551" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a9d76b612e041e10462a16a3648d09008" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -999,7 +1000,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="566" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="556" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a33c3daf5feb84c357357012e1b0e7a0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1013,7 +1014,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="572" column="10"/>
+        <location file="interface/wx/scrolwin.h" line="562" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a2d44af932b964f1522d1c78d86cd4a27" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -1032,32 +1033,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="582" column="18"/>
+        <location file="interface/wx/scrolwin.h" line="572" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
-      <memberdef kind="function" id="classwx_scrolled_1aa52533d3486dafec14afe3742fee383b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type>bool</type>
-        <definition>virtual bool wxScrolled&lt; T &gt;::ShouldScrollToChildOnFocus</definition>
-        <argsstring>(wxWindow *child)</argsstring>
-        <name>ShouldScrollToChildOnFocus</name>
-        <param>
-          <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
-          <declname>child</declname>
-        </param>
-        <briefdescription>
-<para>This method can be overridden in a derived class to prevent scrolling the child window into view automatically when it gets focus. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The default behaviour is to scroll this window to show its currently focused child automatically, to ensure that the user can interact with it. This is usually helpful, but can be undesirable for some windows, in which case this method can be overridden to return false for them to prevent any scrolling from taking place when such windows get focus.</para>
-<para><simplesect kind="since"><para>3.1.3 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="597" column="18"/>
-      </memberdef>
       <memberdef kind="function" id="classwx_scrolled_1a81800886d1d5f094caeee683e707de12" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
         <definition>virtual wxSize wxScrolled&lt; T &gt;::GetSizeAvailableForScrollTarget</definition>
@@ -1075,7 +1054,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/scrolwin.h" line="611" column="20"/>
+        <location file="interface/wx/scrolwin.h" line="588" column="20"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1088,14 +1067,12 @@
 </listitem><listitem><para><ref refid="group__group__class__miscwnd_1ga6b205af0f8759231eab11f15f7d4a098" kindref="member">wxScrolledCanvas</ref>, aka wxScrolled&lt;wxWindow&gt;, derives from <ref refid="classwx_window" kindref="compound">wxWindow</ref> and so doesn&apos;t handle children specially. This is suitable e.g. for implementing scrollable controls such as tree or list controls.</para>
 </listitem></itemizedlist>
 </para>
-<para><simplesect kind="note"><para>See <ref refid="classwx_scrolled_1a9f03bd3bcbb96c84f90c2482f58f075a" kindref="member">wxScrolled::Create()</ref> if you want to use <ref refid="classwx_scrolled" kindref="compound">wxScrolled</ref> with a custom class.</para>
-</simplesect>
-Starting from version 2.4 of wxWidgets, there are several ways to use a <ref refid="group__group__class__miscwnd_1ga695bec5996cd4d5512d1a01cfdcf96a5" kindref="member">wxScrolledWindow</ref> (and now <ref refid="classwx_scrolled" kindref="compound">wxScrolled</ref>). In particular, there are three ways to set the size of the scrolling area:</para>
+<para>Starting from version 2.4 of wxWidgets, there are several ways to use a <ref refid="group__group__class__miscwnd_1ga695bec5996cd4d5512d1a01cfdcf96a5" kindref="member">wxScrolledWindow</ref> (and now <ref refid="classwx_scrolled" kindref="compound">wxScrolled</ref>). In particular, there are three ways to set the size of the scrolling area:</para>
 <para>One way is to set the scrollbars directly using a call to <ref refid="classwx_scrolled_1af5d940f364bb5097f20fee4a8e1210bb" kindref="member">SetScrollbars()</ref>. This is the way it used to be in any previous version of wxWidgets and it will be kept for backwards compatibility.</para>
 <para>An additional method of manual control, which requires a little less computation of your own, is to set the total size of the scrolling area by calling either <ref refid="classwx_window_1a37f293b7904bc6668b86cccb0aea5669" kindref="member">wxWindow::SetVirtualSize()</ref>, or <ref refid="classwx_window_1a55aca401aab29d59f7cc53f89ba2e38d" kindref="member">wxWindow::FitInside()</ref>, and setting the scrolling increments for it by calling <ref refid="classwx_scrolled_1a76286e2efa55d0ba85d37106a44a9401" kindref="member">SetScrollRate()</ref>. Scrolling in some orientation is enabled by setting a non-zero increment for it.</para>
 <para>The most automatic and newest way is to simply let sizers determine the scrolling area. This is now the default when you set an interior sizer into a <ref refid="classwx_scrolled" kindref="compound">wxScrolled</ref> with <ref refid="classwx_window_1abc95691b45e29a52c24aa9d33d46dec1" kindref="member">wxWindow::SetSizer()</ref>. The scrolling area will be set to the size requested by the sizer and the scrollbars will be assigned for each orientation according to the need for them and the scrolling increment set by <ref refid="classwx_scrolled_1a76286e2efa55d0ba85d37106a44a9401" kindref="member">SetScrollRate()</ref>. As above, scrolling is only enabled in orientations with a non-zero increment. You can influence the minimum size of the scrolled area controlled by a sizer by calling wxWindow::SetVirtualSizeHints(). (Calling <ref refid="classwx_scrolled_1af5d940f364bb5097f20fee4a8e1210bb" kindref="member">SetScrollbars()</ref> has analogous effects in wxWidgets 2.4 <ndash/> in later versions it may not continue to override the sizer.)</para>
 <para>Note that if maximum size hints are still supported by wxWindow::SetVirtualSizeHints(), use them at your own dire risk. They may or may not have been removed for 2.4, but it really only makes sense to set minimum size hints here. We should probably replace wxWindow::SetVirtualSizeHints() with wxWindow::SetMinVirtualSize() or similar and remove it entirely in future.</para>
-<para><xrefsect id="todo_1_todo000031"><xreftitle>Todo</xreftitle><xrefdescription><para>review docs for this class replacing SetVirtualSizeHints() with SetMinClientSize().</para>
+<para><xrefsect id="todo_1_todo000044"><xreftitle>Todo</xreftitle><xrefdescription><para>review docs for this class replacing SetVirtualSizeHints() with SetMinClientSize().</para>
 </xrefdescription></xrefsect></para>
 <para>As with all windows, an application can draw onto a <ref refid="classwx_scrolled" kindref="compound">wxScrolled</ref> using a <ref refid="overview_dc" kindref="compound">device context</ref>.</para>
 <para>You have the option of handling the OnPaint handler or overriding the <ref refid="classwx_scrolled_1a52284d06a6160fb42b0899aedce2c880" kindref="member">wxScrolled::OnDraw()</ref> function, which is passed a pre-scrolled device context (prepared by <ref refid="classwx_scrolled_1a96a2b41d3bcd07e28491de5f39f9c5cb" kindref="member">wxScrolled::DoPrepareDC()</ref>).</para>
@@ -1155,18 +1132,18 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
 </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="1">
+        <label>wxScrolled&lt; T &gt;</label>
+        <link refid="classwx_scrolled"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
         <label>T</label>
       </node>
       <node id="3">
-        <label>wxGrid&lt; wxWindow &gt;</label>
+        <label>wxGrid&lt; wxPanel &gt;</label>
         <link refid="classwx_grid"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>wxHtmlWindow&lt; wxPanel &gt;</label>
-        <link refid="classwx_html_window"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -1176,25 +1153,25 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>wxScrolled&lt; T &gt;</label>
-        <link refid="classwx_scrolled"/>
-        <childnode refid="2" relation="public-inheritance">
+      <node id="4">
+        <label>wxHtmlWindow&lt; wxPanel &gt;</label>
+        <link refid="classwx_html_window"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>T</label>
-      </node>
       <node id="1">
         <label>wxScrolled&lt; T &gt;</label>
         <link refid="classwx_scrolled"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>T</label>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/scrolwin.h" line="167" column="1" bodyfile="interface/wx/scrolwin.h" bodystart="168" bodyend="612"/>
+    <location file="interface/wx/scrolwin.h" line="165" column="1" bodyfile="interface/wx/scrolwin.h" bodystart="164" bodyend="589"/>
     <listofallmembers>
       <member refid="classwx_scrolled_1a5b5e335677055e4107903f7d5dad042f" prot="public" virt="virtual"><scope>wxScrolled</scope><name>AdjustScrollbars</name></member>
       <member refid="classwx_scrolled_1a5beb86afd7eec414740ac5be2e80da33" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>CalcScrolledPosition</name></member>
@@ -1212,7 +1189,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_scrolled_1ae57f966af767e2f99f486a3c45485370" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>GetScrollPixelsPerUnit</name></member>
       <member refid="classwx_scrolled_1a81800886d1d5f094caeee683e707de12" prot="protected" virt="virtual"><scope>wxScrolled</scope><name>GetSizeAvailableForScrollTarget</name></member>
       <member refid="classwx_scrolled_1aa43a5283b564da82368b532b22971410" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>GetTargetRect</name></member>
-      <member refid="classwx_scrolled_1a94c9b5f2550ee37fdf4e09413b3098ea" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>GetTargetWindow</name></member>
+      <member refid="classwx_scrolled_1aa48e3a4731d7e4dea26e89e9015e295d" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>GetTargetWindow</name></member>
       <member refid="classwx_scrolled_1a01d57d0b9b81537dc011e3e8b3f4b43d" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>GetViewStart</name></member>
       <member refid="classwx_scrolled_1a3ced29907b1e914f841f979f272277c8" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>GetViewStart</name></member>
       <member refid="classwx_scrolled_1a9e993dd807f71f622765ccc68c60082b" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>GetVirtualSize</name></member>
@@ -1229,7 +1206,6 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_scrolled_1a76286e2efa55d0ba85d37106a44a9401" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>SetScrollRate</name></member>
       <member refid="classwx_scrolled_1aee90a87e1b3f7f0f70a89e085c0d9928" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>SetTargetRect</name></member>
       <member refid="classwx_scrolled_1a117dc8edabb3e1250199eab089e4fa5b" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>SetTargetWindow</name></member>
-      <member refid="classwx_scrolled_1aa52533d3486dafec14afe3742fee383b" prot="protected" virt="virtual"><scope>wxScrolled</scope><name>ShouldScrollToChildOnFocus</name></member>
       <member refid="classwx_scrolled_1a8590337dc643a64437c56031cf5f2e71" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>ShowScrollbars</name></member>
       <member refid="classwx_scrolled_1a33c3daf5feb84c357357012e1b0e7a0a" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>StopAutoScrolling</name></member>
       <member refid="classwx_scrolled_1a01d0ecb5daa59ebb7a0806f16b7ac267" prot="public" virt="non-virtual"><scope>wxScrolled</scope><name>wxScrolled</name></member>

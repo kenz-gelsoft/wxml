@@ -1,7 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="automtn_8h" kind="file" language="C++">
     <compoundname>automtn.h</compoundname>
+    <innerclass refid="classwx_variant_data_currency" prot="public">wxVariantDataCurrency</innerclass>
+    <innerclass refid="classwx_variant_data_error_code" prot="public">wxVariantDataErrorCode</innerclass>
+    <innerclass refid="classwx_variant_data_safe_array" prot="public">wxVariantDataSafeArray</innerclass>
     <innerclass refid="classwx_automation_object" prot="public">wxAutomationObject</innerclass>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="automtn_8h_1a2a632c1c7e22d8092a8f94b3ac95909e" prot="public" static="no" strong="no">
@@ -48,7 +51,42 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/msw/ole/automtn.h" line="15" column="1" bodyfile="interface/wx/msw/ole/automtn.h" bodystart="16" bodyend="42"/>
+        <location file="interface/wx/msw/ole/automtn.h" line="16" column="1" bodyfile="interface/wx/msw/ole/automtn.h" bodystart="15" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="enum" id="automtn_8h_1abc7384fa01c6eb0bda9f6daba63b5f19" prot="public" static="no" strong="no">
+        <type></type>
+        <name>wxOleConvertVariantFlags</name>
+        <enumvalue id="automtn_8h_1abc7384fa01c6eb0bda9f6daba63b5f19aa1349835207204f3b4ba60c2aae37181" prot="public">
+          <name>wxOleConvertVariant_Default</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Default value. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="automtn_8h_1abc7384fa01c6eb0bda9f6daba63b5f19ac9eb2d8b9ff34bf523694dfc2c7481f0" prot="public">
+          <name>wxOleConvertVariant_ReturnSafeArrays</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>If this flag is used, SAFEARRAYs contained in OLE VARIANTs will be returned as wxVariants with <ref refid="classwx_variant_data_safe_array" kindref="compound">wxVariantDataSafeArray</ref> type instead of wxVariants with the list type containing the (flattened) SAFEARRAY&apos;s elements. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Flags used for conversions between <ref refid="classwx_variant" kindref="compound">wxVariant</ref> and OLE VARIANT. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>These flags are used by <ref refid="classwx_automation_object" kindref="compound">wxAutomationObject</ref> for its wxConvertOleToVariant() calls. They can be obtained by <ref refid="classwx_automation_object_1af8565d70c2e0370bc0dac5a86d4afeb0" kindref="member">wxAutomationObject::GetConvertVariantFlags()</ref> and set by <ref refid="classwx_automation_object_1af68c1dfd67c9c018983e0da3c0385fae" kindref="member">wxAutomationObject::SetConvertVariantFlags()</ref>.</para>
+<para><simplesect kind="since"><para>3.0</para>
+</simplesect>
+Include file:<linebreak/>
+ <verbatim>#include &lt;wx/msw/ole/oleutils.h&gt; </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/msw/ole/automtn.h" line="56" column="1" bodyfile="interface/wx/msw/ole/automtn.h" bodystart="55" bodyend="69"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

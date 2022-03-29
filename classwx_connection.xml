@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_connection" kind="class" language="C++" prot="public">
     <compoundname>wxConnection</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -15,7 +15,7 @@
         </briefdescription>
         <detaileddescription>
 <para>If no user-defined connection object is to be derived from <ref refid="classwx_connection" kindref="compound">wxConnection</ref>, then the constructor should not be called directly, since the default connection object will be provided on requesting (or accepting) a connection.</para>
-<para>However, if the user defines his or her own derived connection object, the <ref refid="classwx_server_1a4422a224618f5d655ffbb59bec6735e0" kindref="member">wxServer::OnAcceptConnection</ref> and/or <ref refid="classwx_client_1a789d235c6b00df9f80094c769c04d4bc" kindref="member">wxClient::OnMakeConnection</ref> members should be replaced by functions which construct the new connection object.</para>
+<para>However, if the user defines his or her own derived connection object, the <ref refid="classwx_server_1ae04dd9aa98b7a0a3cfce1333d80b0713" kindref="member">wxServer::OnAcceptConnection</ref> and/or <ref refid="classwx_client_1a71328614681f8f50de8a561b5dcfbbde" kindref="member">wxClient::OnMakeConnection</ref> members should be replaced by functions which construct the new connection object.</para>
 <para>If the arguments of the <ref refid="classwx_connection" kindref="compound">wxConnection</ref> constructor are void then the <ref refid="classwx_connection" kindref="compound">wxConnection</ref> object manages its own connection buffer, allocating memory as needed. A programmer-supplied buffer cannot be increased if necessary, and the program will assert if it is not large enough.</para>
 <para>The programmer-supplied buffer is included mainly for backwards compatibility. </para>
         </detaileddescription>
@@ -342,9 +342,9 @@
         </inbodydescription>
         <location file="interface/wx/ipc.h" line="130" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_connection_1aa5b17393fe1eb0120f0e61bae6087541" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_connection_1a646a4fe944f63edb338c987e461fec95" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>const void *</type>
-        <definition>virtual const void * wxConnection::OnRequest</definition>
+        <definition>virtual const void* wxConnection::OnRequest</definition>
         <argsstring>(const wxString &amp;topic, const wxString &amp;item, size_t *size, wxIPCFormat format)</argsstring>
         <name>OnRequest</name>
         <param>
@@ -364,10 +364,10 @@
           <declname>format</declname>
         </param>
         <briefdescription>
-<para>Message sent to the server application when the client calls <ref refid="classwx_connection_1a612a3b4f1cedcc78f9dfb3fb52956ffc" kindref="member">Request()</ref>. </para>
+<para>Message sent to the server application when the client calls <ref refid="classwx_connection_1ad692904420977e68c7a6311d96059a8f" kindref="member">Request()</ref>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The server&apos;s <ref refid="classwx_connection_1aa5b17393fe1eb0120f0e61bae6087541" kindref="member">OnRequest()</ref> method should respond by returning a character string, or NULL to indicate no data, and setting *size.</para>
+<para>The server&apos;s <ref refid="classwx_connection_1a646a4fe944f63edb338c987e461fec95" kindref="member">OnRequest()</ref> method should respond by returning a character string, or NULL to indicate no data, and setting *size.</para>
 <para>The character string must of course persist after the call returns. </para>
         </detaileddescription>
         <inbodydescription>
@@ -516,9 +516,9 @@
         </inbodydescription>
         <location file="interface/wx/ipc.h" line="177" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_connection_1a612a3b4f1cedcc78f9dfb3fb52956ffc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_connection_1ad692904420977e68c7a6311d96059a8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const void *</type>
-        <definition>const void * wxConnection::Request</definition>
+        <definition>const void* wxConnection::Request</definition>
         <argsstring>(const wxString &amp;item, size_t *size, wxIPCFormat format=wxIPC_TEXT)</argsstring>
         <name>Request</name>
         <param>
@@ -538,7 +538,7 @@
 <para>Called by the client application to request data from the server. </para>
         </briefdescription>
         <detaileddescription>
-<para>Causes the server connection&apos;s <ref refid="classwx_connection_1aa5b17393fe1eb0120f0e61bae6087541" kindref="member">OnRequest()</ref> member to be called. Size may be NULL or a pointer to a variable to receive the size of the requested item.</para>
+<para>Causes the server connection&apos;s <ref refid="classwx_connection_1a646a4fe944f63edb338c987e461fec95" kindref="member">OnRequest()</ref> member to be called. Size may be NULL or a pointer to a variable to receive the size of the requested item.</para>
 <para>Returns a character string (actually a pointer to the connection&apos;s buffer) if successful, NULL otherwise. This buffer does not need to be deleted. </para>
         </detaileddescription>
         <inbodydescription>
@@ -660,10 +660,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A <ref refid="classwx_connection" kindref="compound">wxConnection</ref> object represents the connection between a client and a server. </para>
     </briefdescription>
     <detaileddescription>
-<para>It is created by making a connection using a <ref refid="classwx_client" kindref="compound">wxClient</ref> object, or by the acceptance of a connection by a <ref refid="classwx_server" kindref="compound">wxServer</ref> object.</para>
+<para>A <ref refid="classwx_connection" kindref="compound">wxConnection</ref> object represents the connection between a client and a server. It is created by making a connection using a <ref refid="classwx_client" kindref="compound">wxClient</ref> object, or by the acceptance of a connection by a <ref refid="classwx_server" kindref="compound">wxServer</ref> object.</para>
 <para>The bulk of a DDE-like (Dynamic Data Exchange) conversation is controlled by calling members in a <bold><ref refid="classwx_connection" kindref="compound">wxConnection</ref></bold> object or by overriding its members. The actual DDE-based implementation using <ref refid="classwx_d_d_e_connection" kindref="compound">wxDDEConnection</ref> is available on Windows only, but a platform-independent, socket-based version of this API is available using <ref refid="classwx_t_c_p_connection" kindref="compound">wxTCPConnection</ref>, which has the same API.</para>
 <para>An application should normally derive a new connection class from <ref refid="classwx_connection" kindref="compound">wxConnection</ref>, in order to override the communication event handlers to do something interesting.</para>
 <para><heading level="2"></heading>
@@ -704,22 +703,22 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/ipc.h" line="29" column="1" bodyfile="interface/wx/ipc.h" bodystart="30" bodyend="231"/>
+    <location file="interface/wx/ipc.h" line="30" column="1" bodyfile="interface/wx/ipc.h" bodystart="29" bodyend="231"/>
     <listofallmembers>
       <member refid="classwx_connection_1a21a78690ee1ae3649ea1ecd292f7f453" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Advise</name></member>
       <member refid="classwx_connection_1adc2134e6040120d214e9c58946fb7b87" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Advise</name></member>
       <member refid="classwx_connection_1a6b9c26fb7a98ad9cf9533943ecc34f30" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Advise</name></member>
       <member refid="classwx_connection_1ab879420b12ec8b085cdbc4bd1411b7fa" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Advise</name></member>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxConnection</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxConnection</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxConnection</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxConnection</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxConnection</scope><name>CreateRefData</name></member>
       <member refid="classwx_connection_1a685d3d8b0b5220afdc3dda2aa7a37e03" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Disconnect</name></member>
       <member refid="classwx_connection_1aedb1028c9578f04f2c5b084271b54e4d" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Execute</name></member>
       <member refid="classwx_connection_1a6b6ca69abb25e74bcc25a3f70a482b6b" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Execute</name></member>
       <member refid="classwx_connection_1aab34b313bf5cd8ec6c071bbec33f48a9" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Execute</name></member>
       <member refid="classwx_connection_1af1ef17a196c6d1d40d2b060be0690fd8" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Execute</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxConnection</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxConnection</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>GetRefData</name></member>
       <member refid="classwx_connection_1acf4f913152774d0b5eff1397cfd8890c" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>GetTextFromData</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>IsSameAs</name></member>
@@ -729,17 +728,17 @@
       <member refid="classwx_connection_1a69dadd11a2a7b07acfbab20c82719651" prot="public" virt="virtual"><scope>wxConnection</scope><name>OnDisconnect</name></member>
       <member refid="classwx_connection_1a3995d44a885eccc26820262a35b11cd3" prot="public" virt="virtual"><scope>wxConnection</scope><name>OnExec</name></member>
       <member refid="classwx_connection_1a34e3b471ab151be9356acdf583ba8997" prot="public" virt="virtual"><scope>wxConnection</scope><name>OnPoke</name></member>
-      <member refid="classwx_connection_1aa5b17393fe1eb0120f0e61bae6087541" prot="public" virt="virtual"><scope>wxConnection</scope><name>OnRequest</name></member>
+      <member refid="classwx_connection_1a646a4fe944f63edb338c987e461fec95" prot="public" virt="virtual"><scope>wxConnection</scope><name>OnRequest</name></member>
       <member refid="classwx_connection_1a6c50178f8a0da930a49f6fc68c17c9c1" prot="public" virt="virtual"><scope>wxConnection</scope><name>OnStartAdvise</name></member>
       <member refid="classwx_connection_1ad3f6d06404e75a35f83870cce83ded81" prot="public" virt="virtual"><scope>wxConnection</scope><name>OnStopAdvise</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>operator new</name></member>
       <member refid="classwx_connection_1a1a3e3fccd19a0ee3aa2ac89f5ecb8d1d" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Poke</name></member>
       <member refid="classwx_connection_1aecd75b4c449b0f684fe355d511494f52" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Poke</name></member>
       <member refid="classwx_connection_1a8f3b561683c4a05858aef37b690d01bd" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Poke</name></member>
       <member refid="classwx_connection_1abb26402299fbb2db2ae19810148062b8" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Poke</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Ref</name></member>
-      <member refid="classwx_connection_1a612a3b4f1cedcc78f9dfb3fb52956ffc" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Request</name></member>
+      <member refid="classwx_connection_1ad692904420977e68c7a6311d96059a8f" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>Request</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>SetRefData</name></member>
       <member refid="classwx_connection_1a28a3851ff97bf155727c8a0ccc478c5b" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>StartAdvise</name></member>
       <member refid="classwx_connection_1a4dd918c1cc033d83c73c6783d1e2c64a" prot="public" virt="non-virtual"><scope>wxConnection</scope><name>StopAdvise</name></member>

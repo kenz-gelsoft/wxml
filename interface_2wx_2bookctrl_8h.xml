@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="interface_2wx_2bookctrl_8h" kind="file" language="C++">
     <compoundname>bookctrl.h</compoundname>
     <innerclass refid="classwx_book_ctrl_base" prot="public">wxBookCtrlBase</innerclass>
@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/bookctrl.h" line="38" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="38" bodyend="-1"/>
+        <location file="interface/wx/bookctrl.h" line="36" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="interface_2wx_2bookctrl_8h_1ad36f889d557af729966b28a9e53f0230" prot="public" static="no">
         <name>wxBK_TOP</name>
@@ -26,7 +26,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/bookctrl.h" line="39" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="39" bodyend="-1"/>
+        <location file="interface/wx/bookctrl.h" line="37" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="interface_2wx_2bookctrl_8h_1ae5e1e857ef24fe84d9ca7d6720e31cc2" prot="public" static="no">
         <name>wxBK_BOTTOM</name>
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/bookctrl.h" line="40" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="40" bodyend="-1"/>
+        <location file="interface/wx/bookctrl.h" line="38" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="interface_2wx_2bookctrl_8h_1a241a12974cb60b7175e06ddb0df3ac80" prot="public" static="no">
         <name>wxBK_LEFT</name>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/bookctrl.h" line="41" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="41" bodyend="-1"/>
+        <location file="interface/wx/bookctrl.h" line="39" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="interface_2wx_2bookctrl_8h_1ad61e5dcc5cbb913956437899963fab2a" prot="public" static="no">
         <name>wxBK_RIGHT</name>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/bookctrl.h" line="42" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="42" bodyend="-1"/>
+        <location file="interface/wx/bookctrl.h" line="40" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="interface_2wx_2bookctrl_8h_1aa9e49fb51efb4c643c46362c43aee118" prot="public" static="no">
         <name>wxBK_ALIGN_MASK</name>
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/bookctrl.h" line="43" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="43" bodyend="-1"/>
+        <location file="interface/wx/bookctrl.h" line="41" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="interface_2wx_2bookctrl_8h_1ab367c06ea9df73f0d3bf3c464afdb7d6" prot="public" static="no">
         <name>wxBookCtrl</name>
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/bookctrl.h" line="382" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="382" bodyend="-1"/>
+        <location file="interface/wx/bookctrl.h" line="368" column="9" bodyfile="interface/wx/bookctrl.h" bodystart="368" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -119,7 +119,7 @@
         </enumvalue>
         <enumvalue id="interface_2wx_2bookctrl_8h_1a99fb83031ce9923c84392b4e92f956b5a66b7d6ce07520e46b0a42d6ae873934c" prot="public">
           <name>wxBK_HITTEST_ONITEM</name>
-          <initializer>= 16</initializer>
+          <initializer>= wxBK_HITTEST_ONICON | wxBK_HITTEST_ONLABEL</initializer>
           <briefdescription>
 <para>The point if over a tab item but not over its icon or label. </para>
           </briefdescription>
@@ -139,11 +139,11 @@
 <para>Bit flags returned by wxBookCtrl::HitTest(). </para>
         </briefdescription>
         <detaileddescription>
-<para>Only one of wxBK_HITTEST_ONICON, wxBK_HITTEST_ONLABEL, wxBK_HITTEST_ONITEM bits is set if point is over a tab. Notice that wxOSX currently only returns wxBK_HITTEST_ONLABEL or wxBK_HITTEST_NOWHERE and never the other values, so you should only test for these two in the code that should be portable under macOS. </para>
+<para>Notice that wxOSX currently only returns wxBK_HITTEST_ONLABEL or wxBK_HITTEST_NOWHERE and never the other values, so you should only test for these two in the code that should be portable under OS X. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/bookctrl.h" line="17" column="1" bodyfile="interface/wx/bookctrl.h" bodystart="18" bodyend="33"/>
+        <location file="interface/wx/bookctrl.h" line="16" column="1" bodyfile="interface/wx/bookctrl.h" bodystart="15" bodyend="31"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

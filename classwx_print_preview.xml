@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_print_preview" kind="class" language="C++" prot="public">
     <compoundname>wxPrintPreview</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -78,9 +78,9 @@ Use <ref refid="classwx_print_preview_1ad021ac4397424612e6cb4623c24bcf63" kindre
         </inbodydescription>
         <location file="interface/wx/print.h" line="334" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_print_preview_1a0b01f6f2910cc685c9acad4e724b3c27" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_print_preview_1a9de231ef12bd19ac928ef8b6ebf10fcc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_preview_canvas" kindref="compound">wxPreviewCanvas</ref> *</type>
-        <definition>virtual wxPreviewCanvas * wxPrintPreview::GetCanvas</definition>
+        <definition>virtual wxPreviewCanvas* wxPrintPreview::GetCanvas</definition>
         <argsstring>() const</argsstring>
         <name>GetCanvas</name>
         <briefdescription>
@@ -106,9 +106,9 @@ Use <ref refid="classwx_print_preview_1ad021ac4397424612e6cb4623c24bcf63" kindre
         </inbodydescription>
         <location file="interface/wx/print.h" line="344" column="17"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_print_preview_1a18a81b358d02d8d131d890c0f2b8dae8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_print_preview_1ab64f60ae0343c6a7de6304eae8033703" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_frame" kindref="compound">wxFrame</ref> *</type>
-        <definition>virtual wxFrame * wxPrintPreview::GetFrame</definition>
+        <definition>virtual wxFrame* wxPrintPreview::GetFrame</definition>
         <argsstring>() const</argsstring>
         <name>GetFrame</name>
         <briefdescription>
@@ -148,9 +148,9 @@ Use <ref refid="classwx_print_preview_1ad021ac4397424612e6cb4623c24bcf63" kindre
         </inbodydescription>
         <location file="interface/wx/print.h" line="360" column="17"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_print_preview_1ae9f42c6699cd06ec351a9da0e9413e09" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_print_preview_1ae82cafe02c405af38bc35a2e6232551e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_printout" kindref="compound">wxPrintout</ref> *</type>
-        <definition>virtual wxPrintout * wxPrintPreview::GetPrintout</definition>
+        <definition>virtual wxPrintout* wxPrintPreview::GetPrintout</definition>
         <argsstring>() const</argsstring>
         <name>GetPrintout</name>
         <briefdescription>
@@ -162,9 +162,9 @@ Use <ref refid="classwx_print_preview_1ad021ac4397424612e6cb4623c24bcf63" kindre
         </inbodydescription>
         <location file="interface/wx/print.h" line="365" column="24"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_print_preview_1a3eb96d844b1cc691f674ff2aade8cf02" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_print_preview_1aa35e977ad698cf54fbae4944328fd1d1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_printout" kindref="compound">wxPrintout</ref> *</type>
-        <definition>virtual wxPrintout * wxPrintPreview::GetPrintoutForPrinting</definition>
+        <definition>virtual wxPrintout* wxPrintPreview::GetPrintoutForPrinting</definition>
         <argsstring>() const</argsstring>
         <name>GetPrintoutForPrinting</name>
         <briefdescription>
@@ -346,11 +346,10 @@ Use <ref refid="classwx_print_preview_1ad021ac4397424612e6cb4623c24bcf63" kindre
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Objects of this class manage the print preview process. </para>
     </briefdescription>
     <detaileddescription>
-<para>The object is passed a <ref refid="classwx_printout" kindref="compound">wxPrintout</ref> object, and the <ref refid="classwx_print_preview" kindref="compound">wxPrintPreview</ref> object itself is passed to a <ref refid="classwx_preview_frame" kindref="compound">wxPreviewFrame</ref> object. Previewing is started by initializing and showing the preview frame. Unlike <ref refid="classwx_printer_1a59e6d69be017dfa033e116bdf749bab3" kindref="member">wxPrinter::Print()</ref>, flow of control returns to the application immediately after the frame is shown.</para>
-<para><simplesect kind="note"><para>The preview shown is only exact on Windows. On other platforms, the <ref refid="classwx_d_c" kindref="compound">wxDC</ref> used for preview is different from what is used for printing and the results may be significantly different, depending on how is the output created. In particular, printing code relying on <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">wxDC::GetTextExtent()</ref> heavily (for example, <ref refid="classwx_html_easy_printing" kindref="compound">wxHtmlEasyPrinting</ref> and other wxHTML classes do) is affected. It is recommended to use native preview functionality on platforms that offer it (macOS, GTK+).</para>
+<para>Objects of this class manage the print preview process. The object is passed a <ref refid="classwx_printout" kindref="compound">wxPrintout</ref> object, and the <ref refid="classwx_print_preview" kindref="compound">wxPrintPreview</ref> object itself is passed to a <ref refid="classwx_preview_frame" kindref="compound">wxPreviewFrame</ref> object. Previewing is started by initializing and showing the preview frame. Unlike <ref refid="classwx_printer_1a59e6d69be017dfa033e116bdf749bab3" kindref="member">wxPrinter::Print()</ref>, flow of control returns to the application immediately after the frame is shown.</para>
+<para><simplesect kind="note"><para>The preview shown is only exact on Windows. On other platforms, the <ref refid="classwx_d_c" kindref="compound">wxDC</ref> used for preview is different from what is used for printing and the results may be significantly different, depending on how is the output created. In particular, printing code relying on <ref refid="classwx_d_c_1a8ad68582fbd5373b4af6bad906defeb4" kindref="member">wxDC::GetTextExtent()</ref> heavily (for example, <ref refid="classwx_html_easy_printing" kindref="compound">wxHtmlEasyPrinting</ref> and other wxHTML classes do) is affected. It is recommended to use native preview functionality on platforms that offer it (OS X, GTK+).</para>
 </simplesect>
 <heading level="2"></heading>
 </para>
@@ -390,26 +389,26 @@ Use <ref refid="classwx_print_preview_1ad021ac4397424612e6cb4623c24bcf63" kindre
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/print.h" line="301" column="1" bodyfile="interface/wx/print.h" bodystart="302" bodyend="432"/>
+    <location file="interface/wx/print.h" line="302" column="1" bodyfile="interface/wx/print.h" bodystart="301" bodyend="432"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxPrintPreview</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxPrintPreview</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxPrintPreview</scope><name>CreateRefData</name></member>
-      <member refid="classwx_print_preview_1a0b01f6f2910cc685c9acad4e724b3c27" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetCanvas</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxPrintPreview</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxPrintPreview</scope><name>CreateRefData</name></member>
+      <member refid="classwx_print_preview_1a9de231ef12bd19ac928ef8b6ebf10fcc" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetCanvas</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetClassInfo</name></member>
       <member refid="classwx_print_preview_1afcca618e09fd0b727454edbb0944442c" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetCurrentPage</name></member>
-      <member refid="classwx_print_preview_1a18a81b358d02d8d131d890c0f2b8dae8" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetFrame</name></member>
+      <member refid="classwx_print_preview_1ab64f60ae0343c6a7de6304eae8033703" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetFrame</name></member>
       <member refid="classwx_print_preview_1a86dfc77babeef70ae963b27aa61460ea" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetMaxPage</name></member>
       <member refid="classwx_print_preview_1a7a6dfb4a72505723932aae24647def36" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetMinPage</name></member>
-      <member refid="classwx_print_preview_1ae9f42c6699cd06ec351a9da0e9413e09" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetPrintout</name></member>
-      <member refid="classwx_print_preview_1a3eb96d844b1cc691f674ff2aade8cf02" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetPrintoutForPrinting</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxPrintPreview</scope><name>GetRefData</name></member>
+      <member refid="classwx_print_preview_1ae82cafe02c405af38bc35a2e6232551e" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetPrintout</name></member>
+      <member refid="classwx_print_preview_1aa35e977ad698cf54fbae4944328fd1d1" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>GetPrintoutForPrinting</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxPrintPreview</scope><name>GetRefData</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxPrintPreview</scope><name>IsKindOf</name></member>
       <member refid="classwx_print_preview_1ad021ac4397424612e6cb4623c24bcf63" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>IsOk</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxPrintPreview</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxPrintPreview</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxPrintPreview</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxPrintPreview</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxPrintPreview</scope><name>operator new</name></member>
       <member refid="classwx_print_preview_1a4d889f1a13a1b4cd4a3c0f699ddcccf8" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>PaintPage</name></member>
       <member refid="classwx_print_preview_1a65fef323ded88669f88d4c77520f0797" prot="public" virt="virtual"><scope>wxPrintPreview</scope><name>Print</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxPrintPreview</scope><name>Ref</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_scrolling" kind="page">
     <compoundname>overview_scrolling</compoundname>
     <title>Scrolled Windows</title>
@@ -14,11 +14,9 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>Scrollbars come in various guises in wxWidgets. </para>
     </briefdescription>
     <detaileddescription>
-<para>Scrollbars come in various guises in wxWidgets.</para>
-<para>All windows have the potential to show a vertical scrollbar and/or a horizontal scrollbar: it is a basic capability of a window. However, in practice, not all windows do make use of scrollbars, such as a single-line <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>.</para>
+<para>Scrollbars come in various guises in wxWidgets. All windows have the potential to show a vertical scrollbar and/or a horizontal scrollbar: it is a basic capability of a window. However, in practice, not all windows do make use of scrollbars, such as a single-line <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>.</para>
 <para>Because any class derived from <ref refid="classwx_window" kindref="compound">wxWindow</ref> may have scrollbars, there are functions to manipulate the scrollbars and event handlers to intercept scroll events. But just because a window generates a scroll event, doesn&apos;t mean that the window necessarily handles it and physically scrolls the window. The base class <ref refid="classwx_window" kindref="compound">wxWindow</ref> in fact doesn&apos;t have any default functionality to handle scroll events. If you created a <ref refid="classwx_window" kindref="compound">wxWindow</ref> object with scrollbars, and then clicked on the scrollbars, nothing at all would happen. This is deliberate, because the <emphasis>interpretation</emphasis> of scroll events varies from one window class to another.</para>
 <para><ref refid="group__group__class__miscwnd_1ga695bec5996cd4d5512d1a01cfdcf96a5" kindref="member">wxScrolledWindow</ref> (formerly wxCanvas) is an example of a window that adds functionality to make scrolling really work. It assumes that scrolling happens in consistent units, not different-sized jumps, and that page size is represented by the visible portion of the window. It is suited to drawing applications, but perhaps not so suitable for a sophisticated editor in which the amount scrolled may vary according to the size of text on a given line. For this, you would derive from <ref refid="classwx_window" kindref="compound">wxWindow</ref> and implement scrolling yourself. <ref refid="classwx_grid" kindref="compound">wxGrid</ref> is an example of a class that implements its own scrolling, largely because columns and rows can vary in size.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_scroll_bar" kindref="compound">wxScrollBar</ref></para>
@@ -58,12 +56,11 @@
 <sect1 id="overview_scrolling_1overview_scrolling_example">
 <title>An Example</title>
 <para>Let&apos;s say you wish to display 50 lines of text, using the same font. The window is sized so that you can only see 16 lines at a time. You would use:</para>
-<para><programlisting><codeline><highlight class="normal">SetScrollbar(<ref refid="defs_8h_1a1e6994f40bd9cb140e292afb165af971a2134d1cb8cf605532880c118190695b5" kindref="member">wxVERTICAL</ref>,<sp/>0,<sp/>16,<sp/>50);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">SetScrollbar(wxVERTICAL,<sp/>0,<sp/>16,<sp/>50);</highlight></codeline>
 </programlisting></para>
 <para>Note that with the window at this size, the thumb position can never go above 50 minus 16, or 34. You can determine how many lines are currently visible by dividing the current view size by the character height in pixels.</para>
 <para>When defining your own scrollbar behaviour, you will always need to recalculate the scrollbar settings when the window size changes. You could therefore put your scrollbar calculations and SetScrollbar call into a function named AdjustScrollbars, which can be called initially and also from your <ref refid="classwx_size_event" kindref="compound">wxSizeEvent</ref> handler function. </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/scrolling.h"/>
   </compounddef>
 </doxygen>

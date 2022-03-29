@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_stock_preferences_page" kind="class" language="C++" prot="public">
     <compoundname>wxStockPreferencesPage</compoundname>
     <basecompoundref refid="classwx_preferences_page" prot="public" virt="non-virtual">wxPreferencesPage</basecompoundref>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/preferences.h" line="201" column="5" bodyfile="interface/wx/preferences.h" bodystart="202" bodyend="207"/>
+        <location file="interface/wx/preferences.h" line="202" column="1" bodyfile="interface/wx/preferences.h" bodystart="201" bodyend="207"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -89,7 +89,7 @@
         <name>GetLargeIcon</name>
         <reimplements refid="classwx_preferences_page_1a05880595e8507b60eaea11d5addc71e6">GetLargeIcon</reimplements>
         <briefdescription>
-<para>Reimplemented to return stock icon on macOS. </para>
+<para>Reimplemented to return stock icon on OS X. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -102,7 +102,7 @@
 <para>Specialization of <ref refid="classwx_preferences_page" kindref="compound">wxPreferencesPage</ref> useful for certain commonly used preferences page. </para>
     </briefdescription>
     <detaileddescription>
-<para>On macOS, preferences pages named &quot;General&quot; and &quot;Advanced&quot; are commonly used in apps and the OS provides stock icons for them that should be used. Instead of reimplementing this behaviour yourself, you can inherit from <ref refid="classwx_stock_preferences_page" kindref="compound">wxStockPreferencesPage</ref> and get correct title and icon.</para>
+<para>On OS X, preferences pages named &quot;General&quot; and &quot;Advanced&quot; are commonly used in apps and the OS provides stock icons for them that should be used. Instead of reimplementing this behavior yourself, you can inherit from <ref refid="classwx_stock_preferences_page" kindref="compound">wxStockPreferencesPage</ref> and get correct title and icon.</para>
 <para>Notice that this class only implements <ref refid="classwx_stock_preferences_page_1a2fbb3a80b61a66e4b8e4ac752c953d20" kindref="member">GetName()</ref> and <ref refid="classwx_stock_preferences_page_1a4caa4c4dcfd648abe36452baa0864138" kindref="member">GetLargeIcon()</ref>, you still have to provide the rest of <ref refid="classwx_preferences_page" kindref="compound">wxPreferencesPage</ref> implementation.</para>
 <para><heading level="2"></heading>
 </para>
@@ -112,32 +112,32 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxPreferencesPage</label>
-        <link refid="classwx_preferences_page"/>
-      </node>
       <node id="1">
         <label>wxStockPreferencesPage</label>
         <link refid="classwx_stock_preferences_page"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>wxPreferencesPage</label>
+        <link refid="classwx_preferences_page"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>wxPreferencesPage</label>
-        <link refid="classwx_preferences_page"/>
-      </node>
       <node id="1">
         <label>wxStockPreferencesPage</label>
         <link refid="classwx_stock_preferences_page"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>wxPreferencesPage</label>
+        <link refid="classwx_preferences_page"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/preferences.h" line="197" column="1" bodyfile="interface/wx/preferences.h" bodystart="198" bodyend="219"/>
+    <location file="interface/wx/preferences.h" line="198" column="1" bodyfile="interface/wx/preferences.h" bodystart="197" bodyend="219"/>
     <listofallmembers>
-      <member refid="classwx_preferences_page_1a5d401e0e131e088e43cf378248ea494d" prot="public" virt="pure-virtual"><scope>wxStockPreferencesPage</scope><name>CreateWindow</name></member>
+      <member refid="classwx_preferences_page_1a5b1dabcb4d9e86ce3613f7f32803b7e5" prot="public" virt="pure-virtual"><scope>wxStockPreferencesPage</scope><name>CreateWindow</name></member>
       <member refid="classwx_stock_preferences_page_1a3ee55131ca24e69b407dc556d2789604" prot="public" virt="non-virtual"><scope>wxStockPreferencesPage</scope><name>GetKind</name></member>
       <member refid="classwx_stock_preferences_page_1a4caa4c4dcfd648abe36452baa0864138" prot="public" virt="virtual"><scope>wxStockPreferencesPage</scope><name>GetLargeIcon</name></member>
       <member refid="classwx_stock_preferences_page_1a2fbb3a80b61a66e4b8e4ac752c953d20" prot="public" virt="virtual"><scope>wxStockPreferencesPage</scope><name>GetName</name></member>

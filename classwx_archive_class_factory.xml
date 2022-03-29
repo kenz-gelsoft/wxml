@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_archive_class_factory" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxArchiveClassFactory</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -31,9 +31,9 @@
         </inbodydescription>
         <location file="interface/wx/archive.h" line="339" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_archive_class_factory_1ae10df6db899ec0f203cae3d6897e56b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_archive_class_factory_1a74421219d955202be3ae25699725d374" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> &amp;</type>
-        <definition>wxMBConv &amp; wxArchiveClassFactory::GetConv</definition>
+        <definition>wxMBConv&amp; wxArchiveClassFactory::GetConv</definition>
         <argsstring>() const</argsstring>
         <name>GetConv</name>
         <briefdescription>
@@ -64,9 +64,9 @@
         </inbodydescription>
         <location file="interface/wx/archive.h" line="364" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_archive_class_factory_1a195777ed4a768085e9245735f12f6748" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_archive_class_factory_1afbf627fd9db36516553999cacaddf3b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_archive_class_factory" kindref="compound">wxArchiveClassFactory</ref> *</type>
-        <definition>const wxArchiveClassFactory * wxArchiveClassFactory::GetNext</definition>
+        <definition>const wxArchiveClassFactory* wxArchiveClassFactory::GetNext</definition>
         <argsstring>() const</argsstring>
         <name>GetNext</name>
         <briefdescription>
@@ -92,7 +92,7 @@
           <defval><ref refid="filename_8h_1a0f0d9c04938ef2820d1ff7ed6b97bf00a82373989c22bc22b15025a7900f4324e" kindref="member">wxPATH_NATIVE</ref></defval>
         </param>
         <briefdescription>
-<para>Calls the static <ref refid="classwx_archive_class_factory_1ac83622385ff9b2525266d0c5c147f90c" kindref="member">GetInternalName()</ref> function for the archive entry type, for example <ref refid="classwx_zip_entry_1a4e6efe4cf7ae4196892998c977ff8287" kindref="member">wxZipEntry::GetInternalName</ref>. </para>
+<para>Calls the static <ref refid="classwx_archive_class_factory_1ac83622385ff9b2525266d0c5c147f90c" kindref="member">GetInternalName()</ref> function for the archive entry type, for example <ref refid="classwx_zip_entry_1aab5dd8f5bb2d47d2532facd2f1629f25" kindref="member">wxZipEntry::GetInternalName</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -109,16 +109,16 @@
 <para>Returns the <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref> protocol supported by this factory. </para>
         </briefdescription>
         <detaileddescription>
-<para>Equivalent to <programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref>(*<ref refid="classwx_archive_class_factory_1a95daac25443636a21e3fad3e82f9129d" kindref="member">GetProtocols</ref>())<sp/></highlight></codeline>
+<para>Equivalent to<programlisting><codeline><highlight class="normal">wxString(*GetProtocols())<sp/></highlight></codeline>
 </programlisting>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/archive.h" line="399" column="14"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_archive_class_factory_1a95daac25443636a21e3fad3e82f9129d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_archive_class_factory_1acab270a64690103ec5179aa17386fce4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>const <ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref> **</type>
-        <definition>virtual const wxChar ** wxArchiveClassFactory::GetProtocols</definition>
+        <definition>virtual const wxChar** wxArchiveClassFactory::GetProtocols</definition>
         <argsstring>(wxStreamProtocolType type=wxSTREAM_PROTOCOL) const =0</argsstring>
         <name>GetProtocols</name>
         <param>
@@ -131,20 +131,20 @@
         </briefdescription>
         <detaileddescription>
 <para>It does not give away ownership of the array or strings. For example, to list the file extensions a factory supports:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>list;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*p;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(p<sp/>=<sp/>factory-&gt;GetProtocols(<ref refid="interface_2wx_2stream_8h_1af43964582cc2e87658bf792727dceff8a6a7551247424d0c62b240da47daee204" kindref="member">wxSTREAM_FILEEXT</ref>);<sp/>*p;<sp/>p++)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>list<sp/>&lt;&lt;<sp/>*p<sp/>&lt;&lt;<sp/><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxString<sp/>list;</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>wxChar<sp/>*const<sp/>*p;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">for<sp/>(p<sp/>=<sp/>factory-&gt;GetProtocols(wxSTREAM_FILEEXT);<sp/>*p;<sp/>p++)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>list<sp/>&lt;&lt;<sp/>*p<sp/>&lt;&lt;<sp/>wxT(&quot;\n&quot;);</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/archive.h" line="416" column="26"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_archive_class_factory_1a8f2d026b1da64645e7d5df05ee35aa48" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_archive_class_factory_1af4338d9f02309004d1bd6ebb7a1addc8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_archive_entry" kindref="compound">wxArchiveEntry</ref> *</type>
-        <definition>wxArchiveEntry * wxArchiveClassFactory::NewEntry</definition>
+        <definition>wxArchiveEntry* wxArchiveClassFactory::NewEntry</definition>
         <argsstring>() const</argsstring>
         <name>NewEntry</name>
         <briefdescription>
@@ -156,9 +156,9 @@
         </inbodydescription>
         <location file="interface/wx/archive.h" line="421" column="20"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_archive_class_factory_1a8335cbb540b1c5c7347a3917e00e4978" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_archive_class_factory_1adaee5b0575c3025085b07e59e52f37cf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_archive_input_stream" kindref="compound">wxArchiveInputStream</ref> *</type>
-        <definition>wxArchiveInputStream * wxArchiveClassFactory::NewStream</definition>
+        <definition>wxArchiveInputStream* wxArchiveClassFactory::NewStream</definition>
         <argsstring>(wxInputStream &amp;stream) const</argsstring>
         <name>NewStream</name>
         <param>
@@ -175,9 +175,9 @@
         </inbodydescription>
         <location file="interface/wx/archive.h" line="430" column="26"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_archive_class_factory_1ae758fe35da8c9b67c2a17c3bffeb259c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_archive_class_factory_1a54c0a6fa4700022dbf6269514676a0e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_archive_output_stream" kindref="compound">wxArchiveOutputStream</ref> *</type>
-        <definition>wxArchiveOutputStream * wxArchiveClassFactory::NewStream</definition>
+        <definition>wxArchiveOutputStream* wxArchiveClassFactory::NewStream</definition>
         <argsstring>(wxOutputStream &amp;stream) const</argsstring>
         <name>NewStream</name>
         <param>
@@ -192,9 +192,9 @@
         </inbodydescription>
         <location file="interface/wx/archive.h" line="431" column="27"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_archive_class_factory_1a7e9ca9f5b62aa36c815d27693e6445aa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_archive_class_factory_1ae2adc99f94c9d9f1fbcbc2059a38690e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_archive_input_stream" kindref="compound">wxArchiveInputStream</ref> *</type>
-        <definition>wxArchiveInputStream * wxArchiveClassFactory::NewStream</definition>
+        <definition>wxArchiveInputStream* wxArchiveClassFactory::NewStream</definition>
         <argsstring>(wxInputStream *stream) const</argsstring>
         <name>NewStream</name>
         <param>
@@ -209,9 +209,9 @@
         </inbodydescription>
         <location file="interface/wx/archive.h" line="432" column="26"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_archive_class_factory_1ab68504c53964c1e139e3eed453371398" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_archive_class_factory_1a2b89a50e4599b0a7cb17c8a68b84d6d5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_archive_output_stream" kindref="compound">wxArchiveOutputStream</ref> *</type>
-        <definition>wxArchiveOutputStream * wxArchiveClassFactory::NewStream</definition>
+        <definition>wxArchiveOutputStream* wxArchiveClassFactory::NewStream</definition>
         <argsstring>(wxOutputStream *stream) const</argsstring>
         <name>NewStream</name>
         <param>
@@ -232,7 +232,7 @@
         <argsstring>()</argsstring>
         <name>PushFront</name>
         <briefdescription>
-<para>Adds this class factory to the list returned by <ref refid="classwx_archive_class_factory_1ae4352734a45f0257c3d260daaef6a73b" kindref="member">GetFirst()</ref> or <ref refid="classwx_archive_class_factory_1a195777ed4a768085e9245735f12f6748" kindref="member">GetNext()</ref>. </para>
+<para>Adds this class factory to the list returned by <ref refid="classwx_archive_class_factory_1a4550c0581291ca6255b7eb0cb917a8ce" kindref="member">GetFirst()</ref> or <ref refid="classwx_archive_class_factory_1afbf627fd9db36516553999cacaddf3b7" kindref="member">GetNext()</ref>. </para>
         </briefdescription>
         <detaileddescription>
 <para>It is not necessary to do this to use the archive streams. It is usually used when implementing streams, typically the implementation will add a static instance of its factory class.</para>
@@ -248,7 +248,7 @@
         <argsstring>()</argsstring>
         <name>Remove</name>
         <briefdescription>
-<para>Removes this class factory from the list returned by <ref refid="classwx_archive_class_factory_1ae4352734a45f0257c3d260daaef6a73b" kindref="member">GetFirst()</ref> and <ref refid="classwx_archive_class_factory_1a195777ed4a768085e9245735f12f6748" kindref="member">GetNext()</ref>. </para>
+<para>Removes this class factory from the list returned by <ref refid="classwx_archive_class_factory_1a4550c0581291ca6255b7eb0cb917a8ce" kindref="member">GetFirst()</ref> and <ref refid="classwx_archive_class_factory_1afbf627fd9db36516553999cacaddf3b7" kindref="member">GetNext()</ref>. </para>
         </briefdescription>
         <detaileddescription>
 <para>Removing from the list isn&apos;t a thread safe operation so can&apos;t be done when other threads are running that will be using the list. The list does not own the factories, so removing a factory does not delete it. </para>
@@ -259,9 +259,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classwx_archive_class_factory_1a16277df97e73b3670f654d373cee0ec3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_archive_class_factory_1ad9f083561596ee377cea71a0125d3c3b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_archive_class_factory" kindref="compound">wxArchiveClassFactory</ref> *</type>
-        <definition>static const wxArchiveClassFactory * wxArchiveClassFactory::Find</definition>
+        <definition>static const wxArchiveClassFactory* wxArchiveClassFactory::Find</definition>
         <argsstring>(const wxString &amp;protocol, wxStreamProtocolType type=wxSTREAM_PROTOCOL)</argsstring>
         <name>Find</name>
         <param>
@@ -284,9 +284,9 @@
         </inbodydescription>
         <location file="interface/wx/archive.h" line="350" column="40"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_archive_class_factory_1ae4352734a45f0257c3d260daaef6a73b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_archive_class_factory_1a4550c0581291ca6255b7eb0cb917a8ce" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_archive_class_factory" kindref="compound">wxArchiveClassFactory</ref> *</type>
-        <definition>static const wxArchiveClassFactory * wxArchiveClassFactory::GetFirst</definition>
+        <definition>static const wxArchiveClassFactory* wxArchiveClassFactory::GetFirst</definition>
         <argsstring>()</argsstring>
         <name>GetFirst</name>
         <briefdescription>
@@ -294,15 +294,15 @@
         </briefdescription>
         <detaileddescription>
 <para>For example, to list them:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>list;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_archive_class_factory" kindref="compound">wxArchiveClassFactory</ref><sp/>*factory<sp/>=<sp/><ref refid="classwx_archive_class_factory_1ae4352734a45f0257c3d260daaef6a73b" kindref="member">wxArchiveClassFactory::GetFirst</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(factory)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>list<sp/>&lt;&lt;<sp/>factory-&gt;<ref refid="classwx_archive_class_factory_1a135eb8fa4ad950e25b5db824067d1231" kindref="member">GetProtocol</ref>()<sp/>&lt;&lt;<sp/><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>factory<sp/>=<sp/>factory-&gt;<ref refid="classwx_archive_class_factory_1a195777ed4a768085e9245735f12f6748" kindref="member">GetNext</ref>();</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxString<sp/>list;</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>wxArchiveClassFactory<sp/>*factory<sp/>=<sp/>wxArchiveClassFactory::GetFirst();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">while<sp/>(factory)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>list<sp/>&lt;&lt;<sp/>factory-&gt;GetProtocol()<sp/>&lt;&lt;<sp/>wxT(&quot;\n&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>factory<sp/>=<sp/>factory-&gt;GetNext();</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
-<para><ref refid="classwx_archive_class_factory_1ae4352734a45f0257c3d260daaef6a73b" kindref="member">GetFirst()</ref> and <ref refid="classwx_archive_class_factory_1a195777ed4a768085e9245735f12f6748" kindref="member">GetNext()</ref> return a pointer to a factory or NULL if no more are available. They do not give away ownership of the factory. </para>
+<para><ref refid="classwx_archive_class_factory_1a4550c0581291ca6255b7eb0cb917a8ce" kindref="member">GetFirst()</ref> and <ref refid="classwx_archive_class_factory_1afbf627fd9db36516553999cacaddf3b7" kindref="member">GetNext()</ref> return a pointer to a factory or NULL if no more are available. They do not give away ownership of the factory. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -310,16 +310,16 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Allows the creation of streams to handle archive formats such as zip and tar. </para>
     </briefdescription>
     <detaileddescription>
+<para>Allows the creation of streams to handle archive formats such as zip and tar.</para>
 <para>For example, given a filename you can search for a factory that will handle it and create a stream to read it:</para>
-<para><programlisting><codeline><highlight class="normal">factory<sp/>=<sp/><ref refid="classwx_archive_class_factory_1a16277df97e73b3670f654d373cee0ec3" kindref="member">wxArchiveClassFactory::Find</ref>(filename,<sp/><ref refid="interface_2wx_2stream_8h_1af43964582cc2e87658bf792727dceff8a6a7551247424d0c62b240da47daee204" kindref="member">wxSTREAM_FILEEXT</ref>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(factory)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>stream<sp/>=<sp/>factory-&gt;NewStream(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_f_file_input_stream" kindref="compound">wxFFileInputStream</ref>(filename));</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">factory<sp/>=<sp/>wxArchiveClassFactory::Find(filename,<sp/>wxSTREAM_FILEEXT);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(factory)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>stream<sp/>=<sp/>factory-&gt;NewStream(new<sp/>wxFFileInputStream(filename));</highlight></codeline>
 </programlisting></para>
-<para><ref refid="classwx_archive_class_factory_1a16277df97e73b3670f654d373cee0ec3" kindref="member">wxArchiveClassFactory::Find</ref> can also search for a factory by MIME type or <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref> protocol.</para>
-<para>The available factories can be enumerated using <ref refid="classwx_archive_class_factory_1ae4352734a45f0257c3d260daaef6a73b" kindref="member">wxArchiveClassFactory::GetFirst()</ref> and <ref refid="classwx_archive_class_factory_1a195777ed4a768085e9245735f12f6748" kindref="member">wxArchiveClassFactory::GetNext()</ref>.</para>
+<para><ref refid="classwx_archive_class_factory_1ad9f083561596ee377cea71a0125d3c3b" kindref="member">wxArchiveClassFactory::Find</ref> can also search for a factory by MIME type or <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref> protocol.</para>
+<para>The available factories can be enumerated using <ref refid="classwx_archive_class_factory_1a4550c0581291ca6255b7eb0cb917a8ce" kindref="member">wxArchiveClassFactory::GetFirst()</ref> and <ref refid="classwx_archive_class_factory_1afbf627fd9db36516553999cacaddf3b7" kindref="member">wxArchiveClassFactory::GetNext()</ref>.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ , \ &lt;/&gt;&lt;/&gt;</para>
@@ -328,21 +328,9 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxArchiveClassFactory</label>
-        <link refid="classwx_archive_class_factory"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
-      </node>
-      <node id="3">
-        <label>wxTarClassFactory</label>
-        <link refid="classwx_tar_class_factory"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="4">
         <label>wxZipClassFactory</label>
@@ -350,14 +338,20 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="1">
         <label>wxArchiveClassFactory</label>
         <link refid="classwx_archive_class_factory"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>wxTarClassFactory</label>
+        <link refid="classwx_tar_class_factory"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -365,36 +359,42 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxArchiveClassFactory</label>
+        <link refid="classwx_archive_class_factory"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/archive.h" line="329" column="1" bodyfile="interface/wx/archive.h" bodystart="330" bodyend="458"/>
+    <location file="interface/wx/archive.h" line="330" column="1" bodyfile="interface/wx/archive.h" bodystart="329" bodyend="458"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>AllocExclusive</name></member>
       <member refid="classwx_archive_class_factory_1a9c79bfa1c111f5016a8e536d66aab3e0" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>CanHandle</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxArchiveClassFactory</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxArchiveClassFactory</scope><name>CreateRefData</name></member>
-      <member refid="classwx_archive_class_factory_1a16277df97e73b3670f654d373cee0ec3" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>Find</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxArchiveClassFactory</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_archive_class_factory_1ae10df6db899ec0f203cae3d6897e56b8" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>GetConv</name></member>
-      <member refid="classwx_archive_class_factory_1ae4352734a45f0257c3d260daaef6a73b" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>GetFirst</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxArchiveClassFactory</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxArchiveClassFactory</scope><name>CreateRefData</name></member>
+      <member refid="classwx_archive_class_factory_1ad9f083561596ee377cea71a0125d3c3b" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>Find</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxArchiveClassFactory</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_archive_class_factory_1a74421219d955202be3ae25699725d374" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>GetConv</name></member>
+      <member refid="classwx_archive_class_factory_1a4550c0581291ca6255b7eb0cb917a8ce" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>GetFirst</name></member>
       <member refid="classwx_archive_class_factory_1ac83622385ff9b2525266d0c5c147f90c" prot="public" virt="pure-virtual"><scope>wxArchiveClassFactory</scope><name>GetInternalName</name></member>
-      <member refid="classwx_archive_class_factory_1a195777ed4a768085e9245735f12f6748" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>GetNext</name></member>
+      <member refid="classwx_archive_class_factory_1afbf627fd9db36516553999cacaddf3b7" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>GetNext</name></member>
       <member refid="classwx_archive_class_factory_1a135eb8fa4ad950e25b5db824067d1231" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>GetProtocol</name></member>
-      <member refid="classwx_archive_class_factory_1a95daac25443636a21e3fad3e82f9129d" prot="public" virt="pure-virtual"><scope>wxArchiveClassFactory</scope><name>GetProtocols</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>GetRefData</name></member>
+      <member refid="classwx_archive_class_factory_1acab270a64690103ec5179aa17386fce4" prot="public" virt="pure-virtual"><scope>wxArchiveClassFactory</scope><name>GetProtocols</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>GetRefData</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>m_refData</name></member>
-      <member refid="classwx_archive_class_factory_1a8f2d026b1da64645e7d5df05ee35aa48" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>NewEntry</name></member>
-      <member refid="classwx_archive_class_factory_1a8335cbb540b1c5c7347a3917e00e4978" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>NewStream</name></member>
-      <member refid="classwx_archive_class_factory_1ae758fe35da8c9b67c2a17c3bffeb259c" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>NewStream</name></member>
-      <member refid="classwx_archive_class_factory_1a7e9ca9f5b62aa36c815d27693e6445aa" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>NewStream</name></member>
-      <member refid="classwx_archive_class_factory_1ab68504c53964c1e139e3eed453371398" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>NewStream</name></member>
+      <member refid="classwx_archive_class_factory_1af4338d9f02309004d1bd6ebb7a1addc8" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>NewEntry</name></member>
+      <member refid="classwx_archive_class_factory_1adaee5b0575c3025085b07e59e52f37cf" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>NewStream</name></member>
+      <member refid="classwx_archive_class_factory_1a54c0a6fa4700022dbf6269514676a0e4" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>NewStream</name></member>
+      <member refid="classwx_archive_class_factory_1ae2adc99f94c9d9f1fbcbc2059a38690e" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>NewStream</name></member>
+      <member refid="classwx_archive_class_factory_1a2b89a50e4599b0a7cb17c8a68b84d6d5" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>NewStream</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>operator new</name></member>
       <member refid="classwx_archive_class_factory_1a2ce9c0d68e825a8f2b61617f8b213ee2" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>PushFront</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>Ref</name></member>
       <member refid="classwx_archive_class_factory_1a541af2ac6ad3a33a103d0c557165751f" prot="public" virt="non-virtual"><scope>wxArchiveClassFactory</scope><name>Remove</name></member>

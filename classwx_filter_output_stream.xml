@@ -1,11 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_filter_output_stream" kind="class" language="C++" prot="public">
     <compoundname>wxFilterOutputStream</compoundname>
     <basecompoundref refid="classwx_output_stream" prot="public" virt="non-virtual">wxOutputStream</basecompoundref>
     <derivedcompoundref refid="classwx_archive_output_stream" prot="public" virt="non-virtual">wxArchiveOutputStream</derivedcompoundref>
     <derivedcompoundref refid="classwx_buffered_output_stream" prot="public" virt="non-virtual">wxBufferedOutputStream</derivedcompoundref>
-    <derivedcompoundref refid="classwx_l_z_m_a_output_stream" prot="public" virt="non-virtual">wxLZMAOutputStream</derivedcompoundref>
     <derivedcompoundref refid="classwx_zlib_output_stream" prot="public" virt="non-virtual">wxZlibOutputStream</derivedcompoundref>
     <includes local="no">wx/stream.h</includes>
       <sectiondef kind="public-func">
@@ -47,10 +46,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A filter stream has the capability of a normal stream but it can be placed on top of another stream. </para>
     </briefdescription>
     <detaileddescription>
-<para>So, for example, it can compress, encrypt the data which are passed to it and write them to another stream.</para>
+<para>A filter stream has the capability of a normal stream but it can be placed on top of another stream. So, for example, it can compress, encrypt the data which are passed to it and write them to another stream.</para>
 <para><simplesect kind="note"><para>The use of this class is exactly the same as of <ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref>. Only a constructor differs and it is documented below.</para>
 </simplesect>
 <heading level="2"></heading>
@@ -61,9 +59,9 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="4">
-        <label>wxArchiveOutputStream</label>
-        <link refid="classwx_archive_output_stream"/>
+      <node id="8">
+        <label>wxZlibOutputStream</label>
+        <link refid="classwx_zlib_output_stream"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -73,22 +71,10 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>wxFilterOutputStream</label>
-        <link refid="classwx_filter_output_stream"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>wxLZMAOutputStream</label>
-        <link refid="classwx_l_z_m_a_output_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxOutputStream</label>
-        <link refid="classwx_output_stream"/>
-        <childnode refid="3" relation="public-inheritance">
+      <node id="6">
+        <label>wxZipOutputStream</label>
+        <link refid="classwx_zip_output_stream"/>
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -101,20 +87,6 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
-        <label>wxZipOutputStream</label>
-        <link refid="classwx_zip_output_stream"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>wxZlibOutputStream</label>
-        <link refid="classwx_zlib_output_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="1">
         <label>wxFilterOutputStream</label>
         <link refid="classwx_filter_output_stream"/>
@@ -127,12 +99,32 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="4">
+        <label>wxArchiveOutputStream</label>
+        <link refid="classwx_archive_output_stream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="3">
         <label>wxStreamBase</label>
         <link refid="classwx_stream_base"/>
       </node>
+      <node id="1">
+        <label>wxFilterOutputStream</label>
+        <link refid="classwx_filter_output_stream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxOutputStream</label>
+        <link refid="classwx_output_stream"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/stream.h" line="987" column="1" bodyfile="interface/wx/stream.h" bodystart="988" bodyend="1000"/>
+    <location file="interface/wx/stream.h" line="988" column="1" bodyfile="interface/wx/stream.h" bodystart="987" bodyend="1000"/>
     <listofallmembers>
       <member refid="classwx_output_stream_1a1c306ce99990d525921f8f6ae8432083" prot="public" virt="virtual"><scope>wxFilterOutputStream</scope><name>Close</name></member>
       <member refid="classwx_stream_base_1a33440c8ea3f8df382adecd7d188a1662" prot="public" virt="non-virtual"><scope>wxFilterOutputStream</scope><name>GetLastError</name></member>
@@ -149,8 +141,8 @@
       <member refid="classwx_stream_base_1a52353ac42f72538b2022a84f416e5fe2" prot="public" virt="non-virtual"><scope>wxFilterOutputStream</scope><name>Reset</name></member>
       <member refid="classwx_output_stream_1ac898dd36e44e5f4785a6658f470e9752" prot="public" virt="virtual"><scope>wxFilterOutputStream</scope><name>SeekO</name></member>
       <member refid="classwx_output_stream_1a468208f94273630dcbdb0c692645e42c" prot="public" virt="virtual"><scope>wxFilterOutputStream</scope><name>TellO</name></member>
-      <member refid="classwx_output_stream_1afc577008c335756968530cdae4b05b34" prot="public" virt="virtual"><scope>wxFilterOutputStream</scope><name>Write</name></member>
-      <member refid="classwx_output_stream_1a7c7a356201ad354949a5a9cf3bf97d30" prot="public" virt="non-virtual"><scope>wxFilterOutputStream</scope><name>Write</name></member>
+      <member refid="classwx_output_stream_1a22154f02408431ffe8b1590407c3b011" prot="public" virt="virtual"><scope>wxFilterOutputStream</scope><name>Write</name></member>
+      <member refid="classwx_output_stream_1aacced095d3e9b19b4f6264d94c85cf8f" prot="public" virt="non-virtual"><scope>wxFilterOutputStream</scope><name>Write</name></member>
       <member refid="classwx_output_stream_1aa82aca41108fba5cebbba951c84431f0" prot="public" virt="non-virtual"><scope>wxFilterOutputStream</scope><name>WriteAll</name></member>
       <member refid="classwx_filter_output_stream_1af602ad1b7673a587430733f4cfb493d0" prot="public" virt="non-virtual"><scope>wxFilterOutputStream</scope><name>wxFilterOutputStream</name></member>
       <member refid="classwx_filter_output_stream_1a0358028d12b8dde1ef969efd1703908e" prot="public" virt="non-virtual"><scope>wxFilterOutputStream</scope><name>wxFilterOutputStream</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_font_info" kind="class" language="C++" prot="public">
     <compoundname>wxFontInfo</compoundname>
     <includes local="no">wx/font.h</includes>
@@ -16,29 +16,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="320" column="5"/>
+        <location file="interface/wx/font.h" line="302" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1a0bc774f70794c581c0d3f7fd06c38517" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1a9f73a0feb3a99af33022f4abf781664b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxFontInfo::wxFontInfo</definition>
-        <argsstring>(double pointSize)</argsstring>
+        <argsstring>(int pointSize)</argsstring>
         <name>wxFontInfo</name>
         <param>
-          <type>double</type>
+          <type>int</type>
           <declname>pointSize</declname>
         </param>
         <briefdescription>
 <para>Constructor setting the font size in points to use. </para>
         </briefdescription>
         <detaileddescription>
-<para>Note that until wxWidgets 3.1.2 fractional point sizes were not supported, and the type of <emphasis>pointSize</emphasis> was <computeroutput>int</computeroutput>.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_font_1a32d54af99749f180991c4cdab9f9a7dd" kindref="member">wxFont::SetPointSize()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="330" column="14"/>
+        <location file="interface/wx/font.h" line="309" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_font_info_1acbd5529c8f0ad810efd6dc6c6b2a0108" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -59,11 +58,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="337" column="14"/>
+        <location file="interface/wx/font.h" line="316" column="14"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1a65d4561c9e70a211d80bdfceca0031ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1a4cf5b8aa6129780ec0ba76eff893f270" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::Family</definition>
+        <definition>wxFontInfo&amp; wxFontInfo::Family</definition>
         <argsstring>(wxFontFamily family)</argsstring>
         <name>Family</name>
         <param>
@@ -75,18 +74,18 @@
         </briefdescription>
         <detaileddescription>
 <para>The family is a generic portable way of referring to fonts without specifying a precise face name. This parameter must be one of the <ref refid="interface_2wx_2font_8h_1a0cd7bfd21a4f901245d3c86d8ea0c080" kindref="member">wxFontFamily</ref> enumeration values.</para>
-<para>If the <ref refid="classwx_font_info_1a7005464c09466c6751fdd72953bf0f22" kindref="member">FaceName()</ref> is used, then it overrides the font family.</para>
+<para>If the <ref refid="classwx_font_info_1aa373d41ee06d4bd1e4bfc03c5189f9f9" kindref="member">FaceName()</ref> is used, then it overrides the font family.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_font_1a20202449727755508176f186b8d5b340" kindref="member">wxFont::SetFamily()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="350" column="16"/>
+        <location file="interface/wx/font.h" line="329" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1a7005464c09466c6751fdd72953bf0f22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1aa373d41ee06d4bd1e4bfc03c5189f9f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::FaceName</definition>
+        <definition>wxFontInfo&amp; wxFontInfo::FaceName</definition>
         <argsstring>(const wxString &amp;faceName)</argsstring>
         <name>FaceName</name>
         <param>
@@ -97,48 +96,18 @@
 <para>Set the font face name to use. </para>
         </briefdescription>
         <detaileddescription>
-<para>Face names are not portable, so prefer to use <ref refid="classwx_font_info_1a65d4561c9e70a211d80bdfceca0031ae" kindref="member">Family()</ref> in portable code.</para>
+<para>Face names are not portable, so prefer to use <ref refid="classwx_font_info_1a4cf5b8aa6129780ec0ba76eff893f270" kindref="member">Family()</ref> in portable code.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_font_1a97456a61332a1b6d44a76f0b57b01709" kindref="member">wxFont::SetFaceName()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="360" column="16"/>
+        <location file="interface/wx/font.h" line="339" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1ab0c54026f341afc625ef8cf27faf9041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1ad2746cc5006af1421dc060a73884b5f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::Weight</definition>
-        <argsstring>(int weight)</argsstring>
-        <name>Weight</name>
-        <param>
-          <type>int</type>
-          <declname>weight</declname>
-        </param>
-        <briefdescription>
-<para>Specify the weight of the font. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>weight</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>A font weight in the range from 1 to 1000, inclusive, with 1 being the thinnest and 1000 the heaviest possible font variant. <computeroutput>wxFONTWEIGHT_XXX</computeroutput> values from wxFontWeight enum can be used here.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="since"><para>3.1.2 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/font.h" line="372" column="16"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1a58eb94978bb09f0efe7aca0ab8ef4eee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::Bold</definition>
+        <definition>wxFontInfo&amp; wxFontInfo::Bold</definition>
         <argsstring>(bool bold=true)</argsstring>
         <name>Bold</name>
         <param>
@@ -150,18 +119,17 @@
 <para>Use a bold version of the font. </para>
         </briefdescription>
         <detaileddescription>
-<para>This is a wrapper for <ref refid="classwx_font_info_1ab0c54026f341afc625ef8cf27faf9041" kindref="member">Weight()</ref> calling it with <ref refid="interface_2wx_2font_8h_1a7cc37d08c7e84370f4fcc175b557a022a7b9d5773967fe5a3b649ad72444c929a" kindref="member">wxFONTWEIGHT_BOLD</ref> argument.</para>
 <para><simplesect kind="see"><para><ref refid="interface_2wx_2font_8h_1a7cc37d08c7e84370f4fcc175b557a022" kindref="member">wxFontWeight</ref>, <ref refid="classwx_font_1a63c3c48f10dd64bfdca812f4526cb7eb" kindref="member">wxFont::SetWeight()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="382" column="16"/>
+        <location file="interface/wx/font.h" line="346" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1a499e123adb68b278f8dfe6a79225f4a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1ab51229fb707f4e6a6f2cd0ed2c3ee4ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::Light</definition>
+        <definition>wxFontInfo&amp; wxFontInfo::Light</definition>
         <argsstring>(bool light=true)</argsstring>
         <name>Light</name>
         <param>
@@ -173,18 +141,17 @@
 <para>Use a lighter version of the font. </para>
         </briefdescription>
         <detaileddescription>
-<para>This is a wrapper for <ref refid="classwx_font_info_1ab0c54026f341afc625ef8cf27faf9041" kindref="member">Weight()</ref> calling it with <ref refid="interface_2wx_2font_8h_1a7cc37d08c7e84370f4fcc175b557a022a5701c36c70fe4224f952e0c5291931e9" kindref="member">wxFONTWEIGHT_LIGHT</ref> argument.</para>
 <para><simplesect kind="see"><para><ref refid="interface_2wx_2font_8h_1a7cc37d08c7e84370f4fcc175b557a022" kindref="member">wxFontWeight</ref>, <ref refid="classwx_font_1a63c3c48f10dd64bfdca812f4526cb7eb" kindref="member">wxFont::SetWeight()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="392" column="16"/>
+        <location file="interface/wx/font.h" line="353" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1ac9de28f8567ed90e930a13b6d1109f33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1a839422eadd55011b4b386159517be44b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::Italic</definition>
+        <definition>wxFontInfo&amp; wxFontInfo::Italic</definition>
         <argsstring>(bool italic=true)</argsstring>
         <name>Italic</name>
         <param>
@@ -196,18 +163,17 @@
 <para>Use an italic version of the font. </para>
         </briefdescription>
         <detaileddescription>
-<para>This is a wrapper for <ref refid="classwx_font_info_1a5ab5a6c513e3106088393b9a6305fbdc" kindref="member">Style()</ref> calling it with <ref refid="interface_2wx_2font_8h_1ab8f87d0b928ad1f8cba7d1c01f5f7a55a123666542d626b2f8278bd129e20cf5e" kindref="member">wxFONTSTYLE_ITALIC</ref> argument.</para>
 <para><simplesect kind="see"><para><ref refid="interface_2wx_2font_8h_1ab8f87d0b928ad1f8cba7d1c01f5f7a55" kindref="member">wxFontStyle</ref>, <ref refid="classwx_font_1a1e2199aae978662fc4ceaa79be8a70b7" kindref="member">wxFont::SetStyle()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="402" column="16"/>
+        <location file="interface/wx/font.h" line="360" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1a54077ba654b55085cf89a9c9b616260b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1a764da87af82ae4ea19e486dc78148564" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::Slant</definition>
+        <definition>wxFontInfo&amp; wxFontInfo::Slant</definition>
         <argsstring>(bool slant=true)</argsstring>
         <name>Slant</name>
         <param>
@@ -219,39 +185,17 @@
 <para>Use a slanted version of the font. </para>
         </briefdescription>
         <detaileddescription>
-<para>This is a wrapper for <ref refid="classwx_font_info_1a5ab5a6c513e3106088393b9a6305fbdc" kindref="member">Style()</ref> calling it with <ref refid="interface_2wx_2font_8h_1ab8f87d0b928ad1f8cba7d1c01f5f7a55a9e61ae2ea957a608e665de8d8f3d2e3c" kindref="member">wxFONTSTYLE_SLANT</ref> argument.</para>
 <para><simplesect kind="see"><para><ref refid="interface_2wx_2font_8h_1ab8f87d0b928ad1f8cba7d1c01f5f7a55" kindref="member">wxFontStyle</ref>, <ref refid="classwx_font_1a1e2199aae978662fc4ceaa79be8a70b7" kindref="member">wxFont::SetStyle()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="412" column="16"/>
+        <location file="interface/wx/font.h" line="367" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1a5ab5a6c513e3106088393b9a6305fbdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1afb8a34aec76cc22c1e79cb1c68e6aa3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::Style</definition>
-        <argsstring>(wxFontStyle style)</argsstring>
-        <name>Style</name>
-        <param>
-          <type><ref refid="interface_2wx_2font_8h_1ab8f87d0b928ad1f8cba7d1c01f5f7a55" kindref="member">wxFontStyle</ref></type>
-          <declname>style</declname>
-        </param>
-        <briefdescription>
-<para>Specify the style of the font using one of wxFontStyle constants. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="since"><para>3.1.2 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/font.h" line="419" column="16"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1a3568c3e7722e573feeed23d4d5cabd22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::AntiAliased</definition>
+        <definition>wxFontInfo&amp; wxFontInfo::AntiAliased</definition>
         <argsstring>(bool antiAliased=true)</argsstring>
         <name>AntiAliased</name>
         <param>
@@ -268,11 +212,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="429" column="16"/>
+        <location file="interface/wx/font.h" line="377" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1ab0112e35864e0f96e1012bba86911e76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1ace13a62bad5956af94abb097b2abc1d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::Underlined</definition>
+        <definition>wxFontInfo&amp; wxFontInfo::Underlined</definition>
         <argsstring>(bool underlined=true)</argsstring>
         <name>Underlined</name>
         <param>
@@ -287,11 +231,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="434" column="16"/>
+        <location file="interface/wx/font.h" line="382" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1a1ee8be022e3939928f8f9b626fa655fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1a5798c7486ccd55d15e984b5709d787cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::Strikethrough</definition>
+        <definition>wxFontInfo&amp; wxFontInfo::Strikethrough</definition>
         <argsstring>(bool strikethrough=true)</argsstring>
         <name>Strikethrough</name>
         <param>
@@ -303,15 +247,15 @@
 <para>Use a strike-through version of the font. </para>
         </briefdescription>
         <detaileddescription>
-<para>Currently this is only implemented in wxMSW, wxGTK, and wxOSX. </para>
+<para>Currently this is only implemented in wxMSW and wxGTK. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="441" column="16"/>
+        <location file="interface/wx/font.h" line="389" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1a0818b52d3fdc10b641747805a9af1eb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1a5bd8b81330fe276670796d3f4ba330d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::Encoding</definition>
+        <definition>wxFontInfo&amp; wxFontInfo::Encoding</definition>
         <argsstring>(wxFontEncoding encoding)</argsstring>
         <name>Encoding</name>
         <param>
@@ -329,11 +273,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="450" column="16"/>
+        <location file="interface/wx/font.h" line="398" column="16"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_info_1ac98f783b79cecf19ffc977bfd251d49f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_info_1a139740d464208177c927cbcce89e6336" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_info" kindref="compound">wxFontInfo</ref> &amp;</type>
-        <definition>wxFontInfo &amp; wxFontInfo::AllFlags</definition>
+        <definition>wxFontInfo&amp; wxFontInfo::AllFlags</definition>
         <argsstring>(int flags)</argsstring>
         <name>AllFlags</name>
         <param>
@@ -344,53 +288,18 @@
 <para>Set all the font attributes at once. </para>
         </briefdescription>
         <detaileddescription>
-<para>See <ref refid="interface_2wx_2font_8h_1a332098a83a5d888d2e1169b4bd9565da" kindref="member">wxFontFlag</ref> for the various flags that can be used.</para>
-<para>Note that calling this method affects the font weight stored in this object: it is set to <ref refid="interface_2wx_2font_8h_1a7cc37d08c7e84370f4fcc175b557a022a5701c36c70fe4224f952e0c5291931e9" kindref="member">wxFONTWEIGHT_LIGHT</ref> or <ref refid="interface_2wx_2font_8h_1a7cc37d08c7e84370f4fcc175b557a022a7b9d5773967fe5a3b649ad72444c929a" kindref="member">wxFONTWEIGHT_BOLD</ref> if the corresponding flag is present in <emphasis>flags</emphasis>, or <ref refid="interface_2wx_2font_8h_1a7cc37d08c7e84370f4fcc175b557a022afe7140726570221d64aa5094026a50e8" kindref="member">wxFONTWEIGHT_NORMAL</ref> otherwise. </para>
+<para>See <ref refid="interface_2wx_2font_8h_1a332098a83a5d888d2e1169b4bd9565da" kindref="member">wxFontFlag</ref> for the various flags that can be used. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/font.h" line="462" column="16"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classwx_font_info_1a69d611ae9cbd4274ebd86c7bff0f487f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="interface_2wx_2font_8h_1a7cc37d08c7e84370f4fcc175b557a022" kindref="member">wxFontWeight</ref></type>
-        <definition>static wxFontWeight wxFontInfo::GetWeightClosestToNumericValue</definition>
-        <argsstring>(int numWeight)</argsstring>
-        <name>GetWeightClosestToNumericValue</name>
-        <param>
-          <type>int</type>
-          <declname>numWeight</declname>
-        </param>
-        <briefdescription>
-<para>Get the symbolic weight closest to the given raw weight value. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>numWeight</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>A valid raw weight value, i.e. a value in the range 1 to 1000, inclusive. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>A valid element of wxFontWeight enum.</para>
-</simplesect>
-<simplesect kind="since"><para>3.1.2 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/font.h" line="474" column="25"/>
+        <location file="interface/wx/font.h" line="405" column="16"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class is a helper used for <ref refid="classwx_font" kindref="compound">wxFont</ref> creation using named parameter idiom: it allows specifying various <ref refid="classwx_font" kindref="compound">wxFont</ref> attributes using the chained calls to its clearly named methods instead of passing them in the fixed order to <ref refid="classwx_font" kindref="compound">wxFont</ref> constructors. </para>
     </briefdescription>
     <detaileddescription>
-<para>For example, to create an italic font with the given face name and size you could use: <programlisting><codeline><highlight class="normal"><ref refid="classwx_font" kindref="compound">wxFont</ref><sp/>font(<ref refid="classwx_font_info_1a7273ff25fbd808e83ee79103d117ecaf" kindref="member">wxFontInfo</ref>(12).<ref refid="classwx_font_info_1a7005464c09466c6751fdd72953bf0f22" kindref="member">FaceName</ref>(</highlight><highlight class="stringliteral">&quot;Helvetica&quot;</highlight><highlight class="normal">).<ref refid="classwx_font_info_1ac9de28f8567ed90e930a13b6d1109f33" kindref="member">Italic</ref>());</highlight></codeline>
+<para>This class is a helper used for <ref refid="classwx_font" kindref="compound">wxFont</ref> creation using named parameter idiom: it allows to specify various <ref refid="classwx_font" kindref="compound">wxFont</ref> attributes using the chained calls to its clearly named methods instead of passing them in the fixed order to <ref refid="classwx_font" kindref="compound">wxFont</ref> constructors.</para>
+<para>For example, to create an italic font with the given face name and size you could use: <programlisting><codeline><highlight class="normal">wxFont<sp/>font(wxFontInfo(12).FaceName(&quot;Helvetica&quot;).Italic());</highlight></codeline>
 </programlisting></para>
 <para>Notice that all of the methods of this object return a reference to the object itself, allowing the calls to them to be chained as in the example above.</para>
 <para>All methods taking boolean parameters can be used to turn the specified font attribute on or off and turn it on by default.</para>
@@ -398,24 +307,21 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/font.h" line="313" column="1" bodyfile="interface/wx/font.h" bodystart="314" bodyend="475"/>
+    <location file="interface/wx/font.h" line="296" column="1" bodyfile="interface/wx/font.h" bodystart="295" bodyend="406"/>
     <listofallmembers>
-      <member refid="classwx_font_info_1ac98f783b79cecf19ffc977bfd251d49f" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>AllFlags</name></member>
-      <member refid="classwx_font_info_1a3568c3e7722e573feeed23d4d5cabd22" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>AntiAliased</name></member>
-      <member refid="classwx_font_info_1a58eb94978bb09f0efe7aca0ab8ef4eee" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Bold</name></member>
-      <member refid="classwx_font_info_1a0818b52d3fdc10b641747805a9af1eb2" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Encoding</name></member>
-      <member refid="classwx_font_info_1a7005464c09466c6751fdd72953bf0f22" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>FaceName</name></member>
-      <member refid="classwx_font_info_1a65d4561c9e70a211d80bdfceca0031ae" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Family</name></member>
-      <member refid="classwx_font_info_1a69d611ae9cbd4274ebd86c7bff0f487f" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>GetWeightClosestToNumericValue</name></member>
-      <member refid="classwx_font_info_1ac9de28f8567ed90e930a13b6d1109f33" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Italic</name></member>
-      <member refid="classwx_font_info_1a499e123adb68b278f8dfe6a79225f4a6" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Light</name></member>
-      <member refid="classwx_font_info_1a54077ba654b55085cf89a9c9b616260b" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Slant</name></member>
-      <member refid="classwx_font_info_1a1ee8be022e3939928f8f9b626fa655fd" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Strikethrough</name></member>
-      <member refid="classwx_font_info_1a5ab5a6c513e3106088393b9a6305fbdc" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Style</name></member>
-      <member refid="classwx_font_info_1ab0112e35864e0f96e1012bba86911e76" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Underlined</name></member>
-      <member refid="classwx_font_info_1ab0c54026f341afc625ef8cf27faf9041" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Weight</name></member>
+      <member refid="classwx_font_info_1a139740d464208177c927cbcce89e6336" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>AllFlags</name></member>
+      <member refid="classwx_font_info_1afb8a34aec76cc22c1e79cb1c68e6aa3c" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>AntiAliased</name></member>
+      <member refid="classwx_font_info_1ad2746cc5006af1421dc060a73884b5f6" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Bold</name></member>
+      <member refid="classwx_font_info_1a5bd8b81330fe276670796d3f4ba330d7" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Encoding</name></member>
+      <member refid="classwx_font_info_1aa373d41ee06d4bd1e4bfc03c5189f9f9" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>FaceName</name></member>
+      <member refid="classwx_font_info_1a4cf5b8aa6129780ec0ba76eff893f270" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Family</name></member>
+      <member refid="classwx_font_info_1a839422eadd55011b4b386159517be44b" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Italic</name></member>
+      <member refid="classwx_font_info_1ab51229fb707f4e6a6f2cd0ed2c3ee4ac" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Light</name></member>
+      <member refid="classwx_font_info_1a764da87af82ae4ea19e486dc78148564" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Slant</name></member>
+      <member refid="classwx_font_info_1a5798c7486ccd55d15e984b5709d787cd" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Strikethrough</name></member>
+      <member refid="classwx_font_info_1ace13a62bad5956af94abb097b2abc1d5" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>Underlined</name></member>
       <member refid="classwx_font_info_1a7273ff25fbd808e83ee79103d117ecaf" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>wxFontInfo</name></member>
-      <member refid="classwx_font_info_1a0bc774f70794c581c0d3f7fd06c38517" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>wxFontInfo</name></member>
+      <member refid="classwx_font_info_1a9f73a0feb3a99af33022f4abf781664b" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>wxFontInfo</name></member>
       <member refid="classwx_font_info_1acbd5529c8f0ad810efd6dc6c6b2a0108" prot="public" virt="non-virtual"><scope>wxFontInfo</scope><name>wxFontInfo</name></member>
     </listofallmembers>
   </compounddef>

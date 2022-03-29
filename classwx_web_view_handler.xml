@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_web_view_handler" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxWebViewHandler</compoundname>
     <derivedcompoundref refid="classwx_web_view_archive_handler" prot="public" virt="non-virtual">wxWebViewArchiveHandler</derivedcompoundref>
@@ -23,15 +23,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="275" column="5"/>
+        <location file="interface/wx/webview.h" line="189" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_web_view_handler_1a188071c80aa5b0dc07e6e15d1a03387c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_web_view_handler_1a29f448e3c8f685c45e43cc06bd4c9b38" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_f_s_file" kindref="compound">wxFSFile</ref> *</type>
-        <definition>virtual wxFSFile * wxWebViewHandler::GetFile</definition>
+        <definition>virtual wxFSFile* wxWebViewHandler::GetFile</definition>
         <argsstring>(const wxString &amp;uri)=0</argsstring>
         <name>GetFile</name>
-        <reimplementedby refid="classwx_web_view_archive_handler_1a85461d2499660f96767ef78d317fe28f">GetFile</reimplementedby>
-        <reimplementedby refid="classwx_web_view_f_s_handler_1ac1b2b16f5d902a7263387d45fde20a12">GetFile</reimplementedby>
+        <reimplementedby refid="classwx_web_view_f_s_handler_1ae6b09b3d16d1e4b029582998115cabe9">GetFile</reimplementedby>
+        <reimplementedby refid="classwx_web_view_archive_handler_1a80858acc71a35bbd1e48ee31c7d9a3d8">GetFile</reimplementedby>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>uri</declname>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="280" column="22"/>
+        <location file="interface/wx/webview.h" line="194" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_handler_1ae9021adc4b3c815b00da81b9efd92dce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -61,53 +61,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="285" column="22"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_web_view_handler_1a617cd541077ada0687d89e60deee789b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type>void</type>
-        <definition>virtual void wxWebViewHandler::SetSecurityURL</definition>
-        <argsstring>(const wxString &amp;url)</argsstring>
-        <name>SetSecurityURL</name>
-        <param>
-          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>url</declname>
-        </param>
-        <briefdescription>
-<para>Sets a custom security URL. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Only used by <ref refid="classwx_web_view_i_e" kindref="compound">wxWebViewIE</ref>.</para>
-<para><simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/webview.h" line="292" column="18"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_web_view_handler_1ae4733ccc7026f76691f39a161c32490e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
-        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
-        <definition>virtual wxString wxWebViewHandler::GetSecurityURL</definition>
-        <argsstring>() const</argsstring>
-        <name>GetSecurityURL</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>The custom security URL. Only used by <ref refid="classwx_web_view_i_e" kindref="compound">wxWebViewIE</ref>.</para>
-</simplesect>
-<simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/webview.h" line="299" column="22"/>
+        <location file="interface/wx/webview.h" line="199" column="22"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>The base class for handling custom schemes in <ref refid="classwx_web_view" kindref="compound">wxWebView</ref>, for example to allow virtual file system support. </para>
     </briefdescription>
     <detaileddescription>
+<para>The base class for handling custom schemes in <ref refid="classwx_web_view" kindref="compound">wxWebView</ref>, for example to allow virtual file system support.</para>
 <para><simplesect kind="since"><para>2.9.3 <heading level="2"></heading>
 </para>
 </simplesect>
@@ -134,12 +94,10 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <link refid="classwx_web_view_handler"/>
       </node>
     </inheritancegraph>
-    <location file="interface/wx/webview.h" line="268" column="1" bodyfile="interface/wx/webview.h" bodystart="269" bodyend="300"/>
+    <location file="interface/wx/webview.h" line="183" column="1" bodyfile="interface/wx/webview.h" bodystart="182" bodyend="200"/>
     <listofallmembers>
-      <member refid="classwx_web_view_handler_1a188071c80aa5b0dc07e6e15d1a03387c" prot="public" virt="pure-virtual"><scope>wxWebViewHandler</scope><name>GetFile</name></member>
+      <member refid="classwx_web_view_handler_1a29f448e3c8f685c45e43cc06bd4c9b38" prot="public" virt="pure-virtual"><scope>wxWebViewHandler</scope><name>GetFile</name></member>
       <member refid="classwx_web_view_handler_1ae9021adc4b3c815b00da81b9efd92dce" prot="public" virt="virtual"><scope>wxWebViewHandler</scope><name>GetName</name></member>
-      <member refid="classwx_web_view_handler_1ae4733ccc7026f76691f39a161c32490e" prot="public" virt="virtual"><scope>wxWebViewHandler</scope><name>GetSecurityURL</name></member>
-      <member refid="classwx_web_view_handler_1a617cd541077ada0687d89e60deee789b" prot="public" virt="virtual"><scope>wxWebViewHandler</scope><name>SetSecurityURL</name></member>
       <member refid="classwx_web_view_handler_1a81e1c85b7954904245e49277df098149" prot="public" virt="non-virtual"><scope>wxWebViewHandler</scope><name>wxWebViewHandler</name></member>
     </listofallmembers>
   </compounddef>

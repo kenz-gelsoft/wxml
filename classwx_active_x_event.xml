@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_active_x_event" kind="class" language="C++" prot="public">
     <compoundname>wxActiveXEvent</compoundname>
     <basecompoundref refid="classwx_command_event" prot="public" virt="non-virtual">wxCommandEvent</basecompoundref>
@@ -92,9 +92,9 @@
         </inbodydescription>
         <location file="interface/wx/msw/ole/activex.h" line="65" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_active_x_event_1a610af0c5a723962d5e072cd1dcf08017" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_active_x_event_1a93773b8e0f17ca8fe90e9f14b1479f2a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>wxActiveXEventNativeMSW *</type>
-        <definition>wxActiveXEventNativeMSW * wxActiveXEvent::GetNativeParameters</definition>
+        <definition>wxActiveXEventNativeMSW* wxActiveXEvent::GetNativeParameters</definition>
         <argsstring>() const</argsstring>
         <name>GetNativeParameters</name>
         <briefdescription>
@@ -111,9 +111,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>An event class for handling ActiveX events passed from <ref refid="classwx_active_x_container" kindref="compound">wxActiveXContainer</ref>. </para>
     </briefdescription>
     <detaileddescription>
+<para>An event class for handling ActiveX events passed from <ref refid="classwx_active_x_container" kindref="compound">wxActiveXContainer</ref>.</para>
 <para>ActiveX events are basically a function call with the parameters passed through an array of wxVariants along with a return value that is a <ref refid="classwx_variant" kindref="compound">wxVariant</ref> itself. What type the parameters or return value are depends on the context (i.e. what the .idl specifies).</para>
 <para><linebreak/>
 <heading level="2">Events using this class</heading>
@@ -121,49 +121,29 @@
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_active_x_event" kindref="compound">wxActiveXEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
 <listitem><para>EVT_ACTIVEX(func): Sent when the ActiveX control hosted by <ref refid="classwx_active_x_container" kindref="compound">wxActiveXContainer</ref> receives an ActiveX event. <linebreak/>
- ActiveX event parameters can get extremely complex and may be beyond the abilities of <ref refid="classwx_variant" kindref="compound">wxVariant</ref>. If &apos;operator[]&apos; fails, prints an error messages or crashes the application, event handlers should use <ref refid="classwx_active_x_event_1a610af0c5a723962d5e072cd1dcf08017" kindref="member">GetNativeParameters()</ref> instead to obtain the original event information. Calls to operator[] and GetNativeParmeters() can be mixed. It is valid to handle some parameters of an event with operator[] and others directly through <ref refid="classwx_active_x_event_1a610af0c5a723962d5e072cd1dcf08017" kindref="member">GetNativeParameters()</ref>. It is <bold>not</bold> valid however to manipulate the same parameter using both approaches at the same time.</para>
+ ActiveX event parameters can get extremely complex and may be beyond the abilities of <ref refid="classwx_variant" kindref="compound">wxVariant</ref>. If &apos;operator[]&apos; fails, prints an error messages or crashes the application, event handlers should use <ref refid="classwx_active_x_event_1a93773b8e0f17ca8fe90e9f14b1479f2a" kindref="member">GetNativeParameters()</ref> instead to obtain the original event information. Calls to operator[] and GetNativeParmeters() can be mixed. It is valid to handle some parameters of an event with operator[] and others directly through <ref refid="classwx_active_x_event_1a93773b8e0f17ca8fe90e9f14b1479f2a" kindref="member">GetNativeParameters()</ref>. It is <bold>not</bold> valid however to manipulate the same parameter using both approaches at the same time.</para>
 </listitem>
 </itemizedlist>
-Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor> </para>
+Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port. <onlyfor>wxmsw</onlyfor> </para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxActiveXEvent</label>
-        <link refid="classwx_active_x_event"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxCommandEvent</label>
-        <link refid="classwx_command_event"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>wxEvent</label>
-        <link refid="classwx_event"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="4">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="1">
-        <label>wxActiveXEvent</label>
-        <link refid="classwx_active_x_event"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxCommandEvent</label>
         <link refid="classwx_command_event"/>
         <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wxActiveXEvent</label>
+        <link refid="classwx_active_x_event"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -172,6 +152,8 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="4">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -179,30 +161,48 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="2">
+        <label>wxCommandEvent</label>
+        <link refid="classwx_command_event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wxActiveXEvent</label>
+        <link refid="classwx_active_x_event"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="5">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/msw/ole/activex.h" line="38" column="1" bodyfile="interface/wx/msw/ole/activex.h" bodystart="39" bodyend="76"/>
+    <location file="interface/wx/msw/ole/activex.h" line="39" column="1" bodyfile="interface/wx/msw/ole/activex.h" bodystart="38" bodyend="76"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxActiveXEvent</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxActiveXEvent</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxActiveXEvent</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxActiveXEvent</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxActiveXEvent</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_command_event_1a3d41eef5b753ff2fd0b822bd1e0c6af9" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetClientData</name></member>
-      <member refid="classwx_command_event_1a48e7b34762b82cdc9d1b5d58d1e6a17f" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetClientObject</name></member>
+      <member refid="classwx_event_1a26878097a702e8d0368da150125d4158" prot="public" virt="pure-virtual"><scope>wxActiveXEvent</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxActiveXEvent</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxActiveXEvent</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxActiveXEvent</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_command_event_1a85c77819c73081dab3a43bfd2fe02e6a" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetClientData</name></member>
+      <member refid="classwx_command_event_1adab474dc431edb70a05f470ba1b18b08" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetClientObject</name></member>
       <member refid="classwx_active_x_event_1a264197c95ff46e7e68b983475b97a448" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetDispatchId</name></member>
       <member refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131" prot="public" virt="virtual"><scope>wxActiveXEvent</scope><name>GetEventCategory</name></member>
-      <member refid="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetEventObject</name></member>
+      <member refid="classwx_event_1a424a4ffaaaf95164d8952ef9ab2ef444" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetEventObject</name></member>
       <member refid="classwx_event_1a01c89719ef6241a6e612a313a259c1c2" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetEventType</name></member>
-      <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetEventUserData</name></member>
+      <member refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetEventUserData</name></member>
       <member refid="classwx_command_event_1abdba7c3e93f0dbf99f5382e60e7a461a" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetExtraLong</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetId</name></member>
       <member refid="classwx_command_event_1a24ad2aab26646c762ca3092a7ffd5ccd" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetInt</name></member>
-      <member refid="classwx_active_x_event_1a610af0c5a723962d5e072cd1dcf08017" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetNativeParameters</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_active_x_event_1a93773b8e0f17ca8fe90e9f14b1479f2a" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetNativeParameters</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetRefData</name></member>
       <member refid="classwx_command_event_1a93609c04b8fd7001259efb5d65645fe6" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetSelection</name></member>
       <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetSkipped</name></member>
       <member refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>GetString</name></member>
@@ -215,7 +215,7 @@ Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref
       <member refid="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" virt="non-virtual"><scope>wxActiveXEvent</scope><name>m_propagationLevel</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxActiveXEvent</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>operator new</name></member>
       <member refid="classwx_active_x_event_1a228781b71eedc945f2669ac4c2e7342c" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>operator[]</name></member>
       <member refid="classwx_active_x_event_1ae901ef8ff5ac09f660c6d4d4d2346c8e" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>ParamCount</name></member>
       <member refid="classwx_active_x_event_1aedf5af76894ea05e542e03b80d506417" prot="public" virt="non-virtual"><scope>wxActiveXEvent</scope><name>ParamName</name></member>

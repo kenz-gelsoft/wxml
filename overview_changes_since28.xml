@@ -1,14 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_changes_since28" kind="page">
     <compoundname>overview_changes_since28</compoundname>
     <title>Changes Since wxWidgets 2.8</title>
     <briefdescription>
-<para>This topic describes backwards-incompatible changes in wxWidgets 3.0 compared to the last stable release and is very important to read if you are updating from the 2.8 or an older version. </para>
     </briefdescription>
     <detaileddescription>
-<para>This topic describes backwards-incompatible changes in wxWidgets 3.0 compared to the last stable release and is very important to read if you are updating from the 2.8 or an older version.</para>
-<para>And even if you hadn&apos;t used any previous version of wxWidgets and are starting directly with 3.0, it can still be useful to have at least a quick look at it just to know that some of the older examples and tutorials may not be applicable any more to wxWidgets 3.0.</para>
+<para>This topic describes backwards-incompatible changes in wxWidgets 3.0 compared to the last stable release and is very important to read if you are updating from the 2.8 or an older version. And even if you hadn&apos;t used any previous version of wxWidgets and are starting directly with 3.0, it can still be useful to have at least a quick look at it just to know that some of the older examples and tutorials may not be applicable any more to wxWidgets 3.0.</para>
 <para>The incompatible changes can be grouped into the following categories:</para>
 <para><itemizedlist>
 <listitem><para><ref refid="overview_changes_since28_1overview_changes_unicode" kindref="member">Unicode-related Changes</ref> </para>
@@ -23,20 +21,20 @@
 <para>If you used Unicode build of wxWidgets 2.8 or previous version, please read <ref refid="overview_unicode" kindref="compound">Unicode Support in wxWidgets</ref> for the details about how the API changed in 3.0 as a lot of the information which was correct before doesn&apos;t apply any longer.</para>
 <para>For example, the notorious (due to the confusion they created) macros <computeroutput><ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT()</ref></computeroutput> and <computeroutput><ref refid="chartype_8h_1a7dfc2888539861afe6c4337ef315472b" kindref="member">_T()</ref></computeroutput> are not needed at all any longer. Basically, you can remove them from any code which used them. On the other hand, there is no particular harm in leaving them neither as the code will still compile and work correctly <ndash/> you only need to remove them if you think that your code looks tidier without them. You also don&apos;t need to use <computeroutput>wxChar</computeroutput> any longer but can directly use the standard <computeroutput>wchar_t</computeroutput> type even if, again, <computeroutput>wxChar</computeroutput> continues to work.</para>
 <para>The most serious backwards-incompatible change is related to the change of return type of <ref refid="classwx_string_1a5db49c775c09e77fe0acde2a928bbf8f" kindref="member">wxString::c_str()</ref> method: it returns a special proxy object instead of a simple <computeroutput>char*</computeroutput> or <computeroutput>wchar_t*</computeroutput> now. Because of this, you cannot pass its result to any standard vararg functions such as <computeroutput>printf()</computeroutput> any more as described in <ref refid="overview_unicode_1overview_unicode_compilation_errors" kindref="member">Unicode-Related Compilation Errors</ref>. All wxWidgets functions, such as wxPrintf(), <ref refid="interface_2wx_2log_8h_1a249358701f3c2d410088ddf7a61d8564" kindref="member">wxLogMessage()</ref> &amp;c still work with it, but passing it to <computeroutput>printf()</computeroutput> will now result in a crash. It is strongly advised to recompile your code with a compiler warning about passing non-POD objects to vararg functions, such as g++.</para>
-<para>The change of the type of <ref refid="classwx_string_1a5db49c775c09e77fe0acde2a928bbf8f" kindref="member">wxString::c_str()</ref> can also result in compilation errors when passing its result to a function overloaded to take both narrow and wide strings and in this case you must select the version which you really want to use, e.g.: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OpenLogFile(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OpenLogFile(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>s;</highlight></codeline>
-<codeline><highlight class="normal">OpenLogFile(s);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ERROR:<sp/>ambiguity</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">OpenLogFile(s.<ref refid="classwx_string_1a5db49c775c09e77fe0acde2a928bbf8f" kindref="member">c_str</ref>());<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ERROR:<sp/>ambiguity</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">OpenLogFile(s.<ref refid="classwx_string_1a2af910142512c5bbef6268a3fc78a957" kindref="member">wx_str</ref>());<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>OK:<sp/>function<sp/>called<sp/>depends<sp/>on<sp/>the<sp/>build</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">OpenLogFile(s.<ref refid="classwx_string_1a4e0a115d6b98abacc9a5365f3e988135" kindref="member">mb_str</ref>());<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>OK:<sp/>always<sp/>calls<sp/>narrow<sp/>string<sp/>overload</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">OpenLogFile(s.<ref refid="classwx_string_1aa17b9e38640fd3f22b5235173e910c9b" kindref="member">wc_str</ref>());<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>OK:<sp/>always<sp/>calls<sp/>wide<sp/>string<sp/>overload</highlight></codeline>
-</programlisting> A common example of such problem arises with <computeroutput>std::fstream</computeroutput> class constructor in Microsoft Visual C++ standard library implementation. In addition to a constructor from <computeroutput>const</computeroutput> <computeroutput>char</computeroutput> * which this class must have, it also provides a constructor taking a wide character file name. Because of this, code like the following <programlisting><codeline><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyFunc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_string" kindref="compound">wxString</ref>&amp;<sp/>filename)</highlight></codeline>
+<para>The change of the type of <ref refid="classwx_string_1a5db49c775c09e77fe0acde2a928bbf8f" kindref="member">wxString::c_str()</ref> can also result in compilation errors when passing its result to a function overloaded to take both narrow and wide strings and in this case you must select the version which you really want to use, e.g.: <programlisting><codeline><highlight class="normal">void<sp/>OpenLogFile(const<sp/>char<sp/>*filename);</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>OpenLogFile(const<sp/>wchar_t<sp/>*filename);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxString<sp/>s;</highlight></codeline>
+<codeline><highlight class="normal">OpenLogFile(s);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>ERROR:<sp/>ambiguity</highlight></codeline>
+<codeline><highlight class="normal">OpenLogFile(s.c_str());<sp/><sp/><sp/><sp/><sp/>//<sp/>ERROR:<sp/>ambiguity</highlight></codeline>
+<codeline><highlight class="normal">OpenLogFile(s.wx_str());<sp/><sp/><sp/><sp/>//<sp/>OK:<sp/>function<sp/>called<sp/>depends<sp/>on<sp/>the<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">OpenLogFile(s.mb_str());<sp/><sp/><sp/><sp/>//<sp/>OK:<sp/>always<sp/>calls<sp/>narrow<sp/>string<sp/>overload</highlight></codeline>
+<codeline><highlight class="normal">OpenLogFile(s.wc_str());<sp/><sp/><sp/><sp/>//<sp/>OK:<sp/>always<sp/>calls<sp/>wide<sp/>string<sp/>overload</highlight></codeline>
+</programlisting> A common example of such problem arises with <computeroutput>std::fstream</computeroutput> class constructor in Microsoft Visual C++ standard library implementation. In addition to a constructor from <computeroutput>const</computeroutput> <computeroutput>char</computeroutput> * which this class must have, it also provides a constructor taking a wide character file name. Because of this, code like the following <programlisting><codeline><highlight class="normal">#include<sp/>&lt;fstream&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>MyFunc(const<sp/>wxString&amp;<sp/>filename)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::ifstream<sp/>ifs(filename.<ref refid="classwx_string_1a5db49c775c09e77fe0acde2a928bbf8f" kindref="member">c_str</ref>());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>std::ifstream<sp/>ifs(filename.c_str());</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> does not compile when using Microsoft Visual C++ and needs to be changed to use mb_str() (which will not work for file names containing Unicode characters, consider using wxWidgets classes and functions to work with such file names as they are not supported by standard C++ library).</para>
@@ -54,35 +52,38 @@
 </listitem><listitem><para><ref refid="classwx_calendar_ctrl" kindref="compound">wxCalendarCtrl</ref> has native implementation in wxGTK, but it has less features than the generic one. The native implementation is used by default, but you can still use wxGenericCalendarCtrl instead of <ref refid="classwx_calendar_ctrl" kindref="compound">wxCalendarCtrl</ref> in your code if you need the extra features.</para>
 </listitem><listitem><para>wxDocument::FileHistoryLoad() and <ref refid="classwx_file_history_1a2537201495686a3a6a26701e158ecfb3" kindref="member">wxFileHistory::Load()</ref> now take const reference to <ref refid="classwx_config_base" kindref="compound">wxConfigBase</ref> argument and not just a reference, please update your code if you overrode these functions and change the functions in the derived classes to use const reference as well.</para>
 </listitem><listitem><para>Calling wxConfig::Write() with an enum value will fail to compile because wxConfig now tries to convert all unknown types to <ref refid="classwx_string" kindref="compound">wxString</ref> automatically using <ref refid="colour_8h_1a0adf8026ea8ed126420a2e7ef9edc678" kindref="member">wxToString()</ref> function.</para>
-<para>The simplest solution is to cast the enum value to int, e.g. <programlisting><codeline><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>Colour<sp/>{<sp/>Red,<sp/>Green,<sp/>Blue<sp/>};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<para>The simplest solution is to cast the enum value to int, e.g. <programlisting><codeline><highlight class="normal">enum<sp/>Colour<sp/>{<sp/>Red,<sp/>Green,<sp/>Blue<sp/>};</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">wxConfig<sp/>conf;</highlight></codeline>
-<codeline><highlight class="normal">conf.Write(</highlight><highlight class="stringliteral">&quot;MyFavouriteColour&quot;</highlight><highlight class="normal">,<sp/>Red);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ERROR:<sp/>no<sp/>match</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">conf.Write(</highlight><highlight class="stringliteral">&quot;MyFavouriteColour&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">(Red));<sp/><sp/></highlight><highlight class="comment">//<sp/>OK</highlight></codeline>
+<codeline><highlight class="normal">conf.Write(&quot;MyFavouriteColour&quot;,<sp/>Red);<sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>ERROR:<sp/>no<sp/>match</highlight></codeline>
+<codeline><highlight class="normal">conf.Write(&quot;MyFavouriteColour&quot;,<sp/>int(Red));<sp/><sp/>//<sp/>OK</highlight></codeline>
 </programlisting></para>
 <para>Another possibility which exists now is to provide an overload of <ref refid="colour_8h_1a0adf8026ea8ed126420a2e7ef9edc678" kindref="member">wxToString()</ref> (and <ref refid="colour_8h_1a598ae7504c6436af325490b41f4b5e90" kindref="member">wxFromString()</ref>) for your own type, e.g.</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/><ref refid="colour_8h_1a0adf8026ea8ed126420a2e7ef9edc678" kindref="member">wxToString</ref>(Colour<sp/>col)</highlight></codeline>
+</listitem></itemizedlist>
+</para>
+<para><programlisting><codeline><highlight class="normal">wxString<sp/>wxToString(Colour<sp/>col)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>col<sp/>==<sp/>Red<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;R&quot;</highlight><highlight class="normal"><sp/>:<sp/>col<sp/>==<sp/>Green<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;G&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;B&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>col<sp/>==<sp/>Red<sp/>?<sp/>&quot;R&quot;<sp/>:<sp/>col<sp/>==<sp/>Green<sp/>?<sp/>&quot;G&quot;<sp/>:<sp/>&quot;B&quot;;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="colour_8h_1a598ae7504c6436af325490b41f4b5e90" kindref="member">wxFromString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_string" kindref="compound">wxString</ref>&amp;<sp/>s,<sp/>Colour*<sp/>col)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">bool<sp/>wxFromString(const<sp/>wxString&amp;<sp/>s,<sp/>Colour*<sp/>col)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>s.<ref refid="classwx_string_1ae4d27fb54ba938b6dcf76bfcf722eccd" kindref="member">length</ref>()<sp/>!=<sp/>1<sp/>)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<sp/>s[0].GetValue()<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>s.length()<sp/>!=<sp/>1<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>false;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>switch<sp/>(<sp/>s[0].GetValue()<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;R&apos;</highlight><highlight class="normal">:<sp/>*col<sp/>=<sp/>Red;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;G&apos;</highlight><highlight class="normal">:<sp/>*col<sp/>=<sp/>Green;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;B&apos;</highlight><highlight class="normal">:<sp/>*col<sp/>=<sp/>Blue;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>&apos;R&apos;:<sp/>*col<sp/>=<sp/>Red;<sp/>return<sp/>true;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>&apos;G&apos;:<sp/>*col<sp/>=<sp/>Green;<sp/>return<sp/>true;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>&apos;B&apos;:<sp/>*col<sp/>=<sp/>Blue;<sp/>return<sp/>true;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>false;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>Of course, this will change the format of the wxConfig output which may be undesirable.</para>
-</listitem><listitem><para>wxTE_AUTO_SCROLL style is deprecated as it&apos;s always on by default anyhow in the ports which support it so you should simply remove any mentions of it from your code.</para>
+<para><itemizedlist>
+<listitem><para>wxTE_AUTO_SCROLL style is deprecated as it&apos;s always on by default anyhow in the ports which support it so you should simply remove any mentions of it from your code.</para>
 </listitem><listitem><para>If you use <ref refid="classwx_scrolled_1a117dc8edabb3e1250199eab089e4fa5b" kindref="member">wxScrolled&lt;T&gt;::SetTargetWindow()</ref> you must override <ref refid="classwx_scrolled_1a81800886d1d5f094caeee683e707de12" kindref="member">wxScrolled&lt;T&gt;::GetSizeAvailableForScrollTarget()</ref> method to compute the size available for the scroll target as function of the main window size, please see the documentation of this method for more details.</para>
 </listitem><listitem><para>Signature of <ref refid="classwx_data_view_custom_renderer_1a36d6d5c64097bb48f67a712ddb7f97bf" kindref="member">wxDataViewCustomRenderer::StartDrag()</ref> virtual method changed. You will need to change it in your derived renderer class too if you override it.</para>
 </listitem><listitem><para><ref refid="classwx_data_view_custom_renderer_1a242d0992df73be6830e66d74b211974d" kindref="member">wxDataViewCustomRenderer::Activate()</ref> and <ref refid="classwx_data_view_custom_renderer_1ab7fe7693a94fee896eb0b60b843cd474" kindref="member">wxDataViewCustomRenderer::LeftClick()</ref> were replaced with the new <ref refid="classwx_data_view_custom_renderer_1a76e85467c89adae6612236d803a552fc" kindref="member">wxDataViewCustomRenderer::ActivateCell()</ref> method. You will need to change it in your derived renderer class accordingly. </para>
@@ -90,6 +91,5 @@
 </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/changes_since28.h"/>
   </compounddef>
 </doxygen>

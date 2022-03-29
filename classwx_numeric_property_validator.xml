@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_numeric_property_validator" kind="class" language="C++" prot="public">
     <compoundname>wxNumericPropertyValidator</compoundname>
     <basecompoundref refid="classwx_text_validator" prot="public" virt="non-virtual">wxTextValidator</basecompoundref>
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="91" column="5" bodyfile="interface/wx/propgrid/props.h" bodystart="92" bodyend="96"/>
+        <location file="interface/wx/propgrid/props.h" line="91" column="1" bodyfile="interface/wx/propgrid/props.h" bodystart="90" bodyend="95"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="98" column="5"/>
+        <location file="interface/wx/propgrid/props.h" line="97" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_numeric_property_validator_1a0908e290a736fd309393a4f04c44499c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type></type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="99" column="13" bodyfile="interface/wx/propgrid/props.h" bodystart="99" bodyend="99"/>
+        <location file="interface/wx/propgrid/props.h" line="98" column="13" bodyfile="interface/wx/propgrid/props.h" bodystart="98" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="classwx_numeric_property_validator_1afc43c355089e62fde2fc202879a94cf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="100" column="18"/>
+        <location file="interface/wx/propgrid/props.h" line="99" column="18"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -101,6 +101,16 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>wxValidator</label>
+        <link refid="classwx_validator"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
       <node id="4">
         <label>wxEvtHandler</label>
         <link refid="classwx_evt_handler"/>
@@ -109,15 +119,15 @@
         <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="6">
+        <label>wxTrackable</label>
+        <link refid="classwx_trackable"/>
+      </node>
       <node id="1">
         <label>wxNumericPropertyValidator</label>
         <link refid="classwx_numeric_property_validator"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="5">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
       </node>
       <node id="2">
         <label>wxTextValidator</label>
@@ -125,30 +135,12 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
-        <label>wxTrackable</label>
-        <link refid="classwx_trackable"/>
-      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="3">
         <label>wxValidator</label>
         <link refid="classwx_validator"/>
         <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="4">
-        <label>wxEvtHandler</label>
-        <link refid="classwx_evt_handler"/>
-        <childnode refid="5" relation="public-inheritance">
-        </childnode>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>wxNumericPropertyValidator</label>
-        <link refid="classwx_numeric_property_validator"/>
-        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5">
@@ -158,9 +150,23 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="6">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
+      <node id="4">
+        <label>wxEvtHandler</label>
+        <link refid="classwx_evt_handler"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>wxTrackable</label>
+        <link refid="classwx_trackable"/>
+      </node>
+      <node id="1">
+        <label>wxNumericPropertyValidator</label>
+        <link refid="classwx_numeric_property_validator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="2">
         <label>wxTextValidator</label>
@@ -168,70 +174,55 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7">
-        <label>wxTrackable</label>
-        <link refid="classwx_trackable"/>
-      </node>
-      <node id="3">
-        <label>wxValidator</label>
-        <link refid="classwx_validator"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
+      <node id="6">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/propgrid/props.h" line="88" column="1" bodyfile="interface/wx/propgrid/props.h" bodystart="89" bodyend="101"/>
+    <location file="interface/wx/propgrid/props.h" line="88" column="1" bodyfile="interface/wx/propgrid/props.h" bodystart="87" bodyend="100"/>
     <listofallmembers>
-      <member refid="classwx_text_validator_1a5841025e9d33a204c1c63ac0e35a6350" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>AddCharExcludes</name></member>
-      <member refid="classwx_text_validator_1ab8bec6a5a5a1b7c33d8aa369ceefa6ce" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>AddCharIncludes</name></member>
-      <member refid="classwx_text_validator_1ab4bab3f3d26d9874d93aebcbe8572847" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>AddExclude</name></member>
       <member refid="classwx_evt_handler_1a7dc3c701781f4044372049de5004137e" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>AddFilter</name></member>
-      <member refid="classwx_text_validator_1a6324e041079dc0c6a64ea0bc5639333c" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>AddInclude</name></member>
       <member refid="classwx_evt_handler_1a0737c6d2cbcd5ded4b1ecdd53ed0def3" prot="public" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>AddPendingEvent</name></member>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>AllocExclusive</name></member>
       <member refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>Bind</name></member>
       <member refid="classwx_evt_handler_1a03cc68ca201fb79c7e837919025be71a" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>Bind</name></member>
       <member refid="classwx_evt_handler_1a63c7351618fd77330d80a250b3719519" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>CallAfter</name></member>
       <member refid="classwx_evt_handler_1a910416e4d0b1f38cec02213b8a0c6a12" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>CallAfter</name></member>
-      <member refid="classwx_text_validator_1a632cef3cda074cbcdc7b59d52b17df12" prot="public" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>CloneRefData</name></member>
+      <member refid="classwx_text_validator_1a6a25ba59a4d05798b4ec57b56c6faadb" prot="public" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>CloneRefData</name></member>
       <member refid="classwx_evt_handler_1a78719e8b82c9f9c6e4056b3449df1943" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>Connect</name></member>
       <member refid="classwx_evt_handler_1a1e8b5fc4c7e7f6d32d40bc00d4108ba4" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>Connect</name></member>
       <member refid="classwx_evt_handler_1aa290d9b67348e74c1da8497955a4e35c" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>Connect</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>CreateRefData</name></member>
+      <member refid="classwx_text_validator_1ae81260e4a6b5dc5f68791fbb82f5ac5c" prot="protected" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>ContainsExcludedCharacters</name></member>
+      <member refid="classwx_text_validator_1ae8d3e5da9789f32f20f02adc43729ead" prot="protected" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>ContainsOnlyIncludedCharacters</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>CreateRefData</name></member>
       <member refid="classwx_evt_handler_1a6e7f9cf4ebd0623c1d94979855d096f8" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>DeletePendingEvents</name></member>
       <member refid="classwx_evt_handler_1a13061cf0ed01ac10a804ac057ef4bdbc" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>Disconnect</name></member>
       <member refid="classwx_evt_handler_1a2f171e19444b9c4034c5e11f24fa9c91" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>Disconnect</name></member>
       <member refid="classwx_evt_handler_1a16a6f823853e4b74b43dd9a2cf3abee6" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>Disconnect</name></member>
       <member refid="classwx_numeric_property_validator_1a48ef167836dab280dd87e50cafbee1daa54f54ad744e00ad30c0fcef7c588ab16" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>Float</name></member>
-      <member refid="classwx_text_validator_1a62c6db9d30541b1720a942eb1fb82972" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetCharExcludes</name></member>
-      <member refid="classwx_text_validator_1a1fba4cb2eb69546a1ac7fb7235ea2b3e" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetCharIncludes</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_evt_handler_1a62baf87cabf4dd2c9ecce3ee5e1e9f61" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetClientData</name></member>
-      <member refid="classwx_evt_handler_1a537d17d644e48bc1735c4dd28b8b8c04" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetClientObject</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_evt_handler_1a291bc92c1bea8abfff276a8e333d46db" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetClientData</name></member>
+      <member refid="classwx_evt_handler_1a371742bda1686e82065f3a1f2acb31c8" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetClientObject</name></member>
       <member refid="classwx_evt_handler_1a7742d81c5eb7849a0ad75b9de8575153" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetEvtHandlerEnabled</name></member>
-      <member refid="classwx_text_validator_1a470219e1cac3953dc2ff015e43891665" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetExcludes</name></member>
-      <member refid="classwx_text_validator_1a5466e57dff6e7edcd0957ac7a2150beb" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetIncludes</name></member>
-      <member refid="classwx_evt_handler_1a6de721ad9f331826a5c925d6008116e5" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetNextHandler</name></member>
-      <member refid="classwx_evt_handler_1abbf9904ea5108b816f5f4faab1a33db9" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetPreviousHandler</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetRefData</name></member>
+      <member refid="classwx_text_validator_1aeaed6526217c8682f0d63246a91982e4" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetExcludes</name></member>
+      <member refid="classwx_text_validator_1a5b1b471464f95c35d82d4edb315de63c" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetIncludes</name></member>
+      <member refid="classwx_evt_handler_1addedbed1c9f970c2b1e2893a42805b6a" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetNextHandler</name></member>
+      <member refid="classwx_evt_handler_1a69bfde9623d89eb91e363c53616e4587" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetPreviousHandler</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetRefData</name></member>
       <member refid="classwx_text_validator_1a5410e686b5a2a70d6c7e15bc8055188c" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetStyle</name></member>
-      <member refid="classwx_validator_1a7568622187a3ffa022ba53ef7e976b9c" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetWindow</name></member>
+      <member refid="classwx_validator_1ae81ace856490b0ba3d65fa8b444d090d" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>GetWindow</name></member>
       <member refid="classwx_text_validator_1ac58cde355cc8198c1708ee2155b2ba97" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>HasFlag</name></member>
-      <member refid="classwx_text_validator_1ae1712ef8397b3adc1c3b51ae803065a7" prot="protected" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>IsCharExcluded</name></member>
-      <member refid="classwx_text_validator_1ac0f29edec5ffb469cb79e662e25a103f" prot="protected" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>IsCharIncluded</name></member>
-      <member refid="classwx_text_validator_1ae93ed0d5eb57367a98b9cd5aa2a1f6d0" prot="protected" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>IsExcluded</name></member>
-      <member refid="classwx_text_validator_1a92cfbc929be4f5c002fa563c13e945a2" prot="protected" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>IsIncluded</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>IsSameAs</name></member>
       <member refid="classwx_validator_1a50671f3be232b0fd30a0877d3273a366" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>IsSilent</name></member>
       <member refid="classwx_evt_handler_1ac0734578a8d929b8b0be440ce0b53ad6" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>IsUnlinked</name></member>
-      <member refid="classwx_text_validator_1a77dd17dbc8f6c23a23add534051d8129" prot="public" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>IsValid</name></member>
-      <member refid="classwx_text_validator_1a40fa5d477a6989592a41bdadd4fd6d4a" prot="protected" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>IsValidChar</name></member>
+      <member refid="classwx_text_validator_1a77dd17dbc8f6c23a23add534051d8129" prot="protected" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>IsValid</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>m_refData</name></member>
       <member refid="classwx_numeric_property_validator_1a48ef167836dab280dd87e50cafbee1da" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>NumericType</name></member>
       <member refid="classwx_text_validator_1a125b03603df03e2d45d6bbb3ec079499" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>OnChar</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>operator new</name></member>
       <member refid="classwx_evt_handler_1a65968dd27f3aac7718f2dd6b2ddd5a08" prot="public" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>ProcessEvent</name></member>
       <member refid="classwx_evt_handler_1ac0f5d2cb29a04c1f7f82eb6b351f79fb" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>ProcessEventLocally</name></member>
       <member refid="classwx_evt_handler_1a6f643dbdcf8e914ae1c8b70dd305e6f2" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>ProcessPendingEvents</name></member>
@@ -239,6 +230,7 @@
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>Ref</name></member>
       <member refid="classwx_evt_handler_1a67a57b759c447b121bf70a7c9804c8f2" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>RemoveFilter</name></member>
       <member refid="classwx_evt_handler_1a8205cb1a5a00d8b550b3ead22266b16b" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>SafelyProcessEvent</name></member>
+      <member refid="classwx_evt_handler_1a3c07426130d2868a5ae7fa918a251f49" prot="public" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>SearchEventTable</name></member>
       <member refid="classwx_text_validator_1a8a461648fd10e0ce15021e3d913f24d4" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>SetCharExcludes</name></member>
       <member refid="classwx_text_validator_1a73b9a9a92761b34503777381226d30a3" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>SetCharIncludes</name></member>
       <member refid="classwx_evt_handler_1a82c74f2cebfa02cb3c1563d459c872bf" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>SetClientData</name></member>
@@ -250,7 +242,7 @@
       <member refid="classwx_evt_handler_1aff0d1836464be82e2ad723ad3a58eccc" prot="public" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>SetPreviousHandler</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>SetRefData</name></member>
       <member refid="classwx_text_validator_1a30d9deab4413db1039539dc7c062f9fa" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>SetStyle</name></member>
-      <member refid="classwx_validator_1af909586ba6a6c8f665f684a4a83334eb" prot="public" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>SetWindow</name></member>
+      <member refid="classwx_validator_1acf2179bcc4b256bc71e01f8a12f6da58" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>SetWindow</name></member>
       <member refid="classwx_numeric_property_validator_1a48ef167836dab280dd87e50cafbee1daa36939a6e1e8ceef0732246b23a3952a8" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>Signed</name></member>
       <member refid="classwx_validator_1a810c6c099c730a13b88f04d46ebe720e" prot="public" virt="non-virtual"><scope>wxNumericPropertyValidator</scope><name>SuppressBellOnError</name></member>
       <member refid="classwx_text_validator_1a2fcf41e1c0fb40177703f96b3e60193f" prot="public" virt="virtual"><scope>wxNumericPropertyValidator</scope><name>TransferFromWindow</name></member>

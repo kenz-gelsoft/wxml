@@ -1,67 +1,67 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_paint_event" kind="class" language="C++" prot="public">
     <compoundname>wxPaintEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
     <includes local="no">wx/event.h</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classwx_paint_event_1ad6d201c4b88ecf72ab454d174a7d607b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_paint_event_1a1847bf0e6267edd1658d2be6132eeece" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxPaintEvent::wxPaintEvent</definition>
-        <argsstring>(wxWindow *window)</argsstring>
+        <argsstring>(int id=0)</argsstring>
         <name>wxPaintEvent</name>
         <param>
-          <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
-          <declname>window</declname>
+          <type>int</type>
+          <declname>id</declname>
+          <defval>0</defval>
         </param>
         <briefdescription>
-<para>Constructor for exclusive use of wxWidgets itself. </para>
+<para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para>Note that the objects of this class can <emphasis>not</emphasis> be created from application code, they&apos;re only created by the library itself. If you need a window to be repainted, use <ref refid="classwx_window_1a29dc7251746154c821b17841b9877830" kindref="member">wxWindow::Refresh()</ref> instead of trying to manually create an event of this class. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="2229" column="14"/>
+        <location file="interface/wx/event.h" line="2230" column="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A paint event is sent when a window&apos;s contents needs to be repainted. </para>
     </briefdescription>
     <detaileddescription>
-<para>The handler of this event must create a <ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref> object and use it for painting the window contents. For example: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyWindow::OnPaint(<ref refid="classwx_paint_event" kindref="compound">wxPaintEvent</ref>&amp;<sp/>event)</highlight></codeline>
+<para>A paint event is sent when a window&apos;s contents needs to be repainted.</para>
+<para>The handler of this event must create a <ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref> object and use it for painting the window contents. For example: <programlisting><codeline><highlight class="normal">void<sp/>MyWindow::OnPaint(wxPaintEvent&amp;<sp/>event)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref><sp/>dc(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxPaintDC<sp/>dc(this);</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>DrawMyDocument(dc);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>Notice that you must <emphasis>not</emphasis> create other kinds of <ref refid="classwx_d_c" kindref="compound">wxDC</ref> (e.g. <ref refid="classwx_client_d_c" kindref="compound">wxClientDC</ref> or <ref refid="classwx_window_d_c" kindref="compound">wxWindowDC</ref>) in EVT_PAINT handlers and also don&apos;t create <ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref> outside of this event handlers.</para>
-<para>You can optimize painting by retrieving the rectangles that have been damaged and only repainting these. The rectangles are in terms of the client area, and are unscrolled, so you will need to do some calculations using the current view position to obtain logical, scrolled units. Here is an example of using the <ref refid="classwx_region_iterator" kindref="compound">wxRegionIterator</ref> class: <programlisting><codeline><highlight class="comment">//<sp/>Called<sp/>when<sp/>window<sp/>needs<sp/>to<sp/>be<sp/>repainted.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyWindow::OnPaint(<ref refid="classwx_paint_event" kindref="compound">wxPaintEvent</ref>&amp;<sp/>event)</highlight></codeline>
+<para>You can optimize painting by retrieving the rectangles that have been damaged and only repainting these. The rectangles are in terms of the client area, and are unscrolled, so you will need to do some calculations using the current view position to obtain logical, scrolled units. Here is an example of using the <ref refid="classwx_region_iterator" kindref="compound">wxRegionIterator</ref> class: <programlisting><codeline><highlight class="normal">//<sp/>Called<sp/>when<sp/>window<sp/>needs<sp/>to<sp/>be<sp/>repainted.</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>MyWindow::OnPaint(wxPaintEvent&amp;<sp/>event)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref><sp/>dc(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>Out<sp/>where<sp/>the<sp/>window<sp/>is<sp/>scrolled<sp/>to</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vbX,vbY;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Top<sp/>left<sp/>corner<sp/>of<sp/>client</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxPaintDC<sp/>dc(this);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Find<sp/>Out<sp/>where<sp/>the<sp/>window<sp/>is<sp/>scrolled<sp/>to</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>vbX,vbY;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Top<sp/>left<sp/>corner<sp/>of<sp/>client</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>GetViewStart(&amp;vbX,&amp;vbY);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vX,vY,vW,vH;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Dimensions<sp/>of<sp/>client<sp/>area<sp/>in<sp/>pixels</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_region_iterator" kindref="compound">wxRegionIterator</ref><sp/>upd(GetUpdateRegion());<sp/></highlight><highlight class="comment">//<sp/>get<sp/>the<sp/>update<sp/>rect<sp/>list</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(upd)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>vX,vY,vW,vH;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Dimensions<sp/>of<sp/>client<sp/>area<sp/>in<sp/>pixels</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxRegionIterator<sp/>upd(GetUpdateRegion());<sp/>//<sp/>get<sp/>the<sp/>update<sp/>rect<sp/>list</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(upd)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vX<sp/>=<sp/>upd.GetX();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vY<sp/>=<sp/>upd.GetY();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vW<sp/>=<sp/>upd.GetW();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vH<sp/>=<sp/>upd.GetH();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Alternatively<sp/>we<sp/>can<sp/>do<sp/>this:</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wxRect<sp/>rect(upd.GetRect());</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Repaint<sp/>this<sp/>rectangle</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Alternatively<sp/>we<sp/>can<sp/>do<sp/>this:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>wxRect<sp/>rect(upd.GetRect());</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Repaint<sp/>this<sp/>rectangle</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...some<sp/>code...</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>upd<sp/>++<sp/>;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
@@ -84,28 +84,28 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxEvent</label>
-        <link refid="classwx_event"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-      </node>
       <node id="1">
         <label>wxPaintEvent</label>
         <link refid="classwx_paint_event"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
+      <node id="3">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
       <node id="2">
         <label>wxEvent</label>
         <link refid="classwx_event"/>
         <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>wxPaintEvent</label>
+        <link refid="classwx_paint_event"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -115,30 +115,30 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="2">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
-      <node id="1">
-        <label>wxPaintEvent</label>
-        <link refid="classwx_paint_event"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="2218" column="1" bodyfile="interface/wx/event.h" bodystart="2219" bodyend="2230"/>
+    <location file="interface/wx/event.h" line="2225" column="1" bodyfile="interface/wx/event.h" bodystart="2224" bodyend="2231"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxPaintEvent</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxPaintEvent</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxPaintEvent</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxPaintEvent</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxPaintEvent</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_event_1a26878097a702e8d0368da150125d4158" prot="public" virt="pure-virtual"><scope>wxPaintEvent</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxPaintEvent</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxPaintEvent</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxPaintEvent</scope><name>GetClassInfo</name></member>
       <member refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131" prot="public" virt="virtual"><scope>wxPaintEvent</scope><name>GetEventCategory</name></member>
-      <member refid="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>GetEventObject</name></member>
+      <member refid="classwx_event_1a424a4ffaaaf95164d8952ef9ab2ef444" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>GetEventObject</name></member>
       <member refid="classwx_event_1a01c89719ef6241a6e612a313a259c1c2" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>GetEventType</name></member>
-      <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>GetEventUserData</name></member>
+      <member refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>GetEventUserData</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>GetId</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>GetRefData</name></member>
       <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>GetSkipped</name></member>
       <member refid="classwx_event_1a48662230971127737d2500cef7be549d" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>GetTimestamp</name></member>
       <member refid="classwx_event_1a31f6a4377d6d36964b8eae4e56ec43e0" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>IsCommandEvent</name></member>
@@ -147,7 +147,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" virt="non-virtual"><scope>wxPaintEvent</scope><name>m_propagationLevel</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxPaintEvent</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>Ref</name></member>
       <member refid="classwx_event_1a0acb5c75f6e67b8822ad8ba3c5bdc4fe" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>ResumePropagation</name></member>
       <member refid="classwx_event_1a3460217d04c36393ab868ba453fde13d" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>SetEventObject</name></member>
@@ -163,7 +163,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_event_1aaf2a5cf056d006859cea36689ba13d36" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>wxEvent</name></member>
       <member refid="classwx_object_1acaa378363a28af421ab56ad7b46eadf0" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>wxObject</name></member>
       <member refid="classwx_object_1a4721b4dc9b7aff0f30904ba2ea3954cf" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>wxObject</name></member>
-      <member refid="classwx_paint_event_1ad6d201c4b88ecf72ab454d174a7d607b" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>wxPaintEvent</name></member>
+      <member refid="classwx_paint_event_1a1847bf0e6267edd1658d2be6132eeece" prot="public" virt="non-virtual"><scope>wxPaintEvent</scope><name>wxPaintEvent</name></member>
       <member refid="classwx_object_1a2a51aa8bfbab47ca2f051bcf84b3f35b" prot="public" virt="virtual"><scope>wxPaintEvent</scope><name>~wxObject</name></member>
     </listofallmembers>
   </compounddef>

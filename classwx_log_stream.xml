@@ -1,46 +1,35 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_log_stream" kind="class" language="C++" prot="public">
     <compoundname>wxLogStream</compoundname>
     <basecompoundref refid="classwx_log" prot="public" virt="non-virtual">wxLog</basecompoundref>
     <includes local="no">wx/log.h</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classwx_log_stream_1a94c6e16d3cbdf8b3d6e66c37a6e6ee39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_log_stream_1aa3f142e078770fe7bba7086663fe8903" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxLogStream::wxLogStream</definition>
-        <argsstring>(std::ostream *ostr=NULL, const wxMBConv &amp;conv=wxConvWhateverWorks)</argsstring>
+        <argsstring>(std::ostream *ostr=NULL)</argsstring>
         <name>wxLogStream</name>
         <param>
           <type>std::ostream *</type>
           <declname>ostr</declname>
           <defval>NULL</defval>
         </param>
-        <param>
-          <type>const <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> &amp;</type>
-          <declname>conv</declname>
-          <defval><ref refid="strconv_8h_1ab91097a28adc811113c5c1bf9e4b3873" kindref="member">wxConvWhateverWorks</ref></defval>
-        </param>
         <briefdescription>
 <para>Constructs a log target which sends all the log messages to the given output stream. </para>
         </briefdescription>
         <detaileddescription>
-<para>If it is NULL, the messages are sent to <computeroutput>cerr</computeroutput>. The messages will be written in the encoding specified by the given <computeroutput><ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref></computeroutput>.</para>
-<para>The <emphasis>conv</emphasis> argument is only available in wxWidgets 3.1.1 and later.</para>
-<para><simplesect kind="note"><para>In practice, it is only advisable to specify <computeroutput>wxConvUTF8</computeroutput> as the <emphasis>conv</emphasis>. If using <computeroutput><ref refid="classwx_m_b_conv_u_t_f16" kindref="compound">wxMBConvUTF16()</ref></computeroutput>, the file should be opened in <computeroutput>std::ios::binary</computeroutput> mode.</para>
-</simplesect>
-<simplesect kind="warning"><para>If a log message contains any characters that cannot be converted to the character set given by <emphasis>conv</emphasis>, that message will be silently ignored, i.e. it will not be written at all. </para>
-</simplesect>
-</para>
+<para>If it is NULL, the messages are sent to <computeroutput>cerr</computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/log.h" line="807" column="5"/>
+        <location file="interface/wx/log.h" line="758" column="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class can be used to redirect the log messages to a C++ stream. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class can be used to redirect the log messages to a C++ stream.</para>
 <para>Please note that this class is only available if wxWidgets was compiled with the standard iostream library support (<computeroutput>wxUSE_STD_IOSTREAM</computeroutput> must be on).</para>
 <para><heading level="2"></heading>
 </para>
@@ -73,7 +62,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/log.h" line="785" column="1" bodyfile="interface/wx/log.h" bodystart="786" bodyend="809"/>
+    <location file="interface/wx/log.h" line="752" column="1" bodyfile="interface/wx/log.h" bodystart="751" bodyend="759"/>
     <listofallmembers>
       <member refid="classwx_log_1a4c11ee23ce5264b6c5921a17610cda13" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>AddTraceMask</name></member>
       <member refid="classwx_log_1ac6b25e807e4948795aea21def6b5c1e4" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>ClearTraceMasks</name></member>
@@ -85,11 +74,11 @@
       <member refid="classwx_log_1a58bbfc0831eb47f0d88c9350d1f6e02d" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>EnableLogging</name></member>
       <member refid="classwx_log_1a21f8a2a7d83bd17a0e89bbe7dd7e6feb" prot="public" virt="virtual"><scope>wxLogStream</scope><name>Flush</name></member>
       <member refid="classwx_log_1ab0808092c4ec1d503e261d9d226d7e90" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>FlushActive</name></member>
-      <member refid="classwx_log_1ac13fbdf3d8e9aa4c8285034aad5cdb03" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>GetActiveTarget</name></member>
+      <member refid="classwx_log_1aabbef40bf3aa7ba2c71b33932d4854ec" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>GetActiveTarget</name></member>
       <member refid="classwx_log_1a474ba0555bce38b182d7bc8e152d128a" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>GetLogLevel</name></member>
       <member refid="classwx_log_1add8fb43f08799998e68251e9b77020d7" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>GetRepetitionCounting</name></member>
-      <member refid="classwx_log_1a9b0a2629af3da34514709b74233bb6fd" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>GetTimestamp</name></member>
-      <member refid="classwx_log_1adec4c3bbaf0b4e4eaac91dd14249e49d" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>GetTraceMasks</name></member>
+      <member refid="classwx_log_1a872a55302394dfc42d0035e987156622" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>GetTimestamp</name></member>
+      <member refid="classwx_log_1a899ccb4d60fe3d096e4c8c713774ba5c" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>GetTraceMasks</name></member>
       <member refid="classwx_log_1ae67871e92f85fcf92a0eb885d0684777" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>GetVerbose</name></member>
       <member refid="classwx_log_1a28fece055f6d4eb97455b216bc042ee4" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>IsAllowedTraceMask</name></member>
       <member refid="classwx_log_1a386ce41902b74521a31f4b0de7e1007f" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>IsEnabled</name></member>
@@ -97,16 +86,16 @@
       <member refid="classwx_log_1a99bd499a7375bb627ecbc22ff057ec04" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>LogRecord</name></member>
       <member refid="classwx_log_1ab2d378dce2d927e36b7e09618c61fa05" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>RemoveTraceMask</name></member>
       <member refid="classwx_log_1a14a562556933276939cedbb470f149cb" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>Resume</name></member>
-      <member refid="classwx_log_1ac37cb2d1ef582ea8524c8cf62ed0d019" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>SetActiveTarget</name></member>
+      <member refid="classwx_log_1ac7ea85f71c8d3ecd4247f412be410505" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>SetActiveTarget</name></member>
       <member refid="classwx_log_1a7ae244e71dff20efd3a37b3718841a39" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>SetComponentLevel</name></member>
-      <member refid="classwx_log_1a76c493bc9b5e07f5d5e3ed1c0850bc01" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>SetFormatter</name></member>
+      <member refid="classwx_log_1a9f316422df6930c549db80a5e4bf36a2" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>SetFormatter</name></member>
       <member refid="classwx_log_1a4ea68379469ca27f645d5f91c2d42b3b" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>SetLogLevel</name></member>
       <member refid="classwx_log_1ae814f9b9b4c8b4a52e34d7c919f98296" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>SetRepetitionCounting</name></member>
-      <member refid="classwx_log_1a4aaa4a2c1fd8db6a5c0640f8ec30dfc5" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>SetThreadActiveTarget</name></member>
+      <member refid="classwx_log_1a2525bf54fa3f31dc50e6e3cd8651e71d" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>SetThreadActiveTarget</name></member>
       <member refid="classwx_log_1a9d0193f89e127de5cc996a32d75cf5c0" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>SetTimestamp</name></member>
       <member refid="classwx_log_1a854c6f60a72ef046b4f54953287534e6" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>SetVerbose</name></member>
       <member refid="classwx_log_1ac563b1d13ec717fb7d5ccf4590e35308" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>Suspend</name></member>
-      <member refid="classwx_log_stream_1a94c6e16d3cbdf8b3d6e66c37a6e6ee39" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>wxLogStream</name></member>
+      <member refid="classwx_log_stream_1aa3f142e078770fe7bba7086663fe8903" prot="public" virt="non-virtual"><scope>wxLogStream</scope><name>wxLogStream</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

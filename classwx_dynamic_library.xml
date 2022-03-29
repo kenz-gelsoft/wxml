@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_dynamic_library" kind="class" language="C++" prot="public">
     <compoundname>wxDynamicLibrary</compoundname>
     <includes local="no">wx/dynlib.h</includes>
@@ -42,49 +42,23 @@
         </inbodydescription>
         <location file="interface/wx/dynlib.h" line="118" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_dynamic_library_1ad5a510f800ec0e77950553015dd44330" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void wxDynamicLibrary::Attach</definition>
-        <argsstring>(wxDllType h)</argsstring>
-        <name>Attach</name>
-        <param>
-          <type>wxDllType</type>
-          <declname>h</declname>
-        </param>
-        <briefdescription>
-<para>Attaches the object to an existing handle. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This allows to give ownership of an existing handle, possibly obtained from <ref refid="classwx_dynamic_library_1abf953699d784076924386a519453e363" kindref="member">Detach()</ref>, to this object, so that it will unload it when destroyed.</para>
-<para><simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="157" column="10"/>
-      </memberdef>
       <memberdef kind="function" id="classwx_dynamic_library_1abf953699d784076924386a519453e363" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>wxDllType</type>
         <definition>wxDllType wxDynamicLibrary::Detach</definition>
         <argsstring>()</argsstring>
         <name>Detach</name>
         <briefdescription>
-<para>Detaches this object from its library handle. </para>
+<para>Detaches this object from its library handle, i.e. the object will not unload the library any longer in its destructor but it is now the callers responsibility to do this using <ref refid="classwx_dynamic_library_1a3c1c0310e1dd448e3575ed981fe0cef4" kindref="member">Unload()</ref>. </para>
         </briefdescription>
         <detaileddescription>
-<para>This means that the object will not unload the library any longer in its destructor but it is now the callers responsibility to do this using static <ref refid="classwx_dynamic_library_1a3c1c0310e1dd448e3575ed981fe0cef4" kindref="member">Unload()</ref>.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_dynamic_library_1ad5a510f800ec0e77950553015dd44330" kindref="member">Attach()</ref> </para>
-</simplesect>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="168" column="15"/>
+        <location file="interface/wx/dynlib.h" line="144" column="15"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_dynamic_library_1ac3134bc87d78c4c310d4faac399796ee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_dynamic_library_1a42554274e3b3c5a14c8e57bcfb8e7dd8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
-        <definition>void * wxDynamicLibrary::GetSymbol</definition>
+        <definition>void* wxDynamicLibrary::GetSymbol</definition>
         <argsstring>(const wxString &amp;name, bool *success=0) const</argsstring>
         <name>GetSymbol</name>
         <param>
@@ -106,11 +80,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="182" column="10"/>
+        <location file="interface/wx/dynlib.h" line="158" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_dynamic_library_1ae43b24a9b7a2521d3a2747f13ec51afc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_dynamic_library_1a37bf5fb297d5c00258080782f4145406" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
-        <definition>void * wxDynamicLibrary::GetSymbolAorW</definition>
+        <definition>void* wxDynamicLibrary::GetSymbolAorW</definition>
         <argsstring>(const wxString &amp;name) const</argsstring>
         <name>GetSymbolAorW</name>
         <param>
@@ -121,12 +95,12 @@
 <para>This function is available only under Windows as it is only useful when dynamically loading symbols from standard Windows DLLs. </para>
         </briefdescription>
         <detaileddescription>
-<para>Such functions have either <computeroutput>&apos;A&apos;</computeroutput> (in ANSI build) or <computeroutput>&apos;W&apos;</computeroutput> (in Unicode, or wide character build) suffix if they take string parameters. Using this function, you can use just the base name of the function and the correct suffix is appended automatically depending on the current build. Otherwise, this method is identical to <ref refid="classwx_dynamic_library_1ac3134bc87d78c4c310d4faac399796ee" kindref="member">GetSymbol()</ref>.</para>
-<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor>  </para>
+<para>Such functions have either <computeroutput>&apos;A&apos;</computeroutput> (in ANSI build) or <computeroutput>&apos;W&apos;</computeroutput> (in Unicode, or wide character build) suffix if they take string parameters. Using this function, you can use just the base name of the function and the correct suffix is appended automatically depending on the current build. Otherwise, this method is identical to <ref refid="classwx_dynamic_library_1a42554274e3b3c5a14c8e57bcfb8e7dd8" kindref="member">GetSymbol()</ref>.</para>
+<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port. <onlyfor>wxmsw</onlyfor>  </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="195" column="10"/>
+        <location file="interface/wx/dynlib.h" line="171" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_dynamic_library_1a9dc76e2266baac2f67e631e376982f13" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -141,14 +115,14 @@
 <para>Returns true if the symbol with the given <emphasis>name</emphasis> is present in the dynamic library, false otherwise. </para>
         </briefdescription>
         <detaileddescription>
-<para>Unlike <ref refid="classwx_dynamic_library_1ac3134bc87d78c4c310d4faac399796ee" kindref="member">GetSymbol()</ref>, this function doesn&apos;t log an error message if the symbol is not found.</para>
+<para>Unlike <ref refid="classwx_dynamic_library_1a42554274e3b3c5a14c8e57bcfb8e7dd8" kindref="member">GetSymbol()</ref>, this function doesn&apos;t log an error message if the symbol is not found.</para>
 <para><simplesect kind="since"><para>2.5.4 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="204" column="10"/>
+        <location file="interface/wx/dynlib.h" line="180" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_dynamic_library_1ab9d97445f1a025d523664af516dc5d73" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -162,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="209" column="10"/>
+        <location file="interface/wx/dynlib.h" line="185" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_dynamic_library_1a8fc30053e38d44cfe0b2252a16598c44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -187,7 +161,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="243" column="10"/>
+        <location file="interface/wx/dynlib.h" line="204" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_dynamic_library_1a3c1c0310e1dd448e3575ed981fe0cef4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -202,31 +176,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="250" column="10"/>
+        <location file="interface/wx/dynlib.h" line="211" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classwx_dynamic_library_1ada4500f1f3effebe85b761f76c9fcb4f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
-        <definition>static wxString wxDynamicLibrary::GetDllExt</definition>
-        <argsstring>(wxDynamicLibraryCategory cat=wxDL_LIBRARY)</argsstring>
-        <name>GetDllExt</name>
-        <param>
-          <type><ref refid="dynlib_8h_1a71fa4e7e0f6f4b39883faf98c5120dab" kindref="member">wxDynamicLibraryCategory</ref></type>
-          <declname>cat</declname>
-          <defval><ref refid="dynlib_8h_1a71fa4e7e0f6f4b39883faf98c5120daba40e1ee25b601d95c057eefc3a7e375a1" kindref="member">wxDL_LIBRARY</ref></defval>
-        </param>
-        <briefdescription>
-<para>Returns the platform-specific dynamic library file extension, or depending on <emphasis>flags</emphasis>, the plugin file extension. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The leading dot is included.</para>
-<para>For example, on Windows <computeroutput>&quot;.dll&quot;</computeroutput> is returned, and either <computeroutput>&quot;.dylib&quot;</computeroutput> or <computeroutput>&quot;.bundle&quot;</computeroutput> on macOS. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="128" column="21"/>
-      </memberdef>
       <memberdef kind="function" id="classwx_dynamic_library_1a2d61b9a60e0c804c06e2fc6a5d53fb3c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>static wxString wxDynamicLibrary::CanonicalizeName</definition>
@@ -252,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="137" column="21"/>
+        <location file="interface/wx/dynlib.h" line="127" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classwx_dynamic_library_1a36a523c77c4bbc8dbe43bb35b070ed1d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -276,7 +229,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="146" column="21"/>
+        <location file="interface/wx/dynlib.h" line="136" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classwx_dynamic_library_1a74aa762219bc25e2a52c8d024ae84183" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>wxDllType</type>
@@ -290,7 +243,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="174" column="22"/>
+        <location file="interface/wx/dynlib.h" line="150" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_dynamic_library_1a89df5540b1dc3aa3886122d8fc8e1e84" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>wxDynamicLibraryDetailsArray</type>
@@ -306,35 +259,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="220" column="41"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_dynamic_library_1aa13b2fa3d1fedf5620f2d8f99f62fde8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void *</type>
-        <definition>static void * wxDynamicLibrary::GetModuleFromAddress</definition>
-        <argsstring>(const void *addr, wxString *path=NULL)</argsstring>
-        <name>GetModuleFromAddress</name>
-        <param>
-          <type>const void *</type>
-          <declname>addr</declname>
-        </param>
-        <param>
-          <type><ref refid="classwx_string" kindref="compound">wxString</ref> *</type>
-          <declname>path</declname>
-          <defval>NULL</defval>
-        </param>
-        <briefdescription>
-<para>Returns the load address of the module containing the specified address or NULL if not found. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>If the second argument <emphasis>path</emphasis> is not NULL, it is filled with the full path to the file the module was loaded from upon a successful return.</para>
-<para>This method is implemented under MSW and Unix platforms providing <computeroutput>dladdr()</computeroutput> call (which include Linux and various BSD systems) and always returns NULL elsewhere.</para>
-<para><simplesect kind="since"><para>3.1.0 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="235" column="17"/>
+        <location file="interface/wx/dynlib.h" line="196" column="41"/>
       </memberdef>
       <memberdef kind="function" id="classwx_dynamic_library_1a27a115695cc04dd1e0a59c2d5ed82989" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -354,14 +279,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dynlib.h" line="261" column="17"/>
+        <location file="interface/wx/dynlib.h" line="222" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_dynamic_library" kindref="compound">wxDynamicLibrary</ref> is a class representing dynamically loadable library (Windows DLL, shared library under Unix etc). </para>
     </briefdescription>
     <detaileddescription>
-<para>Just create an object of this class to load a library and don&apos;t worry about unloading it <ndash/> it will be done in the objects destructor automatically.</para>
+<para><ref refid="classwx_dynamic_library" kindref="compound">wxDynamicLibrary</ref> is a class representing dynamically loadable library (Windows DLL, shared library under Unix etc). Just create an object of this class to load a library and don&apos;t worry about unloading it <ndash/> it will be done in the objects destructor automatically.</para>
 <para>The following flags can be used with <ref refid="classwx_dynamic_library_1a1aac7b87d69f545f6e25b785eed82cb2" kindref="member">wxDynamicLibrary()</ref> or <ref refid="classwx_dynamic_library_1a8fc30053e38d44cfe0b2252a16598c44" kindref="member">Load()</ref>:</para>
 <para><linebreak/>
 <heading level="2">Styles</heading>
@@ -385,17 +309,14 @@
 </itemizedlist>
 Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
-    <location file="interface/wx/dynlib.h" line="108" column="1" bodyfile="interface/wx/dynlib.h" bodystart="109" bodyend="262"/>
+    <location file="interface/wx/dynlib.h" line="109" column="1" bodyfile="interface/wx/dynlib.h" bodystart="108" bodyend="223"/>
     <listofallmembers>
-      <member refid="classwx_dynamic_library_1ad5a510f800ec0e77950553015dd44330" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>Attach</name></member>
       <member refid="classwx_dynamic_library_1a2d61b9a60e0c804c06e2fc6a5d53fb3c" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>CanonicalizeName</name></member>
       <member refid="classwx_dynamic_library_1a36a523c77c4bbc8dbe43bb35b070ed1d" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>CanonicalizePluginName</name></member>
       <member refid="classwx_dynamic_library_1abf953699d784076924386a519453e363" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>Detach</name></member>
-      <member refid="classwx_dynamic_library_1ada4500f1f3effebe85b761f76c9fcb4f" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>GetDllExt</name></member>
-      <member refid="classwx_dynamic_library_1aa13b2fa3d1fedf5620f2d8f99f62fde8" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>GetModuleFromAddress</name></member>
       <member refid="classwx_dynamic_library_1a74aa762219bc25e2a52c8d024ae84183" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>GetProgramHandle</name></member>
-      <member refid="classwx_dynamic_library_1ac3134bc87d78c4c310d4faac399796ee" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>GetSymbol</name></member>
-      <member refid="classwx_dynamic_library_1ae43b24a9b7a2521d3a2747f13ec51afc" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>GetSymbolAorW</name></member>
+      <member refid="classwx_dynamic_library_1a42554274e3b3c5a14c8e57bcfb8e7dd8" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>GetSymbol</name></member>
+      <member refid="classwx_dynamic_library_1a37bf5fb297d5c00258080782f4145406" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>GetSymbolAorW</name></member>
       <member refid="classwx_dynamic_library_1a9dc76e2266baac2f67e631e376982f13" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>HasSymbol</name></member>
       <member refid="classwx_dynamic_library_1ab9d97445f1a025d523664af516dc5d73" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>IsLoaded</name></member>
       <member refid="classwx_dynamic_library_1a89df5540b1dc3aa3886122d8fc8e1e84" prot="public" virt="non-virtual"><scope>wxDynamicLibrary</scope><name>ListLoaded</name></member>

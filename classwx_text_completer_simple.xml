@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_text_completer_simple" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxTextCompleterSimple</compoundname>
     <basecompoundref refid="classwx_text_completer" prot="public" virt="non-virtual">wxTextCompleter</basecompoundref>
@@ -54,32 +54,32 @@
     </briefdescription>
     <detaileddescription>
 <para>This class may be simpler to use than the base <ref refid="classwx_text_completer" kindref="compound">wxTextCompleter</ref> as it allows to implement only a single virtual method instead of two of them (at the price of storing all completions in a temporary array).</para>
-<para>Here is a simple example of a custom completer that completes the names of some chess pieces. Of course, as the total list here has only four items it would have been much simpler to just specify the array containing all the completions in this example but the same approach could be used when the total number of completions is much higher provided the number of possibilities for each word is still relatively small: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyTextCompleter<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_text_completer_simple" kindref="compound">wxTextCompleterSimple</ref></highlight></codeline>
+<para>Here is a simple example of a custom completer that completes the names of some chess pieces. Of course, as the total list here has only four items it would have been much simpler to just specify the array containing all the completions in this example but the same approach could be used when the total number of completions is much higher provided the number of possibilities for each word is still relatively small: <programlisting><codeline><highlight class="normal">class<sp/>MyTextCompleter<sp/>:<sp/>public<sp/>wxTextCompleterSimple</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classwx_text_completer_simple_1abf3d103eda25bcb7a9d572523d0de736" kindref="member">GetCompletions</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_string" kindref="compound">wxString</ref>&amp;<sp/>prefix,<sp/><ref refid="classwx_array_string" kindref="compound">wxArrayString</ref>&amp;<sp/>res)</highlight></codeline>
+<codeline><highlight class="normal">public:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>void<sp/>GetCompletions(const<sp/>wxString&amp;<sp/>prefix,<sp/>wxArrayString&amp;<sp/>res)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>firstWord<sp/>=<sp/>prefix.<ref refid="classwx_string_1ac7175df8f51528fe2cc6a00f63ab9f24" kindref="member">BeforeFirst</ref>(</highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>firstWord<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;white&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>wxString<sp/>firstWord<sp/>=<sp/>prefix.BeforeFirst(&apos;<sp/>&apos;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>firstWord<sp/>==<sp/>&quot;white&quot;<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(</highlight><highlight class="stringliteral">&quot;white<sp/>pawn&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(</highlight><highlight class="stringliteral">&quot;white<sp/>rook&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(&quot;white<sp/>pawn&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(&quot;white<sp/>rook&quot;);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>firstWord<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;black&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(<sp/>firstWord<sp/>==<sp/>&quot;black&quot;<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(</highlight><highlight class="stringliteral">&quot;black<sp/>king&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(</highlight><highlight class="stringliteral">&quot;black<sp/>queen&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(&quot;black<sp/>king&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(&quot;black<sp/>queen&quot;);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>else</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(</highlight><highlight class="stringliteral">&quot;white&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(</highlight><highlight class="stringliteral">&quot;black&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(&quot;white&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.push_back(&quot;black&quot;);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
 <codeline><highlight class="normal">...</highlight></codeline>
 <codeline><highlight class="normal">wxTextCtrl<sp/>*text<sp/>=<sp/>...;</highlight></codeline>
-<codeline><highlight class="normal">text-&gt;AutoComplete(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyTextCompleter);</highlight></codeline>
+<codeline><highlight class="normal">text-&gt;AutoComplete(new<sp/>MyTextCompleter);</highlight></codeline>
 </programlisting></para>
 <para><heading level="2"></heading>
 </para>
@@ -89,30 +89,30 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxTextCompleter</label>
-        <link refid="classwx_text_completer"/>
-      </node>
       <node id="1">
         <label>wxTextCompleterSimple</label>
         <link refid="classwx_text_completer_simple"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>wxTextCompleter</label>
+        <link refid="classwx_text_completer"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>wxTextCompleter</label>
-        <link refid="classwx_text_completer"/>
-      </node>
       <node id="1">
         <label>wxTextCompleterSimple</label>
         <link refid="classwx_text_completer_simple"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>wxTextCompleter</label>
+        <link refid="classwx_text_completer"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/textcompleter.h" line="115" column="1" bodyfile="interface/wx/textcompleter.h" bodystart="116" bodyend="141"/>
+    <location file="interface/wx/textcompleter.h" line="116" column="1" bodyfile="interface/wx/textcompleter.h" bodystart="115" bodyend="141"/>
     <listofallmembers>
       <member refid="classwx_text_completer_simple_1abf3d103eda25bcb7a9d572523d0de736" prot="public" virt="pure-virtual"><scope>wxTextCompleterSimple</scope><name>GetCompletions</name></member>
       <member refid="classwx_text_completer_1afcfaf585fe34114a444411148c299619" prot="public" virt="pure-virtual"><scope>wxTextCompleterSimple</scope><name>GetNext</name></member>

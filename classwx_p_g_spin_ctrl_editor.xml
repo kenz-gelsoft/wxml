@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_p_g_spin_ctrl_editor" kind="class" language="C++" prot="public">
     <compoundname>wxPGSpinCtrlEditor</compoundname>
     <basecompoundref refid="classwx_p_g_text_ctrl_editor" prot="public" virt="non-virtual">wxPGTextCtrlEditor</basecompoundref>
@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/advprops.h" line="365" column="13"/>
+        <location file="interface/wx/propgrid/advprops.h" line="338" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_p_g_spin_ctrl_editor_1a30e3ffefcfb83ab08e1ce385ab931fd4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -28,11 +28,11 @@
 <para>Returns pointer to the name of the editor. </para>
         </briefdescription>
         <detaileddescription>
-<para>For example, wxPGEditor_TextCtrl has name &quot;TextCtrl&quot;. If you don&apos;t need to access your custom editor by string name, then you do not need to implement this function. </para>
+<para>For example, wxPGEditor_TextCtrl has name &quot;TextCtrl&quot;. If you dont&apos; need to access your custom editor by string name, then you do not need to implement this function. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/advprops.h" line="367" column="14"/>
+        <location file="interface/wx/propgrid/advprops.h" line="340" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_p_g_spin_ctrl_editor_1aacb4044785ae46b2081bb36cd6085eb5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_p_g_window_list" kindref="compound">wxPGWindowList</ref></type>
@@ -94,7 +94,8 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="remark"><para><itemizedlist>
-<listitem><para>It is not necessary to call <ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">wxEvtHandler::Bind()</ref> for interesting editor events. All events from controls are automatically forwarded to <ref refid="classwx_p_g_editor_1a035fa3bee4ac87e4300df0c637a56261" kindref="member">wxPGEditor::OnEvent()</ref> and <ref refid="classwx_p_g_property_1a16fbe26240bf47ab0a9a02d21781da73" kindref="member">wxPGProperty::OnEvent()</ref>. </para>
+<listitem><para>Primary control shall use id wxPG_SUBID1, and secondary (button) control shall use wxPG_SUBID2.</para>
+</listitem><listitem><para>Unlike in previous version of <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref>, it is no longer necessary to call <ref refid="classwx_evt_handler_1a78719e8b82c9f9c6e4056b3449df1943" kindref="member">wxEvtHandler::Connect()</ref> for interesting editor events. Instead, all events from control are now automatically forwarded to <ref refid="classwx_p_g_editor_1a035fa3bee4ac87e4300df0c637a56261" kindref="member">wxPGEditor::OnEvent()</ref> and <ref refid="classwx_p_g_property_1a16fbe26240bf47ab0a9a02d21781da73" kindref="member">wxPGProperty::OnEvent()</ref>. </para>
 </listitem></itemizedlist>
 </para>
 </simplesect>
@@ -102,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/advprops.h" line="368" column="28"/>
+        <location file="interface/wx/propgrid/advprops.h" line="341" column="28"/>
       </memberdef>
       <memberdef kind="function" id="classwx_p_g_spin_ctrl_editor_1a58576e6cedcffd406c6d2ea82cfc1699" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -131,13 +132,13 @@
         </briefdescription>
         <detaileddescription>
 <para>Returns true if value in control was modified (see <ref refid="classwx_p_g_property_1a16fbe26240bf47ab0a9a02d21781da73" kindref="member">wxPGProperty::OnEvent()</ref> for more information).</para>
-<para><simplesect kind="remark"><para><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> will automatically unfocus the editor when <computeroutput>wxEVT_TEXT_ENTER</computeroutput> is received and when it results in property value being modified. This happens regardless of editor type (i.e. behaviour is same for any <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> and <ref refid="classwx_combo_box" kindref="compound">wxComboBox</ref> based editor). </para>
+<para><simplesect kind="remark"><para><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> will automatically unfocus the editor when <computeroutput>wxEVT_TEXT_ENTER</computeroutput> is received and when it results in property value being modified. This happens regardless of editor type (ie. behaviour is same for any <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> and <ref refid="classwx_combo_box" kindref="compound">wxComboBox</ref> based editor). </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/advprops.h" line="372" column="18"/>
+        <location file="interface/wx/propgrid/advprops.h" line="345" column="18"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -145,15 +146,15 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="2">
+        <label>wxPGTextCtrlEditor</label>
+        <link refid="classwx_p_g_text_ctrl_editor"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>wxObject</label>
         <link refid="classwx_object"/>
-      </node>
-      <node id="3">
-        <label>wxPGEditor</label>
-        <link refid="classwx_p_g_editor"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="1">
         <label>wxPGSpinCtrlEditor</label>
@@ -161,14 +162,20 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>wxPGEditor</label>
+        <link refid="classwx_p_g_editor"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>wxPGTextCtrlEditor</label>
         <link refid="classwx_p_g_text_ctrl_editor"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="4">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -176,9 +183,11 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="5">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
+      <node id="1">
+        <label>wxPGSpinCtrlEditor</label>
+        <link refid="classwx_p_g_spin_ctrl_editor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="3">
         <label>wxPGEditor</label>
@@ -186,31 +195,23 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>wxPGSpinCtrlEditor</label>
-        <link refid="classwx_p_g_spin_ctrl_editor"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxPGTextCtrlEditor</label>
-        <link refid="classwx_p_g_text_ctrl_editor"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
+      <node id="5">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/propgrid/advprops.h" line="362" column="1" bodyfile="interface/wx/propgrid/advprops.h" bodystart="363" bodyend="374"/>
+    <location file="interface/wx/propgrid/advprops.h" line="336" column="1" bodyfile="interface/wx/propgrid/advprops.h" bodystart="335" bodyend="347"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxPGSpinCtrlEditor</scope><name>AllocExclusive</name></member>
       <member refid="classwx_p_g_editor_1ab5483cdd96879f78eb31cd1775eac2a8" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>CanContainCustomImage</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>CloneRefData</name></member>
       <member refid="classwx_p_g_spin_ctrl_editor_1aacb4044785ae46b2081bb36cd6085eb5" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>CreateControls</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>CreateRefData</name></member>
       <member refid="classwx_p_g_editor_1a6d8f77f37726060b95ededf323177478" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>DeleteItem</name></member>
       <member refid="classwx_p_g_editor_1a32a1bd59a5d00b39d35e39f9ee7c1cb3" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>DrawValue</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>GetClassInfo</name></member>
       <member refid="classwx_p_g_spin_ctrl_editor_1a30e3ffefcfb83ab08e1ce385ab931fd4" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>GetName</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxPGSpinCtrlEditor</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxPGSpinCtrlEditor</scope><name>GetRefData</name></member>
       <member refid="classwx_p_g_text_ctrl_editor_1a3e5fe5f9f1505a732978d58b3c86078d" prot="public" virt="non-virtual"><scope>wxPGSpinCtrlEditor</scope><name>GetTextCtrlValueFromControl</name></member>
       <member refid="classwx_p_g_text_ctrl_editor_1a86cd6ebdc261ba50a57159ab3bf381cc" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>GetValueFromControl</name></member>
       <member refid="classwx_p_g_editor_1aa36816d607db13e0daf9c1feb22580ea" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>InsertItem</name></member>
@@ -222,7 +223,7 @@
       <member refid="classwx_p_g_text_ctrl_editor_1a2d6d20a887c9568d68d36b9d8e70f348" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>OnFocus</name></member>
       <member refid="classwx_p_g_text_ctrl_editor_1a523cd48878670459e7917f8e45b4703e" prot="public" virt="non-virtual"><scope>wxPGSpinCtrlEditor</scope><name>OnTextCtrlEvent</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxPGSpinCtrlEditor</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxPGSpinCtrlEditor</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxPGSpinCtrlEditor</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxPGSpinCtrlEditor</scope><name>Ref</name></member>
       <member refid="classwx_p_g_editor_1a475bd60b51f9cd4f08dd7f0d67cc2334" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>SetControlAppearance</name></member>
       <member refid="classwx_p_g_editor_1a98a252a47c070cb8e4e8b7142624777a" prot="public" virt="virtual"><scope>wxPGSpinCtrlEditor</scope><name>SetControlIntValue</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_help_controller_base" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxHelpControllerBase</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -22,7 +22,7 @@
 <para>Constructs a help instance object, but does not invoke the help viewer. </para>
         </briefdescription>
         <detaileddescription>
-<para>If you provide a window, it will be used by some help controller classes, such as wxCHMHelpController, wxWinHelpController and <ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref>, as the parent for the help window instead of the value of <ref refid="classwx_app_1a050f2f83ff339ffc133e1a0cf782dbba" kindref="member">wxApp::GetTopWindow</ref>.</para>
+<para>If you provide a window, it will be used by some help controller classes, such as wxCHMHelpController, wxWinHelpController and <ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref>, as the parent for the help window instead of the value of <ref refid="classwx_app_1acb93296a7170ee494f5f379921785bab" kindref="member">wxApp::GetTopWindow</ref>.</para>
 <para>You can also change the parent window later with <ref refid="classwx_help_controller_base_1a8cb9ceb25ef38343812758131d4c464f" kindref="member">SetParentWindow()</ref>. </para>
         </detaileddescription>
         <inbodydescription>
@@ -62,7 +62,7 @@
 </listitem><listitem><para><emphasis>MS</emphasis> HTML Help: Refers to the context number.</para>
 </listitem><listitem><para><emphasis>External</emphasis> HTML help: the same as for <ref refid="classwx_help_controller_base_1a57ad6b821d19d61de836a445fb9a1365" kindref="member">DisplaySection()</ref>.</para>
 </listitem><listitem><para><emphasis><ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref>:</emphasis> <emphasis>sectionNo</emphasis> is an identifier as specified in the <computeroutput></computeroutput>.hhc file. See <ref refid="overview_html_1overview_html_helpformats" kindref="member">Help Files Format</ref>.</para>
-<para><xrefsect id="deprecated_1_deprecated000028"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is for backward compatibility only, and applications should use <ref refid="classwx_help_controller_base_1a57ad6b821d19d61de836a445fb9a1365" kindref="member">DisplaySection()</ref> instead. </para>
+<para><xrefsect id="deprecated_1_deprecated000020"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is for backward compatibility only, and applications should use <ref refid="classwx_help_controller_base_1a57ad6b821d19d61de836a445fb9a1365" kindref="member">DisplaySection()</ref> instead. </para>
 </xrefdescription></xrefsect></para>
 </listitem></itemizedlist>
 </para>
@@ -142,7 +142,6 @@
         <detaileddescription>
 <para><itemizedlist>
 <listitem><para><emphasis>WinHelp</emphasis>, MS HTML Help <emphasis>sectionNo</emphasis> is a context id.</para>
-</listitem><listitem><para><emphasis>MS</emphasis> HTML Help: Pass -1 in <emphasis>sectionNo</emphasis> to display the index.</para>
 </listitem><listitem><para><emphasis>External</emphasis> HTML help: <ref refid="classwx_ext_help_controller" kindref="compound">wxExtHelpController</ref> implements <emphasis>sectionNo</emphasis> as an id in a map file, which is of the form:</para>
 </listitem><listitem><para><emphasis><ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref>:</emphasis> <emphasis>sectionNo</emphasis> is an identifier as specified in the <computeroutput></computeroutput>.hhc file. See <ref refid="overview_html_1overview_html_helpformats" kindref="member">Help Files Format</ref>. See also the help sample for notes on how to specify section numbers for various help file formats. </para>
 </listitem></itemizedlist>
@@ -150,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/help.h" line="111" column="18"/>
+        <location file="interface/wx/help.h" line="110" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_help_controller_base_1a416082870baafe1719ee4af2a9c50a26" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -173,14 +172,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/help.h" line="118" column="18"/>
+        <location file="interface/wx/help.h" line="117" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_help_controller_base_1a512a9481ea54fbaecae1ea03c1b1e62d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_help_controller_base_1a756498b71be6d604e358551ad2d2289e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_frame" kindref="compound">wxFrame</ref> *</type>
-        <definition>virtual wxFrame * wxHelpControllerBase::GetFrameParameters</definition>
+        <definition>virtual wxFrame* wxHelpControllerBase::GetFrameParameters</definition>
         <argsstring>(wxSize *size=NULL, wxPoint *pos=NULL, bool *newFrameEachTime=NULL)</argsstring>
         <name>GetFrameParameters</name>
-        <reimplementedby refid="classwx_ext_help_controller_1abf41e98391547ae15d7f835afae01b0d">GetFrameParameters</reimplementedby>
+        <reimplementedby refid="classwx_ext_help_controller_1ab7ff5bd233c274fb8788ebbeebe244c2">GetFrameParameters</reimplementedby>
         <param>
           <type><ref refid="classwx_size" kindref="compound">wxSize</ref> *</type>
           <declname>size</declname>
@@ -230,11 +229,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/help.h" line="133" column="21"/>
+        <location file="interface/wx/help.h" line="132" column="21"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_help_controller_base_1aad01d3f5694ecd805a813459450ea054" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_help_controller_base_1a05097c57ea9f317104b00c8a2d6923d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
-        <definition>virtual wxWindow * wxHelpControllerBase::GetParentWindow</definition>
+        <definition>virtual wxWindow* wxHelpControllerBase::GetParentWindow</definition>
         <argsstring>() const</argsstring>
         <name>GetParentWindow</name>
         <briefdescription>
@@ -245,7 +244,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/help.h" line="142" column="22"/>
+        <location file="interface/wx/help.h" line="141" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_help_controller_base_1ac7a8fa6e2f659cdca5863f8a3e35e1f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -258,11 +257,32 @@
           <declname>file</declname>
         </param>
         <briefdescription>
-<para>Initializes the help instance with a help filename. </para>
+<para>Initializes the help instance with a help filename, and optionally a server socket number if using wxHelp (now obsolete). </para>
         </briefdescription>
         <detaileddescription>
 <para>Does not invoke the help viewer. This must be called directly after the help instance object is created and before any attempts to communicate with the viewer.</para>
 <para>You may omit the file extension and a suitable one will be chosen. For <ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref>, the extensions zip, htb and hhp will be appended while searching for a suitable file. For WinHelp, the hlp extension is appended. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/help.h" line="154" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_help_controller_base_1ae637c7add0d5f48544c72d8982691568" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool wxHelpControllerBase::Initialize</definition>
+        <argsstring>(const wxString &amp;file, int server)</argsstring>
+        <name>Initialize</name>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -288,10 +308,9 @@
 <para>If the help viewer is not running, runs it, and searches for sections matching the given keyword. </para>
         </briefdescription>
         <detaileddescription>
-<para>If one match is found, the file is displayed at this section. The optional parameter allows searching the index (wxHELP_SEARCH_INDEX) but this currently is only supported by the <ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref>.</para>
+<para>If one match is found, the file is displayed at this section. The optional parameter allows to search the index (wxHELP_SEARCH_INDEX) but this currently is only supported by the <ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref>.</para>
 <para><itemizedlist>
 <listitem><para><emphasis>WinHelp</emphasis>, MS HTML Help: If more than one match is found, the first topic is displayed.</para>
-</listitem><listitem><para><emphasis>MS</emphasis> HTML Help: Pass an empty string to display the search page.</para>
 </listitem><listitem><para><emphasis>External</emphasis> HTML help, simple wxHTML help: If more than one match is found, a choice of topics is displayed.</para>
 </listitem><listitem><para><emphasis><ref refid="classwx_html_help_controller" kindref="compound">wxHtmlHelpController</ref>:</emphasis> see <ref refid="classwx_html_help_controller_1ae22ee2f714ad59162e1f7d583899e58b" kindref="member">wxHtmlHelpController::KeywordSearch</ref>. </para>
 </listitem></itemizedlist>
@@ -431,9 +450,9 @@
         </briefdescription>
         <detaileddescription>
 <para>So far this is only relevant to <ref refid="classwx_ext_help_controller" kindref="compound">wxExtHelpController</ref>. Some examples of usage:</para>
-<para><programlisting><codeline><highlight class="normal">m_help.SetViewer(</highlight><highlight class="stringliteral">&quot;kdehelp&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal">m_help.SetViewer(</highlight><highlight class="stringliteral">&quot;gnome-help-browser&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal">m_help.SetViewer(</highlight><highlight class="stringliteral">&quot;netscape&quot;</highlight><highlight class="normal">,<sp/><ref refid="help_8h_1acd0d0af47426ef60ed7f286ff8b7a8e8" kindref="member">wxHELP_NETSCAPE</ref>);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">m_help.SetViewer(&quot;kdehelp&quot;);</highlight></codeline>
+<codeline><highlight class="normal">m_help.SetViewer(&quot;gnome-help-browser&quot;);</highlight></codeline>
+<codeline><highlight class="normal">m_help.SetViewer(&quot;netscape&quot;,<sp/>wxHELP_NETSCAPE);</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -452,7 +471,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<xrefsect id="todo_1_todo000018"><xreftitle>Todo</xreftitle><xrefdescription><para>modernize this function with <ref refid="utils_8h_1a3ff36fe489da2a779248b56f283615ca" kindref="member">wxLaunchDefaultBrowser</ref> </para>
+<xrefsect id="todo_1_todo000022"><xreftitle>Todo</xreftitle><xrefdescription><para>modernize this function with <ref refid="utils_8h_1a3ff36fe489da2a779248b56f283615ca" kindref="member">wxLaunchDefaultBrowser</ref> </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -461,9 +480,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This is the abstract base class a family of classes by which applications may invoke a help viewer to provide on-line help. </para>
     </briefdescription>
     <detaileddescription>
+<para>This is the abstract base class a family of classes by which applications may invoke a help viewer to provide on-line help.</para>
 <para>A help controller allows an application to display help, at the contents or at a particular topic, and shut the help program down on termination. This avoids proliferation of many instances of the help viewer whenever the user requests a different topic via the application&apos;s menus or buttons.</para>
 <para>Typically, an application will create a help controller instance when it starts, and immediately call <ref refid="classwx_help_controller_base_1ac7a8fa6e2f659cdca5863f8a3e35e1f0" kindref="member">wxHelpController::Initialize</ref> to associate a filename with it. The help viewer will only get run, however, just before the first call to display something.</para>
 <para><heading level="2"></heading>
@@ -474,12 +493,6 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>wxExtHelpController</label>
-        <link refid="classwx_ext_help_controller"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="4">
         <label>wxHelpController</label>
         <link refid="classwx_help_controller"/>
@@ -492,15 +505,21 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
       <node id="5">
         <label>wxHtmlHelpController</label>
         <link refid="classwx_html_help_controller"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
+      <node id="3">
+        <label>wxExtHelpController</label>
+        <link refid="classwx_ext_help_controller"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -522,22 +541,23 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/help.h" line="42" column="1" bodyfile="interface/wx/help.h" bodystart="43" bodyend="240"/>
+    <location file="interface/wx/help.h" line="43" column="1" bodyfile="interface/wx/help.h" bodystart="42" bodyend="240"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxHelpControllerBase</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxHelpControllerBase</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxHelpControllerBase</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxHelpControllerBase</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxHelpControllerBase</scope><name>CreateRefData</name></member>
       <member refid="classwx_help_controller_base_1acef270454911598d88e31016124f487c" prot="public" virt="pure-virtual"><scope>wxHelpControllerBase</scope><name>DisplayBlock</name></member>
       <member refid="classwx_help_controller_base_1a369c8bd9974b06105778226399563cbb" prot="public" virt="pure-virtual"><scope>wxHelpControllerBase</scope><name>DisplayContents</name></member>
       <member refid="classwx_help_controller_base_1a8ec7169cdc87678e2bbee7f1c6a8cdca" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>DisplayContextPopup</name></member>
       <member refid="classwx_help_controller_base_1a57ad6b821d19d61de836a445fb9a1365" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>DisplaySection</name></member>
       <member refid="classwx_help_controller_base_1a84351b9fd7d02de52bd0a292995f06e4" prot="public" virt="pure-virtual"><scope>wxHelpControllerBase</scope><name>DisplaySection</name></member>
       <member refid="classwx_help_controller_base_1a416082870baafe1719ee4af2a9c50a26" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>DisplayTextPopup</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_help_controller_base_1a512a9481ea54fbaecae1ea03c1b1e62d" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>GetFrameParameters</name></member>
-      <member refid="classwx_help_controller_base_1aad01d3f5694ecd805a813459450ea054" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>GetParentWindow</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxHelpControllerBase</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_help_controller_base_1a756498b71be6d604e358551ad2d2289e" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>GetFrameParameters</name></member>
+      <member refid="classwx_help_controller_base_1a05097c57ea9f317104b00c8a2d6923d8" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>GetParentWindow</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxHelpControllerBase</scope><name>GetRefData</name></member>
       <member refid="classwx_help_controller_base_1ac7a8fa6e2f659cdca5863f8a3e35e1f0" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>Initialize</name></member>
+      <member refid="classwx_help_controller_base_1ae637c7add0d5f48544c72d8982691568" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>Initialize</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxHelpControllerBase</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxHelpControllerBase</scope><name>IsSameAs</name></member>
       <member refid="classwx_help_controller_base_1a725195abad79988412d6f9708cee9641" prot="public" virt="pure-virtual"><scope>wxHelpControllerBase</scope><name>KeywordSearch</name></member>
@@ -545,7 +565,7 @@
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxHelpControllerBase</scope><name>m_refData</name></member>
       <member refid="classwx_help_controller_base_1afe4eee3105ed7529420cde766a156a13" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>OnQuit</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxHelpControllerBase</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxHelpControllerBase</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxHelpControllerBase</scope><name>operator new</name></member>
       <member refid="classwx_help_controller_base_1a66380fa26b81c64bb3ead8b22ae620cb" prot="public" virt="pure-virtual"><scope>wxHelpControllerBase</scope><name>Quit</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxHelpControllerBase</scope><name>Ref</name></member>
       <member refid="classwx_help_controller_base_1a7ea0be94d89b1c8171865cb5d956e39e" prot="public" virt="virtual"><scope>wxHelpControllerBase</scope><name>SetFrameParameters</name></member>

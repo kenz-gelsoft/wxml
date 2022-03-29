@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_archive_iterator" kind="class" language="C++" prot="public">
     <compoundname>wxArchiveIterator</compoundname>
     <includes local="no">wx/archive.h</includes>
@@ -82,33 +82,32 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>An input iterator template class that can be used to transfer an archive&apos;s catalogue to a container. </para>
     </briefdescription>
     <detaileddescription>
-<para>It is only available if wxUSE_STL is set to 1 in setup.h, and the uses for it outlined below require a compiler which supports member templates.</para>
-<para><programlisting><codeline><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Arc,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T<sp/>=<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Arc::entry_type*&gt;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classwx_archive_iterator" kindref="compound">wxArchiveIterator</ref></highlight></codeline>
+<para>An input iterator template class that can be used to transfer an archive&apos;s catalogue to a container. It is only available if wxUSE_STL is set to 1 in setup.h, and the uses for it outlined below require a compiler which supports member templates.</para>
+<para><programlisting><codeline><highlight class="normal">template&lt;class<sp/>Arc,<sp/>class<sp/>T<sp/>=<sp/>typename<sp/>Arc::entry_type*&gt;</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>wxArchiveIterator</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>constructor<sp/>creates<sp/>an<sp/>&apos;end<sp/>of<sp/>sequence&apos;<sp/>object</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_archive_iterator_1aa9efa7aaf43227212b9ced2ac4a9d2bf" kindref="member">wxArchiveIterator</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>template<sp/>parameter<sp/>&apos;Arc&apos;<sp/>should<sp/>be<sp/>the<sp/>type<sp/>of<sp/>an<sp/>archive<sp/>input<sp/>stream</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_archive_iterator_1aa9efa7aaf43227212b9ced2ac4a9d2bf" kindref="member">wxArchiveIterator</ref>(Arc&amp;<sp/>arc)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>this<sp/>constructor<sp/>creates<sp/>an<sp/>&apos;end<sp/>of<sp/>sequence&apos;<sp/>object</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxArchiveIterator();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>template<sp/>parameter<sp/>&apos;Arc&apos;<sp/>should<sp/>be<sp/>the<sp/>type<sp/>of<sp/>an<sp/>archive<sp/>input<sp/>stream</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxArchiveIterator(Arc&amp;<sp/>arc)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>...</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
 </programlisting></para>
 <para>The first template parameter should be the type of archive input stream (e.g. <ref refid="classwx_archive_input_stream" kindref="compound">wxArchiveInputStream</ref>) and the second can either be a pointer to an entry (e.g. wxArchiveEntry*), or a string/pointer pair (e.g. std::pair&lt;wxString,wxArchiveEntry*&gt;).</para>
 <para>The <computeroutput><ref refid="interface_2wx_2archive_8h" kindref="compound">wx/archive.h</ref></computeroutput> header defines the following typedefs:</para>
-<para><programlisting><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classwx_archive_iterator" kindref="compound">wxArchiveIterator&lt;wxArchiveInputStream&gt;</ref><sp/>wxArchiveIter;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classwx_archive_iterator" kindref="compound">wxArchiveIterator</ref>&lt;<ref refid="classwx_archive_input_stream" kindref="compound">wxArchiveInputStream</ref>,</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">typedef<sp/>wxArchiveIterator&lt;wxArchiveInputStream&gt;<sp/>wxArchiveIter;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">typedef<sp/>wxArchiveIterator&lt;wxArchiveInputStream,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;wxString,<sp/>wxArchiveEntry*&gt;<sp/>&gt;<sp/>wxArchivePairIter;</highlight></codeline>
 </programlisting></para>
 <para>The header for any implementation of this interface should define similar typedefs for its types, for example in <computeroutput><ref refid="zipstrm_8h" kindref="compound">wx/zipstrm.h</ref></computeroutput> there is:</para>
-<para><programlisting><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classwx_archive_iterator" kindref="compound">wxArchiveIterator&lt;wxZipInputStream&gt;</ref><sp/>wxZipIter;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classwx_archive_iterator" kindref="compound">wxArchiveIterator</ref>&lt;<ref refid="classwx_zip_input_stream" kindref="compound">wxZipInputStream</ref>,</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">typedef<sp/>wxArchiveIterator&lt;wxZipInputStream&gt;<sp/>wxZipIter;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">typedef<sp/>wxArchiveIterator&lt;wxZipInputStream,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;wxString,<sp/>wxZipEntry*&gt;<sp/>&gt;<sp/>wxZipPairIter;</highlight></codeline>
 </programlisting></para>
 <para>Transferring the catalogue of an archive <emphasis>arc</emphasis> to a vector <emphasis>cat</emphasis>, can then be done something like this:</para>
@@ -117,18 +116,18 @@
 <para>When the iterator is dereferenced, it gives away ownership of an entry object. So in the above example, when you have finished with <emphasis>cat</emphasis> you must delete the pointers it contains.</para>
 <para>If you have smart pointers with normal copy semantics (i.e. not auto_ptr or <ref refid="classwx_scoped_ptr" kindref="compound">wxScopedPtr</ref>), then you can create an iterator which uses them instead.</para>
 <para>For example, with a smart pointer class for zip entries <emphasis>ZipEntryPtr:</emphasis> </para>
-<para><programlisting><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::vector&lt;ZipEntryPtr&gt;<sp/>ZipCatalog;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classwx_archive_iterator" kindref="compound">wxArchiveIterator&lt;wxZipInputStream, ZipEntryPtr&gt;</ref><sp/>ZipIter;</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">typedef<sp/>std::vector&lt;ZipEntryPtr&gt;<sp/>ZipCatalog;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>wxArchiveIterator&lt;wxZipInputStream,<sp/>ZipEntryPtr&gt;<sp/>ZipIter;</highlight></codeline>
 <codeline><highlight class="normal">ZipCatalog<sp/>cat((ZipIter)zip,<sp/>ZipIter());</highlight></codeline>
 </programlisting></para>
 <para>Iterators that return std::pair objects can be used to populate a std::multimap, to allow entries to be looked up by name. The string is initialised using the <ref refid="classwx_archive_entry" kindref="compound">wxArchiveEntry</ref> object&apos;s <ref refid="classwx_archive_entry_1a53486cf23696bd7b910a652c27af0a38" kindref="member">wxArchiveEntry::GetInternalName</ref> function.</para>
-<para><programlisting><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::multimap&lt;wxString,<sp/>wxZipEntry*&gt;<sp/>ZipCatalog;</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">typedef<sp/>std::multimap&lt;wxString,<sp/>wxZipEntry*&gt;<sp/>ZipCatalog;</highlight></codeline>
 <codeline><highlight class="normal">ZipCatalog<sp/>cat((wxZipPairIter)zip,<sp/>wxZipPairIter());</highlight></codeline>
 </programlisting></para>
 <para>Note that this iterator also gives away ownership of an entry object each time it is dereferenced. So in the above example, when you have finished with <emphasis>cat</emphasis> you must delete the pointers it contains.</para>
 <para>Or if you have them, a pair containing a smart pointer can be used (again <emphasis>ZipEntryPtr</emphasis>), no worries about ownership:</para>
-<para><programlisting><codeline><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::multimap&lt;wxString,<sp/>ZipEntryPtr&gt;<sp/>ZipCatalog;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classwx_archive_iterator" kindref="compound">wxArchiveIterator</ref>&lt;<ref refid="classwx_zip_input_stream" kindref="compound">wxZipInputStream</ref>,</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">typedef<sp/>std::multimap&lt;wxString,<sp/>ZipEntryPtr&gt;<sp/>ZipCatalog;</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>wxArchiveIterator&lt;wxZipInputStream,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;wxString,<sp/>ZipEntryPtr&gt;<sp/>&gt;<sp/>ZipPairIter;</highlight></codeline>
 <codeline><highlight class="normal">ZipCatalog<sp/>cat((ZipPairIter)zip,<sp/>ZipPairIter());</highlight></codeline>
 </programlisting></para>
@@ -139,7 +138,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/archive.h" line="593" column="1" bodyfile="interface/wx/archive.h" bodystart="594" bodyend="620"/>
+    <location file="interface/wx/archive.h" line="594" column="1" bodyfile="interface/wx/archive.h" bodystart="593" bodyend="620"/>
     <listofallmembers>
       <member refid="classwx_archive_iterator_1aead542a2dc3b2ca042eb8c77b3cf7ab7" prot="public" virt="non-virtual"><scope>wxArchiveIterator</scope><name>operator*</name></member>
       <member refid="classwx_archive_iterator_1a1ea0a4c8d77e860b229e04d4ca44ca47" prot="public" virt="non-virtual"><scope>wxArchiveIterator</scope><name>operator++</name></member>

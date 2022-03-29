@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_modal_dialog_hook" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxModalDialogHook</compoundname>
     <includes local="no">wx/modalhook.h</includes>
@@ -131,58 +131,58 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Allows intercepting all modal dialog calls. </para>
+<para>Allows to intercept all modal dialog calls. </para>
     </briefdescription>
     <detaileddescription>
 <para>This class can be used to hook into normal modal dialog handling for some special needs. One of the most common use cases is for testing: as automatic tests can&apos;t continue if a modal dialog is shown while they run, this class can be used to avoid showing the modal dialogs during unattended execution. <ref refid="classwx_modal_dialog_hook" kindref="compound">wxModalDialogHook</ref> can also be used for disabling some background operation while a modal dialog is shown.</para>
-<para>To install a modal dialog hook, you need to derive your own class from this one and implement its pure virtual <ref refid="classwx_modal_dialog_hook_1a9f477ea46562af13c12f4fd39594e9e8" kindref="member">Enter()</ref> method. Then simply create an object of your class and call <ref refid="classwx_modal_dialog_hook_1a02fa64dfe62289002cd7667af46abc4c" kindref="member">Register()</ref> on it to start receiving calls to your overridden <ref refid="classwx_modal_dialog_hook_1a9f477ea46562af13c12f4fd39594e9e8" kindref="member">Enter()</ref> (and possibly <ref refid="classwx_modal_dialog_hook_1a038ee1611b0176902fe9d1295af083c2" kindref="member">Exit()</ref>) methods: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyModalDialogHook<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_modal_dialog_hook" kindref="compound">wxModalDialogHook</ref></highlight></codeline>
+<para>To install a modal dialog hook, you need to derive your own class from this one and implement its pure virtual <ref refid="classwx_modal_dialog_hook_1a9f477ea46562af13c12f4fd39594e9e8" kindref="member">Enter()</ref> method. Then simply create an object of your class and call <ref refid="classwx_modal_dialog_hook_1a02fa64dfe62289002cd7667af46abc4c" kindref="member">Register()</ref> on it to start receiving calls to your overridden <ref refid="classwx_modal_dialog_hook_1a9f477ea46562af13c12f4fd39594e9e8" kindref="member">Enter()</ref> (and possibly <ref refid="classwx_modal_dialog_hook_1a038ee1611b0176902fe9d1295af083c2" kindref="member">Exit()</ref>) methods: <programlisting><codeline><highlight class="normal">class<sp/>MyModalDialogHook<sp/>:<sp/>public<sp/>wxModalDialogHook</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classwx_modal_dialog_hook_1a9f477ea46562af13c12f4fd39594e9e8" kindref="member">Enter</ref>(<ref refid="classwx_dialog" kindref="compound">wxDialog</ref>*<sp/>dialog)</highlight></codeline>
+<codeline><highlight class="normal">protected:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>int<sp/>Enter(wxDialog*<sp/>dialog)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Just<sp/>for<sp/>demonstration<sp/>purposes,<sp/>intercept<sp/>all<sp/>uses<sp/>of</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wxFileDialog.<sp/>Notice<sp/>that<sp/>this<sp/>doesn&apos;t<sp/>provide<sp/>any<sp/>real</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>sandboxing,<sp/>of<sp/>course,<sp/>the<sp/>program<sp/>can<sp/>still<sp/>read<sp/>and<sp/>write</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>files<sp/>by<sp/>not<sp/>using<sp/>wxFileDialog<sp/>to<sp/>ask<sp/>the<sp/>user<sp/>for<sp/>their</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>names.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="object_8h_1a2606f92f8d5f8e22f4afb44a6df3c38a" kindref="member">wxDynamicCast</ref>(dialog,<sp/><ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref>)<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Just<sp/>for<sp/>demonstration<sp/>purposes,<sp/>intercept<sp/>all<sp/>uses<sp/>of</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>wxFileDialog.<sp/>Notice<sp/>that<sp/>this<sp/>doesn&apos;t<sp/>provide<sp/>any<sp/>real</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>sandboxing,<sp/>of<sp/>course,<sp/>the<sp/>program<sp/>can<sp/>still<sp/>read<sp/>and<sp/>write</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>files<sp/>by<sp/>not<sp/>using<sp/>wxFileDialog<sp/>to<sp/>ask<sp/>the<sp/>user<sp/>for<sp/>their</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>names.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>wxDynamicCast(dialog,<sp/>wxFileDialog)<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2log_8h_1a0dd3c633f990f794e76065c9a7af4c87" kindref="member">wxLogError</ref>(</highlight><highlight class="stringliteral">&quot;Access<sp/>to<sp/>file<sp/>system<sp/>disallowed.&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Skip<sp/>showing<sp/>the<sp/>file<sp/>dialog<sp/>entirely.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbba27aec3f2d4b5cf0e36c028bbab048206" kindref="member">wxID_CANCEL</ref>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxLogError(&quot;Access<sp/>to<sp/>file<sp/>system<sp/>disallowed.&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Skip<sp/>showing<sp/>the<sp/>file<sp/>dialog<sp/>entirely.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>wxID_CANCEL;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lastEnter<sp/>=<sp/><ref refid="classwx_date_time_1a6e6c37a0414bb4831e2cc03b37f498a2" kindref="member">wxDateTime::Now</ref>();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allow<sp/>the<sp/>dialog<sp/>to<sp/>be<sp/>shown<sp/>as<sp/>usual.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbbaa49202a202b229f4a4cc91f1b60ae31b" kindref="member">wxID_NONE</ref>;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_lastEnter<sp/>=<sp/>wxDateTime::Now();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Allow<sp/>the<sp/>dialog<sp/>to<sp/>be<sp/>shown<sp/>as<sp/>usual.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>wxID_NONE;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classwx_modal_dialog_hook_1a038ee1611b0176902fe9d1295af083c2" kindref="member">Exit</ref>(<ref refid="classwx_dialog" kindref="compound">wxDialog</ref>*<sp/>dialog)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>void<sp/>Exit(wxDialog*<sp/>dialog)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Again,<sp/>just<sp/>for<sp/>demonstration<sp/>purposes,<sp/>show<sp/>how<sp/>long<sp/>did</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>user<sp/>take<sp/>to<sp/>dismiss<sp/>the<sp/>dialog.<sp/>Notice<sp/>that<sp/>we</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>shouldn&apos;t<sp/>use<sp/>wxLogMessage()<sp/>here<sp/>as<sp/>this<sp/>would<sp/>result<sp/>in</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>another<sp/>modal<sp/>dialog<sp/>call<sp/>and<sp/>hence<sp/>infinite<sp/>recursion.<sp/>In</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>general,<sp/>the<sp/>hooks<sp/>should<sp/>be<sp/>as<sp/>unintrusive<sp/>as<sp/>possible.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2log_8h_1a9c530ae20eb423744f90874d2c97d02b" kindref="member">wxLogDebug</ref>(</highlight><highlight class="stringliteral">&quot;%s<sp/>dialog<sp/>took<sp/>%s<sp/>to<sp/>be<sp/>dismissed&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dialog-&gt;<ref refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" kindref="member">GetClassInfo</ref>()-&gt;<ref refid="classwx_class_info_1a470a32e5eb6f3a804ea7eb4556e3b480" kindref="member">GetClassName</ref>(),</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classwx_date_time_1a6e6c37a0414bb4831e2cc03b37f498a2" kindref="member">wxDateTime::Now</ref>()<sp/>-<sp/>m_lastEnter).Format());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Again,<sp/>just<sp/>for<sp/>demonstration<sp/>purposes,<sp/>show<sp/>how<sp/>long<sp/>did</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>the<sp/>user<sp/>take<sp/>to<sp/>dismiss<sp/>the<sp/>dialog.<sp/>Notice<sp/>that<sp/>we</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>shouldn&apos;t<sp/>use<sp/>wxLogMessage()<sp/>here<sp/>as<sp/>this<sp/>would<sp/>result<sp/>in</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>another<sp/>modal<sp/>dialog<sp/>call<sp/>and<sp/>hence<sp/>infinite<sp/>recursion.<sp/>In</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>general,<sp/>the<sp/>hooks<sp/>should<sp/>be<sp/>as<sp/>unintrusive<sp/>as<sp/>possible.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxLogDebug(&quot;%s<sp/>dialog<sp/>took<sp/>%s<sp/>to<sp/>be<sp/>dismissed&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dialog-&gt;GetClassInfo()-&gt;GetClassName(),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(wxDateTime::Now()<sp/>-<sp/>m_lastEnter).Format());</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyApp<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_app" kindref="compound">wxApp</ref></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">class<sp/>MyApp<sp/>:<sp/>public<sp/>wxApp</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>OnInit()</highlight></codeline>
+<codeline><highlight class="normal">public:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>bool<sp/>OnInit()</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_myHook.Register();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">private:</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyModalDialogHook<sp/>m_myHook;</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
 </programlisting></para>
@@ -190,7 +190,7 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/modalhook.h" line="78" column="1" bodyfile="interface/wx/modalhook.h" bodystart="79" bodyend="149"/>
+    <location file="interface/wx/modalhook.h" line="79" column="1" bodyfile="interface/wx/modalhook.h" bodystart="78" bodyend="149"/>
     <listofallmembers>
       <member refid="classwx_modal_dialog_hook_1a9f477ea46562af13c12f4fd39594e9e8" prot="protected" virt="pure-virtual"><scope>wxModalDialogHook</scope><name>Enter</name></member>
       <member refid="classwx_modal_dialog_hook_1a038ee1611b0176902fe9d1295af083c2" prot="protected" virt="virtual"><scope>wxModalDialogHook</scope><name>Exit</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_stream_to_text_redirector" kind="class" language="C++" prot="public">
     <compoundname>wxStreamToTextRedirector</compoundname>
     <includes local="no">wx/textctrl.h</includes>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/textctrl.h" line="1736" column="5"/>
+        <location file="interface/wx/textctrl.h" line="1647" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_stream_to_text_redirector_1a7e2cac14100ba43aea4acee1a747854c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -56,26 +56,26 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/textctrl.h" line="1743" column="5"/>
+        <location file="interface/wx/textctrl.h" line="1654" column="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class can be used to (temporarily) redirect all output sent to a C++ ostream object to a <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> instead. </para>
     </briefdescription>
     <detaileddescription>
-<para><simplesect kind="note"><para>Some compilers and/or build configurations don&apos;t support multiply inheriting <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> from <computeroutput>std::streambuf</computeroutput> in which case this class is not compiled in. You also must have <computeroutput>wxUSE_STD_IOSTREAM</computeroutput> option on (i.e. set to 1) in your <computeroutput>setup.h</computeroutput> to be able to use it. Under Unix, specify <computeroutput>--enable-std_iostreams</computeroutput> switch when running configure for this.</para>
+<para>This class can be used to (temporarily) redirect all output sent to a C++ ostream object to a <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> instead.</para>
+<para><simplesect kind="note"><para>Some compilers and/or build configurations don&apos;t support multiply inheriting <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> from <computeroutput>std::streambuf</computeroutput> in which case this class is not compiled in. You also must have <computeroutput>wxUSE_STD_IOSTREAM</computeroutput> option on (i.e. set to 1) in your <computeroutput>setup.h</computeroutput> to be able to use it. Under Unix, specify <computeroutput><ndash/>enable-std_iostreams</computeroutput> switch when running configure for this.</para>
 </simplesect>
 Example of usage:</para>
-<para><programlisting><codeline><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>*<sp/>text<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>(...);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">using<sp/>namespace<sp/>std;</highlight></codeline>
+<codeline><highlight class="normal">wxTextCtrl*<sp/>text<sp/>=<sp/>new<sp/>wxTextCtrl(...);</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_stream_to_text_redirector" kindref="compound">wxStreamToTextRedirector</ref><sp/>redirect(text);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>goes<sp/>to<sp/>the<sp/>text<sp/>control</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Hello,<sp/>text!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="txtstrm_8h_1a696f69d76df63d35e1d28df1cc6f9532" kindref="member">endl</ref>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxStreamToTextRedirector<sp/>redirect(text);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>this<sp/>goes<sp/>to<sp/>the<sp/>text<sp/>control</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>&quot;Hello,<sp/>text!&quot;<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>this<sp/>goes<sp/>somewhere<sp/>else,<sp/>presumably<sp/>to<sp/>stdout</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Hello,<sp/>console!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="txtstrm_8h_1a696f69d76df63d35e1d28df1cc6f9532" kindref="member">endl</ref>;</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>this<sp/>goes<sp/>somewhere<sp/>else,<sp/>presumably<sp/>to<sp/>stdout</highlight></codeline>
+<codeline><highlight class="normal">cout<sp/>&lt;&lt;<sp/>&quot;Hello,<sp/>console!&quot;<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
 </programlisting></para>
 <para><heading level="2"></heading>
 </para>
@@ -84,7 +84,7 @@ Example of usage:</para>
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/textctrl.h" line="1724" column="1" bodyfile="interface/wx/textctrl.h" bodystart="1725" bodyend="1744"/>
+    <location file="interface/wx/textctrl.h" line="1636" column="1" bodyfile="interface/wx/textctrl.h" bodystart="1635" bodyend="1655"/>
     <listofallmembers>
       <member refid="classwx_stream_to_text_redirector_1aaf6717267c8638d0ade7fe5ae143cae0" prot="public" virt="non-virtual"><scope>wxStreamToTextRedirector</scope><name>wxStreamToTextRedirector</name></member>
       <member refid="classwx_stream_to_text_redirector_1a7e2cac14100ba43aea4acee1a747854c" prot="public" virt="non-virtual"><scope>wxStreamToTextRedirector</scope><name>~wxStreamToTextRedirector</name></member>

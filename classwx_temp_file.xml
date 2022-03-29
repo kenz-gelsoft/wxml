@@ -1,25 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_temp_file" kind="class" language="C++" prot="public">
     <compoundname>wxTempFile</compoundname>
     <includes local="no">wx/file.h</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classwx_temp_file_1ae3ac9441051d67d81fa575883f8bbdd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>wxTempFile::wxTempFile</definition>
-        <argsstring>()</argsstring>
-        <name>wxTempFile</name>
-        <briefdescription>
-<para>Default constructor doesn&apos;t do anything. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Call <ref refid="classwx_temp_file_1a9c6a42adfae433ce7928fb77ac769291" kindref="member">Open()</ref> later. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/file.h" line="54" column="5"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_temp_file_1a3eb3d2c6bab845067b40f29159198a82" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_temp_file_1a3eb3d2c6bab845067b40f29159198a82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxTempFile::wxTempFile</definition>
         <argsstring>(const wxString &amp;strName)</argsstring>
@@ -38,7 +23,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/file.h" line="62" column="14"/>
+        <location file="interface/wx/file.h" line="55" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_temp_file_1a64b32458252f16d9e2de51e3528ac5ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -52,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/file.h" line="67" column="5"/>
+        <location file="interface/wx/file.h" line="60" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_temp_file_1a3483386ef70cd83a2919054a681f2892" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -68,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/file.h" line="77" column="10"/>
+        <location file="interface/wx/file.h" line="70" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_temp_file_1ae4154e93bcd87a48293e38666e2e10a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -82,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/file.h" line="83" column="10"/>
+        <location file="interface/wx/file.h" line="76" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_temp_file_1a76e49e860b868a53a4dbcae2a2965e09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -97,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/file.h" line="95" column="10"/>
+        <location file="interface/wx/file.h" line="88" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_temp_file_1aebcd617facf6e89fbe65dc5a1f7cb32d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -111,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/file.h" line="100" column="10"/>
+        <location file="interface/wx/file.h" line="93" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_temp_file_1a6affb65b68ba46f971b76fe3c96ccfc3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
@@ -122,12 +107,12 @@
 <para>Returns the length of the file. </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns <ref refid="filefn_8h_1ab184c7199d93541d22ae42e515cbbcb7" kindref="member">wxInvalidOffset</ref> if the length couldn&apos;t be determined.</para>
-<para>Please also note that there is <emphasis>no</emphasis> guarantee that reading that many bytes from the file will always succeed. While this is true for regular files (unless the file size has been changed by another process in between <ref refid="classwx_temp_file_1a6affb65b68ba46f971b76fe3c96ccfc3" kindref="member">Length()</ref> and Read() calls), some special files, such as most files under <computeroutput>/sys</computeroutput> or <computeroutput>/proc</computeroutput> directories under Linux, don&apos;t actually contain as much data as their size indicates. </para>
+<para>This method may return <ref refid="filefn_8h_1ab184c7199d93541d22ae42e515cbbcb7" kindref="member">wxInvalidOffset</ref> if the length couldn&apos;t be determined or 0 even for non-empty files if the file is not seekable.</para>
+<para>In general, the only way to determine if the file for which this function returns 0 is really empty or not is to try reading from it. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/file.h" line="114" column="18"/>
+        <location file="interface/wx/file.h" line="104" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_temp_file_1a9c6a42adfae433ce7928fb77ac769291" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -146,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/file.h" line="124" column="10"/>
+        <location file="interface/wx/file.h" line="114" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_temp_file_1ab3d5fd185404cab6431500cd0019988f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
@@ -169,7 +154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/file.h" line="129" column="18"/>
+        <location file="interface/wx/file.h" line="119" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_temp_file_1ae6853eb54320698f344f42c5b69c0211" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
@@ -183,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/file.h" line="136" column="18"/>
+        <location file="interface/wx/file.h" line="126" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_temp_file_1a40b4547f8c20673ea38e84b8a6a7eb02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -207,14 +192,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/file.h" line="143" column="10"/>
+        <location file="interface/wx/file.h" line="133" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_temp_file" kindref="compound">wxTempFile</ref> provides a relatively safe way to replace the contents of the existing file. </para>
     </briefdescription>
     <detaileddescription>
-<para>The name is explained by the fact that it may be also used as just a temporary file if you don&apos;t replace the old file contents.</para>
+<para><ref refid="classwx_temp_file" kindref="compound">wxTempFile</ref> provides a relatively safe way to replace the contents of the existing file. The name is explained by the fact that it may be also used as just a temporary file if you don&apos;t replace the old file contents.</para>
 <para>Usually, when a program replaces the contents of some file it first opens it for writing, thus losing all of the old data and then starts recreating it. This approach is not very safe because during the regeneration of the file bad things may happen: the program may find that there is an internal error preventing it from completing file generation, the user may interrupt it (especially if file generation takes long time) and, finally, any other external interrupts (power supply failure or a disk error) will leave you without either the original file or the new one.</para>
 <para><ref refid="classwx_temp_file" kindref="compound">wxTempFile</ref> addresses this problem by creating a temporary file which is meant to replace the original file - but only after it is fully written. So, if the user interrupts the program during the file generation, the old file won&apos;t be lost. Also, if the program discovers itself that it doesn&apos;t want to replace the old file there is no problem - in fact, <ref refid="classwx_temp_file" kindref="compound">wxTempFile</ref> will <bold>not</bold> replace the old file by default, you should explicitly call <ref refid="classwx_temp_file_1a3483386ef70cd83a2919054a681f2892" kindref="member">wxTempFile::Commit()</ref> to do it. Calling <ref refid="classwx_temp_file_1ae4154e93bcd87a48293e38666e2e10a8" kindref="member">wxTempFile::Discard()</ref> explicitly discards any modifications: it closes and deletes the temporary file and leaves the original file unchanged. If you call neither <ref refid="classwx_temp_file_1a3483386ef70cd83a2919054a681f2892" kindref="member">Commit()</ref> nor <ref refid="classwx_temp_file_1ae4154e93bcd87a48293e38666e2e10a8" kindref="member">Discard()</ref>, the destructor will call <ref refid="classwx_temp_file_1ae4154e93bcd87a48293e38666e2e10a8" kindref="member">Discard()</ref> automatically.</para>
 <para>To summarize: if you want to replace another file, create an instance of <ref refid="classwx_temp_file" kindref="compound">wxTempFile</ref> passing the name of the file to be replaced to the constructor. (You may also use default constructor and pass the file name to <ref refid="classwx_temp_file_1a9c6a42adfae433ce7928fb77ac769291" kindref="member">wxTempFile::Open</ref>.) Then you can write to <ref refid="classwx_temp_file" kindref="compound">wxTempFile</ref> using wxFile-like functions and later call <ref refid="classwx_temp_file_1a3483386ef70cd83a2919054a681f2892" kindref="member">wxTempFile::Commit()</ref> to replace the old file (and close this one) or call <ref refid="classwx_temp_file_1ae4154e93bcd87a48293e38666e2e10a8" kindref="member">wxTempFile::Discard()</ref> to cancel the modifications.</para>
@@ -222,7 +206,7 @@
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
-    <location file="interface/wx/file.h" line="46" column="1" bodyfile="interface/wx/file.h" bodystart="47" bodyend="145"/>
+    <location file="interface/wx/file.h" line="47" column="1" bodyfile="interface/wx/file.h" bodystart="46" bodyend="135"/>
     <listofallmembers>
       <member refid="classwx_temp_file_1a3483386ef70cd83a2919054a681f2892" prot="public" virt="non-virtual"><scope>wxTempFile</scope><name>Commit</name></member>
       <member refid="classwx_temp_file_1ae4154e93bcd87a48293e38666e2e10a8" prot="public" virt="non-virtual"><scope>wxTempFile</scope><name>Discard</name></member>
@@ -233,7 +217,6 @@
       <member refid="classwx_temp_file_1ab3d5fd185404cab6431500cd0019988f" prot="public" virt="non-virtual"><scope>wxTempFile</scope><name>Seek</name></member>
       <member refid="classwx_temp_file_1ae6853eb54320698f344f42c5b69c0211" prot="public" virt="non-virtual"><scope>wxTempFile</scope><name>Tell</name></member>
       <member refid="classwx_temp_file_1a40b4547f8c20673ea38e84b8a6a7eb02" prot="public" virt="non-virtual"><scope>wxTempFile</scope><name>Write</name></member>
-      <member refid="classwx_temp_file_1ae3ac9441051d67d81fa575883f8bbdd2" prot="public" virt="non-virtual"><scope>wxTempFile</scope><name>wxTempFile</name></member>
       <member refid="classwx_temp_file_1a3eb3d2c6bab845067b40f29159198a82" prot="public" virt="non-virtual"><scope>wxTempFile</scope><name>wxTempFile</name></member>
       <member refid="classwx_temp_file_1a64b32458252f16d9e2de51e3528ac5ea" prot="public" virt="non-virtual"><scope>wxTempFile</scope><name>~wxTempFile</name></member>
     </listofallmembers>

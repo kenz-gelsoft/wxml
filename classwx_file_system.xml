@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_file_system" kind="class" language="C++" prot="public">
     <compoundname>wxFileSystem</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -14,7 +14,7 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para>The initial current path of this object will be empty (i.e. <ref refid="classwx_file_system_1a2a2aa4f04017b44e2bb40464dbc6b07e" kindref="member">GetPath()</ref> == wxEmptyString) which means that e.g. <ref refid="classwx_file_system_1a5e26143cb935407f101e077582da510b" kindref="member">OpenFile()</ref> or <ref refid="classwx_file_system_1a93f5d9fc8fe388213f8ed7dddc55db71" kindref="member">FindFirst()</ref> functions will use current working directory as current path (see also wxGetCwd). </para>
+<para>The initial current path of this object will be empty (i.e. <ref refid="classwx_file_system_1a2a2aa4f04017b44e2bb40464dbc6b07e" kindref="member">GetPath()</ref> == wxEmptyString) which means that e.g. <ref refid="classwx_file_system_1a01c6b989e86e34da21e94c802e516b16" kindref="member">OpenFile()</ref> or <ref refid="classwx_file_system_1a93f5d9fc8fe388213f8ed7dddc55db71" kindref="member">FindFirst()</ref> functions will use current working directory as current path (see also wxGetCwd). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -38,17 +38,17 @@
 <para>Sets the current location. </para>
         </briefdescription>
         <detaileddescription>
-<para><emphasis>location</emphasis> parameter passed to <ref refid="classwx_file_system_1a5e26143cb935407f101e077582da510b" kindref="member">OpenFile()</ref> is relative to this path.</para>
+<para><emphasis>location</emphasis> parameter passed to <ref refid="classwx_file_system_1a01c6b989e86e34da21e94c802e516b16" kindref="member">OpenFile()</ref> is relative to this path.</para>
 <para><simplesect kind="remark"><para>Unless <emphasis>is_dir</emphasis> is true the <emphasis>location</emphasis> parameter is not the directory name but the name of the file in this directory.</para>
 </simplesect>
 All these commands change the path to &quot;dir/subdir/&quot;:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_file_system_1ad491d9cb899dcdd3b9960c1974e34da0" kindref="member">ChangePathTo</ref>(</highlight><highlight class="stringliteral">&quot;dir/subdir/xh.htm&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_file_system_1ad491d9cb899dcdd3b9960c1974e34da0" kindref="member">ChangePathTo</ref>(</highlight><highlight class="stringliteral">&quot;dir/subdir&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_file_system_1ad491d9cb899dcdd3b9960c1974e34da0" kindref="member">ChangePathTo</ref>(</highlight><highlight class="stringliteral">&quot;dir/subdir/&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">ChangePathTo(&quot;dir/subdir/xh.htm&quot;);</highlight></codeline>
+<codeline><highlight class="normal">ChangePathTo(&quot;dir/subdir&quot;,<sp/>true);</highlight></codeline>
+<codeline><highlight class="normal">ChangePathTo(&quot;dir/subdir/&quot;,<sp/>true);</highlight></codeline>
 </programlisting></para>
-<para>Example: <programlisting><codeline><highlight class="normal">f<sp/>=<sp/>fs-&gt;OpenFile(</highlight><highlight class="stringliteral">&quot;hello.htm&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>opens<sp/>file<sp/>&apos;hello.htm&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">fs-&gt;ChangePathTo(</highlight><highlight class="stringliteral">&quot;subdir/folder&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal">f<sp/>=<sp/>fs-&gt;OpenFile(</highlight><highlight class="stringliteral">&quot;hello.htm&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>opens<sp/>file<sp/>&apos;subdir/folder/hello.htm&apos;<sp/>!!</highlight></codeline>
+<para>Example: <programlisting><codeline><highlight class="normal">f<sp/>=<sp/>fs-&gt;OpenFile(&quot;hello.htm&quot;);<sp/>//<sp/>opens<sp/>file<sp/>&apos;hello.htm&apos;</highlight></codeline>
+<codeline><highlight class="normal">fs-&gt;ChangePathTo(&quot;subdir/folder&quot;,<sp/>true);</highlight></codeline>
+<codeline><highlight class="normal">f<sp/>=<sp/>fs-&gt;OpenFile(&quot;hello.htm&quot;);<sp/>//<sp/>opens<sp/>file<sp/>&apos;subdir/folder/hello.htm&apos;<sp/>!!</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -196,9 +196,9 @@ All these commands change the path to &quot;dir/subdir/&quot;:</para>
         </inbodydescription>
         <location file="interface/wx/filesys.h" line="143" column="14"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_file_system_1a5e26143cb935407f101e077582da510b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_file_system_1a01c6b989e86e34da21e94c802e516b16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_f_s_file" kindref="compound">wxFSFile</ref> *</type>
-        <definition>wxFSFile * wxFileSystem::OpenFile</definition>
+        <definition>wxFSFile* wxFileSystem::OpenFile</definition>
         <argsstring>(const wxString &amp;location, int flags=wxFS_READ)</argsstring>
         <name>OpenFile</name>
         <param>
@@ -242,7 +242,7 @@ All these commands change the path to &quot;dir/subdir/&quot;:</para>
         </briefdescription>
         <detaileddescription>
 <para>Note that if two handlers for the same protocol are added, the last added one takes precedence.</para>
-<para><simplesect kind="note"><para>You can call: <programlisting><codeline><highlight class="normal"><ref refid="classwx_file_system_1a442d841b2baa5a0eb83c3a985b1e3119" kindref="member">wxFileSystem::AddHandler</ref>(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>My_FS_Handler);</highlight></codeline>
+<para><simplesect kind="note"><para>You can call: <programlisting><codeline><highlight class="normal">wxFileSystem::AddHandler(new<sp/>My_FS_Handler);</highlight></codeline>
 </programlisting> This is because (a) AddHandler is a static method, and (b) the handlers are deleted in <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref>&apos;s destructor so that you don&apos;t have to care about it. </para>
 </simplesect>
 </para>
@@ -251,9 +251,9 @@ All these commands change the path to &quot;dir/subdir/&quot;:</para>
         </inbodydescription>
         <location file="interface/wx/filesys.h" line="61" column="17"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_file_system_1acab56a5ea1b10735eb780d46a51a9a7b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_file_system_1a4dfed1274580f8fcbfd02e27bcb920d1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_file_system_handler" kindref="compound">wxFileSystemHandler</ref> *</type>
-        <definition>static wxFileSystemHandler * wxFileSystem::RemoveHandler</definition>
+        <definition>static wxFileSystemHandler* wxFileSystem::RemoveHandler</definition>
         <argsstring>(wxFileSystemHandler *handler)</argsstring>
         <name>RemoveHandler</name>
         <param>
@@ -329,10 +329,9 @@ All these commands change the path to &quot;dir/subdir/&quot;:</para>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class provides an interface for opening files on different file systems. </para>
     </briefdescription>
     <detaileddescription>
-<para>It can handle absolute and/or local filenames.</para>
+<para>This class provides an interface for opening files on different file systems. It can handle absolute and/or local filenames.</para>
 <para>It uses a system of handlers (see <ref refid="classwx_file_system_handler" kindref="compound">wxFileSystemHandler</ref>) to provide access to user-defined virtual file systems.</para>
 <para><heading level="2"></heading>
 </para>
@@ -372,29 +371,29 @@ All these commands change the path to &quot;dir/subdir/&quot;:</para>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/filesys.h" line="33" column="1" bodyfile="interface/wx/filesys.h" bodystart="34" bodyend="181"/>
+    <location file="interface/wx/filesys.h" line="34" column="1" bodyfile="interface/wx/filesys.h" bodystart="33" bodyend="181"/>
     <listofallmembers>
       <member refid="classwx_file_system_1a442d841b2baa5a0eb83c3a985b1e3119" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>AddHandler</name></member>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxFileSystem</scope><name>AllocExclusive</name></member>
       <member refid="classwx_file_system_1ad491d9cb899dcdd3b9960c1974e34da0" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>ChangePathTo</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxFileSystem</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxFileSystem</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxFileSystem</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxFileSystem</scope><name>CreateRefData</name></member>
       <member refid="classwx_file_system_1a616610cafdb14b841940d5e6b08a9615" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>FileNameToURL</name></member>
       <member refid="classwx_file_system_1aa398cf786d93b2033782eb31efb6d63e" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>FindFileInPath</name></member>
       <member refid="classwx_file_system_1a93f5d9fc8fe388213f8ed7dddc55db71" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>FindFirst</name></member>
       <member refid="classwx_file_system_1ae654ed12023c1a1776fdaf340f9012ec" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>FindNext</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxFileSystem</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxFileSystem</scope><name>GetClassInfo</name></member>
       <member refid="classwx_file_system_1a2a2aa4f04017b44e2bb40464dbc6b07e" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>GetPath</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>GetRefData</name></member>
       <member refid="classwx_file_system_1ac6d225954ea267ae5a6808aa61c86175" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>HasHandlerForPath</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxFileSystem</scope><name>m_refData</name></member>
-      <member refid="classwx_file_system_1a5e26143cb935407f101e077582da510b" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>OpenFile</name></member>
+      <member refid="classwx_file_system_1a01c6b989e86e34da21e94c802e516b16" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>OpenFile</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>Ref</name></member>
-      <member refid="classwx_file_system_1acab56a5ea1b10735eb780d46a51a9a7b" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>RemoveHandler</name></member>
+      <member refid="classwx_file_system_1a4dfed1274580f8fcbfd02e27bcb920d1" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>RemoveHandler</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>SetRefData</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>UnRef</name></member>
       <member refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" prot="public" virt="non-virtual"><scope>wxFileSystem</scope><name>UnShare</name></member>

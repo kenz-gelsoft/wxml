@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_u_i_action_simulator" kind="class" language="C++" prot="public">
     <compoundname>wxUIActionSimulator</compoundname>
     <includes local="no">wx/uiaction.h</includes>
@@ -297,7 +297,7 @@
 <para>Press a key. </para>
         </briefdescription>
         <detaileddescription>
-<para>If you are using modifiers then it needs to be paired with an identical KeyUp or the modifiers will not be released (MSW and macOS).</para>
+<para>If you are using modifiers then it needs to be paired with an identical KeyUp or the modifiers will not be released (MSW and OSX).</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>keycode</parametername>
@@ -403,60 +403,26 @@
         </inbodydescription>
         <location file="interface/wx/uiaction.h" line="145" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_u_i_action_simulator_1a2a63445d3d08f9d2e062eeaa89b6a0ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool wxUIActionSimulator::Select</definition>
-        <argsstring>(const wxString &amp;text)</argsstring>
-        <name>Select</name>
-        <param>
-          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-          <declname>text</declname>
-        </param>
-        <briefdescription>
-<para>Simulate selection of an item with the given text. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This method selects an item in the currently focused <ref refid="classwx_choice" kindref="compound">wxChoice</ref>, <ref refid="classwx_combo_box" kindref="compound">wxComboBox</ref>, <ref refid="classwx_list_box" kindref="compound">wxListBox</ref> and similar controls. It does it by simulating keyboard events, so the behaviour should be the same as if the item was really selected by the user.</para>
-<para>Notice that the implementation of this method uses <ref refid="interface_2wx_2app_8h_1ac386c89a04e364afc07edce6d848c27a" kindref="member">wxYield()</ref> and so events can be dispatched from it.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>text</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The text of the item to select.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>true if the item <emphasis>text</emphasis> was successfully selected or false if the currently focused window is not one of the controls allowing item selection or if the item with the given text was not found in it.</para>
-</simplesect>
-<simplesect kind="since"><para>3.1.0 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/uiaction.h" line="169" column="10"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_u_i_action_simulator_1af7ecf0d4fe7c2565f327d83421df7a65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_u_i_action_simulator_1af8daaf3d87f184e2dec185b820eab9b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool wxUIActionSimulator::Text</definition>
-        <argsstring>(const char *text)</argsstring>
+        <argsstring>(const wxString &amp;text)</argsstring>
         <name>Text</name>
         <param>
-          <type>const char *</type>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>text</declname>
         </param>
         <briefdescription>
 <para>Emulate typing in the keys representing the given string. </para>
         </briefdescription>
         <detaileddescription>
-<para>Currently only the ASCII letters are universally supported. Digits and punctuation characters can be used with the standard QWERTY (US) keyboard layout but may not work with other layouts.</para>
+<para>Currently only the ASCII letters, digits and characters for the definition of numbers (i.e. characters <computeroutput>a-z</computeroutput> <computeroutput>A-Z</computeroutput> <computeroutput>0-9</computeroutput> <computeroutput>+</computeroutput> <computeroutput>-</computeroutput> <computeroutput></computeroutput>. <computeroutput></computeroutput>, <computeroutput>&apos;space&apos;</computeroutput>) are supported.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>text</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The string, containing only US ASCII characters, to type. </para>
+<para>The string to type. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -464,13 +430,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/uiaction.h" line="181" column="10"/>
+        <location file="interface/wx/uiaction.h" line="157" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_u_i_action_simulator" kindref="compound">wxUIActionSimulator</ref> is a class used to simulate user interface actions such as a mouse click or a key press. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classwx_u_i_action_simulator" kindref="compound">wxUIActionSimulator</ref> is a class used to simulate user interface actions such as a mouse click or a key press.</para>
 <para>Common usage for this class would be to provide playback and record (aka macro recording) functionality for users, or to drive unit tests by simulating user sessions.</para>
 <para>See the <ref refid="page_samples_1page_samples_uiaction" kindref="member">wxUIActionSimulator Sample</ref> for an example of using this class.</para>
 <para><simplesect kind="since"><para>2.9.2</para>
@@ -479,7 +445,7 @@
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> </para>
     </detaileddescription>
-    <location file="interface/wx/uiaction.h" line="25" column="1" bodyfile="interface/wx/uiaction.h" bodystart="26" bodyend="182"/>
+    <location file="interface/wx/uiaction.h" line="26" column="1" bodyfile="interface/wx/uiaction.h" bodystart="25" bodyend="158"/>
     <listofallmembers>
       <member refid="classwx_u_i_action_simulator_1a573e464dc75d6168564a6372f6b9aa21" prot="public" virt="non-virtual"><scope>wxUIActionSimulator</scope><name>Char</name></member>
       <member refid="classwx_u_i_action_simulator_1aabcdc7be926c32bd5b68b75f16c0fcb8" prot="public" virt="non-virtual"><scope>wxUIActionSimulator</scope><name>KeyDown</name></member>
@@ -491,8 +457,7 @@
       <member refid="classwx_u_i_action_simulator_1a810d21924e14cb66205e4a921f711e5a" prot="public" virt="non-virtual"><scope>wxUIActionSimulator</scope><name>MouseMove</name></member>
       <member refid="classwx_u_i_action_simulator_1aca7da1cd2fe227f2b1a85cfe8aef828b" prot="public" virt="non-virtual"><scope>wxUIActionSimulator</scope><name>MouseMove</name></member>
       <member refid="classwx_u_i_action_simulator_1a84bb2f01cfc044d682cbadd9efb9846f" prot="public" virt="non-virtual"><scope>wxUIActionSimulator</scope><name>MouseUp</name></member>
-      <member refid="classwx_u_i_action_simulator_1a2a63445d3d08f9d2e062eeaa89b6a0ef" prot="public" virt="non-virtual"><scope>wxUIActionSimulator</scope><name>Select</name></member>
-      <member refid="classwx_u_i_action_simulator_1af7ecf0d4fe7c2565f327d83421df7a65" prot="public" virt="non-virtual"><scope>wxUIActionSimulator</scope><name>Text</name></member>
+      <member refid="classwx_u_i_action_simulator_1af8daaf3d87f184e2dec185b820eab9b3" prot="public" virt="non-virtual"><scope>wxUIActionSimulator</scope><name>Text</name></member>
       <member refid="classwx_u_i_action_simulator_1aa0f66cea40a642075482e06ccf2b75cb" prot="public" virt="non-virtual"><scope>wxUIActionSimulator</scope><name>wxUIActionSimulator</name></member>
     </listofallmembers>
   </compounddef>

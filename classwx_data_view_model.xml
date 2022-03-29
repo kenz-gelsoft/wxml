@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_data_view_model" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxDataViewModel</compoundname>
     <basecompoundref refid="classwx_ref_counter" prot="public" virt="non-virtual">wxRefCounter</basecompoundref>
@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="106" column="5"/>
+        <location file="interface/wx/dataview.h" line="102" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1af975c0a3afb970a21b9691a92f44c6c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="111" column="10"/>
+        <location file="interface/wx/dataview.h" line="107" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1ab52b55596d0724047be8cf62184f4468" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -60,7 +60,7 @@
 <para>Change the value of the given item and update the control to reflect it. </para>
         </briefdescription>
         <detaileddescription>
-<para>This function simply calls <ref refid="classwx_data_view_model_1a136dbef49beb09df1ffe5aa884a9c022" kindref="member">SetValue()</ref> and, if it succeeded, <ref refid="classwx_data_view_model_1afc162ff0230dd026ef99591696cbfb86" kindref="member">ValueChanged()</ref>.</para>
+<para>This function simply calls <ref refid="classwx_data_view_model_1a136dbef49beb09df1ffe5aa884a9c022" kindref="member">SetValue()</ref> and, if it succeeded, <ref refid="classwx_data_view_model_1a29418c077b554d0e87d509806fffc67d" kindref="member">ValueChanged()</ref>.</para>
 <para><simplesect kind="since"><para>2.9.1</para>
 </simplesect>
 <parameterlist kind="param"><parameteritem>
@@ -88,29 +88,28 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>true if both <ref refid="classwx_data_view_model_1a136dbef49beb09df1ffe5aa884a9c022" kindref="member">SetValue()</ref> and <ref refid="classwx_data_view_model_1afc162ff0230dd026ef99591696cbfb86" kindref="member">ValueChanged()</ref> returned true. </para>
+<simplesect kind="return"><para>true if both <ref refid="classwx_data_view_model_1a136dbef49beb09df1ffe5aa884a9c022" kindref="member">SetValue()</ref> and <ref refid="classwx_data_view_model_1a29418c077b554d0e87d509806fffc67d" kindref="member">ValueChanged()</ref> returned true. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="131" column="10"/>
+        <location file="interface/wx/dataview.h" line="127" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_data_view_model_1ab1ce641ec025c4706f878d569a9516f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_data_view_model_1ad7f3023ee6166eb6f5bafececb4fff0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
-        <definition>bool wxDataViewModel::Cleared</definition>
+        <definition>virtual bool wxDataViewModel::Cleared</definition>
         <argsstring>()</argsstring>
         <name>Cleared</name>
         <briefdescription>
-<para>Called to inform the model that all of its data has been changed. </para>
+<para>Called to inform the model that all data has been cleared. </para>
         </briefdescription>
         <detaileddescription>
-<para>This method should be called if so many of the model items have changed, that the control should just reread all of them, repopulating itself entirely.</para>
-<para>Note that, contrary to the name of the method, it doesn&apos;t necessarily indicate that model has become empty <ndash/> although this is the right method to call, rather than <ref refid="classwx_data_view_model_1af472d2e95b0e062045785cab17e72383" kindref="member">ItemsDeleted()</ref>, if it was indeed cleared, which explains the origin of its name. </para>
+<para>The control will reread the data from the model again. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="147" column="10"/>
+        <location file="interface/wx/dataview.h" line="135" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a2eefab97a9a73e5ff896222d3600c8bb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>int</type>
@@ -135,61 +134,17 @@
           <declname>ascending</declname>
         </param>
         <briefdescription>
-<para>The compare function to be used by the control. </para>
+<para>The compare function to be used by control. </para>
         </briefdescription>
         <detaileddescription>
-<para>The default compare function sorts most data types implemented by <ref refid="classwx_variant" kindref="compound">wxVariant</ref> (i.e. bool, int, long, double, string) as well as datetime and <ref refid="classwx_data_view_icon_text" kindref="compound">wxDataViewIconText</ref>. Override this method to implement a different sorting behaviour or override just <ref refid="classwx_data_view_model_1a507515b9595a8a2438e936ee320f6567" kindref="member">DoCompareValues()</ref> to extend it to support other <ref refid="classwx_variant" kindref="compound">wxVariant</ref> types.</para>
-<para>The function should return negative, null or positive for an ascending comparison, depending on whether the first item is less than, equal to or greater than the second one. The reverse is true for descending comparisons. The items should be compared using the appropriate type for the column passed.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>item1</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>First item to compare. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>item2</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Second item to compare. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>column</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The column holding the items to be compared. If the model class overrides <ref refid="classwx_data_view_model_1a909b2f8ec6493dbb8dff5b22f857eda7" kindref="member">HasDefaultCompare()</ref> to return true, this parameter will be <computeroutput></computeroutput>(unsigned)-1 when sorting items if no column is selected for sorting them. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>ascending</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Indicates whether the sort is being performed in ascending or descending order. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>For an ascending comparison: a negative value if the item1 is less than (i.e. should appear above) item2, zero if the two items are equal or a positive value if item1 is greater than (i.e. should appear below) the second one. The reverse for a descending comparison. </para>
-</simplesect>
-<simplesect kind="note"><para>If there can be multiple rows with the same value, consider differentiating them form each other by their IDs rather than returning zero. This to prevent rows with the same value jumping positions when items are added etc. For example: <programlisting><codeline><highlight class="comment">//<sp/>Note<sp/>that<sp/>we<sp/>need<sp/>to<sp/>distinguish<sp/>between<sp/>items<sp/>with<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="defs_8h_1a74cc3a4753ec135e9e2ee6b155c97216" kindref="member">wxUIntPtr</ref><sp/>id1<sp/>=<sp/>wxPtrToUInt(item1.GetID()),</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>id2<sp/>=<sp/>wxPtrToUInt(item2.GetID());</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(ascending<sp/>==<sp/>(id1<sp/>&gt;<sp/>id2))<sp/>?<sp/>:<sp/>1<sp/>:<sp/>-1;</highlight></codeline>
-</programlisting></para>
-</simplesect>
-<simplesect kind="see"><para><ref refid="classwx_data_view_model_1a909b2f8ec6493dbb8dff5b22f857eda7" kindref="member">HasDefaultCompare()</ref>, <ref refid="classwx_data_view_model_1a507515b9595a8a2438e936ee320f6567" kindref="member">DoCompareValues()</ref> </para>
+<para>The default compare function sorts by container and other items separately and in ascending order. Override this for a different sorting behaviour.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_data_view_model_1a909b2f8ec6493dbb8dff5b22f857eda7" kindref="member">HasDefaultCompare()</ref>. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="196" column="17"/>
+        <location file="interface/wx/dataview.h" line="144" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a28b85b9aca3a1ea803940817d86b0b73" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -247,7 +202,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="218" column="18"/>
+        <location file="interface/wx/dataview.h" line="166" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a561564e63f8c975b4241ad5be74e6965" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -287,13 +242,15 @@
 </parameterlist>
 <simplesect kind="return"><para>true if this item should be enabled, false otherwise.</para>
 </simplesect>
+<simplesect kind="note"><para>Currently disabling items is not supported by the wxOSX/Carbon implementation.</para>
+</simplesect>
 <simplesect kind="since"><para>2.9.2 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="239" column="18"/>
+        <location file="interface/wx/dataview.h" line="190" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a945bbb0523166c6b092af62c7ba7b2ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>unsigned int</type>
@@ -316,7 +273,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="246" column="26"/>
+        <location file="interface/wx/dataview.h" line="197" column="26"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1adbdf03c45af02bce54d6f979a831e728" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>unsigned int</type>
@@ -331,7 +288,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="252" column="26"/>
+        <location file="interface/wx/dataview.h" line="203" column="26"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1ae370253a221d44db0c230127404858ab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -351,7 +308,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="260" column="22"/>
+        <location file="interface/wx/dataview.h" line="211" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a4e12a582dffdc40bf043a48e1c12a9fb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_data_view_item" kindref="compound">wxDataViewItem</ref></type>
@@ -369,7 +326,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="267" column="28"/>
+        <location file="interface/wx/dataview.h" line="218" column="28"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a74d9f0ac2dd9935b7132da11c008c67f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -396,7 +353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="273" column="18"/>
+        <location file="interface/wx/dataview.h" line="224" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a1c8983afee8875226c2b11500f228ae4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -415,7 +372,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="281" column="18"/>
+        <location file="interface/wx/dataview.h" line="232" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a909b2f8ec6493dbb8dff5b22f857eda7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -427,20 +384,15 @@
         </briefdescription>
         <detaileddescription>
 <para>Usually, the user clicks on a column header for sorting, the data will be sorted alphanumerically.</para>
-<para>If any other order (e.g. by index or order of appearance) is required, then this should be used.</para>
-<para>Note that if this method is overridden to return true, the implementation of <ref refid="classwx_data_view_model_1a2eefab97a9a73e5ff896222d3600c8bb" kindref="member">Compare()</ref> should be ready to accept <computeroutput></computeroutput>(unsigned)-1 as the value for the column index parameter.</para>
-<para>See <ref refid="classwx_data_view_index_list_model" kindref="compound">wxDataViewIndexListModel</ref> for a model which makes use of this.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_data_view_model_1a2eefab97a9a73e5ff896222d3600c8bb" kindref="member">Compare()</ref> </para>
-</simplesect>
-</para>
+<para>If any other order (e.g. by index or order of appearance) is required, then this should be used. See <ref refid="classwx_data_view_index_list_model" kindref="compound">wxDataViewIndexListModel</ref> for a model which makes use of this. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="300" column="18"/>
+        <location file="interface/wx/dataview.h" line="244" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_data_view_model_1a9da6aa5356297d68f04ba1fd924eaa6e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_data_view_model_1a94cf3ebac6c5ee259a3fa4cf51def987" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
-        <definition>virtual bool wxDataViewModel::HasValue</definition>
+        <definition>bool wxDataViewModel::HasValue</definition>
         <argsstring>(const wxDataViewItem &amp;item, unsigned col) const</argsstring>
         <name>HasValue</name>
         <param>
@@ -455,15 +407,14 @@
 <para>Return true if there is a value in the given column of this item. </para>
         </briefdescription>
         <detaileddescription>
-<para>All normal items have values in all columns but the container items only show their label in the first column (<emphasis>col</emphasis> == 0) by default (but see <ref refid="classwx_data_view_model_1a1c8983afee8875226c2b11500f228ae4" kindref="member">HasContainerColumns()</ref>). So this function by default returns true for the first column while for the other ones it returns true only if the item is not a container or <ref refid="classwx_data_view_model_1a1c8983afee8875226c2b11500f228ae4" kindref="member">HasContainerColumns()</ref> was overridden to return true for it.</para>
-<para>Since wxWidgets 3.1.4, this method is virtual and can be overridden to explicitly specify for which columns a given item has, and doesn&apos;t have, values.</para>
+<para>All normal items have values in all columns but the container items only show their label in the first column (<emphasis>col</emphasis> == 0) by default (but see <ref refid="classwx_data_view_model_1a1c8983afee8875226c2b11500f228ae4" kindref="member">HasContainerColumns()</ref>). So this function always returns true for the first column while for the other ones it returns true only if the item is not a container or <ref refid="classwx_data_view_model_1a1c8983afee8875226c2b11500f228ae4" kindref="member">HasContainerColumns()</ref> was overridden to return true for it.</para>
 <para><simplesect kind="since"><para>2.9.1 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="318" column="18"/>
+        <location file="interface/wx/dataview.h" line="258" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a2c61a09270fdda6720966742f0e4f09c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -481,7 +432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="324" column="18"/>
+        <location file="interface/wx/dataview.h" line="264" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a37f9bf080fb368c6e964dc03aee46e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -503,7 +454,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="329" column="10"/>
+        <location file="interface/wx/dataview.h" line="269" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1abd4be4a8981cceaab024e0f69111e2f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -522,7 +473,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="338" column="10"/>
+        <location file="interface/wx/dataview.h" line="278" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a8bdcc58bf0e606c473ecd06c93ff0812" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -544,7 +495,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="343" column="10"/>
+        <location file="interface/wx/dataview.h" line="283" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a23b737d08f3a2249e7780c4a97e4277d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -566,7 +517,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="349" column="10"/>
+        <location file="interface/wx/dataview.h" line="289" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a9a3c99b9200ed1a72990973df07f4b1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -585,7 +536,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="358" column="10"/>
+        <location file="interface/wx/dataview.h" line="298" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1af472d2e95b0e062045785cab17e72383" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -607,7 +558,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="363" column="10"/>
+        <location file="interface/wx/dataview.h" line="303" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1ae0ce5ec556a84b6fd8612d36b0078d63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -625,7 +576,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="369" column="10"/>
+        <location file="interface/wx/dataview.h" line="309" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a2c2c525bd1617b19f34bc286a638b293" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -639,7 +590,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="374" column="18"/>
+        <location file="interface/wx/dataview.h" line="314" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a136dbef49beb09df1ffe5aa884a9c022" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -663,15 +614,15 @@
         </briefdescription>
         <detaileddescription>
 <para>The most common scenario is that the <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> calls this method after the user changed some data in the view.</para>
-<para>This is the function you need to override in your derived class but if you want to call it, <ref refid="classwx_data_view_model_1ab52b55596d0724047be8cf62184f4468" kindref="member">ChangeValue()</ref> is usually more convenient as otherwise you need to manually call <ref refid="classwx_data_view_model_1afc162ff0230dd026ef99591696cbfb86" kindref="member">ValueChanged()</ref> to update the control itself. </para>
+<para>This is the function you need to override in your derived class but if you want to call it, <ref refid="classwx_data_view_model_1ab52b55596d0724047be8cf62184f4468" kindref="member">ChangeValue()</ref> is usually more convenient as otherwise you need to manually call <ref refid="classwx_data_view_model_1a29418c077b554d0e87d509806fffc67d" kindref="member">ValueChanged()</ref> to update the control itself. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="387" column="18"/>
+        <location file="interface/wx/dataview.h" line="327" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_data_view_model_1afc162ff0230dd026ef99591696cbfb86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_data_view_model_1a29418c077b554d0e87d509806fffc67d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
-        <definition>bool wxDataViewModel::ValueChanged</definition>
+        <definition>virtual bool wxDataViewModel::ValueChanged</definition>
         <argsstring>(const wxDataViewItem &amp;item, unsigned int col)</argsstring>
         <name>ValueChanged</name>
         <param>
@@ -691,7 +642,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="399" column="10"/>
+        <location file="interface/wx/dataview.h" line="339" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a550180cf1a3b529b025c98e0c16b9d85" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -704,7 +655,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="402" column="18"/>
+        <location file="interface/wx/dataview.h" line="343" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_model_1a503f49f7ef8767c208068c320c68783c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -717,7 +668,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="403" column="18"/>
+        <location file="interface/wx/dataview.h" line="344" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -734,53 +685,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="410" column="13"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_data_view_model_1a507515b9595a8a2438e936ee320f6567" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
-        <type>int</type>
-        <definition>virtual int wxDataViewModel::DoCompareValues</definition>
-        <argsstring>(const wxVariant &amp;value1, const wxVariant &amp;value2) const</argsstring>
-        <name>DoCompareValues</name>
-        <param>
-          <type>const <ref refid="classwx_variant" kindref="compound">wxVariant</ref> &amp;</type>
-          <declname>value1</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classwx_variant" kindref="compound">wxVariant</ref> &amp;</type>
-          <declname>value2</declname>
-        </param>
-        <briefdescription>
-<para>Virtual method that can be overridden to define comparison for values of non-standard types. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This function is called from the default <ref refid="classwx_data_view_model_1a2eefab97a9a73e5ff896222d3600c8bb" kindref="member">Compare()</ref> implementation to compare values of types it is not aware about (i.e. not any of the standard ones). As <ref refid="classwx_data_view_model_1a2eefab97a9a73e5ff896222d3600c8bb" kindref="member">Compare()</ref> itself, this method should return a negative value if <emphasis>value1</emphasis> is less than (i.e. should appear above) <emphasis>value2</emphasis> and a positive value if <emphasis>value2</emphasis> is less than <emphasis>value1</emphasis>.</para>
-<para>Unlike <ref refid="classwx_data_view_model_1a2eefab97a9a73e5ff896222d3600c8bb" kindref="member">Compare()</ref>, if the values are equal, this method should just return 0 to indicate it and let <ref refid="classwx_data_view_model_1a2eefab97a9a73e5ff896222d3600c8bb" kindref="member">Compare()</ref> order them by their items values. It also doesn&apos;t have to care about the sort order direction, making it simpler to override than <ref refid="classwx_data_view_model_1a2eefab97a9a73e5ff896222d3600c8bb" kindref="member">Compare()</ref> itself.</para>
-<para>The default implementation just returns 0, so the derived class version can simply forward to it if it doesn&apos;t know how to compare the given values.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_data_view_model_1a2eefab97a9a73e5ff896222d3600c8bb" kindref="member">Compare()</ref></para>
-</simplesect>
-<simplesect kind="since"><para>3.1.1 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/dataview.h" line="435" column="17"/>
+        <location file="interface/wx/dataview.h" line="351" column="13"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_data_view_model" kindref="compound">wxDataViewModel</ref> is the base class for all data model to be displayed by a <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref>. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classwx_data_view_model" kindref="compound">wxDataViewModel</ref> is the base class for all data model to be displayed by a <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref>.</para>
 <para>All other models derive from it and must implement its pure virtual functions in order to define a complete data model. In detail, you need to override <ref refid="classwx_data_view_model_1a2c61a09270fdda6720966742f0e4f09c" kindref="member">wxDataViewModel::IsContainer</ref>, <ref refid="classwx_data_view_model_1a4e12a582dffdc40bf043a48e1c12a9fb" kindref="member">wxDataViewModel::GetParent</ref>, <ref refid="classwx_data_view_model_1a945bbb0523166c6b092af62c7ba7b2ac" kindref="member">wxDataViewModel::GetChildren</ref>, <ref refid="classwx_data_view_model_1adbdf03c45af02bce54d6f979a831e728" kindref="member">wxDataViewModel::GetColumnCount</ref>, <ref refid="classwx_data_view_model_1ae370253a221d44db0c230127404858ab" kindref="member">wxDataViewModel::GetColumnType</ref> and <ref refid="classwx_data_view_model_1a74d9f0ac2dd9935b7132da11c008c67f" kindref="member">wxDataViewModel::GetValue</ref> in order to define the data model which acts as an interface between your actual data and the <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref>.</para>
 <para>Note that <ref refid="classwx_data_view_model" kindref="compound">wxDataViewModel</ref> does not define the position or index of any item in the control because different controls might display the same data differently. <ref refid="classwx_data_view_model" kindref="compound">wxDataViewModel</ref> does provide a <ref refid="classwx_data_view_model_1a2eefab97a9a73e5ff896222d3600c8bb" kindref="member">wxDataViewModel::Compare</ref> method which the <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> may use to sort the data either in conjunction with a column header or without (see <ref refid="classwx_data_view_model_1a909b2f8ec6493dbb8dff5b22f857eda7" kindref="member">wxDataViewModel::HasDefaultCompare</ref>).</para>
 <para><ref refid="classwx_data_view_model" kindref="compound">wxDataViewModel</ref> (as indeed the entire <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> code) is using <ref refid="classwx_variant" kindref="compound">wxVariant</ref> to store data and its type in a generic way. <ref refid="classwx_variant" kindref="compound">wxVariant</ref> can be extended to contain almost any data without changes to the original class. To a certain extent, you can use (the somewhat more elegant) <ref refid="classwx_any" kindref="compound">wxAny</ref> instead of <ref refid="classwx_variant" kindref="compound">wxVariant</ref> as there is code to convert between the two, but it is unclear what impact this will have on performance.</para>
 <para>Since you will usually allow the <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> to change your data through its graphical interface, you will also have to override <ref refid="classwx_data_view_model_1a136dbef49beb09df1ffe5aa884a9c022" kindref="member">wxDataViewModel::SetValue</ref> which the <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> will call when a change to some data has been committed.</para>
 <para>If the data represented by the model is changed by something else than its associated <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref>, the control has to be notified about the change. Depending on what happened you need to call one of the following methods:<itemizedlist>
-<listitem><para><ref refid="classwx_data_view_model_1afc162ff0230dd026ef99591696cbfb86" kindref="member">wxDataViewModel::ValueChanged</ref>,</para>
+<listitem><para><ref refid="classwx_data_view_model_1a29418c077b554d0e87d509806fffc67d" kindref="member">wxDataViewModel::ValueChanged</ref>,</para>
 </listitem><listitem><para><ref refid="classwx_data_view_model_1a37f9bf080fb368c6e964dc03aee46e5c" kindref="member">wxDataViewModel::ItemAdded</ref>,</para>
 </listitem><listitem><para><ref refid="classwx_data_view_model_1a8bdcc58bf0e606c473ecd06c93ff0812" kindref="member">wxDataViewModel::ItemDeleted</ref>,</para>
 </listitem><listitem><para><ref refid="classwx_data_view_model_1abd4be4a8981cceaab024e0f69111e2f2" kindref="member">wxDataViewModel::ItemChanged</ref>,</para>
-</listitem><listitem><para><ref refid="classwx_data_view_model_1ab1ce641ec025c4706f878d569a9516f4" kindref="member">wxDataViewModel::Cleared</ref>.</para>
+</listitem><listitem><para><ref refid="classwx_data_view_model_1ad7f3023ee6166eb6f5bafececb4fff0c" kindref="member">wxDataViewModel::Cleared</ref>.</para>
 </listitem></itemizedlist>
 </para>
 <para>There are plural forms for notification of addition, change or removal of several item at once. See:<itemizedlist>
@@ -789,47 +710,44 @@
 </listitem><listitem><para><ref refid="classwx_data_view_model_1a9a3c99b9200ed1a72990973df07f4b1d" kindref="member">wxDataViewModel::ItemsChanged</ref>.</para>
 </listitem></itemizedlist>
 </para>
-<para>Note that <ref refid="classwx_data_view_model_1ab1ce641ec025c4706f878d569a9516f4" kindref="member">Cleared()</ref> can be called for all changes involving many, or all, of the model items and not only for deleting all of them (i.e. clearing the model).</para>
-<para>This class maintains a list of <ref refid="classwx_data_view_model_notifier" kindref="compound">wxDataViewModelNotifier</ref> which link this class to the specific implementations on the supported platforms so that e.g. calling <ref refid="classwx_data_view_model_1afc162ff0230dd026ef99591696cbfb86" kindref="member">wxDataViewModel::ValueChanged</ref> on this model will just call <ref refid="classwx_data_view_model_notifier_1a0c99e0ae9e1becff0cdedc0a8f3374c4" kindref="member">wxDataViewModelNotifier::ValueChanged</ref> for each notifier that has been added. You can also add your own notifier in order to get informed about any changes to the data in the list model.</para>
+<para>This class maintains a list of <ref refid="classwx_data_view_model_notifier" kindref="compound">wxDataViewModelNotifier</ref> which link this class to the specific implementations on the supported platforms so that e.g. calling <ref refid="classwx_data_view_model_1a29418c077b554d0e87d509806fffc67d" kindref="member">wxDataViewModel::ValueChanged</ref> on this model will just call <ref refid="classwx_data_view_model_notifier_1a0c99e0ae9e1becff0cdedc0a8f3374c4" kindref="member">wxDataViewModelNotifier::ValueChanged</ref> for each notifier that has been added. You can also add your own notifier in order to get informed about any changes to the data in the list model.</para>
 <para>Currently wxWidgets provides the following models apart from the base model: <ref refid="classwx_data_view_index_list_model" kindref="compound">wxDataViewIndexListModel</ref>, <ref refid="classwx_data_view_virtual_list_model" kindref="compound">wxDataViewVirtualListModel</ref>, <ref refid="classwx_data_view_tree_store" kindref="compound">wxDataViewTreeStore</ref>, <ref refid="classwx_data_view_list_store" kindref="compound">wxDataViewListStore</ref>.</para>
 <para>Note that <ref refid="classwx_data_view_model" kindref="compound">wxDataViewModel</ref> is reference counted, derives from <ref refid="classwx_ref_counter" kindref="compound">wxRefCounter</ref> and cannot be deleted directly as it can be shared by several wxDataViewCtrls. This implies that you need to decrease the reference count after associating the model with a control like this:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref><sp/>*musicCtrl<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbba1f375b01ea03a713bbb7e32a36a2589c" kindref="member">wxID_ANY</ref>);</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_data_view_model" kindref="compound">wxDataViewModel</ref><sp/>*musicModel<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyMusicModel;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">musicCtrl-&gt;<ref refid="classwx_data_view_ctrl_1af4b6c168d14814d69875c42ed960108b" kindref="member">AssociateModel</ref>(musicModel);</highlight></codeline>
-<codeline><highlight class="normal">musicModel-&gt;<ref refid="classwx_ref_counter_1a803eb5be907b1a342082ceb59c01d8c5" kindref="member">DecRef</ref>();<sp/><sp/></highlight><highlight class="comment">//<sp/>avoid<sp/>memory<sp/>leak<sp/>!!</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>add<sp/>columns<sp/>now</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxDataViewCtrl<sp/>*musicCtrl<sp/>=<sp/>new<sp/>wxDataViewCtrl(<sp/>this,<sp/>wxID_ANY<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">wxDataViewModel<sp/>*musicModel<sp/>=<sp/>new<sp/>MyMusicModel;</highlight></codeline>
+<codeline><highlight class="normal">m_musicCtrl-&gt;AssociateModel(<sp/>musicModel<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">musicModel-&gt;DecRef();<sp/><sp/>//<sp/>avoid<sp/>memory<sp/>leak<sp/>!!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>add<sp/>columns<sp/>now</highlight></codeline>
 </programlisting></para>
 <para>A potentially better way to avoid memory leaks is to use wxObjectDataPtr</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref><sp/>*musicCtrl<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbba1f375b01ea03a713bbb7e32a36a2589c" kindref="member">wxID_ANY</ref>);</highlight></codeline>
-<codeline><highlight class="normal">wxObjectDataPtr&lt;wxDataViewModel&gt;<sp/>musicModel(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyMusicModel);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">musicCtrl-&gt;<ref refid="classwx_data_view_ctrl_1af4b6c168d14814d69875c42ed960108b" kindref="member">AssociateModel</ref>(musicModel.get());</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>add<sp/>columns<sp/>now</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxObjectDataPtr&lt;MyMusicModel&gt;<sp/>musicModel;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxDataViewCtrl<sp/>*musicCtrl<sp/>=<sp/>new<sp/>wxDataViewCtrl(<sp/>this,<sp/>wxID_ANY<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">musicModel<sp/>=<sp/>new<sp/>MyMusicModel;</highlight></codeline>
+<codeline><highlight class="normal">m_musicCtrl-&gt;AssociateModel(<sp/>musicModel.get()<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>add<sp/>columns<sp/>now</highlight></codeline>
 </programlisting></para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxadv" kindref="member">wxAdvanced</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="4">
-        <label>wxDataViewIndexListModel</label>
-        <link refid="classwx_data_view_index_list_model"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>wxDataViewListModel</label>
-        <link refid="classwx_data_view_list_model"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="5">
         <label>wxDataViewListStore</label>
         <link refid="classwx_data_view_list_store"/>
         <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxRefCounter</label>
+        <link refid="classwx_ref_counter"/>
+      </node>
+      <node id="4">
+        <label>wxDataViewIndexListModel</label>
+        <link refid="classwx_data_view_index_list_model"/>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
@@ -850,31 +768,32 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>wxDataViewListModel</label>
+        <link refid="classwx_data_view_list_model"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>wxRefCounter</label>
         <link refid="classwx_ref_counter"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="1">
         <label>wxDataViewModel</label>
         <link refid="classwx_data_view_model"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>wxRefCounter</label>
-        <link refid="classwx_ref_counter"/>
-      </node>
     </collaborationgraph>
-    <location file="interface/wx/dataview.h" line="100" column="1" bodyfile="interface/wx/dataview.h" bodystart="101" bodyend="437"/>
+    <location file="interface/wx/dataview.h" line="97" column="1" bodyfile="interface/wx/dataview.h" bodystart="96" bodyend="352"/>
     <listofallmembers>
       <member refid="classwx_data_view_model_1af975c0a3afb970a21b9691a92f44c6c8" prot="public" virt="non-virtual"><scope>wxDataViewModel</scope><name>AddNotifier</name></member>
       <member refid="classwx_data_view_model_1ab52b55596d0724047be8cf62184f4468" prot="public" virt="non-virtual"><scope>wxDataViewModel</scope><name>ChangeValue</name></member>
-      <member refid="classwx_data_view_model_1ab1ce641ec025c4706f878d569a9516f4" prot="public" virt="non-virtual"><scope>wxDataViewModel</scope><name>Cleared</name></member>
+      <member refid="classwx_data_view_model_1ad7f3023ee6166eb6f5bafececb4fff0c" prot="public" virt="virtual"><scope>wxDataViewModel</scope><name>Cleared</name></member>
       <member refid="classwx_data_view_model_1a2eefab97a9a73e5ff896222d3600c8bb" prot="public" virt="virtual"><scope>wxDataViewModel</scope><name>Compare</name></member>
       <member refid="classwx_ref_counter_1a803eb5be907b1a342082ceb59c01d8c5" prot="public" virt="non-virtual"><scope>wxDataViewModel</scope><name>DecRef</name></member>
-      <member refid="classwx_data_view_model_1a507515b9595a8a2438e936ee320f6567" prot="protected" virt="virtual"><scope>wxDataViewModel</scope><name>DoCompareValues</name></member>
       <member refid="classwx_data_view_model_1a28b85b9aca3a1ea803940817d86b0b73" prot="public" virt="virtual"><scope>wxDataViewModel</scope><name>GetAttr</name></member>
       <member refid="classwx_data_view_model_1a945bbb0523166c6b092af62c7ba7b2ac" prot="public" virt="pure-virtual"><scope>wxDataViewModel</scope><name>GetChildren</name></member>
       <member refid="classwx_data_view_model_1adbdf03c45af02bce54d6f979a831e728" prot="public" virt="pure-virtual"><scope>wxDataViewModel</scope><name>GetColumnCount</name></member>
@@ -884,7 +803,7 @@
       <member refid="classwx_data_view_model_1a74d9f0ac2dd9935b7132da11c008c67f" prot="public" virt="pure-virtual"><scope>wxDataViewModel</scope><name>GetValue</name></member>
       <member refid="classwx_data_view_model_1a1c8983afee8875226c2b11500f228ae4" prot="public" virt="virtual"><scope>wxDataViewModel</scope><name>HasContainerColumns</name></member>
       <member refid="classwx_data_view_model_1a909b2f8ec6493dbb8dff5b22f857eda7" prot="public" virt="virtual"><scope>wxDataViewModel</scope><name>HasDefaultCompare</name></member>
-      <member refid="classwx_data_view_model_1a9da6aa5356297d68f04ba1fd924eaa6e" prot="public" virt="virtual"><scope>wxDataViewModel</scope><name>HasValue</name></member>
+      <member refid="classwx_data_view_model_1a94cf3ebac6c5ee259a3fa4cf51def987" prot="public" virt="non-virtual"><scope>wxDataViewModel</scope><name>HasValue</name></member>
       <member refid="classwx_ref_counter_1a9fec1fb6f778d9df7a8c046ad6a2d887" prot="public" virt="non-virtual"><scope>wxDataViewModel</scope><name>IncRef</name></member>
       <member refid="classwx_data_view_model_1a2c61a09270fdda6720966742f0e4f09c" prot="public" virt="pure-virtual"><scope>wxDataViewModel</scope><name>IsContainer</name></member>
       <member refid="classwx_data_view_model_1a561564e63f8c975b4241ad5be74e6965" prot="public" virt="virtual"><scope>wxDataViewModel</scope><name>IsEnabled</name></member>
@@ -899,7 +818,7 @@
       <member refid="classwx_data_view_model_1ae0ce5ec556a84b6fd8612d36b0078d63" prot="public" virt="non-virtual"><scope>wxDataViewModel</scope><name>RemoveNotifier</name></member>
       <member refid="classwx_data_view_model_1a2c2c525bd1617b19f34bc286a638b293" prot="public" virt="virtual"><scope>wxDataViewModel</scope><name>Resort</name></member>
       <member refid="classwx_data_view_model_1a136dbef49beb09df1ffe5aa884a9c022" prot="public" virt="pure-virtual"><scope>wxDataViewModel</scope><name>SetValue</name></member>
-      <member refid="classwx_data_view_model_1afc162ff0230dd026ef99591696cbfb86" prot="public" virt="non-virtual"><scope>wxDataViewModel</scope><name>ValueChanged</name></member>
+      <member refid="classwx_data_view_model_1a29418c077b554d0e87d509806fffc67d" prot="public" virt="virtual"><scope>wxDataViewModel</scope><name>ValueChanged</name></member>
       <member refid="classwx_data_view_model_1a0a14db629af262fad0d4044959e85a11" prot="public" virt="non-virtual"><scope>wxDataViewModel</scope><name>wxDataViewModel</name></member>
       <member refid="classwx_ref_counter_1aebcddb8241dfea7f60f8e4df6776a0e3" prot="public" virt="non-virtual"><scope>wxDataViewModel</scope><name>wxRefCounter</name></member>
       <member refid="classwx_data_view_model_1a9bd6ba637b1ff7130acda86527c10862" prot="protected" virt="virtual"><scope>wxDataViewModel</scope><name>~wxDataViewModel</name></member>

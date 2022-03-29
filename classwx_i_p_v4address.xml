@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_i_p_v4address" kind="class" language="C++" prot="public">
     <compoundname>wxIPV4address</compoundname>
     <basecompoundref refid="classwx_i_paddress" prot="public" virt="non-virtual">wxIPaddress</basecompoundref>
@@ -149,14 +149,18 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A class for working with IPv4 network addresses. </para>
     </briefdescription>
     <detaileddescription>
+<para>A class for working with IPv4 network addresses.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxnet" kindref="member">wxNet</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="4">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
       <node id="1">
         <label>wxIPV4address</label>
         <link refid="classwx_i_p_v4address"/>
@@ -168,10 +172,6 @@
         <link refid="classwx_i_paddress"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="4">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
       </node>
       <node id="3">
         <label>wxSockAddress</label>
@@ -181,6 +181,13 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="4">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>m_refData</edgelabel>
+        </childnode>
+      </node>
       <node id="1">
         <label>wxIPV4address</label>
         <link refid="classwx_i_p_v4address"/>
@@ -193,36 +200,29 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-        <childnode refid="5" relation="usage">
-          <edgelabel>m_refData</edgelabel>
-        </childnode>
-      </node>
-      <node id="5">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
-      </node>
       <node id="3">
         <label>wxSockAddress</label>
         <link refid="classwx_sock_address"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="5">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/socket.h" line="118" column="1" bodyfile="interface/wx/socket.h" bodystart="119" bodyend="180"/>
+    <location file="interface/wx/socket.h" line="119" column="1" bodyfile="interface/wx/socket.h" bodystart="118" bodyend="180"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxIPV4address</scope><name>AllocExclusive</name></member>
       <member refid="classwx_i_p_v4address_1a0dc33ef2c107ea8be0adb4682857d6bd" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>AnyAddress</name></member>
       <member refid="classwx_i_paddress_1a84d58d990e0931616c6842ce103e2000" prot="public" virt="pure-virtual"><scope>wxIPV4address</scope><name>BroadcastAddress</name></member>
       <member refid="classwx_sock_address_1a1a51e9dabf2728940da1e75a918b4360" prot="public" virt="virtual"><scope>wxIPV4address</scope><name>Clear</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxIPV4address</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxIPV4address</scope><name>CreateRefData</name></member>
-      <member refid="classwx_sock_address_1a77aca3f9b9ee1fed1de86309d79ab975" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>GetAddressData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxIPV4address</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxIPV4address</scope><name>CreateRefData</name></member>
+      <member refid="classwx_sock_address_1ace19aed630df59c76d3926077d2fd8da" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>GetAddressData</name></member>
       <member refid="classwx_sock_address_1a44626cc0d264fd8db37491b75f8449a0" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>GetAddressDataLen</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxIPV4address</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxIPV4address</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>GetRefData</name></member>
       <member refid="classwx_i_p_v4address_1a6a24909f394dc8f315ebbbfe398c9d64" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>Hostname</name></member>
       <member refid="classwx_i_p_v4address_1a2b197a03721435545ace251e3965d133" prot="public" virt="virtual"><scope>wxIPV4address</scope><name>Hostname</name></member>
       <member refid="classwx_i_p_v4address_1a49c5a446eca9d3894394a2d84d8263f1" prot="public" virt="virtual"><scope>wxIPV4address</scope><name>IPAddress</name></member>
@@ -232,7 +232,7 @@
       <member refid="classwx_i_p_v4address_1a13f8cc6fcb211617ee15d9e1b4debc42" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>LocalHost</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxIPV4address</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>Ref</name></member>
       <member refid="classwx_i_p_v4address_1afd8784300624fe06e57cf35835529b36" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>Service</name></member>
       <member refid="classwx_i_p_v4address_1a3833c1ce1a49de08c5a906410a8bb4e3" prot="public" virt="non-virtual"><scope>wxIPV4address</scope><name>Service</name></member>

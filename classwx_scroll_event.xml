@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_scroll_event" kind="class" language="C++" prot="public">
     <compoundname>wxScrollEvent</compoundname>
     <basecompoundref refid="classwx_command_event" prot="public" virt="non-virtual">wxCommandEvent</basecompoundref>
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3797" column="5"/>
+        <location file="interface/wx/event.h" line="3622" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scroll_event_1a8be98254dc58119e1e08d819034f86a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -51,7 +51,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3804" column="9"/>
+        <location file="interface/wx/event.h" line="3629" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scroll_event_1a84e3dd8a0a47dbe0d49d55442900f495" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3809" column="9"/>
+        <location file="interface/wx/event.h" line="3634" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scroll_event_1acbe59c387a80ef7b98f9c0f2308e7ab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3812" column="10"/>
+        <location file="interface/wx/event.h" line="3637" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scroll_event_1a89ec1c45caac5f2548ad7875124e5a6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -99,19 +99,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3813" column="10"/>
+        <location file="interface/wx/event.h" line="3638" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A scroll event holds information about events sent from stand-alone scrollbars (see <ref refid="classwx_scroll_bar" kindref="compound">wxScrollBar</ref>) and sliders (see <ref refid="classwx_slider" kindref="compound">wxSlider</ref>). </para>
     </briefdescription>
     <detaileddescription>
+<para>A scroll event holds information about events sent from stand-alone scrollbars (see <ref refid="classwx_scroll_bar" kindref="compound">wxScrollBar</ref>) and sliders (see <ref refid="classwx_slider" kindref="compound">wxSlider</ref>).</para>
 <para>Note that scrolled windows send the <ref refid="classwx_scroll_win_event" kindref="compound">wxScrollWinEvent</ref> which does not derive from <ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>, but from <ref refid="classwx_event" kindref="compound">wxEvent</ref> directly - don&apos;t confuse these two kinds of events and use the event table macros mentioned below only for the scrollbar-like controls.</para>
 <sect1 id="classwx_scroll_event_1scrollevent_diff">
 <title>The difference between EVT_SCROLL_THUMBRELEASE and EVT_SCROLL_CHANGED</title>
 <para>The EVT_SCROLL_THUMBRELEASE event is only emitted when actually dragging the thumb using the mouse and releasing it (This EVT_SCROLL_THUMBRELEASE event is also followed by an EVT_SCROLL_CHANGED event).</para>
 <para>The EVT_SCROLL_CHANGED event also occurs when using the keyboard to change the thumb position, and when clicking next to the thumb (In all these cases the EVT_SCROLL_THUMBRELEASE event does not happen).</para>
-<para>In short, the EVT_SCROLL_CHANGED event is triggered when scrolling/ moving has finished independently of the way it had started. Please see the <ref refid="page_samples_1page_samples_widgets" kindref="member">Widgets Sample</ref> (&quot;Slider&quot; page) to see the difference between EVT_SCROLL_THUMBRELEASE and EVT_SCROLL_CHANGED in action.</para>
+<para>In short, the EVT_SCROLL_CHANGED event is triggered when scrolling/ moving has finished independently of the way it had started. Please see the widgets sample (&quot;Slider&quot; page) to see the difference between EVT_SCROLL_THUMBRELEASE and EVT_SCROLL_CHANGED in action.</para>
 <para><simplesect kind="remark"><para>Note that unless specifying a scroll control identifier, you will need to test for scrollbar orientation with <ref refid="classwx_scroll_event_1a8be98254dc58119e1e08d819034f86a2" kindref="member">wxScrollEvent::GetOrientation</ref>, since horizontal and vertical scroll events are processed using the same event handler.</para>
 </simplesect>
 <linebreak/>
@@ -169,18 +169,6 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
 </sect1>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxCommandEvent</label>
-        <link refid="classwx_command_event"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>wxEvent</label>
-        <link refid="classwx_event"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="4">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -191,8 +179,6 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="2">
         <label>wxCommandEvent</label>
         <link refid="classwx_command_event"/>
@@ -205,6 +191,8 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="4">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -212,36 +200,48 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="5">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
-      </node>
       <node id="1">
         <label>wxScrollEvent</label>
         <link refid="classwx_scroll_event"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="2">
+        <label>wxCommandEvent</label>
+        <link refid="classwx_command_event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="3791" column="1" bodyfile="interface/wx/event.h" bodystart="3792" bodyend="3814"/>
+    <location file="interface/wx/event.h" line="3617" column="1" bodyfile="interface/wx/event.h" bodystart="3616" bodyend="3639"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxScrollEvent</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxScrollEvent</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxScrollEvent</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxScrollEvent</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxScrollEvent</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_command_event_1a3d41eef5b753ff2fd0b822bd1e0c6af9" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetClientData</name></member>
-      <member refid="classwx_command_event_1a48e7b34762b82cdc9d1b5d58d1e6a17f" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetClientObject</name></member>
+      <member refid="classwx_event_1a26878097a702e8d0368da150125d4158" prot="public" virt="pure-virtual"><scope>wxScrollEvent</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxScrollEvent</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxScrollEvent</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxScrollEvent</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_command_event_1a85c77819c73081dab3a43bfd2fe02e6a" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetClientData</name></member>
+      <member refid="classwx_command_event_1adab474dc431edb70a05f470ba1b18b08" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetClientObject</name></member>
       <member refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131" prot="public" virt="virtual"><scope>wxScrollEvent</scope><name>GetEventCategory</name></member>
-      <member refid="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetEventObject</name></member>
+      <member refid="classwx_event_1a424a4ffaaaf95164d8952ef9ab2ef444" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetEventObject</name></member>
       <member refid="classwx_event_1a01c89719ef6241a6e612a313a259c1c2" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetEventType</name></member>
-      <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetEventUserData</name></member>
+      <member refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetEventUserData</name></member>
       <member refid="classwx_command_event_1abdba7c3e93f0dbf99f5382e60e7a461a" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetExtraLong</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetId</name></member>
       <member refid="classwx_command_event_1a24ad2aab26646c762ca3092a7ffd5ccd" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetInt</name></member>
       <member refid="classwx_scroll_event_1a8be98254dc58119e1e08d819034f86a2" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetOrientation</name></member>
       <member refid="classwx_scroll_event_1a84e3dd8a0a47dbe0d49d55442900f495" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetPosition</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetRefData</name></member>
       <member refid="classwx_command_event_1a93609c04b8fd7001259efb5d65645fe6" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetSelection</name></member>
       <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetSkipped</name></member>
       <member refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>GetString</name></member>
@@ -254,7 +254,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" virt="non-virtual"><scope>wxScrollEvent</scope><name>m_propagationLevel</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxScrollEvent</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>Ref</name></member>
       <member refid="classwx_event_1a0acb5c75f6e67b8822ad8ba3c5bdc4fe" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>ResumePropagation</name></member>
       <member refid="classwx_command_event_1a1778d16766134e08cafcdb49b06855ce" prot="public" virt="non-virtual"><scope>wxScrollEvent</scope><name>SetClientData</name></member>

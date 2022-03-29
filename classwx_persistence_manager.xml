@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_persistence_manager" kind="class" language="C++" prot="public">
     <compoundname>wxPersistenceManager</compoundname>
     <includes local="no">wx/persist.h</includes>
@@ -26,9 +26,9 @@
         </inbodydescription>
         <location file="interface/wx/persist.h" line="39" column="17"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_persistence_manager_1a4a6a946bdd6dc862fb66db774a4b9de7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_persistence_manager_1a1d594b5905ef1c7a11ccadf348325f5b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_persistence_manager" kindref="compound">wxPersistenceManager</ref> &amp;</type>
-        <definition>static wxPersistenceManager &amp; wxPersistenceManager::Get</definition>
+        <definition>static wxPersistenceManager&amp; wxPersistenceManager::Get</definition>
         <argsstring>()</argsstring>
         <name>Get</name>
         <briefdescription>
@@ -70,7 +70,7 @@
 <para>Globally disable restoring the persistence object properties. </para>
         </briefdescription>
         <detaileddescription>
-<para>By default, restoring properties in <ref refid="classwx_persistence_manager_1a932d8f5cf981aed723f79d1923f67aed" kindref="member">Restore()</ref> is enabled but this function allows disabling it. This is mostly useful for testing.</para>
+<para>By default, restoring properties in <ref refid="classwx_persistence_manager_1a932d8f5cf981aed723f79d1923f67aed" kindref="member">Restore()</ref> is enabled but this function allows to disable it. This is mostly useful for testing.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_persistence_manager_1a4183a42f9dfbd223c363c2879b85d137" kindref="member">DisableSaving()</ref> </para>
 </simplesect>
 </para>
@@ -79,14 +79,14 @@
         </inbodydescription>
         <location file="interface/wx/persist.h" line="69" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_persistence_manager_1a2573798843d1eaadeec097df836e182e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_persistence_manager_1a0163b3f81fd0187dc35774de09679777" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
           </param>
         </templateparamlist>
         <type><ref refid="classwx_persistent_object" kindref="compound">wxPersistentObject</ref> *</type>
-        <definition>wxPersistentObject * wxPersistenceManager::Register</definition>
+        <definition>wxPersistentObject* wxPersistenceManager::Register</definition>
         <argsstring>(T *obj)</argsstring>
         <name>Register</name>
         <param>
@@ -97,13 +97,13 @@
 <para>Register an object with the manager automatically creating a persistence adapter for it. </para>
         </briefdescription>
         <detaileddescription>
-<para>This is equivalent to calling <ref refid="classwx_persistence_manager_1ac34c8e512fa7cef9d011d8df5809cfee" kindref="member">Register(void *, wxPersistentObject *)</ref> with wxCreatePersistentObject(obj) as the second argument.</para>
+<para>This is equivalent to calling <ref refid="classwx_persistence_manager_1a48a010ae8b64a84a58ba5ab8b8b9e836" kindref="member">Register(void *, wxPersistentObject *)</ref> with wxCreatePersistentObject(obj) as the second argument.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>obj</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The object to register. <ref refid="persist_8h_1ad80ef91e22893e60106a0acd55c6aa9f" kindref="member">wxCreatePersistentObject()</ref> overload must be defined for the objects of this class. </para>
+<para>The object to register. <ref refid="interface_2wx_2persist_2bookctrl_8h_1a8b21681a5cb6009c8acb05f474ca1899" kindref="member">wxCreatePersistentObject()</ref> overload must be defined for the objects of this class. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -113,9 +113,9 @@
         </inbodydescription>
         <location file="interface/wx/persist.h" line="84" column="24"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_persistence_manager_1ac34c8e512fa7cef9d011d8df5809cfee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_persistence_manager_1a48a010ae8b64a84a58ba5ab8b8b9e836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_persistent_object" kindref="compound">wxPersistentObject</ref> *</type>
-        <definition>wxPersistentObject * wxPersistenceManager::Register</definition>
+        <definition>wxPersistentObject* wxPersistenceManager::Register</definition>
         <argsstring>(void *obj, wxPersistentObject *po)</argsstring>
         <name>Register</name>
         <param>
@@ -155,9 +155,9 @@
         </inbodydescription>
         <location file="interface/wx/persist.h" line="102" column="24"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_persistence_manager_1a832fcd53e5d4ddfd31bc3334ccb5e1d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_persistence_manager_1a19f16951190b7a74d85026d58cdd3582" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_persistent_object" kindref="compound">wxPersistentObject</ref> *</type>
-        <definition>wxPersistentObject * wxPersistenceManager::Find</definition>
+        <definition>wxPersistentObject* wxPersistenceManager::Find</definition>
         <argsstring>(void *obj) const</argsstring>
         <name>Find</name>
         <param>
@@ -192,7 +192,7 @@
 <parametername>obj</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An object previously registered with <ref refid="classwx_persistence_manager_1a2573798843d1eaadeec097df836e182e" kindref="member">Register()</ref>. </para>
+<para>An object previously registered with <ref refid="classwx_persistence_manager_1a0163b3f81fd0187dc35774de09679777" kindref="member">Register()</ref>. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -221,7 +221,7 @@
 <parametername>obj</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An object previously registered with <ref refid="classwx_persistence_manager_1a2573798843d1eaadeec097df836e182e" kindref="member">Register()</ref>.</para>
+<para>An object previously registered with <ref refid="classwx_persistence_manager_1a0163b3f81fd0187dc35774de09679777" kindref="member">Register()</ref>.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -252,7 +252,7 @@
 <parametername>obj</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An object previously registered with <ref refid="classwx_persistence_manager_1a2573798843d1eaadeec097df836e182e" kindref="member">Register()</ref>. </para>
+<para>An object previously registered with <ref refid="classwx_persistence_manager_1a0163b3f81fd0187dc35774de09679777" kindref="member">Register()</ref>. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -299,7 +299,7 @@
           <declname>obj</declname>
         </param>
         <briefdescription>
-<para>Combines both <ref refid="classwx_persistence_manager_1a2573798843d1eaadeec097df836e182e" kindref="member">Register()</ref> and <ref refid="classwx_persistence_manager_1a932d8f5cf981aed723f79d1923f67aed" kindref="member">Restore()</ref> calls. </para>
+<para>Combines both <ref refid="classwx_persistence_manager_1a0163b3f81fd0187dc35774de09679777" kindref="member">Register()</ref> and <ref refid="classwx_persistence_manager_1a932d8f5cf981aed723f79d1923f67aed" kindref="member">Restore()</ref> calls. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -339,22 +339,22 @@
 <para>Protected default constructor. </para>
         </briefdescription>
         <detaileddescription>
-<para>This constructor is only provided for the derived classes, to use an object of this class static <ref refid="classwx_persistence_manager_1a4a6a946bdd6dc862fb66db774a4b9de7" kindref="member">Get()</ref> method should be called. </para>
+<para>This constructor is only provided for the derived classes, to use an object of this class static <ref refid="classwx_persistence_manager_1a1d594b5905ef1c7a11ccadf348325f5b" kindref="member">Get()</ref> method should be called. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/persist.h" line="170" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_persistence_manager_1a85d3300029a422a18cb6d437dc15612e" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_persistence_manager_1a2510b6a740e5083b4cdfa93af43010ec" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_config_base" kindref="compound">wxConfigBase</ref> *</type>
-        <definition>virtual wxConfigBase * wxPersistenceManager::GetConfig</definition>
+        <definition>virtual wxConfigBase* wxPersistenceManager::GetConfig</definition>
         <argsstring>() const</argsstring>
         <name>GetConfig</name>
         <briefdescription>
 <para>Return the config object to use. </para>
         </briefdescription>
         <detaileddescription>
-<para>By default the global wxConfig, returned by wxConfigBase::Get(), is used but a derived class could override this function to return a different one if necessary.</para>
+<para>By default the global wxConfig, returned by <ref refid="classwx_config_base_1a61bfb04c1c133190b3e851b252ed1c60" kindref="member">wxConfigBase::Get()</ref>, is used but a derived class could override this function to return a different one if necessary.</para>
 <para><simplesect kind="since"><para>2.9.3 </para>
 </simplesect>
 </para>
@@ -396,23 +396,23 @@
     </briefdescription>
     <detaileddescription>
 <para>This class is the central element of wxWidgets persistence framework, see <ref refid="overview_persistence" kindref="compound">Persistent Objects Overview</ref> for its overview.</para>
-<para>This is a singleton class and its unique instance can be retrieved using <ref refid="classwx_persistence_manager_1a4a6a946bdd6dc862fb66db774a4b9de7" kindref="member">Get()</ref> method.</para>
+<para>This is a singleton class and its unique instance can be retrieved using <ref refid="classwx_persistence_manager_1a1d594b5905ef1c7a11ccadf348325f5b" kindref="member">Get()</ref> method.</para>
 <para><simplesect kind="since"><para>2.9.0</para>
 </simplesect>
 <heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> </para>
     </detaileddescription>
-    <location file="interface/wx/persist.h" line="23" column="1" bodyfile="interface/wx/persist.h" bodystart="24" bodyend="202"/>
+    <location file="interface/wx/persist.h" line="24" column="1" bodyfile="interface/wx/persist.h" bodystart="23" bodyend="202"/>
     <listofallmembers>
       <member refid="classwx_persistence_manager_1aea41f3b4c596f7bc90f43e888faac93b" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>DisableRestoring</name></member>
       <member refid="classwx_persistence_manager_1a4183a42f9dfbd223c363c2879b85d137" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>DisableSaving</name></member>
-      <member refid="classwx_persistence_manager_1a832fcd53e5d4ddfd31bc3334ccb5e1d9" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>Find</name></member>
-      <member refid="classwx_persistence_manager_1a4a6a946bdd6dc862fb66db774a4b9de7" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>Get</name></member>
-      <member refid="classwx_persistence_manager_1a85d3300029a422a18cb6d437dc15612e" prot="protected" virt="virtual"><scope>wxPersistenceManager</scope><name>GetConfig</name></member>
+      <member refid="classwx_persistence_manager_1a19f16951190b7a74d85026d58cdd3582" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>Find</name></member>
+      <member refid="classwx_persistence_manager_1a1d594b5905ef1c7a11ccadf348325f5b" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>Get</name></member>
+      <member refid="classwx_persistence_manager_1a2510b6a740e5083b4cdfa93af43010ec" prot="protected" virt="virtual"><scope>wxPersistenceManager</scope><name>GetConfig</name></member>
       <member refid="classwx_persistence_manager_1a67520629fa60ed569dd6e7489c47417a" prot="protected" virt="virtual"><scope>wxPersistenceManager</scope><name>GetKey</name></member>
-      <member refid="classwx_persistence_manager_1a2573798843d1eaadeec097df836e182e" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>Register</name></member>
-      <member refid="classwx_persistence_manager_1ac34c8e512fa7cef9d011d8df5809cfee" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>Register</name></member>
+      <member refid="classwx_persistence_manager_1a0163b3f81fd0187dc35774de09679777" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>Register</name></member>
+      <member refid="classwx_persistence_manager_1a48a010ae8b64a84a58ba5ab8b8b9e836" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>Register</name></member>
       <member refid="classwx_persistence_manager_1a2d90794f76e46b357bcffc01be657f94" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>RegisterAndRestore</name></member>
       <member refid="classwx_persistence_manager_1ac0a4d5858a69cd6db22e5ab75e5e9298" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>RegisterAndRestore</name></member>
       <member refid="classwx_persistence_manager_1a932d8f5cf981aed723f79d1923f67aed" prot="public" virt="non-virtual"><scope>wxPersistenceManager</scope><name>Restore</name></member>

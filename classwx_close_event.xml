@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_close_event" kind="class" language="C++" prot="public">
     <compoundname>wxCloseEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4473" column="5"/>
+        <location file="interface/wx/event.h" line="4053" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_close_event_1acb23de85447edb56bf806cc382f311ec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4480" column="10"/>
+        <location file="interface/wx/event.h" line="4060" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_close_event_1ac366162fc32083e502090a9d75c4bf16" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4487" column="10"/>
+        <location file="interface/wx/event.h" line="4067" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_close_event_1a25150c209983febf02b80a6f93dfc6ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4492" column="10"/>
+        <location file="interface/wx/event.h" line="4072" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_close_event_1af8059e703d942f5962a0b2f6dedc3bd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4497" column="10"/>
+        <location file="interface/wx/event.h" line="4077" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_close_event_1a0ec337c77613d5d8407831cd64e16417" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4505" column="10"/>
+        <location file="interface/wx/event.h" line="4085" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_close_event_1a35320f500ee6c929198ef94534227a64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -127,33 +127,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4510" column="10"/>
+        <location file="interface/wx/event.h" line="4090" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This event class contains information about window and session close events. </para>
     </briefdescription>
     <detaileddescription>
+<para>This event class contains information about window and session close events.</para>
 <para>The handler function for EVT_CLOSE is called when the user has tried to close a a frame or dialog box using the window manager (X) or system menu (Windows). It can also be invoked by the application itself programmatically, for example by calling the <ref refid="classwx_window_1a3e44f4a494fc9ef4346c4fba70c8de0c" kindref="member">wxWindow::Close</ref> function.</para>
 <para>You should check whether the application is forcing the deletion of the window using <ref refid="classwx_close_event_1acb23de85447edb56bf806cc382f311ec" kindref="member">wxCloseEvent::CanVeto</ref>. If this is false, you <emphasis>must</emphasis> destroy the window using <ref refid="classwx_window_1a6bf0c5be864544d9ce0560087667b7fc" kindref="member">wxWindow::Destroy</ref>.</para>
 <para>If the return value is true, it is up to you whether you respond by destroying the window.</para>
 <para>If you don&apos;t destroy the window, you should call <ref refid="classwx_close_event_1a0ec337c77613d5d8407831cd64e16417" kindref="member">wxCloseEvent::Veto</ref> to let the calling code know that you did not destroy the window. This allows the <ref refid="classwx_window_1a3e44f4a494fc9ef4346c4fba70c8de0c" kindref="member">wxWindow::Close</ref> function to return true or false depending on whether the close instruction was honoured or not.</para>
 <para>Example of a <ref refid="classwx_close_event" kindref="compound">wxCloseEvent</ref> handler:</para>
-<para><programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyFrame::OnClose(<ref refid="classwx_close_event" kindref="compound">wxCloseEvent</ref>&amp;<sp/>event)</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">void<sp/>MyFrame::OnClose(wxCloseEvent&amp;<sp/>event)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>event.<ref refid="classwx_close_event_1acb23de85447edb56bf806cc382f311ec" kindref="member">CanVeto</ref>()<sp/>&amp;&amp;<sp/>m_bFileNotSaved<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(<sp/>event.CanVeto()<sp/>&amp;&amp;<sp/>m_bFileNotSaved<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="msgdlg_8h_1a193c64ed4802e379799cdb42de252647" kindref="member">wxMessageBox</ref>(</highlight><highlight class="stringliteral">&quot;The<sp/>file<sp/>has<sp/>not<sp/>been<sp/>saved...<sp/>continue<sp/>closing?&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Please<sp/>confirm&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="defs_8h_1a01d0612a961327f6038a91e5f94fa44a" kindref="member">wxICON_QUESTION</ref><sp/>|<sp/><ref refid="defs_8h_1a5ba00a09cea0417a2ef7c4a4c2b0012c" kindref="member">wxYES_NO</ref>)<sp/>!=<sp/><ref refid="defs_8h_1ab38ccd9aa8aa47f9df32a75c96bb3000" kindref="member">wxYES</ref><sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>wxMessageBox(&quot;The<sp/>file<sp/>has<sp/>not<sp/>been<sp/>saved...<sp/>continue<sp/>closing?&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Please<sp/>confirm&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxICON_QUESTION<sp/>|<sp/>wxYES_NO)<sp/>!=<sp/>wxYES<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Veto();</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.Veto();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Destroy();<sp/><sp/></highlight><highlight class="comment">//<sp/>you<sp/>may<sp/>also<sp/>do:<sp/><sp/>event.Skip();</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>since<sp/>the<sp/>default<sp/>event<sp/>handler<sp/>does<sp/>call<sp/>Destroy(),<sp/>too</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Destroy();<sp/><sp/>//<sp/>you<sp/>may<sp/>also<sp/>do:<sp/><sp/>event.Skip();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>since<sp/>the<sp/>default<sp/>event<sp/>handler<sp/>does<sp/>call<sp/>Destroy(),<sp/>too</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>The EVT_END_SESSION event is slightly different as it is sent by the system when the user session is ending (e.g. because of log out or shutdown) and so all windows are being forcefully closed. At least under MSW, after the handler for this event is executed the program is simply killed by the system. Because of this, the default handler for this event provided by wxWidgets calls all the usual cleanup code (including <ref refid="classwx_app_console_1a5ee60051c92b0b2933258799626a0485" kindref="member">wxApp::OnExit()</ref>) so that it could still be executed and exit()s the process itself, without waiting for being killed. If this behaviour is for some reason undesirable, make sure that you define a handler for this event in your wxApp-derived class and do not call <computeroutput>event.Skip()</computeroutput> in it (but be aware that the system will still kill your application).</para>
@@ -177,24 +177,10 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxCloseEvent</label>
-        <link refid="classwx_close_event"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxEvent</label>
-        <link refid="classwx_event"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="1">
         <label>wxCloseEvent</label>
         <link refid="classwx_close_event"/>
@@ -207,6 +193,8 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -214,26 +202,38 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxCloseEvent</label>
+        <link refid="classwx_close_event"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxEvent</label>
+        <link refid="classwx_event"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="4467" column="1" bodyfile="interface/wx/event.h" bodystart="4468" bodyend="4511"/>
+    <location file="interface/wx/event.h" line="4048" column="1" bodyfile="interface/wx/event.h" bodystart="4047" bodyend="4091"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxCloseEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_close_event_1acb23de85447edb56bf806cc382f311ec" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>CanVeto</name></member>
-      <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxCloseEvent</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxCloseEvent</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxCloseEvent</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxCloseEvent</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_event_1a26878097a702e8d0368da150125d4158" prot="public" virt="pure-virtual"><scope>wxCloseEvent</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxCloseEvent</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxCloseEvent</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxCloseEvent</scope><name>GetClassInfo</name></member>
       <member refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131" prot="public" virt="virtual"><scope>wxCloseEvent</scope><name>GetEventCategory</name></member>
-      <member refid="classwx_event_1a1ed12f8a9b61af6a76c6746cb8acfeae" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetEventObject</name></member>
+      <member refid="classwx_event_1a424a4ffaaaf95164d8952ef9ab2ef444" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetEventObject</name></member>
       <member refid="classwx_event_1a01c89719ef6241a6e612a313a259c1c2" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetEventType</name></member>
-      <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetEventUserData</name></member>
+      <member refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetEventUserData</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetId</name></member>
       <member refid="classwx_close_event_1ac366162fc32083e502090a9d75c4bf16" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetLoggingOff</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetRefData</name></member>
       <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetSkipped</name></member>
       <member refid="classwx_event_1a48662230971127737d2500cef7be549d" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetTimestamp</name></member>
       <member refid="classwx_close_event_1a35320f500ee6c929198ef94534227a64" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>GetVeto</name></member>
@@ -243,7 +243,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_event_1ac81911194f1f59e1454c0397b87975d4" prot="protected" virt="non-virtual"><scope>wxCloseEvent</scope><name>m_propagationLevel</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxCloseEvent</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>Ref</name></member>
       <member refid="classwx_event_1a0acb5c75f6e67b8822ad8ba3c5bdc4fe" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>ResumePropagation</name></member>
       <member refid="classwx_close_event_1a25150c209983febf02b80a6f93dfc6ba" prot="public" virt="non-virtual"><scope>wxCloseEvent</scope><name>SetCanVeto</name></member>

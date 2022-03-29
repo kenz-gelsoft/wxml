@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_clipboard" kind="class" language="C++" prot="public">
     <compoundname>wxClipboard</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="74" column="5"/>
+        <location file="interface/wx/clipbrd.h" line="67" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1a385b85405a761cc65956f6b479003bbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="79" column="13"/>
+        <location file="interface/wx/clipbrd.h" line="72" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1ae226633489bee0881839e5332fca714f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="86" column="18"/>
+        <location file="interface/wx/clipbrd.h" line="79" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1adf8ae31ddd1081f79951b4a782b84db1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="92" column="18"/>
+        <location file="interface/wx/clipbrd.h" line="85" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1afe9ac8bdb2af7c20cf68d36d460ac4fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="98" column="18"/>
+        <location file="interface/wx/clipbrd.h" line="91" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1a10997196ffd3b2cf8d823033f291f932" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -89,16 +89,14 @@
 <para>Flushes the clipboard: this means that the data which is currently on clipboard will stay available even after the application exits (possibly eating memory), otherwise the clipboard will be emptied on exit. </para>
         </briefdescription>
         <detaileddescription>
-<para>Currently this method is implemented in MSW and GTK and always returns false otherwise.</para>
-<para><simplesect kind="note"><para>On GTK, only the non-primary selection can be flushed. Calling this function when the clipboard is using the primary selection will return false and not make any data available after the program exits.</para>
-</simplesect>
-<simplesect kind="return"><para>false if the operation is unsuccessful for any reason. </para>
+<para>Currently this method is not implemented in X11-based ports, i.e. wxGTK, wxX11 and wxMotif and always returns false there.</para>
+<para><simplesect kind="return"><para>false if the operation is unsuccessful for any reason. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="115" column="18"/>
+        <location file="interface/wx/clipbrd.h" line="104" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1af9edcd205c3749a317bd6b1e8a5716cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -117,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="121" column="18"/>
+        <location file="interface/wx/clipbrd.h" line="110" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1ab18cfdeb2e139cfb0e87811cd133b744" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -131,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="126" column="18"/>
+        <location file="interface/wx/clipbrd.h" line="115" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1a6c56dbf02b1807ce61cac8134a534336" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -146,12 +144,12 @@
 <para>Returns true if there is data which matches the data format of the given data object currently <bold>available</bold> on the clipboard. </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="todo_1_todo000010"><xreftitle>Todo</xreftitle><xrefdescription><para>The name of this function is misleading. This should be renamed to something that more accurately indicates what it does. </para>
+<para><xrefsect id="todo_1_todo000011"><xreftitle>Todo</xreftitle><xrefdescription><para>The name of this function is misleading. This should be renamed to something that more accurately indicates what it does. </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="135" column="18"/>
+        <location file="interface/wx/clipbrd.h" line="124" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1a6f814afdfebeba1399667ae008515b30" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -168,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="143" column="10"/>
+        <location file="interface/wx/clipbrd.h" line="132" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1a27dd0b1a54a368c9a786c8616eac667d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -186,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="155" column="18"/>
+        <location file="interface/wx/clipbrd.h" line="144" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1afae7236718f30437c15709a911d4bab6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -206,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="170" column="18"/>
+        <location file="interface/wx/clipbrd.h" line="159" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_clipboard_1aec2787c528e42791547a424e647b9dc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -223,17 +221,17 @@
         </briefdescription>
         <detaileddescription>
 <para>When this function is called with true, all subsequent clipboard operations will use PRIMARY selection until this function is called again with false.</para>
-<para>On the other platforms, there is no PRIMARY selection and so all clipboard operations will fail. This allows implementing the standard X11 handling of the clipboard which consists in copying data to the CLIPBOARD selection only when the user explicitly requests it (i.e. by selecting the &quot;Copy&quot; menu command) but putting the currently selected text into the PRIMARY selection automatically, without overwriting the normal clipboard contents with the currently selected text on the other platforms. </para>
+<para>On the other platforms, there is no PRIMARY selection and so all clipboard operations will fail. This allows to implement the standard X11 handling of the clipboard which consists in copying data to the CLIPBOARD selection only when the user explicitly requests it (i.e. by selecting the &quot;Copy&quot; menu command) but putting the currently selected text into the PRIMARY selection automatically, without overwriting the normal clipboard contents with the currently selected text on the other platforms. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="187" column="18"/>
+        <location file="interface/wx/clipbrd.h" line="176" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classwx_clipboard_1a6f3a1f27cd3de59bfafd538827bc89a8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_clipboard_1a33bc66920c219c39100c2556326282b1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_clipboard" kindref="compound">wxClipboard</ref> *</type>
-        <definition>static wxClipboard * wxClipboard::Get</definition>
+        <definition>static wxClipboard* wxClipboard::Get</definition>
         <argsstring>()</argsstring>
         <name>Get</name>
         <briefdescription>
@@ -243,41 +241,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/clipbrd.h" line="192" column="24"/>
+        <location file="interface/wx/clipbrd.h" line="181" column="24"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A class for manipulating the clipboard. </para>
     </briefdescription>
     <detaileddescription>
+<para>A class for manipulating the clipboard.</para>
 <para>To use the clipboard, you call member functions of the global <ref refid="clipbrd_8h_1a7981f5d50a36729858d8356aac6e77eb" kindref="member">wxTheClipboard</ref> object.</para>
 <para>See the <ref refid="overview_dataobject" kindref="compound">wxDataObject Overview</ref> for further information.</para>
 <para>Call <ref refid="classwx_clipboard_1a27dd0b1a54a368c9a786c8616eac667d" kindref="member">wxClipboard::Open()</ref> to get ownership of the clipboard. If this operation returns true, you now own the clipboard. Call <ref refid="classwx_clipboard_1afae7236718f30437c15709a911d4bab6" kindref="member">wxClipboard::SetData()</ref> to put data on the clipboard, or <ref refid="classwx_clipboard_1af9edcd205c3749a317bd6b1e8a5716cc" kindref="member">wxClipboard::GetData()</ref> to retrieve data from the clipboard. Call <ref refid="classwx_clipboard_1afe9ac8bdb2af7c20cf68d36d460ac4fe" kindref="member">wxClipboard::Close()</ref> to close the clipboard and relinquish ownership. You should keep the clipboard open only momentarily.</para>
 <para>For example:</para>
-<para><programlisting><codeline><highlight class="comment">//<sp/>Write<sp/>some<sp/>text<sp/>to<sp/>the<sp/>clipboard</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="clipbrd_8h_1a7981f5d50a36729858d8356aac6e77eb" kindref="member">wxTheClipboard</ref>-&gt;Open())</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//<sp/>Write<sp/>some<sp/>text<sp/>to<sp/>the<sp/>clipboard</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(wxTheClipboard-&gt;Open())</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>data<sp/>objects<sp/>are<sp/>held<sp/>by<sp/>the<sp/>clipboard,</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>do<sp/>not<sp/>delete<sp/>them<sp/>in<sp/>the<sp/>app.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="clipbrd_8h_1a7981f5d50a36729858d8356aac6e77eb" kindref="member">wxTheClipboard</ref>-&gt;SetData(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_text_data_object" kindref="compound">wxTextDataObject</ref>(</highlight><highlight class="stringliteral">&quot;Some<sp/>text&quot;</highlight><highlight class="normal">)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="clipbrd_8h_1a7981f5d50a36729858d8356aac6e77eb" kindref="member">wxTheClipboard</ref>-&gt;Close();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>This<sp/>data<sp/>objects<sp/>are<sp/>held<sp/>by<sp/>the<sp/>clipboard,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>so<sp/>do<sp/>not<sp/>delete<sp/>them<sp/>in<sp/>the<sp/>app.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxTheClipboard-&gt;SetData(<sp/>new<sp/>wxTextDataObject(&quot;Some<sp/>text&quot;)<sp/>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxTheClipboard-&gt;Close();</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Read<sp/>some<sp/>text</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="clipbrd_8h_1a7981f5d50a36729858d8356aac6e77eb" kindref="member">wxTheClipboard</ref>-&gt;Open())</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Read<sp/>some<sp/>text</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(wxTheClipboard-&gt;Open())</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="clipbrd_8h_1a7981f5d50a36729858d8356aac6e77eb" kindref="member">wxTheClipboard</ref>-&gt;IsSupported(<sp/><ref refid="defs_8h_1a263109c79f708754bf656c7768b27047ac72dfba09ea736965c1c9c52acdb857a" kindref="member">wxDF_TEXT</ref><sp/>))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(wxTheClipboard-&gt;IsSupported(<sp/>wxDF_TEXT<sp/>))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_text_data_object" kindref="compound">wxTextDataObject</ref><sp/>data;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="clipbrd_8h_1a7981f5d50a36729858d8356aac6e77eb" kindref="member">wxTheClipboard</ref>-&gt;GetData(<sp/>data<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="msgdlg_8h_1a193c64ed4802e379799cdb42de252647" kindref="member">wxMessageBox</ref>(<sp/>data.<ref refid="classwx_text_data_object_1a7dcbc7745b8cc16cdaedd3bddc40a7fb" kindref="member">GetText</ref>()<sp/>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxTextDataObject<sp/>data;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxTheClipboard-&gt;GetData(<sp/>data<sp/>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxMessageBox(<sp/>data.GetText()<sp/>);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="clipbrd_8h_1a7981f5d50a36729858d8356aac6e77eb" kindref="member">wxTheClipboard</ref>-&gt;Close();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxTheClipboard-&gt;Close();</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
-<para><simplesect kind="note"><para>On GTK, the clipboard behavior can vary depending on the configuration of the end-user&apos;s machine. In order for the clipboard data to persist after the window closes, a clipboard manager must be installed. Some clipboard managers will automatically flush the clipboard after each new piece of data is added, while others will not. The <ref refid="classwx_clipboard_1a10997196ffd3b2cf8d823033f291f932" kindref="member">Flush()</ref> function will force the clipboard manager to flush the data.</para>
-</simplesect>
-<heading level="2"></heading>
+<para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
 <para><simplesect kind="see"><para><ref refid="overview_dnd" kindref="compound">Drag and Drop Overview</ref>, <ref refid="overview_dataobject" kindref="compound">wxDataObject Overview</ref>, <ref refid="classwx_data_object" kindref="compound">wxDataObject</ref> </para>
@@ -315,19 +311,19 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/clipbrd.h" line="68" column="1" bodyfile="interface/wx/clipbrd.h" bodystart="69" bodyend="194"/>
+    <location file="interface/wx/clipbrd.h" line="62" column="1" bodyfile="interface/wx/clipbrd.h" bodystart="61" bodyend="183"/>
     <listofallmembers>
       <member refid="classwx_clipboard_1ae226633489bee0881839e5332fca714f" prot="public" virt="virtual"><scope>wxClipboard</scope><name>AddData</name></member>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxClipboard</scope><name>AllocExclusive</name></member>
       <member refid="classwx_clipboard_1adf8ae31ddd1081f79951b4a782b84db1" prot="public" virt="virtual"><scope>wxClipboard</scope><name>Clear</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxClipboard</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxClipboard</scope><name>CloneRefData</name></member>
       <member refid="classwx_clipboard_1afe9ac8bdb2af7c20cf68d36d460ac4fe" prot="public" virt="virtual"><scope>wxClipboard</scope><name>Close</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxClipboard</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxClipboard</scope><name>CreateRefData</name></member>
       <member refid="classwx_clipboard_1a10997196ffd3b2cf8d823033f291f932" prot="public" virt="virtual"><scope>wxClipboard</scope><name>Flush</name></member>
-      <member refid="classwx_clipboard_1a6f3a1f27cd3de59bfafd538827bc89a8" prot="public" virt="non-virtual"><scope>wxClipboard</scope><name>Get</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxClipboard</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_clipboard_1a33bc66920c219c39100c2556326282b1" prot="public" virt="non-virtual"><scope>wxClipboard</scope><name>Get</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxClipboard</scope><name>GetClassInfo</name></member>
       <member refid="classwx_clipboard_1af9edcd205c3749a317bd6b1e8a5716cc" prot="public" virt="virtual"><scope>wxClipboard</scope><name>GetData</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxClipboard</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxClipboard</scope><name>GetRefData</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxClipboard</scope><name>IsKindOf</name></member>
       <member refid="classwx_clipboard_1ab18cfdeb2e139cfb0e87811cd133b744" prot="public" virt="virtual"><scope>wxClipboard</scope><name>IsOpened</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxClipboard</scope><name>IsSameAs</name></member>
@@ -336,7 +332,7 @@
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxClipboard</scope><name>m_refData</name></member>
       <member refid="classwx_clipboard_1a27dd0b1a54a368c9a786c8616eac667d" prot="public" virt="virtual"><scope>wxClipboard</scope><name>Open</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxClipboard</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxClipboard</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxClipboard</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxClipboard</scope><name>Ref</name></member>
       <member refid="classwx_clipboard_1afae7236718f30437c15709a911d4bab6" prot="public" virt="virtual"><scope>wxClipboard</scope><name>SetData</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxClipboard</scope><name>SetRefData</name></member>

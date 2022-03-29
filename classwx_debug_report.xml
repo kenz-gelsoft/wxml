@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_debug_report" kind="class" language="C++" prot="public">
     <compoundname>wxDebugReport</compoundname>
     <derivedcompoundref refid="classwx_debug_report_compress" prot="public" virt="non-virtual">wxDebugReportCompress</derivedcompoundref>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debugrpt.h" line="159" column="5" bodyfile="interface/wx/debugrpt.h" bodystart="159" bodyend="162"/>
+        <location file="interface/wx/debugrpt.h" line="159" column="17" bodyfile="interface/wx/debugrpt.h" bodystart="159" bodyend="162"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -193,9 +193,9 @@
 <para>Add another file to the report. </para>
         </briefdescription>
         <detaileddescription>
-<para>If <emphasis>filename</emphasis> is an absolute path, it is copied to a file in the debug report directory with the same name. Otherwise the file will be searched in the temporary directory returned by <ref refid="classwx_debug_report_1a7feee2a3e4bae5b206dfc17ef792ffee" kindref="member">GetDirectory()</ref>.</para>
+<para>If <emphasis>filename</emphasis> is an absolute path, it is copied to a file in the debug report directory with the same name. Otherwise the file will be searched in the temporary directory returned by <ref refid="classwx_debug_report_1a9b07b96a3747f7aa3dbff81b77297298" kindref="member">GetDirectory()</ref>.</para>
 <para>The argument <emphasis>description</emphasis> only exists to be displayed to the user in the report summary shown by <ref refid="classwx_debug_report_preview" kindref="compound">wxDebugReportPreview</ref>.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_debug_report_1a7feee2a3e4bae5b206dfc17ef792ffee" kindref="member">GetDirectory()</ref>, <ref refid="classwx_debug_report_1a6573bf401d5a7d2ba4d5bc17f6dba480" kindref="member">AddText()</ref> </para>
+<para><simplesect kind="see"><para><ref refid="classwx_debug_report_1a9b07b96a3747f7aa3dbff81b77297298" kindref="member">GetDirectory()</ref>, <ref refid="classwx_debug_report_1a6573bf401d5a7d2ba4d5bc17f6dba480" kindref="member">AddText()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -233,9 +233,9 @@
         </inbodydescription>
         <location file="interface/wx/debugrpt.h" line="240" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_debug_report_1a7feee2a3e4bae5b206dfc17ef792ffee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_debug_report_1a9b07b96a3747f7aa3dbff81b77297298" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
-        <definition>const wxString &amp; wxDebugReport::GetDirectory</definition>
+        <definition>const wxString&amp; wxDebugReport::GetDirectory</definition>
         <argsstring>() const</argsstring>
         <name>GetDirectory</name>
         <briefdescription>
@@ -268,7 +268,7 @@
           <declname>desc</declname>
         </param>
         <briefdescription>
-<para>Retrieves the name (relative to <ref refid="classwx_debug_report_1a7feee2a3e4bae5b206dfc17ef792ffee" kindref="member">GetDirectory()</ref>) and the description of the file with the given index. </para>
+<para>Retrieves the name (relative to <ref refid="classwx_debug_report_1a9b07b96a3747f7aa3dbff81b77297298" kindref="member">GetDirectory()</ref>) and the description of the file with the given index. </para>
         </briefdescription>
         <detaileddescription>
 <para>If <emphasis>n</emphasis> is greater than or equal to the number of files, then false is returned. </para>
@@ -445,27 +445,32 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_debug_report" kindref="compound">wxDebugReport</ref> is used to generate a debug report, containing information about the program current state. </para>
     </briefdescription>
     <detaileddescription>
-<para>It is usually used from <ref refid="classwx_app_console_1a927931aafbb7aec4debdfc02ee6f6f9d" kindref="member">wxApp::OnFatalException()</ref> as shown in the <ref refid="page_samples_1page_samples_debugrpt" kindref="member">Debug Reporter Sample</ref>.</para>
+<para><ref refid="classwx_debug_report" kindref="compound">wxDebugReport</ref> is used to generate a debug report, containing information about the program current state. It is usually used from <ref refid="classwx_app_console_1a927931aafbb7aec4debdfc02ee6f6f9d" kindref="member">wxApp::OnFatalException()</ref> as shown in the <ref refid="page_samples_1page_samples_debugrpt" kindref="member">Debug Reporter Sample</ref>.</para>
 <para>A <ref refid="classwx_debug_report" kindref="compound">wxDebugReport</ref> object contains one or more files. A few of them can be created by the class itself but more can be created from the outside and then added to the report. Also note that several virtual functions may be overridden to further customize the class behaviour.</para>
 <para>Once a report is fully assembled, it can simply be left in the temporary directory so that the user can email it to the developers (in which case you should still use <ref refid="classwx_debug_report_compress" kindref="compound">wxDebugReportCompress</ref> to compress it in a single file) or uploaded to a Web server using <ref refid="classwx_debug_report_upload" kindref="compound">wxDebugReportUpload</ref> (setting up the Web server to accept uploads is your responsibility, of course). Other handlers, for example for automatically emailing the report, can be defined as well but are not currently included in wxWidgets.</para>
 <para>A typical usage example:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_debug_report" kindref="compound">wxDebugReport</ref><sp/>report;</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_debug_report_preview_std" kindref="compound">wxDebugReportPreviewStd</ref><sp/>preview;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">report.<ref refid="classwx_debug_report_1a239a2a49a7e951fcffc40c05f3cd0ab2" kindref="member">AddCurrentContext</ref>();<sp/><sp/></highlight><highlight class="comment">//<sp/>could<sp/>also<sp/>use<sp/>AddAll()</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">report.<ref refid="classwx_debug_report_1aea719d012f378d470c75183339b3c542" kindref="member">AddCurrentDump</ref>();<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>do<sp/>both<sp/>at<sp/>once</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>preview.<ref refid="classwx_debug_report_preview_std_1adea223b68bbb23a2f64e9ae062ebbcfd" kindref="member">Show</ref>(report)<sp/>)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>report.<ref refid="classwx_debug_report_1a3ec35bb65b88aac386a399b27ef940a5" kindref="member">Process</ref>();</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxDebugReport<sp/>report;</highlight></codeline>
+<codeline><highlight class="normal">wxDebugReportPreviewStd<sp/>preview;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">report.AddCurrentContext();<sp/><sp/>//<sp/>could<sp/>also<sp/>use<sp/>AddAll()</highlight></codeline>
+<codeline><highlight class="normal">report.AddCurrentDump();<sp/><sp/><sp/><sp/><sp/>//<sp/>to<sp/>do<sp/>both<sp/>at<sp/>once</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">if<sp/>(<sp/>preview.Show(report)<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>report.Process();</highlight></codeline>
 </programlisting></para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxqa" kindref="member">wxQA</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>wxDebugReportUpload</label>
+        <link refid="classwx_debug_report_upload"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="1">
         <label>wxDebugReport</label>
         <link refid="classwx_debug_report"/>
@@ -476,14 +481,8 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>wxDebugReportUpload</label>
-        <link refid="classwx_debug_report_upload"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
     </inheritancegraph>
-    <location file="interface/wx/debugrpt.h" line="152" column="1" bodyfile="interface/wx/debugrpt.h" bodystart="153" bodyend="321"/>
+    <location file="interface/wx/debugrpt.h" line="153" column="1" bodyfile="interface/wx/debugrpt.h" bodystart="152" bodyend="321"/>
     <listofallmembers>
       <member refid="classwx_debug_report_1aeec28b7b39294cdb29a5f4da252cc18b" prot="public" virt="non-virtual"><scope>wxDebugReport</scope><name>AddAll</name></member>
       <member refid="classwx_debug_report_1a8f54f2a1a052a7e33d10a5deb0b1037f" prot="public" virt="virtual"><scope>wxDebugReport</scope><name>AddContext</name></member>
@@ -501,7 +500,7 @@
       <member refid="classwx_debug_report_1ab3c7d9e2329a70fd86ad91237d6efdee" prot="protected" virt="virtual"><scope>wxDebugReport</scope><name>DoAddExceptionInfo</name></member>
       <member refid="classwx_debug_report_1a07639b262106766a4a860a358b5ed814" prot="protected" virt="virtual"><scope>wxDebugReport</scope><name>DoAddLoadedModules</name></member>
       <member refid="classwx_debug_report_1a11a2815019fcaa50dffe53c21f5b121f" prot="protected" virt="virtual"><scope>wxDebugReport</scope><name>DoAddSystemInfo</name></member>
-      <member refid="classwx_debug_report_1a7feee2a3e4bae5b206dfc17ef792ffee" prot="public" virt="non-virtual"><scope>wxDebugReport</scope><name>GetDirectory</name></member>
+      <member refid="classwx_debug_report_1a9b07b96a3747f7aa3dbff81b77297298" prot="public" virt="non-virtual"><scope>wxDebugReport</scope><name>GetDirectory</name></member>
       <member refid="classwx_debug_report_1a7c5e6af02d7416551e3c9e6428f3efdb" prot="public" virt="non-virtual"><scope>wxDebugReport</scope><name>GetFile</name></member>
       <member refid="classwx_debug_report_1af2c388b39b1bc16b90615775b434b07a" prot="public" virt="non-virtual"><scope>wxDebugReport</scope><name>GetFilesCount</name></member>
       <member refid="classwx_debug_report_1ac35c5d4c408be26a244e86c4ce1484ab" prot="public" virt="virtual"><scope>wxDebugReport</scope><name>GetReportName</name></member>

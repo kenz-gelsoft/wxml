@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_graphics_object" kind="class" language="C++" prot="public">
     <compoundname>wxGraphicsObject</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -12,9 +12,9 @@
     <derivedcompoundref refid="classwx_graphics_pen" prot="public" virt="non-virtual">wxGraphicsPen</derivedcompoundref>
     <includes local="no">wx/graphics.h</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classwx_graphics_object_1a0c39cbf592f20ac90b3718d399210e1e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_graphics_object_1a7b43981ec6a6502c8112edb4d8020f8b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_graphics_renderer" kindref="compound">wxGraphicsRenderer</ref> *</type>
-        <definition>wxGraphicsRenderer * wxGraphicsObject::GetRenderer</definition>
+        <definition>wxGraphicsRenderer* wxGraphicsObject::GetRenderer</definition>
         <argsstring>() const</argsstring>
         <name>GetRenderer</name>
         <briefdescription>
@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="235" column="24"/>
+        <location file="interface/wx/graphics.h" line="194" column="24"/>
       </memberdef>
       <memberdef kind="function" id="classwx_graphics_object_1a217fe7a511a2a20f4a39089329e5b6e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -40,14 +40,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/graphics.h" line="240" column="10"/>
+        <location file="interface/wx/graphics.h" line="199" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class is the superclass of native graphics objects like pens etc. </para>
     </briefdescription>
     <detaileddescription>
-<para>It allows reference counting. Not instantiated by user code.</para>
+<para>This class is the superclass of native graphics objects like pens etc. It allows reference counting. Not instantiated by user code.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
@@ -56,9 +55,13 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>wxGraphicsBitmap</label>
-        <link refid="classwx_graphics_bitmap"/>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
+      <node id="9">
+        <label>wxGraphicsPen</label>
+        <link refid="classwx_graphics_pen"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -68,16 +71,28 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="6">
+        <label>wxGraphicsFont</label>
+        <link refid="classwx_graphics_font"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxGraphicsBitmap</label>
+        <link refid="classwx_graphics_bitmap"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="5">
         <label>wxGraphicsContext</label>
         <link refid="classwx_graphics_context"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
-        <label>wxGraphicsFont</label>
-        <link refid="classwx_graphics_font"/>
-        <childnode refid="1" relation="public-inheritance">
+      <node id="1">
+        <label>wxGraphicsObject</label>
+        <link refid="classwx_graphics_object"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="7">
@@ -86,36 +101,14 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>wxGraphicsObject</label>
-        <link refid="classwx_graphics_object"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="8">
         <label>wxGraphicsPath</label>
         <link refid="classwx_graphics_path"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="9">
-        <label>wxGraphicsPen</label>
-        <link refid="classwx_graphics_pen"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-      </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1">
-        <label>wxGraphicsObject</label>
-        <link refid="classwx_graphics_object"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -123,25 +116,31 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxGraphicsObject</label>
+        <link refid="classwx_graphics_object"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/graphics.h" line="228" column="1" bodyfile="interface/wx/graphics.h" bodystart="229" bodyend="241"/>
+    <location file="interface/wx/graphics.h" line="188" column="1" bodyfile="interface/wx/graphics.h" bodystart="187" bodyend="200"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxGraphicsObject</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxGraphicsObject</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxGraphicsObject</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxGraphicsObject</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>GetRefData</name></member>
-      <member refid="classwx_graphics_object_1a0c39cbf592f20ac90b3718d399210e1e" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>GetRenderer</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxGraphicsObject</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxGraphicsObject</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxGraphicsObject</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>GetRefData</name></member>
+      <member refid="classwx_graphics_object_1a7b43981ec6a6502c8112edb4d8020f8b" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>GetRenderer</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>IsKindOf</name></member>
       <member refid="classwx_graphics_object_1a217fe7a511a2a20f4a39089329e5b6e5" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>IsNull</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxGraphicsObject</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>Ref</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>SetRefData</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxGraphicsObject</scope><name>UnRef</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_font_mapper" kind="class" language="C++" prot="public">
     <compoundname>wxFontMapper</compoundname>
     <includes local="no">wx/fontmap.h</includes>
@@ -13,7 +13,7 @@
 <para>Default ctor. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>The preferred way of creating a <ref refid="classwx_font_mapper" kindref="compound">wxFontMapper</ref> instance is to call <ref refid="classwx_font_mapper_1ae0718e57b4e91c1b2f38cac352c0a9d5" kindref="member">wxFontMapper::Get()</ref>. </para>
+<para><simplesect kind="note"><para>The preferred way of creating a <ref refid="classwx_font_mapper" kindref="compound">wxFontMapper</ref> instance is to call <ref refid="classwx_font_mapper_1a2bd9e7f8c2c6808c4508ed05e9f1cfe5" kindref="member">wxFontMapper::Get()</ref>. </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -204,9 +204,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classwx_font_mapper_1ae0718e57b4e91c1b2f38cac352c0a9d5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_mapper_1a2bd9e7f8c2c6808c4508ed05e9f1cfe5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_mapper" kindref="compound">wxFontMapper</ref> *</type>
-        <definition>static wxFontMapper * wxFontMapper::Get</definition>
+        <definition>static wxFontMapper* wxFontMapper::Get</definition>
         <argsstring>()</argsstring>
         <name>Get</name>
         <briefdescription>
@@ -214,7 +214,7 @@
         </briefdescription>
         <detaileddescription>
 <para>If there is no current object, creates one.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_font_mapper_1a41b0051189bfe57f3fabde0f42c5635c" kindref="member">Set()</ref> </para>
+<para><simplesect kind="see"><para><ref refid="classwx_font_mapper_1a08ed527234d2cd470019f492a19d9cc3" kindref="member">Set()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -222,9 +222,9 @@
         </inbodydescription>
         <location file="interface/wx/fontmap.h" line="95" column="25"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_mapper_1a675d6b1fcaf7e845c17059c44922bb44" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_mapper_1af52ac5ceb2482193c7f473f1011271ce" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref> **</type>
-        <definition>static const wxChar ** wxFontMapper::GetAllEncodingNames</definition>
+        <definition>static const wxChar** wxFontMapper::GetAllEncodingNames</definition>
         <argsstring>(wxFontEncoding encoding)</argsstring>
         <name>GetAllEncodingNames</name>
         <param>
@@ -333,9 +333,9 @@
         </inbodydescription>
         <location file="interface/wx/fontmap.h" line="163" column="19"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_font_mapper_1a41b0051189bfe57f3fabde0f42c5635c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_font_mapper_1a08ed527234d2cd470019f492a19d9cc3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_font_mapper" kindref="compound">wxFontMapper</ref> *</type>
-        <definition>static wxFontMapper * wxFontMapper::Set</definition>
+        <definition>static wxFontMapper* wxFontMapper::Set</definition>
         <argsstring>(wxFontMapper *mapper)</argsstring>
         <name>Set</name>
         <param>
@@ -347,7 +347,7 @@
         </briefdescription>
         <detaileddescription>
 <para>This method is only useful if you want to plug-in an alternative font mapper into wxWidgets.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_font_mapper_1ae0718e57b4e91c1b2f38cac352c0a9d5" kindref="member">Get()</ref> </para>
+<para><simplesect kind="see"><para><ref refid="classwx_font_mapper_1a2bd9e7f8c2c6808c4508ed05e9f1cfe5" kindref="member">Get()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -357,27 +357,27 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_font_mapper" kindref="compound">wxFontMapper</ref> manages user-definable correspondence between logical font names and the fonts present on the machine. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classwx_font_mapper" kindref="compound">wxFontMapper</ref> manages user-definable correspondence between logical font names and the fonts present on the machine.</para>
 <para>The default implementations of all functions will ask the user if they are not capable of finding the answer themselves and store the answer in a config file (configurable via SetConfigXXX functions). This behaviour may be disabled by giving the value of false to &quot;interactive&quot; parameter.</para>
 <para>However, the functions will always consult the config file to allow the user-defined values override the default logic and there is no way to disable this - which shouldn&apos;t be ever needed because if &quot;interactive&quot; was never true, the config file is never created anyhow.</para>
 <para>In case everything else fails (i.e. there is no record in config file and &quot;interactive&quot; is false or user denied to choose any replacement), the class queries <ref refid="classwx_encoding_converter" kindref="compound">wxEncodingConverter</ref> for &quot;equivalent&quot; encodings (e.g. iso8859-2 and cp1250) and tries them.</para>
 <sect1 id="classwx_font_mapper_1fontmapper_mbconv">
 <title>Using wxFontMapper in conjunction with wxMBConv classes</title>
 <para>If you need to display text in encoding which is not available at host system (see <ref refid="classwx_font_mapper_1ab5c09ab2aab7641ca85f3c711b7c700b" kindref="member">wxFontMapper::IsEncodingAvailable</ref>), you may use these two classes to find font in some similar encoding (see <ref refid="classwx_font_mapper_1afdf9308df8aaf1afc53f5fc7731cf38a" kindref="member">wxFontMapper::GetAltForEncoding</ref>) and convert the text to this encoding (<ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> classes). Following code snippet demonstrates it:</para>
-<para><programlisting><codeline><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classwx_font_mapper_1ae0718e57b4e91c1b2f38cac352c0a9d5" kindref="member">wxFontMapper::Get</ref>()-&gt;<ref refid="classwx_font_mapper_1ab5c09ab2aab7641ca85f3c711b7c700b" kindref="member">IsEncodingAvailable</ref>(enc,<sp/>facename))</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">if<sp/>(!wxFontMapper::Get()-&gt;IsEncodingAvailable(enc,<sp/>facename))</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2font_8h_1a09016a7497d1ec6defdf13fd6439acca" kindref="member">wxFontEncoding</ref><sp/>alternative;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classwx_font_mapper_1ae0718e57b4e91c1b2f38cac352c0a9d5" kindref="member">wxFontMapper::Get</ref>()-&gt;<ref refid="classwx_font_mapper_1afdf9308df8aaf1afc53f5fc7731cf38a" kindref="member">GetAltForEncoding</ref>(enc,<sp/>&amp;alternative,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>facename,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxFontEncoding<sp/>alternative;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(wxFontMapper::Get()-&gt;GetAltForEncoding(enc,<sp/>&amp;alternative,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>facename,<sp/>false))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_c_s_conv" kindref="compound">wxCSConv</ref><sp/>convFrom(<ref refid="classwx_font_mapper_1ae0718e57b4e91c1b2f38cac352c0a9d5" kindref="member">wxFontMapper::Get</ref>()-&gt;<ref refid="classwx_font_mapper_1a92839194dfb366558dc80f8c28d89b68" kindref="member">GetEncodingName</ref>(enc));</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_c_s_conv" kindref="compound">wxCSConv</ref><sp/>convTo(<ref refid="classwx_font_mapper_1ae0718e57b4e91c1b2f38cac352c0a9d5" kindref="member">wxFontMapper::Get</ref>()-&gt;<ref refid="classwx_font_mapper_1a92839194dfb366558dc80f8c28d89b68" kindref="member">GetEncodingName</ref>(alternative));</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text<sp/>=<sp/><ref refid="classwx_string" kindref="compound">wxString</ref>(text.mb_str(convFrom),<sp/>convTo);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxCSConv<sp/>convFrom(wxFontMapper::Get()-&gt;GetEncodingName(enc));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxCSConv<sp/>convTo(wxFontMapper::Get()-&gt;GetEncodingName(alternative));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text<sp/>=<sp/>wxString(text.mb_str(convFrom),<sp/>convTo);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...failure<sp/>(or<sp/>we<sp/>may<sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>iso8859-1/7bit<sp/>ASCII)...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...failure<sp/>(or<sp/>we<sp/>may<sp/>try<sp/>iso8859-1/7bit<sp/>ASCII)...</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal">...display<sp/>text...</highlight></codeline>
 </programlisting></para>
@@ -389,11 +389,11 @@
 </para>
 </sect1>
     </detaileddescription>
-    <location file="interface/wx/fontmap.h" line="60" column="1" bodyfile="interface/wx/fontmap.h" bodystart="61" bodyend="195"/>
+    <location file="interface/wx/fontmap.h" line="61" column="1" bodyfile="interface/wx/fontmap.h" bodystart="60" bodyend="195"/>
     <listofallmembers>
       <member refid="classwx_font_mapper_1a5c812a32c4477b0f507026d9939e4d29" prot="public" virt="virtual"><scope>wxFontMapper</scope><name>CharsetToEncoding</name></member>
-      <member refid="classwx_font_mapper_1ae0718e57b4e91c1b2f38cac352c0a9d5" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>Get</name></member>
-      <member refid="classwx_font_mapper_1a675d6b1fcaf7e845c17059c44922bb44" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>GetAllEncodingNames</name></member>
+      <member refid="classwx_font_mapper_1a2bd9e7f8c2c6808c4508ed05e9f1cfe5" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>Get</name></member>
+      <member refid="classwx_font_mapper_1af52ac5ceb2482193c7f473f1011271ce" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>GetAllEncodingNames</name></member>
       <member refid="classwx_font_mapper_1afdf9308df8aaf1afc53f5fc7731cf38a" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>GetAltForEncoding</name></member>
       <member refid="classwx_font_mapper_1a9da8deb093a74bd4c061c6811c253f98" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>GetAltForEncoding</name></member>
       <member refid="classwx_font_mapper_1ac4a62f1b70e490871b81041f8615c42a" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>GetEncoding</name></member>
@@ -402,7 +402,7 @@
       <member refid="classwx_font_mapper_1a92839194dfb366558dc80f8c28d89b68" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>GetEncodingName</name></member>
       <member refid="classwx_font_mapper_1a49c41e77de4bb68d8ceb2c22d182a819" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>GetSupportedEncodingsCount</name></member>
       <member refid="classwx_font_mapper_1ab5c09ab2aab7641ca85f3c711b7c700b" prot="public" virt="virtual"><scope>wxFontMapper</scope><name>IsEncodingAvailable</name></member>
-      <member refid="classwx_font_mapper_1a41b0051189bfe57f3fabde0f42c5635c" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>Set</name></member>
+      <member refid="classwx_font_mapper_1a08ed527234d2cd470019f492a19d9cc3" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>Set</name></member>
       <member refid="classwx_font_mapper_1a5999b3950e0a78e3e8890d96abe37a97" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>SetConfigPath</name></member>
       <member refid="classwx_font_mapper_1a2fc0db252f9a52356f1484c684c6f8b0" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>SetDialogParent</name></member>
       <member refid="classwx_font_mapper_1a7459de236727f25d40a57414f10850c1" prot="public" virt="non-virtual"><scope>wxFontMapper</scope><name>SetDialogTitle</name></member>

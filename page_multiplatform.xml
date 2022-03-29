@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="page_multiplatform" kind="page">
     <compoundname>page_multiplatform</compoundname>
     <title>Cross-Platform Development Tips</title>
@@ -104,7 +104,6 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>This chapter describes some general tips related to cross-platform development. </para>
     </briefdescription>
     <detaileddescription>
 <para>This chapter describes some general tips related to cross-platform development.</para>
@@ -115,6 +114,10 @@
 <para><verbatim>// For compilers that support precompilation, includes &quot;wx.h&quot;.
 #include &lt;wx/wxprec.h&gt;
 
+#ifdef __BORLANDC__
+#   pragma hdrstop
+#endif
+
 #ifndef WX_PRECOMP
     // Include your minimal set of headers here, or wx.h
 #   include &lt;wx/wx.h&gt;
@@ -122,7 +125,7 @@
 
 ... now your other include files ...
 </verbatim></para>
-<para>The file <computeroutput>&quot;wx/wxprec.h&quot;</computeroutput> includes <computeroutput>&quot;wx/wx.h&quot;</computeroutput>. Although this incantation may seem quirky, it is in fact the end result of a lot of experimentation, and several Windows compilers to use precompilation which is largely automatic for compilers with necessary support. Currently it is used for Visual C++ (including embedded Visual C++) and newer versions of GCC. Some compilers might need extra work from the application developer to set the build environment up as necessary for the support.</para>
+<para>The file <computeroutput>&quot;wx/wxprec.h&quot;</computeroutput> includes <computeroutput>&quot;wx/wx.h&quot;</computeroutput>. Although this incantation may seem quirky, it is in fact the end result of a lot of experimentation, and several Windows compilers to use precompilation which is largely automatic for compilers with necessary support. Currently it is used for Visual C++ (including embedded Visual C++), Borland C++, Open Watcom C++, Digital Mars C++ and newer versions of GCC. Some compilers might need extra work from the application developer to set the build environment up as necessary for the support.</para>
 </sect1>
 <sect1 id="page_multiplatform_1page_multiplatform_libraries">
 <title>Libraries</title>
@@ -143,13 +146,13 @@
 </sect1>
 <sect1 id="page_multiplatform_1page_multiplatform_makefiles">
 <title>Makefiles</title>
-<para>On Microsoft Windows, wxWidgets has a different set of makefiles for each compiler, because each compiler&apos;s <computeroutput>&apos;make&apos;</computeroutput> tool is slightly different. Popular Windows compilers that we cater for, and the corresponding makefile extensions, include: Microsoft Visual C++ (.vc) and MinGW/Cygwin (.gcc). Makefiles are provided for the wxWidgets library itself, samples, demos, and utilities.</para>
-<para>On Linux and macOS, you use the <computeroutput>&apos;configure&apos;</computeroutput> command to generate the necessary makefiles. You should also use this method when building with MinGW/Cygwin on Windows.</para>
+<para>On Microsoft Windows, wxWidgets has a different set of makefiles for each compiler, because each compiler&apos;s <computeroutput>&apos;make&apos;</computeroutput> tool is slightly different. Popular Windows compilers that we cater for, and the corresponding makefile extensions, include: Microsoft Visual C++ (.vc), Borland C++ (.bcc), OpenWatcom C++ (.wat) and MinGW/Cygwin (.gcc). Makefiles are provided for the wxWidgets library itself, samples, demos, and utilities.</para>
+<para>On Linux, Mac and OS/2, you use the <computeroutput>&apos;configure&apos;</computeroutput> command to generate the necessary makefiles. You should also use this method when building with MinGW/Cygwin on Windows.</para>
 <para>We also provide project files for some compilers, such as Microsoft VC++. However, we recommend using makefiles to build the wxWidgets library itself, because makefiles can be more powerful and less manual intervention is required.</para>
 <para>On Windows using a compiler other than MinGW/Cygwin, you would build the wxWidgets library from the <computeroutput>&quot;build/msw&quot;</computeroutput> directory which contains the relevant makefiles.</para>
-<para>On Windows using MinGW/Cygwin, and on Unix and macOS, you invoke &apos;configure&apos; (found in the top-level of the wxWidgets source hierarchy), from within a suitable empty directory for containing makefiles, object files and libraries.</para>
+<para>On Windows using MinGW/Cygwin, and on Unix, OS X and OS/2, you invoke &apos;configure&apos; (found in the top-level of the wxWidgets source hierarchy), from within a suitable empty directory for containing makefiles, object files and libraries.</para>
 <para>For details on using makefiles, configure, and project files, please see <computeroutput>&quot;docs/xxx/install.txt&quot;</computeroutput> in your distribution, where <computeroutput>&quot;xxx&quot;</computeroutput> is the platform of interest, such as <computeroutput>msw</computeroutput>, <computeroutput>gtk</computeroutput>, <computeroutput>x11</computeroutput>, <computeroutput>mac</computeroutput>.</para>
-<para>All wxWidgets makefiles are generated using Bakefile <ulink url="https://www.bakefile.org/">https://www.bakefile.org/</ulink>. wxWidgets also provides (in the <computeroutput>&quot;build/bakefiles/wxpresets&quot;</computeroutput> folder) the wxWidgets bakefile presets. These files allow you to create bakefiles for your own wxWidgets-based applications very easily.</para>
+<para>All wxWidgets makefiles are generated using Bakefile <ulink url="http://www.bakefile.org/">http://www.bakefile.org/</ulink>. wxWidgets also provides (in the <computeroutput>&quot;build/bakefiles/wxpresets&quot;</computeroutput> folder) the wxWidgets bakefile presets. These files allow you to create bakefiles for your own wxWidgets-based applications very easily.</para>
 </sect1>
 <sect1 id="page_multiplatform_1page_multiplatform_winresources">
 <title>Windows Resource Files</title>
@@ -198,7 +201,7 @@
 </sect2>
 <sect2 id="page_multiplatform_1page_multiplatform_cpp_precompiledheaders">
 <title>Precompiled Headers</title>
-<para>Some compilers, such as Microsoft C++, support precompiled headers. This can save a great deal of compiling time. The recommended approach is to precompile <computeroutput>&quot;wx.h&quot;</computeroutput>, using this precompiled header for compiling both wxWidgets itself and any wxWidgets applications. For Windows compilers, two dummy source files are provided (one for normal applications and one for creating DLLs) to allow initial creation of the precompiled header.</para>
+<para>Some compilers, such as Borland C++ and Microsoft C++, support precompiled headers. This can save a great deal of compiling time. The recommended approach is to precompile <computeroutput>&quot;wx.h&quot;</computeroutput>, using this precompiled header for compiling both wxWidgets itself and any wxWidgets applications. For Windows compilers, two dummy source files are provided (one for normal applications and one for creating DLLs) to allow initial creation of the precompiled header.</para>
 <para>However, there are several downsides to using precompiled headers. One is that to take advantage of the facility, you often need to include more header files than would normally be the case. This means that changing a header file will cause more recompilations (in the case of wxWidgets, everything needs to be recompiled since everything includes <computeroutput>&quot;wx.h&quot;</computeroutput>).</para>
 <para>A related problem is that for compilers that don&apos;t have precompiled headers, including a lot of header files slows down compilation considerably. For this reason, you will find (in the common X and Windows parts of the library) conditional compilation that under Unix, includes a minimal set of headers; and when using Visual C++, includes <computeroutput>&quot;wx.h&quot;</computeroutput>. This should help provide the optimal compilation for each compiler, although it is biased towards the precompiled headers facility available in Microsoft C++.</para>
 </sect2>
@@ -269,6 +272,5 @@ programming&quot; strategy, scattering <ref refid="debug_8h_1a204cc264ee560b67e6
 </sect2>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/mainpages/devtips.h"/>
   </compounddef>
 </doxygen>

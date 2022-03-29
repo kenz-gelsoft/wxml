@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="page_wxusedef" kind="page">
     <compoundname>page_wxusedef</compoundname>
     <title>wxUSE Preprocessor Symbols</title>
@@ -33,6 +33,14 @@
         <reference>page_wxusedef_1page_wxusedef_motif</reference>
     </tocsect>
       <tocsect>
+        <name>Cocoa Symbols</name>
+        <reference>page_wxusedef_1page_wxusedef_cocoa</reference>
+    </tocsect>
+      <tocsect>
+        <name>OS2 Symbols</name>
+        <reference>page_wxusedef_1page_wxusedef_os2</reference>
+    </tocsect>
+      <tocsect>
         <name>wxMSW Symbols</name>
         <reference>page_wxusedef_1page_wxusedef_msw</reference>
     </tocsect>
@@ -42,15 +50,13 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>This section documents the wxUSE preprocessor symbols used in the wxWidgets source, grouped by category (and sorted by alphabetical order inside each category). </para>
     </briefdescription>
     <detaileddescription>
-<para>This section documents the wxUSE preprocessor symbols used in the wxWidgets source, grouped by category (and sorted by alphabetical order inside each category).</para>
-<para>These symbols are always defined and whether the given feature is active or not depends on their value: if defined as <computeroutput>1</computeroutput>, feature is active, otherwise it is disabled. Because of this these symbols should always be tested using #if and not #ifdef.</para>
+<para>This section documents the wxUSE preprocessor symbols used in the wxWidgets source, grouped by category (and sorted by alphabetical order inside each category). These symbols are always defined and whether the given feature is active or not depends on their value: if defined as <computeroutput>1</computeroutput>, feature is active, otherwise it is disabled. Because of this these symbols should always be tested using #if and not #ifdef.</para>
 <sect1 id="page_wxusedef_1page_wxusedef_important">
 <title>Most Important Symbols</title>
 <para>This table summarizes some of the global build features affecting the entire library:</para>
-<para><table rows="9" cols="2"><row>
+<para><table rows="8" cols="2"><row>
 <entry thead="no"><para>wxUSE_STL </para>
 </entry><entry thead="no"><para>Container classes and <ref refid="classwx_string" kindref="compound">wxString</ref> are implemented using standard classes and provide the same standard API. </para>
 </entry></row>
@@ -64,15 +70,15 @@
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_UNICODE </para>
-</entry><entry thead="no"><para>Compiled with Unicode support (default in wxWidgets 3.0, non-Unicode build is deprecated and will be removed in the future). </para>
+</entry><entry thead="no"><para>Compiled with Unicode support (default in wxWidgets 3.0, non-Unicode build will be deprecated in the future). </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_UNICODE_WCHAR </para>
-</entry><entry thead="no"><para><ref refid="classwx_string" kindref="compound">wxString</ref> uses wchar_t buffer for internal storage (default). </para>
+</entry><entry thead="no"><para><ref refid="classwx_string" kindref="compound">wxString</ref> uses wchar_t buffer for internal storage (default under MSW). </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_UNICODE_UTF8 </para>
-</entry><entry thead="no"><para><ref refid="classwx_string" kindref="compound">wxString</ref> uses UTF-8 for internal storage (mostly useful for wxGTK where UTF-8 is used by the underlying toolkit). </para>
+</entry><entry thead="no"><para><ref refid="classwx_string" kindref="compound">wxString</ref> uses UTF-8 for internal storage (default under Unix and Mac systems). </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_UTF8_LOCALE_ONLY </para>
@@ -82,16 +88,12 @@
 <entry thead="no"><para>wxUSE_GUI </para>
 </entry><entry thead="no"><para>Use the GUI classes; if set to 0 only non-GUI classes are available. </para>
 </entry></row>
-<row>
-<entry thead="no"><para>wxUSE_UNSAFE_WXSTRING_CONV </para>
-</entry><entry thead="no"><para>Defined as 1 by default for compatibility, but can be set to 0 to globally disable unsafe implicit conversions in <ref refid="classwx_string" kindref="compound">wxString</ref> class. See <ref refid="overview_string_1overview_string_settings" kindref="member">wxString Related Compilation Settings</ref> for more details. </para>
-</entry></row>
 </table>
 </para>
 </sect1>
 <sect1 id="page_wxusedef_1page_wxusedef_multi">
 <title>Generic Symbols</title>
-<para><table rows="210" cols="2"><row>
+<para><table rows="203" cols="2"><row>
 <entry thead="no"><para>wxUSE_ABOUTDLG </para>
 </entry><entry thead="no"><para>Use <ref refid="classwx_about_dialog_info" kindref="compound">wxAboutDialogInfo</ref> class. </para>
 </entry></row>
@@ -102,10 +104,6 @@
 <row>
 <entry thead="no"><para>wxUSE_AFM_FOR_POSTSCRIPT </para>
 </entry><entry thead="no"><para>In <ref refid="classwx_post_script_d_c" kindref="compound">wxPostScriptDC</ref> class use AFM (adobe font metrics) file for character widths. </para>
-</entry></row>
-<row>
-<entry thead="no"><para>wxUSE_ACTIVITYINDICATOR </para>
-</entry><entry thead="no"><para>Use <ref refid="classwx_activity_indicator" kindref="compound">wxActivityIndicator</ref> class. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_ANIMATIONCTRL </para>
@@ -234,10 +232,6 @@
 <row>
 <entry thead="no"><para>wxUSE_CONTROLS </para>
 </entry><entry thead="no"><para>If set to 0, no classes deriving from <ref refid="classwx_control" kindref="compound">wxControl</ref> can be used. </para>
-</entry></row>
-<row>
-<entry thead="no"><para>wxUSE_CREDENTIALDLG </para>
-</entry><entry thead="no"><para>If set to 0, disabled <ref refid="classwx_credential_entry_dialog" kindref="compound">wxCredentialEntryDialog</ref> used by <ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref>. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_DATAOBJ </para>
@@ -464,6 +458,10 @@
 </entry><entry thead="no"><para>Use <ref refid="classwx_locale" kindref="compound">wxLocale</ref> and related classes. </para>
 </entry></row>
 <row>
+<entry thead="no"><para>wxUSE_IOSTREAMH </para>
+</entry><entry thead="no"><para>Use header &quot;iostream.h&quot; instead of &quot;iostream&quot;. </para>
+</entry></row>
+<row>
 <entry thead="no"><para>wxUSE_IPC </para>
 </entry><entry thead="no"><para>Use interprocess communication classes. </para>
 </entry></row>
@@ -478,10 +476,6 @@
 <row>
 <entry thead="no"><para>wxUSE_LIBJPEG </para>
 </entry><entry thead="no"><para>Enables JPEG format support (requires libjpeg). </para>
-</entry></row>
-<row>
-<entry thead="no"><para>wxUSE_LIBLZMA </para>
-</entry><entry thead="no"><para>Enables LZMA compression support (see <ref refid="page_build_liblzma" kindref="compound">Using LZMA compression with liblzma</ref>). </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_LIBPNG </para>
@@ -557,11 +551,7 @@
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_MENUS </para>
-</entry><entry thead="no"><para>Use <ref refid="classwx_menu" kindref="compound">wxMenu</ref> and <ref refid="classwx_menu_item" kindref="compound">wxMenuItem</ref>. </para>
-</entry></row>
-<row>
-<entry thead="no"><para>wxUSE_MENUBAR </para>
-</entry><entry thead="no"><para>Use wxMenubar. </para>
+</entry><entry thead="no"><para>Use <ref refid="classwx_menu" kindref="compound">wxMenu</ref> and related classes. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_METAFILE </para>
@@ -584,10 +574,6 @@
 </entry><entry thead="no"><para>Use <ref refid="classwx_message_dialog" kindref="compound">wxMessageDialog</ref> class and wxMessageBox function. </para>
 </entry></row>
 <row>
-<entry thead="no"><para>wxUSE_NATIVE_DATAVIEWCTRL </para>
-</entry><entry thead="no"><para>Use native <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> class (this option is new since wxWidgets 3.1.4). </para>
-</entry></row>
-<row>
 <entry thead="no"><para>wxUSE_NATIVE_STATUSBAR </para>
 </entry><entry thead="no"><para>Use native <ref refid="classwx_status_bar" kindref="compound">wxStatusBar</ref> class. </para>
 </entry></row>
@@ -597,7 +583,7 @@
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_NUMBERDLG </para>
-</entry><entry thead="no"><para>Use <ref refid="classwx_number_entry_dialog" kindref="compound">wxNumberEntryDialog</ref> class. </para>
+</entry><entry thead="no"><para>Use wxNumberEntryDialog class. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_ODCOMBOBOX </para>
@@ -644,10 +630,6 @@
 </entry><entry thead="no"><para>Enable printer classes. </para>
 </entry></row>
 <row>
-<entry thead="no"><para>wxUSE_PRIVATE_FONTS </para>
-</entry><entry thead="no"><para>Implement <ref refid="classwx_font_1ab96266bba385bc770a40ec4c7d1ec620" kindref="member">wxFont::AddPrivateFont()</ref> method. </para>
-</entry></row>
-<row>
 <entry thead="no"><para>wxUSE_PROGRESSDLG </para>
 </entry><entry thead="no"><para>Enables progress dialog classes. </para>
 </entry></row>
@@ -678,10 +660,6 @@
 <row>
 <entry thead="no"><para>wxUSE_RADIOBTN </para>
 </entry><entry thead="no"><para>Use <ref refid="classwx_radio_button" kindref="compound">wxRadioButton</ref> class. </para>
-</entry></row>
-<row>
-<entry thead="no"><para>wxUSE_REPRODUCIBLE_BUILD </para>
-</entry><entry thead="no"><para>Make library builds reproducible. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_REGEX </para>
@@ -896,10 +874,6 @@
 </entry><entry thead="no"><para>Use <ref refid="classwx_variant" kindref="compound">wxVariant</ref> class. </para>
 </entry></row>
 <row>
-<entry thead="no"><para>wxUSE_WEBREQUEST </para>
-</entry><entry thead="no"><para>Use <ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref> class. </para>
-</entry></row>
-<row>
 <entry thead="no"><para>wxUSE_WEBVIEW </para>
 </entry><entry thead="no"><para>Use <ref refid="classwx_web_view" kindref="compound">wxWebView</ref> class. </para>
 </entry></row>
@@ -958,7 +932,7 @@
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_UNIX </para>
-</entry><entry thead="no"><para>Enabled on Unix Platform. @itemdef(wxUSE_XTEST, Use XTest extension.} </para>
+</entry><entry thead="no"><para>Enabled on Unix Platform. </para>
 </entry></row>
 </table>
 </para>
@@ -978,7 +952,7 @@
 </sect1>
 <sect1 id="page_wxusedef_1page_wxusedef_gtk">
 <title>wxGTK Symbols</title>
-<para><table rows="3" cols="2"><row>
+<para><table rows="4" cols="2"><row>
 <entry thead="no"><para>wxUSE_DETECT_SM </para>
 </entry><entry thead="no"><para>Use code to detect X11 session manager. </para>
 </entry></row>
@@ -989,6 +963,10 @@
 <row>
 <entry thead="no"><para>wxUSE_LIBGNOMEVFS </para>
 </entry><entry thead="no"><para>Use GNOME VFS support. Currently has no effect.  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_LIBHILDON </para>
+</entry><entry thead="no"><para>Use Hildon framework for Nokia 770. Currently has no effect.  </para>
 </entry></row>
 </table>
 </para>
@@ -1009,7 +987,7 @@
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_WEBKIT </para>
-</entry><entry thead="no"><para>Use wxWebKitCtrl class. </para>
+</entry><entry thead="no"><para>Use <ref refid="classwx_web_kit_ctrl" kindref="compound">wxWebKitCtrl</ref> class. </para>
 </entry></row>
 </table>
 </para>
@@ -1027,9 +1005,47 @@
 </table>
 </para>
 </sect1>
+<sect1 id="page_wxusedef_1page_wxusedef_cocoa">
+<title>Cocoa Symbols</title>
+<para><table rows="1" cols="2"><row>
+<entry thead="no"><para>wxUSE_OBJC_UNIQUIFYING </para>
+</entry><entry thead="no"><para>Enable Objective-C class name uniquifying. </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="page_wxusedef_1page_wxusedef_os2">
+<title>OS2 Symbols</title>
+<para><table rows="6" cols="2"><row>
+<entry thead="no"><para>wxUSE_CONSOLEDEBUG </para>
+</entry><entry thead="no"><para>See src/os2/app.cpp file. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_DDE </para>
+</entry><entry thead="no"><para>See src/os2/mimetype.cpp file. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_IMAGE_LOADING_IN_MSW </para>
+</entry><entry thead="no"><para>See src/os2/clipbrd.cpp file. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_IMAGE_LOADING_IN_OS2 </para>
+</entry><entry thead="no"><para>See src/os2/gdiimage.cpp file. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_NET_API </para>
+</entry><entry thead="no"><para>Use NetBios32GetInfo API call. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_RESOURCE_LOADING_IN_OS2 </para>
+</entry><entry thead="no"><para>See src/os2/gdiimage.cpp file. </para>
+</entry></row>
+</table>
+</para>
+</sect1>
 <sect1 id="page_wxusedef_1page_wxusedef_msw">
 <title>wxMSW Symbols</title>
-<para><table rows="29" cols="2"><row>
+<para><table rows="30" cols="2"><row>
 <entry thead="no"><para>wxUSE_ACCESSIBILITY </para>
 </entry><entry thead="no"><para>Enable accessibility support </para>
 </entry></row>
@@ -1040,6 +1056,10 @@
 <row>
 <entry thead="no"><para>wxUSE_COMBOCTRL_POPUP_ANIMATION </para>
 </entry><entry thead="no"><para>See wx/msw/combo.h file. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxUSE_COMCTL32_SAFELY </para>
+</entry><entry thead="no"><para>See src/msw/treectrl.cpp file. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_COMMON_DIALOGS </para>
@@ -1062,10 +1082,6 @@
 </entry><entry thead="no"><para>See <ref refid="interface_2wx_2ipc_8h" kindref="compound">wx/ipc.h</ref> file. </para>
 </entry></row>
 <row>
-<entry thead="no"><para>wxUSE_DPI_AWARE_MANIFEST </para>
-</entry><entry thead="no"><para>Set the DPI awareness of the application (0=none, 1=system, 2=per-monitor. Used by CMake and when wxUSE_RC_MANIFEST is enabled. </para>
-</entry></row>
-<row>
 <entry thead="no"><para>wxUSE_ENH_METAFILE </para>
 </entry><entry thead="no"><para>Use wxEnhMetaFile. </para>
 </entry></row>
@@ -1086,6 +1102,10 @@
 </entry><entry thead="no"><para>Can be predefined to disable inclusion of the manifest from wxWidgets RC file. See also wxUSE_RC_MANIFEST. </para>
 </entry></row>
 <row>
+<entry thead="no"><para>wxUSE_NORLANDER_HEADERS </para>
+</entry><entry thead="no"><para>Using headers whose author is Anders Norlander. </para>
+</entry></row>
+<row>
 <entry thead="no"><para>wxUSE_OLE </para>
 </entry><entry thead="no"><para>Enables OLE helper routines. </para>
 </entry></row>
@@ -1098,6 +1118,10 @@
 </entry><entry thead="no"><para>Use OLE clipboard. </para>
 </entry></row>
 <row>
+<entry thead="no"><para>wxUSE_PENWINDOWS </para>
+</entry><entry thead="no"><para>See src/msw/penwin.cpp file. </para>
+</entry></row>
+<row>
 <entry thead="no"><para>wxUSE_POSTSCRIPT_ARCHITECTURE_IN_MSW </para>
 </entry><entry thead="no"><para>Use PS printing in wxMSW. </para>
 </entry></row>
@@ -1107,7 +1131,7 @@
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_RC_MANIFEST </para>
-</entry><entry thead="no"><para>Include manifest for common controls library v6 from wxWidgets RC file. This may be needed to be defined explicitly for MSVC 7 (a.k.a. MSVS 2003) only as later versions of MSVC generate this manifest themselves and the manifest generation is enabled by default for the other compilers. See also wxUSE_NO_MANIFEST. </para>
+</entry><entry thead="no"><para>Include manifest for common controls library v6 from wxWidgets RC file. This may be needed to be defined explicitly for MSVC 6 and 7 (98 and 2003) only as later versions of MSVC generate this manifest themselves and the manifest generation is enabled by default for the other compilers. See also wxUSE_NO_MANIFEST. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxUSE_REGKEY </para>
@@ -1126,6 +1150,10 @@
 </entry><entry thead="no"><para>See wx/msw/msvcrt.h file. </para>
 </entry></row>
 <row>
+<entry thead="no"><para>wxUSE_UNICODE_MSLU </para>
+</entry><entry thead="no"><para>Use MSLU for Unicode support under Windows 9x systems. </para>
+</entry></row>
+<row>
 <entry thead="no"><para>wxUSE_UXTHEME </para>
 </entry><entry thead="no"><para>Enable support for XP themes. </para>
 </entry></row>
@@ -1134,16 +1162,8 @@
 </entry><entry thead="no"><para>Use wxMetaFile even when wxUSE_ENH_METAFILE=1. </para>
 </entry></row>
 <row>
-<entry thead="no"><para>wxUSE_WINRT </para>
-</entry><entry thead="no"><para>Enable WinRT support. </para>
-</entry></row>
-<row>
 <entry thead="no"><para>wxUSE_WXDIB </para>
 </entry><entry thead="no"><para>Use wxDIB class. </para>
-</entry></row>
-<row>
-<entry thead="no"><para>wxUSE_WINSOCK2 </para>
-</entry><entry thead="no"><para>Include <computeroutput>&lt;winsock2.h&gt;</computeroutput> instead of <computeroutput>&lt;winsock.h&gt;</computeroutput>. Turned on automatically if wxUSE_IPV6 is on (this option is new since wxWidgets 3.1.3). </para>
 </entry></row>
 </table>
 </para>
@@ -1174,6 +1194,5 @@
 </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/mainpages/const_wxusedef.h"/>
   </compounddef>
 </doxygen>

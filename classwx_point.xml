@@ -1,96 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_point" kind="class" language="C++" prot="public">
     <compoundname>wxPoint</compoundname>
     <includes local="no">wx/gdicmn.h</includes>
       <sectiondef kind="user-defined">
-      <header>Defaults handling.</header>
-      <description><para>Test for and set non-specified <ref refid="classwx_point" kindref="compound">wxPoint</ref> components.</para>
-<para>Although a <ref refid="classwx_point" kindref="compound">wxPoint</ref> is always initialized to (0, 0), wxWidgets commonly uses wxDefaultCoord (defined as <computeroutput>-1</computeroutput>) to indicate that a point hasn&apos;t been initialized or specified. In particular, <ref refid="gdicmn_8h_1af5a90c753eaf3d3e3e5068a19ec3c1d0" kindref="member">wxDefaultPosition</ref> is used in many places with this meaning. </para>
-</description>
-      <memberdef kind="variable" id="classwx_point_1a96cd57c992846b3338837db97836ba5c" prot="public" static="no" mutable="no">
-        <type>int</type>
-        <definition>int wxPoint::x</definition>
-        <argsstring></argsstring>
-        <name>x</name>
-        <briefdescription>
-<para>x member. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="771" column="9" bodyfile="interface/wx/gdicmn.h" bodystart="771" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classwx_point_1a569141753bb48c51a857b7839de54b11" prot="public" static="no" mutable="no">
-        <type>int</type>
-        <definition>int wxPoint::y</definition>
-        <argsstring></argsstring>
-        <name>y</name>
-        <briefdescription>
-<para>y member. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="776" column="10" bodyfile="interface/wx/gdicmn.h" bodystart="776" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_point_1a1ee077698a3bc36a4132af72a94f0012" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>bool</type>
-        <definition>bool wxPoint::IsFullySpecified</definition>
-        <argsstring>() const</argsstring>
-        <name>IsFullySpecified</name>
-        <briefdescription>
-<para>Returns true if neither of the point components is equal to wxDefaultCoord. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This method is typically used before calling <ref refid="classwx_point_1a3283b1248006f81984ac22a81d2d94f6" kindref="member">SetDefaults()</ref>.</para>
-<para><simplesect kind="since"><para>2.9.2 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="746" column="10"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_point_1a3283b1248006f81984ac22a81d2d94f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void wxPoint::SetDefaults</definition>
-        <argsstring>(const wxPoint &amp;pt)</argsstring>
-        <name>SetDefaults</name>
-        <param>
-          <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
-          <declname>pt</declname>
-        </param>
-        <briefdescription>
-<para>Combine this object with another one replacing the uninitialized values. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>It is typically used like this:</para>
-<para><programlisting><codeline><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!pos.IsFullySpecified()<sp/>)</highlight></codeline>
-<codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pos.SetDefaults(GetDefaultPosition());</highlight></codeline>
-<codeline><highlight class="normal">}</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="see"><para><ref refid="classwx_point_1a1ee077698a3bc36a4132af72a94f0012" kindref="member">IsFullySpecified()</ref></para>
-</simplesect>
-<simplesect kind="since"><para>2.9.2 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="765" column="10"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="user-defined">
       <header>Miscellaneous operators</header>
       <description><para>Note that these operators are documented as class members (to make them easier to find) but, as their prototype shows, they are implemented as global operators; note that this is transparent to the user but it helps to understand why the following functions are documented to take the <ref refid="classwx_point" kindref="compound">wxPoint</ref> they operate on as an explicit argument. </para>
 </description>
-      <memberdef kind="function" id="classwx_point_1a412fe3d1a14913d7c495fe03f3d0559f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_point_1a40d4fd764cc42ef70d987485acdc57cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
-        <definition>wxPoint &amp; wxPoint::operator=</definition>
+        <definition>wxPoint&amp; wxPoint::operator=</definition>
         <argsstring>(const wxPoint &amp;pt)</argsstring>
         <name>operator=</name>
         <param>
@@ -103,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="699" column="13"/>
+        <location file="interface/wx/gdicmn.h" line="631" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1a7f80cb7ac02b5375a71a0bd2c2ef55d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -124,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="701" column="10"/>
+        <location file="interface/wx/gdicmn.h" line="633" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1ae83b76cf770cc64cd73d0c35364a69ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -145,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="702" column="10"/>
+        <location file="interface/wx/gdicmn.h" line="634" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1a7e000418e403c0019de3f57d05b393a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
@@ -166,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="704" column="13"/>
+        <location file="interface/wx/gdicmn.h" line="636" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1ad2096558bc6182830ec9443e066f1260" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
@@ -187,11 +106,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="705" column="13"/>
+        <location file="interface/wx/gdicmn.h" line="637" column="13"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_point_1a97ff06bc8169d4a14974829359c1d1f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_point_1a8ff75b06b0bf93155f27d6c6446015ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
-        <definition>wxPoint &amp; wxPoint::operator+=</definition>
+        <definition>wxPoint&amp; wxPoint::operator+=</definition>
         <argsstring>(const wxPoint &amp;pt)</argsstring>
         <name>operator+=</name>
         <param>
@@ -204,11 +123,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="707" column="13"/>
+        <location file="interface/wx/gdicmn.h" line="639" column="13"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_point_1ac8cb6c788a29306ff98bbfab73703ec4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_point_1a0b62d9c63c5f9c848135b7bdfdfd2a2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
-        <definition>wxPoint &amp; wxPoint::operator-=</definition>
+        <definition>wxPoint&amp; wxPoint::operator-=</definition>
         <argsstring>(const wxPoint &amp;pt)</argsstring>
         <name>operator-=</name>
         <param>
@@ -221,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="708" column="13"/>
+        <location file="interface/wx/gdicmn.h" line="640" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1a9c4739a74b71059e54d4482a61649396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
@@ -242,7 +161,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="710" column="13"/>
+        <location file="interface/wx/gdicmn.h" line="642" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1ad884377a7c42e25bdb065071a402554a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
@@ -263,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="711" column="13"/>
+        <location file="interface/wx/gdicmn.h" line="643" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1aeafdbd750f698ae6afd5111759573fa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
@@ -284,7 +203,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="712" column="13"/>
+        <location file="interface/wx/gdicmn.h" line="644" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1a8eada7e36da7ff32134f5aba92fd5e4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
@@ -305,11 +224,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="713" column="13"/>
+        <location file="interface/wx/gdicmn.h" line="645" column="13"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_point_1a189792dd4dbdae7a29a153b74b13c5c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_point_1a6d8b02db94ce8fef9738503671c0026b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
-        <definition>wxPoint &amp; wxPoint::operator+=</definition>
+        <definition>wxPoint&amp; wxPoint::operator+=</definition>
         <argsstring>(const wxSize &amp;sz)</argsstring>
         <name>operator+=</name>
         <param>
@@ -322,11 +241,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="715" column="13"/>
+        <location file="interface/wx/gdicmn.h" line="647" column="13"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_point_1a8eebf50b6afa16e5422cb33762d9bc78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_point_1ac2b614c7ab508befc1569279f6b98916" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
-        <definition>wxPoint &amp; wxPoint::operator-=</definition>
+        <definition>wxPoint&amp; wxPoint::operator-=</definition>
         <argsstring>(const wxSize &amp;sz)</argsstring>
         <name>operator-=</name>
         <param>
@@ -339,7 +258,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="716" column="13"/>
+        <location file="interface/wx/gdicmn.h" line="648" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1a48b4d9f7329bc95ed1e8f5fa1a0c4223" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -360,7 +279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="718" column="12"/>
+        <location file="interface/wx/gdicmn.h" line="650" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1aa58ad3ce386ecc4c40d346937f9095ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -381,7 +300,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="719" column="12"/>
+        <location file="interface/wx/gdicmn.h" line="651" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1a2eb2e707f65586011943f9ea1cd9a89a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -402,11 +321,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="720" column="12"/>
+        <location file="interface/wx/gdicmn.h" line="652" column="12"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_point_1a96f5e5857613fd63c3bc6417a16f6da0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_point_1ac0c36e535bb08d2b11702b3c55139472" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
-        <definition>wxSize &amp; wxPoint::operator/=</definition>
+        <definition>wxSize&amp; wxPoint::operator/=</definition>
         <argsstring>(int factor)</argsstring>
         <name>operator/=</name>
         <param>
@@ -419,11 +338,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="721" column="12"/>
+        <location file="interface/wx/gdicmn.h" line="653" column="12"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_point_1a38c75676214cafe94b0a92f09b14f850" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_point_1a848b895a3dbb807b6b8d8e4cb1f06e10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
-        <definition>wxSize &amp; wxPoint::operator*=</definition>
+        <definition>wxSize&amp; wxPoint::operator*=</definition>
         <argsstring>(int factor)</argsstring>
         <name>operator*=</name>
         <param>
@@ -436,7 +355,88 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="722" column="12"/>
+        <location file="interface/wx/gdicmn.h" line="654" column="12"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Defaults handling.</header>
+      <description><para>Test for and set non-specified <ref refid="classwx_point" kindref="compound">wxPoint</ref> components.</para>
+<para>Although a <ref refid="classwx_point" kindref="compound">wxPoint</ref> is always initialized to (0, 0), wxWidgets commonly uses wxDefaultCoord (defined as <computeroutput>-1</computeroutput>) to indicate that a point hasn&apos;t been initialized or specified. In particular, <ref refid="gdicmn_8h_1af5a90c753eaf3d3e3e5068a19ec3c1d0" kindref="member">wxDefaultPosition</ref> is used in many places with this meaning. </para>
+</description>
+      <memberdef kind="variable" id="classwx_point_1a96cd57c992846b3338837db97836ba5c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wxPoint::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+<para>x member. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/gdicmn.h" line="703" column="9" bodyfile="interface/wx/gdicmn.h" bodystart="703" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classwx_point_1a569141753bb48c51a857b7839de54b11" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wxPoint::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+<para>y member. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/gdicmn.h" line="708" column="10" bodyfile="interface/wx/gdicmn.h" bodystart="708" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_point_1a1ee077698a3bc36a4132af72a94f0012" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxPoint::IsFullySpecified</definition>
+        <argsstring>() const</argsstring>
+        <name>IsFullySpecified</name>
+        <briefdescription>
+<para>Returns true if neither of the point components is equal to wxDefaultCoord. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is typically used before calling <ref refid="classwx_point_1a3283b1248006f81984ac22a81d2d94f6" kindref="member">SetDefaults()</ref>.</para>
+<para><simplesect kind="since"><para>2.9.2 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/gdicmn.h" line="678" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_point_1a3283b1248006f81984ac22a81d2d94f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxPoint::SetDefaults</definition>
+        <argsstring>(const wxPoint &amp;pt)</argsstring>
+        <name>SetDefaults</name>
+        <param>
+          <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
+          <declname>pt</declname>
+        </param>
+        <briefdescription>
+<para>Combine this object with another one replacing the uninitialized values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is typically used like this:</para>
+<para><programlisting><codeline><highlight class="normal">if<sp/>(<sp/>!pos.IsFullySpecified()<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pos.SetDefaults(GetDefaultPosition());</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="see"><para><ref refid="classwx_point_1a1ee077698a3bc36a4132af72a94f0012" kindref="member">IsFullySpecified()</ref></para>
+</simplesect>
+<simplesect kind="since"><para>2.9.2 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/gdicmn.h" line="697" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -453,7 +453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="665" column="5"/>
+        <location file="interface/wx/gdicmn.h" line="597" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1a35d450cf9a580947188a16c5dadebc34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -475,7 +475,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="670" column="5"/>
+        <location file="interface/wx/gdicmn.h" line="602" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_point_1ad6f9c02b56357d8dcfb0bc135dcab639" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -490,21 +490,21 @@
 <para>Converts the given <ref refid="classwx_real_point" kindref="compound">wxRealPoint</ref> (with floating point coordinates) to a <ref refid="classwx_point" kindref="compound">wxPoint</ref> instance. </para>
         </briefdescription>
         <detaileddescription>
-<para>Notice that this truncates the floating point values of <emphasis>pt</emphasis> components, if you want to round them instead you need to do it manually, e.g. <programlisting><codeline><highlight class="preprocessor">#include<sp/>&lt;<ref refid="math_8h" kindref="compound">wx/math.h</ref>&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for<sp/>wxRound()</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_real_point" kindref="compound">wxRealPoint</ref><sp/>rp<sp/>=<sp/>...;</highlight></codeline>
-<codeline><highlight class="normal"><ref refid="classwx_point" kindref="compound">wxPoint</ref><sp/>p(<ref refid="math_8h_1a50abef50da35ae9597c3684b26bb33ee" kindref="member">wxRound</ref>(rp.<ref refid="classwx_real_point_1a37b6bb617ddb5ed5d8fbb0346b09f05d" kindref="member">x</ref>),<sp/><ref refid="math_8h_1a50abef50da35ae9597c3684b26bb33ee" kindref="member">wxRound</ref>(rp.<ref refid="classwx_real_point_1abcbd831a252eb24599d5c345c0491e62" kindref="member">y</ref>));</highlight></codeline>
+<para>Notice that this truncates the floating point values of <emphasis>pt</emphasis> components, if you want to round them instead you need to do it manually, e.g. <programlisting><codeline><highlight class="normal">#include<sp/>&lt;wx/math.h&gt;<sp/><sp/><sp/><sp/>//<sp/>for<sp/>wxRound()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">wxRealPoint<sp/>rp<sp/>=<sp/>...;</highlight></codeline>
+<codeline><highlight class="normal">wxPoint<sp/>p(wxRound(rp.x),<sp/>wxRound(rp.y));</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="686" column="5"/>
+        <location file="interface/wx/gdicmn.h" line="618" column="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A <ref refid="classwx_point" kindref="compound">wxPoint</ref> is a useful data structure for graphics operations. </para>
     </briefdescription>
     <detaileddescription>
+<para>A <ref refid="classwx_point" kindref="compound">wxPoint</ref> is a useful data structure for graphics operations.</para>
 <para>It contains integer <emphasis>x</emphasis> and <emphasis>y</emphasis> members. See <ref refid="classwx_real_point" kindref="compound">wxRealPoint</ref> for a floating point version.</para>
 <para>Note that the width and height stored inside a <ref refid="classwx_point" kindref="compound">wxPoint</ref> object may be negative and that <ref refid="classwx_point" kindref="compound">wxPoint</ref> functions do not perform any check against negative values (this is used to e.g. store the special -1 value in <ref refid="gdicmn_8h_1af5a90c753eaf3d3e3e5068a19ec3c1d0" kindref="member">wxDefaultPosition</ref> instance).</para>
 <para><heading level="2"></heading>
@@ -515,26 +515,26 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/gdicmn.h" line="658" column="1" bodyfile="interface/wx/gdicmn.h" bodystart="659" bodyend="777"/>
+    <location file="interface/wx/gdicmn.h" line="591" column="1" bodyfile="interface/wx/gdicmn.h" bodystart="590" bodyend="709"/>
     <listofallmembers>
       <member refid="classwx_point_1a1ee077698a3bc36a4132af72a94f0012" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>IsFullySpecified</name></member>
       <member refid="classwx_point_1ae83b76cf770cc64cd73d0c35364a69ec" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator!=</name></member>
       <member refid="classwx_point_1aa58ad3ce386ecc4c40d346937f9095ca" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator*</name></member>
       <member refid="classwx_point_1a2eb2e707f65586011943f9ea1cd9a89a" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator*</name></member>
-      <member refid="classwx_point_1a38c75676214cafe94b0a92f09b14f850" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator*=</name></member>
+      <member refid="classwx_point_1a848b895a3dbb807b6b8d8e4cb1f06e10" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator*=</name></member>
       <member refid="classwx_point_1a7e000418e403c0019de3f57d05b393a8" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator+</name></member>
       <member refid="classwx_point_1a9c4739a74b71059e54d4482a61649396" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator+</name></member>
       <member refid="classwx_point_1aeafdbd750f698ae6afd5111759573fa7" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator+</name></member>
-      <member refid="classwx_point_1a97ff06bc8169d4a14974829359c1d1f2" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator+=</name></member>
-      <member refid="classwx_point_1a189792dd4dbdae7a29a153b74b13c5c8" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator+=</name></member>
+      <member refid="classwx_point_1a8ff75b06b0bf93155f27d6c6446015ce" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator+=</name></member>
+      <member refid="classwx_point_1a6d8b02db94ce8fef9738503671c0026b" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator+=</name></member>
       <member refid="classwx_point_1ad2096558bc6182830ec9443e066f1260" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator-</name></member>
       <member refid="classwx_point_1ad884377a7c42e25bdb065071a402554a" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator-</name></member>
       <member refid="classwx_point_1a8eada7e36da7ff32134f5aba92fd5e4e" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator-</name></member>
-      <member refid="classwx_point_1ac8cb6c788a29306ff98bbfab73703ec4" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator-=</name></member>
-      <member refid="classwx_point_1a8eebf50b6afa16e5422cb33762d9bc78" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator-=</name></member>
+      <member refid="classwx_point_1a0b62d9c63c5f9c848135b7bdfdfd2a2a" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator-=</name></member>
+      <member refid="classwx_point_1ac2b614c7ab508befc1569279f6b98916" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator-=</name></member>
       <member refid="classwx_point_1a48b4d9f7329bc95ed1e8f5fa1a0c4223" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator/</name></member>
-      <member refid="classwx_point_1a96f5e5857613fd63c3bc6417a16f6da0" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator/=</name></member>
-      <member refid="classwx_point_1a412fe3d1a14913d7c495fe03f3d0559f" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator=</name></member>
+      <member refid="classwx_point_1ac0c36e535bb08d2b11702b3c55139472" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator/=</name></member>
+      <member refid="classwx_point_1a40d4fd764cc42ef70d987485acdc57cf" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator=</name></member>
       <member refid="classwx_point_1a7f80cb7ac02b5375a71a0bd2c2ef55d1" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>operator==</name></member>
       <member refid="classwx_point_1a3283b1248006f81984ac22a81d2d94f6" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>SetDefaults</name></member>
       <member refid="classwx_point_1a561759249aa13713d92eaa310e746772" prot="public" virt="non-virtual"><scope>wxPoint</scope><name>wxPoint</name></member>

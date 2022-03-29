@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_grid" kind="page">
     <compoundname>overview_grid</compoundname>
     <title>wxGrid Overview</title>
@@ -14,48 +14,46 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para><ref refid="classwx_grid" kindref="compound">wxGrid</ref> and its related classes are used for displaying and editing tabular data. </para>
     </briefdescription>
     <detaileddescription>
-<para><ref refid="classwx_grid" kindref="compound">wxGrid</ref> and its related classes are used for displaying and editing tabular data.</para>
-<para><ref refid="classwx_grid" kindref="compound">wxGrid</ref> supports custom attributes for the table cells, allowing to completely customize its appearance and uses a separate grid table (wxGridTableBase-derived) class for the data management meaning that it can be used to display arbitrary amounts of data.</para>
+<para><ref refid="classwx_grid" kindref="compound">wxGrid</ref> and its related classes are used for displaying and editing tabular data. <ref refid="classwx_grid" kindref="compound">wxGrid</ref> supports custom attributes for the table cells, allowing to completely customize its appearance and uses a separate grid table (wxGridTableBase-derived) class for the data management meaning that it can be used to display arbitrary amounts of data.</para>
 <sect1 id="overview_grid_1overview_grid_simpleexample">
 <title>Getting Started</title>
 <para>For simple applications you need only refer to the <ref refid="classwx_grid" kindref="compound">wxGrid</ref> class in your code. This example shows how you might create a grid in a frame or dialog constructor and illustrates some of the formatting functions.</para>
-<para><programlisting><codeline><highlight class="comment">//<sp/>Create<sp/>a<sp/>wxGrid<sp/>object</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">grid<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_grid" kindref="compound">wxGrid</ref>(<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">//<sp/>Create<sp/>a<sp/>wxGrid<sp/>object</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">grid<sp/>=<sp/>new<sp/>wxGrid(<sp/>this,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_point" kindref="compound">wxPoint</ref>(<sp/>0,<sp/>0<sp/>),</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_size" kindref="compound">wxSize</ref>(<sp/>400,<sp/>300<sp/>)<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Then<sp/>we<sp/>call<sp/>CreateGrid<sp/>to<sp/>set<sp/>the<sp/>dimensions<sp/>of<sp/>the<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>(100<sp/>rows<sp/>and<sp/>10<sp/>columns<sp/>in<sp/>this<sp/>example)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxPoint(<sp/>0,<sp/>0<sp/>),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxSize(<sp/>400,<sp/>300<sp/>)<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Then<sp/>we<sp/>call<sp/>CreateGrid<sp/>to<sp/>set<sp/>the<sp/>dimensions<sp/>of<sp/>the<sp/>grid</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>(100<sp/>rows<sp/>and<sp/>10<sp/>columns<sp/>in<sp/>this<sp/>example)</highlight></codeline>
 <codeline><highlight class="normal">grid-&gt;CreateGrid(<sp/>100,<sp/>10<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>can<sp/>set<sp/>the<sp/>sizes<sp/>of<sp/>individual<sp/>rows<sp/>and<sp/>columns</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>in<sp/>pixels</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>We<sp/>can<sp/>set<sp/>the<sp/>sizes<sp/>of<sp/>individual<sp/>rows<sp/>and<sp/>columns</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>in<sp/>pixels</highlight></codeline>
 <codeline><highlight class="normal">grid-&gt;SetRowSize(<sp/>0,<sp/>60<sp/>);</highlight></codeline>
 <codeline><highlight class="normal">grid-&gt;SetColSize(<sp/>0,<sp/>120<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>And<sp/>set<sp/>grid<sp/>cell<sp/>contents<sp/>as<sp/>strings</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">grid-&gt;SetCellValue(<sp/>0,<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;wxGrid<sp/>is<sp/>good&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>can<sp/>specify<sp/>that<sp/>some<sp/>cells<sp/>are<sp/>read-&gt;only</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">grid-&gt;SetCellValue(<sp/>0,<sp/>3,<sp/></highlight><highlight class="stringliteral">&quot;This<sp/>is<sp/>read-&gt;only&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>And<sp/>set<sp/>grid<sp/>cell<sp/>contents<sp/>as<sp/>strings</highlight></codeline>
+<codeline><highlight class="normal">grid-&gt;SetCellValue(<sp/>0,<sp/>0,<sp/>&quot;wxGrid<sp/>is<sp/>good&quot;<sp/>);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>We<sp/>can<sp/>specify<sp/>that<sp/>some<sp/>cells<sp/>are<sp/>read-&gt;only</highlight></codeline>
+<codeline><highlight class="normal">grid-&gt;SetCellValue(<sp/>0,<sp/>3,<sp/>&quot;This<sp/>is<sp/>read-&gt;only&quot;<sp/>);</highlight></codeline>
 <codeline><highlight class="normal">grid-&gt;SetReadOnly(<sp/>0,<sp/>3<sp/>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Colours<sp/>can<sp/>be<sp/>specified<sp/>for<sp/>grid<sp/>cell<sp/>contents</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">grid-&gt;SetCellValue(3,<sp/>3,<sp/></highlight><highlight class="stringliteral">&quot;green<sp/>on<sp/>grey&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal">grid-&gt;SetCellTextColour(3,<sp/>3,<sp/>*<ref refid="colour_8h_1a98125a3b5ab1f7bc8dbc7a62e329f142" kindref="member">wxGREEN</ref>);</highlight></codeline>
-<codeline><highlight class="normal">grid-&gt;SetCellBackgroundColour(3,<sp/>3,<sp/>*<ref refid="colour_8h_1a76762d1254986a92025f54e7683c3441" kindref="member">wxLIGHT_GREY</ref>);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>can<sp/>specify<sp/>the<sp/>some<sp/>cells<sp/>will<sp/>store<sp/>numeric</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>values<sp/>rather<sp/>than<sp/>strings.<sp/>Here<sp/>we<sp/>set<sp/>grid<sp/>column<sp/>5</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>to<sp/>hold<sp/>floating<sp/>point<sp/>values<sp/>displayed<sp/>with<sp/>width<sp/>of<sp/>6</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>and<sp/>precision<sp/>of<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Colours<sp/>can<sp/>be<sp/>specified<sp/>for<sp/>grid<sp/>cell<sp/>contents</highlight></codeline>
+<codeline><highlight class="normal">grid-&gt;SetCellValue(3,<sp/>3,<sp/>&quot;green<sp/>on<sp/>grey&quot;);</highlight></codeline>
+<codeline><highlight class="normal">grid-&gt;SetCellTextColour(3,<sp/>3,<sp/>*wxGREEN);</highlight></codeline>
+<codeline><highlight class="normal">grid-&gt;SetCellBackgroundColour(3,<sp/>3,<sp/>*wxLIGHT_GREY);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>We<sp/>can<sp/>specify<sp/>the<sp/>some<sp/>cells<sp/>will<sp/>store<sp/>numeric</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>values<sp/>rather<sp/>than<sp/>strings.<sp/>Here<sp/>we<sp/>set<sp/>grid<sp/>column<sp/>5</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>to<sp/>hold<sp/>floating<sp/>point<sp/>values<sp/>displayed<sp/>with<sp/>width<sp/>of<sp/>6</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>and<sp/>precision<sp/>of<sp/>2</highlight></codeline>
 <codeline><highlight class="normal">grid-&gt;SetColFormatFloat(5,<sp/>6,<sp/>2);</highlight></codeline>
-<codeline><highlight class="normal">grid-&gt;SetCellValue(0,<sp/>6,<sp/></highlight><highlight class="stringliteral">&quot;3.1415&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">grid-&gt;SetCellValue(0,<sp/>6,<sp/>&quot;3.1415&quot;);</highlight></codeline>
 </programlisting></para>
 <para>Here is a list of classes related to <ref refid="classwx_grid" kindref="compound">wxGrid</ref>:</para>
 <para><itemizedlist>
@@ -87,8 +85,6 @@
 </listitem>
 <listitem><para><ref refid="classwx_grid_cell_bool_renderer" kindref="compound">wxGridCellBoolRenderer</ref>: Renderer showing the cell as checked or unchecked box. </para>
 </listitem>
-<listitem><para><ref refid="classwx_grid_cell_date_renderer" kindref="compound">wxGridCellDateRenderer</ref>: Renderer showing the cell as date. </para>
-</listitem>
 <listitem><para><ref refid="classwx_grid_cell_editor" kindref="compound">wxGridCellEditor</ref>: Base class for objects used to edit the cell value. </para>
 </listitem>
 <listitem><para>wxGridCellStringEditor: Editor for cells containing text strings. </para>
@@ -100,8 +96,6 @@
 <listitem><para><ref refid="classwx_grid_cell_bool_editor" kindref="compound">wxGridCellBoolEditor</ref>: Editor for boolean-valued cells. </para>
 </listitem>
 <listitem><para><ref refid="classwx_grid_cell_choice_editor" kindref="compound">wxGridCellChoiceEditor</ref>: Editor allowing to choose one of the predefined strings (and possibly enter new one). </para>
-</listitem>
-<listitem><para><ref refid="classwx_grid_cell_date_editor" kindref="compound">wxGridCellDateEditor</ref>: Editor for cells containing dates without time component. </para>
 </listitem>
 <listitem><para><ref refid="classwx_grid_event" kindref="compound">wxGridEvent</ref>: The event sent by most of <ref refid="classwx_grid" kindref="compound">wxGrid</ref> actions. </para>
 </listitem>
@@ -126,6 +120,5 @@
 <para>If you do allow the user to resize the grid rows, it may be a good idea to save their heights and restore it when the grid is recreated the next time (possibly during a next program execution): the functions <ref refid="classwx_grid_1a2fc2ec5ea5a8b0076d6bec3da420f0cb" kindref="member">wxGrid::GetRowSizes()</ref> and <ref refid="classwx_grid_1a07a8fc5ffab7932e63a3741ea364d958" kindref="member">wxGrid::SetRowSizes()</ref> can help with this, you will just need to serialize <ref refid="structwx_grid_sizes_info" kindref="compound">wxGridSizesInfo</ref> structure returned by the former in some way and deserialize it back before calling the latter. </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/grid.h"/>
   </compounddef>
 </doxygen>

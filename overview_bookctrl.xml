@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="overview_bookctrl" kind="page">
     <compoundname>overview_bookctrl</compoundname>
     <title>wxBookCtrl Overview</title>
@@ -10,11 +10,9 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>A book control is a convenient way of displaying multiple pages of information, displayed one page at a time. </para>
     </briefdescription>
     <detaileddescription>
-<para>A book control is a convenient way of displaying multiple pages of information, displayed one page at a time.</para>
-<para>wxWidgets has five variants of this control:</para>
+<para>A book control is a convenient way of displaying multiple pages of information, displayed one page at a time. wxWidgets has five variants of this control:</para>
 <para><itemizedlist>
 <listitem><para><ref refid="classwx_choicebook" kindref="compound">wxChoicebook</ref>: controlled by a <ref refid="classwx_choice" kindref="compound">wxChoice</ref> </para>
 </listitem>
@@ -36,19 +34,18 @@ See the <ref refid="page_samples_1page_samples_notebook" kindref="member">Notebo
 </para>
 <sect1 id="overview_bookctrl_1overview_bookctrl_bestbookctrl">
 <title>Best Book</title>
-<para><ref refid="interface_2wx_2bookctrl_8h_1ab367c06ea9df73f0d3bf3c464afdb7d6" kindref="member">wxBookCtrl</ref> is mapped to the class best suited for a given platform. Currently it is the same as <ref refid="classwx_notebook" kindref="compound">wxNotebook</ref> if it is compiled in (i.e. <computeroutput>wxUSE_NOTEBOOK</computeroutput> was not explicitly set to 0), otherwise it is the same as <ref refid="classwx_choicebook" kindref="compound">wxChoicebook</ref>.</para>
-<para>The mapping consists of:</para>
+<para><ref refid="interface_2wx_2bookctrl_8h_1ab367c06ea9df73f0d3bf3c464afdb7d6" kindref="member">wxBookCtrl</ref> is mapped to the class best suited for a given platform. Currently it provides <ref refid="classwx_choicebook" kindref="compound">wxChoicebook</ref> for smartphones equipped with WinCE, and <ref refid="classwx_notebook" kindref="compound">wxNotebook</ref> for all other platforms. The mapping consists of:</para>
 <para><table rows="5" cols="2"><row>
 <entry thead="no"><para><ref refid="interface_2wx_2bookctrl_8h_1ab367c06ea9df73f0d3bf3c464afdb7d6" kindref="member">wxBookCtrl</ref> </para>
 </entry><entry thead="no"><para><ref refid="classwx_choicebook" kindref="compound">wxChoicebook</ref> or <ref refid="classwx_notebook" kindref="compound">wxNotebook</ref>  </para>
 </entry></row>
 <row>
-<entry thead="no"><para><computeroutput>wxEVT_BOOKCTRL_PAGE_CHANGED</computeroutput>  </para>
-</entry><entry thead="no"><para><computeroutput>wxEVT_CHOICEBOOK_PAGE_CHANGED</computeroutput> or <computeroutput>wxEVT_NOTEBOOK_PAGE_CHANGED</computeroutput>  </para>
+<entry thead="no"><para><computeroutput>wxEVT_COMMAND_BOOKCTRL_PAGE_CHANGED</computeroutput>  </para>
+</entry><entry thead="no"><para><computeroutput>wxEVT_COMMAND_CHOICEBOOK_PAGE_CHANGED</computeroutput> or <computeroutput>wxEVT_COMMAND_NOTEBOOK_PAGE_CHANGED</computeroutput>  </para>
 </entry></row>
 <row>
-<entry thead="no"><para><computeroutput>wxEVT_BOOKCTRL_PAGE_CHANGING</computeroutput>  </para>
-</entry><entry thead="no"><para><computeroutput>wxEVT_CHOICEBOOK_PAGE_CHANGING</computeroutput> or <computeroutput>wxEVT_NOTEBOOK_PAGE_CHANGING</computeroutput>  </para>
+<entry thead="no"><para><computeroutput>wxEVT_COMMAND_BOOKCTRL_PAGE_CHANGING</computeroutput>  </para>
+</entry><entry thead="no"><para><computeroutput>wxEVT_COMMAND_CHOICEBOOK_PAGE_CHANGING</computeroutput> or <computeroutput>wxEVT_COMMAND_NOTEBOOK_PAGE_CHANGING</computeroutput>  </para>
 </entry></row>
 <row>
 <entry thead="no"><para><computeroutput>EVT_BOOKCTRL_PAGE_CHANGED(id, fn)</computeroutput>  </para>
@@ -76,6 +73,5 @@ See the <ref refid="page_samples_1page_samples_notebook" kindref="member">Notebo
 </para>
 </sect1>
     </detaileddescription>
-    <location file="docs/doxygen/overviews/bookctrl.h"/>
   </compounddef>
 </doxygen>

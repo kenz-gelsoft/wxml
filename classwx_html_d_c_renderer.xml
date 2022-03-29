@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_html_d_c_renderer" kind="class" language="C++" prot="public">
     <compoundname>wxHtmlDCRenderer</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -48,61 +48,19 @@
 <para>Returns the height of the HTML text in pixels. </para>
         </briefdescription>
         <detaileddescription>
-<para>If the height of the area used with this renderer (see <ref refid="classwx_html_d_c_renderer_1afa7a08a1a57cad6e0ae78a219fb608d1" kindref="member">wxHtmlDCRenderer::SetSize</ref>) is smaller that total height, the renderer will produce more than one page of output.</para>
+<para>This is important if area height (see <ref refid="classwx_html_d_c_renderer_1afa7a08a1a57cad6e0ae78a219fb608d1" kindref="member">wxHtmlDCRenderer::SetSize</ref>) is smaller that total height and thus the page cannot fit into it. In that case you&apos;re supposed to call <ref refid="classwx_html_d_c_renderer_1af6921c6712a998118297c1b53eebf8fa" kindref="member">Render()</ref> as long as its return value is smaller than <ref refid="classwx_html_d_c_renderer_1a239ef443f47d9d48d7c743e2e64136f9" kindref="member">GetTotalHeight()</ref>&apos;s.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_html_d_c_renderer_1a53c14866333a89a96d7ac9dbd308d208" kindref="member">GetTotalWidth()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/html/htmprint.h" line="47" column="9"/>
+        <location file="interface/wx/html/htmprint.h" line="48" column="9"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_html_d_c_renderer_1aa423595e111d5b242d79c549d5929aa8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_html_d_c_renderer_1af6921c6712a998118297c1b53eebf8fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
-        <definition>int wxHtmlDCRenderer::FindNextPageBreak</definition>
-        <argsstring>(int pos) const</argsstring>
-        <name>FindNextPageBreak</name>
-        <param>
-          <type>int</type>
-          <declname>pos</declname>
-        </param>
-        <briefdescription>
-<para>Finds the next page break after the specified (vertical) position. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>An example of using this method:</para>
-<para><programlisting><codeline><highlight class="normal">std::vector&lt;int&gt;<sp/>pages;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>0;<sp/>pos<sp/>!=<sp/><ref refid="defs_8h_1a89de5e6353fc7812991b085e12263e98" kindref="member">wxNOT_FOUND</ref>;<sp/>pos<sp/>=<sp/>renderer.FindNextPageBreak(pos)<sp/>)</highlight></codeline>
-<codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>pages.push_back(pos);</highlight></codeline>
-<codeline><highlight class="normal">}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>&quot;pages&quot;<sp/>vector<sp/>now<sp/>contains<sp/>all<sp/>page<sp/>break<sp/>positions<sp/>and,<sp/>in</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>particular,<sp/>its<sp/>size()<sp/>returns<sp/>the<sp/>number<sp/>of<sp/>pages</highlight></codeline>
-</programlisting></para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>pos</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Absolute position of the last page break. For the initial call of this function, it should be 0 and for the subsequent ones it should be the previous return value. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Position of the next page break or <computeroutput>wxNOT_FOUND</computeroutput> if there are no more of them.</para>
-</simplesect>
-<simplesect kind="since"><para>3.1.2 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/html/htmprint.h" line="73" column="9"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_html_d_c_renderer_1a5fe383f22d986458858f5ebef359b9bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void wxHtmlDCRenderer::Render</definition>
-        <argsstring>(int x, int y, int from=0, int to=INT_MAX)</argsstring>
+        <definition>int wxHtmlDCRenderer::Render</definition>
+        <argsstring>(int x, int y, wxArrayInt &amp;known_pagebreaks, int from=0, int dont_render=false, int to=INT_MAX)</argsstring>
         <name>Render</name>
         <param>
           <type>int</type>
@@ -113,9 +71,18 @@
           <declname>y</declname>
         </param>
         <param>
+          <type><ref refid="dynarray_8h_1add87f199292e36ee87efd6d7f0d4ee66" kindref="member">wxArrayInt</ref> &amp;</type>
+          <declname>known_pagebreaks</declname>
+        </param>
+        <param>
           <type>int</type>
           <declname>from</declname>
           <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dont_render</declname>
+          <defval>false</defval>
         </param>
         <param>
           <type>int</type>
@@ -126,7 +93,6 @@
 <para>Renders HTML text to the DC. </para>
         </briefdescription>
         <detaileddescription>
-<para>When using multi-page documents, <ref refid="classwx_html_d_c_renderer_1aa423595e111d5b242d79c549d5929aa8" kindref="member">FindNextPageBreak()</ref> can be used to find the values for <emphasis>from</emphasis> and <emphasis>to</emphasis>, which should be the consecutive page breaks returned by that function.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>x</parametername>
@@ -138,6 +104,16 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
+<parametername>known_pagebreaks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<xrefsect id="todo_1_todo000027"><xreftitle>Todo</xreftitle><xrefdescription><para>docme </para>
+</xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<parameternamelist>
 <parametername>from</parametername>
 </parameternamelist>
 <parameterdescription>
@@ -146,25 +122,36 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
+<parametername>dont_render</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if true then this method only returns y coordinate of the next page and does not output anything. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
 <parametername>to</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>y-coordinate of the last visible cell or <computeroutput>INT_MAX</computeroutput> to use the full page height.</para>
+<para>y-coordinate of the last visible cell.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="note"><para>The following three methods <bold>must</bold> always be called before any call to <ref refid="classwx_html_d_c_renderer_1a5fe383f22d986458858f5ebef359b9bb" kindref="member">Render()</ref>, in this order:<itemizedlist>
+Returned value is y coordinate of first cell than didn&apos;t fit onto page. Use this value as from in next call to <ref refid="classwx_html_d_c_renderer_1af6921c6712a998118297c1b53eebf8fa" kindref="member">Render()</ref> in order to print multipages document.</para>
+<para><simplesect kind="note"><para>The following three methods <bold>must</bold> always be called before any call to <ref refid="classwx_html_d_c_renderer_1af6921c6712a998118297c1b53eebf8fa" kindref="member">Render()</ref>, in this order:<itemizedlist>
 <listitem><para><ref refid="classwx_html_d_c_renderer_1a43d1c3cd2e0d772b1ba1fc4e14f5f030" kindref="member">SetDC()</ref></para>
 </listitem><listitem><para><ref refid="classwx_html_d_c_renderer_1afa7a08a1a57cad6e0ae78a219fb608d1" kindref="member">SetSize()</ref></para>
-</listitem><listitem><para><ref refid="classwx_html_d_c_renderer_1a96e6e1583d11d6db81afd0c99adc4dff" kindref="member">SetHtmlText()</ref> </para>
+</listitem><listitem><para><ref refid="classwx_html_d_c_renderer_1a96e6e1583d11d6db81afd0c99adc4dff" kindref="member">SetHtmlText()</ref></para>
 </listitem></itemizedlist>
 </para>
+</simplesect>
+<simplesect kind="note"><para><ref refid="classwx_html_d_c_renderer_1af6921c6712a998118297c1b53eebf8fa" kindref="member">Render()</ref> changes the DC&apos;s user scale and does NOT restore it. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/html/htmprint.h" line="97" column="10"/>
+        <location file="interface/wx/html/htmprint.h" line="78" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_html_d_c_renderer_1a43d1c3cd2e0d772b1ba1fc4e14f5f030" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -188,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/html/htmprint.h" line="108" column="10"/>
+        <location file="interface/wx/html/htmprint.h" line="90" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_html_d_c_renderer_1a70cfd1cd9f25f91afe40694466b70f7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -244,7 +231,7 @@ Default font sizes are defined by constants wxHTML_FONT_SIZE_1, wxHTML_FONT_SIZE
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/html/htmprint.h" line="132" column="10"/>
+        <location file="interface/wx/html/htmprint.h" line="114" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_html_d_c_renderer_1a277ee219b82244b3eecef42f4e67f14c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -301,7 +288,7 @@ Default font sizes are defined by constants wxHTML_FONT_SIZE_1, wxHTML_FONT_SIZE
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/html/htmprint.h" line="151" column="10"/>
+        <location file="interface/wx/html/htmprint.h" line="133" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_html_d_c_renderer_1a96e6e1583d11d6db81afd0c99adc4dff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -326,7 +313,7 @@ Default font sizes are defined by constants wxHTML_FONT_SIZE_1, wxHTML_FONT_SIZE
 <para>Assign text to the renderer. </para>
         </briefdescription>
         <detaileddescription>
-<para><ref refid="classwx_html_d_c_renderer_1a5fe383f22d986458858f5ebef359b9bb" kindref="member">Render()</ref> then draws the text onto DC.</para>
+<para><ref refid="classwx_html_d_c_renderer_1af6921c6712a998118297c1b53eebf8fa" kindref="member">Render()</ref> then draws the text onto DC.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>html</parametername>
@@ -356,30 +343,7 @@ Default font sizes are defined by constants wxHTML_FONT_SIZE_1, wxHTML_FONT_SIZE
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/html/htmprint.h" line="167" column="10"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_html_d_c_renderer_1a4affbf52e9c154e04359ecc876e6fd64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void wxHtmlDCRenderer::SetHtmlCell</definition>
-        <argsstring>(wxHtmlContainerCell &amp;cell)</argsstring>
-        <name>SetHtmlCell</name>
-        <param>
-          <type><ref refid="classwx_html_container_cell" kindref="compound">wxHtmlContainerCell</ref> &amp;</type>
-          <declname>cell</declname>
-        </param>
-        <briefdescription>
-<para>Associate the given HTML contents to the renderer. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This is similar to <ref refid="classwx_html_d_c_renderer_1a96e6e1583d11d6db81afd0c99adc4dff" kindref="member">SetHtmlText()</ref>, but is more efficient as the text can be parsed only once, using <ref refid="classwx_html_parser_1a5f419e633b0d042c98f8e4738718d572" kindref="member">wxHtmlParser::Parse()</ref>, and then passed to <ref refid="classwx_html_d_c_renderer" kindref="compound">wxHtmlDCRenderer</ref> multiple times or already reused for other purposes.</para>
-<para>Note that <emphasis>cell</emphasis> will be modified (e.g. laid out) by this function.</para>
-<para><simplesect kind="since"><para>3.1.2 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/html/htmprint.h" line="182" column="10"/>
+        <location file="interface/wx/html/htmprint.h" line="149" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_html_d_c_renderer_1afa7a08a1a57cad6e0ae78a219fb608d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -398,41 +362,34 @@ Default font sizes are defined by constants wxHTML_FONT_SIZE_1, wxHTML_FONT_SIZE
 <para>Set size of output rectangle, in pixels. </para>
         </briefdescription>
         <detaileddescription>
-<para>Note that you <bold>can&apos;t</bold> change width of the rectangle between calls to <ref refid="classwx_html_d_c_renderer_1a5fe383f22d986458858f5ebef359b9bb" kindref="member">Render()</ref> ! (You can freely change height.) </para>
+<para>Note that you <bold>can&apos;t</bold> change width of the rectangle between calls to <ref refid="classwx_html_d_c_renderer_1af6921c6712a998118297c1b53eebf8fa" kindref="member">Render()</ref> ! (You can freely change height.) </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/html/htmprint.h" line="189" column="10"/>
+        <location file="interface/wx/html/htmprint.h" line="158" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class can render HTML document into a specified area of a DC. </para>
     </briefdescription>
     <detaileddescription>
-<para>You can use it in your own printing code, although use of <ref refid="classwx_html_easy_printing" kindref="compound">wxHtmlEasyPrinting</ref> or <ref refid="classwx_html_printout" kindref="compound">wxHtmlPrintout</ref> is strongly recommended.</para>
+<para>This class can render HTML document into a specified area of a DC. You can use it in your own printing code, although use of <ref refid="classwx_html_easy_printing" kindref="compound">wxHtmlEasyPrinting</ref> or <ref refid="classwx_html_printout" kindref="compound">wxHtmlPrintout</ref> is strongly recommended.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxhtml" kindref="member">wxHTML</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxHtmlDCRenderer</label>
-        <link refid="classwx_html_d_c_renderer"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="1">
         <label>wxHtmlDCRenderer</label>
         <link refid="classwx_html_d_c_renderer"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="2">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -440,31 +397,35 @@ Default font sizes are defined by constants wxHTML_FONT_SIZE_1, wxHTML_FONT_SIZE
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="1">
+        <label>wxHtmlDCRenderer</label>
+        <link refid="classwx_html_d_c_renderer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="3">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/html/htmprint.h" line="18" column="1" bodyfile="interface/wx/html/htmprint.h" bodystart="19" bodyend="190"/>
+    <location file="interface/wx/html/htmprint.h" line="19" column="1" bodyfile="interface/wx/html/htmprint.h" bodystart="18" bodyend="159"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxHtmlDCRenderer</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxHtmlDCRenderer</scope><name>CreateRefData</name></member>
-      <member refid="classwx_html_d_c_renderer_1aa423595e111d5b242d79c549d5929aa8" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>FindNextPageBreak</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxHtmlDCRenderer</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxHtmlDCRenderer</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxHtmlDCRenderer</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxHtmlDCRenderer</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>GetRefData</name></member>
       <member refid="classwx_html_d_c_renderer_1a239ef443f47d9d48d7c743e2e64136f9" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>GetTotalHeight</name></member>
       <member refid="classwx_html_d_c_renderer_1a53c14866333a89a96d7ac9dbd308d208" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>GetTotalWidth</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>Ref</name></member>
-      <member refid="classwx_html_d_c_renderer_1a5fe383f22d986458858f5ebef359b9bb" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>Render</name></member>
+      <member refid="classwx_html_d_c_renderer_1af6921c6712a998118297c1b53eebf8fa" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>Render</name></member>
       <member refid="classwx_html_d_c_renderer_1a43d1c3cd2e0d772b1ba1fc4e14f5f030" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>SetDC</name></member>
       <member refid="classwx_html_d_c_renderer_1a70cfd1cd9f25f91afe40694466b70f7a" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>SetFonts</name></member>
-      <member refid="classwx_html_d_c_renderer_1a4affbf52e9c154e04359ecc876e6fd64" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>SetHtmlCell</name></member>
       <member refid="classwx_html_d_c_renderer_1a96e6e1583d11d6db81afd0c99adc4dff" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>SetHtmlText</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>SetRefData</name></member>
       <member refid="classwx_html_d_c_renderer_1afa7a08a1a57cad6e0ae78a219fb608d1" prot="public" virt="non-virtual"><scope>wxHtmlDCRenderer</scope><name>SetSize</name></member>

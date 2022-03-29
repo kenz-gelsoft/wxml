@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_zip_output_stream" kind="class" language="C++" prot="public">
     <compoundname>wxZipOutputStream</compoundname>
     <basecompoundref refid="classwx_archive_output_stream" prot="public" virt="non-virtual">wxArchiveOutputStream</basecompoundref>
     <includes local="no">wx/zipstrm.h</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classwx_zip_output_stream_1a959a931f02c11d39a574691f830e0909" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_zip_output_stream_1ad22d73c10ed4f1082f0fc6488b94e72d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxZipOutputStream::wxZipOutputStream</definition>
-        <argsstring>(wxOutputStream &amp;stream, int level=-1, wxMBConv &amp;conv=wxConvUTF8)</argsstring>
+        <argsstring>(wxOutputStream &amp;stream, int level=-1, wxMBConv &amp;conv=wxConvLocal)</argsstring>
         <name>wxZipOutputStream</name>
         <param>
           <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> &amp;</type>
@@ -22,24 +22,23 @@
         <param>
           <type><ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> &amp;</type>
           <declname>conv</declname>
-          <defval>wxConvUTF8</defval>
+          <defval>wxConvLocal</defval>
         </param>
         <briefdescription>
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
 <para><emphasis>level</emphasis> is the compression level to use. It can be a value between 0 and 9 or -1 to use the default value which currently is equivalent to 6.</para>
-<para>If the parent stream is passed as a pointer then the new filter stream takes ownership of it. If it is passed by reference then it does not. In a Unicode build the third parameter <emphasis>conv</emphasis> is used to translate the filename and comment fields to an 8-bit encoding. It has no effect on the stream&apos;s data.</para>
-<para>Since version 3.1.1, filenames in the generated archive will be encoded using UTF-8 and marked according to ZIP specification. To get the previous behaviour wxConvLocal may be provided as the conv object. Please note that not all unzip applications are fully ZIP spec compatible and may not correctly decode UTF-8 characters. For the best interoperability using only ASCII characters is the safest option. </para>
+<para>If the parent stream is passed as a pointer then the new filter stream takes ownership of it. If it is passed by reference then it does not. In a Unicode build the third parameter <emphasis>conv</emphasis> is used to translate the filename and comment fields to an 8-bit encoding. It has no effect on the stream&apos;s data. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="501" column="5"/>
+        <location file="interface/wx/zipstrm.h" line="493" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_zip_output_stream_1a93073667dd9a3e630702999877a98d44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_zip_output_stream_1afa04f2760607dfd8aeac5199d22991db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxZipOutputStream::wxZipOutputStream</definition>
-        <argsstring>(wxOutputStream *stream, int level=-1, wxMBConv &amp;conv=wxConvUTF8)</argsstring>
+        <argsstring>(wxOutputStream *stream, int level=-1, wxMBConv &amp;conv=wxConvLocal)</argsstring>
         <name>wxZipOutputStream</name>
         <param>
           <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> *</type>
@@ -53,7 +52,7 @@
         <param>
           <type><ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> &amp;</type>
           <declname>conv</declname>
-          <defval>wxConvUTF8</defval>
+          <defval>wxConvLocal</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -61,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="503" column="5"/>
+        <location file="interface/wx/zipstrm.h" line="495" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_zip_output_stream_1a2b70e588571810235c0c5d01c0257acc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -75,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="511" column="13"/>
+        <location file="interface/wx/zipstrm.h" line="503" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_zip_output_stream_1a8c1c85831fa28ddca211200fd315ad04" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -91,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="517" column="10"/>
+        <location file="interface/wx/zipstrm.h" line="509" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_zip_output_stream_1aa8c78bdb0eba298b9a3648756b3562bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -107,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="524" column="10"/>
+        <location file="interface/wx/zipstrm.h" line="516" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_zip_output_stream_1aadc5bec41140d1b24ad14e6c128f57a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -125,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="530" column="10"/>
+        <location file="interface/wx/zipstrm.h" line="522" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_zip_output_stream_1a8dbdbb89330f20bdc5ea9feeaaf13729" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -145,12 +144,12 @@
         </briefdescription>
         <detaileddescription>
 <para><emphasis>entry</emphasis> is then opened in <emphasis>inputStream</emphasis> and its contents copied to this stream.</para>
-<para><ref refid="classwx_zip_output_stream_1a8dbdbb89330f20bdc5ea9feeaaf13729" kindref="member">CopyEntry()</ref> is much more efficient than transferring the data using Read() and <ref refid="classwx_output_stream_1afc577008c335756968530cdae4b05b34" kindref="member">Write()</ref> since it will copy them without decompressing and recompressing them.</para>
+<para><ref refid="classwx_zip_output_stream_1a8dbdbb89330f20bdc5ea9feeaaf13729" kindref="member">CopyEntry()</ref> is much more efficient than transferring the data using Read() and <ref refid="classwx_output_stream_1a22154f02408431ffe8b1590407c3b011" kindref="member">Write()</ref> since it will copy them without decompressing and recompressing them.</para>
 <para>For zips on seekable streams, <emphasis>entry</emphasis> must be from the same zip file as <emphasis>inputStream</emphasis>. For non-seekable streams, <emphasis>entry</emphasis> must also be the last thing read from <emphasis>inputStream</emphasis>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="545" column="10"/>
+        <location file="interface/wx/zipstrm.h" line="537" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_zip_output_stream_1aa8c45e47b7b15618ded64228e45c43d3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -165,7 +164,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="555" column="9"/>
+        <location file="interface/wx/zipstrm.h" line="547" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_zip_output_stream_1acd503189dc57277be3ddce5ff6de743c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -182,7 +181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="556" column="10"/>
+        <location file="interface/wx/zipstrm.h" line="548" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_zip_output_stream_1a8b92bb0f3837e79f8a289c9cecde7d3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -207,7 +206,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="566" column="10"/>
+        <location file="interface/wx/zipstrm.h" line="558" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_zip_output_stream_1a3ef78370a66ac4c0030164df04eec61d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -222,11 +221,10 @@
 <para>Takes ownership of <emphasis>entry</emphasis> and uses it to create a new entry in the zip. </para>
         </briefdescription>
         <detaileddescription>
-<para>If you do not specify a size and plan to put more than 4GB data into the entry see <ref refid="classwx_zip_output_stream_1a32e3ae0c40a2c2df5af97e4eac09fb8e" kindref="member">SetFormat()</ref> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="576" column="10"/>
+        <location file="interface/wx/zipstrm.h" line="565" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_zip_output_stream_1a4190f1b14a18d059689406951de42442" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -252,11 +250,10 @@
 <para>Create a new entry with the given name, timestamp and size. </para>
         </briefdescription>
         <detaileddescription>
-<para>If you do not specify a size and plan to put more than 4GB data into the entry see <ref refid="classwx_zip_output_stream_1a32e3ae0c40a2c2df5af97e4eac09fb8e" kindref="member">SetFormat()</ref> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="584" column="10"/>
+        <location file="interface/wx/zipstrm.h" line="570" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_zip_output_stream_1a939d59ea1b953158036a99ab9ab42235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -275,54 +272,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="593" column="10"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_zip_output_stream_1a32e3ae0c40a2c2df5af97e4eac09fb8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void wxZipOutputStream::SetFormat</definition>
-        <argsstring>(wxZipArchiveFormat format)</argsstring>
-        <name>SetFormat</name>
-        <param>
-          <type><ref refid="zipstrm_8h_1a80ba75b354d4e58388a5fc2df20120ea" kindref="member">wxZipArchiveFormat</ref></type>
-          <declname>format</declname>
-        </param>
-        <briefdescription>
-<para>Set the format of the archive. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The normal zip format is limited to single files and the complete archive smaller than 4GB with less than 65k files. If any of these limits are exceeded, this class will automatically create a ZIP64 file, so in most situations calling <ref refid="classwx_zip_output_stream_1a32e3ae0c40a2c2df5af97e4eac09fb8e" kindref="member">SetFormat()</ref> is not necessary.</para>
-<para>However, to support single entries with more than 4GB of data (compressed or original) whose sizes are unknown when adding the entry with <ref refid="classwx_zip_output_stream_1a3ef78370a66ac4c0030164df04eec61d" kindref="member">PutNextEntry()</ref>, the format has to be set to wxZIP_FORMAT_ZIP64 before adding such entries.</para>
-<para><simplesect kind="since"><para>3.1.1 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="610" column="10"/>
-      </memberdef>
-      <memberdef kind="function" id="classwx_zip_output_stream_1acc2fba1e0cd2b0f57799029e4171536b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="zipstrm_8h_1a80ba75b354d4e58388a5fc2df20120ea" kindref="member">wxZipArchiveFormat</ref></type>
-        <definition>wxZipArchiveFormat wxZipOutputStream::GetFormat</definition>
-        <argsstring>() const</argsstring>
-        <name>GetFormat</name>
-        <briefdescription>
-<para>Get the format of the archive. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This returns the value passed to <ref refid="classwx_zip_output_stream_1a32e3ae0c40a2c2df5af97e4eac09fb8e" kindref="member">SetFormat()</ref> and not necessarily the actual archive format (e.g. this method could return wxZIP_FORMAT_DEFAULT even if a ZIP64 will end up being created).</para>
-<para><simplesect kind="since"><para>3.1.1 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/zipstrm.h" line="621" column="24"/>
+        <location file="interface/wx/zipstrm.h" line="579" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Output stream for writing zip files. </para>
     </briefdescription>
     <detaileddescription>
+<para>Output stream for writing zip files.</para>
 <para><ref refid="classwx_zip_output_stream_1a3ef78370a66ac4c0030164df04eec61d" kindref="member">wxZipOutputStream::PutNextEntry()</ref> is used to create a new entry in the output zip, then the entry&apos;s data is written to the <ref refid="classwx_zip_output_stream" kindref="compound">wxZipOutputStream</ref>. Another call to <ref refid="classwx_zip_output_stream_1a3ef78370a66ac4c0030164df04eec61d" kindref="member">wxZipOutputStream::PutNextEntry()</ref> closes the current entry and begins the next.</para>
 <para><heading level="2"></heading>
 </para>
@@ -332,11 +288,15 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxArchiveOutputStream</label>
-        <link refid="classwx_archive_output_stream"/>
-        <childnode refid="3" relation="public-inheritance">
+      <node id="1">
+        <label>wxZipOutputStream</label>
+        <link refid="classwx_zip_output_stream"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="5">
+        <label>wxStreamBase</label>
+        <link refid="classwx_stream_base"/>
       </node>
       <node id="3">
         <label>wxFilterOutputStream</label>
@@ -350,23 +310,23 @@
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
-        <label>wxStreamBase</label>
-        <link refid="classwx_stream_base"/>
-      </node>
-      <node id="1">
-        <label>wxZipOutputStream</label>
-        <link refid="classwx_zip_output_stream"/>
-        <childnode refid="2" relation="public-inheritance">
+      <node id="2">
+        <label>wxArchiveOutputStream</label>
+        <link refid="classwx_archive_output_stream"/>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>wxArchiveOutputStream</label>
-        <link refid="classwx_archive_output_stream"/>
-        <childnode refid="3" relation="public-inheritance">
+      <node id="1">
+        <label>wxZipOutputStream</label>
+        <link refid="classwx_zip_output_stream"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="5">
+        <label>wxStreamBase</label>
+        <link refid="classwx_stream_base"/>
       </node>
       <node id="3">
         <label>wxFilterOutputStream</label>
@@ -380,18 +340,14 @@
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
-        <label>wxStreamBase</label>
-        <link refid="classwx_stream_base"/>
-      </node>
-      <node id="1">
-        <label>wxZipOutputStream</label>
-        <link refid="classwx_zip_output_stream"/>
-        <childnode refid="2" relation="public-inheritance">
+      <node id="2">
+        <label>wxArchiveOutputStream</label>
+        <link refid="classwx_archive_output_stream"/>
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/zipstrm.h" line="477" column="1" bodyfile="interface/wx/zipstrm.h" bodystart="478" bodyend="622"/>
+    <location file="interface/wx/zipstrm.h" line="477" column="1" bodyfile="interface/wx/zipstrm.h" bodystart="476" bodyend="580"/>
     <listofallmembers>
       <member refid="classwx_zip_output_stream_1a8c1c85831fa28ddca211200fd315ad04" prot="public" virt="virtual"><scope>wxZipOutputStream</scope><name>Close</name></member>
       <member refid="classwx_zip_output_stream_1aa8c78bdb0eba298b9a3648756b3562bd" prot="public" virt="virtual"><scope>wxZipOutputStream</scope><name>CloseEntry</name></member>
@@ -399,7 +355,6 @@
       <member refid="classwx_archive_output_stream_1a043827f9c01ef7bb4bfebf7b9be8ee55" prot="public" virt="pure-virtual" ambiguityscope="wxArchiveOutputStream::"><scope>wxZipOutputStream</scope><name>CopyArchiveMetaData</name></member>
       <member refid="classwx_zip_output_stream_1a8dbdbb89330f20bdc5ea9feeaaf13729" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>CopyEntry</name></member>
       <member refid="classwx_archive_output_stream_1acf19a29865cca24282fd163a20a4b137" prot="public" virt="pure-virtual" ambiguityscope="wxArchiveOutputStream::"><scope>wxZipOutputStream</scope><name>CopyEntry</name></member>
-      <member refid="classwx_zip_output_stream_1acc2fba1e0cd2b0f57799029e4171536b" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>GetFormat</name></member>
       <member refid="classwx_stream_base_1a33440c8ea3f8df382adecd7d188a1662" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>GetLastError</name></member>
       <member refid="classwx_stream_base_1a052d67c85f63873fabb45ecd108ea615" prot="public" virt="virtual"><scope>wxZipOutputStream</scope><name>GetLength</name></member>
       <member refid="classwx_zip_output_stream_1aa8c45e47b7b15618ded64228e45c43d3" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>GetLevel</name></member>
@@ -419,18 +374,17 @@
       <member refid="classwx_stream_base_1a52353ac42f72538b2022a84f416e5fe2" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>Reset</name></member>
       <member refid="classwx_output_stream_1ac898dd36e44e5f4785a6658f470e9752" prot="public" virt="virtual"><scope>wxZipOutputStream</scope><name>SeekO</name></member>
       <member refid="classwx_zip_output_stream_1a939d59ea1b953158036a99ab9ab42235" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>SetComment</name></member>
-      <member refid="classwx_zip_output_stream_1a32e3ae0c40a2c2df5af97e4eac09fb8e" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>SetFormat</name></member>
       <member refid="classwx_zip_output_stream_1acd503189dc57277be3ddce5ff6de743c" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>SetLevel</name></member>
       <member refid="classwx_output_stream_1a468208f94273630dcbdb0c692645e42c" prot="public" virt="virtual"><scope>wxZipOutputStream</scope><name>TellO</name></member>
-      <member refid="classwx_output_stream_1afc577008c335756968530cdae4b05b34" prot="public" virt="virtual"><scope>wxZipOutputStream</scope><name>Write</name></member>
-      <member refid="classwx_output_stream_1a7c7a356201ad354949a5a9cf3bf97d30" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>Write</name></member>
+      <member refid="classwx_output_stream_1a22154f02408431ffe8b1590407c3b011" prot="public" virt="virtual"><scope>wxZipOutputStream</scope><name>Write</name></member>
+      <member refid="classwx_output_stream_1aacced095d3e9b19b4f6264d94c85cf8f" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>Write</name></member>
       <member refid="classwx_output_stream_1aa82aca41108fba5cebbba951c84431f0" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>WriteAll</name></member>
       <member refid="classwx_filter_output_stream_1af602ad1b7673a587430733f4cfb493d0" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>wxFilterOutputStream</name></member>
       <member refid="classwx_filter_output_stream_1a0358028d12b8dde1ef969efd1703908e" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>wxFilterOutputStream</name></member>
       <member refid="classwx_output_stream_1ab2391df744df6ec2d4e4e3f561c51118" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>wxOutputStream</name></member>
       <member refid="classwx_stream_base_1a2bdb01f1ccd34d551d3cfc848054bf1e" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>wxStreamBase</name></member>
-      <member refid="classwx_zip_output_stream_1a959a931f02c11d39a574691f830e0909" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>wxZipOutputStream</name></member>
-      <member refid="classwx_zip_output_stream_1a93073667dd9a3e630702999877a98d44" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>wxZipOutputStream</name></member>
+      <member refid="classwx_zip_output_stream_1ad22d73c10ed4f1082f0fc6488b94e72d" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>wxZipOutputStream</name></member>
+      <member refid="classwx_zip_output_stream_1afa04f2760607dfd8aeac5199d22991db" prot="public" virt="non-virtual"><scope>wxZipOutputStream</scope><name>wxZipOutputStream</name></member>
       <member refid="classwx_archive_output_stream_1a398e15a6c9b1799e64672b4320053376" prot="public" virt="virtual"><scope>wxZipOutputStream</scope><name>~wxArchiveOutputStream</name></member>
       <member refid="classwx_output_stream_1aadf4d69a6ab7430e99ecb8d02feecfd3" prot="public" virt="virtual"><scope>wxZipOutputStream</scope><name>~wxOutputStream</name></member>
       <member refid="classwx_stream_base_1aebba32b4da79c60933fa997735a8bfe5" prot="public" virt="virtual"><scope>wxZipOutputStream</scope><name>~wxStreamBase</name></member>

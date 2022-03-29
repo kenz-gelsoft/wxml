@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_input_stream" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxInputStream</compoundname>
     <basecompoundref refid="classwx_stream_base" prot="public" virt="non-virtual">wxStreamBase</basecompoundref>
@@ -45,7 +45,7 @@
         <argsstring>() const</argsstring>
         <name>CanRead</name>
         <briefdescription>
-<para>Returns true if some data is available in the stream right now, so that calling <ref refid="classwx_input_stream_1ae70ea89ff05940bc312216decde6237d" kindref="member">Read()</ref> wouldn&apos;t block. </para>
+<para>Returns true if some data is available in the stream right now, so that calling <ref refid="classwx_input_stream_1a72f24d0f50c7f07bb68dedf5e8690f4e" kindref="member">Read()</ref> wouldn&apos;t block. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -110,9 +110,9 @@
         </inbodydescription>
         <location file="interface/wx/stream.h" line="620" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_input_stream_1ae70ea89ff05940bc312216decde6237d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_input_stream_1a72f24d0f50c7f07bb68dedf5e8690f4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> &amp;</type>
-        <definition>virtual wxInputStream &amp; wxInputStream::Read</definition>
+        <definition>virtual wxInputStream&amp; wxInputStream::Read</definition>
         <argsstring>(void *buffer, size_t size)</argsstring>
         <name>Read</name>
         <param>
@@ -138,9 +138,9 @@
         </inbodydescription>
         <location file="interface/wx/stream.h" line="634" column="27"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_input_stream_1a34987cf731f908880e4b1d4e4deb42c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_input_stream_1a05cc7b25c9df86f00157a34ee9809bd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> &amp;</type>
-        <definition>wxInputStream &amp; wxInputStream::Read</definition>
+        <definition>wxInputStream&amp; wxInputStream::Read</definition>
         <argsstring>(wxOutputStream &amp;stream_out)</argsstring>
         <name>Read</name>
         <param>
@@ -177,8 +177,8 @@
 <para>Reads exactly the specified number of bytes into the buffer. </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns true only if the entire amount of data was read, otherwise false is returned and the number of bytes really read can be retrieved using <ref refid="classwx_input_stream_1aae3e3341d71b3441eb4b723f5a6a518f" kindref="member">LastRead()</ref>, as with <ref refid="classwx_input_stream_1ae70ea89ff05940bc312216decde6237d" kindref="member">Read()</ref>.</para>
-<para>This method uses repeated calls to <ref refid="classwx_input_stream_1ae70ea89ff05940bc312216decde6237d" kindref="member">Read()</ref> (which may return after reading less than the requested number of bytes) if necessary.</para>
+<para>Returns true only if the entire amount of data was read, otherwise false is returned and the number of bytes really read can be retrieved using <ref refid="classwx_input_stream_1aae3e3341d71b3441eb4b723f5a6a518f" kindref="member">LastRead()</ref>, as with <ref refid="classwx_input_stream_1a72f24d0f50c7f07bb68dedf5e8690f4e" kindref="member">Read()</ref>.</para>
+<para>This method uses repeated calls to <ref refid="classwx_input_stream_1a72f24d0f50c7f07bb68dedf5e8690f4e" kindref="member">Read()</ref> (which may return after reading less than the requested number of bytes) if necessary.</para>
 <para><simplesect kind="warning"><para>The buffer absolutely needs to have at least the specified size.</para>
 </simplesect>
 <simplesect kind="since"><para>2.9.5 </para>
@@ -321,50 +321,25 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> is an abstract base class which may not be used directly. </para>
     </briefdescription>
     <detaileddescription>
-<para>It is the base class of all streams which provide a <ref refid="classwx_input_stream_1ae70ea89ff05940bc312216decde6237d" kindref="member">Read()</ref> function, i.e. which can be used to read data from a source (e.g. a file, a socket, etc).</para>
+<para><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> is an abstract base class which may not be used directly. It is the base class of all streams which provide a <ref refid="classwx_input_stream_1a72f24d0f50c7f07bb68dedf5e8690f4e" kindref="member">Read()</ref> function, i.e. which can be used to read data from a source (e.g. a file, a socket, etc).</para>
 <para>If you want to create your own input stream, you&apos;ll need to derive from this class and implement the protected <ref refid="classwx_input_stream_1a8ebacd18964a4b169a62ad9190cab4d5" kindref="member">OnSysRead()</ref> function only.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="8">
-        <label>wxArchiveInputStream</label>
-        <link refid="classwx_archive_input_stream"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>wxBufferedInputStream</label>
-        <link refid="classwx_buffered_input_stream"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>wxFFileInputStream</label>
-        <link refid="classwx_f_file_input_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>wxFFileStream</label>
-        <link refid="classwx_f_file_stream"/>
-        <childnode refid="3" relation="public-inheritance">
+      <node id="1">
+        <label>wxInputStream</label>
+        <link refid="classwx_input_stream"/>
+        <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="14">
-        <label>wxFSInputStream</label>
-        <link refid="classwx_f_s_input_stream"/>
-        <childnode refid="13" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>wxFileInputStream</label>
-        <link refid="classwx_file_input_stream"/>
-        <childnode refid="1" relation="public-inheritance">
+        <label>wxZlibInputStream</label>
+        <link refid="classwx_zlib_input_stream"/>
+        <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
       <node id="6">
@@ -373,43 +348,55 @@
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="7">
-        <label>wxFilterInputStream</label>
-        <link refid="classwx_filter_input_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>wxInputStream</label>
-        <link refid="classwx_input_stream"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>wxLZMAInputStream</label>
-        <link refid="classwx_l_z_m_a_input_stream"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="16">
+      <node id="15">
         <label>wxMemoryInputStream</label>
         <link refid="classwx_memory_input_stream"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="17">
+        <label>wxStringInputStream</label>
+        <link refid="classwx_string_input_stream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
         <label>wxSocketInputStream</label>
         <link refid="classwx_socket_input_stream"/>
         <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxFileInputStream</label>
+        <link refid="classwx_file_input_stream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>wxWrapperInputStream</label>
+        <link refid="classwx_wrapper_input_stream"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>wxArchiveInputStream</label>
+        <link refid="classwx_archive_input_stream"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>wxFSInputStream</label>
+        <link refid="classwx_f_s_input_stream"/>
+        <childnode refid="12" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
         <label>wxStreamBase</label>
         <link refid="classwx_stream_base"/>
       </node>
-      <node id="18">
-        <label>wxStringInputStream</label>
-        <link refid="classwx_string_input_stream"/>
+      <node id="7">
+        <label>wxFilterInputStream</label>
+        <link refid="classwx_filter_input_stream"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -419,22 +406,28 @@
         <childnode refid="8" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="13">
-        <label>wxWrapperInputStream</label>
-        <link refid="classwx_wrapper_input_stream"/>
+      <node id="11">
+        <label>wxBufferedInputStream</label>
+        <link refid="classwx_buffered_input_stream"/>
         <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxFFileStream</label>
+        <link refid="classwx_f_file_stream"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxFFileInputStream</label>
+        <link refid="classwx_f_file_input_stream"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="10">
         <label>wxZipInputStream</label>
         <link refid="classwx_zip_input_stream"/>
         <childnode refid="8" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>wxZlibInputStream</label>
-        <link refid="classwx_zlib_input_stream"/>
-        <childnode refid="7" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
@@ -450,7 +443,7 @@
         <link refid="classwx_stream_base"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/stream.h" line="579" column="1" bodyfile="interface/wx/stream.h" bodystart="580" bodyend="721"/>
+    <location file="interface/wx/stream.h" line="580" column="1" bodyfile="interface/wx/stream.h" bodystart="579" bodyend="721"/>
     <listofallmembers>
       <member refid="classwx_input_stream_1ab081191ca94cf4bc511850471cd090f1" prot="public" virt="virtual"><scope>wxInputStream</scope><name>CanRead</name></member>
       <member refid="classwx_input_stream_1a632ef01c45abc66f6e39db9b25f5ebde" prot="public" virt="virtual"><scope>wxInputStream</scope><name>Eof</name></member>
@@ -466,8 +459,8 @@
       <member refid="classwx_stream_base_1a7131a1f866ea911e90bb85bc1937d29b" prot="protected" virt="virtual"><scope>wxInputStream</scope><name>OnSysTell</name></member>
       <member refid="classwx_stream_base_1a2559b4fcfc7f7173259d703b39cb0d33" prot="public" virt="non-virtual"><scope>wxInputStream</scope><name>operator!</name></member>
       <member refid="classwx_input_stream_1a42dc4394276b726b9877faf2c71ae408" prot="public" virt="virtual"><scope>wxInputStream</scope><name>Peek</name></member>
-      <member refid="classwx_input_stream_1ae70ea89ff05940bc312216decde6237d" prot="public" virt="virtual"><scope>wxInputStream</scope><name>Read</name></member>
-      <member refid="classwx_input_stream_1a34987cf731f908880e4b1d4e4deb42c4" prot="public" virt="non-virtual"><scope>wxInputStream</scope><name>Read</name></member>
+      <member refid="classwx_input_stream_1a72f24d0f50c7f07bb68dedf5e8690f4e" prot="public" virt="virtual"><scope>wxInputStream</scope><name>Read</name></member>
+      <member refid="classwx_input_stream_1a05cc7b25c9df86f00157a34ee9809bd5" prot="public" virt="non-virtual"><scope>wxInputStream</scope><name>Read</name></member>
       <member refid="classwx_input_stream_1a80d84e864b277719a3034c15cdd5a017" prot="public" virt="non-virtual"><scope>wxInputStream</scope><name>ReadAll</name></member>
       <member refid="classwx_stream_base_1a52353ac42f72538b2022a84f416e5fe2" prot="public" virt="non-virtual"><scope>wxInputStream</scope><name>Reset</name></member>
       <member refid="classwx_input_stream_1a989ed0f85fe7340cc0996bbcee03822d" prot="public" virt="virtual"><scope>wxInputStream</scope><name>SeekI</name></member>

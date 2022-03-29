@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="gdicmn_8h" kind="file" language="C++">
     <compoundname>gdicmn.h</compoundname>
     <innerclass refid="classwx_real_point" prot="public">wxRealPoint</innerclass>
@@ -12,10 +12,10 @@
         <name>wxBITMAP</name>
         <param><defname>bitmapName</defname></param>
         <briefdescription>
-<para>This macro loads a bitmap from either application resources (on the platforms for which they exist, i.e. Windows) or from an XPM file. </para>
+<para>This macro loads a bitmap from either application resources (on the platforms for which they exist, i.e. </para>
         </briefdescription>
         <detaileddescription>
-<para>This can help to avoid using #ifdef when creating bitmaps.</para>
+<para>Windows and OS2) or from an XPM file. This can help to avoid using #ifdef when creating bitmaps.</para>
 <para><simplesect kind="see"><para><ref refid="overview_bitmap" kindref="compound">Bitmaps and Icons</ref>, <ref refid="gdicmn_8h_1a1f22eefa44998cbeb8f018978cf5d375" kindref="member">wxICON()</ref></para>
 </simplesect>
 Include file:<linebreak/>
@@ -23,7 +23,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1117" column="9" bodyfile="interface/wx/gdicmn.h" bodystart="1117" bodyend="-1"/>
+        <location file="interface/wx/gdicmn.h" line="1049" column="9" bodyfile="interface/wx/gdicmn.h" bodystart="1049" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="gdicmn_8h_1a30fc362d22b3045f58aed54fc808f203" prot="public" static="no">
         <name>wxBITMAP_PNG</name>
@@ -35,7 +35,7 @@ Include file:<linebreak/>
 <para>This macro is similar to <ref refid="gdicmn_8h_1a309f860d17c1a8c4cc54c6e772a2fd09" kindref="member">wxBITMAP()</ref> but works with bitmap data in PNG format and not BMP or XPM.</para>
 <para>Under Windows the given <emphasis>bitmapName</emphasis> must be present in the application resource file with the type <computeroutput>RCDATA</computeroutput> and refer to a PNG image. I.e. you should have a definition similar to the following in your <computeroutput></computeroutput>.rc file: <programlisting><codeline><highlight class="normal">mybitmap<sp/><sp/><sp/><sp/>RCDATA<sp/><sp/>&quot;mybitmap.png&quot;</highlight></codeline>
 </programlisting> to be able to use <computeroutput><ref refid="gdicmn_8h_1a30fc362d22b3045f58aed54fc808f203" kindref="member">wxBITMAP_PNG(mybitmap)</ref></computeroutput> in the code.</para>
-<para>Under macOS the file with the specified name and &quot;png&quot; extension must be present in the &quot;Resources&quot; subdirectory of the application bundle.</para>
+<para>Under OS X the file with the specified name and &quot;png&quot; extension must be present in the &quot;Resources&quot; subdirectory of the application bundle.</para>
 <para>Under the other platforms, this is equivalent to <ref refid="gdicmn_8h_1a9eaa3cc84338a358ba0d0292bc67daaa" kindref="member">wxBITMAP_PNG_FROM_DATA()</ref> and so loads the image data from the array called <computeroutput>bitmapName_png</computeroutput> that must exist. Notice that it <emphasis>must</emphasis> be an array and not a pointer as the macro needs to be able to determine its size. Such an array can be produced by a number of conversion programs. A very simple one is included in wxWidgets distribution as <computeroutput>misc/scripts/png2c.py</computeroutput>.</para>
 <para>Finally notice that you must register PNG image handler to be able to load bitmaps from PNG data. This can be done either by calling <ref refid="image_8h_1a27f6c78d5d13374a28022b7bd44c6823" kindref="member">wxInitAllImageHandlers()</ref> which also registers all the other image formats or including the necessary header: <programlisting><codeline><highlight class="normal">#include<sp/>&lt;wx/imagpng.h&gt;</highlight></codeline>
 </programlisting> and calling <programlisting><codeline><highlight class="normal">wxImage::AddHandler(new<sp/>wxPNGHandler);</highlight></codeline>
@@ -50,7 +50,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1163" column="9" bodyfile="interface/wx/gdicmn.h" bodystart="1163" bodyend="-1"/>
+        <location file="interface/wx/gdicmn.h" line="1095" column="9" bodyfile="interface/wx/gdicmn.h" bodystart="1095" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="gdicmn_8h_1a9eaa3cc84338a358ba0d0292bc67daaa" prot="public" static="no">
         <name>wxBITMAP_PNG_FROM_DATA</name>
@@ -60,7 +60,7 @@ Include file:<linebreak/>
         </briefdescription>
         <detaileddescription>
 <para>This macro is a thin wrapper around <ref refid="classwx_bitmap_1a2048897970d5e845040fcfc0259e1be1" kindref="member">wxBitmap::NewFromPNGData()</ref> and takes just the base name of the array containing the image data and computes its size internally. In other words, the array called <computeroutput>bitmapName_png</computeroutput> must exist. Notice that it <emphasis>must</emphasis> be an array and not a pointer as the macro needs to be able to determine its size. Such an array can be produced by a number of conversion programs. A very simple one is included in wxWidgets distribution as <computeroutput>misc/scripts/png2c.py</computeroutput>.</para>
-<para>You can use <ref refid="gdicmn_8h_1a30fc362d22b3045f58aed54fc808f203" kindref="member">wxBITMAP_PNG()</ref> to load the PNG bitmaps from resources on the platforms that support this and only fall back to loading them from data under the other ones (i.e. not Windows and not macOS).</para>
+<para>You can use <ref refid="gdicmn_8h_1a30fc362d22b3045f58aed54fc808f203" kindref="member">wxBITMAP_PNG()</ref> to load the PNG bitmaps from resources on the platforms that support this and only fall back to loading them from data under the other ones (i.e. not Windows and not OS X).</para>
 <para>Include file:<linebreak/>
  <verbatim>#include &lt;wx/gdicmn.h&gt; </verbatim></para>
 <para><simplesect kind="since"><para>2.9.5 </para>
@@ -69,16 +69,16 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1184" column="9" bodyfile="interface/wx/gdicmn.h" bodystart="1184" bodyend="-1"/>
+        <location file="interface/wx/gdicmn.h" line="1116" column="9" bodyfile="interface/wx/gdicmn.h" bodystart="1116" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="gdicmn_8h_1a1f22eefa44998cbeb8f018978cf5d375" prot="public" static="no">
         <name>wxICON</name>
         <param><defname>iconName</defname></param>
         <briefdescription>
-<para>This macro loads an icon from either application resources (on the platforms for which they exist, i.e. Windows) or from an XPM file. </para>
+<para>This macro loads an icon from either application resources (on the platforms for which they exist, i.e. </para>
         </briefdescription>
         <detaileddescription>
-<para>This can help to avoid using #ifdef when creating icons.</para>
+<para>Windows and OS2) or from an XPM file. This can help to avoid using #ifdef when creating icons.</para>
 <para><simplesect kind="see"><para><ref refid="overview_bitmap" kindref="compound">Bitmaps and Icons</ref>, <ref refid="gdicmn_8h_1a309f860d17c1a8c4cc54c6e772a2fd09" kindref="member">wxBITMAP()</ref></para>
 </simplesect>
 Include file:<linebreak/>
@@ -86,7 +86,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1195" column="9" bodyfile="interface/wx/gdicmn.h" bodystart="1195" bodyend="-1"/>
+        <location file="interface/wx/gdicmn.h" line="1127" column="9" bodyfile="interface/wx/gdicmn.h" bodystart="1127" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -357,7 +357,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="12" column="1" bodyfile="interface/wx/gdicmn.h" bodystart="13" bodyend="50"/>
+        <location file="interface/wx/gdicmn.h" line="13" column="1" bodyfile="interface/wx/gdicmn.h" bodystart="12" bodyend="50"/>
       </memberdef>
       <memberdef kind="enum" id="gdicmn_8h_1a771e5c5703eb406b19fb50bb718eee05" prot="public" static="no" strong="no">
         <type></type>
@@ -385,7 +385,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="55" column="1" bodyfile="interface/wx/gdicmn.h" bodystart="56" bodyend="59"/>
+        <location file="interface/wx/gdicmn.h" line="56" column="1" bodyfile="interface/wx/gdicmn.h" bodystart="55" bodyend="59"/>
       </memberdef>
       <memberdef kind="enum" id="gdicmn_8h_1ae668769c0de48b50d4695b279c7c41b2" prot="public" static="no" strong="no">
         <type></type>
@@ -677,105 +677,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="71" column="1" bodyfile="interface/wx/gdicmn.h" bodystart="72" bodyend="108"/>
-      </memberdef>
-      <memberdef kind="enum" id="gdicmn_8h_1ad7c89373a31bffb2388cfa2b98abea39" prot="public" static="no" strong="no">
-        <type></type>
-        <name>wxEllipsizeFlags</name>
-        <enumvalue id="gdicmn_8h_1ad7c89373a31bffb2388cfa2b98abea39acee65715edbd26cde0a294b33a330d7a" prot="public">
-          <name>wxELLIPSIZE_FLAGS_NONE</name>
-          <initializer>= 0</initializer>
-          <briefdescription>
-<para>No special flags. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="gdicmn_8h_1ad7c89373a31bffb2388cfa2b98abea39ac52490f0265d4093a96aeb6d550facfe" prot="public">
-          <name>wxELLIPSIZE_FLAGS_PROCESS_MNEMONICS</name>
-          <initializer>= 1</initializer>
-          <briefdescription>
-<para>Take mnemonics into account when calculating the text width. </para>
-          </briefdescription>
-          <detaileddescription>
-<para>With this flag when calculating the size of the passed string, mnemonics characters (see <ref refid="classwx_control_1a2c2ae20554e7db5e765f163022ce09c0" kindref="member">wxControl::SetLabel</ref>) will be automatically reduced to a single character. This leads to correct calculations only if the string passed to Ellipsize() will be used with <ref refid="classwx_control_1a2c2ae20554e7db5e765f163022ce09c0" kindref="member">wxControl::SetLabel</ref>. If you don&apos;t want ampersand to be interpreted as mnemonics (e.g. because you use <ref refid="classwx_control_1ae092899c3fe658831a9c796755a65eb7" kindref="member">wxControl::SetLabelText</ref>) then don&apos;t use this flag. </para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="gdicmn_8h_1ad7c89373a31bffb2388cfa2b98abea39a15694cb026251ddc3452e14b6dcc7b08" prot="public">
-          <name>wxELLIPSIZE_FLAGS_EXPAND_TABS</name>
-          <initializer>= 2</initializer>
-          <briefdescription>
-<para>Expand tabs in spaces when calculating the text width. </para>
-          </briefdescription>
-          <detaileddescription>
-<para>This flag tells <ref refid="classwx_control_1a0bb834cae2a8986aceddb89f84ef4ed1" kindref="member">wxControl::Ellipsize()</ref> to calculate the width of tab characters <computeroutput>&apos;\t&apos;</computeroutput> as 6 spaces. </para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="gdicmn_8h_1ad7c89373a31bffb2388cfa2b98abea39acf249cd72de81f7da28aecb146975722" prot="public">
-          <name>wxELLIPSIZE_FLAGS_DEFAULT</name>
-          <initializer>= wxELLIPSIZE_FLAGS_PROCESS_MNEMONICS|
-                                wxELLIPSIZE_FLAGS_EXPAND_TABS</initializer>
-          <briefdescription>
-<para>The default flags for <ref refid="classwx_control_1a0bb834cae2a8986aceddb89f84ef4ed1" kindref="member">wxControl::Ellipsize</ref>. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-<para>Flags used by <ref refid="classwx_control_1a0bb834cae2a8986aceddb89f84ef4ed1" kindref="member">wxControl::Ellipsize</ref> function. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="113" column="1" bodyfile="interface/wx/gdicmn.h" bodystart="114" bodyend="142"/>
-      </memberdef>
-      <memberdef kind="enum" id="gdicmn_8h_1a0293befa07fe89f6efd8caec89c3b489" prot="public" static="no" strong="no">
-        <type></type>
-        <name>wxEllipsizeMode</name>
-        <enumvalue id="gdicmn_8h_1a0293befa07fe89f6efd8caec89c3b489ae4c8bd13c9e9c6af29a618bc7a554a3a" prot="public">
-          <name>wxELLIPSIZE_NONE</name>
-          <briefdescription>
-<para>Don&apos;t ellipsize the text at all. </para>
-          </briefdescription>
-          <detaileddescription>
-<para><simplesect kind="since"><para>2.9.1 </para>
-</simplesect>
-</para>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="gdicmn_8h_1a0293befa07fe89f6efd8caec89c3b489ad2d48fa3b9b8efd6032a6a4fb3cc040f" prot="public">
-          <name>wxELLIPSIZE_START</name>
-          <briefdescription>
-<para>Put the ellipsis at the start of the string, if the string needs ellipsization. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="gdicmn_8h_1a0293befa07fe89f6efd8caec89c3b489ab003e35ed1323293486f49977758443c" prot="public">
-          <name>wxELLIPSIZE_MIDDLE</name>
-          <briefdescription>
-<para>Put the ellipsis in the middle of the string, if the string needs ellipsization. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="gdicmn_8h_1a0293befa07fe89f6efd8caec89c3b489afffc4ee1338574f3877f35c78080e6e3" prot="public">
-          <name>wxELLIPSIZE_END</name>
-          <briefdescription>
-<para>Put the ellipsis at the end of the string, if the string needs ellipsization. </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-<para>The different ellipsization modes supported by the <ref refid="classwx_control_1a0bb834cae2a8986aceddb89f84ef4ed1" kindref="member">wxControl::Ellipsize</ref> and <ref refid="classwx_renderer_native_1af1a78ca9f745650102ae35ac0e53fe3e" kindref="member">wxRendererNative::DrawItemText()</ref> functions. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="149" column="1" bodyfile="interface/wx/gdicmn.h" bodystart="150" bodyend="162"/>
+        <location file="interface/wx/gdicmn.h" line="72" column="1" bodyfile="interface/wx/gdicmn.h" bodystart="71" bodyend="108"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -791,7 +693,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="782" column="15" bodyfile="interface/wx/gdicmn.h" bodystart="782" bodyend="-1"/>
+        <location file="interface/wx/gdicmn.h" line="714" column="15" bodyfile="interface/wx/gdicmn.h" bodystart="714" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="gdicmn_8h_1a94385d8ea5856702bfc3cbe445163fb0" prot="public" static="no" mutable="no">
         <type><ref refid="classwx_colour_database" kindref="compound">wxColourDatabase</ref> *</type>
@@ -805,7 +707,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="912" column="18" bodyfile="interface/wx/gdicmn.h" bodystart="912" bodyend="-1"/>
+        <location file="interface/wx/gdicmn.h" line="844" column="18" bodyfile="interface/wx/gdicmn.h" bodystart="844" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="gdicmn_8h_1a33a012cdb075e9f78c93f63bec2dc27b" prot="public" static="no" mutable="no">
         <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -819,7 +721,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1096" column="14" bodyfile="interface/wx/gdicmn.h" bodystart="1096" bodyend="-1"/>
+        <location file="interface/wx/gdicmn.h" line="1028" column="14" bodyfile="interface/wx/gdicmn.h" bodystart="1028" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -832,14 +734,12 @@ Include file:<linebreak/>
 <para>Returns true if the display is colour, false otherwise. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>Use of this function is not recommended in the new code as it only works for the primary display. Use wxDisplay::GetDepth() to retrieve the depth of the appropriate display and compare it with 1 instead.</para>
-</simplesect>
-Include file:<linebreak/>
+<para>Include file:<linebreak/>
  <verbatim>#include &lt;wx/gdicmn.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1206" column="6" declfile="interface/wx/gdicmn.h" declline="1206" declcolumn="6"/>
+        <location file="interface/wx/gdicmn.h" line="1134" column="6" declfile="interface/wx/gdicmn.h" declline="1134" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="gdicmn_8h_1aa144903f36a28751aa9b80b3b5f804ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -850,14 +750,12 @@ Include file:<linebreak/>
 <para>Returns the depth of the display (a value of 1 denotes a monochrome display). </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>Use of this function is not recommended in the new code as it only works for the primary display. Use wxDisplay::GetDepth() to retrieve the depth of the appropriate display instead.</para>
-</simplesect>
-Include file:<linebreak/>
+<para>Include file:<linebreak/>
  <verbatim>#include &lt;wx/gdicmn.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1218" column="5" declfile="interface/wx/gdicmn.h" declline="1218" declcolumn="5"/>
+        <location file="interface/wx/gdicmn.h" line="1142" column="5" declfile="interface/wx/gdicmn.h" declline="1142" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="gdicmn_8h_1a04d90db090918ad96448b5603d89617b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -880,7 +778,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1228" column="6" declfile="interface/wx/gdicmn.h" declline="1228" declcolumn="6"/>
+        <location file="interface/wx/gdicmn.h" line="1152" column="6" declfile="interface/wx/gdicmn.h" declline="1152" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="gdicmn_8h_1ab8a48ec2fc13c5112ff5fcd42e2881b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -907,7 +805,7 @@ Include file:<linebreak/>
 <para>Returns the dimensions of the work area on the display. </para>
         </briefdescription>
         <detaileddescription>
-<para>This is the same as <ref refid="gdicmn_8h_1ad087254ad6626958b5e4907e909bcd8d" kindref="member">wxGetClientDisplayRect()</ref> but allows retrieving the individual components instead of the entire rectangle.</para>
+<para>This is the same as <ref refid="gdicmn_8h_1ad087254ad6626958b5e4907e909bcd8d" kindref="member">wxGetClientDisplayRect()</ref> but allows to retrieve the individual components instead of the entire rectangle.</para>
 <para>Any of the output pointers can be NULL if the corresponding value is not needed by the caller.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_display" kindref="compound">wxDisplay</ref></para>
 </simplesect>
@@ -916,7 +814,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1247" column="6" declfile="interface/wx/gdicmn.h" declline="1247" declcolumn="6"/>
+        <location file="interface/wx/gdicmn.h" line="1171" column="6" declfile="interface/wx/gdicmn.h" declline="1171" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="gdicmn_8h_1ad087254ad6626958b5e4907e909bcd8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_rect" kindref="compound">wxRect</ref></type>
@@ -935,7 +833,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1262" column="8" declfile="interface/wx/gdicmn.h" declline="1262" declcolumn="8"/>
+        <location file="interface/wx/gdicmn.h" line="1186" column="8" declfile="interface/wx/gdicmn.h" declline="1186" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="gdicmn_8h_1a84d60564b0cd90909000b53eba457cfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -947,9 +845,7 @@ Include file:<linebreak/>
         </briefdescription>
         <detaileddescription>
 <para>The <computeroutput>x</computeroutput> component of the returned <ref refid="classwx_size" kindref="compound">wxSize</ref> object contains the horizontal resolution and the <computeroutput>y</computeroutput> one <ndash/> the vertical resolution.</para>
-<para><simplesect kind="note"><para>Use of this function is not recommended in the new code as it only works for the primary display. Use <ref refid="classwx_display_1ad086b5e0e9188e28b07f9acefef09695" kindref="member">wxDisplay::GetPPI()</ref> to retrieve the resolution of the appropriate display instead.</para>
-</simplesect>
-Include file:<linebreak/>
+<para>Include file:<linebreak/>
  <verbatim>#include &lt;wx/gdicmn.h&gt; </verbatim></para>
 <para><simplesect kind="see"><para><ref refid="classwx_display" kindref="compound">wxDisplay</ref></para>
 </simplesect>
@@ -959,7 +855,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1283" column="8" declfile="interface/wx/gdicmn.h" declline="1283" declcolumn="8"/>
+        <location file="interface/wx/gdicmn.h" line="1203" column="8" declfile="interface/wx/gdicmn.h" declline="1203" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="gdicmn_8h_1a2a4dcac2c18c10f546e699ddba2fbfc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -978,9 +874,7 @@ Include file:<linebreak/>
 <para>Returns the display size in pixels. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>Use of this function is not recommended in the new code as it only works for the primary display. Use <ref refid="classwx_display_1ab60df0f4e854dda42b890916362b03f9" kindref="member">wxDisplay::GetGeometry()</ref> to retrieve the size of the appropriate display instead.</para>
-</simplesect>
-Either of output pointers can be NULL if the caller is not interested in the corresponding value.</para>
+<para>Either of output pointers can be NULL if the caller is not interested in the corresponding value.</para>
 <para><simplesect kind="see"><para><ref refid="gdicmn_8h_1aefd6b970b2fa62bfc00f386da06ab286" kindref="member">wxGetDisplaySize()</ref>, <ref refid="classwx_display" kindref="compound">wxDisplay</ref></para>
 </simplesect>
 Include file:<linebreak/>
@@ -988,7 +882,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1302" column="6" declfile="interface/wx/gdicmn.h" declline="1302" declcolumn="6"/>
+        <location file="interface/wx/gdicmn.h" line="1218" column="6" declfile="interface/wx/gdicmn.h" declline="1218" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="gdicmn_8h_1aefd6b970b2fa62bfc00f386da06ab286" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -999,16 +893,14 @@ Include file:<linebreak/>
 <para>Returns the display size in pixels. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="note"><para>Use of this function is not recommended in the new code as it only works for the primary display. Use <ref refid="classwx_display_1ab60df0f4e854dda42b890916362b03f9" kindref="member">wxDisplay::GetGeometry()</ref> to retrieve the size of the appropriate display instead.</para>
-</simplesect>
-<simplesect kind="see"><para><ref refid="classwx_display" kindref="compound">wxDisplay</ref></para>
+<para><simplesect kind="see"><para><ref refid="classwx_display" kindref="compound">wxDisplay</ref></para>
 </simplesect>
 Include file:<linebreak/>
  <verbatim>#include &lt;wx/gdicmn.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1318" column="8" declfile="interface/wx/gdicmn.h" declline="1318" declcolumn="8"/>
+        <location file="interface/wx/gdicmn.h" line="1230" column="8" declfile="interface/wx/gdicmn.h" declline="1230" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="gdicmn_8h_1a964bb139750337d8e578450f88b6e97b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1035,7 +927,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1333" column="6" declfile="interface/wx/gdicmn.h" declline="1333" declcolumn="6"/>
+        <location file="interface/wx/gdicmn.h" line="1245" column="6" declfile="interface/wx/gdicmn.h" declline="1245" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="gdicmn_8h_1a3ff3369f130a82b6b0fc2c021d9b800e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
@@ -1053,7 +945,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/gdicmn.h" line="1345" column="8" declfile="interface/wx/gdicmn.h" declline="1345" declcolumn="8"/>
+        <location file="interface/wx/gdicmn.h" line="1257" column="8" declfile="interface/wx/gdicmn.h" declline="1257" declcolumn="8"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

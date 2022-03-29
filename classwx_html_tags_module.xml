@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_html_tags_module" kind="class" language="C++" prot="public">
     <compoundname>wxHtmlTagsModule</compoundname>
     <basecompoundref refid="classwx_module" prot="public" virt="non-virtual">wxModule</basecompoundref>
@@ -18,7 +18,7 @@
 <para>You must override this method. </para>
         </briefdescription>
         <detaileddescription>
-<para>In most common case its body consists only of lines of the following type: <programlisting><codeline><highlight class="normal">parser<sp/>-&gt;<sp/>AddTagHandler(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyHandler);</highlight></codeline>
+<para>In most common case its body consists only of lines of the following type: <programlisting><codeline><highlight class="normal">parser<sp/>-&gt;<sp/>AddTagHandler(new<sp/>MyHandler);</highlight></codeline>
 </programlisting></para>
 <para>It&apos;s recommended to use the <bold>TAGS_MODULE_*</bold> macros.</para>
 <para><parameterlist kind="param"><parameteritem>
@@ -38,10 +38,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class provides easy way of filling <ref refid="classwx_html_win_parser" kindref="compound">wxHtmlWinParser</ref>&apos;s table of tag handlers. </para>
     </briefdescription>
     <detaileddescription>
-<para>It is used almost exclusively together with the set of <ref refid="overview_html_1overview_html_handlers" kindref="member">TAGS_MODULE_* macros</ref></para>
+<para>This class provides easy way of filling <ref refid="classwx_html_win_parser" kindref="compound">wxHtmlWinParser</ref>&apos;s table of tag handlers. It is used almost exclusively together with the set of <ref refid="overview_html_1overview_html_handlers" kindref="member">TAGS_MODULE_* macros</ref></para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxhtml" kindref="member">wxHTML</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
@@ -50,36 +49,24 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxHtmlTagsModule</label>
-        <link refid="classwx_html_tags_module"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxModule</label>
-        <link refid="classwx_module"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="1">
-        <label>wxHtmlTagsModule</label>
-        <link refid="classwx_html_tags_module"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
         <label>wxModule</label>
         <link refid="classwx_module"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="1">
+        <label>wxHtmlTagsModule</label>
+        <link refid="classwx_html_tags_module"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="3">
         <label>wxObject</label>
         <link refid="classwx_object"/>
@@ -87,28 +74,40 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
+      <node id="2">
+        <label>wxModule</label>
+        <link refid="classwx_module"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wxHtmlTagsModule</label>
+        <link refid="classwx_html_tags_module"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="4">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/html/winpars.h" line="20" column="1" bodyfile="interface/wx/html/winpars.h" bodystart="21" bodyend="36"/>
+    <location file="interface/wx/html/winpars.h" line="21" column="1" bodyfile="interface/wx/html/winpars.h" bodystart="20" bodyend="36"/>
     <listofallmembers>
       <member refid="classwx_module_1a943494994b76ddaefebf95345c5a05ec" prot="protected" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>AddDependency</name></member>
       <member refid="classwx_module_1aadbdbde333a3c497eedd802ba4c76a0c" prot="protected" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>AddDependency</name></member>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxHtmlTagsModule</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxHtmlTagsModule</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxHtmlTagsModule</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxHtmlTagsModule</scope><name>CreateRefData</name></member>
       <member refid="classwx_html_tags_module_1a07b608fbcafccc6b0c1a3a6a9fc57332" prot="public" virt="virtual"><scope>wxHtmlTagsModule</scope><name>FillHandlersTable</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxHtmlTagsModule</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxHtmlTagsModule</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>GetRefData</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>m_refData</name></member>
       <member refid="classwx_module_1ab7615e407981a1ab0dd2b5f0a6f760c3" prot="public" virt="pure-virtual"><scope>wxHtmlTagsModule</scope><name>OnExit</name></member>
       <member refid="classwx_module_1a297484b97a61428afecdaae4f8854d99" prot="public" virt="pure-virtual"><scope>wxHtmlTagsModule</scope><name>OnInit</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>Ref</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>SetRefData</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxHtmlTagsModule</scope><name>UnRef</name></member>

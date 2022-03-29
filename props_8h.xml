@@ -1,11 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="props_8h" kind="file" language="C++">
     <compoundname>props.h</compoundname>
     <innerclass refid="classwx_p_g_in_dialog_validator" prot="public">wxPGInDialogValidator</innerclass>
     <innerclass refid="classwx_string_property" prot="public">wxStringProperty</innerclass>
     <innerclass refid="classwx_numeric_property_validator" prot="public">wxNumericPropertyValidator</innerclass>
-    <innerclass refid="classwx_numeric_property" prot="public">wxNumericProperty</innerclass>
     <innerclass refid="classwx_int_property" prot="public">wxIntProperty</innerclass>
     <innerclass refid="classwx_u_int_property" prot="public">wxUIntProperty</innerclass>
     <innerclass refid="classwx_float_property" prot="public">wxFloatProperty</innerclass>
@@ -13,8 +12,9 @@
     <innerclass refid="classwx_enum_property" prot="public">wxEnumProperty</innerclass>
     <innerclass refid="classwx_edit_enum_property" prot="public">wxEditEnumProperty</innerclass>
     <innerclass refid="classwx_flags_property" prot="public">wxFlagsProperty</innerclass>
-    <innerclass refid="classwx_editor_dialog_property" prot="public">wxEditorDialogProperty</innerclass>
+    <innerclass refid="classwx_p_g_file_dialog_adapter" prot="public">wxPGFileDialogAdapter</innerclass>
     <innerclass refid="classwx_file_property" prot="public">wxFileProperty</innerclass>
+    <innerclass refid="classwx_p_g_long_string_dialog_adapter" prot="public">wxPGLongStringDialogAdapter</innerclass>
     <innerclass refid="classwx_long_string_property" prot="public">wxLongStringProperty</innerclass>
     <innerclass refid="classwx_dir_property" prot="public">wxDirProperty</innerclass>
     <innerclass refid="classwx_array_string_property" prot="public">wxArrayStringProperty</innerclass>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="353" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="353" bodyend="-1"/>
+        <location file="interface/wx/propgrid/props.h" line="294" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="294" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="props_8h_1a2cd06c6f42991789636758208b2221dd" prot="public" static="no">
         <name>wxPG_PROP_SHOW_FULL_FILENAME</name>
@@ -52,10 +52,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="599" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="599" bodyend="-1"/>
+        <location file="interface/wx/propgrid/props.h" line="506" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="506" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="props_8h_1adad5212333d177986c4ada17d69867f9" prot="public" static="no">
-        <name>wxPG_PROP_ACTIVE_BTN</name>
+      <memberdef kind="define" id="props_8h_1ac4f6024c5cad65da6ecc5ffb4d6dce87" prot="public" static="no">
+        <name>wxPG_PROP_NO_ESCAPE</name>
         <initializer><ref refid="property_8h_1a2aac85b6d4e1018849f0026b62f1b751a34b5ec724cfcb6f22bca2ec03fe92ecd" kindref="member">wxPG_PROP_CLASS_SPECIFIC_1</ref></initializer>
         <briefdescription>
         </briefdescription>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="651" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="651" bodyend="-1"/>
+        <location file="interface/wx/propgrid/props.h" line="557" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="557" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="props_8h_1ac9dd78fd1d01036290d6d6c9df4d846f" prot="public" static="no">
         <name>wxPG_PROP_USE_CHECKBOX</name>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="707" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="707" bodyend="-1"/>
+        <location file="interface/wx/propgrid/props.h" line="630" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="630" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="props_8h_1a5d629340241ecd8b2d1153b8700b396f" prot="public" static="no">
         <name>wxPG_PROP_USE_DCC</name>
@@ -85,18 +85,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="709" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="709" bodyend="-1"/>
+        <location file="interface/wx/propgrid/props.h" line="632" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="632" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="props_8h_1aa62242461b67971fe252d41794f72d93" prot="public" static="no">
         <name>wxAEDIALOG_STYLE</name>
-        <initializer>    (<ref refid="interface_2wx_2dialog_8h_1a05926442fcb63ec70f4389a62729027a" kindref="member">wxDEFAULT_DIALOG_STYLE</ref> | <ref refid="defs_8h_1ab2e7b3533b073e1df781c5b60ccc92d5" kindref="member">wxRESIZE_BORDER</ref> | <ref refid="defs_8h_1a9c40266b61a27f0124a69a699753889a" kindref="member">wxOK</ref> | <ref refid="defs_8h_1a5580412e224117ac127aacaafd49dc2e" kindref="member">wxCANCEL</ref> | <ref refid="defs_8h_1ae160ea382a8f7921484db9d499516dafaa9f0378dc2d52d0a96553e30d05a57ff" kindref="member">wxCENTRE</ref>)</initializer>
+        <initializer>(<ref refid="interface_2wx_2dialog_8h_1a05926442fcb63ec70f4389a62729027a" kindref="member">wxDEFAULT_DIALOG_STYLE</ref> | <ref refid="defs_8h_1ab2e7b3533b073e1df781c5b60ccc92d5" kindref="member">wxRESIZE_BORDER</ref> | <ref refid="defs_8h_1a9c40266b61a27f0124a69a699753889a" kindref="member">wxOK</ref> | <ref refid="defs_8h_1a5580412e224117ac127aacaafd49dc2e" kindref="member">wxCANCEL</ref> | <ref refid="defs_8h_1ae160ea382a8f7921484db9d499516dafaa9f0378dc2d52d0a96553e30d05a57ff" kindref="member">wxCENTRE</ref>)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="787" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="787" bodyend="-1"/>
+        <location file="interface/wx/propgrid/props.h" line="703" column="9" bodyfile="interface/wx/propgrid/props.h" bodystart="703" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -137,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/propgrid/props.h" line="68" column="1" bodyfile="interface/wx/propgrid/props.h" bodystart="69" bodyend="81"/>
+        <location file="interface/wx/propgrid/props.h" line="68" column="1" bodyfile="interface/wx/propgrid/props.h" bodystart="67" bodyend="80"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

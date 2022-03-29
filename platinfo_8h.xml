@@ -1,9 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="platinfo_8h" kind="file" language="C++">
     <compoundname>platinfo.h</compoundname>
     <innerclass refid="structwx_linux_distribution_info" prot="public">wxLinuxDistributionInfo</innerclass>
-    <innerclass refid="classwx_platform_id" prot="public">wxPlatformId</innerclass>
     <innerclass refid="classwx_platform_info" prot="public">wxPlatformInfo</innerclass>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fd" prot="public" static="no" strong="no">
@@ -31,7 +30,7 @@
           <name>wxOS_MAC_OSX_DARWIN</name>
           <initializer>= 1 &lt;&lt; 1</initializer>
           <briefdescription>
-<para>Apple macOS with Unix paths. </para>
+<para>Apple Mac OS X with Unix paths. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -45,20 +44,50 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fda511ef24f79be175ea9e724bd40db7c99" prot="public">
+          <name>wxOS_WINDOWS_9X</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+<para>Windows 9x family (95/98/ME) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <enumvalue id="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fda0a70b97d5d09cd90c13d85a3be837d72" prot="public">
           <name>wxOS_WINDOWS_NT</name>
           <initializer>= 1 &lt;&lt; 3</initializer>
           <briefdescription>
-<para>Windows NT family (XP/Vista/7/8/10) </para>
+<para>Windows NT family (NT/2000/XP/Vista/7) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fda1072e1d66534e81eb2914a4ec92af483" prot="public">
+          <name>wxOS_WINDOWS_MICRO</name>
+          <initializer>= 1 &lt;&lt; 4</initializer>
+          <briefdescription>
+<para>MicroWindows. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fda74f523ea86b3b39d347050aa4b2b6e8e" prot="public">
+          <name>wxOS_WINDOWS_CE</name>
+          <initializer>= 1 &lt;&lt; 5</initializer>
+          <briefdescription>
+<para>Windows CE (Window Mobile) </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fdaded2828e1f46da9179425ce8c0f47f03" prot="public">
           <name>wxOS_WINDOWS</name>
-          <initializer>= wxOS_WINDOWS_NT</initializer>
+          <initializer>= wxOS_WINDOWS_9X       |
+                    wxOS_WINDOWS_NT      |
+                    wxOS_WINDOWS_MICRO   |
+                    wxOS_WINDOWS_CE</initializer>
           <briefdescription>
-<para>Any Windows system, currently can be only wxOS_WINDOWS_NT. </para>
+<para>A combination of all <computeroutput>wxOS_WINDOWS_*</computeroutput> values previously listed. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -141,16 +170,34 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fda9ce15c0e96d0b30ab92c558310d3f086" prot="public">
+          <name>wxOS_DOS</name>
+          <initializer>= 1 &lt;&lt; 15</initializer>
+          <briefdescription>
+<para>Microsoft DOS. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fda812e59799c1a161a70b8cbebb45af159" prot="public">
+          <name>wxOS_OS2</name>
+          <initializer>= 1 &lt;&lt; 16</initializer>
+          <briefdescription>
+<para>OS/2. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>The following are the operating systems which are recognized by wxWidgets and whose version can be detected at run-time. </para>
         </briefdescription>
         <detaileddescription>
-<para>The values of the constants are chosen so that they can be combined as flags; this allows checking for operating system families like e.g. <computeroutput>wxOS_MAC</computeroutput> and <computeroutput>wxOS_UNIX</computeroutput>.</para>
-<para>Note that you can obtain more detailed information about the current OS version in use by checking the major, minor, and micro version numbers returned by <ref refid="utils_8h_1a46ce8b844446a6cfcff8dde6122d7932" kindref="member">wxGetOsVersion()</ref> or by <ref refid="classwx_platform_info_1a642f20e054367d13a86ba989d9638cdc" kindref="member">wxPlatformInfo::GetOSMajorVersion()</ref>, <ref refid="classwx_platform_info_1af73fcccd3de26814ae5d358b3c7b55c0" kindref="member">wxPlatformInfo::GetOSMinorVersion()</ref>, and <ref refid="classwx_platform_info_1a8778691d322cc8e8937a4a8db81c4447" kindref="member">wxPlatformInfo::GetOSMicroVersion()</ref>. </para>
+<para>The values of the constants are chosen so that they can be combined as flags; this allows to check for operating system families like e.g. <computeroutput>wxOS_MAC</computeroutput> and <computeroutput>wxOS_UNIX</computeroutput>.</para>
+<para>Note that you can obtain more detailed information about the current OS version in use by checking the major and minor version numbers returned by <ref refid="utils_8h_1a2ca585c288b956d80511478dc7b01533" kindref="member">wxGetOsVersion()</ref> or by <ref refid="classwx_platform_info_1a642f20e054367d13a86ba989d9638cdc" kindref="member">wxPlatformInfo::GetOSMajorVersion()</ref>, <ref refid="classwx_platform_info_1af73fcccd3de26814ae5d358b3c7b55c0" kindref="member">wxPlatformInfo::GetOSMinorVersion()</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="21" column="1" bodyfile="interface/wx/platinfo.h" bodystart="22" bodyend="52"/>
+        <location file="interface/wx/platinfo.h" line="22" column="1" bodyfile="interface/wx/platinfo.h" bodystart="21" bodyend="61"/>
       </memberdef>
       <memberdef kind="enum" id="platinfo_8h_1a4acbc14b366d6ce2875f809be384757b" prot="public" static="no" strong="no">
         <type></type>
@@ -195,7 +242,7 @@
           <name>wxPORT_GTK</name>
           <initializer>= 1 &lt;&lt; 3</initializer>
           <briefdescription>
-<para>wxGTK, using GTK+ 1.x, 2.x, 3.x, GPE </para>
+<para>wxGTK, using GTK+ 1.x, 2.x, GPE or Maemo </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -218,6 +265,15 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="platinfo_8h_1a4acbc14b366d6ce2875f809be384757bada576bcb2049081bbb141abc28598bd5" prot="public">
+          <name>wxPORT_OS2</name>
+          <initializer>= 1 &lt;&lt; 6</initializer>
+          <briefdescription>
+<para>wxOS2, using OS/2 Presentation Manager </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <enumvalue id="platinfo_8h_1a4acbc14b366d6ce2875f809be384757ba4593db0a158d91759825dfe209568d95" prot="public">
           <name>wxPORT_MAC</name>
           <initializer>= 1 &lt;&lt; 7</initializer>
@@ -236,11 +292,11 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="platinfo_8h_1a4acbc14b366d6ce2875f809be384757baf3f1db8e634b1e4f1bddf8713a82954f" prot="public">
-          <name>wxPORT_QT</name>
-          <initializer>= 1 &lt;&lt; 10</initializer>
+        <enumvalue id="platinfo_8h_1a4acbc14b366d6ce2875f809be384757ba791f6ceb0243051814d1a6e85cdbd577" prot="public">
+          <name>wxPORT_WINCE</name>
+          <initializer>= 1 &lt;&lt; 9</initializer>
           <briefdescription>
-<para>wxQT, using Qt 5+ </para>
+<para>wxWinCE, toolkit is WinCE SDK API </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -249,58 +305,11 @@
 <para>The list of wxWidgets ports. </para>
         </briefdescription>
         <detaileddescription>
-<para>Some of them can be used with more than a single (native) toolkit. </para>
+<para>Some of them can be used with more than a single (native) toolkit; e.g. wxWinCE port sources can be used with smartphones, pocket PCs and handheld devices SDKs. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="59" column="1" bodyfile="interface/wx/platinfo.h" bodystart="60" bodyend="73"/>
-      </memberdef>
-      <memberdef kind="enum" id="platinfo_8h_1a3e0e8b583386e102c89d8d9a4e3147a1" prot="public" static="no" strong="no">
-        <type></type>
-        <name>wxBitness</name>
-        <enumvalue id="platinfo_8h_1a3e0e8b583386e102c89d8d9a4e3147a1a125a2126290b0b22644094352fb85060" prot="public">
-          <name>wxBITNESS_INVALID</name>
-          <initializer>= -1</initializer>
-          <briefdescription>
-<para>returned on error </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="platinfo_8h_1a3e0e8b583386e102c89d8d9a4e3147a1a1fba9c7568fb7f9cea22c1593527268c" prot="public">
-          <name>wxBITNESS_32</name>
-          <briefdescription>
-<para>32 bit </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="platinfo_8h_1a3e0e8b583386e102c89d8d9a4e3147a1a4093f21926a2dbef79d9046ce9abdfad" prot="public">
-          <name>wxBITNESS_64</name>
-          <briefdescription>
-<para>64 bit </para>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="platinfo_8h_1a3e0e8b583386e102c89d8d9a4e3147a1a1e8abc7d0dc96c5390ef9f1605b415d4" prot="public">
-          <name>wxBITNESS_MAX</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-<para>The architecture bitness of the operating system (regardless of the build environment of wxWidgets library - see <ref refid="utils_8h_1a56083f0f3875e40b13aa6094e283584e" kindref="member">wxIsPlatform64Bit()</ref> documentation for more info). </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="since"><para>3.1.5 </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="83" column="1" bodyfile="interface/wx/platinfo.h" bodystart="84" bodyend="91"/>
+        <location file="interface/wx/platinfo.h" line="71" column="1" bodyfile="interface/wx/platinfo.h" bodystart="70" bodyend="85"/>
       </memberdef>
       <memberdef kind="enum" id="platinfo_8h_1ab2b4836af7d22393b06c1d4f110bdb4c" prot="public" static="no" strong="no">
         <type></type>
@@ -338,14 +347,13 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>The architecture of the operating system (regardless of the build environment of wxWidgets library - see <ref refid="utils_8h_1a56083f0f3875e40b13aa6094e283584e" kindref="member">wxIsPlatform64Bit()</ref> documentation for more info). </para>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000052"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use wxBitness instead. </para>
-</xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="97" column="1" bodyfile="interface/wx/platinfo.h" bodystart="98" bodyend="105"/>
+        <location file="interface/wx/platinfo.h" line="94" column="1" bodyfile="interface/wx/platinfo.h" bodystart="93" bodyend="101"/>
       </memberdef>
       <memberdef kind="enum" id="platinfo_8h_1a604702957b3c219643e1c989766f7047" prot="public" static="no" strong="no">
         <type></type>
@@ -397,7 +405,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="111" column="1" bodyfile="interface/wx/platinfo.h" bodystart="112" bodyend="120"/>
+        <location file="interface/wx/platinfo.h" line="108" column="1" bodyfile="interface/wx/platinfo.h" bodystart="107" bodyend="116"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

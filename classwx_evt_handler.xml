@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_evt_handler" kind="class" language="C++" prot="public">
     <compoundname>wxEvtHandler</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -39,24 +39,24 @@
         <detaileddescription>
 <para>This method is similar to <ref refid="classwx_evt_handler_1a65968dd27f3aac7718f2dd6b2ddd5a08" kindref="member">ProcessEvent()</ref> but while the latter is synchronous, i.e. the event is processed immediately, before the function returns, this one is asynchronous and returns immediately while the event will be processed at some later time (usually during the next event loop iteration).</para>
 <para>Another important difference is that this method takes ownership of the <emphasis>event</emphasis> parameter, i.e. it will delete it itself. This implies that the event should be allocated on the heap and that the pointer can&apos;t be used any more after the function returns (as it can be deleted at any moment).</para>
-<para><ref refid="classwx_evt_handler_1acffd03bf407a856166ea71ef0318b59a" kindref="member">QueueEvent()</ref> can be used for inter-thread communication from the worker threads to the main thread, it is safe in the sense that it uses locking internally and avoids the problem mentioned in <ref refid="classwx_evt_handler_1a0737c6d2cbcd5ded4b1ecdd53ed0def3" kindref="member">AddPendingEvent()</ref> documentation by ensuring that the <emphasis>event</emphasis> object is not used by the calling thread any more. Care should still be taken to avoid that some fields of this object are used by it, notably any <ref refid="classwx_string" kindref="compound">wxString</ref> members of the event object must not be shallow copies of another <ref refid="classwx_string" kindref="compound">wxString</ref> object as this would result in them still using the same string buffer behind the scenes. For example: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FunctionInAWorkerThread(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_string" kindref="compound">wxString</ref>&amp;<sp/>str)</highlight></codeline>
+<para><ref refid="classwx_evt_handler_1acffd03bf407a856166ea71ef0318b59a" kindref="member">QueueEvent()</ref> can be used for inter-thread communication from the worker threads to the main thread, it is safe in the sense that it uses locking internally and avoids the problem mentioned in <ref refid="classwx_evt_handler_1a0737c6d2cbcd5ded4b1ecdd53ed0def3" kindref="member">AddPendingEvent()</ref> documentation by ensuring that the <emphasis>event</emphasis> object is not used by the calling thread any more. Care should still be taken to avoid that some fields of this object are used by it, notably any <ref refid="classwx_string" kindref="compound">wxString</ref> members of the event object must not be shallow copies of another <ref refid="classwx_string" kindref="compound">wxString</ref> object as this would result in them still using the same string buffer behind the scenes. For example: <programlisting><codeline><highlight class="normal">void<sp/>FunctionInAWorkerThread(const<sp/>wxString&amp;<sp/>str)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>*<sp/>evt<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOT<sp/>evt-&gt;SetString(str)<sp/>as<sp/>this<sp/>would<sp/>be<sp/>a<sp/>shallow<sp/>copy</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>evt-&gt;<ref refid="classwx_command_event_1a06ca56ac6680fe3b3178d8abd913d450" kindref="member">SetString</ref>(str.<ref refid="classwx_string_1a5db49c775c09e77fe0acde2a928bbf8f" kindref="member">c_str</ref>());<sp/></highlight><highlight class="comment">//<sp/>make<sp/>a<sp/>deep<sp/>copy</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2app_8h_1a01fd2cb0a8fbaade87800e71a50e855d" kindref="member">wxTheApp</ref>-&gt;<ref refid="classwx_evt_handler_1acffd03bf407a856166ea71ef0318b59a" kindref="member">QueueEvent</ref>(<sp/>evt<sp/>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxCommandEvent*<sp/>evt<sp/>=<sp/>new<sp/>wxCommandEvent;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>NOT<sp/>evt-&gt;SetString(str)<sp/>as<sp/>this<sp/>would<sp/>be<sp/>a<sp/>shallow<sp/>copy</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>evt-&gt;SetString(str.c_str());<sp/>//<sp/>make<sp/>a<sp/>deep<sp/>copy</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxTheApp-&gt;QueueEvent(<sp/>evt<sp/>);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
-<para>Note that you can use <ref refid="classwx_thread_event" kindref="compound">wxThreadEvent</ref> instead of <ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref> to avoid this problem: <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FunctionInAWorkerThread(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_string" kindref="compound">wxString</ref>&amp;<sp/>str)</highlight></codeline>
+<para>Note that you can use <ref refid="classwx_thread_event" kindref="compound">wxThreadEvent</ref> instead of <ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref> to avoid this problem: <programlisting><codeline><highlight class="normal">void<sp/>FunctionInAWorkerThread(const<sp/>wxString&amp;<sp/>str)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_thread_event" kindref="compound">wxThreadEvent</ref><sp/>evt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>evt.<ref refid="classwx_thread_event_1a72092085fc4e0837d8e56666cb45f4d3" kindref="member">SetString</ref>(str);</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wxThreadEvent::Clone()<sp/>makes<sp/>sure<sp/>that<sp/>the<sp/>internal<sp/>wxString</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>member<sp/>is<sp/>not<sp/>shared<sp/>by<sp/>other<sp/>wxString<sp/>instances:</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2app_8h_1a01fd2cb0a8fbaade87800e71a50e855d" kindref="member">wxTheApp</ref>-&gt;<ref refid="classwx_evt_handler_1acffd03bf407a856166ea71ef0318b59a" kindref="member">QueueEvent</ref>(<sp/>evt.<ref refid="classwx_thread_event_1a12938fd82b6f61d33c6e7186abe492e0" kindref="member">Clone</ref>()<sp/>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxThreadEvent<sp/>evt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>evt-&gt;SetString(str);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>wxThreadEvent::Clone()<sp/>makes<sp/>sure<sp/>that<sp/>the<sp/>internal<sp/>wxString</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>member<sp/>is<sp/>not<sp/>shared<sp/>by<sp/>other<sp/>wxString<sp/>instances:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxTheApp-&gt;QueueEvent(<sp/>evt.Clone()<sp/>);</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>Finally notice that this method automatically wakes up the event loop if it is currently idle by calling <ref refid="interface_2wx_2app_8h_1a97206743f70b5382f9e2615217604d15" kindref="member">wxWakeUpIdle()</ref> so there is no need to do it manually when using it.</para>
@@ -92,7 +92,7 @@
         </briefdescription>
         <detaileddescription>
 <para>This function is similar to <ref refid="classwx_evt_handler_1acffd03bf407a856166ea71ef0318b59a" kindref="member">QueueEvent()</ref> but can&apos;t be used to post events from worker threads for the event objects with <ref refid="classwx_string" kindref="compound">wxString</ref> fields (i.e. in practice most of them) because of an unsafe use of the same <ref refid="classwx_string" kindref="compound">wxString</ref> object which happens because the <ref refid="classwx_string" kindref="compound">wxString</ref> field in the original <emphasis>event</emphasis> object and its copy made internally by this function share the same string buffer internally. Use <ref refid="classwx_evt_handler_1acffd03bf407a856166ea71ef0318b59a" kindref="member">QueueEvent()</ref> to avoid this.</para>
-<para>A copy of <emphasis>event</emphasis> is made by the function, so the original can be deleted as soon as function returns (it is common that the original is created on the stack). This requires that the <ref refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" kindref="member">wxEvent::Clone()</ref> method be implemented by event so that it can be duplicated and stored until it gets processed.</para>
+<para>A copy of <emphasis>event</emphasis> is made by the function, so the original can be deleted as soon as function returns (it is common that the original is created on the stack). This requires that the <ref refid="classwx_event_1a26878097a702e8d0368da150125d4158" kindref="member">wxEvent::Clone()</ref> method be implemented by event so that it can be duplicated and stored until it gets processed.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>event</parametername>
@@ -142,17 +142,17 @@
 <para>Calling this function on an object schedules an asynchronous call to the method specified as <ref refid="classwx_evt_handler_1a63c7351618fd77330d80a250b3719519" kindref="member">CallAfter()</ref> argument at a (slightly) later time. This is useful when processing some events as certain actions typically can&apos;t be performed inside their handlers, e.g. you shouldn&apos;t show a modal dialog from a mouse click event handler as this would break the mouse capture state <ndash/> but you can call a method showing this message dialog after the current event handler completes.</para>
 <para>The method being called must be the method of the object on which <ref refid="classwx_evt_handler_1a63c7351618fd77330d80a250b3719519" kindref="member">CallAfter()</ref> itself is called.</para>
 <para>Notice that it is safe to use <ref refid="classwx_evt_handler_1a63c7351618fd77330d80a250b3719519" kindref="member">CallAfter()</ref> from other, non-GUI, threads, but that the method will be always called in the main, GUI, thread context.</para>
-<para>Example of use: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyFrame<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_frame" kindref="compound">wxFrame</ref><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnClick(<ref refid="classwx_mouse_event" kindref="compound">wxMouseEvent</ref>&amp;<sp/>event)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_evt_handler_1a63c7351618fd77330d80a250b3719519" kindref="member">CallAfter</ref>(&amp;MyFrame::ShowPosition,<sp/>event.<ref refid="classwx_mouse_state_1a318d5a329edfd9210f611058546c2b1f" kindref="member">GetPosition</ref>());</highlight></codeline>
+<para>Example of use: <programlisting><codeline><highlight class="normal">class<sp/>MyFrame<sp/>:<sp/>public<sp/>wxFrame<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>void<sp/>OnClick(wxMouseEvent&amp;<sp/>event)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CallAfter(&amp;MyFrame::ShowPosition,<sp/>event.GetPosition());</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShowPosition(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_point" kindref="compound">wxPoint</ref>&amp;<sp/>pos)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="msgdlg_8h_1a193c64ed4802e379799cdb42de252647" kindref="member">wxMessageBox</ref>(</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_string_1addd9ccfa3ae2b7ab2d66bcbf034d0be0" kindref="member">wxString::Format</ref>(</highlight><highlight class="stringliteral">&quot;Perform<sp/>click<sp/>at<sp/>(%d,<sp/>%d)?&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos.<ref refid="classwx_point_1a96cd57c992846b3338837db97836ba5c" kindref="member">x</ref>,<sp/>pos.<ref refid="classwx_point_1a569141753bb48c51a857b7839de54b11" kindref="member">y</ref>),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/><ref refid="defs_8h_1a5ba00a09cea0417a2ef7c4a4c2b0012c" kindref="member">wxYES_NO</ref>)<sp/>==<sp/><ref refid="defs_8h_1ab38ccd9aa8aa47f9df32a75c96bb3000" kindref="member">wxYES</ref><sp/>)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>void<sp/>ShowPosition(const<sp/>wxPoint&amp;<sp/>pos)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>wxMessageBox(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxString::Format(&quot;Perform<sp/>click<sp/>at<sp/>(%d,<sp/>%d)?&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos.x,<sp/>pos.y),<sp/>&quot;&quot;,<sp/>wxYES_NO)<sp/>==<sp/>wxYES<sp/>)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>take<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>click<sp/>into<sp/>account<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>do<sp/>take<sp/>this<sp/>click<sp/>into<sp/>account<sp/>...</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
@@ -204,8 +204,8 @@
         <detaileddescription>
 <para>Calling this function on an object schedules an asynchronous call to the functor specified as <ref refid="classwx_evt_handler_1a63c7351618fd77330d80a250b3719519" kindref="member">CallAfter()</ref> argument at a (slightly) later time. This is useful when processing some events as certain actions typically can&apos;t be performed inside their handlers, e.g. you shouldn&apos;t show a modal dialog from a mouse click event handler as this would break the mouse capture state <ndash/> but you can call a function showing this message dialog after the current event handler completes.</para>
 <para>Notice that it is safe to use <ref refid="classwx_evt_handler_1a63c7351618fd77330d80a250b3719519" kindref="member">CallAfter()</ref> from other, non-GUI, threads, but that the method will be always called in the main, GUI, thread context.</para>
-<para>This overload is particularly useful in combination with C++11 lambdas: <programlisting><codeline><highlight class="normal"><ref refid="interface_2wx_2app_8h_1a10e0a27ef33ad2abc9b862cef90b3e25" kindref="member">wxGetApp</ref>().CallAfter([]{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="utils_8h_1a3267f33060d2ae403862427acb758bab" kindref="member">wxBell</ref>();</highlight></codeline>
+<para>This overload is particularly useful in combination with C++11 lambdas: <programlisting><codeline><highlight class="normal">wxGetApp().CallAfter([]{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxBell();</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>
 <para><parameterlist kind="param"><parameteritem>
@@ -248,8 +248,8 @@
 <listitem><para><ref refid="classwx_app_console_1ada7ab606e014a10d46e4b3c6f602e20c" kindref="member">wxApp::FilterEvent()</ref> is called. If it returns anything but <computeroutput>-1</computeroutput> (default) the processing stops here.</para>
 </listitem><listitem><para><ref refid="classwx_evt_handler_1ad4b0eac704dd005ac6a88fdb1e673c13" kindref="member">TryBefore()</ref> is called (this is where <ref refid="classwx_validator" kindref="compound">wxValidator</ref> are taken into account for <ref refid="classwx_window" kindref="compound">wxWindow</ref> objects). If this returns true, the function exits.</para>
 </listitem><listitem><para>If the object is disabled (via a call to <ref refid="classwx_evt_handler_1a7388ae19c8657e5656471b658c320036" kindref="member">wxEvtHandler::SetEvtHandlerEnabled</ref>) the function skips to step (7).</para>
-</listitem><listitem><para>Dynamic event table of the handlers bound using <ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">Bind&lt;&gt;()</ref> is searched in the most-recently-bound to the most-early-bound order. If a handler is found, it is executed and the function returns true unless the handler used <ref refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" kindref="member">wxEvent::Skip()</ref> to indicate that it didn&apos;t handle the event in which case the search continues.</para>
-</listitem><listitem><para>Static events table of the handlers bound using event table macros is searched for this event handler in the order of appearance of event table macros in the source code. If this fails, the base class event table is tried, and so on until no more tables exist or an appropriate function was found. If a handler is found, the same logic as in the previous step applies.</para>
+</listitem><listitem><para>Dynamic event table of the handlers bound using <ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">Bind&lt;&gt;()</ref> is searched. If a handler is found, it is executed and the function returns true unless the handler used <ref refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" kindref="member">wxEvent::Skip()</ref> to indicate that it didn&apos;t handle the event in which case the search continues.</para>
+</listitem><listitem><para>Static events table of the handlers bound using event table macros is searched for this event handler. If this fails, the base class event table is tried, and so on until no more tables exist or an appropriate function was found. If a handler is found, the same logic as in the previous step applies.</para>
 </listitem><listitem><para>The search is applied down the entire chain of event handlers (usually the chain has a length of one). This chain can be formed using <ref refid="classwx_evt_handler_1a68e2ef2d2b7d68c4c9c18ca92933031b" kindref="member">wxEvtHandler::SetNextHandler()</ref>: <image type="html" name="overview_events_chain.png"></image>
  (referring to the image, if <computeroutput>A-&gt;ProcessEvent</computeroutput> is called and it doesn&apos;t handle the event, <computeroutput>B-&gt;ProcessEvent</computeroutput> will be called and so on...). Note that in the case of <ref refid="classwx_window" kindref="compound">wxWindow</ref> you can build a stack of event handlers (see <ref refid="classwx_window_1a398c11ab9af7956067a964f560d1978c" kindref="member">wxWindow::PushEventHandler()</ref> for more info). If any of the handlers of the chain return true, the function exits.</para>
 </listitem><listitem><para><ref refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" kindref="member">TryAfter()</ref> is called: for the <ref refid="classwx_window" kindref="compound">wxWindow</ref> object this may propagate the event to the window parent (recursively). If the event is still not processed, <ref refid="classwx_evt_handler_1a65968dd27f3aac7718f2dd6b2ddd5a08" kindref="member">ProcessEvent()</ref> on wxTheApp object is called as the last step.</para>
@@ -265,7 +265,9 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>true if a suitable event handler function was found and executed, and the function did not call <ref refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" kindref="member">wxEvent::Skip</ref>. </para>
+<simplesect kind="return"><para>true if a suitable event handler function was found and executed, and the function did not call <ref refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" kindref="member">wxEvent::Skip</ref>.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classwx_evt_handler_1a3c07426130d2868a5ae7fa918a251f49" kindref="member">SearchEventTable()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -350,7 +352,7 @@
         </briefdescription>
         <detaileddescription>
 <para>The real processing still happens in <ref refid="classwx_evt_handler_1a65968dd27f3aac7718f2dd6b2ddd5a08" kindref="member">ProcessEvent()</ref> which is called by this function.</para>
-<para>Note that this function needs a valid application object (see <ref refid="classwx_app_console_1ad417e3d46817d6fcfccda1392f333aee" kindref="member">wxAppConsole::GetInstance()</ref>) because <ref refid="classwx_app" kindref="compound">wxApp</ref> holds the list of the event handlers with pending events and this function manipulates that list. </para>
+<para>Note that this function needs a valid application object (see <ref refid="classwx_app_console_1a2cb953d248e41fd5bdb95ade98311ad3" kindref="member">wxAppConsole::GetInstance()</ref>) because <ref refid="classwx_app" kindref="compound">wxApp</ref> holds the list of the event handlers with pending events and this function manipulates that list. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -370,6 +372,60 @@
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/event.h" line="696" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_evt_handler_1a3c07426130d2868a5ae7fa918a251f49" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool wxEvtHandler::SearchEventTable</definition>
+        <argsstring>(wxEventTable &amp;table, wxEvent &amp;event)</argsstring>
+        <name>SearchEventTable</name>
+        <param>
+          <type>wxEventTable &amp;</type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="classwx_event" kindref="compound">wxEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Searches the event table, executing an event handler function if an appropriate one is found. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event table to be searched. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event to be matched against an event table entry.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if a suitable event handler function was found and executed, and the function did not call <ref refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" kindref="member">wxEvent::Skip</ref>.</para>
+</simplesect>
+<simplesect kind="remark"><para>This function looks through the object&apos;s event table and tries to find an entry that will match the event. An entry will match if: <itemizedlist>
+<listitem><para>The event type matches, and </para>
+</listitem>
+<listitem><para>the identifier or identifier range matches, or the event table entry&apos;s identifier is zero.</para>
+</listitem>
+</itemizedlist>
+If a suitable function is called but calls <ref refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" kindref="member">wxEvent::Skip</ref>, this function will fail, and searching will continue.</para>
+</simplesect>
+<xrefsect id="todo_1_todo000016"><xreftitle>Todo</xreftitle><xrefdescription><para>this function in the header is listed as an &quot;implementation only&quot; function; are we sure we want to document it?</para>
+</xrefdescription></xrefsect></para>
+<para><simplesect kind="see"><para><ref refid="classwx_evt_handler_1a65968dd27f3aac7718f2dd6b2ddd5a08" kindref="member">ProcessEvent()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/event.h" line="725" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -410,7 +466,7 @@
         </briefdescription>
         <detaileddescription>
 <para>Notice that <ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">Bind()</ref> provides a more flexible and safer way to do the same thing as <ref refid="classwx_evt_handler_1a78719e8b82c9f9c6e4056b3449df1943" kindref="member">Connect()</ref>, please use it in any new code <ndash/> while <ref refid="classwx_evt_handler_1a78719e8b82c9f9c6e4056b3449df1943" kindref="member">Connect()</ref> is not formally deprecated due to its existing widespread usage, it has no advantages compared to <ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">Bind()</ref>.</para>
-<para>This is an alternative to the use of static event tables. It is more flexible as it allows connecting events generated by some object to an event handler defined in a different object of a different class (which is impossible to do directly with the event tables <ndash/> the events can be only handled in another object if they are propagated upwards to it). Do make sure to specify the correct <emphasis>eventSink</emphasis> when connecting to an event of a different object.</para>
+<para>This is an alternative to the use of static event tables. It is more flexible as it allows to connect events generated by some object to an event handler defined in a different object of a different class (which is impossible to do directly with the event tables <ndash/> the events can be only handled in another object if they are propagated upwards to it). Do make sure to specify the correct <emphasis>eventSink</emphasis> when connecting to an event of a different object.</para>
 <para>See <ref refid="overview_events_1overview_events_bind" kindref="member">Dynamic Event Handling</ref> for more detailed explanation of this function and the <ref refid="page_samples_1page_samples_event" kindref="member">Event Sample</ref> sample for usage examples.</para>
 <para>This specific overload allows you to connect an event handler to a <emphasis>range</emphasis> of <emphasis>source</emphasis> IDs. Do not confuse <emphasis>source</emphasis> IDs with event <emphasis>types:</emphasis> source IDs identify the event generator objects (typically <ref refid="classwx_menu_item" kindref="compound">wxMenuItem</ref> or <ref refid="classwx_window" kindref="compound">wxWindow</ref> objects) while the event <emphasis>type</emphasis> identify which type of events should be handled by the given <emphasis>function</emphasis> (an event generator object may generate many different types of events!).</para>
 <para><parameterlist kind="param"><parameteritem>
@@ -450,7 +506,7 @@
 <parametername>userData</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Optional data to be associated with the event table entry. wxWidgets will take ownership of this pointer, i.e. it will be destroyed when the event handler is disconnected or at the program termination. This pointer can be retrieved using <ref refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" kindref="member">wxEvent::GetEventUserData()</ref> later. </para>
+<para>Optional data to be associated with the event table entry. wxWidgets will take ownership of this pointer, i.e. it will be destroyed when the event handler is disconnected or at the program termination. This pointer can be retrieved using <ref refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" kindref="member">wxEvent::GetEventUserData()</ref> later. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -462,13 +518,14 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<bold>wxPerl Note:</bold> In wxPerl this function takes 4 arguments: <emphasis>id</emphasis>, <emphasis>lastid</emphasis>, <emphasis>type</emphasis>, <emphasis>method</emphasis>; if <emphasis>method</emphasis> is undef, the handler is disconnected.  <simplesect kind="see"><para><ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">Bind&lt;&gt;()</ref> </para>
+<bold>wxPerl Note:</bold> In wxPerl this function takes 4 arguments: <emphasis>id</emphasis>, <emphasis>lastid</emphasis>, <emphasis>type</emphasis>, <emphasis>method</emphasis>; if <emphasis>method</emphasis> is undef, the handler is disconnected.}</para>
+<para><simplesect kind="see"><para><ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">Bind&lt;&gt;()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="766" column="10"/>
+        <location file="interface/wx/event.h" line="796" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a1e8b5fc4c7e7f6d32d40bc00d4108ba4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -502,15 +559,15 @@
         </briefdescription>
         <detaileddescription>
 <para>This overload can be used to attach an event handler to a single source ID:</para>
-<para>Example: <programlisting><codeline><highlight class="normal">frame-&gt;Connect(<sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbba37f548d1211c664ede962e943baad4e5" kindref="member">wxID_EXIT</ref>,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="event_8h_1ae74e7c2eb422fb70fba050f2204ad734" kindref="member">wxEVT_MENU</ref>,</highlight></codeline>
+<para>Example: <programlisting><codeline><highlight class="normal">frame-&gt;Connect(<sp/>wxID_EXIT,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxEVT_MENU,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxCommandEventHandler(MyFrame::OnQuit)<sp/>);</highlight></codeline>
 </programlisting></para>
-<para><bold>wxPerl Note:</bold> Not supported by wxPerl.  </para>
+<para><bold>wxPerl Note:</bold> Not supported by wxPerl. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="788" column="10"/>
+        <location file="interface/wx/event.h" line="818" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1aa290d9b67348e74c1da8497955a4e35c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -540,11 +597,11 @@
         </briefdescription>
         <detaileddescription>
 <para>This overload will connect the given event handler so that regardless of the ID of the event source, the handler will be called.</para>
-<para><bold>wxPerl Note:</bold> Not supported by wxPerl.  </para>
+<para><bold>wxPerl Note:</bold> Not supported by wxPerl. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="804" column="10"/>
+        <location file="interface/wx/event.h" line="834" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a13061cf0ed01ac10a804ac057ef4bdbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -607,11 +664,11 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<bold>wxPerl Note:</bold> Not supported by wxPerl.  </para>
+<bold>wxPerl Note:</bold> Not supported by wxPerl. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="831" column="10"/>
+        <location file="interface/wx/event.h" line="861" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a2f171e19444b9c4034c5e11f24fa9c91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -648,11 +705,11 @@
         </briefdescription>
         <detaileddescription>
 <para>This overload takes the additional <emphasis>id</emphasis> parameter.</para>
-<para><bold>wxPerl Note:</bold> Not supported by wxPerl.  </para>
+<para><bold>wxPerl Note:</bold> Not supported by wxPerl. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="846" column="10"/>
+        <location file="interface/wx/event.h" line="876" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a16a6f823853e4b74b43dd9a2cf3abee6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -691,11 +748,11 @@
         </briefdescription>
         <detaileddescription>
 <para>This overload takes an additional range of source IDs.</para>
-<para><bold>wxPerl Note:</bold> In wxPerl this function takes 3 arguments: <emphasis>id</emphasis>, <emphasis>lastid</emphasis>, <emphasis>type</emphasis>.  </para>
+<para><bold>wxPerl Note:</bold> In wxPerl this function takes 3 arguments: <emphasis>id</emphasis>, <emphasis>lastid</emphasis>, <emphasis>type</emphasis>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="863" column="10"/>
+        <location file="interface/wx/event.h" line="893" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -779,7 +836,7 @@
 <parametername>userData</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Optional data to be associated with the event table entry. wxWidgets will take ownership of this pointer, i.e. it will be destroyed when the event handler is disconnected or at the program termination. This pointer can be retrieved using <ref refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" kindref="member">wxEvent::GetEventUserData()</ref> later.</para>
+<para>Optional data to be associated with the event table entry. wxWidgets will take ownership of this pointer, i.e. it will be destroyed when the event handler is disconnected or at the program termination. This pointer can be retrieved using <ref refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" kindref="member">wxEvent::GetEventUserData()</ref> later.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -791,7 +848,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="912" column="10"/>
+        <location file="interface/wx/event.h" line="942" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a03cc68ca201fb79c7e837919025be71a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -889,7 +946,7 @@
 <parametername>userData</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Optional data to be associated with the event table entry. wxWidgets will take ownership of this pointer, i.e. it will be destroyed when the event handler is disconnected or at the program termination. This pointer can be retrieved using <ref refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" kindref="member">wxEvent::GetEventUserData()</ref> later.</para>
+<para>Optional data to be associated with the event table entry. wxWidgets will take ownership of this pointer, i.e. it will be destroyed when the event handler is disconnected or at the program termination. This pointer can be retrieved using <ref refid="classwx_event_1ae7d3e088f0f165ad0421717dd33e4460" kindref="member">wxEvent::GetEventUserData()</ref> later.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -901,7 +958,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="951" column="10"/>
+        <location file="interface/wx/event.h" line="981" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a2b7df8272075a96daea78cdd799c00da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -944,9 +1001,7 @@
         </briefdescription>
         <detaileddescription>
 <para>This method can only unbind functions, functors or methods which have been added using the <ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">Bind&lt;&gt;()</ref> method. There is no way to unbind functions bound using the (static) event tables.</para>
-<para><simplesect kind="note"><para>Currently functors are compared by their address which, unfortunately, doesn&apos;t work correctly if the same address is reused for two different functor objects. Because of this, using <ref refid="classwx_evt_handler_1a2b7df8272075a96daea78cdd799c00da" kindref="member">Unbind()</ref> is not recommended if there are multiple functors using the same <emphasis>eventType</emphasis> and <emphasis>id</emphasis> and <emphasis>lastId</emphasis> as a wrong one could be unbound.</para>
-</simplesect>
-<parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>eventType</parametername>
 </parameternamelist>
@@ -995,7 +1050,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="991" column="10"/>
+        <location file="interface/wx/event.h" line="1015" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1aa49f9c4ad4462456b4fe4bd1ab53533d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1105,14 +1160,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1023" column="10"/>
+        <location file="interface/wx/event.h" line="1047" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
       <header>User-supplied data</header>
-      <memberdef kind="function" id="classwx_evt_handler_1a62baf87cabf4dd2c9ecce3ee5e1e9f61" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_evt_handler_1a291bc92c1bea8abfff276a8e333d46db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
-        <definition>void * wxEvtHandler::GetClientData</definition>
+        <definition>void* wxEvtHandler::GetClientData</definition>
         <argsstring>() const</argsstring>
         <name>GetClientData</name>
         <briefdescription>
@@ -1127,11 +1182,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1044" column="10"/>
+        <location file="interface/wx/event.h" line="1068" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_evt_handler_1a537d17d644e48bc1735c4dd28b8b8c04" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_evt_handler_1a371742bda1686e82065f3a1f2acb31c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_client_data" kindref="compound">wxClientData</ref> *</type>
-        <definition>wxClientData * wxEvtHandler::GetClientObject</definition>
+        <definition>wxClientData* wxEvtHandler::GetClientObject</definition>
         <argsstring>() const</argsstring>
         <name>GetClientObject</name>
         <briefdescription>
@@ -1144,7 +1199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1051" column="18"/>
+        <location file="interface/wx/event.h" line="1075" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a82c74f2cebfa02cb3c1563d459c872bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1170,13 +1225,13 @@
 </parameterlist>
 <simplesect kind="remark"><para>Normally, any extra data the programmer wishes to associate with the object should be made available by deriving a new class with new data members. You must not call this method and SetClientObject on the same class - only one of them.</para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="classwx_evt_handler_1a62baf87cabf4dd2c9ecce3ee5e1e9f61" kindref="member">GetClientData()</ref> </para>
+<simplesect kind="see"><para><ref refid="classwx_evt_handler_1a291bc92c1bea8abfff276a8e333d46db" kindref="member">GetClientData()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1066" column="10"/>
+        <location file="interface/wx/event.h" line="1090" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1af1e33a06087b8b2ddc43c7d15a91b326" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1192,13 +1247,13 @@
         </briefdescription>
         <detaileddescription>
 <para>Any previous object will be deleted.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_evt_handler_1a537d17d644e48bc1735c4dd28b8b8c04" kindref="member">GetClientObject()</ref>, <ref refid="classwx_client_data" kindref="compound">wxClientData</ref> </para>
+<para><simplesect kind="see"><para><ref refid="classwx_evt_handler_1a371742bda1686e82065f3a1f2acb31c8" kindref="member">GetClientObject()</ref>, <ref refid="classwx_client_data" kindref="compound">wxClientData</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1073" column="10"/>
+        <location file="interface/wx/event.h" line="1097" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -1220,41 +1275,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1091" column="10"/>
+        <location file="interface/wx/event.h" line="1115" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_evt_handler_1a6de721ad9f331826a5c925d6008116e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_evt_handler_1addedbed1c9f970c2b1e2893a42805b6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref> *</type>
-        <definition>wxEvtHandler * wxEvtHandler::GetNextHandler</definition>
+        <definition>wxEvtHandler* wxEvtHandler::GetNextHandler</definition>
         <argsstring>() const</argsstring>
         <name>GetNextHandler</name>
         <briefdescription>
 <para>Returns the pointer to the next handler in the chain. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="classwx_evt_handler_1a68e2ef2d2b7d68c4c9c18ca92933031b" kindref="member">SetNextHandler()</ref>, <ref refid="classwx_evt_handler_1abbf9904ea5108b816f5f4faab1a33db9" kindref="member">GetPreviousHandler()</ref>, <ref refid="classwx_evt_handler_1aff0d1836464be82e2ad723ad3a58eccc" kindref="member">SetPreviousHandler()</ref>, <ref refid="classwx_window_1a398c11ab9af7956067a964f560d1978c" kindref="member">wxWindow::PushEventHandler</ref>, <ref refid="classwx_window_1a0b71a51a2f13179d0ca1b488d177ca4d" kindref="member">wxWindow::PopEventHandler</ref> </para>
+<para><simplesect kind="see"><para><ref refid="classwx_evt_handler_1a68e2ef2d2b7d68c4c9c18ca92933031b" kindref="member">SetNextHandler()</ref>, <ref refid="classwx_evt_handler_1a69bfde9623d89eb91e363c53616e4587" kindref="member">GetPreviousHandler()</ref>, <ref refid="classwx_evt_handler_1aff0d1836464be82e2ad723ad3a58eccc" kindref="member">SetPreviousHandler()</ref>, <ref refid="classwx_window_1a398c11ab9af7956067a964f560d1978c" kindref="member">wxWindow::PushEventHandler</ref>, <ref refid="classwx_window_1ac45c1f4cf96c70779764c14cf528790b" kindref="member">wxWindow::PopEventHandler</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1099" column="18"/>
+        <location file="interface/wx/event.h" line="1123" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_evt_handler_1abbf9904ea5108b816f5f4faab1a33db9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_evt_handler_1a69bfde9623d89eb91e363c53616e4587" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref> *</type>
-        <definition>wxEvtHandler * wxEvtHandler::GetPreviousHandler</definition>
+        <definition>wxEvtHandler* wxEvtHandler::GetPreviousHandler</definition>
         <argsstring>() const</argsstring>
         <name>GetPreviousHandler</name>
         <briefdescription>
 <para>Returns the pointer to the previous handler in the chain. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="classwx_evt_handler_1aff0d1836464be82e2ad723ad3a58eccc" kindref="member">SetPreviousHandler()</ref>, <ref refid="classwx_evt_handler_1a6de721ad9f331826a5c925d6008116e5" kindref="member">GetNextHandler()</ref>, <ref refid="classwx_evt_handler_1a68e2ef2d2b7d68c4c9c18ca92933031b" kindref="member">SetNextHandler()</ref>, <ref refid="classwx_window_1a398c11ab9af7956067a964f560d1978c" kindref="member">wxWindow::PushEventHandler</ref>, <ref refid="classwx_window_1a0b71a51a2f13179d0ca1b488d177ca4d" kindref="member">wxWindow::PopEventHandler</ref> </para>
+<para><simplesect kind="see"><para><ref refid="classwx_evt_handler_1aff0d1836464be82e2ad723ad3a58eccc" kindref="member">SetPreviousHandler()</ref>, <ref refid="classwx_evt_handler_1addedbed1c9f970c2b1e2893a42805b6a" kindref="member">GetNextHandler()</ref>, <ref refid="classwx_evt_handler_1a68e2ef2d2b7d68c4c9c18ca92933031b" kindref="member">SetNextHandler()</ref>, <ref refid="classwx_window_1a398c11ab9af7956067a964f560d1978c" kindref="member">wxWindow::PushEventHandler</ref>, <ref refid="classwx_window_1ac45c1f4cf96c70779764c14cf528790b" kindref="member">wxWindow::PopEventHandler</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1107" column="18"/>
+        <location file="interface/wx/event.h" line="1131" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a7388ae19c8657e5656471b658c320036" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1286,7 +1341,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1121" column="10"/>
+        <location file="interface/wx/event.h" line="1145" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a68e2ef2d2b7d68c4c9c18ca92933031b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1321,7 +1376,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1143" column="18"/>
+        <location file="interface/wx/event.h" line="1167" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1aff0d1836464be82e2ad723ad3a58eccc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -1353,7 +1408,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1155" column="18"/>
+        <location file="interface/wx/event.h" line="1179" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a22e5db2ec1d19c8252c056fd116975d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1373,7 +1428,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1169" column="10"/>
+        <location file="interface/wx/event.h" line="1193" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1ac0734578a8d929b8b0be440ce0b53ad6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1392,7 +1447,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1179" column="10"/>
+        <location file="interface/wx/event.h" line="1203" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -1420,7 +1475,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1203" column="17"/>
+        <location file="interface/wx/event.h" line="1227" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a67a57b759c447b121bf70a7c9804c8f2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1442,7 +1497,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1213" column="17"/>
+        <location file="interface/wx/event.h" line="1237" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1ad4b0eac704dd005ac6a88fdb1e673c13" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -1458,16 +1513,16 @@
         </briefdescription>
         <detaileddescription>
 <para>This method can be overridden to hook into the event processing logic as early as possible. You should usually call the base class version when overriding this method, even if <ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref> itself does nothing here, some derived classes do use this method, e.g. <ref refid="classwx_window" kindref="compound">wxWindow</ref> implements support for <ref refid="classwx_validator" kindref="compound">wxValidator</ref> in it.</para>
-<para>Example: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyClass<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>BaseClass<sp/></highlight><highlight class="comment">//<sp/>inheriting<sp/>from<sp/>wxEvtHandler</highlight><highlight class="normal"></highlight></codeline>
+<para>Example: <programlisting><codeline><highlight class="normal">class<sp/>MyClass<sp/>:<sp/>public<sp/>BaseClass<sp/>//<sp/>inheriting<sp/>from<sp/>wxEvtHandler</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal">...</highlight></codeline>
 <codeline><highlight class="normal">protected:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classwx_evt_handler_1ad4b0eac704dd005ac6a88fdb1e673c13" kindref="member">TryBefore</ref>(<ref refid="classwx_event" kindref="compound">wxEvent</ref>&amp;<sp/>event)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>bool<sp/>TryBefore(wxEvent&amp;<sp/>event)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>MyPreProcess(event)<sp/>)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BaseClass::TryBefore(event);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>MyPreProcess(event)<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>true;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>BaseClass::TryBefore(event);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
 </programlisting></para>
@@ -1477,7 +1532,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1246" column="18"/>
+        <location file="interface/wx/event.h" line="1270" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -1493,16 +1548,16 @@
         </briefdescription>
         <detaileddescription>
 <para>This method can be overridden to implement post-processing for the events which were not processed anywhere else.</para>
-<para>The base class version handles forwarding the unprocessed events to <ref refid="classwx_app" kindref="compound">wxApp</ref> at <ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref> level and propagating them upwards the window child-parent chain at <ref refid="classwx_window" kindref="compound">wxWindow</ref> level and so should usually be called when overriding this method: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyClass<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>BaseClass<sp/></highlight><highlight class="comment">//<sp/>inheriting<sp/>from<sp/>wxEvtHandler</highlight><highlight class="normal"></highlight></codeline>
+<para>The base class version handles forwarding the unprocessed events to <ref refid="classwx_app" kindref="compound">wxApp</ref> at <ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref> level and propagating them upwards the window child-parent chain at <ref refid="classwx_window" kindref="compound">wxWindow</ref> level and so should usually be called when overriding this method: <programlisting><codeline><highlight class="normal">class<sp/>MyClass<sp/>:<sp/>public<sp/>BaseClass<sp/>//<sp/>inheriting<sp/>from<sp/>wxEvtHandler</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal">...</highlight></codeline>
 <codeline><highlight class="normal">protected:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" kindref="member">TryAfter</ref>(<ref refid="classwx_event" kindref="compound">wxEvent</ref>&amp;<sp/>event)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>virtual<sp/>bool<sp/>TryAfter(wxEvent&amp;<sp/>event)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>BaseClass::TryAfter(event)<sp/>)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>MyPostProcess(event);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>BaseClass::TryAfter(event)<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>true;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>MyPostProcess(event);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">};</highlight></codeline>
 </programlisting></para>
@@ -1512,7 +1567,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1275" column="18"/>
+        <location file="interface/wx/event.h" line="1299" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -1547,10 +1602,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A class that can handle events from the windowing system. </para>
     </briefdescription>
     <detaileddescription>
-<para><ref refid="classwx_window" kindref="compound">wxWindow</ref> is (and therefore all window classes are) derived from this class.</para>
+<para>A class that can handle events from the windowing system. <ref refid="classwx_window" kindref="compound">wxWindow</ref> is (and therefore all window classes are) derived from this class.</para>
 <para>When events are received, <ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref> invokes the method listed in the event table using itself as the object. When using multiple inheritance <bold>it is imperative that the <ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref>(-derived) class is the first class inherited</bold> such that the <computeroutput>this</computeroutput> pointer for the overall object will be identical to the <computeroutput>this</computeroutput> pointer of the <ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref> portion.</para>
 <para><heading level="2"></heading>
 </para>
@@ -1560,33 +1614,817 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="31">
-        <label>wxActiveXContainer</label>
-        <link refid="classwx_active_x_container"/>
+      <node id="101">
+        <label>wxStaticText</label>
+        <link refid="classwx_static_text"/>
         <childnode refid="28" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="32">
-        <label>wxActivityIndicator</label>
-        <link refid="classwx_activity_indicator"/>
+      <node id="97">
+        <label>wxSpinCtrlDouble</label>
+        <link refid="classwx_spin_ctrl_double"/>
         <childnode refid="28" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="165">
-        <label>wxAddRemoveCtrl</label>
-        <link refid="classwx_add_remove_ctrl"/>
-        <childnode refid="164" relation="public-inheritance">
+      <node id="65">
+        <label>wxGenericDirCtrl</label>
+        <link refid="classwx_generic_dir_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="33">
+      <node id="18">
+        <label>wxValidator</label>
+        <link refid="classwx_validator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>wxEventBlocker</label>
+        <link refid="classwx_event_blocker"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="144">
+        <label>wxDocChildFrame</label>
+        <link refid="classwx_doc_child_frame"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="171">
+        <label>wxSashLayoutWindow</label>
+        <link refid="classwx_sash_layout_window"/>
+        <childnode refid="170" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
         <label>wxAnimationCtrl</label>
         <link refid="classwx_animation_ctrl"/>
         <childnode refid="28" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="67">
+        <label>wxHeaderCtrlSimple</label>
+        <link refid="classwx_header_ctrl_simple"/>
+        <childnode refid="66" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>wxAuiNotebook</label>
+        <link refid="classwx_aui_notebook"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>wxCollapsiblePane</label>
+        <link refid="classwx_collapsible_pane"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>wxFileSystemWatcher</label>
+        <link refid="classwx_file_system_watcher"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>wxSpinButton</label>
+        <link refid="classwx_spin_button"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>wxNonOwnedWindow</label>
+        <link refid="classwx_non_owned_window"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>wxListBox</label>
+        <link refid="classwx_list_box"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="157">
+        <label>wxHScrolledWindow</label>
+        <link refid="classwx_h_scrolled_window"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="147">
+        <label>wxMDIChildFrame</label>
+        <link refid="classwx_m_d_i_child_frame"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="35">
+        <label>wxCommandLinkButton</label>
+        <link refid="classwx_command_link_button"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>wxRibbonControl</label>
+        <link refid="classwx_ribbon_control"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>wxInfoBar</label>
+        <link refid="classwx_info_bar"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>wxNumValidator&lt; T &gt;</label>
+        <link refid="classwx_num_validator"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>wxBookCtrlBase</label>
+        <link refid="classwx_book_ctrl_base"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="173">
+        <label>wxTipWindow</label>
+        <link refid="classwx_tip_window"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="125">
+        <label>wxGenericProgressDialog</label>
+        <link refid="classwx_generic_progress_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="155">
+        <label>wxAuiMDIChildFrame</label>
+        <link refid="classwx_aui_m_d_i_child_frame"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>wxTreeCtrl</label>
+        <link refid="classwx_tree_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>wxIntegerValidator&lt; T &gt;</label>
+        <link refid="classwx_integer_validator"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="159">
+        <label>wxPreviewControlBar</label>
+        <link refid="classwx_preview_control_bar"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="143">
+        <label>wxAuiMDIParentFrame</label>
+        <link refid="classwx_aui_m_d_i_parent_frame"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="163">
+        <label>wxVListBox</label>
+        <link refid="classwx_v_list_box"/>
+        <childnode refid="162" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+      </node>
+      <node id="25">
+        <label>wxView</label>
+        <link refid="classwx_view"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>wxProcess</label>
+        <link refid="classwx_process"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>wxFontDialog</label>
+        <link refid="classwx_font_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>wxAuiMDIClientWindow</label>
+        <link refid="classwx_aui_m_d_i_client_window"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>wxSimpleHtmlListBox</label>
+        <link refid="classwx_simple_html_list_box"/>
+        <childnode refid="164" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>wxScrollBar</label>
+        <link refid="classwx_scroll_bar"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>wxVScrolledWindow</label>
+        <link refid="classwx_v_scrolled_window"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>wxActiveXContainer</label>
+        <link refid="classwx_active_x_container"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>wxSearchCtrl</label>
+        <link refid="classwx_search_ctrl"/>
+        <childnode refid="104" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="122">
+        <label>wxFileDialog</label>
+        <link refid="classwx_file_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>wxBitmapComboBox</label>
+        <link refid="classwx_bitmap_combo_box"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>wxTextCtrl</label>
+        <link refid="classwx_text_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wxEvtHandler</label>
+        <link refid="classwx_evt_handler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>wxSimplebook</label>
+        <link refid="classwx_simplebook"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="154">
+        <label>wxPanel</label>
+        <link refid="classwx_panel"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>wxRadioButton</label>
+        <link refid="classwx_radio_button"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>wxTimer</label>
+        <link refid="classwx_timer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>wxStatusBar</label>
+        <link refid="classwx_status_bar"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>wxStaticLine</label>
+        <link refid="classwx_static_line"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>wxDatePickerCtrl</label>
+        <link refid="classwx_date_picker_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>wxPGMultiButton</label>
+        <link refid="classwx_p_g_multi_button"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>wxProgressDialog</label>
+        <link refid="classwx_progress_dialog"/>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>wxRibbonPanel</label>
+        <link refid="classwx_ribbon_panel"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>wxGenericValidator</label>
+        <link refid="classwx_generic_validator"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>wxMouseEventsManager</label>
+        <link refid="classwx_mouse_events_manager"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>wxRadioBox</label>
+        <link refid="classwx_radio_box"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="136">
+        <label>wxRichTextStyleOrganiserDialog</label>
+        <link refid="classwx_rich_text_style_organiser_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>wxCheckBox</label>
+        <link refid="classwx_check_box"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>wxDocParentFrame</label>
+        <link refid="classwx_doc_parent_frame"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>wxToggleButton</label>
+        <link refid="classwx_toggle_button"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="172">
+        <label>wxSplitterWindow</label>
+        <link refid="classwx_splitter_window"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="61">
+        <label>wxDataViewTreeCtrl</label>
+        <link refid="classwx_data_view_tree_ctrl"/>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>wxToolBar</label>
+        <link refid="classwx_tool_bar"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="129">
+        <label>wxMultiChoiceDialog</label>
+        <link refid="classwx_multi_choice_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>wxRibbonButtonBar</label>
+        <link refid="classwx_ribbon_button_bar"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>wxTreebook</label>
+        <link refid="classwx_treebook"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>wxCheckListBox</label>
+        <link refid="classwx_check_list_box"/>
+        <childnode refid="70" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="141">
+        <label>wxWizard</label>
+        <link refid="classwx_wizard"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>wxDataViewListCtrl</label>
+        <link refid="classwx_data_view_list_ctrl"/>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxTrackable</label>
+        <link refid="classwx_trackable"/>
+      </node>
+      <node id="72">
+        <label>wxRearrangeList</label>
+        <link refid="classwx_rearrange_list"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>wxPopupTransientWindow</label>
+        <link refid="classwx_popup_transient_window"/>
+        <childnode refid="116" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>wxPrintAbortDialog</label>
+        <link refid="classwx_print_abort_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>wxListbook</label>
+        <link refid="classwx_listbook"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="165">
+        <label>wxRichTextStyleListBox</label>
+        <link refid="classwx_rich_text_style_list_box"/>
+        <childnode refid="164" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>wxColourPickerCtrl</label>
+        <link refid="classwx_colour_picker_ctrl"/>
+        <childnode refid="76" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>wxHyperlinkCtrl</label>
+        <link refid="classwx_hyperlink_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>wxControl</label>
+        <link refid="classwx_control"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>wxListView</label>
+        <link refid="classwx_list_view"/>
+        <childnode refid="73" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>wxRichTextCtrl</label>
+        <link refid="classwx_rich_text_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>wxGauge</label>
+        <link refid="classwx_gauge"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>wxWebView</label>
+        <link refid="classwx_web_view"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>wxWindow</label>
+        <link refid="classwx_window"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>wxMediaCtrl</label>
+        <link refid="classwx_media_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>wxToolbook</label>
+        <link refid="classwx_toolbook"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>wxListCtrl</label>
+        <link refid="classwx_list_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>wxDocument</label>
+        <link refid="classwx_document"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="150">
+        <label>wxDocMDIParentFrame</label>
+        <link refid="classwx_doc_m_d_i_parent_frame"/>
+        <childnode refid="149" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>wxAuiToolBar</label>
+        <link refid="classwx_aui_tool_bar"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>wxComboCtrl</label>
+        <link refid="classwx_combo_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>wxRibbonGallery</label>
+        <link refid="classwx_ribbon_gallery"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="119">
+        <label>wxDialog</label>
+        <link refid="classwx_dialog"/>
+        <childnode refid="118" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="128">
+        <label>wxMessageDialog</label>
+        <link refid="classwx_message_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>wxFindReplaceDialog</label>
+        <link refid="classwx_find_replace_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>wxBitmapToggleButton</label>
+        <link refid="classwx_bitmap_toggle_button"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>wxWebKitCtrl</label>
+        <link refid="classwx_web_kit_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="164">
+        <label>wxHtmlListBox</label>
+        <link refid="classwx_html_list_box"/>
+        <childnode refid="163" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>wxFilePickerCtrl</label>
+        <link refid="classwx_file_picker_ctrl"/>
+        <childnode refid="76" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>wxRibbonBar</label>
+        <link refid="classwx_ribbon_bar"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>wxSpinCtrl</label>
+        <link refid="classwx_spin_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>wxChoice</label>
+        <link refid="classwx_choice"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>wxComboBox</label>
+        <link refid="classwx_combo_box"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>wxNotificationMessage</label>
+        <link refid="classwx_notification_message"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>wxStyledTextCtrl</label>
+        <link refid="classwx_styled_text_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>wxOwnerDrawnComboBox</label>
+        <link refid="classwx_owner_drawn_combo_box"/>
+        <childnode refid="55" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>wxAuiManager</label>
+        <link refid="classwx_aui_manager"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="142">
+        <label>wxFrame</label>
+        <link refid="classwx_frame"/>
+        <childnode refid="118" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>wxMDIClientWindow</label>
+        <link refid="classwx_m_d_i_client_window"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>wxMenuBar</label>
+        <link refid="classwx_menu_bar"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="152">
+        <label>wxPreviewFrame</label>
+        <link refid="classwx_preview_frame"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>wxHVScrolledWindow</label>
+        <link refid="classwx_h_v_scrolled_window"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="137">
+        <label>wxSingleChoiceDialog</label>
+        <link refid="classwx_single_choice_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>wxRichTextStyleComboCtrl</label>
+        <link refid="classwx_rich_text_style_combo_ctrl"/>
+        <childnode refid="55" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>wxDirDialog</label>
+        <link refid="classwx_dir_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
         <label>wxAnyButton</label>
         <link refid="classwx_any_button"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>wxDataViewCtrl</label>
+        <link refid="classwx_data_view_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>wxButton</label>
+        <link refid="classwx_button"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>wxRibbonToolBar</label>
+        <link refid="classwx_ribbon_tool_bar"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>wxBannerWindow</label>
+        <link refid="classwx_banner_window"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>wxNumericPropertyValidator</label>
+        <link refid="classwx_numeric_property_validator"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>wxRearrangeDialog</label>
+        <link refid="classwx_rearrange_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="127">
+        <label>wxHtmlHelpDialog</label>
+        <link refid="classwx_html_help_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>wxColourDialog</label>
+        <link refid="classwx_colour_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="160">
+        <label>wxPropertyGridManager</label>
+        <link refid="classwx_property_grid_manager"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>wxGLCanvas</label>
+        <link refid="classwx_g_l_canvas"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>wxHtmlHelpWindow</label>
+        <link refid="classwx_html_help_window"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>wxChoicebook</label>
+        <link refid="classwx_choicebook"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>wxPopupWindow</label>
+        <link refid="classwx_popup_window"/>
+        <childnode refid="115" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="161">
+        <label>wxRearrangeCtrl</label>
+        <link refid="classwx_rearrange_ctrl"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>wxControlWithItems</label>
+        <link refid="classwx_control_with_items"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="151">
+        <label>wxMiniFrame</label>
+        <link refid="classwx_mini_frame"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>wxPropertyGrid</label>
+        <link refid="classwx_property_grid"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>wxRichTextStyleListCtrl</label>
+        <link refid="classwx_rich_text_style_list_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>wxDirPickerCtrl</label>
+        <link refid="classwx_dir_picker_ctrl"/>
+        <childnode refid="76" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>wxStaticBitmap</label>
+        <link refid="classwx_static_bitmap"/>
         <childnode refid="28" relation="public-inheritance">
         </childnode>
       </node>
@@ -1602,486 +2440,40 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="151">
-        <label>wxAuiFloatingFrame</label>
-        <link refid="classwx_aui_floating_frame"/>
-        <childnode refid="150" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="166">
-        <label>wxAuiMDIChildFrame</label>
-        <link refid="classwx_aui_m_d_i_child_frame"/>
-        <childnode refid="164" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="45">
-        <label>wxAuiMDIClientWindow</label>
-        <link refid="classwx_aui_m_d_i_client_window"/>
-        <childnode refid="44" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="152">
-        <label>wxAuiMDIParentFrame</label>
-        <link refid="classwx_aui_m_d_i_parent_frame"/>
-        <childnode refid="150" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>wxAuiManager</label>
-        <link refid="classwx_aui_manager"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="44">
-        <label>wxAuiNotebook</label>
-        <link refid="classwx_aui_notebook"/>
-        <childnode refid="43" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="42">
-        <label>wxAuiToolBar</label>
-        <link refid="classwx_aui_tool_bar"/>
+      <node id="94">
+        <label>wxSlider</label>
+        <link refid="classwx_slider"/>
         <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>wxBannerWindow</label>
-        <link refid="classwx_banner_window"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="37">
-        <label>wxBitmapButton</label>
-        <link refid="classwx_bitmap_button"/>
-        <childnode refid="36" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="59">
-        <label>wxBitmapComboBox</label>
-        <link refid="classwx_bitmap_combo_box"/>
-        <childnode refid="58" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="41">
-        <label>wxBitmapToggleButton</label>
-        <link refid="classwx_bitmap_toggle_button"/>
-        <childnode refid="40" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="43">
-        <label>wxBookCtrlBase</label>
-        <link refid="classwx_book_ctrl_base"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="36">
-        <label>wxButton</label>
-        <link refid="classwx_button"/>
-        <childnode refid="35" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="52">
-        <label>wxCalendarCtrl</label>
-        <link refid="classwx_calendar_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="53">
-        <label>wxCheckBox</label>
-        <link refid="classwx_check_box"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="76">
-        <label>wxCheckListBox</label>
-        <link refid="classwx_check_list_box"/>
-        <childnode refid="75" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="54">
-        <label>wxChoice</label>
-        <link refid="classwx_choice"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="46">
-        <label>wxChoicebook</label>
-        <link refid="classwx_choicebook"/>
-        <childnode refid="43" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="56">
-        <label>wxCollapsibleHeaderCtrl</label>
-        <link refid="classwx_collapsible_header_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="57">
-        <label>wxCollapsiblePane</label>
-        <link refid="classwx_collapsible_pane"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="126">
-        <label>wxColourDialog</label>
-        <link refid="classwx_colour_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="82">
-        <label>wxColourPickerCtrl</label>
-        <link refid="classwx_colour_picker_ctrl"/>
-        <childnode refid="81" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="58">
-        <label>wxComboBox</label>
-        <link refid="classwx_combo_box"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="60">
-        <label>wxComboCtrl</label>
-        <link refid="classwx_combo_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="39">
-        <label>wxCommandLinkButton</label>
-        <link refid="classwx_command_link_button"/>
-        <childnode refid="36" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="38">
-        <label>wxContextHelpButton</label>
-        <link refid="classwx_context_help_button"/>
-        <childnode refid="37" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="28">
-        <label>wxControl</label>
-        <link refid="classwx_control"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="63">
-        <label>wxControlWithItems</label>
-        <link refid="classwx_control_with_items"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="127">
-        <label>wxCredentialEntryDialog</label>
-        <link refid="classwx_credential_entry_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="64">
-        <label>wxDataViewCtrl</label>
-        <link refid="classwx_data_view_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="65">
-        <label>wxDataViewListCtrl</label>
-        <link refid="classwx_data_view_list_ctrl"/>
-        <childnode refid="64" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="66">
-        <label>wxDataViewTreeCtrl</label>
-        <link refid="classwx_data_view_tree_ctrl"/>
-        <childnode refid="64" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="67">
-        <label>wxDatePickerCtrl</label>
-        <link refid="classwx_date_picker_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="125">
-        <label>wxDialog</label>
-        <link refid="classwx_dialog"/>
-        <childnode refid="124" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="128">
-        <label>wxDirDialog</label>
-        <link refid="classwx_dir_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="55">
-        <label>wxDirFilterListCtrl</label>
-        <link refid="classwx_dir_filter_list_ctrl"/>
-        <childnode refid="54" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="83">
-        <label>wxDirPickerCtrl</label>
-        <link refid="classwx_dir_picker_ctrl"/>
-        <childnode refid="81" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="153">
-        <label>wxDocChildFrame</label>
-        <link refid="classwx_doc_child_frame"/>
-        <childnode refid="150" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="157">
-        <label>wxDocMDIChildFrame</label>
-        <link refid="classwx_doc_m_d_i_child_frame"/>
-        <childnode refid="156" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="159">
-        <label>wxDocMDIParentFrame</label>
-        <link refid="classwx_doc_m_d_i_parent_frame"/>
-        <childnode refid="158" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>wxDocManager</label>
-        <link refid="classwx_doc_manager"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="154">
-        <label>wxDocParentFrame</label>
-        <link refid="classwx_doc_parent_frame"/>
-        <childnode refid="150" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>wxDocument</label>
-        <link refid="classwx_document"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="167">
-        <label>wxEditableListBox</label>
-        <link refid="classwx_editable_list_box"/>
-        <childnode refid="164" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>wxEventBlocker</label>
-        <link refid="classwx_event_blocker"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>wxEvtHandler</label>
-        <link refid="classwx_evt_handler"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="68">
-        <label>wxFileCtrl</label>
-        <link refid="classwx_file_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="129">
-        <label>wxFileDialog</label>
-        <link refid="classwx_file_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="84">
-        <label>wxFilePickerCtrl</label>
-        <link refid="classwx_file_picker_ctrl"/>
-        <childnode refid="81" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>wxFileSystemWatcher</label>
-        <link refid="classwx_file_system_watcher"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="130">
-        <label>wxFindReplaceDialog</label>
-        <link refid="classwx_find_replace_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>wxFloatingPointValidator&lt; T &gt;</label>
-        <link refid="classwx_floating_point_validator"/>
-        <childnode refid="20" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="131">
-        <label>wxFontDialog</label>
-        <link refid="classwx_font_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="85">
-        <label>wxFontPickerCtrl</label>
-        <link refid="classwx_font_picker_ctrl"/>
-        <childnode refid="81" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="150">
-        <label>wxFrame</label>
-        <link refid="classwx_frame"/>
-        <childnode refid="124" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="116">
-        <label>wxGLCanvas</label>
-        <link refid="classwx_g_l_canvas"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="69">
-        <label>wxGauge</label>
-        <link refid="classwx_gauge"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="34">
-        <label>wxGenericAnimationCtrl</label>
-        <link refid="classwx_generic_animation_ctrl"/>
-        <childnode refid="33" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="70">
-        <label>wxGenericDirCtrl</label>
-        <link refid="classwx_generic_dir_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="132">
-        <label>wxGenericProgressDialog</label>
-        <link refid="classwx_generic_progress_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>wxGenericValidator</label>
-        <link refid="classwx_generic_validator"/>
-        <childnode refid="18" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="168">
-        <label>wxHScrolledWindow</label>
-        <link refid="classwx_h_scrolled_window"/>
-        <childnode refid="164" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="169">
-        <label>wxHVScrolledWindow</label>
-        <link refid="classwx_h_v_scrolled_window"/>
-        <childnode refid="164" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="71">
-        <label>wxHeaderCtrl</label>
-        <link refid="classwx_header_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="72">
-        <label>wxHeaderCtrlSimple</label>
-        <link refid="classwx_header_ctrl_simple"/>
-        <childnode refid="71" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="134">
-        <label>wxHtmlHelpDialog</label>
-        <link refid="classwx_html_help_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="155">
-        <label>wxHtmlHelpFrame</label>
-        <link refid="classwx_html_help_frame"/>
-        <childnode refid="150" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="117">
-        <label>wxHtmlHelpWindow</label>
-        <link refid="classwx_html_help_window"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="175">
-        <label>wxHtmlListBox</label>
-        <link refid="classwx_html_list_box"/>
-        <childnode refid="174" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="73">
-        <label>wxHyperlinkCtrl</label>
-        <link refid="classwx_hyperlink_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="74">
-        <label>wxInfoBar</label>
-        <link refid="classwx_info_bar"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="22">
-        <label>wxIntegerValidator&lt; T &gt;</label>
-        <link refid="classwx_integer_validator"/>
-        <childnode refid="20" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="75">
-        <label>wxListBox</label>
-        <link refid="classwx_list_box"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="78">
-        <label>wxListCtrl</label>
-        <link refid="classwx_list_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="79">
-        <label>wxListView</label>
-        <link refid="classwx_list_view"/>
-        <childnode refid="78" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="47">
-        <label>wxListbook</label>
-        <link refid="classwx_listbook"/>
-        <childnode refid="43" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="156">
-        <label>wxMDIChildFrame</label>
-        <link refid="classwx_m_d_i_child_frame"/>
-        <childnode refid="150" relation="public-inheritance">
         </childnode>
       </node>
       <node id="118">
-        <label>wxMDIClientWindow</label>
-        <link refid="classwx_m_d_i_client_window"/>
+        <label>wxTopLevelWindow</label>
+        <link refid="classwx_top_level_window"/>
+        <childnode refid="115" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>wxDirFilterListCtrl</label>
+        <link refid="classwx_dir_filter_list_ctrl"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>wxNotebook</label>
+        <link refid="classwx_notebook"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="134">
+        <label>wxRichTextFormattingDialog</label>
+        <link refid="classwx_rich_text_formatting_dialog"/>
+        <childnode refid="133" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="174">
+        <label>wxTreeListCtrl</label>
+        <link refid="classwx_tree_list_ctrl"/>
         <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="158">
-        <label>wxMDIParentFrame</label>
-        <link refid="classwx_m_d_i_parent_frame"/>
-        <childnode refid="150" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="80">
-        <label>wxMediaCtrl</label>
-        <link refid="classwx_media_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
         </childnode>
       </node>
       <node id="11">
@@ -2090,440 +2482,16 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="119">
-        <label>wxMenuBar</label>
-        <link refid="classwx_menu_bar"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="135">
-        <label>wxMessageDialog</label>
-        <link refid="classwx_message_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="160">
-        <label>wxMiniFrame</label>
-        <link refid="classwx_mini_frame"/>
-        <childnode refid="150" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>wxMouseEventsManager</label>
-        <link refid="classwx_mouse_events_manager"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="136">
-        <label>wxMultiChoiceDialog</label>
-        <link refid="classwx_multi_choice_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="120">
-        <label>wxNativeWindow</label>
-        <link refid="classwx_native_window"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="121">
-        <label>wxNonOwnedWindow</label>
-        <link refid="classwx_non_owned_window"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="48">
-        <label>wxNotebook</label>
-        <link refid="classwx_notebook"/>
-        <childnode refid="43" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>wxNotificationMessage</label>
-        <link refid="classwx_notification_message"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>wxNumValidator&lt; T &gt;</label>
-        <link refid="classwx_num_validator"/>
-        <childnode refid="18" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="137">
-        <label>wxNumberEntryDialog</label>
-        <link refid="classwx_number_entry_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="24">
-        <label>wxNumericPropertyValidator</label>
-        <link refid="classwx_numeric_property_validator"/>
-        <childnode refid="23" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-      </node>
-      <node id="61">
-        <label>wxOwnerDrawnComboBox</label>
-        <link refid="classwx_owner_drawn_combo_box"/>
-        <childnode refid="60" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="138">
-        <label>wxPGArrayEditorDialog</label>
-        <link refid="classwx_p_g_array_editor_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="139">
-        <label>wxPGArrayStringEditorDialog</label>
-        <link refid="classwx_p_g_array_string_editor_dialog"/>
-        <childnode refid="138" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="163">
-        <label>wxPGMultiButton</label>
-        <link refid="classwx_p_g_multi_button"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="164">
-        <label>wxPanel</label>
-        <link refid="classwx_panel"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="148">
-        <label>wxPasswordEntryDialog</label>
-        <link refid="classwx_password_entry_dialog"/>
-        <childnode refid="147" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="81">
-        <label>wxPickerBase</label>
-        <link refid="classwx_picker_base"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="123">
-        <label>wxPopupTransientWindow</label>
-        <link refid="classwx_popup_transient_window"/>
-        <childnode refid="122" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="122">
-        <label>wxPopupWindow</label>
-        <link refid="classwx_popup_window"/>
-        <childnode refid="121" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="170">
-        <label>wxPreviewControlBar</label>
-        <link refid="classwx_preview_control_bar"/>
-        <childnode refid="164" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="161">
-        <label>wxPreviewFrame</label>
-        <link refid="classwx_preview_frame"/>
-        <childnode refid="150" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="140">
-        <label>wxPrintAbortDialog</label>
-        <link refid="classwx_print_abort_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>wxProcess</label>
-        <link refid="classwx_process"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="133">
-        <label>wxProgressDialog</label>
-        <link refid="classwx_progress_dialog"/>
-        <childnode refid="132" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="30">
-        <label>wxPropertyGrid</label>
-        <link refid="classwx_property_grid"/>
-        <childnode refid="29" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="171">
-        <label>wxPropertyGridManager</label>
-        <link refid="classwx_property_grid_manager"/>
-        <childnode refid="164" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>wxPropertyGridPage</label>
-        <link refid="classwx_property_grid_page"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="141">
-        <label>wxPropertySheetDialog</label>
-        <link refid="classwx_property_sheet_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="86">
-        <label>wxRadioBox</label>
-        <link refid="classwx_radio_box"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="87">
-        <label>wxRadioButton</label>
-        <link refid="classwx_radio_button"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="172">
-        <label>wxRearrangeCtrl</label>
-        <link refid="classwx_rearrange_ctrl"/>
-        <childnode refid="164" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="143">
-        <label>wxRearrangeDialog</label>
-        <link refid="classwx_rearrange_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="77">
-        <label>wxRearrangeList</label>
-        <link refid="classwx_rearrange_list"/>
-        <childnode refid="76" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="89">
-        <label>wxRibbonBar</label>
-        <link refid="classwx_ribbon_bar"/>
-        <childnode refid="88" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="90">
-        <label>wxRibbonButtonBar</label>
-        <link refid="classwx_ribbon_button_bar"/>
-        <childnode refid="88" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="88">
-        <label>wxRibbonControl</label>
-        <link refid="classwx_ribbon_control"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="91">
-        <label>wxRibbonGallery</label>
-        <link refid="classwx_ribbon_gallery"/>
-        <childnode refid="88" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="92">
-        <label>wxRibbonPage</label>
-        <link refid="classwx_ribbon_page"/>
-        <childnode refid="88" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="93">
-        <label>wxRibbonPanel</label>
-        <link refid="classwx_ribbon_panel"/>
-        <childnode refid="88" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="94">
-        <label>wxRibbonToolBar</label>
-        <link refid="classwx_ribbon_tool_bar"/>
-        <childnode refid="88" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="95">
-        <label>wxRichTextCtrl</label>
-        <link refid="classwx_rich_text_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="142">
-        <label>wxRichTextFormattingDialog</label>
-        <link refid="classwx_rich_text_formatting_dialog"/>
-        <childnode refid="141" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="62">
-        <label>wxRichTextStyleComboCtrl</label>
-        <link refid="classwx_rich_text_style_combo_ctrl"/>
-        <childnode refid="60" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="176">
-        <label>wxRichTextStyleListBox</label>
-        <link refid="classwx_rich_text_style_list_box"/>
-        <childnode refid="175" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="96">
-        <label>wxRichTextStyleListCtrl</label>
-        <link refid="classwx_rich_text_style_list_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="144">
-        <label>wxRichTextStyleOrganiserDialog</label>
-        <link refid="classwx_rich_text_style_organiser_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="181">
-        <label>wxSashLayoutWindow</label>
-        <link refid="classwx_sash_layout_window"/>
-        <childnode refid="180" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="180">
-        <label>wxSashWindow</label>
-        <link refid="classwx_sash_window"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="97">
-        <label>wxScrollBar</label>
-        <link refid="classwx_scroll_bar"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="29">
-        <label>wxScrolled&lt; wxControl &gt;</label>
-        <link refid="classwx_scrolled"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="109">
-        <label>wxSearchCtrl</label>
-        <link refid="classwx_search_ctrl"/>
-        <childnode refid="108" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="177">
-        <label>wxSimpleHtmlListBox</label>
-        <link refid="classwx_simple_html_list_box"/>
-        <childnode refid="175" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="49">
-        <label>wxSimplebook</label>
-        <link refid="classwx_simplebook"/>
-        <childnode refid="43" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="145">
-        <label>wxSingleChoiceDialog</label>
-        <link refid="classwx_single_choice_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="98">
-        <label>wxSlider</label>
-        <link refid="classwx_slider"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="99">
-        <label>wxSpinButton</label>
-        <link refid="classwx_spin_button"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="100">
-        <label>wxSpinCtrl</label>
-        <link refid="classwx_spin_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="101">
-        <label>wxSpinCtrlDouble</label>
-        <link refid="classwx_spin_ctrl_double"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="162">
-        <label>wxSplashScreen</label>
-        <link refid="classwx_splash_screen"/>
-        <childnode refid="150" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="182">
-        <label>wxSplitterWindow</label>
-        <link refid="classwx_splitter_window"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="102">
-        <label>wxStaticBitmap</label>
-        <link refid="classwx_static_bitmap"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="103">
-        <label>wxStaticBox</label>
-        <link refid="classwx_static_box"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="104">
-        <label>wxStaticLine</label>
-        <link refid="classwx_static_line"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="105">
-        <label>wxStaticText</label>
-        <link refid="classwx_static_text"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="106">
-        <label>wxStatusBar</label>
-        <link refid="classwx_status_bar"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="107">
-        <label>wxStyledTextCtrl</label>
-        <link refid="classwx_styled_text_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="146">
-        <label>wxSymbolPickerDialog</label>
-        <link refid="classwx_symbol_picker_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>wxTaskBarIcon</label>
-        <link refid="classwx_task_bar_icon"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="108">
-        <label>wxTextCtrl</label>
-        <link refid="classwx_text_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="147">
         <label>wxTextEntryDialog</label>
         <link refid="classwx_text_entry_dialog"/>
-        <childnode refid="125" relation="public-inheritance">
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="168">
+        <label>wxWizardPageSimple</label>
+        <link refid="classwx_wizard_page_simple"/>
+        <childnode refid="167" relation="public-inheritance">
         </childnode>
       </node>
       <node id="23">
@@ -2532,138 +2500,171 @@
         <childnode refid="18" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="110">
+      <node id="15">
+        <label>wxPropertyGridPage</label>
+        <link refid="classwx_property_grid_page"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>wxHtmlHelpFrame</label>
+        <link refid="classwx_html_help_frame"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="156">
+        <label>wxEditableListBox</label>
+        <link refid="classwx_editable_list_box"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>wxBitmapButton</label>
+        <link refid="classwx_bitmap_button"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>wxTaskBarIcon</label>
+        <link refid="classwx_task_bar_icon"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>wxHeaderCtrl</label>
+        <link refid="classwx_header_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>wxContextHelpButton</label>
+        <link refid="classwx_context_help_button"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="153">
+        <label>wxSplashScreen</label>
+        <link refid="classwx_splash_screen"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>wxMDIParentFrame</label>
+        <link refid="classwx_m_d_i_parent_frame"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="167">
+        <label>wxWizardPage</label>
+        <link refid="classwx_wizard_page"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>wxFileCtrl</label>
+        <link refid="classwx_file_ctrl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>wxDocMDIChildFrame</label>
+        <link refid="classwx_doc_m_d_i_child_frame"/>
+        <childnode refid="147" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>wxPGArrayStringEditorDialog</label>
+        <link refid="classwx_p_g_array_string_editor_dialog"/>
+        <childnode refid="130" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>wxPGArrayEditorDialog</label>
+        <link refid="classwx_p_g_array_editor_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>wxDocManager</label>
+        <link refid="classwx_doc_manager"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="140">
+        <label>wxPasswordEntryDialog</label>
+        <link refid="classwx_password_entry_dialog"/>
+        <childnode refid="139" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>wxRibbonPage</label>
+        <link refid="classwx_ribbon_page"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="138">
+        <label>wxSymbolPickerDialog</label>
+        <link refid="classwx_symbol_picker_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>wxFloatingPointValidator&lt; T &gt;</label>
+        <link refid="classwx_floating_point_validator"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>wxStaticBox</label>
+        <link refid="classwx_static_box"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>wxFontPickerCtrl</label>
+        <link refid="classwx_font_picker_ctrl"/>
+        <childnode refid="76" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="133">
+        <label>wxPropertySheetDialog</label>
+        <link refid="classwx_property_sheet_dialog"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="106">
         <label>wxTimePickerCtrl</label>
         <link refid="classwx_time_picker_ctrl"/>
         <childnode refid="28" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="17">
-        <label>wxTimer</label>
-        <link refid="classwx_timer"/>
-        <childnode refid="1" relation="public-inheritance">
+      <node id="76">
+        <label>wxPickerBase</label>
+        <link refid="classwx_picker_base"/>
+        <childnode refid="28" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="183">
-        <label>wxTipWindow</label>
-        <link refid="classwx_tip_window"/>
+      <node id="170">
+        <label>wxSashWindow</label>
+        <link refid="classwx_sash_window"/>
         <childnode refid="26" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="40">
-        <label>wxToggleButton</label>
-        <link refid="classwx_toggle_button"/>
-        <childnode refid="35" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="111">
-        <label>wxToolBar</label>
-        <link refid="classwx_tool_bar"/>
+      <node id="48">
+        <label>wxCalendarCtrl</label>
+        <link refid="classwx_calendar_ctrl"/>
         <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="50">
-        <label>wxToolbook</label>
-        <link refid="classwx_toolbook"/>
-        <childnode refid="43" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="124">
-        <label>wxTopLevelWindow</label>
-        <link refid="classwx_top_level_window"/>
-        <childnode refid="121" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>wxTrackable</label>
-        <link refid="classwx_trackable"/>
-      </node>
-      <node id="112">
-        <label>wxTreeCtrl</label>
-        <link refid="classwx_tree_ctrl"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="184">
-        <label>wxTreeListCtrl</label>
-        <link refid="classwx_tree_list_ctrl"/>
-        <childnode refid="26" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="51">
-        <label>wxTreebook</label>
-        <link refid="classwx_treebook"/>
-        <childnode refid="43" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="174">
-        <label>wxVListBox</label>
-        <link refid="classwx_v_list_box"/>
-        <childnode refid="173" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="173">
-        <label>wxVScrolledWindow</label>
-        <link refid="classwx_v_scrolled_window"/>
-        <childnode refid="164" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>wxValidator</label>
-        <link refid="classwx_validator"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>wxView</label>
-        <link refid="classwx_view"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="113">
-        <label>wxWebView</label>
-        <link refid="classwx_web_view"/>
-        <childnode refid="28" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="114">
-        <label>wxWebViewEdge</label>
-        <link refid="classwx_web_view_edge"/>
-        <childnode refid="113" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="115">
-        <label>wxWebViewIE</label>
-        <link refid="classwx_web_view_i_e"/>
-        <childnode refid="113" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>wxWindow</label>
-        <link refid="classwx_window"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="149">
-        <label>wxWizard</label>
-        <link refid="classwx_wizard"/>
-        <childnode refid="125" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="178">
-        <label>wxWizardPage</label>
-        <link refid="classwx_wizard_page"/>
-        <childnode refid="164" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="179">
-        <label>wxWizardPageSimple</label>
-        <link refid="classwx_wizard_page_simple"/>
-        <childnode refid="178" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="2">
+        <label>wxObject</label>
+        <link refid="classwx_object"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_refData</edgelabel>
+        </childnode>
+      </node>
       <node id="1">
         <label>wxEvtHandler</label>
         <link refid="classwx_evt_handler"/>
@@ -2672,23 +2673,16 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
-        <label>wxObject</label>
-        <link refid="classwx_object"/>
-        <childnode refid="3" relation="usage">
-          <edgelabel>m_refData</edgelabel>
-        </childnode>
+      <node id="4">
+        <label>wxTrackable</label>
+        <link refid="classwx_trackable"/>
       </node>
       <node id="3">
         <label>wxObjectRefData</label>
         <link refid="classwx_object_ref_data"/>
       </node>
-      <node id="4">
-        <label>wxTrackable</label>
-        <link refid="classwx_trackable"/>
-      </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="381" column="1" bodyfile="interface/wx/event.h" bodystart="382" bodyend="1276"/>
+    <location file="interface/wx/event.h" line="382" column="1" bodyfile="interface/wx/event.h" bodystart="381" bodyend="1300"/>
     <listofallmembers>
       <member refid="classwx_evt_handler_1a7dc3c701781f4044372049de5004137e" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>AddFilter</name></member>
       <member refid="classwx_evt_handler_1a0737c6d2cbcd5ded4b1ecdd53ed0def3" prot="public" virt="virtual"><scope>wxEvtHandler</scope><name>AddPendingEvent</name></member>
@@ -2697,28 +2691,28 @@
       <member refid="classwx_evt_handler_1a03cc68ca201fb79c7e837919025be71a" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>Bind</name></member>
       <member refid="classwx_evt_handler_1a63c7351618fd77330d80a250b3719519" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>CallAfter</name></member>
       <member refid="classwx_evt_handler_1a910416e4d0b1f38cec02213b8a0c6a12" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>CallAfter</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxEvtHandler</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxEvtHandler</scope><name>CloneRefData</name></member>
       <member refid="classwx_evt_handler_1a78719e8b82c9f9c6e4056b3449df1943" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>Connect</name></member>
       <member refid="classwx_evt_handler_1a1e8b5fc4c7e7f6d32d40bc00d4108ba4" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>Connect</name></member>
       <member refid="classwx_evt_handler_1aa290d9b67348e74c1da8497955a4e35c" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>Connect</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxEvtHandler</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxEvtHandler</scope><name>CreateRefData</name></member>
       <member refid="classwx_evt_handler_1a6e7f9cf4ebd0623c1d94979855d096f8" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>DeletePendingEvents</name></member>
       <member refid="classwx_evt_handler_1a13061cf0ed01ac10a804ac057ef4bdbc" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>Disconnect</name></member>
       <member refid="classwx_evt_handler_1a2f171e19444b9c4034c5e11f24fa9c91" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>Disconnect</name></member>
       <member refid="classwx_evt_handler_1a16a6f823853e4b74b43dd9a2cf3abee6" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>Disconnect</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxEvtHandler</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_evt_handler_1a62baf87cabf4dd2c9ecce3ee5e1e9f61" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>GetClientData</name></member>
-      <member refid="classwx_evt_handler_1a537d17d644e48bc1735c4dd28b8b8c04" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>GetClientObject</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxEvtHandler</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_evt_handler_1a291bc92c1bea8abfff276a8e333d46db" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>GetClientData</name></member>
+      <member refid="classwx_evt_handler_1a371742bda1686e82065f3a1f2acb31c8" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>GetClientObject</name></member>
       <member refid="classwx_evt_handler_1a7742d81c5eb7849a0ad75b9de8575153" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>GetEvtHandlerEnabled</name></member>
-      <member refid="classwx_evt_handler_1a6de721ad9f331826a5c925d6008116e5" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>GetNextHandler</name></member>
-      <member refid="classwx_evt_handler_1abbf9904ea5108b816f5f4faab1a33db9" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>GetPreviousHandler</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>GetRefData</name></member>
+      <member refid="classwx_evt_handler_1addedbed1c9f970c2b1e2893a42805b6a" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>GetNextHandler</name></member>
+      <member refid="classwx_evt_handler_1a69bfde9623d89eb91e363c53616e4587" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>GetPreviousHandler</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>GetRefData</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>IsSameAs</name></member>
       <member refid="classwx_evt_handler_1ac0734578a8d929b8b0be440ce0b53ad6" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>IsUnlinked</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxEvtHandler</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>operator new</name></member>
       <member refid="classwx_evt_handler_1a65968dd27f3aac7718f2dd6b2ddd5a08" prot="public" virt="virtual"><scope>wxEvtHandler</scope><name>ProcessEvent</name></member>
       <member refid="classwx_evt_handler_1ac0f5d2cb29a04c1f7f82eb6b351f79fb" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>ProcessEventLocally</name></member>
       <member refid="classwx_evt_handler_1a6f643dbdcf8e914ae1c8b70dd305e6f2" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>ProcessPendingEvents</name></member>
@@ -2726,6 +2720,7 @@
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>Ref</name></member>
       <member refid="classwx_evt_handler_1a67a57b759c447b121bf70a7c9804c8f2" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>RemoveFilter</name></member>
       <member refid="classwx_evt_handler_1a8205cb1a5a00d8b550b3ead22266b16b" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>SafelyProcessEvent</name></member>
+      <member refid="classwx_evt_handler_1a3c07426130d2868a5ae7fa918a251f49" prot="public" virt="virtual"><scope>wxEvtHandler</scope><name>SearchEventTable</name></member>
       <member refid="classwx_evt_handler_1a82c74f2cebfa02cb3c1563d459c872bf" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>SetClientData</name></member>
       <member refid="classwx_evt_handler_1af1e33a06087b8b2ddc43c7d15a91b326" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>SetClientObject</name></member>
       <member refid="classwx_evt_handler_1a7388ae19c8657e5656471b658c320036" prot="public" virt="non-virtual"><scope>wxEvtHandler</scope><name>SetEvtHandlerEnabled</name></member>

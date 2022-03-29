@@ -1,12 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_persistent_object" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxPersistentObject</compoundname>
-    <derivedcompoundref refid="classwx_persistent_window" prot="public" virt="non-virtual">wxPersistentWindow&lt; wxBookCtrlBase &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classwx_persistent_window" prot="public" virt="non-virtual">wxPersistentWindow&lt; wxComboBox &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classwx_persistent_window" prot="public" virt="non-virtual">wxPersistentWindow&lt; wxDataViewCtrl &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classwx_persistent_window" prot="public" virt="non-virtual">wxPersistentWindow&lt; wxTopLevelWindow &gt;</derivedcompoundref>
     <derivedcompoundref refid="classwx_persistent_window" prot="public" virt="non-virtual">wxPersistentWindow&lt; T &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classwx_persistent_window" prot="public" virt="non-virtual">wxPersistentWindow&lt; wxBookCtrlBase &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classwx_persistent_window" prot="public" virt="non-virtual">wxPersistentWindow&lt; wxTopLevelWindow &gt;</derivedcompoundref>
     <includes local="no">wx/persist.h</includes>
       <sectiondef kind="user-defined">
       <header>Methods to be implemented in the derived classes.</header>
@@ -17,11 +15,9 @@
         <definition>virtual void wxPersistentObject::Save</definition>
         <argsstring>() const =0</argsstring>
         <name>Save</name>
-        <reimplementedby refid="classwx_persistent_book_ctrl_1a1974bc77414bda4cdfde9b2fbd823d4c">Save</reimplementedby>
-        <reimplementedby refid="classwx_persistent_combo_box_1a14de55336b4fcaa7efac69150895ec54">Save</reimplementedby>
-        <reimplementedby refid="classwx_persistent_t_l_w_1ada1c69648b3ee9799b0003b430d90cb6">Save</reimplementedby>
         <reimplementedby refid="classwx_persistent_tree_book_ctrl_1a2f9ed12a98414be0968b951f12161ed1">Save</reimplementedby>
-        <reimplementedby refid="classwx_persistent_data_view_ctrl_1a51f90f130df6bfd982036bebf779a1b9">Save</reimplementedby>
+        <reimplementedby refid="classwx_persistent_t_l_w_1ada1c69648b3ee9799b0003b430d90cb6">Save</reimplementedby>
+        <reimplementedby refid="classwx_persistent_book_ctrl_1a1974bc77414bda4cdfde9b2fbd823d4c">Save</reimplementedby>
         <briefdescription>
 <para>Save the object properties. </para>
         </briefdescription>
@@ -30,18 +26,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/persist.h" line="249" column="18"/>
+        <location file="interface/wx/persist.h" line="246" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_persistent_object_1a04f9a557b8dd17c60c83cb29102e093e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
         <definition>virtual bool wxPersistentObject::Restore</definition>
         <argsstring>()=0</argsstring>
         <name>Restore</name>
-        <reimplementedby refid="classwx_persistent_book_ctrl_1a5c7d8a31c3018ed3773e7f97133e4299">Restore</reimplementedby>
-        <reimplementedby refid="classwx_persistent_combo_box_1ae9f69a601beee8fd0cf02c30873862e6">Restore</reimplementedby>
         <reimplementedby refid="classwx_persistent_t_l_w_1ab32aa061f7548f6ccc4ed4820f73d2e5">Restore</reimplementedby>
         <reimplementedby refid="classwx_persistent_tree_book_ctrl_1ac74fd4229fe85d962ec33ffe0137d9d0">Restore</reimplementedby>
-        <reimplementedby refid="classwx_persistent_data_view_ctrl_1a7310ae56bc40baee6a6de7baf6c025f2">Restore</reimplementedby>
+        <reimplementedby refid="classwx_persistent_book_ctrl_1a5c7d8a31c3018ed3773e7f97133e4299">Restore</reimplementedby>
         <briefdescription>
 <para>Restore the object properties. </para>
         </briefdescription>
@@ -50,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/persist.h" line="256" column="18"/>
+        <location file="interface/wx/persist.h" line="253" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_persistent_object_1a53d730bbfe3fdf57c9c553987f1096f8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
@@ -65,17 +59,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/persist.h" line="266" column="22"/>
+        <location file="interface/wx/persist.h" line="263" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_persistent_object_1ae175687a86da6a3d0d6edac12840d7e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>virtual wxString wxPersistentObject::GetName</definition>
         <argsstring>() const =0</argsstring>
         <name>GetName</name>
-        <reimplementedby refid="classwx_persistent_window_1a261c7aef57887305fc94eba8c2661ff0">GetName</reimplementedby>
-        <reimplementedby refid="classwx_persistent_window_1a261c7aef57887305fc94eba8c2661ff0">GetName</reimplementedby>
-        <reimplementedby refid="classwx_persistent_window_1a261c7aef57887305fc94eba8c2661ff0">GetName</reimplementedby>
-        <reimplementedby refid="classwx_persistent_window_1a261c7aef57887305fc94eba8c2661ff0">GetName</reimplementedby>
         <reimplementedby refid="classwx_persistent_window_1a261c7aef57887305fc94eba8c2661ff0">GetName</reimplementedby>
         <briefdescription>
 <para>Returns the string uniquely identifying the object we&apos;re associated with among all the other objects of the same type. </para>
@@ -85,11 +75,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/persist.h" line="275" column="22"/>
+        <location file="interface/wx/persist.h" line="272" column="22"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_persistent_object_1a99ae23e272e916edc3e1f747be8228bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_persistent_object_1a0b0fbd22151149d2c45aca62c2c738bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
-        <definition>void * wxPersistentObject::GetObject</definition>
+        <definition>void* wxPersistentObject::GetObject</definition>
         <argsstring>() const</argsstring>
         <name>GetObject</name>
         <briefdescription>
@@ -99,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/persist.h" line="281" column="10"/>
+        <location file="interface/wx/persist.h" line="278" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_persistent_object_1ac1fcea880e365018189ae3534c50a80f" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -146,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/persist.h" line="295" column="10"/>
+        <location file="interface/wx/persist.h" line="292" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_persistent_object_1a7dd10ed5914be1d60f9104f0a80bafe5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -167,7 +157,7 @@
           <declname>value</declname>
         </param>
         <briefdescription>
-<para>Restore a value saved by <ref refid="classwx_persistent_object_1ac1fcea880e365018189ae3534c50a80f" kindref="member">SaveValue()</ref>. </para>
+<para>Restore the value saved by <ref refid="classwx_persistent_object_1a93e351e08f224fbe7a2ab110458ba9cc" kindref="member">Save()</ref>. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -175,7 +165,7 @@
 <parametername>name</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The same name as was used by <ref refid="classwx_persistent_object_1ac1fcea880e365018189ae3534c50a80f" kindref="member">SaveValue()</ref>. </para>
+<para>The same name as was used by <ref refid="classwx_persistent_object_1a93e351e08f224fbe7a2ab110458ba9cc" kindref="member">Save()</ref>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -183,7 +173,7 @@
 <parametername>value</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Non-NULL pointer to the same type that was passed to <ref refid="classwx_persistent_object_1ac1fcea880e365018189ae3534c50a80f" kindref="member">SaveValue()</ref>. The pointed to object will be filled with the saved value if it was read successfully or not modified otherwise. </para>
+<para>Non-NULL pointer which will be filled with the value if it was read successfully or not modified if it wasn&apos;t. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -193,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/persist.h" line="311" column="10"/>
+        <location file="interface/wx/persist.h" line="307" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -214,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/persist.h" line="230" column="5"/>
+        <location file="interface/wx/persist.h" line="227" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_persistent_object_1accfdecb17fa0e67708e0c9057cc91041" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -228,14 +218,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/persist.h" line="233" column="13"/>
+        <location file="interface/wx/persist.h" line="230" column="13"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Base class for persistent object adapters. </para>
     </briefdescription>
     <detaileddescription>
-<para>See <ref refid="overview_persistence" kindref="compound">Persistent Objects Overview</ref> for an overview of persistent objects within wxWidgets.</para>
 <para>wxWidgets persistence framework is non-intrusive, i.e. can work with the classes which have no relationship to nor knowledge of it. To allow this, an intermediate persistence adapter is used: this is just a simple object which provides the methods used by <ref refid="classwx_persistence_manager" kindref="compound">wxPersistenceManager</ref> to save and restore the object properties and implements them using the concrete class methods.</para>
 <para>You may derive your own classes from <ref refid="classwx_persistent_object" kindref="compound">wxPersistentObject</ref> to implement persistence support for your common classes, see <ref refid="overview_persistence_1persistence_defining" kindref="member">Defining Custom Persistent Windows</ref>.</para>
 <para><simplesect kind="see"><para>wxPersistentWindow&lt;&gt; </para>
@@ -243,76 +232,52 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
+      <node id="2">
+        <label>wxPersistentWindow&lt; T &gt;</label>
+        <link refid="classwx_persistent_window"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
         <label>wxPersistentBookCtrl</label>
         <link refid="classwx_persistent_book_ctrl"/>
-        <childnode refid="2" relation="public-inheritance">
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>wxPersistentTLW</label>
+        <link refid="classwx_persistent_t_l_w"/>
+        <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
       <node id="6">
-        <label>wxPersistentComboBox</label>
-        <link refid="classwx_persistent_combo_box"/>
-        <childnode refid="5" relation="public-inheritance">
+        <label>wxPersistentWindow&lt; wxTopLevelWindow &gt;</label>
+        <link refid="classwx_persistent_window"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="8">
-        <label>wxPersistentDataViewCtrl</label>
-        <link refid="classwx_persistent_data_view_ctrl"/>
-        <childnode refid="7" relation="public-inheritance">
+      <node id="3">
+        <label>wxPersistentWindow&lt; wxBookCtrlBase &gt;</label>
+        <link refid="classwx_persistent_window"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
         <label>wxPersistentObject</label>
         <link refid="classwx_persistent_object"/>
       </node>
-      <node id="10">
-        <label>wxPersistentTLW</label>
-        <link refid="classwx_persistent_t_l_w"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
+      <node id="5">
         <label>wxPersistentTreeBookCtrl</label>
         <link refid="classwx_persistent_tree_book_ctrl"/>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>wxPersistentWindow&lt; T &gt;</label>
-        <link refid="classwx_persistent_window"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxPersistentWindow&lt; wxBookCtrlBase &gt;</label>
-        <link refid="classwx_persistent_window"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>wxPersistentWindow&lt; wxComboBox &gt;</label>
-        <link refid="classwx_persistent_window"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>wxPersistentWindow&lt; wxDataViewCtrl &gt;</label>
-        <link refid="classwx_persistent_window"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>wxPersistentWindow&lt; wxTopLevelWindow &gt;</label>
-        <link refid="classwx_persistent_window"/>
-        <childnode refid="1" relation="public-inheritance">
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="interface/wx/persist.h" line="221" column="1" bodyfile="interface/wx/persist.h" bodystart="222" bodyend="312"/>
+    <location file="interface/wx/persist.h" line="219" column="1" bodyfile="interface/wx/persist.h" bodystart="218" bodyend="308"/>
     <listofallmembers>
       <member refid="classwx_persistent_object_1a53d730bbfe3fdf57c9c553987f1096f8" prot="public" virt="pure-virtual"><scope>wxPersistentObject</scope><name>GetKind</name></member>
       <member refid="classwx_persistent_object_1ae175687a86da6a3d0d6edac12840d7e0" prot="public" virt="pure-virtual"><scope>wxPersistentObject</scope><name>GetName</name></member>
-      <member refid="classwx_persistent_object_1a99ae23e272e916edc3e1f747be8228bf" prot="public" virt="non-virtual"><scope>wxPersistentObject</scope><name>GetObject</name></member>
+      <member refid="classwx_persistent_object_1a0b0fbd22151149d2c45aca62c2c738bf" prot="public" virt="non-virtual"><scope>wxPersistentObject</scope><name>GetObject</name></member>
       <member refid="classwx_persistent_object_1a04f9a557b8dd17c60c83cb29102e093e" prot="public" virt="pure-virtual"><scope>wxPersistentObject</scope><name>Restore</name></member>
       <member refid="classwx_persistent_object_1a7dd10ed5914be1d60f9104f0a80bafe5" prot="protected" virt="non-virtual"><scope>wxPersistentObject</scope><name>RestoreValue</name></member>
       <member refid="classwx_persistent_object_1a93e351e08f224fbe7a2ab110458ba9cc" prot="public" virt="pure-virtual"><scope>wxPersistentObject</scope><name>Save</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_string_tokenizer" kind="class" language="C++" prot="public">
     <compoundname>wxStringTokenizer</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -118,14 +118,13 @@
         <argsstring>() const</argsstring>
         <name>GetString</name>
         <briefdescription>
-<para>Returns the part of the initial string which is yet to be tokenized. </para>
+<para>Returns the part of the starting string without all token already extracted. </para>
         </briefdescription>
         <detaileddescription>
-<para>That is, the substring from the current position up to the end, possibly empty if there are no more tokens left. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/tokenzr.h" line="150" column="14"/>
+        <location file="interface/wx/tokenzr.h" line="147" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_string_tokenizer_1a6d92050756fa2f3cf405549f670bef53" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -139,7 +138,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/tokenzr.h" line="155" column="10"/>
+        <location file="interface/wx/tokenzr.h" line="152" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_string_tokenizer_1acac18438a15dbe799d659f13a10187e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -168,23 +167,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/tokenzr.h" line="162" column="10"/>
+        <location file="interface/wx/tokenzr.h" line="159" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_string_tokenizer" kindref="compound">wxStringTokenizer</ref> helps you to break a string up into a number of tokens. </para>
     </briefdescription>
     <detaileddescription>
-<para>It replaces the standard C function <computeroutput>strtok()</computeroutput> and also extends it in a number of ways.</para>
+<para><ref refid="classwx_string_tokenizer" kindref="compound">wxStringTokenizer</ref> helps you to break a string up into a number of tokens. It replaces the standard C function <computeroutput>strtok()</computeroutput> and also extends it in a number of ways.</para>
 <para>To use this class, you should create a <ref refid="classwx_string_tokenizer" kindref="compound">wxStringTokenizer</ref> object, give it the string to tokenize and also the delimiters which separate tokens in the string (by default, white space characters will be used).</para>
 <para>Then <ref refid="classwx_string_tokenizer_1a6537282af1f6b9757393046d780e5270" kindref="member">wxStringTokenizer::GetNextToken()</ref> may be called repeatedly until <ref refid="classwx_string_tokenizer_1a6d92050756fa2f3cf405549f670bef53" kindref="member">wxStringTokenizer::HasMoreTokens()</ref> returns false.</para>
 <para>For example:</para>
-<para><programlisting><codeline><highlight class="normal"><ref refid="classwx_string_tokenizer" kindref="compound">wxStringTokenizer</ref><sp/>tokenizer(</highlight><highlight class="stringliteral">&quot;first:second:third:fourth&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>tokenizer.HasMoreTokens()<sp/>)</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">wxStringTokenizer<sp/>tokenizer(&quot;first:second:third:fourth&quot;,<sp/>&quot;:&quot;);</highlight></codeline>
+<codeline><highlight class="normal">while<sp/>(<sp/>tokenizer.HasMoreTokens()<sp/>)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>token<sp/>=<sp/>tokenizer.GetNextToken();</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>process<sp/>token<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxString<sp/>token<sp/>=<sp/>tokenizer.GetNextToken();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>process<sp/>token<sp/>here</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para><heading level="2"></heading>
@@ -214,35 +212,35 @@
           <edgelabel>m_refData</edgelabel>
         </childnode>
       </node>
-      <node id="3">
-        <label>wxObjectRefData</label>
-        <link refid="classwx_object_ref_data"/>
-      </node>
       <node id="1">
         <label>wxStringTokenizer</label>
         <link refid="classwx_string_tokenizer"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="3">
+        <label>wxObjectRefData</label>
+        <link refid="classwx_object_ref_data"/>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/tokenzr.h" line="95" column="1" bodyfile="interface/wx/tokenzr.h" bodystart="96" bodyend="165"/>
+    <location file="interface/wx/tokenzr.h" line="96" column="1" bodyfile="interface/wx/tokenzr.h" bodystart="95" bodyend="162"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxStringTokenizer</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxStringTokenizer</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxStringTokenizer</scope><name>CloneRefData</name></member>
       <member refid="classwx_string_tokenizer_1ae4a9499d5fc9acb1f755e4dd4a0da192" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>CountTokens</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxStringTokenizer</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxStringTokenizer</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxStringTokenizer</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxStringTokenizer</scope><name>GetClassInfo</name></member>
       <member refid="classwx_string_tokenizer_1a802e2bfdf2e2b93b59b3d04c1d569def" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>GetLastDelimiter</name></member>
       <member refid="classwx_string_tokenizer_1a6537282af1f6b9757393046d780e5270" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>GetNextToken</name></member>
       <member refid="classwx_string_tokenizer_1ae1bbecec383b8f0a5b7c7cc4ea4b45c7" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>GetPosition</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>GetRefData</name></member>
       <member refid="classwx_string_tokenizer_1ac41a76076506d07fbe9bce2281727a63" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>GetString</name></member>
       <member refid="classwx_string_tokenizer_1a6d92050756fa2f3cf405549f670bef53" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>HasMoreTokens</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxStringTokenizer</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>Ref</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>SetRefData</name></member>
       <member refid="classwx_string_tokenizer_1acac18438a15dbe799d659f13a10187e9" prot="public" virt="non-virtual"><scope>wxStringTokenizer</scope><name>SetString</name></member>

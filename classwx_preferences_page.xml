@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_preferences_page" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxPreferencesPage</compoundname>
     <derivedcompoundref refid="classwx_stock_preferences_page" prot="public" virt="non-virtual">wxStockPreferencesPage</derivedcompoundref>
@@ -59,8 +59,8 @@
 <para>Return 32x32 icon used for the page on some platforms. </para>
         </briefdescription>
         <detaileddescription>
-<para>Currently only used on macOS.</para>
-<para><simplesect kind="note"><para>This method is only pure virtual on platforms that require it (macOS). On other platforms, it has default implementation that returns an invalid bitmap. The preprocessor symbol <computeroutput>wxHAS_PREF_EDITOR_ICONS</computeroutput> is defined if this method must be implemented. </para>
+<para>Currently only used on OS X.</para>
+<para><simplesect kind="note"><para>This method is only pure virtual on platforms that require it (OS X). On other platforms, it has default implementation that returns an invalid bitmap. The preprocessor symbol <computeroutput>wxHAS_PREF_EDITOR_ICONS</computeroutput> is defined if this method must be implemented. </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -68,9 +68,9 @@
         </inbodydescription>
         <location file="interface/wx/preferences.h" line="160" column="22"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_preferences_page_1a5d401e0e131e088e43cf378248ea494d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_preferences_page_1a5b1dabcb4d9e86ce3613f7f32803b7e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
-        <definition>virtual wxWindow * wxPreferencesPage::CreateWindow</definition>
+        <definition>virtual wxWindow* wxPreferencesPage::CreateWindow</definition>
         <argsstring>(wxWindow *parent)=0</argsstring>
         <name>CreateWindow</name>
         <param>
@@ -104,7 +104,7 @@
 <para>One page of preferences dialog. </para>
     </briefdescription>
     <detaileddescription>
-<para>This is the base class for implementation of application&apos;s preferences. Its methods return various properties of the page, such as title or icon. The actual page is created by <ref refid="classwx_preferences_page_1a5d401e0e131e088e43cf378248ea494d" kindref="member">CreateWindow()</ref>.</para>
+<para>This is the base class for implementation of application&apos;s preferences. Its methods return various properties of the page, such as title or icon. The actual page is created by <ref refid="classwx_preferences_page_1a5b1dabcb4d9e86ce3613f7f32803b7e5" kindref="member">CreateWindow()</ref>.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_stock_preferences_page" kindref="compound">wxStockPreferencesPage</ref></para>
 </simplesect>
 <heading level="2"></heading>
@@ -115,20 +115,20 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1">
-        <label>wxPreferencesPage</label>
-        <link refid="classwx_preferences_page"/>
-      </node>
       <node id="2">
         <label>wxStockPreferencesPage</label>
         <link refid="classwx_stock_preferences_page"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="1">
+        <label>wxPreferencesPage</label>
+        <link refid="classwx_preferences_page"/>
+      </node>
     </inheritancegraph>
-    <location file="interface/wx/preferences.h" line="132" column="1" bodyfile="interface/wx/preferences.h" bodystart="133" bodyend="178"/>
+    <location file="interface/wx/preferences.h" line="133" column="1" bodyfile="interface/wx/preferences.h" bodystart="132" bodyend="178"/>
     <listofallmembers>
-      <member refid="classwx_preferences_page_1a5d401e0e131e088e43cf378248ea494d" prot="public" virt="pure-virtual"><scope>wxPreferencesPage</scope><name>CreateWindow</name></member>
+      <member refid="classwx_preferences_page_1a5b1dabcb4d9e86ce3613f7f32803b7e5" prot="public" virt="pure-virtual"><scope>wxPreferencesPage</scope><name>CreateWindow</name></member>
       <member refid="classwx_preferences_page_1a05880595e8507b60eaea11d5addc71e6" prot="public" virt="pure-virtual"><scope>wxPreferencesPage</scope><name>GetLargeIcon</name></member>
       <member refid="classwx_preferences_page_1aaf3db462208f700fff0fd99c66afd8d7" prot="public" virt="pure-virtual"><scope>wxPreferencesPage</scope><name>GetName</name></member>
       <member refid="classwx_preferences_page_1a75e85f05d5c78a918dc85a891b8f4c51" prot="public" virt="non-virtual"><scope>wxPreferencesPage</scope><name>wxPreferencesPage</name></member>

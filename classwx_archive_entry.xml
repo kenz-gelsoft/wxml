@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_archive_entry" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxArchiveEntry</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -7,9 +7,9 @@
     <derivedcompoundref refid="classwx_zip_entry" prot="public" virt="non-virtual">wxZipEntry</derivedcompoundref>
     <includes local="no">wx/archive.h</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classwx_archive_entry_1a5cfd37bff3fd0cbe2d9aaa2597de9b7c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_archive_entry_1a050464c6e0be5d7fbcf0f7a1e5acd3f5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_archive_entry" kindref="compound">wxArchiveEntry</ref> *</type>
-        <definition>wxArchiveEntry * wxArchiveEntry::Clone</definition>
+        <definition>wxArchiveEntry* wxArchiveEntry::Clone</definition>
         <argsstring>() const</argsstring>
         <name>Clone</name>
         <briefdescription>
@@ -154,8 +154,8 @@
         <definition>virtual wxString wxArchiveEntry::GetInternalName</definition>
         <argsstring>() const =0</argsstring>
         <name>GetInternalName</name>
-        <reimplementedby refid="classwx_tar_entry_1abc46e348fa6569bb179daef72725ee34">GetInternalName</reimplementedby>
         <reimplementedby refid="classwx_zip_entry_1ad8f72d27b65c6d90d3530d08d499b112">GetInternalName</reimplementedby>
+        <reimplementedby refid="classwx_tar_entry_1abc46e348fa6569bb179daef72725ee34">GetInternalName</reimplementedby>
         <briefdescription>
 <para>Returns the entry&apos;s filename in the internal format used within the archive. </para>
         </briefdescription>
@@ -292,14 +292,13 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This is an abstract base class which serves as a common interface to archive entry classes such as <ref refid="classwx_zip_entry" kindref="compound">wxZipEntry</ref>. </para>
     </briefdescription>
     <detaileddescription>
-<para>These hold the meta-data (filename, timestamp, etc.), for entries in archive files such as zips and tars.</para>
+<para>This is an abstract base class which serves as a common interface to archive entry classes such as <ref refid="classwx_zip_entry" kindref="compound">wxZipEntry</ref>. These hold the meta-data (filename, timestamp, etc.), for entries in archive files such as zips and tars.</para>
 <sect1 id="classwx_archive_entry_1archiveentry_nonseekable">
 <title>About non-seekable streams</title>
 <para>This information applies only when reading archives from non-seekable streams. When the stream is seekable GetNextEntry() returns a fully populated <ref refid="classwx_archive_entry" kindref="compound">wxArchiveEntry</ref>. See <ref refid="overview_archive_1overview_archive_noseek" kindref="member">Archives on Non-Seekable Streams</ref> for more information.</para>
-<para>For generic programming, when the worst case must be assumed, you can rely on all the fields of <ref refid="classwx_archive_entry" kindref="compound">wxArchiveEntry</ref> being fully populated when <ref refid="classwx_archive_input_stream_1a7119caf5d41de6b479050bb5b17aa517" kindref="member">wxArchiveInputStream::GetNextEntry()</ref> returns, with the following exceptions:</para>
+<para>For generic programming, when the worst case must be assumed, you can rely on all the fields of <ref refid="classwx_archive_entry" kindref="compound">wxArchiveEntry</ref> being fully populated when <ref refid="classwx_archive_input_stream_1a87615df48e5f57305aa360098f5dae26" kindref="member">wxArchiveInputStream::GetNextEntry()</ref> returns, with the following exceptions:</para>
 <para><itemizedlist>
 <listitem><para><ref refid="classwx_archive_entry_1a05d8c0618a80cb1ada5c37a58042ec32" kindref="member">GetSize()</ref>: guaranteed to be available after the entry has been read to Eof(), or CloseEntry() has been called; </para>
 </listitem>
@@ -325,15 +324,15 @@
         <label>wxObject</label>
         <link refid="classwx_object"/>
       </node>
-      <node id="3">
-        <label>wxTarEntry</label>
-        <link refid="classwx_tar_entry"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="4">
         <label>wxZipEntry</label>
         <link refid="classwx_zip_entry"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxTarEntry</label>
+        <link refid="classwx_tar_entry"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -357,19 +356,19 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/archive.h" line="185" column="1" bodyfile="interface/wx/archive.h" bodystart="186" bodyend="299"/>
+    <location file="interface/wx/archive.h" line="186" column="1" bodyfile="interface/wx/archive.h" bodystart="185" bodyend="299"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxArchiveEntry</scope><name>AllocExclusive</name></member>
-      <member refid="classwx_archive_entry_1a5cfd37bff3fd0cbe2d9aaa2597de9b7c" prot="public" virt="non-virtual"><scope>wxArchiveEntry</scope><name>Clone</name></member>
-      <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxArchiveEntry</scope><name>CloneRefData</name></member>
-      <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxArchiveEntry</scope><name>CreateRefData</name></member>
-      <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxArchiveEntry</scope><name>GetClassInfo</name></member>
+      <member refid="classwx_archive_entry_1a050464c6e0be5d7fbcf0f7a1e5acd3f5" prot="public" virt="non-virtual"><scope>wxArchiveEntry</scope><name>Clone</name></member>
+      <member refid="classwx_object_1a436fc8fe68cf8a31000296d9cd3d2427" prot="protected" virt="virtual"><scope>wxArchiveEntry</scope><name>CloneRefData</name></member>
+      <member refid="classwx_object_1a3f4f497c65cef611e121c41f21dd5ccc" prot="protected" virt="virtual"><scope>wxArchiveEntry</scope><name>CreateRefData</name></member>
+      <member refid="classwx_object_1ae6d365f2556b26767ced8410c5e839d0" prot="public" virt="virtual"><scope>wxArchiveEntry</scope><name>GetClassInfo</name></member>
       <member refid="classwx_archive_entry_1acb1e2dd308429c6afba02ec6d24c43f3" prot="public" virt="pure-virtual"><scope>wxArchiveEntry</scope><name>GetDateTime</name></member>
       <member refid="classwx_archive_entry_1a3e93b7e12487636f903956935d92c7b2" prot="public" virt="pure-virtual"><scope>wxArchiveEntry</scope><name>GetInternalFormat</name></member>
       <member refid="classwx_archive_entry_1a53486cf23696bd7b910a652c27af0a38" prot="public" virt="pure-virtual"><scope>wxArchiveEntry</scope><name>GetInternalName</name></member>
       <member refid="classwx_archive_entry_1a7f7c8fc858136626dcdf1865e646cef9" prot="public" virt="pure-virtual"><scope>wxArchiveEntry</scope><name>GetName</name></member>
       <member refid="classwx_archive_entry_1ab36942e9cbadced7476b4bceb21b7e08" prot="public" virt="pure-virtual"><scope>wxArchiveEntry</scope><name>GetOffset</name></member>
-      <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxArchiveEntry</scope><name>GetRefData</name></member>
+      <member refid="classwx_object_1af3c6c76a775864832f1536d3c0de3a2b" prot="public" virt="non-virtual"><scope>wxArchiveEntry</scope><name>GetRefData</name></member>
       <member refid="classwx_archive_entry_1a05d8c0618a80cb1ada5c37a58042ec32" prot="public" virt="pure-virtual"><scope>wxArchiveEntry</scope><name>GetSize</name></member>
       <member refid="classwx_archive_entry_1a548d3b6f4aeba699dc0d1ec1c21b7ce2" prot="public" virt="pure-virtual"><scope>wxArchiveEntry</scope><name>IsDir</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxArchiveEntry</scope><name>IsKindOf</name></member>
@@ -377,7 +376,7 @@
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxArchiveEntry</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxArchiveEntry</scope><name>m_refData</name></member>
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxArchiveEntry</scope><name>operator delete</name></member>
-      <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxArchiveEntry</scope><name>operator new</name></member>
+      <member refid="classwx_object_1a96fa423a1dbc212c8227a5d83825971f" prot="public" virt="non-virtual"><scope>wxArchiveEntry</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxArchiveEntry</scope><name>Ref</name></member>
       <member refid="classwx_archive_entry_1a2de48b81c6513c2884b35d606d9b1ffa" prot="public" virt="pure-virtual"><scope>wxArchiveEntry</scope><name>SetDateTime</name></member>
       <member refid="classwx_archive_entry_1ab01182fe22c8eeefa05740e68d12ced0" prot="public" virt="pure-virtual"><scope>wxArchiveEntry</scope><name>SetIsDir</name></member>

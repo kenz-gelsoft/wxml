@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_output_stream" kind="class" language="C++" prot="public">
     <compoundname>wxOutputStream</compoundname>
     <basecompoundref refid="classwx_stream_base" prot="public" virt="non-virtual">wxStreamBase</basecompoundref>
@@ -10,7 +10,6 @@
     <derivedcompoundref refid="classwx_memory_output_stream" prot="public" virt="non-virtual">wxMemoryOutputStream</derivedcompoundref>
     <derivedcompoundref refid="classwx_socket_output_stream" prot="public" virt="non-virtual">wxSocketOutputStream</derivedcompoundref>
     <derivedcompoundref refid="classwx_string_output_stream" prot="public" virt="non-virtual">wxStringOutputStream</derivedcompoundref>
-    <derivedcompoundref refid="classwx_temp_f_file_output_stream" prot="public" virt="non-virtual">wxTempFFileOutputStream</derivedcompoundref>
     <derivedcompoundref refid="classwx_temp_file_output_stream" prot="public" virt="non-virtual">wxTempFileOutputStream</derivedcompoundref>
     <includes local="no">wx/stream.h</includes>
       <sectiondef kind="public-func">
@@ -67,7 +66,7 @@
         <argsstring>() const</argsstring>
         <name>LastWrite</name>
         <briefdescription>
-<para>Returns the number of bytes written during the last <ref refid="classwx_output_stream_1afc577008c335756968530cdae4b05b34" kindref="member">Write()</ref>. </para>
+<para>Returns the number of bytes written during the last <ref refid="classwx_output_stream_1a22154f02408431ffe8b1590407c3b011" kindref="member">Write()</ref>. </para>
         </briefdescription>
         <detaileddescription>
 <para>It may return 0 even if there is no error on the stream if it is only temporarily impossible to write to it. </para>
@@ -152,9 +151,9 @@
         </inbodydescription>
         <location file="interface/wx/stream.h" line="517" column="26"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_output_stream_1afc577008c335756968530cdae4b05b34" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_output_stream_1a22154f02408431ffe8b1590407c3b011" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> &amp;</type>
-        <definition>virtual wxOutputStream &amp; wxOutputStream::Write</definition>
+        <definition>virtual wxOutputStream&amp; wxOutputStream::Write</definition>
         <argsstring>(const void *buffer, size_t size)</argsstring>
         <name>Write</name>
         <param>
@@ -176,9 +175,9 @@
         </inbodydescription>
         <location file="interface/wx/stream.h" line="530" column="28"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_output_stream_1a7c7a356201ad354949a5a9cf3bf97d30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_output_stream_1aacced095d3e9b19b4f6264d94c85cf8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> &amp;</type>
-        <definition>wxOutputStream &amp; wxOutputStream::Write</definition>
+        <definition>wxOutputStream&amp; wxOutputStream::Write</definition>
         <argsstring>(wxInputStream &amp;stream_in)</argsstring>
         <name>Write</name>
         <param>
@@ -213,7 +212,7 @@
         </briefdescription>
         <detaileddescription>
 <para>Returns true if exactly <emphasis>size</emphasis> bytes were written. Otherwise, returns false and <ref refid="classwx_output_stream_1ac21c598e20937355e538fdf2e2926164" kindref="member">LastWrite()</ref> should be used to retrieve the exact amount of the data written if necessary.</para>
-<para>This method uses repeated calls to <ref refid="classwx_output_stream_1afc577008c335756968530cdae4b05b34" kindref="member">Write()</ref> (which may return writing only part of the data) if necessary.</para>
+<para>This method uses repeated calls to <ref refid="classwx_output_stream_1a22154f02408431ffe8b1590407c3b011" kindref="member">Write()</ref> (which may return writing only part of the data) if necessary.</para>
 <para><simplesect kind="since"><para>2.9.5 </para>
 </simplesect>
 </para>
@@ -250,20 +249,25 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> is an abstract base class which may not be used directly. </para>
     </briefdescription>
     <detaileddescription>
-<para>It is the base class of all streams which provide a <ref refid="classwx_output_stream_1afc577008c335756968530cdae4b05b34" kindref="member">Write()</ref> function, i.e. which can be used to output data (e.g. to a file, to a socket, etc).</para>
+<para><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> is an abstract base class which may not be used directly. It is the base class of all streams which provide a <ref refid="classwx_output_stream_1a22154f02408431ffe8b1590407c3b011" kindref="member">Write()</ref> function, i.e. which can be used to output data (e.g. to a file, to a socket, etc).</para>
 <para>If you want to create your own output stream, you&apos;ll need to derive from this class and implement the protected <ref refid="classwx_output_stream_1a41773bceb97b1981cbc3d69c596df929" kindref="member">OnSysWrite()</ref> function only.</para>
 <para><heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="9">
-        <label>wxArchiveOutputStream</label>
-        <link refid="classwx_archive_output_stream"/>
+      <node id="13">
+        <label>wxZlibOutputStream</label>
+        <link refid="classwx_zlib_output_stream"/>
         <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>wxTempFileOutputStream</label>
+        <link refid="classwx_temp_file_output_stream"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="12">
@@ -272,91 +276,9 @@
         <childnode refid="8" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>wxCountingOutputStream</label>
-        <link refid="classwx_counting_output_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="4">
         <label>wxFFileOutputStream</label>
         <link refid="classwx_f_file_output_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>wxFFileStream</label>
-        <link refid="classwx_f_file_stream"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>wxFileOutputStream</label>
-        <link refid="classwx_file_output_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>wxFileStream</label>
-        <link refid="classwx_file_stream"/>
-        <childnode refid="6" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>wxFilterOutputStream</label>
-        <link refid="classwx_filter_output_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>wxLZMAOutputStream</label>
-        <link refid="classwx_l_z_m_a_output_stream"/>
-        <childnode refid="8" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>wxMemoryOutputStream</label>
-        <link refid="classwx_memory_output_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>wxOutputStream</label>
-        <link refid="classwx_output_stream"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>wxSocketOutputStream</label>
-        <link refid="classwx_socket_output_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxStreamBase</label>
-        <link refid="classwx_stream_base"/>
-      </node>
-      <node id="17">
-        <label>wxStringOutputStream</label>
-        <link refid="classwx_string_output_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>wxTarOutputStream</label>
-        <link refid="classwx_tar_output_stream"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>wxTempFFileOutputStream</label>
-        <link refid="classwx_temp_f_file_output_stream"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>wxTempFileOutputStream</label>
-        <link refid="classwx_temp_file_output_stream"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
@@ -366,26 +288,90 @@
         <childnode refid="9" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="14">
-        <label>wxZlibOutputStream</label>
-        <link refid="classwx_zlib_output_stream"/>
-        <childnode refid="8" relation="public-inheritance">
+      <node id="7">
+        <label>wxFileStream</label>
+        <link refid="classwx_file_stream"/>
+        <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="1">
-        <label>wxOutputStream</label>
-        <link refid="classwx_output_stream"/>
-        <childnode refid="2" relation="public-inheritance">
+      <node id="3">
+        <label>wxCountingOutputStream</label>
+        <link refid="classwx_counting_output_stream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>wxMemoryOutputStream</label>
+        <link refid="classwx_memory_output_stream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>wxFileOutputStream</label>
+        <link refid="classwx_file_output_stream"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
         <label>wxStreamBase</label>
         <link refid="classwx_stream_base"/>
       </node>
+      <node id="10">
+        <label>wxTarOutputStream</label>
+        <link refid="classwx_tar_output_stream"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>wxFilterOutputStream</label>
+        <link refid="classwx_filter_output_stream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>wxStringOutputStream</label>
+        <link refid="classwx_string_output_stream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>wxOutputStream</label>
+        <link refid="classwx_output_stream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>wxArchiveOutputStream</label>
+        <link refid="classwx_archive_output_stream"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxFFileStream</label>
+        <link refid="classwx_f_file_stream"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>wxSocketOutputStream</label>
+        <link refid="classwx_socket_output_stream"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>wxStreamBase</label>
+        <link refid="classwx_stream_base"/>
+      </node>
+      <node id="1">
+        <label>wxOutputStream</label>
+        <link refid="classwx_output_stream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
     </collaborationgraph>
-    <location file="interface/wx/stream.h" line="465" column="1" bodyfile="interface/wx/stream.h" bodystart="466" bodyend="563"/>
+    <location file="interface/wx/stream.h" line="466" column="1" bodyfile="interface/wx/stream.h" bodystart="465" bodyend="563"/>
     <listofallmembers>
       <member refid="classwx_output_stream_1a1c306ce99990d525921f8f6ae8432083" prot="public" virt="virtual"><scope>wxOutputStream</scope><name>Close</name></member>
       <member refid="classwx_stream_base_1a33440c8ea3f8df382adecd7d188a1662" prot="public" virt="non-virtual"><scope>wxOutputStream</scope><name>GetLastError</name></member>
@@ -402,8 +388,8 @@
       <member refid="classwx_stream_base_1a52353ac42f72538b2022a84f416e5fe2" prot="public" virt="non-virtual"><scope>wxOutputStream</scope><name>Reset</name></member>
       <member refid="classwx_output_stream_1ac898dd36e44e5f4785a6658f470e9752" prot="public" virt="virtual"><scope>wxOutputStream</scope><name>SeekO</name></member>
       <member refid="classwx_output_stream_1a468208f94273630dcbdb0c692645e42c" prot="public" virt="virtual"><scope>wxOutputStream</scope><name>TellO</name></member>
-      <member refid="classwx_output_stream_1afc577008c335756968530cdae4b05b34" prot="public" virt="virtual"><scope>wxOutputStream</scope><name>Write</name></member>
-      <member refid="classwx_output_stream_1a7c7a356201ad354949a5a9cf3bf97d30" prot="public" virt="non-virtual"><scope>wxOutputStream</scope><name>Write</name></member>
+      <member refid="classwx_output_stream_1a22154f02408431ffe8b1590407c3b011" prot="public" virt="virtual"><scope>wxOutputStream</scope><name>Write</name></member>
+      <member refid="classwx_output_stream_1aacced095d3e9b19b4f6264d94c85cf8f" prot="public" virt="non-virtual"><scope>wxOutputStream</scope><name>Write</name></member>
       <member refid="classwx_output_stream_1aa82aca41108fba5cebbba951c84431f0" prot="public" virt="non-virtual"><scope>wxOutputStream</scope><name>WriteAll</name></member>
       <member refid="classwx_output_stream_1ab2391df744df6ec2d4e4e3f561c51118" prot="public" virt="non-virtual"><scope>wxOutputStream</scope><name>wxOutputStream</name></member>
       <member refid="classwx_stream_base_1a2bdb01f1ccd34d551d3cfc848054bf1e" prot="public" virt="non-virtual"><scope>wxOutputStream</scope><name>wxStreamBase</name></member>

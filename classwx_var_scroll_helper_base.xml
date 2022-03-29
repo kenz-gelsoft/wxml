@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classwx_var_scroll_helper_base" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxVarScrollHelperBase</compoundname>
     <derivedcompoundref refid="classwx_var_h_scroll_helper" prot="public" virt="non-virtual">wxVarHScrollHelper</derivedcompoundref>
@@ -153,9 +153,9 @@
         </inbodydescription>
         <location file="interface/wx/vscroll.h" line="99" column="17"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_var_scroll_helper_base_1a926c572c50a2dc7287c2fb9a52f6e57d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_var_scroll_helper_base_1a3e2719c5d17fb2b3fe40205b40dc9ffb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
-        <definition>virtual wxWindow * wxVarScrollHelperBase::GetTargetWindow</definition>
+        <definition>virtual wxWindow* wxVarScrollHelperBase::GetTargetWindow</definition>
         <argsstring>() const</argsstring>
         <name>GetTargetWindow</name>
         <briefdescription>
@@ -245,7 +245,7 @@
         </briefdescription>
         <detaileddescription>
 <para>a child of it in order to scroll only a portion the area between the scrollbars like a spreadsheet where only the cell area will move).</para>
-<para><simplesect kind="see"><para><ref refid="classwx_var_scroll_helper_base_1a926c572c50a2dc7287c2fb9a52f6e57d" kindref="member">GetTargetWindow()</ref> </para>
+<para><simplesect kind="see"><para><ref refid="classwx_var_scroll_helper_base_1a3e2719c5d17fb2b3fe40205b40dc9ffb" kindref="member">GetTargetWindow()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -350,9 +350,9 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class provides all common base functionality for scroll calculations shared among all variable scrolled window implementations as well as automatic scrollbar functionality, saved scroll positions, controlling target windows to be scrolled, as well as defining all required virtual functions that need to be implemented for any orientation specific work. </para>
     </briefdescription>
     <detaileddescription>
+<para>This class provides all common base functionality for scroll calculations shared among all variable scrolled window implementations as well as automatic scrollbar functionality, saved scroll positions, controlling target windows to be scrolled, as well as defining all required virtual functions that need to be implemented for any orientation specific work.</para>
 <para>Documentation of this class is provided specifically for referencing use of the functions provided by this class for use with the variable scrolled windows that derive from here. You will likely want to derive your window from one of the already implemented variable scrolled windows rather than from <ref refid="classwx_var_scroll_helper_base" kindref="compound">wxVarScrollHelperBase</ref> directly.</para>
 <para><heading level="2"></heading>
 </para>
@@ -368,47 +368,9 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
-        <label>wxHVScrolledWindow</label>
-        <link refid="classwx_h_v_scrolled_window"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>wxHtmlListBox</label>
-        <link refid="classwx_html_list_box"/>
-        <childnode refid="8" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>wxRichTextStyleListBox</label>
-        <link refid="classwx_rich_text_style_list_box"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>wxSimpleHtmlListBox</label>
-        <link refid="classwx_simple_html_list_box"/>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>wxVListBox</label>
-        <link refid="classwx_v_list_box"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>wxVScrolledWindow</label>
-        <link refid="classwx_v_scrolled_window"/>
-        <childnode refid="6" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>wxVarHScrollHelper</label>
-        <link refid="classwx_var_h_scroll_helper"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
+      <node id="1">
+        <label>wxVarScrollHelperBase</label>
+        <link refid="classwx_var_scroll_helper_base"/>
       </node>
       <node id="4">
         <label>wxVarHVScrollHelper</label>
@@ -418,9 +380,47 @@
         <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1">
-        <label>wxVarScrollHelperBase</label>
-        <link refid="classwx_var_scroll_helper_base"/>
+      <node id="8">
+        <label>wxVListBox</label>
+        <link refid="classwx_v_list_box"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>wxSimpleHtmlListBox</label>
+        <link refid="classwx_simple_html_list_box"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>wxVScrolledWindow</label>
+        <link refid="classwx_v_scrolled_window"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>wxRichTextStyleListBox</label>
+        <link refid="classwx_rich_text_style_list_box"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>wxHtmlListBox</label>
+        <link refid="classwx_html_list_box"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxHVScrolledWindow</label>
+        <link refid="classwx_h_v_scrolled_window"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxVarHScrollHelper</label>
+        <link refid="classwx_var_h_scroll_helper"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="6">
         <label>wxVarVScrollHelper</label>
@@ -429,7 +429,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="interface/wx/vscroll.h" line="28" column="1" bodyfile="interface/wx/vscroll.h" bodystart="29" bodyend="195"/>
+    <location file="interface/wx/vscroll.h" line="29" column="1" bodyfile="interface/wx/vscroll.h" bodystart="28" bodyend="195"/>
     <listofallmembers>
       <member refid="classwx_var_scroll_helper_base_1a8a83814cd28efa500bf7ac4a6282a53f" prot="public" virt="non-virtual"><scope>wxVarScrollHelperBase</scope><name>CalcScrolledPosition</name></member>
       <member refid="classwx_var_scroll_helper_base_1ab9c4be21b229ee5621a9a087c79f03fa" prot="public" virt="non-virtual"><scope>wxVarScrollHelperBase</scope><name>CalcUnscrolledPosition</name></member>
@@ -438,7 +438,7 @@
       <member refid="classwx_var_scroll_helper_base_1a5b9316fbade3450efdc359ac049a7839" prot="public" virt="pure-virtual"><scope>wxVarScrollHelperBase</scope><name>GetNonOrientationTargetSize</name></member>
       <member refid="classwx_var_scroll_helper_base_1addff4d4e4e099adac7abfe56fbb50682" prot="public" virt="pure-virtual"><scope>wxVarScrollHelperBase</scope><name>GetOrientation</name></member>
       <member refid="classwx_var_scroll_helper_base_1a5d195a4216200894fc3e843c01ec4e54" prot="public" virt="pure-virtual"><scope>wxVarScrollHelperBase</scope><name>GetOrientationTargetSize</name></member>
-      <member refid="classwx_var_scroll_helper_base_1a926c572c50a2dc7287c2fb9a52f6e57d" prot="public" virt="virtual"><scope>wxVarScrollHelperBase</scope><name>GetTargetWindow</name></member>
+      <member refid="classwx_var_scroll_helper_base_1a3e2719c5d17fb2b3fe40205b40dc9ffb" prot="public" virt="virtual"><scope>wxVarScrollHelperBase</scope><name>GetTargetWindow</name></member>
       <member refid="classwx_var_scroll_helper_base_1ae509ae4eaab4f8b87029824e977fca90" prot="public" virt="non-virtual"><scope>wxVarScrollHelperBase</scope><name>GetVisibleBegin</name></member>
       <member refid="classwx_var_scroll_helper_base_1a216a2ee95e274ef0d653222d72105960" prot="public" virt="non-virtual"><scope>wxVarScrollHelperBase</scope><name>GetVisibleEnd</name></member>
       <member refid="classwx_var_scroll_helper_base_1a5a6cc7aa4518f225c02728b305530e91" prot="public" virt="non-virtual"><scope>wxVarScrollHelperBase</scope><name>IsVisible</name></member>
