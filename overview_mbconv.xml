@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_mbconv" kind="page">
     <compoundname>overview_mbconv</compoundname>
     <title>wxMBConv Overview</title>
@@ -37,7 +37,6 @@
 <para>The <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> classes in wxWidgets enable an Unicode-aware application to easily convert between Unicode and the variety of 8-bit encoding systems still in use. </para>
     </briefdescription>
     <detaileddescription>
-<para>The <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> classes in wxWidgets enable an Unicode-aware application to easily convert between Unicode and the variety of 8-bit encoding systems still in use.</para>
 <para><simplesect kind="see"><para><ref refid="group__group__class__conv" kindref="compound">Text Conversion</ref></para>
 </simplesect>
 </para>
@@ -50,7 +49,7 @@
 </sect1>
 <sect1 id="overview_mbconv_1overview_mbconv_string">
 <title>Background: The wxString Class</title>
-<para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>rewrite this overview; it&apos;s not up2date with <ref refid="classwx_string" kindref="compound">wxString</ref> changes</para>
+<para><xrefsect id="todo_1_todo000004"><xreftitle>Todo</xreftitle><xrefdescription><para>rewrite this overview; it&apos;s not up2date with <ref refid="classwx_string" kindref="compound">wxString</ref> changes</para>
 </xrefdescription></xrefsect></para>
 <para>If you have compiled wxWidgets in Unicode mode, the wxChar type will become identical to wchar_t rather than char, and a <ref refid="classwx_string" kindref="compound">wxString</ref> stores wxChars. Hence, all <ref refid="classwx_string" kindref="compound">wxString</ref> manipulation in your application will then operate on Unicode strings, and almost as easily as working with ordinary char strings (you just need to remember to use the <ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT()</ref> macro to encapsulate any string literals).</para>
 <para>But often, your environment doesn&apos;t want Unicode strings. You could be sending data over a network, or processing a text file for some other application. You need a way to quickly convert your easily-handled Unicode data to and from a traditional 8-bit encoding. And this is what the <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> classes do.</para>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="bmpbndl_8h" kind="file" language="C++">
+    <compoundname>bmpbndl.h</compoundname>
+    <innerclass refid="classwx_bitmap_bundle" prot="public">wxBitmapBundle</innerclass>
+    <innerclass refid="classwx_bitmap_bundle_impl" prot="public">wxBitmapBundleImpl</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="bmpbndl_8h_1ac1b58fbf47d9fead665cd4665d3b02bf" prot="public" static="no">
+        <name>wxBITMAP_BUNDLE_2</name>
+        <param><defname>name</defname></param>
+        <briefdescription>
+<para>Creates a <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> from resources on the platforms supporting them or from two embedded bitmaps otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This macro use <ref refid="classwx_bitmap_bundle_1af5521b4db71cbca163f54ecb1d2ad69d" kindref="member">wxBitmapBundle::FromResources()</ref> with the provide <emphasis>name</emphasis>, which must be an <emphasis>identifier</emphasis> and not a string, i.e. used without quotes, on the platforms where it works and <ref refid="classwx_bitmap_bundle_1a4e46fb7cee28a465150c2233b3f0698f" kindref="member">wxBitmapBundle::FromBitmaps()</ref> with <computeroutput>name_png</computeroutput> and <computeroutput>name_2x_png</computeroutput> arrays containing PNG data elsewhere.</para>
+<para>Using it allows to avoid using preprocessor checks in the common case when just two bitmaps (for standard and high DPI) are embedded in the application code. Note that all bitmaps defined in the resources, even if there are more than 2 of them.</para>
+<para>Example of use: <programlisting><codeline><highlight class="normal">toolBar-&gt;AddTool(wxID_OPEN,<sp/>wxBITMAP_BUNDLE_2(open));</highlight></codeline>
+</programlisting></para>
+<para>Include file: <verbatim>#include &lt;wx/bmpbndl.h&gt; </verbatim></para>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="633" column="9" bodyfile="interface/wx/bmpbndl.h" bodystart="633" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="interface/wx/bmpbndl.h"/>
+  </compounddef>
+</doxygen>

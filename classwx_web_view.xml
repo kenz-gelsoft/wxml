@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_web_view" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxWebView</compoundname>
     <basecompoundref refid="classwx_control" prot="public" virt="non-virtual">wxControl</basecompoundref>
@@ -13,6 +13,7 @@
         <definition>virtual bool wxWebView::RunScript</definition>
         <argsstring>(const wxString &amp;javascript, wxString *output=NULL) const =0</argsstring>
         <name>RunScript</name>
+        <qualifiedname>wxWebView::RunScript</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>javascript</declname>
@@ -26,7 +27,9 @@
 <para>Runs the given JavaScript code. </para>
         </briefdescription>
         <detaileddescription>
-<para>JavaScript code is executed inside the browser control and has full access to DOM and other browser-provided functionality. For example, this code <programlisting><codeline><highlight class="normal">webview-&gt;RunScript(</highlight><highlight class="stringliteral">&quot;document.write(&apos;Hello<sp/>from<sp/>wxWidgets!&apos;)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<para><simplesect kind="note"><para>Because of various potential issues it&apos;s recommended to use <ref refid="classwx_web_view_1a01f497a1f71672706ab62e85d7363aa7" kindref="member">RunScriptAsync()</ref> instead of this method. This is especially true if you plan to run code from a webview event and will also prevent unintended side effects on the UI outside of the webview.</para>
+</simplesect>
+JavaScript code is executed inside the browser control and has full access to DOM and other browser-provided functionality. For example, this code <programlisting><codeline><highlight class="normal">webview-&gt;RunScript(</highlight><highlight class="stringliteral">&quot;document.write(&apos;Hello<sp/>from<sp/>wxWidgets!&apos;)&quot;</highlight><highlight class="normal">);</highlight></codeline>
 </programlisting> will replace the current page contents with the provided string.</para>
 <para>If <emphasis>output</emphasis> is non-null, it is filled with the result of executing this code on success, e.g. a JavaScript value such as a string, a number (integer or floating point), a boolean or JSON representation for non-primitive types such as arrays and objects. For example: <programlisting><codeline><highlight class="normal"><ref refid="classwx_string" kindref="compound">wxString</ref><sp/>result;</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>webview-&gt;RunScript</highlight></codeline>
@@ -64,19 +67,71 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>true if there is a result, false if there is an error. </para>
+<simplesect kind="return"><para>true if there is a result, false if there is an error.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classwx_web_view_1a01f497a1f71672706ab62e85d7363aa7" kindref="member">RunScriptAsync()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="739" column="18"/>
+        <location file="interface/wx/webview.h" line="782" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_web_view_1a01f497a1f71672706ab62e85d7363aa7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void wxWebView::RunScriptAsync</definition>
+        <argsstring>(const wxString &amp;javascript, void *clientData=NULL) const</argsstring>
+        <name>RunScriptAsync</name>
+        <qualifiedname>wxWebView::RunScriptAsync</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>javascript</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>clientData</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+<para>Runs the given JavaScript code asynchronously and returns the result via a <computeroutput>wxEVT_WEBVIEW_SCRIPT_RESULT</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The script result value can be retrieved via <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">wxWebViewEvent::GetString()</ref>. If the execution fails <ref refid="classwx_web_view_event_1ac709fb3c327f7cb6e0cfbfcad1b735cc" kindref="member">wxWebViewEvent::IsError()</ref> will return true. In this case additional script execution error information maybe available via <ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">wxWebViewEvent::GetString()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>javascript</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>JavaScript code to execute. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clientData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arbirary pointer to data that can be retrieved from the result event.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The IE backend does not support async script execution.</para>
+</simplesect>
+<simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classwx_web_view_1a67000a368c45f3684efd460d463ffb98" kindref="member">RunScript()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webview.h" line="802" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a2597c3371ed654bf03262ec6d34a0126" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::AddScriptMessageHandler</definition>
         <argsstring>(const wxString &amp;name)</argsstring>
         <name>AddScriptMessageHandler</name>
+        <qualifiedname>wxWebView::AddScriptMessageHandler</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>name</declname>
@@ -85,11 +140,11 @@
 <para>Add a script message handler with the given name. </para>
         </briefdescription>
         <detaileddescription>
-<para>To use the script message handler from javascript use <computeroutput>window</computeroutput>.&lt;name&gt;.postMessage(&lt;messageBody&gt;) where &lt;name&gt; corresponds the value of the name parameter. The &lt;messageBody&gt; will be available to the application via a <computeroutput>wxEVT_WEBVIEW_SCRIPT_MESSAGE_RECEIVED</computeroutput> event.</para>
+<para>To use the script message handler from javascript use <computeroutput>`window</computeroutput>.&lt;name&gt;.postMessage(&lt;messageBody&gt;)` where <computeroutput>&lt;name&gt;</computeroutput> corresponds the value of the name parameter. The <computeroutput>&lt;messageBody&gt;</computeroutput> will be available to the application via a <computeroutput>wxEVT_WEBVIEW_SCRIPT_MESSAGE_RECEIVED</computeroutput> event.</para>
 <para>Sample C++ code receiving a script message: <programlisting><codeline><highlight class="comment">//<sp/>Install<sp/>message<sp/>handler<sp/>with<sp/>the<sp/>name<sp/>wx_msg</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal">m_webView-&gt;AddScriptMessageHandler(</highlight><highlight class="stringliteral">&apos;wx_msg&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Bind<sp/>handler</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">m_webView-&gt;Bind(wxEVT_WEBVIEW_SCRIPT_MESSAGE_RECEIVED,<sp/>[](<ref refid="classwx_web_view_event" kindref="compound">wxWebViewEvent</ref>&amp;<sp/>evt)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">m_webView-&gt;Bind(<ref refid="webview_8h_1ae3afad5fe6fb94a4fdb7a3f523900743" kindref="member">wxEVT_WEBVIEW_SCRIPT_MESSAGE_RECEIVED</ref>,<sp/>[](<ref refid="classwx_web_view_event" kindref="compound">wxWebViewEvent</ref>&amp;<sp/>evt)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2log_8h_1a249358701f3c2d410088ddf7a61d8564" kindref="member">wxLogMessage</ref>(</highlight><highlight class="stringliteral">&quot;Script<sp/>message<sp/>received;<sp/>value<sp/>=<sp/>%s,<sp/>handler<sp/>=<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>evt.<ref refid="classwx_command_event_1a6aef039e72e358840a7c20da6473e9ae" kindref="member">GetString</ref>(),<sp/>evt.<ref refid="classwx_web_view_event_1a55d1e55702d821610e21b6ad4bac441a" kindref="member">GetMessageHandler</ref>());</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>
@@ -117,13 +172,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="775" column="18"/>
+        <location file="interface/wx/webview.h" line="839" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a7b33f76f97adf735e8e6896bc829d32f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::RemoveScriptMessageHandler</definition>
         <argsstring>(const wxString &amp;name)</argsstring>
         <name>RemoveScriptMessageHandler</name>
+        <qualifiedname>wxWebView::RemoveScriptMessageHandler</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>name</declname>
@@ -142,13 +198,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="787" column="18"/>
+        <location file="interface/wx/webview.h" line="851" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a481f8dfcf2225e84578131375d85152f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::AddUserScript</definition>
         <argsstring>(const wxString &amp;javascript, wxWebViewUserScriptInjectionTime injectionTime=wxWEBVIEW_INJECT_AT_DOCUMENT_START)</argsstring>
         <name>AddUserScript</name>
+        <qualifiedname>wxWebView::AddUserScript</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>javascript</declname>
@@ -159,7 +216,7 @@
           <defval><ref refid="webview_8h_1a53cb88c75f275074aea886e5d9d07d0dae695006c1b2f9d5cb367701a59daa131" kindref="member">wxWEBVIEW_INJECT_AT_DOCUMENT_START</ref></defval>
         </param>
         <briefdescription>
-<para>Injects the specified script into the webpage’s content. </para>
+<para>Injects the specified script into the webpage&apos;s content. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -191,13 +248,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="803" column="18"/>
+        <location file="interface/wx/webview.h" line="867" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1af48a479092c3e83b7d471c473df8ca1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxWebView::RemoveAllUserScripts</definition>
         <argsstring>()</argsstring>
         <name>RemoveAllUserScripts</name>
+        <qualifiedname>wxWebView::RemoveAllUserScripts</qualifiedname>
         <briefdescription>
 <para>Removes all user scripts from the web view. </para>
         </briefdescription>
@@ -210,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="813" column="18"/>
+        <location file="interface/wx/webview.h" line="877" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -220,6 +278,7 @@
         <definition>virtual bool wxWebView::CanCopy</definition>
         <argsstring>() const</argsstring>
         <name>CanCopy</name>
+        <qualifiedname>wxWebView::CanCopy</qualifiedname>
         <briefdescription>
 <para>Returns true if the current selection can be copied. </para>
         </briefdescription>
@@ -227,13 +286,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="822" column="18"/>
+        <location file="interface/wx/webview.h" line="886" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a7fa368672ca372e52d650dd915bf55a6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::CanCut</definition>
         <argsstring>() const</argsstring>
         <name>CanCut</name>
+        <qualifiedname>wxWebView::CanCut</qualifiedname>
         <briefdescription>
 <para>Returns true if the current selection can be cut. </para>
         </briefdescription>
@@ -241,13 +301,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="827" column="18"/>
+        <location file="interface/wx/webview.h" line="891" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a83ab831efe412f0375e5d0a54af6c704" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::CanPaste</definition>
         <argsstring>() const</argsstring>
         <name>CanPaste</name>
+        <qualifiedname>wxWebView::CanPaste</qualifiedname>
         <briefdescription>
 <para>Returns true if data can be pasted. </para>
         </briefdescription>
@@ -255,13 +316,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="832" column="18"/>
+        <location file="interface/wx/webview.h" line="896" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a9c42fa2da4dc3ce459cccc059b16239e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxWebView::Copy</definition>
         <argsstring>()</argsstring>
         <name>Copy</name>
+        <qualifiedname>wxWebView::Copy</qualifiedname>
         <briefdescription>
 <para>Copies the current selection. </para>
         </briefdescription>
@@ -269,13 +331,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="837" column="18"/>
+        <location file="interface/wx/webview.h" line="901" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1ab5830e190e2cd2ad24d0139e365fdb2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxWebView::Cut</definition>
         <argsstring>()</argsstring>
         <name>Cut</name>
+        <qualifiedname>wxWebView::Cut</qualifiedname>
         <briefdescription>
 <para>Cuts the current selection. </para>
         </briefdescription>
@@ -283,13 +346,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="842" column="18"/>
+        <location file="interface/wx/webview.h" line="906" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a4b7f68387e8ace02ea2a0196c3601ac0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxWebView::Paste</definition>
         <argsstring>()</argsstring>
         <name>Paste</name>
+        <qualifiedname>wxWebView::Paste</qualifiedname>
         <briefdescription>
 <para>Pastes the current data. </para>
         </briefdescription>
@@ -297,7 +361,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="847" column="18"/>
+        <location file="interface/wx/webview.h" line="911" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -307,6 +371,7 @@
         <definition>virtual void wxWebView::EnableContextMenu</definition>
         <argsstring>(bool enable=true)</argsstring>
         <name>EnableContextMenu</name>
+        <qualifiedname>wxWebView::EnableContextMenu</qualifiedname>
         <param>
           <type>bool</type>
           <declname>enable</declname>
@@ -323,13 +388,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="861" column="18"/>
+        <location file="interface/wx/webview.h" line="925" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1adbf0b2ef40787d96f5d909f9dd4a2963" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::IsContextMenuEnabled</definition>
         <argsstring>() const</argsstring>
         <name>IsContextMenuEnabled</name>
+        <qualifiedname>wxWebView::IsContextMenuEnabled</qualifiedname>
         <briefdescription>
 <para>Returns true if a context menu will be shown on right click. </para>
         </briefdescription>
@@ -340,7 +406,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="868" column="18"/>
+        <location file="interface/wx/webview.h" line="932" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -350,6 +416,7 @@
         <definition>virtual void wxWebView::EnableAccessToDevTools</definition>
         <argsstring>(bool enable=true)</argsstring>
         <name>EnableAccessToDevTools</name>
+        <qualifiedname>wxWebView::EnableAccessToDevTools</qualifiedname>
         <param>
           <type>bool</type>
           <declname>enable</declname>
@@ -368,13 +435,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="883" column="18"/>
+        <location file="interface/wx/webview.h" line="947" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1aa0580bbf9e022282ddd238fa990fffff" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::IsAccessToDevToolsEnabled</definition>
         <argsstring>() const</argsstring>
         <name>IsAccessToDevToolsEnabled</name>
+        <qualifiedname>wxWebView::IsAccessToDevToolsEnabled</qualifiedname>
         <briefdescription>
 <para>Returns true if dev tools are available to the user. </para>
         </briefdescription>
@@ -385,13 +453,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="890" column="18"/>
+        <location file="interface/wx/webview.h" line="954" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1aabe45a7c34f0f4fce1865f2a31c4f834" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::SetUserAgent</definition>
         <argsstring>(const wxString &amp;userAgent)</argsstring>
         <name>SetUserAgent</name>
+        <qualifiedname>wxWebView::SetUserAgent</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>userAgent</declname>
@@ -410,13 +479,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="904" column="18"/>
+        <location file="interface/wx/webview.h" line="968" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a0ba4b0e87da6caea95296488a9ea9e46" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>virtual wxString wxWebView::GetUserAgent</definition>
         <argsstring>() const</argsstring>
         <name>GetUserAgent</name>
+        <qualifiedname>wxWebView::GetUserAgent</qualifiedname>
         <briefdescription>
 <para>Returns the current user agent string for the web view. </para>
         </briefdescription>
@@ -427,7 +497,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="911" column="22"/>
+        <location file="interface/wx/webview.h" line="975" column="22"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -437,6 +507,7 @@
         <definition>virtual bool wxWebView::CanGoBack</definition>
         <argsstring>() const =0</argsstring>
         <name>CanGoBack</name>
+        <qualifiedname>wxWebView::CanGoBack</qualifiedname>
         <briefdescription>
 <para>Returns true if it is possible to navigate backward in the history of visited pages. </para>
         </briefdescription>
@@ -444,13 +515,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="922" column="18"/>
+        <location file="interface/wx/webview.h" line="986" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1ad87a02f0945a52907b32f75163bd842a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::CanGoForward</definition>
         <argsstring>() const =0</argsstring>
         <name>CanGoForward</name>
+        <qualifiedname>wxWebView::CanGoForward</qualifiedname>
         <briefdescription>
 <para>Returns true if it is possible to navigate forward in the history of visited pages. </para>
         </briefdescription>
@@ -458,13 +530,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="928" column="18"/>
+        <location file="interface/wx/webview.h" line="992" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1aed31910ada73c6fa569e257592649703" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::ClearHistory</definition>
         <argsstring>()=0</argsstring>
         <name>ClearHistory</name>
+        <qualifiedname>wxWebView::ClearHistory</qualifiedname>
         <briefdescription>
 <para>Clear the history, this will also remove the visible page. </para>
         </briefdescription>
@@ -475,13 +548,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="935" column="18"/>
+        <location file="interface/wx/webview.h" line="999" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1ae8c31ef747e292b6ba9f685e72d320fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::EnableHistory</definition>
         <argsstring>(bool enable=true)=0</argsstring>
         <name>EnableHistory</name>
+        <qualifiedname>wxWebView::EnableHistory</qualifiedname>
         <param>
           <type>bool</type>
           <declname>enable</declname>
@@ -498,13 +572,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="942" column="18"/>
+        <location file="interface/wx/webview.h" line="1006" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a4d22f2fe56f5751bf7fb08724ab05c1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>wxVector&lt; wxSharedPtr&lt; <ref refid="classwx_web_view_history_item" kindref="compound">wxWebViewHistoryItem</ref> &gt; &gt;</type>
         <definition>virtual wxVector&lt; wxSharedPtr&lt; wxWebViewHistoryItem &gt; &gt; wxWebView::GetBackwardHistory</definition>
         <argsstring>()=0</argsstring>
         <name>GetBackwardHistory</name>
+        <qualifiedname>wxWebView::GetBackwardHistory</qualifiedname>
         <briefdescription>
 <para>Returns a list of items in the back history. </para>
         </briefdescription>
@@ -513,13 +588,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="948" column="22"/>
+        <location file="interface/wx/webview.h" line="1012" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1ac171bdeb6c147d545eb885973334ce05" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>wxVector&lt; wxSharedPtr&lt; <ref refid="classwx_web_view_history_item" kindref="compound">wxWebViewHistoryItem</ref> &gt; &gt;</type>
         <definition>virtual wxVector&lt; wxSharedPtr&lt; wxWebViewHistoryItem &gt; &gt; wxWebView::GetForwardHistory</definition>
         <argsstring>()=0</argsstring>
         <name>GetForwardHistory</name>
+        <qualifiedname>wxWebView::GetForwardHistory</qualifiedname>
         <briefdescription>
 <para>Returns a list of items in the forward history. </para>
         </briefdescription>
@@ -528,13 +604,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="955" column="22"/>
+        <location file="interface/wx/webview.h" line="1019" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1ad50ae9ee51db5cce11a0e4ac47f636f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::GoBack</definition>
         <argsstring>()=0</argsstring>
         <name>GoBack</name>
+        <qualifiedname>wxWebView::GoBack</qualifiedname>
         <briefdescription>
 <para>Navigate back in the history of visited pages. </para>
         </briefdescription>
@@ -543,13 +620,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="961" column="18"/>
+        <location file="interface/wx/webview.h" line="1025" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1ad2b57279558b0556104b9f32a1833015" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::GoForward</definition>
         <argsstring>()=0</argsstring>
         <name>GoForward</name>
+        <qualifiedname>wxWebView::GoForward</qualifiedname>
         <briefdescription>
 <para>Navigate forward in the history of visited pages. </para>
         </briefdescription>
@@ -558,13 +636,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="967" column="18"/>
+        <location file="interface/wx/webview.h" line="1031" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a35abeaa940f2c4dc9bffa87d66ab85d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::LoadHistoryItem</definition>
         <argsstring>(wxSharedPtr&lt; wxWebViewHistoryItem &gt; item)=0</argsstring>
         <name>LoadHistoryItem</name>
+        <qualifiedname>wxWebView::LoadHistoryItem</qualifiedname>
         <param>
           <type>wxSharedPtr&lt; <ref refid="classwx_web_view_history_item" kindref="compound">wxWebViewHistoryItem</ref> &gt;</type>
           <declname>item</declname>
@@ -576,7 +655,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="972" column="18"/>
+        <location file="interface/wx/webview.h" line="1036" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -586,6 +665,7 @@
         <definition>virtual void wxWebView::ClearSelection</definition>
         <argsstring>()</argsstring>
         <name>ClearSelection</name>
+        <qualifiedname>wxWebView::ClearSelection</qualifiedname>
         <briefdescription>
 <para>Clears the current selection. </para>
         </briefdescription>
@@ -593,13 +673,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="981" column="18"/>
+        <location file="interface/wx/webview.h" line="1045" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1abf297925ca6cd0ce532e21fe730e1650" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxWebView::DeleteSelection</definition>
         <argsstring>()</argsstring>
         <name>DeleteSelection</name>
+        <qualifiedname>wxWebView::DeleteSelection</qualifiedname>
         <briefdescription>
 <para>Deletes the current selection. </para>
         </briefdescription>
@@ -608,13 +689,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="988" column="18"/>
+        <location file="interface/wx/webview.h" line="1052" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a7a8a58d5071e40e672201ba88cffad76" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>virtual wxString wxWebView::GetSelectedSource</definition>
         <argsstring>() const</argsstring>
         <name>GetSelectedSource</name>
+        <qualifiedname>wxWebView::GetSelectedSource</qualifiedname>
         <briefdescription>
 <para>Returns the currently selected source, if any. </para>
         </briefdescription>
@@ -622,13 +704,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="993" column="22"/>
+        <location file="interface/wx/webview.h" line="1057" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a2960369d52341fb2af66b0e56dbe1d91" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>virtual wxString wxWebView::GetSelectedText</definition>
         <argsstring>() const</argsstring>
         <name>GetSelectedText</name>
+        <qualifiedname>wxWebView::GetSelectedText</qualifiedname>
         <briefdescription>
 <para>Returns the currently selected text, if any. </para>
         </briefdescription>
@@ -636,13 +719,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="998" column="22"/>
+        <location file="interface/wx/webview.h" line="1062" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a8b2038afdb9bc5261a52811cbb63479a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::HasSelection</definition>
         <argsstring>() const</argsstring>
         <name>HasSelection</name>
+        <qualifiedname>wxWebView::HasSelection</qualifiedname>
         <briefdescription>
 <para>Returns true if there is a current selection. </para>
         </briefdescription>
@@ -650,13 +734,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1003" column="18"/>
+        <location file="interface/wx/webview.h" line="1067" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a964149443fa1ed8cbed26c50da883ab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxWebView::SelectAll</definition>
         <argsstring>()</argsstring>
         <name>SelectAll</name>
+        <qualifiedname>wxWebView::SelectAll</qualifiedname>
         <briefdescription>
 <para>Selects the entire page. </para>
         </briefdescription>
@@ -664,7 +749,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1008" column="18"/>
+        <location file="interface/wx/webview.h" line="1072" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -674,6 +759,7 @@
         <definition>virtual bool wxWebView::CanRedo</definition>
         <argsstring>() const =0</argsstring>
         <name>CanRedo</name>
+        <qualifiedname>wxWebView::CanRedo</qualifiedname>
         <briefdescription>
 <para>Returns true if there is an action to redo. </para>
         </briefdescription>
@@ -681,13 +767,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1017" column="18"/>
+        <location file="interface/wx/webview.h" line="1081" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1ab953cdb9030d048fb563459a5f95ade8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::CanUndo</definition>
         <argsstring>() const =0</argsstring>
         <name>CanUndo</name>
+        <qualifiedname>wxWebView::CanUndo</qualifiedname>
         <briefdescription>
 <para>Returns true if there is an action to undo. </para>
         </briefdescription>
@@ -695,13 +782,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1022" column="18"/>
+        <location file="interface/wx/webview.h" line="1086" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a6c0ae6a5a527dd2e12115a47493f3c7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::Redo</definition>
         <argsstring>()=0</argsstring>
         <name>Redo</name>
+        <qualifiedname>wxWebView::Redo</qualifiedname>
         <briefdescription>
 <para>Redos the last action. </para>
         </briefdescription>
@@ -709,13 +797,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1027" column="18"/>
+        <location file="interface/wx/webview.h" line="1091" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1af164050b23d2fd54529d147308a36b13" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::Undo</definition>
         <argsstring>()=0</argsstring>
         <name>Undo</name>
+        <qualifiedname>wxWebView::Undo</qualifiedname>
         <briefdescription>
 <para>Undos the last action. </para>
         </briefdescription>
@@ -723,7 +812,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1032" column="18"/>
+        <location file="interface/wx/webview.h" line="1096" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -733,6 +822,7 @@
         <definition>virtual long wxWebView::Find</definition>
         <argsstring>(const wxString &amp;text, wxWebViewFindFlags flags=wxWEBVIEW_FIND_DEFAULT)</argsstring>
         <name>Find</name>
+        <qualifiedname>wxWebView::Find</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>text</declname>
@@ -773,7 +863,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1055" column="18"/>
+        <location file="interface/wx/webview.h" line="1119" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -783,6 +873,7 @@
         <definition>virtual bool wxWebView::CanSetZoomType</definition>
         <argsstring>(wxWebViewZoomType type) const =0</argsstring>
         <name>CanSetZoomType</name>
+        <qualifiedname>wxWebView::CanSetZoomType</qualifiedname>
         <param>
           <type><ref refid="webview_8h_1a4de3543743ab8fb2b462644182845b69" kindref="member">wxWebViewZoomType</ref></type>
           <declname>type</declname>
@@ -806,13 +897,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1067" column="18"/>
+        <location file="interface/wx/webview.h" line="1131" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a2d57d15a85b7994644aef631518c6f53" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="webview_8h_1aacf38eb86740b7b28525fab4f8637a6c" kindref="member">wxWebViewZoom</ref></type>
         <definition>virtual wxWebViewZoom wxWebView::GetZoom</definition>
         <argsstring>() const</argsstring>
         <name>GetZoom</name>
+        <qualifiedname>wxWebView::GetZoom</qualifiedname>
         <briefdescription>
 <para>Get the zoom level of the page. </para>
         </briefdescription>
@@ -823,13 +915,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1075" column="27"/>
+        <location file="interface/wx/webview.h" line="1139" column="27"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a968f8e55b4afd847db40284d81b801cb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>float</type>
         <definition>virtual float wxWebView::GetZoomFactor</definition>
         <argsstring>() const =0</argsstring>
         <name>GetZoomFactor</name>
+        <qualifiedname>wxWebView::GetZoomFactor</qualifiedname>
         <briefdescription>
 <para>Get the zoom factor of the page. </para>
         </briefdescription>
@@ -842,13 +935,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1082" column="19"/>
+        <location file="interface/wx/webview.h" line="1146" column="19"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a40b3522389e4ce19cc995f6bc69e2fb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="webview_8h_1a4de3543743ab8fb2b462644182845b69" kindref="member">wxWebViewZoomType</ref></type>
         <definition>virtual wxWebViewZoomType wxWebView::GetZoomType</definition>
         <argsstring>() const =0</argsstring>
         <name>GetZoomType</name>
+        <qualifiedname>wxWebView::GetZoomType</qualifiedname>
         <briefdescription>
 <para>Get how the zoom factor is currently interpreted. </para>
         </briefdescription>
@@ -859,13 +953,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1088" column="31"/>
+        <location file="interface/wx/webview.h" line="1152" column="31"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a513bd4459fe90a43e97f440416091601" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxWebView::SetZoom</definition>
         <argsstring>(wxWebViewZoom zoom)</argsstring>
         <name>SetZoom</name>
+        <qualifiedname>wxWebView::SetZoom</qualifiedname>
         <param>
           <type><ref refid="webview_8h_1aacf38eb86740b7b28525fab4f8637a6c" kindref="member">wxWebViewZoom</ref></type>
           <declname>zoom</declname>
@@ -887,13 +982,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1096" column="18"/>
+        <location file="interface/wx/webview.h" line="1160" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1acc4f5ce0c69ded05966ae122ad59c0fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::SetZoomFactor</definition>
         <argsstring>(float zoom)=0</argsstring>
         <name>SetZoomFactor</name>
+        <qualifiedname>wxWebView::SetZoomFactor</qualifiedname>
         <param>
           <type>float</type>
           <declname>zoom</declname>
@@ -919,13 +1015,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1106" column="18"/>
+        <location file="interface/wx/webview.h" line="1170" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a3c4ac3d82a94c2a521472a058c4ec572" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::SetZoomType</definition>
         <argsstring>(wxWebViewZoomType zoomType)=0</argsstring>
         <name>SetZoomType</name>
+        <qualifiedname>wxWebView::SetZoomType</qualifiedname>
         <param>
           <type><ref refid="webview_8h_1a4de3543743ab8fb2b462644182845b69" kindref="member">wxWebViewZoomType</ref></type>
           <declname>zoomType</declname>
@@ -949,7 +1046,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="1115" column="18"/>
+        <location file="interface/wx/webview.h" line="1179" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -958,6 +1055,7 @@
         <definition>virtual bool wxWebView::Create</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxString &amp;url=wxWebViewDefaultURLStr, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=0, const wxString &amp;name=wxWebViewNameStr)=0</argsstring>
         <name>Create</name>
+        <qualifiedname>wxWebView::Create</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -998,13 +1096,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="481" column="18"/>
+        <location file="interface/wx/webview.h" line="509" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a5c10294f286dc0b685ccfcaee1fa8cd9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>virtual wxString wxWebView::GetCurrentTitle</definition>
         <argsstring>() const =0</argsstring>
         <name>GetCurrentTitle</name>
+        <qualifiedname>wxWebView::GetCurrentTitle</qualifiedname>
         <briefdescription>
 <para>Get the title of the current web page, or its URL/path if title is not available. </para>
         </briefdescription>
@@ -1012,13 +1111,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="555" column="22"/>
+        <location file="interface/wx/webview.h" line="591" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a2ba0212f788831a48be295b3b1575e93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>virtual wxString wxWebView::GetCurrentURL</definition>
         <argsstring>() const =0</argsstring>
         <name>GetCurrentURL</name>
+        <qualifiedname>wxWebView::GetCurrentURL</qualifiedname>
         <briefdescription>
 <para>Get the URL of the currently displayed document. </para>
         </briefdescription>
@@ -1026,13 +1126,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="560" column="22"/>
+        <location file="interface/wx/webview.h" line="596" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a5bcaae62302796e2687d64d287f91f43" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>void *</type>
         <definition>virtual void * wxWebView::GetNativeBackend</definition>
         <argsstring>() const =0</argsstring>
         <name>GetNativeBackend</name>
+        <qualifiedname>wxWebView::GetNativeBackend</qualifiedname>
         <briefdescription>
 <para>Return the pointer to the native backend used by this control. </para>
         </briefdescription>
@@ -1056,13 +1157,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="588" column="18"/>
+        <location file="interface/wx/webview.h" line="624" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a5df609ee74f4fabb0818bbbc541b5b0c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>virtual wxString wxWebView::GetPageSource</definition>
         <argsstring>() const</argsstring>
         <name>GetPageSource</name>
+        <qualifiedname>wxWebView::GetPageSource</qualifiedname>
         <briefdescription>
 <para>Get the HTML source code of the currently displayed document. </para>
         </briefdescription>
@@ -1073,13 +1175,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="595" column="22"/>
+        <location file="interface/wx/webview.h" line="631" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a9d5a0ad122cfa9df219cbbec529b1362" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>virtual wxString wxWebView::GetPageText</definition>
         <argsstring>() const</argsstring>
         <name>GetPageText</name>
+        <qualifiedname>wxWebView::GetPageText</qualifiedname>
         <briefdescription>
 <para>Get the text of the current page. </para>
         </briefdescription>
@@ -1087,13 +1190,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="600" column="22"/>
+        <location file="interface/wx/webview.h" line="636" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1aadda38fa9b2c05257d25aab93c30140a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::IsBusy</definition>
         <argsstring>() const =0</argsstring>
         <name>IsBusy</name>
+        <qualifiedname>wxWebView::IsBusy</qualifiedname>
         <briefdescription>
 <para>Returns whether the web control is currently busy (e.g. loading a page). </para>
         </briefdescription>
@@ -1101,13 +1205,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="605" column="18"/>
+        <location file="interface/wx/webview.h" line="641" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1af8ef65acca55638267c7d3a340fd0825" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
         <definition>virtual bool wxWebView::IsEditable</definition>
         <argsstring>() const =0</argsstring>
         <name>IsEditable</name>
+        <qualifiedname>wxWebView::IsEditable</qualifiedname>
         <briefdescription>
 <para>Returns whether the web control is currently editable. </para>
         </briefdescription>
@@ -1115,13 +1220,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="610" column="18"/>
+        <location file="interface/wx/webview.h" line="646" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a284e43ed5f52e384e033874debb01254" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::LoadURL</definition>
         <argsstring>(const wxString &amp;url)=0</argsstring>
         <name>LoadURL</name>
+        <qualifiedname>wxWebView::LoadURL</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>url</declname>
@@ -1145,13 +1251,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="619" column="18"/>
+        <location file="interface/wx/webview.h" line="655" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a09c921bd9909fc97d9d87fc9a75248a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::Print</definition>
         <argsstring>()=0</argsstring>
         <name>Print</name>
+        <qualifiedname>wxWebView::Print</qualifiedname>
         <briefdescription>
 <para>Opens a print dialog so that the user may print the currently displayed page. </para>
         </briefdescription>
@@ -1159,13 +1266,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="625" column="18"/>
+        <location file="interface/wx/webview.h" line="661" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a7f97f428ac96426dd84bfd1b7406dbc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::RegisterHandler</definition>
         <argsstring>(wxSharedPtr&lt; wxWebViewHandler &gt; handler)=0</argsstring>
         <name>RegisterHandler</name>
+        <qualifiedname>wxWebView::RegisterHandler</qualifiedname>
         <param>
           <type>wxSharedPtr&lt; <ref refid="classwx_web_view_handler" kindref="compound">wxWebViewHandler</ref> &gt;</type>
           <declname>handler</declname>
@@ -1189,13 +1297,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="634" column="18"/>
+        <location file="interface/wx/webview.h" line="670" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1ad4b6396cea16fdb78095152ce2982a2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::Reload</definition>
         <argsstring>(wxWebViewReloadFlags flags=wxWEBVIEW_RELOAD_DEFAULT)=0</argsstring>
         <name>Reload</name>
+        <qualifiedname>wxWebView::Reload</qualifiedname>
         <param>
           <type><ref refid="webview_8h_1a9a49bca43f7eb6ec259c0fb18101979f" kindref="member">wxWebViewReloadFlags</ref></type>
           <declname>flags</declname>
@@ -1220,13 +1329,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="641" column="18"/>
+        <location file="interface/wx/webview.h" line="677" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a27819424e783db54ab269e0827fef85e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::SetEditable</definition>
         <argsstring>(bool enable=true)=0</argsstring>
         <name>SetEditable</name>
+        <qualifiedname>wxWebView::SetEditable</qualifiedname>
         <param>
           <type>bool</type>
           <declname>enable</declname>
@@ -1243,13 +1353,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="650" column="18"/>
+        <location file="interface/wx/webview.h" line="686" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1acaf31bd55bb607012ce054fc1b0aeab6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::SetPage</definition>
         <argsstring>(const wxString &amp;html, const wxString &amp;baseUrl)=0</argsstring>
         <name>SetPage</name>
+        <qualifiedname>wxWebView::SetPage</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>html</declname>
@@ -1285,13 +1396,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="661" column="18"/>
+        <location file="interface/wx/webview.h" line="697" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1ada9d443aea1d61ce18339c7328c54a67" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxWebView::SetPage</definition>
         <argsstring>(wxInputStream &amp;html, wxString baseUrl)</argsstring>
         <name>SetPage</name>
+        <qualifiedname>wxWebView::SetPage</qualifiedname>
         <param>
           <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> &amp;</type>
           <declname>html</declname>
@@ -1325,13 +1437,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="669" column="18"/>
+        <location file="interface/wx/webview.h" line="705" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a9ca553e7dfd399222d4f89364c5f3a2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxWebView::Stop</definition>
         <argsstring>()=0</argsstring>
         <name>Stop</name>
+        <qualifiedname>wxWebView::Stop</qualifiedname>
         <briefdescription>
 <para>Stop the current page loading process, if any. </para>
         </briefdescription>
@@ -1340,7 +1453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="676" column="18"/>
+        <location file="interface/wx/webview.h" line="712" column="18"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -1349,6 +1462,7 @@
         <definition>static wxWebView * wxWebView::New</definition>
         <argsstring>(const wxString &amp;backend=wxWebViewBackendDefault)</argsstring>
         <name>New</name>
+        <qualifiedname>wxWebView::New</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>backend</declname>
@@ -1375,13 +1489,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="498" column="22"/>
+        <location file="interface/wx/webview.h" line="526" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a41fb6a8b86f77634a07445a13796eb94" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_web_view" kindref="compound">wxWebView</ref> *</type>
         <definition>static wxWebView * wxWebView::New</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxString &amp;url=wxWebViewDefaultURLStr, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, const wxString &amp;backend=wxWebViewBackendDefault, long style=0, const wxString &amp;name=wxWebViewNameStr)</argsstring>
         <name>New</name>
+        <qualifiedname>wxWebView::New</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -1497,13 +1612,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="517" column="22"/>
+        <location file="interface/wx/webview.h" line="545" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1ac2f50fb8d671a7a41b2c2818eb112343" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void wxWebView::RegisterFactory</definition>
         <argsstring>(const wxString &amp;backend, wxSharedPtr&lt; wxWebViewFactory &gt; factory)</argsstring>
         <name>RegisterFactory</name>
+        <qualifiedname>wxWebView::RegisterFactory</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>backend</declname>
@@ -1539,13 +1655,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="534" column="17"/>
+        <location file="interface/wx/webview.h" line="562" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1abcfff9aae99fe107622887e864fda512" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>static bool wxWebView::IsBackendAvailable</definition>
         <argsstring>(const wxString &amp;backend)</argsstring>
         <name>IsBackendAvailable</name>
+        <qualifiedname>wxWebView::IsBackendAvailable</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>backend</declname>
@@ -1554,19 +1671,25 @@
 <para>Allows to check if a specific backend is currently available. </para>
         </briefdescription>
         <detaileddescription>
+<para>For example, to check for Edge backend availability: <programlisting><codeline><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="classwx_web_view_1abcfff9aae99fe107622887e864fda512" kindref="member">wxWebView::IsBackendAvailable</ref>(wxWebViewBackendEdge)<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...<sp/>enable<sp/>some<sp/>extra<sp/>functionality<sp/>not<sp/>available<sp/>with<sp/>the<sp/>IE<sp/>backend<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
 <para><simplesect kind="since"><para>3.1.4 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="542" column="17"/>
+        <location file="interface/wx/webview.h" line="578" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_view_1a45dcf5e2a5c788529e019770fe0f4ffb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_version_info" kindref="compound">wxVersionInfo</ref></type>
         <definition>static wxVersionInfo wxWebView::GetBackendVersionInfo</definition>
         <argsstring>(const wxString &amp;backend=wxWebViewBackendDefault)</argsstring>
         <name>GetBackendVersionInfo</name>
+        <qualifiedname>wxWebView::GetBackendVersionInfo</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>backend</declname>
@@ -1582,20 +1705,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webview.h" line="549" column="26"/>
+        <location file="interface/wx/webview.h" line="585" column="26"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>This control may be used to render web (HTML / CSS / javascript) documents. </para>
     </briefdescription>
     <detaileddescription>
-<para>It is designed to allow the creation of multiple backends for each port, although currently just one is available. It differs from <ref refid="classwx_html_window" kindref="compound">wxHtmlWindow</ref> in that each backend is actually a full rendering engine, Internet Explorer or Edge on MSW and WebKit on macOS and GTK. This allows the correct viewing of complex pages with javascript and css.</para>
-<sect1 id="classwx_web_view_1descriptions">
-<title>Implementation Descriptions</title>
+<para>It is designed to allow the creation of multiple backends for each port, although currently just one is available. It differs from <ref refid="classwx_html_window" kindref="compound">wxHtmlWindow</ref> in that each backend is actually a full rendering engine, Internet Explorer or Edge on MSW and WebKit on macOS and GTK. This allows the correct viewing of complex pages with JavaScript and CSS.</para>
+<sect1 id="classwx_web_view_1backend_descriptions">
+<title>Backend Descriptions</title>
+<para>This class supports using multiple backends, corresponding to different implementations of the same functionality. Under macOS and Unix platforms only a single, WebKit-based, backend is currently provided, but under MSW both the legacy IE backend and the new Edge backend exist. Backends are identified by their names, documented in the backend descriptions below.</para>
 <sect2 id="classwx_web_view_1wxWEBVIEW_BACKEND_IE">
 <title>wxWEBVIEW_BACKEND_IE (MSW)</title>
 <para>The IE backend uses Microsoft&apos;s <ulink url="http://msdn.microsoft.com/en-us/library/aa752085%28v=VS.85%29.aspx">WebBrowser</ulink> control, which depends the locally installed version of Internet Explorer. By default this backend emulates Internet Explorer 7. This can be changed with a registry setting by <ref refid="classwx_web_view_i_e_1a7a45d02cb7dd6dbfcc09566449a1f3bd" kindref="member">wxWebViewIE::MSWSetEmulationLevel()</ref> see <ulink url="http://msdn.microsoft.com/en-us/library/ee330730%28v=vs.85%29.aspx#browser_emulation">this</ulink> article for more information.</para>
 <para>This backend has full support for custom schemes and virtual file systems.</para>
+<para>The predefined <computeroutput>wxWebViewBackendIE</computeroutput> constant contains the name of this backend and can be used to explicitly select it when using <ref refid="classwx_web_view_1a81870308b11a95042b72ab570563c618" kindref="member">wxWebView::New()</ref>.</para>
 <para><simplesect kind="note"><para>If you plan to display any modern web content you should consider using <ref refid="classwx_web_view_1wxWEBVIEW_BACKEND_EDGE" kindref="member">wxWEBVIEW_BACKEND_EDGE (MSW)</ref>, as Internet Explorer is not supported anymore by Microsoft.</para>
 </simplesect>
 </para>
@@ -1608,7 +1733,7 @@
 <listitem><para>Visual Studio 2015 or newer, or GCC/Clang with c++11 is required</para>
 </listitem><listitem><para>With CMake just enable <computeroutput>wxUSE_WEBVIEW_EDGE</computeroutput> </para>
 </listitem><listitem><para>When not using CMake:<itemizedlist>
-<listitem><para>Download the <ulink url="https://aka.ms/webviewnuget">WebView2 SDK</ulink> nuget package (Version 1.0.622.22 or newer)</para>
+<listitem><para>Download the <ulink url="https://aka.ms/webviewnuget">WebView2 SDK</ulink> nuget package (Version 1.0.705.50 or newer)</para>
 </listitem><listitem><para>Extract the package (it&apos;s a zip archive) to <computeroutput>wxWidgets/3rdparty/webview2</computeroutput> (you should have <computeroutput>3rdparty/webview2/build/native/include/WebView2.h</computeroutput> file after unpacking it)</para>
 </listitem><listitem><para>Enable <computeroutput>wxUSE_WEBVIEW_EDGE</computeroutput> in <computeroutput>setup.h</computeroutput> </para>
 </listitem></itemizedlist>
@@ -1617,26 +1742,31 @@
 </listitem><listitem><para>Copy <computeroutput>WebView2Loader.dll</computeroutput> from the subdirectory corresponding to the architecture used (x86 or x64) of <computeroutput>wxWidgets/3rdparty/webview2/build/</computeroutput> to your applications executable</para>
 </listitem><listitem><para>At runtime you can use <ref refid="classwx_web_view_1abcfff9aae99fe107622887e864fda512" kindref="member">wxWebView::IsBackendAvailable()</ref> to check if the backend can be used (it will be available if <computeroutput>WebView2Loader.dll</computeroutput> can be loaded and Edge (Chromium) is installed)</para>
 </listitem><listitem><para>Make sure to add a note about using the WebView2 SDK to your application documentation, as required by its licence</para>
+</listitem><listitem><para>With Visual Studio 2019 or newer <computeroutput>wxUSE_WEBVIEW_EDGE_STATIC</computeroutput> can be used to static link the loader and remove the dependency on <computeroutput>WebView2Loader.dll</computeroutput> at runtime.</para>
 </listitem></itemizedlist>
 </para>
-<para>If enabled and available at runtime Edge will be selected as the default backend. If you require the IE backend use <computeroutput>wxWEBVIEW_BACKEND_IE</computeroutput> when using <ref refid="classwx_web_view_1a81870308b11a95042b72ab570563c618" kindref="member">wxWebView::New()</ref>.</para>
+<para>If enabled and available at runtime Edge will be selected as the default backend. If you require the IE backend use <computeroutput>wxWebViewBackendIE</computeroutput> when using <ref refid="classwx_web_view_1a81870308b11a95042b72ab570563c618" kindref="member">wxWebView::New()</ref>.</para>
 <para>If your application should use a <ulink url="https://docs.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution#fixed-version-distribution-mode">fixed version</ulink> of the WebView2 runtime you must use <ref refid="classwx_web_view_edge_1acf603d714e7a7b5f131097b7a6790c0a" kindref="member">wxWebViewEdge::MSWSetBrowserExecutableDir()</ref> to specify its usage before using the Edge backend.</para>
+<para>The predefined <computeroutput>wxWebViewBackendEdge</computeroutput> constant contains the name of this backend.</para>
 </sect2>
 <sect2 id="classwx_web_view_1wxWEBVIEW_WEBKIT">
 <title>wxWEBVIEW_WEBKIT (GTK)</title>
 <para>Under GTK the WebKit backend uses <ulink url="http://webkitgtk.org/">WebKitGTK+</ulink>. The current minimum version required is 1.3.1 which ships by default with Ubuntu Natty and Debian Wheezy and has the package name libwebkitgtk-dev.</para>
 <para>Custom schemes and virtual files systems are supported under this backend, however embedded resources such as images and stylesheets are currently loaded using the data:// scheme.</para>
+<para>The predefined <computeroutput>wxWebViewBackendWebKit</computeroutput> constant contains the name of this backend.</para>
 </sect2>
 <sect2 id="classwx_web_view_1wxWEBVIEW_WEBKIT2">
 <title>wxWEBVIEW_WEBKIT2 (GTK3)</title>
 <para>Under GTK3 the WebKit2 version of <ulink url="http://webkitgtk.org/">WebKitGTK+</ulink> is used. In Ubuntu the required package name is libwebkit2gtk-4.0-dev and under Fedora it is webkitgtk4-devel.</para>
 <para>All features are supported except for clearing and enabling / disabling the history.</para>
+<para>The predefined <computeroutput>wxWebViewBackendWebKit</computeroutput> constant contains the name of this backend.</para>
 </sect2>
 <sect2 id="classwx_web_view_1wxWEBVIEW_WEBKIT_MACOS">
 <title>wxWEBVIEW_WEBKIT (macOS)</title>
 <para>The macOS WebKit backend uses Apple&apos;s <ulink url="https://developer.apple.com/documentation/webkit/wkwebview">WKWebView</ulink> class.</para>
 <para>This backend has full support for custom schemes and virtual file systems on macOS 10.13+. In order to use handlers two-step creation has to be used and <ref refid="classwx_web_view_1a7f97f428ac96426dd84bfd1b7406dbc2" kindref="member">RegisterHandler()</ref> has to be called before <ref refid="classwx_web_view_1ad20a4d4a98ce4f8a096e4e6da52f9560" kindref="member">Create()</ref>.</para>
 <para>Starting with macOS 10.11 and iOS 9 an application cannot create unsecure connections (this includes HTTP and unverified HTTPS). You have to include additional fields in your Info.plist to enable such connections. For further details see the documentation on NSAppTransportSecurity <ulink url="https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity">here</ulink></para>
+<para>The predefined <computeroutput>wxWebViewBackendWebKit</computeroutput> constant contains the name of this backend.</para>
 </sect2>
 </sect1>
 <sect1 id="classwx_web_view_1async">
@@ -1648,8 +1778,7 @@
 <para><ref refid="classwx_web_view" kindref="compound">wxWebView</ref> supports the registering of custom scheme handlers, for example <computeroutput>file</computeroutput> or <computeroutput>http</computeroutput>. To do this create a new class which inherits from <ref refid="classwx_web_view_handler" kindref="compound">wxWebViewHandler</ref>, where wxWebHandler::GetFile() returns a pointer to a <ref refid="classwx_f_s_file" kindref="compound">wxFSFile</ref> which represents the given url. You can then register your handler with <ref refid="classwx_web_view_1a7f97f428ac96426dd84bfd1b7406dbc2" kindref="member">RegisterHandler()</ref> it will be called for all pages and resources.</para>
 <para><ref refid="classwx_web_view_f_s_handler" kindref="compound">wxWebViewFSHandler</ref> is provided to access the virtual file system encapsulated by <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref>. The <ref refid="classwx_memory_f_s_handler" kindref="compound">wxMemoryFSHandler</ref> documentation gives an example of how this may be used.</para>
 <para><ref refid="classwx_web_view_archive_handler" kindref="compound">wxWebViewArchiveHandler</ref> is provided to allow the navigation of pages inside a zip archive. It supports paths of the form: <computeroutput>scheme:///C</computeroutput>:/example/docs.zip;protocol=zip/main.htm</para>
-<para><linebreak/>
-<heading level="2">Events emitted by this class</heading>
+<para><heading level="2">Events emitted by this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_web_view_event" kindref="compound">wxWebViewEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros for events emitted by this class: <itemizedlist>
@@ -1667,15 +1796,17 @@
 </listitem>
 <listitem><para>EVT_WEBVIEW_FULL_SCREEN_CHANGED(id,  func): Process a <computeroutput>EVT_WEBVIEW_FULL_SCREEN_CHANGED</computeroutput> event, generated when the page wants to enter or leave fullscreen. Use GetInt to get the status. Not implemented for the IE backend and is only available in wxWidgets 3.1.5 or later. </para>
 </listitem>
-<listitem><para>EVT_WEBVIEW_SCRIPT_MESSAGE_RECEIVED(id,  func): Process a <computeroutput>wxEVT_WEBVIEW_SCRIPT_MESSAGE_RECEIVED</computeroutput> event only available in wxWidgets 3.1.5 or later. For usage details see <ref refid="classwx_web_view_1a2597c3371ed654bf03262ec6d34a0126" kindref="member">AddScriptMessageHandler()</ref>. <linebreak/>
- <simplesect kind="since"><para>2.9.3 <heading level="2"></heading>
-</para>
-</simplesect>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxwebview" kindref="member">wxWebView</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ , \ &lt;/&gt;&lt;/&gt; <simplesect kind="see"><para><ref refid="classwx_web_view_handler" kindref="compound">wxWebViewHandler</ref>, <ref refid="classwx_web_view_event" kindref="compound">wxWebViewEvent</ref> </para>
-</simplesect>
-</para>
+<listitem><para>EVT_WEBVIEW_SCRIPT_MESSAGE_RECEIVED(id,  func): Process a <computeroutput>wxEVT_WEBVIEW_SCRIPT_MESSAGE_RECEIVED</computeroutput> event only available in wxWidgets 3.1.5 or later. For usage details see <ref refid="classwx_web_view_1a2597c3371ed654bf03262ec6d34a0126" kindref="member">AddScriptMessageHandler()</ref>. </para>
+</listitem>
+<listitem><para>wxEVT_WEBVIEW_SCRIPT_RESULT(id,  func): Process a <computeroutput>wxEVT_WEBVIEW_SCRIPT_RESULT</computeroutput> event only available in wxWidgets 3.1.6 or later. For usage details see <ref refid="classwx_web_view_1a01f497a1f71672706ab62e85d7363aa7" kindref="member">RunScriptAsync()</ref>. </para>
 </listitem>
 </itemizedlist>
+<simplesect kind="since"><para>2.9.3 <heading level="2"></heading>
+</para>
+</simplesect>
+Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxwebview" kindref="member">wxWebView</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__ctrl" kindref="compound">Controls</ref>, <ref refid="group__group__class__webview" kindref="compound">WebView</ref> <simplesect kind="see"><para><ref refid="classwx_web_view_handler" kindref="compound">wxWebViewHandler</ref>, <ref refid="classwx_web_view_event" kindref="compound">wxWebViewEvent</ref> </para>
+</simplesect>
 </para>
 </sect1>
     </detaileddescription>
@@ -1770,7 +1901,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/webview.h" line="474" column="1" bodyfile="interface/wx/webview.h" bodystart="475" bodyend="1116"/>
+    <location file="interface/wx/webview.h" line="502" column="1" bodyfile="interface/wx/webview.h" bodystart="503" bodyend="1180"/>
     <listofallmembers>
       <member refid="classwx_window_1a1da8baa734b9872d0c085b86a7b5d817" prot="public" virt="virtual"><scope>wxWebView</scope><name>AcceptsFocus</name></member>
       <member refid="classwx_window_1a3a0cb3bd5e82462b19df9f24ad6d9ac4" prot="public" virt="virtual"><scope>wxWebView</scope><name>AcceptsFocusFromKeyboard</name></member>
@@ -1869,6 +2000,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1a71f45373a9fc55e128d263391093c32a" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1ad122671fcef564f7e11658c3ee0d4d87" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1aee63c8b1f8055fef76962578aa7f38c1" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>FromDIP</name></member>
+      <member refid="classwx_window_1a144678f0b197268aa9d8d81b76a150a7" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a048d540d731ac83550c206df4af04270" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1ac3f185cef9f6a645be63b9b62afae46a" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a2fe6412d36c2b81c0dd3eeb1dd8bd004" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1af1ddb23778f531a56f2e1aa937a66d9c" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a27efab91147b0ffeee600f02059c23fc" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>FromPhys</name></member>
       <member refid="classwx_window_1a9cf3fd71ffab949cdf06f8f8e2646d56" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>GetAcceleratorTable</name></member>
       <member refid="classwx_window_1a00547805ce11e2ba64607d31fc2c67e2" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>GetAccessible</name></member>
       <member refid="classwx_window_1a64e3f936ab812d24966827ea4e0f15c0" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>GetAutoLayout</name></member>
@@ -2078,6 +2215,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_web_view_1a7b33f76f97adf735e8e6896bc829d32f" prot="public" virt="virtual"><scope>wxWebView</scope><name>RemoveScriptMessageHandler</name></member>
       <member refid="classwx_window_1a7977b749284e65aecfed2ce146799cb9" prot="public" virt="virtual"><scope>wxWebView</scope><name>Reparent</name></member>
       <member refid="classwx_web_view_1a67000a368c45f3684efd460d463ffb98" prot="public" virt="pure-virtual"><scope>wxWebView</scope><name>RunScript</name></member>
+      <member refid="classwx_web_view_1a01f497a1f71672706ab62e85d7363aa7" prot="public" virt="virtual"><scope>wxWebView</scope><name>RunScriptAsync</name></member>
       <member refid="classwx_window_1a0f9814efc50316b4c57b7ec2bf78b716" prot="protected" virt="non-virtual"><scope>wxWebView</scope><name>SafelyProcessEvent</name></member>
       <member refid="classwx_window_1a09aca554d41d6e771d3dc72f26b9cacc" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>ScreenToClient</name></member>
       <member refid="classwx_window_1a5f4dab599fda780823841bb2fe5f2f99" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>ScreenToClient</name></member>
@@ -2173,6 +2311,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1aef413f1d0252a7a5a29512e8ab5e7c91" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a1771a46c000060619f6e1249ce362433" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a8a4fa47129de552bfec37db8c69688a2" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>ToggleWindowStyle</name></member>
+      <member refid="classwx_window_1a5d3a9450e6b6f44c6b7d0d4a002fa40f" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1afca50ba59976ad9913148fffd38ff0ef" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1ad0bea5e21d33d00d0cf19c011bad39bf" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aaf0ac2191826f233f04bffa900dbc357" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aef56d76b1cacdca83daebffcc385d6db" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1a6797f4c9656276796031b9846ecc20b6" prot="public" virt="non-virtual"><scope>wxWebView</scope><name>ToPhys</name></member>
       <member refid="classwx_window_1ab8e51f36e7d8790b361c8d8c6f37b1ad" prot="public" virt="virtual"><scope>wxWebView</scope><name>TransferDataFromWindow</name></member>
       <member refid="classwx_window_1a88cc65e424a129d9b0057756cdb67ec9" prot="public" virt="virtual"><scope>wxWebView</scope><name>TransferDataToWindow</name></member>
       <member refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" prot="protected" virt="virtual"><scope>wxWebView</scope><name>TryAfter</name></member>

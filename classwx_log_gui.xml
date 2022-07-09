@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_log_gui" kind="class" language="C++" prot="public">
     <compoundname>wxLogGui</compoundname>
     <basecompoundref refid="classwx_log" prot="public" virt="non-virtual">wxLog</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxArrayString wxLogGui::m_aMessages</definition>
         <argsstring></argsstring>
         <name>m_aMessages</name>
+        <qualifiedname>wxLogGui::m_aMessages</qualifiedname>
         <briefdescription>
 <para>All currently accumulated messages. </para>
         </briefdescription>
@@ -28,6 +29,7 @@
         <definition>wxArrayInt wxLogGui::m_aSeverity</definition>
         <argsstring></argsstring>
         <name>m_aSeverity</name>
+        <qualifiedname>wxLogGui::m_aSeverity</qualifiedname>
         <briefdescription>
 <para>The severities of each logged message. </para>
         </briefdescription>
@@ -43,6 +45,7 @@
         <definition>wxArrayLong wxLogGui::m_aTimes</definition>
         <argsstring></argsstring>
         <name>m_aTimes</name>
+        <qualifiedname>wxLogGui::m_aTimes</qualifiedname>
         <briefdescription>
 <para>The time stamps of each logged message. </para>
         </briefdescription>
@@ -58,6 +61,7 @@
         <definition>bool wxLogGui::m_bErrors</definition>
         <argsstring></argsstring>
         <name>m_bErrors</name>
+        <qualifiedname>wxLogGui::m_bErrors</qualifiedname>
         <briefdescription>
 <para>True if there any error messages. </para>
         </briefdescription>
@@ -72,6 +76,7 @@
         <definition>bool wxLogGui::m_bWarnings</definition>
         <argsstring></argsstring>
         <name>m_bWarnings</name>
+        <qualifiedname>wxLogGui::m_bWarnings</qualifiedname>
         <briefdescription>
 <para>True if there any warning messages. </para>
         </briefdescription>
@@ -87,6 +92,7 @@
         <definition>bool wxLogGui::m_bHasMessages</definition>
         <argsstring></argsstring>
         <name>m_bHasMessages</name>
+        <qualifiedname>wxLogGui::m_bHasMessages</qualifiedname>
         <briefdescription>
 <para>True if there any messages to be shown to the user. </para>
         </briefdescription>
@@ -104,6 +110,7 @@
         <definition>wxLogGui::wxLogGui</definition>
         <argsstring>()</argsstring>
         <name>wxLogGui</name>
+        <qualifiedname>wxLogGui::wxLogGui</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -118,6 +125,7 @@
         <definition>virtual void wxLogGui::Flush</definition>
         <argsstring>()</argsstring>
         <name>Flush</name>
+        <qualifiedname>wxLogGui::Flush</qualifiedname>
         <reimplements refid="classwx_log_1a21f8a2a7d83bd17a0e89bbe7dd7e6feb">Flush</reimplements>
         <briefdescription>
 <para>Presents the accumulated log messages, if any, to the user. </para>
@@ -136,6 +144,7 @@
         <definition>wxString wxLogGui::GetTitle</definition>
         <argsstring>() const</argsstring>
         <name>GetTitle</name>
+        <qualifiedname>wxLogGui::GetTitle</qualifiedname>
         <briefdescription>
 <para>Returns the appropriate title for the dialog. </para>
         </briefdescription>
@@ -151,6 +160,7 @@
         <definition>int wxLogGui::GetSeverityIcon</definition>
         <argsstring>() const</argsstring>
         <name>GetSeverityIcon</name>
+        <qualifiedname>wxLogGui::GetSeverityIcon</qualifiedname>
         <briefdescription>
 <para>Returns wxICON_ERROR, wxICON_WARNING or wxICON_INFORMATION depending on the current maximal severity. </para>
         </briefdescription>
@@ -166,6 +176,7 @@
         <definition>void wxLogGui::Clear</definition>
         <argsstring>()</argsstring>
         <name>Clear</name>
+        <qualifiedname>wxLogGui::Clear</qualifiedname>
         <briefdescription>
 <para>Forgets all the currently stored messages. </para>
         </briefdescription>
@@ -183,6 +194,7 @@
         <definition>virtual void wxLogGui::DoShowSingleLogMessage</definition>
         <argsstring>(const wxString &amp;message, const wxString &amp;title, int style)</argsstring>
         <name>DoShowSingleLogMessage</name>
+        <qualifiedname>wxLogGui::DoShowSingleLogMessage</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>message</declname>
@@ -236,6 +248,7 @@
         <definition>virtual void wxLogGui::DoShowMultipleLogMessages</definition>
         <argsstring>(const wxArrayString &amp;messages, const wxArrayInt &amp;severities, const wxArrayLong &amp;times, const wxString &amp;title, int style)</argsstring>
         <name>DoShowMultipleLogMessages</name>
+        <qualifiedname>wxLogGui::DoShowMultipleLogMessages</qualifiedname>
         <param>
           <type>const <ref refid="classwx_array_string" kindref="compound">wxArrayString</ref> &amp;</type>
           <declname>messages</declname>
@@ -320,7 +333,8 @@
 <para>However if only a single message is present when <ref refid="classwx_log_gui_1ac7614396e348c3472bd8d28ba86d782a" kindref="member">Flush()</ref> is called, just a <ref refid="msgdlg_8h_1a193c64ed4802e379799cdb42de252647" kindref="member">wxMessageBox()</ref> is used to show it. This has the advantage of being closer to the native behaviour but it doesn&apos;t give the user any possibility to copy or save the message (except for the recent Windows versions where <computeroutput>Ctrl-C</computeroutput> may be pressed in the message box to copy its contents to the clipboard) so you may want to override <ref refid="classwx_log_gui_1ad336562c034b857d97bbf2142d89ae82" kindref="member">DoShowSingleLogMessage()</ref> to customize <ref refid="classwx_log_gui" kindref="compound">wxLogGui</ref> <ndash/> the dialogs sample shows how to do this.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__logging" kindref="compound">Logging</ref> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_command" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxCommand</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -11,6 +11,7 @@
         <definition>wxCommand::wxCommand</definition>
         <argsstring>(bool canUndo=false, const wxString &amp;name=wxEmptyString)</argsstring>
         <name>wxCommand</name>
+        <qualifiedname>wxCommand::wxCommand</qualifiedname>
         <param>
           <type>bool</type>
           <declname>canUndo</declname>
@@ -54,6 +55,7 @@
         <definition>virtual wxCommand::~wxCommand</definition>
         <argsstring>()</argsstring>
         <name>~wxCommand</name>
+        <qualifiedname>wxCommand::~wxCommand</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -68,6 +70,7 @@
         <definition>virtual bool wxCommand::CanUndo</definition>
         <argsstring>() const</argsstring>
         <name>CanUndo</name>
+        <qualifiedname>wxCommand::CanUndo</qualifiedname>
         <briefdescription>
 <para>Returns true if the command can be undone, false otherwise. </para>
         </briefdescription>
@@ -82,6 +85,7 @@
         <definition>virtual bool wxCommand::Do</definition>
         <argsstring>()=0</argsstring>
         <name>Do</name>
+        <qualifiedname>wxCommand::Do</qualifiedname>
         <reimplementedby refid="classwx_rich_text_command_1a8308209288049a5f31efb384e43b9e15">Do</reimplementedby>
         <briefdescription>
 <para>Override this member function to execute the appropriate action when called. </para>
@@ -100,6 +104,7 @@
         <definition>virtual wxString wxCommand::GetName</definition>
         <argsstring>() const</argsstring>
         <name>GetName</name>
+        <qualifiedname>wxCommand::GetName</qualifiedname>
         <briefdescription>
 <para>Returns the command name. </para>
         </briefdescription>
@@ -114,6 +119,7 @@
         <definition>virtual bool wxCommand::Undo</definition>
         <argsstring>()=0</argsstring>
         <name>Undo</name>
+        <qualifiedname>wxCommand::Undo</qualifiedname>
         <reimplementedby refid="classwx_rich_text_command_1afc5f9fd334b50a8d9994c4f23274f922">Undo</reimplementedby>
         <briefdescription>
 <para>Override this member function to un-execute a previous Do. </para>
@@ -141,7 +147,8 @@
     <detaileddescription>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__docview" kindref="compound">Document/View Framework</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_docview_1overview_docview_wxcommand" kindref="member">wxCommand Overview</ref> </para>
 </simplesect>
 </para>

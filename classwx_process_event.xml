@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_process_event" kind="class" language="C++" prot="public">
     <compoundname>wxProcessEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxProcessEvent::wxProcessEvent</definition>
         <argsstring>(int id=0, int pid=0, int exitcode=0)</argsstring>
         <name>wxProcessEvent</name>
+        <qualifiedname>wxProcessEvent::wxProcessEvent</qualifiedname>
         <param>
           <type>int</type>
           <declname>id</declname>
@@ -40,6 +41,7 @@
         <definition>int wxProcessEvent::GetExitCode</definition>
         <argsstring>() const</argsstring>
         <name>GetExitCode</name>
+        <qualifiedname>wxProcessEvent::GetExitCode</qualifiedname>
         <briefdescription>
 <para>Returns the exist status. </para>
         </briefdescription>
@@ -54,6 +56,7 @@
         <definition>int wxProcessEvent::GetPid</definition>
         <argsstring>() const</argsstring>
         <name>GetPid</name>
+        <qualifiedname>wxProcessEvent::GetPid</qualifiedname>
         <briefdescription>
 <para>Returns the process id. </para>
         </briefdescription>
@@ -68,17 +71,17 @@
 <para>A process event is sent to the <ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref> specified to <ref refid="classwx_process" kindref="compound">wxProcess</ref> when a process is terminated. </para>
     </briefdescription>
     <detaileddescription>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_process_event" kindref="compound">wxProcessEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
-<listitem><para>EVT_END_PROCESS(id,  func): Process a <computeroutput>wxEVT_END_PROCESS</computeroutput> event. <emphasis>id</emphasis> is the identifier of the process object (the id passed to the <ref refid="classwx_process" kindref="compound">wxProcess</ref> constructor) or a window to receive the event. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_END_PROCESS(id,  func): Process a <computeroutput>wxEVT_END_PROCESS</computeroutput> event. <emphasis>id</emphasis> is the identifier of the process object (the id passed to the <ref refid="classwx_process" kindref="compound">wxProcess</ref> constructor) or a window to receive the event. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_process" kindref="compound">wxProcess</ref>, <ref refid="overview_events" kindref="compound">Events and Event Handling</ref> </para>
 </simplesect>
 </para>

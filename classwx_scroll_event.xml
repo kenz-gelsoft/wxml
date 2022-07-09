@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_scroll_event" kind="class" language="C++" prot="public">
     <compoundname>wxScrollEvent</compoundname>
     <basecompoundref refid="classwx_command_event" prot="public" virt="non-virtual">wxCommandEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxScrollEvent::wxScrollEvent</definition>
         <argsstring>(wxEventType commandType=wxEVT_NULL, int id=0, int pos=0, int orientation=0)</argsstring>
         <name>wxScrollEvent</name>
+        <qualifiedname>wxScrollEvent::wxScrollEvent</qualifiedname>
         <param>
           <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
           <declname>commandType</declname>
@@ -37,13 +38,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3797" column="5"/>
+        <location file="interface/wx/event.h" line="3865" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scroll_event_1a8be98254dc58119e1e08d819034f86a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxScrollEvent::GetOrientation</definition>
         <argsstring>() const</argsstring>
         <name>GetOrientation</name>
+        <qualifiedname>wxScrollEvent::GetOrientation</qualifiedname>
         <briefdescription>
 <para>Returns wxHORIZONTAL or wxVERTICAL, depending on the orientation of the scrollbar. </para>
         </briefdescription>
@@ -51,13 +53,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3804" column="9"/>
+        <location file="interface/wx/event.h" line="3872" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scroll_event_1a84e3dd8a0a47dbe0d49d55442900f495" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxScrollEvent::GetPosition</definition>
         <argsstring>() const</argsstring>
         <name>GetPosition</name>
+        <qualifiedname>wxScrollEvent::GetPosition</qualifiedname>
         <briefdescription>
 <para>Returns the position of the scrollbar. </para>
         </briefdescription>
@@ -65,13 +68,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3809" column="9"/>
+        <location file="interface/wx/event.h" line="3877" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scroll_event_1acbe59c387a80ef7b98f9c0f2308e7ab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxScrollEvent::SetOrientation</definition>
         <argsstring>(int orient)</argsstring>
         <name>SetOrientation</name>
+        <qualifiedname>wxScrollEvent::SetOrientation</qualifiedname>
         <param>
           <type>int</type>
           <declname>orient</declname>
@@ -82,13 +86,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3812" column="10"/>
+        <location file="interface/wx/event.h" line="3880" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_scroll_event_1a89ec1c45caac5f2548ad7875124e5a6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxScrollEvent::SetPosition</definition>
         <argsstring>(int pos)</argsstring>
         <name>SetPosition</name>
+        <qualifiedname>wxScrollEvent::SetPosition</qualifiedname>
         <param>
           <type>int</type>
           <declname>pos</declname>
@@ -99,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3813" column="10"/>
+        <location file="interface/wx/event.h" line="3881" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -114,7 +119,6 @@
 <para>In short, the EVT_SCROLL_CHANGED event is triggered when scrolling/ moving has finished independently of the way it had started. Please see the <ref refid="page_samples_1page_samples_widgets" kindref="member">Widgets Sample</ref> (&quot;Slider&quot; page) to see the difference between EVT_SCROLL_THUMBRELEASE and EVT_SCROLL_CHANGED in action.</para>
 <para><simplesect kind="remark"><para>Note that unless specifying a scroll control identifier, you will need to test for scrollbar orientation with <ref refid="classwx_scroll_event_1a8be98254dc58119e1e08d819034f86a2" kindref="member">wxScrollEvent::GetOrientation</ref>, since horizontal and vertical scroll events are processed using the same event handler.</para>
 </simplesect>
-<linebreak/>
 <heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_scroll_event" kindref="compound">wxScrollEvent</ref>&amp;<nonbreakablespace/>event)</para>
@@ -157,12 +161,13 @@
 </listitem>
 <listitem><para>EVT_COMMAND_SCROLL_THUMBRELEASE(func): Process <computeroutput>wxEVT_SCROLL_THUMBRELEASE</computeroutput> thumb release events. </para>
 </listitem>
-<listitem><para>EVT_COMMAND_SCROLL_CHANGED(func): Process <computeroutput>wxEVT_SCROLL_CHANGED</computeroutput> end of scrolling events (MSW only). <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_COMMAND_SCROLL_CHANGED(func): Process <computeroutput>wxEVT_SCROLL_CHANGED</computeroutput> end of scrolling events (MSW only). </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_scroll_bar" kindref="compound">wxScrollBar</ref>, <ref refid="classwx_slider" kindref="compound">wxSlider</ref>, <ref refid="classwx_spin_button" kindref="compound">wxSpinButton</ref>, <ref refid="classwx_scroll_win_event" kindref="compound">wxScrollWinEvent</ref>, <ref refid="overview_events" kindref="compound">Events and Event Handling</ref> </para>
 </simplesect>
 </para>
@@ -223,7 +228,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="3791" column="1" bodyfile="interface/wx/event.h" bodystart="3792" bodyend="3814"/>
+    <location file="interface/wx/event.h" line="3859" column="1" bodyfile="interface/wx/event.h" bodystart="3860" bodyend="3882"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxScrollEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxScrollEvent</scope><name>Clone</name></member>

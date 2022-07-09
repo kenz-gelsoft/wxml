@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_data_view_renderer" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxDataViewRenderer</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -19,6 +19,7 @@
         <definition>wxDataViewRenderer::wxDataViewRenderer</definition>
         <argsstring>(const wxString &amp;varianttype, wxDataViewCellMode mode=wxDATAVIEW_CELL_INERT, int align=wxDVR_DEFAULT_ALIGNMENT)</argsstring>
         <name>wxDataViewRenderer</name>
+        <qualifiedname>wxDataViewRenderer::wxDataViewRenderer</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>varianttype</declname>
@@ -37,16 +38,19 @@
 <para>Constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para>The <emphasis>varianttype</emphasis> parameter is the main type of <ref refid="classwx_variant" kindref="compound">wxVariant</ref> objects supported by this renderer, i.e. those that can be passed to its <ref refid="classwx_data_view_renderer_1ac4494f39d056c1b0976481647b24117f" kindref="member">SetValue()</ref>, e.g. &quot;string&quot; for <ref refid="classwx_data_view_text_renderer" kindref="compound">wxDataViewTextRenderer</ref>. The value of this parameter is returned by <ref refid="classwx_data_view_renderer_1aaa95f8d49da1b296df8bedd1f76ecc28" kindref="member">GetVariantType()</ref>.</para>
+<para>When deriving a custom renderer, either an existing variant type or a new custom one can be used, see <ref refid="classwx_variant" kindref="compound">wxVariant</ref> documentation for more details. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="1959" column="5"/>
+        <location file="interface/wx/dataview.h" line="1980" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1aeea4804c641149896b8e213bba672e64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxDataViewRenderer::EnableEllipsize</definition>
         <argsstring>(wxEllipsizeMode mode=wxELLIPSIZE_MIDDLE)</argsstring>
         <name>EnableEllipsize</name>
+        <qualifiedname>wxDataViewRenderer::EnableEllipsize</qualifiedname>
         <param>
           <type><ref refid="gdicmn_8h_1a0293befa07fe89f6efd8caec89c3b489" kindref="member">wxEllipsizeMode</ref></type>
           <declname>mode</declname>
@@ -73,13 +77,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="1977" column="10"/>
+        <location file="interface/wx/dataview.h" line="1998" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1ad88c4e7dcf842d1ac56544ca85e72f9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxDataViewRenderer::DisableEllipsize</definition>
         <argsstring>()</argsstring>
         <name>DisableEllipsize</name>
+        <qualifiedname>wxDataViewRenderer::DisableEllipsize</qualifiedname>
         <briefdescription>
 <para>Disable replacing parts of the item text with ellipsis. </para>
         </briefdescription>
@@ -93,13 +98,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="1989" column="10"/>
+        <location file="interface/wx/dataview.h" line="2010" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a368362d97818135237cc244dc6f15809" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>virtual wxString wxDataViewRenderer::GetAccessibleDescription</definition>
         <argsstring>() const =0</argsstring>
         <name>GetAccessibleDescription</name>
+        <qualifiedname>wxDataViewRenderer::GetAccessibleDescription</qualifiedname>
         <briefdescription>
 <para>This method returns a string describing the content of the renderer to the class implementing accessibility features in <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref>. </para>
         </briefdescription>
@@ -112,13 +118,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2001" column="22"/>
+        <location file="interface/wx/dataview.h" line="2022" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a0137573f0ab266e4b05fe8237f830870" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>int</type>
         <definition>virtual int wxDataViewRenderer::GetAlignment</definition>
         <argsstring>() const</argsstring>
         <name>GetAlignment</name>
+        <qualifiedname>wxDataViewRenderer::GetAlignment</qualifiedname>
         <briefdescription>
 <para>Returns the alignment. </para>
         </briefdescription>
@@ -127,13 +134,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2006" column="17"/>
+        <location file="interface/wx/dataview.h" line="2027" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a452740b38d2d9ca5eb2fdb84ff50526f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="gdicmn_8h_1a0293befa07fe89f6efd8caec89c3b489" kindref="member">wxEllipsizeMode</ref></type>
         <definition>wxEllipsizeMode wxDataViewRenderer::GetEllipsizeMode</definition>
         <argsstring>() const</argsstring>
         <name>GetEllipsizeMode</name>
+        <qualifiedname>wxDataViewRenderer::GetEllipsizeMode</qualifiedname>
         <briefdescription>
 <para>Returns the ellipsize mode used by the renderer. </para>
         </briefdescription>
@@ -145,13 +153,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2016" column="21"/>
+        <location file="interface/wx/dataview.h" line="2037" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a17ce11df4e93b5a50bfa435cb9f93b35" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="dataview_8h_1a82ea89fa957cf47b29e59799429bda7e" kindref="member">wxDataViewCellMode</ref></type>
         <definition>virtual wxDataViewCellMode wxDataViewRenderer::GetMode</definition>
         <argsstring>() const</argsstring>
         <name>GetMode</name>
+        <qualifiedname>wxDataViewRenderer::GetMode</qualifiedname>
         <briefdescription>
 <para>Returns the cell mode. </para>
         </briefdescription>
@@ -159,13 +168,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2021" column="32"/>
+        <location file="interface/wx/dataview.h" line="2042" column="32"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1acb902597ff5a2023654a0ac1c045a381" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_data_view_column" kindref="compound">wxDataViewColumn</ref> *</type>
         <definition>wxDataViewColumn * wxDataViewRenderer::GetOwner</definition>
         <argsstring>() const</argsstring>
         <name>GetOwner</name>
+        <qualifiedname>wxDataViewRenderer::GetOwner</qualifiedname>
         <briefdescription>
 <para>Returns pointer to the owning <ref refid="classwx_data_view_column" kindref="compound">wxDataViewColumn</ref>. </para>
         </briefdescription>
@@ -173,13 +183,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2026" column="22"/>
+        <location file="interface/wx/dataview.h" line="2047" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1ad7c52082d76074cae4ceaf94e55cf604" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
         <definition>virtual bool wxDataViewRenderer::GetValue</definition>
         <argsstring>(wxVariant &amp;value) const =0</argsstring>
         <name>GetValue</name>
+        <qualifiedname>wxDataViewRenderer::GetValue</qualifiedname>
         <param>
           <type><ref refid="classwx_variant" kindref="compound">wxVariant</ref> &amp;</type>
           <declname>value</declname>
@@ -192,27 +203,53 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2034" column="18"/>
+        <location file="interface/wx/dataview.h" line="2055" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1aaa95f8d49da1b296df8bedd1f76ecc28" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxDataViewRenderer::GetVariantType</definition>
         <argsstring>() const</argsstring>
         <name>GetVariantType</name>
+        <qualifiedname>wxDataViewRenderer::GetVariantType</qualifiedname>
         <briefdescription>
 <para>Returns a string with the type of the <ref refid="classwx_variant" kindref="compound">wxVariant</ref> supported by this renderer. </para>
         </briefdescription>
         <detaileddescription>
+<para>Note that a renderer may support more than one variant type, in which case it needs to override <ref refid="classwx_data_view_renderer_1a04ec07fe8f62bb2366ccbd7d1b6d2da8" kindref="member">IsCompatibleVariantType()</ref> to return <emphasis>true</emphasis> for all types it supports. But by default only the type returned by this function is supported. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2039" column="14"/>
+        <location file="interface/wx/dataview.h" line="2065" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_data_view_renderer_1a04ec07fe8f62bb2366ccbd7d1b6d2da8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool wxDataViewRenderer::IsCompatibleVariantType</definition>
+        <argsstring>(const wxString &amp;variantType) const</argsstring>
+        <name>IsCompatibleVariantType</name>
+        <qualifiedname>wxDataViewRenderer::IsCompatibleVariantType</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>variantType</declname>
+        </param>
+        <briefdescription>
+<para>Check if the given variant type is compatible with the type expected by this renderer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The base class implementation just compares <emphasis>variantType</emphasis> with the value returned by <ref refid="classwx_data_view_renderer_1aaa95f8d49da1b296df8bedd1f76ecc28" kindref="member">GetVariantType()</ref>, but this function can be overridden to accept other types that can be converted to the type needed by the renderer.</para>
+<para><simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/dataview.h" line="2078" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a2c67ceb437b6c2d2280ca651712dec1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxDataViewRenderer::SetAlignment</definition>
         <argsstring>(int align)</argsstring>
         <name>SetAlignment</name>
+        <qualifiedname>wxDataViewRenderer::SetAlignment</qualifiedname>
         <param>
           <type>int</type>
           <declname>align</declname>
@@ -226,13 +263,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2050" column="18"/>
+        <location file="interface/wx/dataview.h" line="2089" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a388da7afbbf86971c1e945255344666c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxDataViewRenderer::SetOwner</definition>
         <argsstring>(wxDataViewColumn *owner)</argsstring>
         <name>SetOwner</name>
+        <qualifiedname>wxDataViewRenderer::SetOwner</qualifiedname>
         <param>
           <type><ref refid="classwx_data_view_column" kindref="compound">wxDataViewColumn</ref> *</type>
           <declname>owner</declname>
@@ -245,13 +283,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2055" column="10"/>
+        <location file="interface/wx/dataview.h" line="2094" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1ac4494f39d056c1b0976481647b24117f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
         <definition>virtual bool wxDataViewRenderer::SetValue</definition>
         <argsstring>(const wxVariant &amp;value)=0</argsstring>
         <name>SetValue</name>
+        <qualifiedname>wxDataViewRenderer::SetValue</qualifiedname>
         <param>
           <type>const <ref refid="classwx_variant" kindref="compound">wxVariant</ref> &amp;</type>
           <declname>value</declname>
@@ -260,17 +299,28 @@
 <para>Set the value of the renderer (and thus its cell) to <emphasis>value</emphasis>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The internal code will then render this cell with this data. </para>
+<para>The internal code will then render this cell with this data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid, i.e. non-null, value to be shown. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2061" column="18"/>
+        <location file="interface/wx/dataview.h" line="2102" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a6e7ed0fa9820b5f9f0a97b8cd82677a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxDataViewRenderer::SetValueAdjuster</definition>
         <argsstring>(wxDataViewValueAdjuster *transformer)</argsstring>
         <name>SetValueAdjuster</name>
+        <qualifiedname>wxDataViewRenderer::SetValueAdjuster</qualifiedname>
         <param>
           <type><ref refid="classwx_data_view_value_adjuster" kindref="compound">wxDataViewValueAdjuster</ref> *</type>
           <declname>transformer</declname>
@@ -290,13 +340,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2083" column="10"/>
+        <location file="interface/wx/dataview.h" line="2124" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a64c9df3410623498956ce5ed7524a9cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxDataViewRenderer::Validate</definition>
         <argsstring>(wxVariant &amp;value)</argsstring>
         <name>Validate</name>
+        <qualifiedname>wxDataViewRenderer::Validate</qualifiedname>
         <param>
           <type><ref refid="classwx_variant" kindref="compound">wxVariant</ref> &amp;</type>
           <declname>value</declname>
@@ -310,13 +361,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2096" column="18"/>
+        <location file="interface/wx/dataview.h" line="2137" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a71ba6f4bc0c54b83540660cdf40a64d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxDataViewRenderer::HasEditorCtrl</definition>
         <argsstring>() const</argsstring>
         <name>HasEditorCtrl</name>
+        <qualifiedname>wxDataViewRenderer::HasEditorCtrl</qualifiedname>
         <reimplementedby refid="classwx_data_view_custom_renderer_1a22c4cfbb75813a49da5b9297e5c5c8e8">HasEditorCtrl</reimplementedby>
         <briefdescription>
         </briefdescription>
@@ -324,13 +376,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2099" column="18"/>
+        <location file="interface/wx/dataview.h" line="2140" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a7aa7242adf07781af9a25dc64272c73a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
         <definition>virtual wxWindow * wxDataViewRenderer::CreateEditorCtrl</definition>
         <argsstring>(wxWindow *parent, wxRect labelRect, const wxVariant &amp;value)</argsstring>
         <name>CreateEditorCtrl</name>
+        <qualifiedname>wxDataViewRenderer::CreateEditorCtrl</qualifiedname>
         <reimplementedby refid="classwx_data_view_custom_renderer_1aa4eae092be8e25fd06eaac3ac5106e41">CreateEditorCtrl</reimplementedby>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
@@ -350,13 +403,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2100" column="22"/>
+        <location file="interface/wx/dataview.h" line="2141" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a6d35e275733f4da63414bf98855278f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxDataViewRenderer::GetValueFromEditorCtrl</definition>
         <argsstring>(wxWindow *editor, wxVariant &amp;value)</argsstring>
         <name>GetValueFromEditorCtrl</name>
+        <qualifiedname>wxDataViewRenderer::GetValueFromEditorCtrl</qualifiedname>
         <reimplementedby refid="classwx_data_view_custom_renderer_1a903359019fcc481b7b6a359d7f3845f2">GetValueFromEditorCtrl</reimplementedby>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
@@ -372,13 +426,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2103" column="18"/>
+        <location file="interface/wx/dataview.h" line="2144" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a2d5d351f5dff1194d0db45d5feb38a90" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxDataViewRenderer::StartEditing</definition>
         <argsstring>(const wxDataViewItem &amp;item, wxRect labelRect)</argsstring>
         <name>StartEditing</name>
+        <qualifiedname>wxDataViewRenderer::StartEditing</qualifiedname>
         <param>
           <type>const <ref refid="classwx_data_view_item" kindref="compound">wxDataViewItem</ref> &amp;</type>
           <declname>item</declname>
@@ -393,46 +448,49 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2105" column="18"/>
+        <location file="interface/wx/dataview.h" line="2146" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1a179780588351469d8c21a66bc2bc2b3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxDataViewRenderer::CancelEditing</definition>
         <argsstring>()</argsstring>
         <name>CancelEditing</name>
+        <qualifiedname>wxDataViewRenderer::CancelEditing</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2106" column="18"/>
+        <location file="interface/wx/dataview.h" line="2147" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1adad0f7c140a4ad6fc2c0935435631beb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxDataViewRenderer::FinishEditing</definition>
         <argsstring>()</argsstring>
         <name>FinishEditing</name>
+        <qualifiedname>wxDataViewRenderer::FinishEditing</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2107" column="18"/>
+        <location file="interface/wx/dataview.h" line="2148" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_renderer_1aecc01bf475dd5607bef9a9e1ef137ac5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
         <definition>wxWindow * wxDataViewRenderer::GetEditorCtrl</definition>
         <argsstring>()</argsstring>
         <name>GetEditorCtrl</name>
+        <qualifiedname>wxDataViewRenderer::GetEditorCtrl</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2108" column="14"/>
+        <location file="interface/wx/dataview.h" line="2149" column="14"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -441,13 +499,14 @@
         <definition>wxDataViewCtrl * wxDataViewRenderer::GetView</definition>
         <argsstring>() const</argsstring>
         <name>GetView</name>
+        <qualifiedname>wxDataViewRenderer::GetView</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2111" column="20"/>
+        <location file="interface/wx/dataview.h" line="2152" column="20"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -470,7 +529,8 @@
 <para>The <ref refid="dataview_8h_1a82ea89fa957cf47b29e59799429bda7e" kindref="member">wxDataViewCellMode</ref> and <ref refid="dataview_8h_1ac165875cd54c065f2aebcc7cd795ff6e" kindref="member">wxDataViewCellRenderState</ref> flags accepted by the constructors respectively controls what actions the cell data allows and how the renderer should display its contents in a cell.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__dvc" kindref="compound">wxDataViewCtrl Related Classes</ref> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="3">
@@ -569,7 +629,7 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/dataview.h" line="1953" column="1" bodyfile="interface/wx/dataview.h" bodystart="1954" bodyend="2112"/>
+    <location file="interface/wx/dataview.h" line="1965" column="1" bodyfile="interface/wx/dataview.h" bodystart="1966" bodyend="2153"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxDataViewRenderer</scope><name>AllocExclusive</name></member>
       <member refid="classwx_data_view_renderer_1a179780588351469d8c21a66bc2bc2b3d" prot="public" virt="virtual"><scope>wxDataViewRenderer</scope><name>CancelEditing</name></member>
@@ -592,6 +652,7 @@
       <member refid="classwx_data_view_renderer_1aaa95f8d49da1b296df8bedd1f76ecc28" prot="public" virt="non-virtual"><scope>wxDataViewRenderer</scope><name>GetVariantType</name></member>
       <member refid="classwx_data_view_renderer_1a7e5388a6978cd5577440bf58a03e2288" prot="protected" virt="non-virtual"><scope>wxDataViewRenderer</scope><name>GetView</name></member>
       <member refid="classwx_data_view_renderer_1a71ba6f4bc0c54b83540660cdf40a64d0" prot="public" virt="virtual"><scope>wxDataViewRenderer</scope><name>HasEditorCtrl</name></member>
+      <member refid="classwx_data_view_renderer_1a04ec07fe8f62bb2366ccbd7d1b6d2da8" prot="public" virt="virtual"><scope>wxDataViewRenderer</scope><name>IsCompatibleVariantType</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxDataViewRenderer</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxDataViewRenderer</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxDataViewRenderer</scope><name>m_refData</name></member>

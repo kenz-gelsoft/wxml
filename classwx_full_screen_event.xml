@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_full_screen_event" kind="class" language="C++" prot="public">
     <compoundname>wxFullScreenEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxFullScreenEvent::wxFullScreenEvent</definition>
         <argsstring>(int id=0, bool fullscreen=true)</argsstring>
         <name>wxFullScreenEvent</name>
+        <qualifiedname>wxFullScreenEvent::wxFullScreenEvent</qualifiedname>
         <param>
           <type>int</type>
           <declname>id</declname>
@@ -27,13 +28,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="2294" column="5"/>
+        <location file="interface/wx/event.h" line="2319" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_full_screen_event_1a7c9db63b24a83801c7b6d7f68d91bfc1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool wxFullScreenEvent::IsFullScreen</definition>
         <argsstring>() const</argsstring>
         <name>IsFullScreen</name>
+        <qualifiedname>wxFullScreenEvent::IsFullScreen</qualifiedname>
         <briefdescription>
 <para>Returns true if the frame entered full screen, false if exited full screen. </para>
         </briefdescription>
@@ -41,28 +43,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="2300" column="10"/>
+        <location file="interface/wx/event.h" line="2325" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>An event being sent when the user enters or exits full screen mode. </para>
     </briefdescription>
     <detaileddescription>
-<para>Currently this event is only generated in the wxOSX/Cocoa port when <ref refid="classwx_top_level_window_1a762c78d588fc19894aa71bfdacbd682f" kindref="member">wxTopLevelWindow::EnableFullScreenView()</ref> is enabled and the user the user enters or exits full screen. Note that this event is <emphasis>not</emphasis> generated when <ref refid="classwx_top_level_window_1ab4089f1274bcb74e5f7763d1fb84ee28" kindref="member">wxTopLevelWindow::ShowFullScreen()</ref>.</para>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para>Currently this event is only generated in the wxOSX/Cocoa port when <ref refid="classwx_top_level_window_1abcc1ee1837105b622512b3bc3347770c" kindref="member">wxTopLevelWindow::EnableFullScreenView()</ref> is enabled and the user the user enters or exits full screen. Note that this event is <emphasis>not</emphasis> generated when <ref refid="classwx_top_level_window_1ab4089f1274bcb74e5f7763d1fb84ee28" kindref="member">wxTopLevelWindow::ShowFullScreen()</ref>.</para>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_full_screen_event" kindref="compound">wxFullScreenEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
-<listitem><para>EVT_FULLSCREEN(func): Process a <computeroutput>wxEVT_FULLSCREEN</computeroutput> event. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_FULLSCREEN(func): Process a <computeroutput>wxEVT_FULLSCREEN</computeroutput> event. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="since"><para>3.1.5</para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="overview_events" kindref="compound">Events and Event Handling</ref>, <ref refid="classwx_top_level_window_1a762c78d588fc19894aa71bfdacbd682f" kindref="member">wxTopLevelWindow::EnableFullScreenView</ref>, <ref refid="classwx_top_level_window_1a865e3244aca58679dab610df06c90f02" kindref="member">wxTopLevelWindow::IsFullScreen</ref> </para>
+<simplesect kind="see"><para><ref refid="overview_events" kindref="compound">Events and Event Handling</ref>, <ref refid="classwx_top_level_window_1abcc1ee1837105b622512b3bc3347770c" kindref="member">wxTopLevelWindow::EnableFullScreenView</ref>, <ref refid="classwx_top_level_window_1a865e3244aca58679dab610df06c90f02" kindref="member">wxTopLevelWindow::IsFullScreen</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
@@ -109,7 +111,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="2288" column="1" bodyfile="interface/wx/event.h" bodystart="2289" bodyend="2301"/>
+    <location file="interface/wx/event.h" line="2313" column="1" bodyfile="interface/wx/event.h" bodystart="2314" bodyend="2326"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxFullScreenEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxFullScreenEvent</scope><name>Clone</name></member>

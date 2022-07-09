@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_data_view_value_adjuster" kind="class" language="C++" prot="public">
     <compoundname>wxDataViewValueAdjuster</compoundname>
     <includes local="no">wx/dataview.h</includes>
@@ -9,6 +9,7 @@
         <definition>virtual wxVariant wxDataViewValueAdjuster::MakeHighlighted</definition>
         <argsstring>(const wxVariant &amp;value) const</argsstring>
         <name>MakeHighlighted</name>
+        <qualifiedname>wxDataViewValueAdjuster::MakeHighlighted</qualifiedname>
         <param>
           <type>const <ref refid="classwx_variant" kindref="compound">wxVariant</ref> &amp;</type>
           <declname>value</declname>
@@ -18,11 +19,12 @@
         </briefdescription>
         <detaileddescription>
 <para>Override to customize the value when it is shown in a highlighted (selected) row, typically on a dark background.</para>
-<para>Default implementation returns <emphasis>value</emphasis> unmodified. </para>
+<para>Default implementation returns <emphasis>value</emphasis> unmodified.</para>
+<para>The <emphasis>value</emphasis> passed to this method is always non-null and it must return a non-null value too. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="4030" column="23"/>
+        <location file="interface/wx/dataview.h" line="4106" column="23"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -63,9 +65,10 @@
 </simplesect>
 <heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__dvc" kindref="compound">wxDataViewCtrl Related Classes</ref> </para>
     </detaileddescription>
-    <location file="interface/wx/dataview.h" line="4019" column="1" bodyfile="interface/wx/dataview.h" bodystart="4020" bodyend="4031"/>
+    <location file="interface/wx/dataview.h" line="4092" column="1" bodyfile="interface/wx/dataview.h" bodystart="4093" bodyend="4107"/>
     <listofallmembers>
       <member refid="classwx_data_view_value_adjuster_1ab1a08da6bb13b13d5229ae191342f2ce" prot="public" virt="virtual"><scope>wxDataViewValueAdjuster</scope><name>MakeHighlighted</name></member>
     </listofallmembers>

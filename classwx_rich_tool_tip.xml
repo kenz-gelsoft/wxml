@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_rich_tool_tip" kind="class" language="C++" prot="public">
     <compoundname>wxRichToolTip</compoundname>
     <includes local="no">wx/richtooltip.h</includes>
@@ -9,6 +9,7 @@
         <definition>wxRichToolTip::wxRichToolTip</definition>
         <argsstring>(const wxString &amp;title, const wxString &amp;message)</argsstring>
         <name>wxRichToolTip</name>
+        <qualifiedname>wxRichToolTip::wxRichToolTip</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>title</declname>
@@ -33,6 +34,7 @@
         <definition>void wxRichToolTip::SetBackgroundColour</definition>
         <argsstring>(const wxColour &amp;col, const wxColour &amp;colEnd=wxColour())</argsstring>
         <name>SetBackgroundColour</name>
+        <qualifiedname>wxRichToolTip::SetBackgroundColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>col</declname>
@@ -58,6 +60,7 @@
         <definition>void wxRichToolTip::SetIcon</definition>
         <argsstring>(int icon=wxICON_INFORMATION)</argsstring>
         <name>SetIcon</name>
+        <qualifiedname>wxRichToolTip::SetIcon</qualifiedname>
         <param>
           <type>int</type>
           <declname>icon</declname>
@@ -73,13 +76,14 @@
         </inbodydescription>
         <location file="interface/wx/richtooltip.h" line="130" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_rich_tool_tip_1ac47b9f9896867acf933326e64e9cd260" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_rich_tool_tip_1a88881abdea0691e6151da6a7f081533e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxRichToolTip::SetIcon</definition>
-        <argsstring>(const wxIcon &amp;icon)</argsstring>
+        <argsstring>(const wxBitmapBundle &amp;icon)</argsstring>
         <name>SetIcon</name>
+        <qualifiedname>wxRichToolTip::SetIcon</qualifiedname>
         <param>
-          <type>const <ref refid="classwx_icon" kindref="compound">wxIcon</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>icon</declname>
         </param>
         <briefdescription>
@@ -95,6 +99,7 @@
         <definition>void wxRichToolTip::SetTimeout</definition>
         <argsstring>(unsigned millisecondsTimeout, unsigned millisecondsDelay=0)</argsstring>
         <name>SetTimeout</name>
+        <qualifiedname>wxRichToolTip::SetTimeout</qualifiedname>
         <param>
           <type>unsigned</type>
           <declname>millisecondsTimeout</declname>
@@ -121,6 +126,7 @@
         <definition>void wxRichToolTip::SetTipKind</definition>
         <argsstring>(wxTipKind tipKind)</argsstring>
         <name>SetTipKind</name>
+        <qualifiedname>wxRichToolTip::SetTipKind</qualifiedname>
         <param>
           <type><ref refid="richtooltip_8h_1a8a5ba062634414b8e1c5432469ec26e6" kindref="member">wxTipKind</ref></type>
           <declname>tipKind</declname>
@@ -142,6 +148,7 @@
         <definition>void wxRichToolTip::SetTitleFont</definition>
         <argsstring>(const wxFont &amp;font)</argsstring>
         <name>SetTitleFont</name>
+        <qualifiedname>wxRichToolTip::SetTitleFont</qualifiedname>
         <param>
           <type>const <ref refid="classwx_font" kindref="compound">wxFont</ref> &amp;</type>
           <declname>font</declname>
@@ -161,6 +168,7 @@
         <definition>void wxRichToolTip::ShowFor</definition>
         <argsstring>(wxWindow *win, const wxRect *rect=NULL)</argsstring>
         <name>ShowFor</name>
+        <qualifiedname>wxRichToolTip::ShowFor</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>win</declname>
@@ -188,6 +196,7 @@
         <definition>wxRichToolTip::~wxRichToolTip</definition>
         <argsstring>()</argsstring>
         <name>~wxRichToolTip</name>
+        <qualifiedname>wxRichToolTip::~wxRichToolTip</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -219,16 +228,11 @@
 <para>The images below show some examples of rich tooltips on different platforms, with various customizations applied.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-richtooltip-msw.png">wxMSW Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-richtooltip-gtk.png">wxGTK Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-richtooltip-mac.png">wxOSX Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__miscwnd" kindref="compound">Miscellaneous Windows</ref> <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-richtooltip-msw.png">wxMSW Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-richtooltip-gtk.png">wxGTK Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-richtooltip-mac.png">wxOSX Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
 <para><simplesect kind="since"><para>2.9.3 </para>
 </simplesect>
 </para>
@@ -237,7 +241,7 @@
     <listofallmembers>
       <member refid="classwx_rich_tool_tip_1abc2ac6aff7ca4404622b8e5a24a7d6df" prot="public" virt="non-virtual"><scope>wxRichToolTip</scope><name>SetBackgroundColour</name></member>
       <member refid="classwx_rich_tool_tip_1a51e540bf634f3e0fdd457f49abb11021" prot="public" virt="non-virtual"><scope>wxRichToolTip</scope><name>SetIcon</name></member>
-      <member refid="classwx_rich_tool_tip_1ac47b9f9896867acf933326e64e9cd260" prot="public" virt="non-virtual"><scope>wxRichToolTip</scope><name>SetIcon</name></member>
+      <member refid="classwx_rich_tool_tip_1a88881abdea0691e6151da6a7f081533e" prot="public" virt="non-virtual"><scope>wxRichToolTip</scope><name>SetIcon</name></member>
       <member refid="classwx_rich_tool_tip_1a9a35b1014b4ce263a639e16252617e4b" prot="public" virt="non-virtual"><scope>wxRichToolTip</scope><name>SetTimeout</name></member>
       <member refid="classwx_rich_tool_tip_1aaac181d1f2eb1cc1c962c9d27528b6dc" prot="public" virt="non-virtual"><scope>wxRichToolTip</scope><name>SetTipKind</name></member>
       <member refid="classwx_rich_tool_tip_1a3268339723ba6bf65c0eb3809b9914eb" prot="public" virt="non-virtual"><scope>wxRichToolTip</scope><name>SetTitleFont</name></member>

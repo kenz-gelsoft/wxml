@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_idle_event" kind="class" language="C++" prot="public">
     <compoundname>wxIdleEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxIdleEvent::wxIdleEvent</definition>
         <argsstring>()</argsstring>
         <name>wxIdleEvent</name>
+        <qualifiedname>wxIdleEvent::wxIdleEvent</qualifiedname>
         <briefdescription>
 <para>Constructor. </para>
         </briefdescription>
@@ -17,13 +18,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4147" column="5"/>
+        <location file="interface/wx/event.h" line="4215" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_idle_event_1a455ecec06a87eec2188d8e4984cf99ff" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool wxIdleEvent::MoreRequested</definition>
         <argsstring>() const</argsstring>
         <name>MoreRequested</name>
+        <qualifiedname>wxIdleEvent::MoreRequested</qualifiedname>
         <briefdescription>
 <para>Returns true if the OnIdle function processing this event requested more processing time. </para>
         </briefdescription>
@@ -34,13 +36,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4164" column="10"/>
+        <location file="interface/wx/event.h" line="4232" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_idle_event_1a6fbe979090c15ba40e6509d9c41f2f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxIdleEvent::RequestMore</definition>
         <argsstring>(bool needMore=true)</argsstring>
         <name>RequestMore</name>
+        <qualifiedname>wxIdleEvent::RequestMore</qualifiedname>
         <param>
           <type>bool</type>
           <declname>needMore</declname>
@@ -58,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4179" column="10"/>
+        <location file="interface/wx/event.h" line="4247" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -67,6 +70,7 @@
         <definition>static wxIdleMode wxIdleEvent::GetMode</definition>
         <argsstring>()</argsstring>
         <name>GetMode</name>
+        <qualifiedname>wxIdleEvent::GetMode</qualifiedname>
         <briefdescription>
 <para>Static function returning a value specifying how wxWidgets will send idle events: to all windows, or only to those which specify that they will process the events. </para>
         </briefdescription>
@@ -77,13 +81,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4156" column="23"/>
+        <location file="interface/wx/event.h" line="4224" column="23"/>
       </memberdef>
       <memberdef kind="function" id="classwx_idle_event_1a655610b1a5a1c668efc7d475313af2e3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void wxIdleEvent::SetMode</definition>
         <argsstring>(wxIdleMode mode)</argsstring>
         <name>SetMode</name>
+        <qualifiedname>wxIdleEvent::SetMode</qualifiedname>
         <param>
           <type><ref refid="event_8h_1af8b16f71b9b38095fe9f7f6244665a80" kindref="member">wxIdleMode</ref></type>
           <declname>mode</declname>
@@ -105,7 +110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4189" column="17"/>
+        <location file="interface/wx/event.h" line="4257" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -116,17 +121,17 @@
 <para>If you need to ensure a continuous stream of idle events, you can either use <ref refid="classwx_idle_event_1a6fbe979090c15ba40e6509d9c41f2f78" kindref="member">wxIdleEvent::RequestMore</ref> method in your handler or call <ref refid="interface_2wx_2app_8h_1a97206743f70b5382f9e2615217604d15" kindref="member">wxWakeUpIdle()</ref> periodically (for example from a timer event handler), but note that both of these approaches (and especially the first one) increase the system load and so should be avoided if possible.</para>
 <para>By default, idle events are sent to all windows, including even the hidden ones because they may be shown if some condition is met from their <computeroutput>wxEVT_IDLE</computeroutput> (or related <computeroutput>wxEVT_UPDATE_UI</computeroutput>) handler. The children of hidden windows do not receive idle events however as they can&apos;t change their state in any way noticeable by the user. Finally, the global <ref refid="classwx_app" kindref="compound">wxApp</ref> object also receives these events, as usual, so it can be used for any global idle time processing.</para>
 <para>If sending idle events to all windows is causing a significant overhead in your application, you can call <ref refid="classwx_idle_event_1a655610b1a5a1c668efc7d475313af2e3" kindref="member">wxIdleEvent::SetMode</ref> with the value wxIDLE_PROCESS_SPECIFIED, and set the wxWS_EX_PROCESS_IDLE extra window style for every window which should receive idle events, all the other ones will not receive them in this case.</para>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_idle_event" kindref="compound">wxIdleEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
-<listitem><para>EVT_IDLE(func): Process a <computeroutput>wxEVT_IDLE</computeroutput> event. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_IDLE(func): Process a <computeroutput>wxEVT_IDLE</computeroutput> event. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <sect1 id="classwx_idle_event_1sec_delayed_action">
 <title>Delayed Action Mechanism</title>
 <para><ref refid="classwx_idle_event" kindref="compound">wxIdleEvent</ref> can be used to perform some action &quot;at slightly later time&quot;. This can be necessary in several circumstances when, for whatever reason, something can&apos;t be done in the current event handler. For example, if a mouse event handler is called with the mouse button pressed, the mouse can be currently captured and some operations with it <ndash/> notably capturing it again <ndash/> might be impossible or lead to undesirable results. If you still want to capture it, you can do it from <computeroutput>wxEVT_IDLE</computeroutput> handler when it is called the next time instead of doing it immediately.</para>
@@ -180,7 +185,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="4141" column="1" bodyfile="interface/wx/event.h" bodystart="4142" bodyend="4190"/>
+    <location file="interface/wx/event.h" line="4209" column="1" bodyfile="interface/wx/event.h" bodystart="4210" bodyend="4258"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxIdleEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxIdleEvent</scope><name>Clone</name></member>

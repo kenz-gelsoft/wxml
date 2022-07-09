@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_archive" kind="page">
     <compoundname>overview_archive</compoundname>
     <title>Archive Formats</title>
@@ -47,7 +47,6 @@
 <para>The archive classes handle archive formats such as zip, tar, rar and cab. </para>
     </briefdescription>
     <detaileddescription>
-<para>The archive classes handle archive formats such as zip, tar, rar and cab.</para>
 <para>Currently wxZip, wxTar and wxZlib classes are included.</para>
 <para>For each archive type, there are the following classes (using zip here as an example):</para>
 <para><itemizedlist>
@@ -246,11 +245,11 @@ In order to able to write generic code it&apos;s necessary to be able to create 
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>list<sp/>the<sp/>contents<sp/>of<sp/>the<sp/>archive</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((entry.reset(arc-&gt;GetNextEntry())),<sp/>entry.get()<sp/>!=<sp/>NULL)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::wcout<sp/>&lt;&lt;<sp/>entry-&gt;<ref refid="classwx_archive_entry_1a7f7c8fc858136626dcdf1865e646cef9" kindref="member">GetName</ref>().<ref refid="classwx_string_1a5db49c775c09e77fe0acde2a928bbf8f" kindref="member">c_str</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::wcout<sp/>&lt;&lt;<sp/>entry-&gt;<ref refid="classwx_archive_entry_1a7f7c8fc858136626dcdf1865e646cef9" kindref="member">GetName</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2log_8h_1a0dd3c633f990f794e76065c9a7af4c87" kindref="member">wxLogError</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;can&apos;t<sp/>handle<sp/>&apos;%s&apos;&quot;</highlight><highlight class="normal">),<sp/>filename.c_str());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="interface_2wx_2log_8h_1a0dd3c633f990f794e76065c9a7af4c87" kindref="member">wxLogError</ref>(<ref refid="chartype_8h_1a437ea6ba615b75dac8603e96ec864160" kindref="member">wxT</ref>(</highlight><highlight class="stringliteral">&quot;can&apos;t<sp/>handle<sp/>&apos;%s&apos;&quot;</highlight><highlight class="normal">),<sp/>filename);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>

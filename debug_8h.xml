@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="debug_8h" kind="file" language="C++">
     <compoundname>debug.h</compoundname>
       <sectiondef kind="define">
@@ -13,22 +13,24 @@
 <para>Alternatively, you may predefine it as 2 to include <ref refid="debug_8h_1a9ff90708a7b76e926493ac0860f6854c" kindref="member">wxASSERT_LEVEL_2()</ref> and similar macros which are used for asserts which have non-trivial run-time costs and so are disabled by default.</para>
 <para><simplesect kind="since"><para>2.9.1</para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="40" column="9" bodyfile="interface/wx/debug.h" bodystart="40" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="38" column="9" bodyfile="interface/wx/debug.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1a30ad68c25d4f7a731f60eb07419c2960" prot="public" static="no">
         <name>__WXDEBUG__</name>
         <briefdescription>
+<para>Compatibility macro indicating presence of debug support. </para>
         </briefdescription>
         <detaileddescription>
+<para>This symbol is defined if wxDEBUG_LEVEL is greater than 0 and undefined otherwise.</para>
+<para>Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="52" column="9" bodyfile="interface/wx/debug.h" bodystart="52" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="48" column="9" bodyfile="interface/wx/debug.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1a204cc264ee560b67e6c6467ba8ffee5f" prot="public" static="no">
         <name>wxASSERT</name>
@@ -42,12 +44,11 @@ Include file:<linebreak/>
 <para>This macro should be used to catch (in debug builds) logical errors done by the programmer.</para>
 <para><simplesect kind="see"><para><ref refid="debug_8h_1a0224638a009ef6a78e09c0d3bb61c379" kindref="member">wxASSERT_MSG()</ref>, <ref refid="debug_8h_1ade23c9c38d065845dc040e31525befdc" kindref="member">wxCOMPILE_TIME_ASSERT()</ref></para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="79" column="9" bodyfile="interface/wx/debug.h" bodystart="79" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="75" column="9" bodyfile="interface/wx/debug.h" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1a9ff90708a7b76e926493ac0860f6854c" prot="public" static="no">
         <name>wxASSERT_LEVEL_2</name>
@@ -58,12 +59,11 @@ Include file:<linebreak/>
         <detaileddescription>
 <para>This macro does nothing unless wxDEBUG_LEVEL is 2 or more and is meant to be used for the assertions with noticeable performance impact and which, hence, should be disabled during run-time.</para>
 <para>If wxDEBUG_LEVEL is 2 or more, it becomes the same as <ref refid="debug_8h_1a204cc264ee560b67e6c6467ba8ffee5f" kindref="member">wxASSERT()</ref>.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="92" column="9" bodyfile="interface/wx/debug.h" bodystart="92" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="88" column="9" bodyfile="interface/wx/debug.h" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1af924de21e1d2b51a97886367b99851e7" prot="public" static="no">
         <name>wxASSERT_LEVEL_2_MSG</name>
@@ -76,12 +76,11 @@ Include file:<linebreak/>
 <para>If wxDEBUG_LEVEL is 2 or more, this is the same as <ref refid="debug_8h_1a0224638a009ef6a78e09c0d3bb61c379" kindref="member">wxASSERT_MSG()</ref>, otherwise it doesn&apos;t do anything at all.</para>
 <para><simplesect kind="see"><para><ref refid="debug_8h_1a9ff90708a7b76e926493ac0860f6854c" kindref="member">wxASSERT_LEVEL_2()</ref></para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="104" column="9" bodyfile="interface/wx/debug.h" bodystart="104" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="100" column="9" bodyfile="interface/wx/debug.h" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1abcdb0bf7c5499469b40a8fe8206e2cbf" prot="public" static="no">
         <name>wxASSERT_MIN_BITSIZE</name>
@@ -99,12 +98,11 @@ Include file:<linebreak/>
 <codeline><highlight class="normal">//<sp/>can&apos;t<sp/>work<sp/>with<sp/>the<sp/>platforms<sp/>using<sp/>UTF-8<sp/>for<sp/>wchar_t</highlight></codeline>
 <codeline><highlight class="normal">wxASSERT_MIN_BITSIZE(wchar_t,<sp/>16);</highlight></codeline>
 </programlisting></para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="126" column="9" bodyfile="interface/wx/debug.h" bodystart="126" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="122" column="9" bodyfile="interface/wx/debug.h" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1a0224638a009ef6a78e09c0d3bb61c379" prot="public" static="no">
         <name>wxASSERT_MSG</name>
@@ -118,12 +116,11 @@ Include file:<linebreak/>
 <para>This macro should be used to catch (in debug builds) logical errors done by the programmer.</para>
 <para><simplesect kind="see"><para><ref refid="debug_8h_1a204cc264ee560b67e6c6467ba8ffee5f" kindref="member">wxASSERT()</ref>, <ref refid="debug_8h_1ade23c9c38d065845dc040e31525befdc" kindref="member">wxCOMPILE_TIME_ASSERT()</ref></para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="139" column="9" bodyfile="interface/wx/debug.h" bodystart="139" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="135" column="9" bodyfile="interface/wx/debug.h" bodystart="135" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1a4e88837cf87a062947ee860f5ea35f16" prot="public" static="no">
         <name>wxASSERT_MSG_AT</name>
@@ -137,15 +134,14 @@ Include file:<linebreak/>
         </briefdescription>
         <detaileddescription>
 <para>This macro is the same as <ref refid="debug_8h_1a0224638a009ef6a78e09c0d3bb61c379" kindref="member">wxASSERT_MSG()</ref>, but the assert message will use the specified source file, line number and function name instead of the values corresponding to the current location as done by <ref refid="debug_8h_1a0224638a009ef6a78e09c0d3bb61c379" kindref="member">wxASSERT_MSG()</ref> by default.</para>
-<para>It is mostly useful for asserting inside functions called from macros, as by passing the usual <computeroutput><bold>FILE</bold></computeroutput>, <computeroutput><bold>LINE</bold></computeroutput> and <computeroutput><bold>FUNCTION</bold></computeroutput> values to a function, it&apos;s possible to pretend that the assert happens at the location of the macro in the source code (which can be useful) instead of inside the function itself (which is never useful as these values are always the same for the given assertion).</para>
+<para>It is mostly useful for asserting inside functions called from macros, as by passing the usual <computeroutput>__FILE__</computeroutput>, <computeroutput>__LINE__</computeroutput> and <computeroutput>__FUNCTION__</computeroutput> values to a function, it&apos;s possible to pretend that the assert happens at the location of the macro in the source code (which can be useful) instead of inside the function itself (which is never useful as these values are always the same for the given assertion).</para>
 <para><simplesect kind="since"><para>3.1.0</para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="160" column="9" bodyfile="interface/wx/debug.h" bodystart="160" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="156" column="9" bodyfile="interface/wx/debug.h" bodystart="156" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1acce4d688e56d4de1bbef692e7df2e3e3" prot="public" static="no">
         <name>wxCHECK</name>
@@ -157,12 +153,11 @@ Include file:<linebreak/>
         <detaileddescription>
 <para>This check is done even in release mode.</para>
 <para>This macro should be used to catch (both in debug and release builds) logical errors done by the programmer.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="171" column="9" bodyfile="interface/wx/debug.h" bodystart="171" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="167" column="9" bodyfile="interface/wx/debug.h" bodystart="167" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1a4822a2ea9fdd0bc98caa3ff42587743e" prot="public" static="no">
         <name>wxCHECK_MSG</name>
@@ -176,12 +171,11 @@ Include file:<linebreak/>
 <para>This check is done even in release mode.</para>
 <para>This macro may be only used in non-void functions, see also <ref refid="debug_8h_1a0cf2ca7d7ff0107197e51e6b434fd0bd" kindref="member">wxCHECK_RET()</ref>.</para>
 <para>This macro should be used to catch (both in debug and release builds) logical errors done by the programmer.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="184" column="9" bodyfile="interface/wx/debug.h" bodystart="184" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="180" column="9" bodyfile="interface/wx/debug.h" bodystart="180" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1a0cf2ca7d7ff0107197e51e6b434fd0bd" prot="public" static="no">
         <name>wxCHECK_RET</name>
@@ -194,12 +188,11 @@ Include file:<linebreak/>
 <para>This check is done even in release mode.</para>
 <para>This macro should be used in void functions instead of <ref refid="debug_8h_1a4822a2ea9fdd0bc98caa3ff42587743e" kindref="member">wxCHECK_MSG()</ref>.</para>
 <para>This macro should be used to catch (both in debug and release builds) logical errors done by the programmer.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="198" column="9" bodyfile="interface/wx/debug.h" bodystart="198" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="194" column="9" bodyfile="interface/wx/debug.h" bodystart="194" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1a2a551ae1dcd439257d35a9b0b6ed483c" prot="public" static="no">
         <name>wxCHECK2</name>
@@ -211,12 +204,11 @@ Include file:<linebreak/>
         <detaileddescription>
 <para>This is a generalisation of <ref refid="debug_8h_1acce4d688e56d4de1bbef692e7df2e3e3" kindref="member">wxCHECK()</ref> and may be used when something else than just returning from the function must be done when the <computeroutput>condition</computeroutput> is false. This check is done even in release mode.</para>
 <para>This macro should be used to catch (both in debug and release builds) logical errors done by the programmer.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="212" column="9" bodyfile="interface/wx/debug.h" bodystart="212" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="208" column="9" bodyfile="interface/wx/debug.h" bodystart="208" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1ad9673fe2c9e69d6b41f0175b151060d0" prot="public" static="no">
         <name>wxCHECK2_MSG</name>
@@ -228,12 +220,11 @@ Include file:<linebreak/>
         </briefdescription>
         <detaileddescription>
 <para>This macro should be used to catch (both in debug and release builds) logical errors done by the programmer.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="223" column="9" bodyfile="interface/wx/debug.h" bodystart="223" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="219" column="9" bodyfile="interface/wx/debug.h" bodystart="219" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1ade23c9c38d065845dc040e31525befdc" prot="public" static="no">
         <name>wxCOMPILE_TIME_ASSERT</name>
@@ -245,17 +236,16 @@ Include file:<linebreak/>
         <detaileddescription>
 <para>The compiler error message should include the <computeroutput>message</computeroutput> identifier - please note that it must be a valid C++ identifier and not a string unlike in the other cases.</para>
 <para>This macro is mostly useful for testing the expressions involving the <computeroutput>sizeof</computeroutput> operator as they can&apos;t be tested by the preprocessor but it is sometimes desirable to test them at the compile time.</para>
-<para>Note that this macro internally declares a struct whose name it tries to make unique by using the <computeroutput><bold>LINE</bold></computeroutput> in it but it may still not work if you use it on the same line in two different source files. In this case you may either change the line in which either of them appears on or use the <ref refid="debug_8h_1af12b2bda7fcd1b1df041f426d245b17f" kindref="member">wxCOMPILE_TIME_ASSERT2()</ref> macro.</para>
+<para>Note that this macro internally declares a struct whose name it tries to make unique by using the <computeroutput>__LINE__</computeroutput> in it but it may still not work if you use it on the same line in two different source files. In this case you may either change the line in which either of them appears on or use the <ref refid="debug_8h_1af12b2bda7fcd1b1df041f426d245b17f" kindref="member">wxCOMPILE_TIME_ASSERT2()</ref> macro.</para>
 <para>Also note that Microsoft Visual C++ has a bug which results in compiler errors if you use this macro with &apos;Program Database For Edit And Continue&apos; (<computeroutput>/ZI</computeroutput>) option, so you shouldn&apos;t use it (&apos;Program Database&apos; (<computeroutput>/Zi</computeroutput>) is ok though) for the code making use of this macro.</para>
 <para>This macro should be used to catch misconfigurations at compile-time.</para>
 <para><simplesect kind="see"><para><ref refid="debug_8h_1a0224638a009ef6a78e09c0d3bb61c379" kindref="member">wxASSERT_MSG()</ref>, <ref refid="debug_8h_1abcdb0bf7c5499469b40a8fe8206e2cbf" kindref="member">wxASSERT_MIN_BITSIZE()</ref></para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="252" column="9" bodyfile="interface/wx/debug.h" bodystart="252" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="248" column="9" bodyfile="interface/wx/debug.h" bodystart="248" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1af12b2bda7fcd1b1df041f426d245b17f" prot="public" static="no">
         <name>wxCOMPILE_TIME_ASSERT2</name>
@@ -267,12 +257,11 @@ Include file:<linebreak/>
         </briefdescription>
         <detaileddescription>
 <para>This macro should be used to catch misconfigurations at compile-time.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="264" column="9" bodyfile="interface/wx/debug.h" bodystart="264" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="260" column="9" bodyfile="interface/wx/debug.h" bodystart="260" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1a96e17e1bb37bec44a6608d0521abe22e" prot="public" static="no">
         <name>wxDISABLE_ASSERTS_IN_RELEASE_BUILD</name>
@@ -287,12 +276,11 @@ Include file:<linebreak/>
 </simplesect>
 <simplesect kind="since"><para>2.9.1</para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="295" column="9" bodyfile="interface/wx/debug.h" bodystart="295" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="289" column="9" bodyfile="interface/wx/debug.h" bodystart="289" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1aa5b456751cd8c71e9a787fba16ecbd68" prot="public" static="no">
         <name>wxFAIL</name>
@@ -308,12 +296,11 @@ Include file:<linebreak/>
 <para>This macro should be used to catch (in debug builds) logical errors done by the programmer.</para>
 <para><simplesect kind="see"><para><ref refid="debug_8h_1a4d129eca8fff062a65dec065edca085e" kindref="member">wxFAIL_MSG()</ref></para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="315" column="9" bodyfile="interface/wx/debug.h" bodystart="315" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="309" column="9" bodyfile="interface/wx/debug.h" bodystart="309" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1a4d129eca8fff062a65dec065edca085e" prot="public" static="no">
         <name>wxFAIL_MSG</name>
@@ -326,12 +313,11 @@ Include file:<linebreak/>
 <para>This macro should be used to catch (in debug builds) logical errors done by the programmer.</para>
 <para><simplesect kind="see"><para><ref refid="debug_8h_1aa5b456751cd8c71e9a787fba16ecbd68" kindref="member">wxFAIL()</ref></para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="332" column="9" bodyfile="interface/wx/debug.h" bodystart="332" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="326" column="9" bodyfile="interface/wx/debug.h" bodystart="326" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="debug_8h_1aafae1aca9981e3dc843de0567164d3cf" prot="public" static="no">
         <name>wxFAIL_MSG_AT</name>
@@ -346,12 +332,11 @@ Include file:<linebreak/>
 <para>This is a cross between <ref refid="debug_8h_1a4e88837cf87a062947ee860f5ea35f16" kindref="member">wxASSERT_MSG_AT()</ref> and <ref refid="debug_8h_1a4d129eca8fff062a65dec065edca085e" kindref="member">wxFAIL_MSG()</ref>, see their documentation for more details.</para>
 <para><simplesect kind="since"><para>3.1.0</para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="344" column="9" bodyfile="interface/wx/debug.h" bodystart="344" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="338" column="9" bodyfile="interface/wx/debug.h" bodystart="338" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -370,7 +355,7 @@ Include file:<linebreak/>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="59" column="9" bodyfile="interface/wx/debug.h" bodystart="59" bodyend="-1"/>
+        <location file="interface/wx/debug.h" line="55" column="9" bodyfile="interface/wx/debug.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -404,12 +389,11 @@ Include file:<linebreak/>
 <para>This is the same as calling <ref refid="debug_8h_1a7a8443c97e45d2943f03769aaa787376" kindref="member">wxSetAssertHandler()</ref> with NULL handler.</para>
 <para><simplesect kind="since"><para>2.9.0</para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="275" column="6" declfile="interface/wx/debug.h" declline="275" declcolumn="6"/>
+        <location file="interface/wx/debug.h" line="271" column="6" declfile="interface/wx/debug.h" declline="271" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="debug_8h_1aeb7e13193cb75f59c70a40bdc595a545" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -421,12 +405,11 @@ Include file:<linebreak/>
         </briefdescription>
         <detaileddescription>
 <para>Please note that this function is currently only implemented for Win32 and always returns false elsewhere.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="354" column="6" declfile="interface/wx/debug.h" declline="354" declcolumn="6"/>
+        <location file="interface/wx/debug.h" line="348" column="6" declfile="interface/wx/debug.h" declline="348" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="debug_8h_1a7a8443c97e45d2943f03769aaa787376" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="debug_8h_1ad30d57c9abb7b281bc368fbd918d5d3c" kindref="member">wxAssertHandler_t</ref></type>
@@ -459,12 +442,11 @@ Include file:<linebreak/>
 </simplesect>
 <simplesect kind="since"><para>2.9.0</para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="390" column="19" declfile="interface/wx/debug.h" declline="390" declcolumn="19"/>
+        <location file="interface/wx/debug.h" line="384" column="19" declfile="interface/wx/debug.h" declline="384" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="debug_8h_1a56835907381132cfc64135d7fbf9d883" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -478,12 +460,11 @@ Include file:<linebreak/>
 <para>This can be useful for the applications compiled in release build (with <computeroutput>NDEBUG</computeroutput> defined) for which the asserts are by default disabled: if you wish to enable them even in this case you need to call this function.</para>
 <para><simplesect kind="since"><para>2.9.1</para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="404" column="6" declfile="interface/wx/debug.h" declline="404" declcolumn="6"/>
+        <location file="interface/wx/debug.h" line="398" column="6" declfile="interface/wx/debug.h" declline="398" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="debug_8h_1a982e43add2be6c375904de61dcb9f852" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -496,12 +477,11 @@ Include file:<linebreak/>
         <detaileddescription>
 <para>Otherwise the program just terminates abnormally.</para>
 <para>If <computeroutput>wxDEBUG_LEVEL</computeroutput> is 0 (which is not the default) this function does nothing.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/debug.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/debug.h" line="417" column="6" declfile="interface/wx/debug.h" declline="417" declcolumn="6"/>
+        <location file="interface/wx/debug.h" line="411" column="6" declfile="interface/wx/debug.h" declline="411" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

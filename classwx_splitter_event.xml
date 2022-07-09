@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_splitter_event" kind="class" language="C++" prot="public">
     <compoundname>wxSplitterEvent</compoundname>
     <basecompoundref refid="classwx_notify_event" prot="public" virt="non-virtual">wxNotifyEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxSplitterEvent::wxSplitterEvent</definition>
         <argsstring>(wxEventType eventType=wxEVT_NULL, wxSplitterWindow *splitter=NULL)</argsstring>
         <name>wxSplitterEvent</name>
+        <qualifiedname>wxSplitterEvent::wxSplitterEvent</qualifiedname>
         <param>
           <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
           <declname>eventType</declname>
@@ -28,28 +29,30 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/splitter.h" line="510" column="5"/>
+        <location file="interface/wx/splitter.h" line="521" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_splitter_event_1a95ddc72c16bf362ccb030c6945ddb609" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxSplitterEvent::GetSashPosition</definition>
         <argsstring>() const</argsstring>
         <name>GetSashPosition</name>
+        <qualifiedname>wxSplitterEvent::GetSashPosition</qualifiedname>
         <briefdescription>
 <para>Returns the new sash position. </para>
         </briefdescription>
         <detaileddescription>
-<para>May only be called while processing <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGING</computeroutput> and <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGED</computeroutput> events. </para>
+<para>May only be called while processing <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGING</computeroutput>, <computeroutput>wxEVT_SPLITTER_SASH_POS_RESIZE</computeroutput> and <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGED</computeroutput> events. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/splitter.h" line="520" column="9"/>
+        <location file="interface/wx/splitter.h" line="532" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_splitter_event_1a48449b0087d55a1e345070201ddd9451" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
         <definition>wxWindow * wxSplitterEvent::GetWindowBeingRemoved</definition>
         <argsstring>() const</argsstring>
         <name>GetWindowBeingRemoved</name>
+        <qualifiedname>wxSplitterEvent::GetWindowBeingRemoved</qualifiedname>
         <briefdescription>
 <para>Returns a pointer to the window being removed when a splitter window is unsplit. </para>
         </briefdescription>
@@ -58,13 +61,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/splitter.h" line="529" column="14"/>
+        <location file="interface/wx/splitter.h" line="541" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_splitter_event_1a479fa5172cdb88875403fbd53b93decf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxSplitterEvent::GetX</definition>
         <argsstring>() const</argsstring>
         <name>GetX</name>
+        <qualifiedname>wxSplitterEvent::GetX</qualifiedname>
         <briefdescription>
 <para>Returns the x coordinate of the double-click point. </para>
         </briefdescription>
@@ -73,13 +77,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/splitter.h" line="537" column="9"/>
+        <location file="interface/wx/splitter.h" line="549" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_splitter_event_1acd259965fc97295ec121adbfe95ef70e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxSplitterEvent::GetY</definition>
         <argsstring>() const</argsstring>
         <name>GetY</name>
+        <qualifiedname>wxSplitterEvent::GetY</qualifiedname>
         <briefdescription>
 <para>Returns the y coordinate of the double-click point. </para>
         </briefdescription>
@@ -88,13 +93,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/splitter.h" line="545" column="9"/>
+        <location file="interface/wx/splitter.h" line="557" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_splitter_event_1a477c99aaf92b0d7ab36d6e71c42f323a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxSplitterEvent::SetSashPosition</definition>
         <argsstring>(int pos)</argsstring>
         <name>SetSashPosition</name>
+        <qualifiedname>wxSplitterEvent::SetSashPosition</qualifiedname>
         <param>
           <type>int</type>
           <declname>pos</declname>
@@ -104,7 +110,7 @@
         </briefdescription>
         <detaileddescription>
 <para>In the case of <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGING</computeroutput> events, sets the new tracking bar position so visual feedback during dragging will represent that change that will actually take place. Set to -1 from the event handler code to prevent repositioning.</para>
-<para>May only be called while processing <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGING</computeroutput> and <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGED</computeroutput> events.</para>
+<para>May only be called while processing <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGING</computeroutput>, <computeroutput>wxEVT_SPLITTER_SASH_POS_RESIZE</computeroutput> and <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGED</computeroutput> events.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>pos</parametername>
@@ -118,7 +124,55 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/splitter.h" line="562" column="10"/>
+        <location file="interface/wx/splitter.h" line="575" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_splitter_event_1adc9eeed091a7cf9136e7f20e0420a846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxSplitterEvent::SetSize</definition>
+        <argsstring>(int oldSize, int newSize)</argsstring>
+        <name>SetSize</name>
+        <qualifiedname>wxSplitterEvent::SetSize</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>oldSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>newSize</declname>
+        </param>
+        <briefdescription>
+<para>Sets the size values of the window size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This size is adjusted to the sash orientation. For a vertical sash it should be the width and for a horizontal sash it&apos;s the height.</para>
+<para>May only be called while processing <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGING</computeroutput>, <computeroutput>wxEVT_SPLITTER_SASH_POS_RESIZE</computeroutput> and <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGED</computeroutput> events. <simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/splitter.h" line="589" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_splitter_event_1a0efcb0489c788d03232e094ba7488afb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxSplitterEvent::GetOldSize</definition>
+        <argsstring>() const int GetNewSize() const</argsstring>
+        <name>GetOldSize</name>
+        <qualifiedname>wxSplitterEvent::GetOldSize</qualifiedname>
+        <briefdescription>
+<para>Returns the old size before the update. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The size value is already adjusted to the orientation of the sash. So for a vertical sash it&apos;s the width and for a horizontal sash it&apos;s the height.</para>
+<para>May only be called while processing <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGING</computeroutput>, <computeroutput>wxEVT_SPLITTER_SASH_POS_RESIZE</computeroutput> and <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGED</computeroutput> events. <simplesect kind="since"><para>3.1.6 Returns the new size which is set after the update. The size value is already adjusted to the orientation of the sash. So for a vertical sash it&apos;s the width and for a horizontal sash it&apos;s the height.</para>
+</simplesect>
+May only be called while processing <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGING</computeroutput>, <computeroutput>wxEVT_SPLITTER_SASH_POS_RESIZE</computeroutput> and <computeroutput>wxEVT_SPLITTER_SASH_POS_CHANGED</computeroutput> events. <simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/splitter.h" line="603" column="9"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -126,8 +180,7 @@
     </briefdescription>
     <detaileddescription>
 <para>Also there is only one event class, the data associated to the different events is not the same and so not all accessor functions may be called for each event. The documentation mentions the kind of event(s) for which the given accessor function makes sense: calling it for other types of events will result in assert failure (in debug mode) and will return meaningless results.</para>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_splitter_event" kindref="compound">wxSplitterEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
@@ -137,12 +190,13 @@
 </listitem>
 <listitem><para>EVT_SPLITTER_UNSPLIT(id,  func): The splitter has been just unsplit. Processes a <computeroutput>wxEVT_SPLITTER_UNSPLIT</computeroutput> event. </para>
 </listitem>
-<listitem><para>EVT_SPLITTER_DCLICK(id,  func): The sash was double clicked. The default behaviour is to unsplit the window when this happens (unless the minimum pane size has been set to a value greater than zero). Processes a <computeroutput>wxEVT_SPLITTER_DOUBLECLICKED</computeroutput> event. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_SPLITTER_DCLICK(id,  func): The sash was double clicked. The default behaviour is to unsplit the window when this happens (unless the minimum pane size has been set to a value greater than zero). Processes a <computeroutput>wxEVT_SPLITTER_DOUBLECLICKED</computeroutput> event. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_splitter_window" kindref="compound">wxSplitterWindow</ref>, <ref refid="overview_events" kindref="compound">Events and Event Handling</ref> </para>
 </simplesect>
 </para>
@@ -214,7 +268,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/splitter.h" line="504" column="1" bodyfile="interface/wx/splitter.h" bodystart="505" bodyend="563"/>
+    <location file="interface/wx/splitter.h" line="515" column="1" bodyfile="interface/wx/splitter.h" bodystart="516" bodyend="619"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxSplitterEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_notify_event_1a7b23515f827b2ce1da1e6990d9aafe80" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>Allow</name></member>
@@ -231,6 +285,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_command_event_1abdba7c3e93f0dbf99f5382e60e7a461a" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>GetExtraLong</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>GetId</name></member>
       <member refid="classwx_command_event_1a24ad2aab26646c762ca3092a7ffd5ccd" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>GetInt</name></member>
+      <member refid="classwx_splitter_event_1a0efcb0489c788d03232e094ba7488afb" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>GetOldSize</name></member>
       <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>GetRefData</name></member>
       <member refid="classwx_splitter_event_1a95ddc72c16bf362ccb030c6945ddb609" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>GetSashPosition</name></member>
       <member refid="classwx_command_event_1a93609c04b8fd7001259efb5d65645fe6" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>GetSelection</name></member>
@@ -261,6 +316,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_command_event_1aeaed91ffb1d02f07d7ea40f029f95a7c" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>SetInt</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>SetRefData</name></member>
       <member refid="classwx_splitter_event_1a477c99aaf92b0d7ab36d6e71c42f323a" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>SetSashPosition</name></member>
+      <member refid="classwx_splitter_event_1adc9eeed091a7cf9136e7f20e0420a846" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>SetSize</name></member>
       <member refid="classwx_command_event_1a06ca56ac6680fe3b3178d8abd913d450" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>SetString</name></member>
       <member refid="classwx_event_1ad4380dff3144a986cb960473051a1d8d" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>SetTimestamp</name></member>
       <member refid="classwx_event_1ac7a178c3c781c80f1308945042f76e7f" prot="public" virt="non-virtual"><scope>wxSplitterEvent</scope><name>ShouldPropagate</name></member>

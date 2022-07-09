@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_grid_cell_editor" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxGridCellEditor</compoundname>
-    <basecompoundref refid="classwx_client_data_container" prot="public" virt="non-virtual">wxClientDataContainer</basecompoundref>
+    <basecompoundref refid="classwx_shared_client_data_container" prot="public" virt="non-virtual">wxSharedClientDataContainer</basecompoundref>
     <basecompoundref refid="classwx_ref_counter" prot="public" virt="non-virtual">wxRefCounter</basecompoundref>
     <derivedcompoundref refid="classwx_grid_cell_activatable_editor" prot="public" virt="non-virtual">wxGridCellActivatableEditor</derivedcompoundref>
     <derivedcompoundref refid="classwx_grid_cell_bool_editor" prot="public" virt="non-virtual">wxGridCellBoolEditor</derivedcompoundref>
@@ -16,6 +16,7 @@
         <definition>wxGridCellEditor::wxGridCellEditor</definition>
         <argsstring>()</argsstring>
         <name>wxGridCellEditor</name>
+        <qualifiedname>wxGridCellEditor::wxGridCellEditor</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -30,6 +31,7 @@
         <definition>virtual void wxGridCellEditor::BeginEdit</definition>
         <argsstring>(int row, int col, wxGrid *grid)=0</argsstring>
         <name>BeginEdit</name>
+        <qualifiedname>wxGridCellEditor::BeginEdit</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -60,6 +62,7 @@
         <definition>virtual wxGridCellEditor * wxGridCellEditor::Clone</definition>
         <argsstring>() const =0</argsstring>
         <name>Clone</name>
+        <qualifiedname>wxGridCellEditor::Clone</qualifiedname>
         <briefdescription>
 <para>Create a new object which is the copy of this one. </para>
         </briefdescription>
@@ -74,6 +77,7 @@
         <definition>virtual void wxGridCellEditor::Create</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, wxEvtHandler *evtHandler)=0</argsstring>
         <name>Create</name>
+        <qualifiedname>wxGridCellEditor::Create</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -100,6 +104,7 @@
         <definition>virtual void wxGridCellEditor::Destroy</definition>
         <argsstring>()</argsstring>
         <name>Destroy</name>
+        <qualifiedname>wxGridCellEditor::Destroy</qualifiedname>
         <briefdescription>
 <para>Final cleanup. </para>
         </briefdescription>
@@ -114,6 +119,7 @@
         <definition>virtual bool wxGridCellEditor::EndEdit</definition>
         <argsstring>(int row, int col, const wxGrid *grid, const wxString &amp;oldval, wxString *newval)=0</argsstring>
         <name>EndEdit</name>
+        <qualifiedname>wxGridCellEditor::EndEdit</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -156,6 +162,7 @@
         <definition>virtual void wxGridCellEditor::ApplyEdit</definition>
         <argsstring>(int row, int col, wxGrid *grid)=0</argsstring>
         <name>ApplyEdit</name>
+        <qualifiedname>wxGridCellEditor::ApplyEdit</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -183,6 +190,7 @@
         <definition>virtual void wxGridCellEditor::HandleReturn</definition>
         <argsstring>(wxKeyEvent &amp;event)</argsstring>
         <name>HandleReturn</name>
+        <qualifiedname>wxGridCellEditor::HandleReturn</qualifiedname>
         <param>
           <type><ref refid="classwx_key_event" kindref="compound">wxKeyEvent</ref> &amp;</type>
           <declname>event</declname>
@@ -201,6 +209,7 @@
         <definition>bool wxGridCellEditor::IsCreated</definition>
         <argsstring>()</argsstring>
         <name>IsCreated</name>
+        <qualifiedname>wxGridCellEditor::IsCreated</qualifiedname>
         <briefdescription>
 <para>Returns true if the edit control has been created. </para>
         </briefdescription>
@@ -215,6 +224,7 @@
         <definition>virtual void wxGridCellEditor::PaintBackground</definition>
         <argsstring>(wxDC &amp;dc, const wxRect &amp;rectCell, const wxGridCellAttr &amp;attr)</argsstring>
         <name>PaintBackground</name>
+        <qualifiedname>wxGridCellEditor::PaintBackground</qualifiedname>
         <param>
           <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> &amp;</type>
           <declname>dc</declname>
@@ -241,6 +251,7 @@
         <definition>virtual void wxGridCellEditor::Reset</definition>
         <argsstring>()=0</argsstring>
         <name>Reset</name>
+        <qualifiedname>wxGridCellEditor::Reset</qualifiedname>
         <briefdescription>
 <para>Reset the value in the control back to its starting value. </para>
         </briefdescription>
@@ -255,6 +266,7 @@
         <definition>virtual void wxGridCellEditor::SetSize</definition>
         <argsstring>(const wxRect &amp;rect)</argsstring>
         <name>SetSize</name>
+        <qualifiedname>wxGridCellEditor::SetSize</qualifiedname>
         <param>
           <type>const <ref refid="classwx_rect" kindref="compound">wxRect</ref> &amp;</type>
           <declname>rect</declname>
@@ -273,6 +285,7 @@
         <definition>virtual void wxGridCellEditor::Show</definition>
         <argsstring>(bool show, wxGridCellAttr *attr=NULL)</argsstring>
         <name>Show</name>
+        <qualifiedname>wxGridCellEditor::Show</qualifiedname>
         <param>
           <type>bool</type>
           <declname>show</declname>
@@ -296,6 +309,7 @@
         <definition>virtual void wxGridCellEditor::StartingClick</definition>
         <argsstring>()</argsstring>
         <name>StartingClick</name>
+        <qualifiedname>wxGridCellEditor::StartingClick</qualifiedname>
         <briefdescription>
 <para>If the editor is enabled by clicking on the cell, this method will be called. </para>
         </briefdescription>
@@ -310,6 +324,7 @@
         <definition>virtual void wxGridCellEditor::StartingKey</definition>
         <argsstring>(wxKeyEvent &amp;event)</argsstring>
         <name>StartingKey</name>
+        <qualifiedname>wxGridCellEditor::StartingKey</qualifiedname>
         <param>
           <type><ref refid="classwx_key_event" kindref="compound">wxKeyEvent</ref> &amp;</type>
           <declname>event</declname>
@@ -328,6 +343,7 @@
         <definition>virtual bool wxGridCellEditor::IsAcceptedKey</definition>
         <argsstring>(wxKeyEvent &amp;event)</argsstring>
         <name>IsAcceptedKey</name>
+        <qualifiedname>wxGridCellEditor::IsAcceptedKey</qualifiedname>
         <param>
           <type><ref refid="classwx_key_event" kindref="compound">wxKeyEvent</ref> &amp;</type>
           <declname>event</declname>
@@ -347,6 +363,7 @@
         <definition>virtual wxString wxGridCellEditor::GetValue</definition>
         <argsstring>() const =0</argsstring>
         <name>GetValue</name>
+        <qualifiedname>wxGridCellEditor::GetValue</qualifiedname>
         <briefdescription>
 <para>Returns the value currently in the editor control. </para>
         </briefdescription>
@@ -361,6 +378,7 @@
         <definition>wxWindow * wxGridCellEditor::GetWindow</definition>
         <argsstring>() const</argsstring>
         <name>GetWindow</name>
+        <qualifiedname>wxGridCellEditor::GetWindow</qualifiedname>
         <briefdescription>
 <para>Get the edit window used by this editor. </para>
         </briefdescription>
@@ -378,6 +396,7 @@
         <definition>void wxGridCellEditor::SetWindow</definition>
         <argsstring>(wxWindow *window)</argsstring>
         <name>SetWindow</name>
+        <qualifiedname>wxGridCellEditor::SetWindow</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>window</declname>
@@ -399,6 +418,7 @@
         <definition>wxControl * wxGridCellEditor::GetControl</definition>
         <argsstring>()</argsstring>
         <name>GetControl</name>
+        <qualifiedname>wxGridCellEditor::GetControl</qualifiedname>
         <briefdescription>
 <para>Get the <ref refid="classwx_control" kindref="compound">wxControl</ref> used by this editor. </para>
         </briefdescription>
@@ -415,6 +435,7 @@
         <definition>void wxGridCellEditor::SetControl</definition>
         <argsstring>(wxControl *control)</argsstring>
         <name>SetControl</name>
+        <qualifiedname>wxGridCellEditor::SetControl</qualifiedname>
         <param>
           <type><ref refid="classwx_control" kindref="compound">wxControl</ref> *</type>
           <declname>control</declname>
@@ -434,6 +455,7 @@
         <definition>virtual wxGridActivationResult wxGridCellEditor::TryActivate</definition>
         <argsstring>(int row, int col, wxGrid *grid, const wxGridActivationSource &amp;actSource)</argsstring>
         <name>TryActivate</name>
+        <qualifiedname>wxGridCellEditor::TryActivate</qualifiedname>
         <reimplementedby refid="classwx_grid_cell_activatable_editor_1aa855df176029b7a826fa0dcc947a5de7">TryActivate</reimplementedby>
         <param>
           <type>int</type>
@@ -471,6 +493,7 @@
         <definition>virtual void wxGridCellEditor::DoActivate</definition>
         <argsstring>(int row, int col, wxGrid *grid)</argsstring>
         <name>DoActivate</name>
+        <qualifiedname>wxGridCellEditor::DoActivate</qualifiedname>
         <reimplementedby refid="classwx_grid_cell_activatable_editor_1a01d85f8058c5fe22fb911817c3709079">DoActivate</reimplementedby>
         <param>
           <type>int</type>
@@ -504,6 +527,7 @@
         <definition>virtual wxGridCellEditor::~wxGridCellEditor</definition>
         <argsstring>()</argsstring>
         <name>~wxGridCellEditor</name>
+        <qualifiedname>wxGridCellEditor::~wxGridCellEditor</qualifiedname>
         <briefdescription>
 <para>The destructor is private because only <ref refid="classwx_ref_counter_1a803eb5be907b1a342082ceb59c01d8c5" kindref="member">DecRef()</ref> can delete us. </para>
         </briefdescription>
@@ -522,16 +546,13 @@
 <para>Normally <ref refid="classwx_grid_cell_editor" kindref="compound">wxGridCellEditor</ref> shows some UI control allowing the user to edit the cell, but starting with wxWidgets 3.1.4 it&apos;s also possible to define &quot;activatable&quot; cell editors, that change the value of the cell directly when it&apos;s activated (typically by pressing Space key or clicking on it), see <ref refid="classwx_grid_cell_editor_1a9eb24dbc65c4c07543f4c975f09fedcc" kindref="member">TryActivate()</ref> method. Note that when implementing an editor which is always activatable, i.e. never shows any in-place editor, it is more convenient to derive its class from <ref refid="classwx_grid_cell_activatable_editor" kindref="compound">wxGridCellActivatableEditor</ref> than from <ref refid="classwx_grid_cell_editor" kindref="compound">wxGridCellEditor</ref> itself.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__grid" kindref="compound">Grid Related Classes</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_grid_cell_auto_wrap_string_editor" kindref="compound">wxGridCellAutoWrapStringEditor</ref>, <ref refid="classwx_grid_cell_bool_editor" kindref="compound">wxGridCellBoolEditor</ref>, <ref refid="classwx_grid_cell_choice_editor" kindref="compound">wxGridCellChoiceEditor</ref>, <ref refid="classwx_grid_cell_enum_editor" kindref="compound">wxGridCellEnumEditor</ref>, <ref refid="classwx_grid_cell_float_editor" kindref="compound">wxGridCellFloatEditor</ref>, <ref refid="classwx_grid_cell_number_editor" kindref="compound">wxGridCellNumberEditor</ref>, <ref refid="classwx_grid_cell_text_editor" kindref="compound">wxGridCellTextEditor</ref>, <ref refid="classwx_grid_cell_date_editor" kindref="compound">wxGridCellDateEditor</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>wxClientDataContainer</label>
-        <link refid="classwx_client_data_container"/>
-      </node>
       <node id="4">
         <label>wxGridCellActivatableEditor</label>
         <link refid="classwx_grid_cell_activatable_editor"/>
@@ -598,12 +619,12 @@
         <label>wxRefCounter</label>
         <link refid="classwx_ref_counter"/>
       </node>
+      <node id="2">
+        <label>wxSharedClientDataContainer</label>
+        <link refid="classwx_shared_client_data_container"/>
+      </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>wxClientDataContainer</label>
-        <link refid="classwx_client_data_container"/>
-      </node>
       <node id="1">
         <label>wxGridCellEditor</label>
         <link refid="classwx_grid_cell_editor"/>
@@ -616,6 +637,10 @@
         <label>wxRefCounter</label>
         <link refid="classwx_ref_counter"/>
       </node>
+      <node id="2">
+        <label>wxSharedClientDataContainer</label>
+        <link refid="classwx_shared_client_data_container"/>
+      </node>
     </collaborationgraph>
     <location file="interface/wx/grid.h" line="574" column="1" bodyfile="interface/wx/grid.h" bodystart="575" bodyend="778"/>
     <listofallmembers>
@@ -627,8 +652,8 @@
       <member refid="classwx_grid_cell_editor_1adc20623daa433958374412a440c2528e" prot="public" virt="virtual"><scope>wxGridCellEditor</scope><name>Destroy</name></member>
       <member refid="classwx_grid_cell_editor_1ac2258168ec052a369b4343bad61a8d99" prot="public" virt="virtual"><scope>wxGridCellEditor</scope><name>DoActivate</name></member>
       <member refid="classwx_grid_cell_editor_1a227445c6c3b66494b2428ecb683a9ae7" prot="public" virt="pure-virtual"><scope>wxGridCellEditor</scope><name>EndEdit</name></member>
-      <member refid="classwx_client_data_container_1a2acdfa0e91eae2cf20c30cdab94ed76b" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>GetClientData</name></member>
-      <member refid="classwx_client_data_container_1a3ea98fef1730f6b0771e7016214fb992" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>GetClientObject</name></member>
+      <member refid="classwx_shared_client_data_container_1ad6124bb7ad421d7ec732fb0183853c39" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>GetClientData</name></member>
+      <member refid="classwx_shared_client_data_container_1a09efd087e9fa18d133810135ec0aa706" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>GetClientObject</name></member>
       <member refid="classwx_grid_cell_editor_1a4d0da78e0914ba2cefcb074dfa29064e" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>GetControl</name></member>
       <member refid="classwx_ref_counter_1a98ca5fc3fa6219d993dd3654925c46aa" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>GetRefCount</name></member>
       <member refid="classwx_grid_cell_editor_1a2dd2032fe1e396fd30686ff022a99d97" prot="public" virt="pure-virtual"><scope>wxGridCellEditor</scope><name>GetValue</name></member>
@@ -639,8 +664,8 @@
       <member refid="classwx_grid_cell_editor_1a9e0e19a87a387d243a0c07f12bc0a2de" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>IsCreated</name></member>
       <member refid="classwx_grid_cell_editor_1aa279d3b3e27d688570294c53eca1def4" prot="public" virt="virtual"><scope>wxGridCellEditor</scope><name>PaintBackground</name></member>
       <member refid="classwx_grid_cell_editor_1a027e54b196a9f30271cfaf28fc1e30b7" prot="public" virt="pure-virtual"><scope>wxGridCellEditor</scope><name>Reset</name></member>
-      <member refid="classwx_client_data_container_1a3b291dde8d851583b00e6917af539d13" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>SetClientData</name></member>
-      <member refid="classwx_client_data_container_1afc03e080cc61dd9acaac86b76965cbb5" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>SetClientObject</name></member>
+      <member refid="classwx_shared_client_data_container_1a67e9b50a8f4c3d4ba8cd69eb6563911f" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>SetClientData</name></member>
+      <member refid="classwx_shared_client_data_container_1a98df28a082ea03a5cfef744328873ce5" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>SetClientObject</name></member>
       <member refid="classwx_grid_cell_editor_1ae9d8087c6b037194b0c7680d63555145" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>SetControl</name></member>
       <member refid="classwx_grid_cell_editor_1a76508cbb2989ce94aa3082f1a12e789f" prot="public" virt="virtual"><scope>wxGridCellEditor</scope><name>SetSize</name></member>
       <member refid="classwx_grid_cell_editor_1a1c181892931a4f57289cc27064930b67" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>SetWindow</name></member>
@@ -648,10 +673,8 @@
       <member refid="classwx_grid_cell_editor_1a222488a19f6f7d4562dd2ef390c01b0f" prot="public" virt="virtual"><scope>wxGridCellEditor</scope><name>StartingClick</name></member>
       <member refid="classwx_grid_cell_editor_1a814292778557067b6068f6ee966985dc" prot="public" virt="virtual"><scope>wxGridCellEditor</scope><name>StartingKey</name></member>
       <member refid="classwx_grid_cell_editor_1a9eb24dbc65c4c07543f4c975f09fedcc" prot="public" virt="virtual"><scope>wxGridCellEditor</scope><name>TryActivate</name></member>
-      <member refid="classwx_client_data_container_1a7de68b5dc45762f7507840d9deac511b" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>wxClientDataContainer</name></member>
       <member refid="classwx_grid_cell_editor_1ae91db451fda342bc5456d38aeec8921a" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>wxGridCellEditor</name></member>
       <member refid="classwx_ref_counter_1aebcddb8241dfea7f60f8e4df6776a0e3" prot="public" virt="non-virtual"><scope>wxGridCellEditor</scope><name>wxRefCounter</name></member>
-      <member refid="classwx_client_data_container_1a20946ab7128a84681ccb7d5da52ba695" prot="public" virt="virtual"><scope>wxGridCellEditor</scope><name>~wxClientDataContainer</name></member>
       <member refid="classwx_grid_cell_editor_1a91d23d6330afefa1323a6ca5d397fd2c" prot="protected" virt="virtual"><scope>wxGridCellEditor</scope><name>~wxGridCellEditor</name></member>
       <member refid="classwx_ref_counter_1aeaa9aceda6421eaa0d693cc29795263a" prot="protected" virt="virtual"><scope>wxGridCellEditor</scope><name>~wxRefCounter</name></member>
     </listofallmembers>

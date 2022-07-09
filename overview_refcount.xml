@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_refcount" kind="page">
     <compoundname>overview_refcount</compoundname>
     <title>Reference Counting</title>
@@ -25,7 +25,6 @@
 <para>Many wxWidgets objects use a technique known as <emphasis>reference counting</emphasis>, also known as <emphasis>copy on write</emphasis> (COW). </para>
     </briefdescription>
     <detaileddescription>
-<para>Many wxWidgets objects use a technique known as <emphasis>reference counting</emphasis>, also known as <emphasis>copy on write</emphasis> (COW).</para>
 <para>This means that when an object is assigned to another, no copying really takes place. Only the reference count on the shared object data is incremented and both objects share the same data (a very fast operation).</para>
 <para>But as soon as one of the two (or more) objects is modified, the data has to be copied because the changes to one of the objects shouldn&apos;t be seen in the others. As data copying only happens when the object is written to, this is known as COW.</para>
 <para>What is important to understand is that all this happens absolutely transparently to the class users and that whether an object is shared or not is not seen from the outside of the class - in any case, the result of any operation on it is the same.</para>

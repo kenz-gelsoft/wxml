@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_file_system_handler" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxFileSystemHandler</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -14,6 +14,7 @@
         <definition>wxFileSystemHandler::wxFileSystemHandler</definition>
         <argsstring>()</argsstring>
         <name>wxFileSystemHandler</name>
+        <qualifiedname>wxFileSystemHandler::wxFileSystemHandler</qualifiedname>
         <briefdescription>
 <para>Constructor. </para>
         </briefdescription>
@@ -28,6 +29,7 @@
         <definition>virtual bool wxFileSystemHandler::CanOpen</definition>
         <argsstring>(const wxString &amp;location)=0</argsstring>
         <name>CanOpen</name>
+        <qualifiedname>wxFileSystemHandler::CanOpen</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>location</declname>
@@ -53,6 +55,7 @@
         <definition>virtual wxString wxFileSystemHandler::FindFirst</definition>
         <argsstring>(const wxString &amp;wildcard, int flags=0)</argsstring>
         <name>FindFirst</name>
+        <qualifiedname>wxFileSystemHandler::FindFirst</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>wildcard</declname>
@@ -78,6 +81,7 @@
         <definition>virtual wxString wxFileSystemHandler::FindNext</definition>
         <argsstring>()</argsstring>
         <name>FindNext</name>
+        <qualifiedname>wxFileSystemHandler::FindNext</qualifiedname>
         <briefdescription>
 <para>Returns next filename that matches parameters passed to <ref refid="classwx_file_system_1a93f5d9fc8fe388213f8ed7dddc55db71" kindref="member">wxFileSystem::FindFirst</ref>. </para>
         </briefdescription>
@@ -93,6 +97,7 @@
         <definition>virtual wxFSFile * wxFileSystemHandler::OpenFile</definition>
         <argsstring>(wxFileSystem &amp;fs, const wxString &amp;location)=0</argsstring>
         <name>OpenFile</name>
+        <qualifiedname>wxFileSystemHandler::OpenFile</qualifiedname>
         <param>
           <type><ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref> &amp;</type>
           <declname>fs</declname>
@@ -136,6 +141,7 @@
         <definition>static wxString wxFileSystemHandler::GetMimeTypeFromExt</definition>
         <argsstring>(const wxString &amp;location)</argsstring>
         <name>GetMimeTypeFromExt</name>
+        <qualifiedname>wxFileSystemHandler::GetMimeTypeFromExt</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>location</declname>
@@ -159,6 +165,7 @@
         <definition>static wxString wxFileSystemHandler::GetAnchor</definition>
         <argsstring>(const wxString &amp;location)</argsstring>
         <name>GetAnchor</name>
+        <qualifiedname>wxFileSystemHandler::GetAnchor</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>location</declname>
@@ -183,6 +190,7 @@
         <definition>static wxString wxFileSystemHandler::GetLeftLocation</definition>
         <argsstring>(const wxString &amp;location)</argsstring>
         <name>GetLeftLocation</name>
+        <qualifiedname>wxFileSystemHandler::GetLeftLocation</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>location</declname>
@@ -203,6 +211,7 @@
         <definition>static wxString wxFileSystemHandler::GetProtocol</definition>
         <argsstring>(const wxString &amp;location)</argsstring>
         <name>GetProtocol</name>
+        <qualifiedname>wxFileSystemHandler::GetProtocol</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>location</declname>
@@ -223,6 +232,7 @@
         <definition>static wxString wxFileSystemHandler::GetRightLocation</definition>
         <argsstring>(const wxString &amp;location)</argsstring>
         <name>GetRightLocation</name>
+        <qualifiedname>wxFileSystemHandler::GetRightLocation</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>location</declname>
@@ -252,9 +262,11 @@
 </simplesect>
 <simplesect kind="note"><para>The location parameter passed to <ref refid="classwx_file_system_handler_1af8d661583bab118af404623f1a471460" kindref="member">OpenFile()</ref> or <ref refid="classwx_file_system_handler_1a421720c382a63c7117076757567c762f" kindref="member">CanOpen()</ref> methods is always an absolute path. You don&apos;t need to check the FS&apos;s current path.</para>
 </simplesect>
-<bold>wxPerl Note:</bold> In wxPerl, you need to derive your file system handler class from <computeroutput>Wx::PlFileSystemHandler</computeroutput>.  <heading level="2"></heading>
+<bold>wxPerl Note:</bold> In wxPerl, you need to derive your file system handler class from <computeroutput>Wx::PlFileSystemHandler</computeroutput>. </para>
+<para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__vfs" kindref="compound">Virtual File System</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref>, <ref refid="classwx_f_s_file" kindref="compound">wxFSFile</ref>, <ref refid="overview_fs" kindref="compound">wxFileSystem Overview</ref> </para>
 </simplesect>
 </para>

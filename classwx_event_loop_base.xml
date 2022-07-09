@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_event_loop_base" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxEventLoopBase</compoundname>
     <derivedcompoundref refid="classwx_g_u_i_event_loop" prot="public" virt="non-virtual">wxGUIEventLoop</derivedcompoundref>
@@ -11,6 +11,7 @@
         <definition>virtual int wxEventLoopBase::Run</definition>
         <argsstring>()=0</argsstring>
         <name>Run</name>
+        <qualifiedname>wxEventLoopBase::Run</qualifiedname>
         <briefdescription>
 <para>Start the event loop, return the exit code when it is finished. </para>
         </briefdescription>
@@ -29,6 +30,7 @@
         <definition>bool wxEventLoopBase::IsRunning</definition>
         <argsstring>() const</argsstring>
         <name>IsRunning</name>
+        <qualifiedname>wxEventLoopBase::IsRunning</qualifiedname>
         <briefdescription>
 <para>Return true if this event loop is currently running. </para>
         </briefdescription>
@@ -44,6 +46,7 @@
         <definition>virtual bool wxEventLoopBase::IsOk</definition>
         <argsstring>() const</argsstring>
         <name>IsOk</name>
+        <qualifiedname>wxEventLoopBase::IsOk</qualifiedname>
         <briefdescription>
 <para>Use this to check whether the event loop was successfully created before using it. </para>
         </briefdescription>
@@ -58,6 +61,7 @@
         <definition>virtual void wxEventLoopBase::Exit</definition>
         <argsstring>(int rc=0)</argsstring>
         <name>Exit</name>
+        <qualifiedname>wxEventLoopBase::Exit</qualifiedname>
         <param>
           <type>int</type>
           <declname>rc</declname>
@@ -79,6 +83,7 @@
         <definition>virtual void wxEventLoopBase::ScheduleExit</definition>
         <argsstring>(int rc=0)=0</argsstring>
         <name>ScheduleExit</name>
+        <qualifiedname>wxEventLoopBase::ScheduleExit</qualifiedname>
         <param>
           <type>int</type>
           <declname>rc</declname>
@@ -103,6 +108,7 @@
         <definition>virtual bool wxEventLoopBase::Pending</definition>
         <argsstring>() const =0</argsstring>
         <name>Pending</name>
+        <qualifiedname>wxEventLoopBase::Pending</qualifiedname>
         <briefdescription>
 <para>Return true if any events are available. </para>
         </briefdescription>
@@ -118,6 +124,7 @@
         <definition>virtual bool wxEventLoopBase::Dispatch</definition>
         <argsstring>()=0</argsstring>
         <name>Dispatch</name>
+        <qualifiedname>wxEventLoopBase::Dispatch</qualifiedname>
         <briefdescription>
 <para>Dispatches the next event in the windowing system event queue. </para>
         </briefdescription>
@@ -142,6 +149,7 @@
         <definition>virtual int wxEventLoopBase::DispatchTimeout</definition>
         <argsstring>(unsigned long timeout)=0</argsstring>
         <name>DispatchTimeout</name>
+        <qualifiedname>wxEventLoopBase::DispatchTimeout</qualifiedname>
         <param>
           <type>unsigned long</type>
           <declname>timeout</declname>
@@ -173,6 +181,7 @@
         <definition>virtual void wxEventLoopBase::WakeUp</definition>
         <argsstring>()=0</argsstring>
         <name>WakeUp</name>
+        <qualifiedname>wxEventLoopBase::WakeUp</qualifiedname>
         <briefdescription>
 <para>Called by wxWidgets to wake up the event loop even if it is currently blocked inside <ref refid="classwx_event_loop_base_1aa6f5e8cf5d07a6f9d2b99a4b64325b84" kindref="member">Dispatch()</ref>. </para>
         </briefdescription>
@@ -190,6 +199,7 @@
         <definition>void wxEventLoopBase::WakeUpIdle</definition>
         <argsstring>()</argsstring>
         <name>WakeUpIdle</name>
+        <qualifiedname>wxEventLoopBase::WakeUpIdle</qualifiedname>
         <briefdescription>
 <para>Makes sure that idle events are sent again. </para>
         </briefdescription>
@@ -204,6 +214,7 @@
         <definition>virtual bool wxEventLoopBase::ProcessIdle</definition>
         <argsstring>()</argsstring>
         <name>ProcessIdle</name>
+        <qualifiedname>wxEventLoopBase::ProcessIdle</qualifiedname>
         <briefdescription>
 <para>This virtual function is called when the application becomes idle and normally just sends <ref refid="classwx_idle_event" kindref="compound">wxIdleEvent</ref> to all interested parties. </para>
         </briefdescription>
@@ -222,6 +233,7 @@
         <definition>virtual bool wxEventLoopBase::IsYielding</definition>
         <argsstring>() const</argsstring>
         <name>IsYielding</name>
+        <qualifiedname>wxEventLoopBase::IsYielding</qualifiedname>
         <briefdescription>
 <para>Returns true if called from inside <ref refid="classwx_event_loop_base_1a43b540654cc046ecea5e1e497acd4189" kindref="member">Yield()</ref> or from inside <ref refid="classwx_event_loop_base_1afb5ed08160c7e6b1364170af6115af55" kindref="member">YieldFor()</ref>. </para>
         </briefdescription>
@@ -236,6 +248,7 @@
         <definition>bool wxEventLoopBase::Yield</definition>
         <argsstring>(bool onlyIfNeeded=false)</argsstring>
         <name>Yield</name>
+        <qualifiedname>wxEventLoopBase::Yield</qualifiedname>
         <param>
           <type>bool</type>
           <declname>onlyIfNeeded</declname>
@@ -259,6 +272,7 @@
         <definition>bool wxEventLoopBase::YieldFor</definition>
         <argsstring>(long eventsToProcess)</argsstring>
         <name>YieldFor</name>
+        <qualifiedname>wxEventLoopBase::YieldFor</qualifiedname>
         <param>
           <type>long</type>
           <declname>eventsToProcess</declname>
@@ -283,6 +297,7 @@
         <definition>virtual bool wxEventLoopBase::IsEventAllowedInsideYield</definition>
         <argsstring>(wxEventCategory cat) const</argsstring>
         <name>IsEventAllowedInsideYield</name>
+        <qualifiedname>wxEventLoopBase::IsEventAllowedInsideYield</qualifiedname>
         <param>
           <type><ref refid="event_8h_1a685cc8dc6176be3ab0d40e3f72719e7d" kindref="member">wxEventCategory</ref></type>
           <declname>cat</declname>
@@ -305,6 +320,7 @@
         <definition>virtual void wxEventLoopBase::OnExit</definition>
         <argsstring>()</argsstring>
         <name>OnExit</name>
+        <qualifiedname>wxEventLoopBase::OnExit</qualifiedname>
         <briefdescription>
 <para>This function is called before the event loop terminates, whether this happens normally (because of <ref refid="classwx_event_loop_base_1a33c979a2f81d59cc340096a8a1dd49a5" kindref="member">Exit()</ref> call) or abnormally (because of an exception thrown from inside the loop). </para>
         </briefdescription>
@@ -322,6 +338,7 @@
         <definition>static wxEventLoopBase * wxEventLoopBase::GetActive</definition>
         <argsstring>()</argsstring>
         <name>GetActive</name>
+        <qualifiedname>wxEventLoopBase::GetActive</qualifiedname>
         <briefdescription>
 <para>Return the currently active (running) event loop. </para>
         </briefdescription>
@@ -337,6 +354,7 @@
         <definition>static void wxEventLoopBase::SetActive</definition>
         <argsstring>(wxEventLoopBase *loop)</argsstring>
         <name>SetActive</name>
+        <qualifiedname>wxEventLoopBase::SetActive</qualifiedname>
         <param>
           <type><ref refid="classwx_event_loop_base" kindref="compound">wxEventLoopBase</ref> *</type>
           <declname>loop</declname>
@@ -359,6 +377,7 @@
         <definition>bool wxEventLoopBase::IsMain</definition>
         <argsstring>() const</argsstring>
         <name>IsMain</name>
+        <qualifiedname>wxEventLoopBase::IsMain</qualifiedname>
         <briefdescription>
 <para>Returns true if this is the main loop executed by <ref refid="classwx_app_console_1ac05a28c7cdb529f2cdfe77b3431c385c" kindref="member">wxApp::OnRun()</ref>. </para>
         </briefdescription>
@@ -379,7 +398,8 @@
 <para>Notice that there can be more than one event loop at any given moment, e.g. an event handler called from the main loop can show a modal dialog, which starts its own loop resulting in two nested loops, with the modal dialog being the active one (its <ref refid="classwx_event_loop_base_1ab994e928bc72b41255226523dcca5680" kindref="member">IsRunning()</ref> returns true). And a handler for a button inside the modal dialog can, of course, create another modal dialog with its own event loop and so on. So in general event loops form a stack and only the event loop at the top of the stack is considered to be active. It is also the only loop that can be directly asked to terminate by calling <ref refid="classwx_event_loop_base_1a33c979a2f81d59cc340096a8a1dd49a5" kindref="member">Exit()</ref> (which is done by <ref refid="classwx_dialog_1a89b6085b05b63e98001311fafcfb21f0" kindref="member">wxDialog::EndModal()</ref>), an outer event loop can&apos;t be stopped while an inner one is still running. It is however possible to ask an outer event loop to terminate as soon as all its nested loops exit and the control returns back to it by using <ref refid="classwx_event_loop_base_1a77cccf1ec4e1fd1776d01585391bce44" kindref="member">ScheduleExit()</ref>.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__appmanagement" kindref="compound">Application and Process Management</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_app" kindref="compound">wxApp</ref>, <ref refid="classwx_event_loop_activator" kindref="compound">wxEventLoopActivator</ref> </para>
 </simplesect>
 </para>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_hash_table" kind="class" language="C++" prot="public">
     <compoundname>wxHashTable</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxHashTable::wxHashTable</definition>
         <argsstring>(wxKeyType key_type=wxKEY_INTEGER, size_t size=1000)</argsstring>
         <name>wxHashTable</name>
+        <qualifiedname>wxHashTable::wxHashTable</qualifiedname>
         <param>
           <type>wxKeyType</type>
           <declname>key_type</declname>
@@ -35,6 +36,7 @@
         <definition>virtual wxHashTable::~wxHashTable</definition>
         <argsstring>()</argsstring>
         <name>~wxHashTable</name>
+        <qualifiedname>wxHashTable::~wxHashTable</qualifiedname>
         <briefdescription>
 <para>Destroys the hash table. </para>
         </briefdescription>
@@ -49,6 +51,7 @@
         <definition>void wxHashTable::BeginFind</definition>
         <argsstring>()</argsstring>
         <name>BeginFind</name>
+        <qualifiedname>wxHashTable::BeginFind</qualifiedname>
         <briefdescription>
 <para>The counterpart of <ref refid="classwx_hash_table_1a4e3ac472d2d3c1da15aaf1bde871bba8" kindref="member">Next()</ref>. </para>
         </briefdescription>
@@ -64,6 +67,7 @@
         <definition>void wxHashTable::Clear</definition>
         <argsstring>()</argsstring>
         <name>Clear</name>
+        <qualifiedname>wxHashTable::Clear</qualifiedname>
         <briefdescription>
 <para>Clears the hash table of all nodes (but as usual, doesn&apos;t delete user data). </para>
         </briefdescription>
@@ -78,6 +82,7 @@
         <definition>wxObject * wxHashTable::Delete</definition>
         <argsstring>(long key)</argsstring>
         <name>Delete</name>
+        <qualifiedname>wxHashTable::Delete</qualifiedname>
         <param>
           <type>long</type>
           <declname>key</declname>
@@ -96,6 +101,7 @@
         <definition>wxObject * wxHashTable::Delete</definition>
         <argsstring>(const wxString &amp;key)</argsstring>
         <name>Delete</name>
+        <qualifiedname>wxHashTable::Delete</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>key</declname>
@@ -113,6 +119,7 @@
         <definition>void wxHashTable::DeleteContents</definition>
         <argsstring>(bool flag)</argsstring>
         <name>DeleteContents</name>
+        <qualifiedname>wxHashTable::DeleteContents</qualifiedname>
         <param>
           <type>bool</type>
           <declname>flag</declname>
@@ -131,6 +138,7 @@
         <definition>wxObject * wxHashTable::Get</definition>
         <argsstring>(long key)</argsstring>
         <name>Get</name>
+        <qualifiedname>wxHashTable::Get</qualifiedname>
         <param>
           <type>long</type>
           <declname>key</declname>
@@ -149,6 +157,7 @@
         <definition>wxObject * wxHashTable::Get</definition>
         <argsstring>(const char *key)</argsstring>
         <name>Get</name>
+        <qualifiedname>wxHashTable::Get</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>key</declname>
@@ -166,6 +175,7 @@
         <definition>size_t wxHashTable::GetCount</definition>
         <argsstring>() const</argsstring>
         <name>GetCount</name>
+        <qualifiedname>wxHashTable::GetCount</qualifiedname>
         <briefdescription>
 <para>Returns the number of elements in the hash table. </para>
         </briefdescription>
@@ -180,6 +190,7 @@
         <definition>wxHashTable::Node * wxHashTable::Next</definition>
         <argsstring>()</argsstring>
         <name>Next</name>
+        <qualifiedname>wxHashTable::Next</qualifiedname>
         <briefdescription>
 <para>If the application wishes to iterate through all the data in the hash table, it can call <ref refid="classwx_hash_table_1a430714a9e63d36f76c092e5cdfb23f31" kindref="member">BeginFind()</ref> and then loop on <ref refid="classwx_hash_table_1a4e3ac472d2d3c1da15aaf1bde871bba8" kindref="member">Next()</ref>. </para>
         </briefdescription>
@@ -196,6 +207,7 @@
         <definition>void wxHashTable::Put</definition>
         <argsstring>(long key, wxObject *object)</argsstring>
         <name>Put</name>
+        <qualifiedname>wxHashTable::Put</qualifiedname>
         <param>
           <type>long</type>
           <declname>key</declname>
@@ -219,6 +231,7 @@
         <definition>void wxHashTable::Put</definition>
         <argsstring>(const char *key, wxObject *object)</argsstring>
         <name>Put</name>
+        <qualifiedname>wxHashTable::Put</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>key</declname>
@@ -242,6 +255,7 @@
         <definition>static long wxHashTable::MakeKey</definition>
         <argsstring>(const wxString &amp;string)</argsstring>
         <name>MakeKey</name>
+        <qualifiedname>wxHashTable::MakeKey</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>string</declname>
@@ -276,7 +290,8 @@
 <para>Retrieval involves recalculating the array index from the key, and searching along the keyed list for the data object whose stored key matches the passed key. Obviously this is quicker when there are fewer collisions, so hashing will become inefficient if the number of items to be stored greatly exceeds the size of the hash table.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__containers" kindref="compound">Containers</ref></para>
 <para><simplesect kind="see"><para>wxList </para>
 </simplesect>
 </para>

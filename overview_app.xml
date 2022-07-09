@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_app" kind="page">
     <compoundname>overview_app</compoundname>
     <title>wxApp Overview</title>
@@ -13,7 +13,6 @@
 <para>A wxWidgets application does not have a <emphasis>main</emphasis> procedure; the equivalent is the <ref refid="classwx_app_console_1a99953775a2fd83fa2456e390779afe15" kindref="member">wxApp::OnInit</ref> member defined for a class derived from <ref refid="classwx_app" kindref="compound">wxApp</ref>. </para>
     </briefdescription>
     <detaileddescription>
-<para>A wxWidgets application does not have a <emphasis>main</emphasis> procedure; the equivalent is the <ref refid="classwx_app_console_1a99953775a2fd83fa2456e390779afe15" kindref="member">wxApp::OnInit</ref> member defined for a class derived from <ref refid="classwx_app" kindref="compound">wxApp</ref>.</para>
 <para><emphasis>OnInit</emphasis> will usually create a top window as a bare minimum. Unlike in earlier versions of wxWidgets, OnInit does not return a frame. Instead it returns a boolean value which indicates whether processing should continue (true) or not (false).</para>
 <para>Note that the program&apos;s command line arguments, represented by <emphasis>argc</emphasis> and <emphasis>argv</emphasis>, are available from within <ref refid="classwx_app" kindref="compound">wxApp</ref> member functions.</para>
 <para>An application closes by destroying all windows. Because all frames must be destroyed for the application to exit, it is advisable to use parent frames wherever possible when creating new frames, so that deleting the top level frame will automatically delete child frames. The alternative is to explicitly delete child frames in the top-level frame&apos;s <ref refid="classwx_close_event" kindref="compound">wxCloseEvent</ref> handler.</para>
@@ -36,7 +35,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
-<para>Note the use of <ref refid="interface_2wx_2app_8h_1a967aafaa261481fe2d2e1cf599e3e003" kindref="member">wxIMPLEMENT_APP(appClass)</ref>, which allows wxWidgets to dynamically create an instance of the application object at the appropriate point in wxWidgets initialization. Previous versions of wxWidgets used to rely on the creation of a global application object, but this is no longer recommended, because required global initialization may not have been performed at application object construction time.</para>
+<para>Note the use of <ref refid="interface_2wx_2app_8h_1a967aafaa261481fe2d2e1cf599e3e003" kindref="member">wxIMPLEMENT_APP()</ref>, which defines the application entry point (either <computeroutput>main()</computeroutput> or <computeroutput>WinMain()</computeroutput> function, depending on the platform) and tells wxWidgets which application class should be used.</para>
 <para>You can also use <ref refid="interface_2wx_2app_8h_1a1523a2d553dea288d66cd35e8a0ffd5c" kindref="member">wxDECLARE_APP(appClass)</ref> in a header file to declare the wxGetApp function which returns a reference to the application object. Otherwise you can only use the global <computeroutput>wxTheApp</computeroutput> pointer which is of type <computeroutput>wxApp*</computeroutput>.</para>
 <sect1 id="overview_app_1overview_app_shutdown">
 <title>Application Shutdown</title>

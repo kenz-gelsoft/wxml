@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_button" kind="class" language="C++" prot="public">
     <compoundname>wxButton</compoundname>
     <basecompoundref refid="classwx_any_button" prot="public" virt="non-virtual">wxAnyButton</basecompoundref>
@@ -12,6 +12,7 @@
         <definition>wxButton::wxButton</definition>
         <argsstring>()</argsstring>
         <name>wxButton</name>
+        <qualifiedname>wxButton::wxButton</qualifiedname>
         <briefdescription>
 <para>Default ctor. </para>
         </briefdescription>
@@ -26,6 +27,7 @@
         <definition>wxButton::wxButton</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxString &amp;label=wxEmptyString, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=0, const wxValidator &amp;validator=wxDefaultValidator, const wxString &amp;name=wxButtonNameStr)</argsstring>
         <name>wxButton</name>
+        <qualifiedname>wxButton::wxButton</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -148,6 +150,7 @@
         <definition>bool wxButton::Create</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxString &amp;label=wxEmptyString, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=0, const wxValidator &amp;validator=wxDefaultValidator, const wxString &amp;name=wxButtonNameStr)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxButton::Create</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -201,6 +204,7 @@
         <definition>bool wxButton::GetAuthNeeded</definition>
         <argsstring>() const</argsstring>
         <name>GetAuthNeeded</name>
+        <qualifiedname>wxButton::GetAuthNeeded</qualifiedname>
         <briefdescription>
 <para>Returns true if an authentication needed symbol is displayed on the button. </para>
         </briefdescription>
@@ -222,6 +226,7 @@
         <definition>wxString wxButton::GetLabel</definition>
         <argsstring>() const</argsstring>
         <name>GetLabel</name>
+        <qualifiedname>wxButton::GetLabel</qualifiedname>
         <reimplements refid="classwx_window_1a50db82dadf3cfaee41dd40a9b90ae339">GetLabel</reimplements>
         <reimplementedby refid="classwx_command_link_button_1ade02e2f524f146db02ccecd2ec424162">GetLabel</reimplementedby>
         <briefdescription>
@@ -241,6 +246,7 @@
         <definition>void wxButton::SetAuthNeeded</definition>
         <argsstring>(bool needed=true)</argsstring>
         <name>SetAuthNeeded</name>
+        <qualifiedname>wxButton::SetAuthNeeded</qualifiedname>
         <param>
           <type>bool</type>
           <declname>needed</declname>
@@ -267,6 +273,7 @@
         <definition>virtual wxWindow * wxButton::SetDefault</definition>
         <argsstring>()</argsstring>
         <name>SetDefault</name>
+        <qualifiedname>wxButton::SetDefault</qualifiedname>
         <briefdescription>
 <para>This sets the button to be the default item in its top-level window (e.g. </para>
         </briefdescription>
@@ -289,6 +296,7 @@
         <definition>void wxButton::SetLabel</definition>
         <argsstring>(const wxString &amp;label)</argsstring>
         <name>SetLabel</name>
+        <qualifiedname>wxButton::SetLabel</qualifiedname>
         <reimplements refid="classwx_window_1aa00ffea9f53587f29ae343adde033b8e">SetLabel</reimplements>
         <reimplementedby refid="classwx_command_link_button_1abc8a21805f1a8c07734a3b781e8dd18b">SetLabel</reimplementedby>
         <param>
@@ -321,6 +329,7 @@
         <definition>static wxSize wxButton::GetDefaultSize</definition>
         <argsstring>(wxWindow *win=NULL)</argsstring>
         <name>GetDefaultSize</name>
+        <qualifiedname>wxButton::GetDefaultSize</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>win</declname>
@@ -344,7 +353,7 @@
     <detaileddescription>
 <para>It may be placed on a <ref refid="classwx_dialog" kindref="compound">dialog box</ref> or on a <ref refid="classwx_panel" kindref="compound">wxPanel</ref> panel, or indeed on almost any other window.</para>
 <para>By default, i.e. if none of the alignment styles are specified, the label is centered both horizontally and vertically. If the button has both a label and a bitmap, the alignment styles above specify the location of the rectangle combining both the label and the bitmap and the bitmap position set with <ref refid="classwx_any_button_1a841c7747f78ea37110338b0ce1aa97dd" kindref="member">wxButton::SetBitmapPosition()</ref> defines the relative position of the bitmap with respect to the label (however currently non-default alignment combinations are not implemented on all platforms).</para>
-<para>Since version 2.9.1 <ref refid="classwx_button" kindref="compound">wxButton</ref> supports showing both text and an image (currently only when using wxMSW, wxGTK or wxOSX/Cocoa ports), see <ref refid="classwx_any_button_1a9d4e6eb774aa5d19b6f75c48439d3685" kindref="member">SetBitmap()</ref> and <ref refid="classwx_any_button_1a1efdfd1f222acca40aacad1fe5f8eb17" kindref="member">SetBitmapLabel()</ref>, <ref refid="classwx_any_button_1a735a45850008e87e1198db36fcbee0db" kindref="member">SetBitmapDisabled()</ref> &amp;c methods. In the previous wxWidgets versions this functionality was only available in (the now trivial) <ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref> class which was only capable of showing an image without text.</para>
+<para>Since version 2.9.1 <ref refid="classwx_button" kindref="compound">wxButton</ref> supports showing both text and an image (currently only when using wxMSW, wxGTK or wxOSX/Cocoa ports), see <ref refid="classwx_any_button_1acdf75b25b6d948dd5ec4e04292283a70" kindref="member">SetBitmap()</ref> and <ref refid="classwx_any_button_1affe257f3d018f448ad1e4c2d33ae5e98" kindref="member">SetBitmapLabel()</ref>, <ref refid="classwx_any_button_1abe5111aaa070d4ce9603511210fc39e3" kindref="member">SetBitmapDisabled()</ref> &amp;c methods. In the previous wxWidgets versions this functionality was only available in (the now trivial) <ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref> class which was only capable of showing an image without text.</para>
 <para>A button may have either a single image for all states or different images for the following states (different images are not currently supported under macOS where the normal image is used for all states): <itemizedlist>
 <listitem><para><bold>normal:</bold> the default state </para>
 </listitem>
@@ -360,8 +369,7 @@
 All of the bitmaps must be of the same size and the normal bitmap must be set first (to a valid bitmap), before setting any other ones. Also, if the size of the bitmaps is changed later, you need to change the size of the normal bitmap before setting any other bitmaps with the new size (and you do need to reset all of them as their original values can be lost when the normal bitmap size changes).</para>
 <para>The position of the image inside the button be configured using <ref refid="classwx_any_button_1a841c7747f78ea37110338b0ce1aa97dd" kindref="member">SetBitmapPosition()</ref>. By default the image is on the left of the text.</para>
 <para>Please also notice that GTK+ uses a global setting called <computeroutput>gtk-button-images</computeroutput> to determine if the images should be shown in the buttons at all. If it is off (which is the case in e.g. Gnome 2.28 by default), no images will be shown, consistently with the native behaviour.</para>
-<para><linebreak/>
-<heading level="2">Styles</heading>
+<para><heading level="2">Styles</heading>
 </para>
 <para>This class supports the following styles:</para>
 <para> <itemizedlist>
@@ -377,30 +385,23 @@ All of the bitmaps must be of the same size and the normal bitmap must be set fi
 </listitem>
 <listitem><para>wxBU_NOTEXT: Disables the display of the text label in the button even if it has one or its id is one of the standard stock ids with an associated label: without using this style a button which is only supposed to show a bitmap but uses a standard id would display a label too. </para>
 </listitem>
-<listitem><para>wxBORDER_NONE: Creates a button without border. This is currently implemented in MSW, GTK2 and OSX/Cocoa. <linebreak/>
- <linebreak/>
-<heading level="2">Events emitted by this class</heading>
-</para>
+<listitem><para>wxBORDER_NONE: Creates a button without border. This is currently implemented in MSW, GTK2 and OSX/Cocoa. </para>
 </listitem>
 </itemizedlist>
+<heading level="2">Events emitted by this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros for events emitted by this class: <itemizedlist>
-<listitem><para>EVT_BUTTON(id,  func): Process a <computeroutput>wxEVT_BUTTON</computeroutput> event, when the button is clicked. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_BUTTON(id,  func): Process a <computeroutput>wxEVT_BUTTON</computeroutput> event, when the button is clicked. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-button-msw.png">wxMSW Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-button-gtk.png">wxGTK Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-button-mac.png">wxOSX Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__ctrl" kindref="compound">Controls</ref> <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-button-msw.png">wxMSW Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-button-gtk.png">wxGTK Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-button-mac.png">wxOSX Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
 <para><simplesect kind="see"><para><ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref> </para>
 </simplesect>
 </para>
@@ -594,6 +595,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1a71f45373a9fc55e128d263391093c32a" prot="public" virt="non-virtual"><scope>wxButton</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1ad122671fcef564f7e11658c3ee0d4d87" prot="public" virt="non-virtual"><scope>wxButton</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1aee63c8b1f8055fef76962578aa7f38c1" prot="public" virt="non-virtual"><scope>wxButton</scope><name>FromDIP</name></member>
+      <member refid="classwx_window_1a144678f0b197268aa9d8d81b76a150a7" prot="public" virt="non-virtual"><scope>wxButton</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a048d540d731ac83550c206df4af04270" prot="public" virt="non-virtual"><scope>wxButton</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1ac3f185cef9f6a645be63b9b62afae46a" prot="public" virt="non-virtual"><scope>wxButton</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a2fe6412d36c2b81c0dd3eeb1dd8bd004" prot="public" virt="non-virtual"><scope>wxButton</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1af1ddb23778f531a56f2e1aa937a66d9c" prot="public" virt="non-virtual"><scope>wxButton</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a27efab91147b0ffeee600f02059c23fc" prot="public" virt="non-virtual"><scope>wxButton</scope><name>FromPhys</name></member>
       <member refid="classwx_window_1a9cf3fd71ffab949cdf06f8f8e2646d56" prot="public" virt="non-virtual"><scope>wxButton</scope><name>GetAcceleratorTable</name></member>
       <member refid="classwx_window_1a00547805ce11e2ba64607d31fc2c67e2" prot="public" virt="non-virtual"><scope>wxButton</scope><name>GetAccessible</name></member>
       <member refid="classwx_button_1a7421e6fc4c646b21898e06305397606e" prot="public" virt="non-virtual"><scope>wxButton</scope><name>GetAuthNeeded</name></member>
@@ -793,15 +800,15 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1ad369fe1db5c20f9d9edff7b5eb1f7226" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetAutoLayout</name></member>
       <member refid="classwx_window_1a37219df52734626e23401fd83b25d8a0" prot="public" virt="virtual"><scope>wxButton</scope><name>SetBackgroundColour</name></member>
       <member refid="classwx_window_1af14f8fd2ed2d30a9bbb5d4f9fd6594ec" prot="public" virt="virtual"><scope>wxButton</scope><name>SetBackgroundStyle</name></member>
-      <member refid="classwx_any_button_1a9d4e6eb774aa5d19b6f75c48439d3685" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmap</name></member>
-      <member refid="classwx_any_button_1a7ef165f2a4d309e6ed6ff943a8d21563" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapCurrent</name></member>
-      <member refid="classwx_any_button_1a735a45850008e87e1198db36fcbee0db" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapDisabled</name></member>
-      <member refid="classwx_any_button_1adcf9477763500b6fde991d8907a18cca" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapFocus</name></member>
-      <member refid="classwx_any_button_1a1efdfd1f222acca40aacad1fe5f8eb17" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapLabel</name></member>
+      <member refid="classwx_any_button_1acdf75b25b6d948dd5ec4e04292283a70" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmap</name></member>
+      <member refid="classwx_any_button_1a1763182bb87be55f21bf4099d7a168f3" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapCurrent</name></member>
+      <member refid="classwx_any_button_1abe5111aaa070d4ce9603511210fc39e3" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapDisabled</name></member>
+      <member refid="classwx_any_button_1aa2f48cf306eb0375c5ff5a94a9a83970" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapFocus</name></member>
+      <member refid="classwx_any_button_1affe257f3d018f448ad1e4c2d33ae5e98" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapLabel</name></member>
       <member refid="classwx_any_button_1a6cd7a739c0795b85c82077934f6f8ba6" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapMargins</name></member>
       <member refid="classwx_any_button_1ab12a46889cfb85eaa96f1a1dc3a21b8f" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapMargins</name></member>
       <member refid="classwx_any_button_1a841c7747f78ea37110338b0ce1aa97dd" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapPosition</name></member>
-      <member refid="classwx_any_button_1a414ed38ee5fce39feaf686b7616c0cb6" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapPressed</name></member>
+      <member refid="classwx_any_button_1a92164bbc6a2659f8ac751b146056a6c6" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetBitmapPressed</name></member>
       <member refid="classwx_window_1a2b8b2e99231a0ec1a05f5066f1b7f3d8" prot="public" virt="virtual"><scope>wxButton</scope><name>SetCanFocus</name></member>
       <member refid="classwx_window_1acfef5e1cada92c73e2937b84ff57ff57" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetCaret</name></member>
       <member refid="classwx_evt_handler_1a82c74f2cebfa02cb3c1563d459c872bf" prot="public" virt="non-virtual"><scope>wxButton</scope><name>SetClientData</name></member>
@@ -874,6 +881,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1aef413f1d0252a7a5a29512e8ab5e7c91" prot="public" virt="non-virtual"><scope>wxButton</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a1771a46c000060619f6e1249ce362433" prot="public" virt="non-virtual"><scope>wxButton</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a8a4fa47129de552bfec37db8c69688a2" prot="public" virt="non-virtual"><scope>wxButton</scope><name>ToggleWindowStyle</name></member>
+      <member refid="classwx_window_1a5d3a9450e6b6f44c6b7d0d4a002fa40f" prot="public" virt="non-virtual"><scope>wxButton</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1afca50ba59976ad9913148fffd38ff0ef" prot="public" virt="non-virtual"><scope>wxButton</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1ad0bea5e21d33d00d0cf19c011bad39bf" prot="public" virt="non-virtual"><scope>wxButton</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aaf0ac2191826f233f04bffa900dbc357" prot="public" virt="non-virtual"><scope>wxButton</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aef56d76b1cacdca83daebffcc385d6db" prot="public" virt="non-virtual"><scope>wxButton</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1a6797f4c9656276796031b9846ecc20b6" prot="public" virt="non-virtual"><scope>wxButton</scope><name>ToPhys</name></member>
       <member refid="classwx_window_1ab8e51f36e7d8790b361c8d8c6f37b1ad" prot="public" virt="virtual"><scope>wxButton</scope><name>TransferDataFromWindow</name></member>
       <member refid="classwx_window_1a88cc65e424a129d9b0057756cdb67ec9" prot="public" virt="virtual"><scope>wxButton</scope><name>TransferDataToWindow</name></member>
       <member refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" prot="protected" virt="virtual"><scope>wxButton</scope><name>TryAfter</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="filename_8h" kind="file" language="C++">
     <compoundname>filename.h</compoundname>
     <innerclass refid="classwx_file_name" prot="public">wxFileName</innerclass>
@@ -137,7 +137,8 @@
 <para>Replace environment variables with their values. </para>
           </briefdescription>
           <detaileddescription>
-<para><ref refid="classwx_file_name" kindref="compound">wxFileName</ref> understands both Unix and Windows (but only under Windows) environment variables expansion: i.e. <computeroutput>&quot;$var&quot;</computeroutput>, <computeroutput>&quot;$(var)&quot;</computeroutput> and <computeroutput>&quot;${var}&quot;</computeroutput> are always understood and in addition under Windows <computeroutput>&quot;%var%&quot;</computeroutput> is also. </para>
+<para><ref refid="classwx_file_name" kindref="compound">wxFileName</ref> understands both Unix and Windows (but only under Windows) environment variables expansion: i.e. <computeroutput>&quot;$var&quot;</computeroutput>, <computeroutput>&quot;$(var)&quot;</computeroutput> and <computeroutput>&quot;${var}&quot;</computeroutput> are always understood and in addition under Windows <computeroutput>&quot;%var%&quot;</computeroutput> is also.</para>
+<para>Note that when this flag is used, dollar or percent signs may be escaped with backslashes to prevent them from being used for the variable expansion, meaning that normalizing any path with a directory starting with a dollar sign under Windows can give unexpected results, as normalizing <computeroutput>c:\foo\$bar</computeroutput> results in <computeroutput>c:\foo$bar</computeroutput>. Because of this, using this flag with arbitrary paths is not recommended. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="filename_8h_1a18dd81e40b3fad4a089077e28e5dce22a6bffe1a3462787d537fcd92bb049a864" prot="public">
@@ -178,11 +179,16 @@
         </enumvalue>
         <enumvalue id="filename_8h_1a18dd81e40b3fad4a089077e28e5dce22a2e0a4224acf272c1a4f6660a3d301386" prot="public">
           <name>wxPATH_NORM_LONG</name>
-          <initializer>=     0x0020</initializer>
+          <initializer>= 0x0020</initializer>
           <briefdescription>
-<para>Expand the path to the &quot;long&quot; form (Windows only). </para>
+<para>Expand the path to the &quot;long&quot; form under Windows. </para>
           </briefdescription>
           <detaileddescription>
+<para>This flag converts DOS short paths in 8.3 format to long form under Windows and does nothing under the other platforms. It is mostly irrelevant nowadays as short paths are not used any longer in practice.</para>
+<para>Notice that it only works for the existing file paths.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_file_name_1ac9866d9a346e6baaa70371ce49d1e29c" kindref="member">wxFileName::GetLongPath()</ref> </para>
+</simplesect>
+</para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="filename_8h_1a18dd81e40b3fad4a089077e28e5dce22a15e8ddcc41e5db893e97093a12b1fd07" prot="public">
@@ -198,20 +204,21 @@
           <name>wxPATH_NORM_ALL</name>
           <initializer>= 0x00ff &amp; ~wxPATH_NORM_CASE</initializer>
           <briefdescription>
-<para>A value indicating all normalization flags except for <computeroutput>wxPATH_NORM_CASE</computeroutput>. </para>
+<para>Flags used by <ref refid="classwx_file_name_1aa343631e16eebfac15a308f376995de9" kindref="member">wxFileName::Normalize()</ref> by default. </para>
           </briefdescription>
           <detaileddescription>
+<para>This includes all normalization flags except for <computeroutput>wxPATH_NORM_CASE</computeroutput> and notably does include <computeroutput>wxPATH_NORM_ENV_VARS</computeroutput> which may yield unexpected results, as described above. Because of this, this flag is deprecated and shouldn&apos;t be used in the new code and the existing code should be reviewed to check if expanding environment variables is really needed. </para>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
 <para>The kind of normalization to do with the file name: these values can be or&apos;d together to perform several operations at once. </para>
         </briefdescription>
         <detaileddescription>
-<para>See <ref refid="classwx_file_name_1a2db3fcc42863daa265619de0d5f390df" kindref="member">wxFileName::Normalize()</ref> for more info. </para>
+<para>See <ref refid="classwx_file_name_1aa343631e16eebfac15a308f376995de9" kindref="member">wxFileName::Normalize()</ref> for more info. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filename.h" line="55" column="1" bodyfile="interface/wx/filename.h" bodystart="56" bodyend="72"/>
+        <location file="interface/wx/filename.h" line="55" column="1" bodyfile="interface/wx/filename.h" bodystart="56" bodyend="104"/>
       </memberdef>
       <memberdef kind="enum" id="filename_8h_1adb49720dc49f7d4e4cf9adbf2948e409" prot="public" static="no" strong="no">
         <type></type>
@@ -242,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filename.h" line="77" column="1" bodyfile="interface/wx/filename.h" bodystart="78" bodyend="90"/>
+        <location file="interface/wx/filename.h" line="109" column="1" bodyfile="interface/wx/filename.h" bodystart="110" bodyend="122"/>
       </memberdef>
       <memberdef kind="enum" id="filename_8h_1aae05225933a42f81e7c4a9fb286596f9" prot="public" static="no" strong="no">
         <type></type>
@@ -323,7 +330,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filename.h" line="97" column="1" bodyfile="interface/wx/filename.h" bodystart="98" bodyend="114"/>
+        <location file="interface/wx/filename.h" line="129" column="1" bodyfile="interface/wx/filename.h" bodystart="130" bodyend="146"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -339,7 +346,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/filename.h" line="119" column="13" bodyfile="interface/wx/filename.h" bodystart="119" bodyend="-1"/>
+        <location file="interface/wx/filename.h" line="151" column="13" bodyfile="interface/wx/filename.h" bodystart="151" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_grid_cell_activatable_editor" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxGridCellActivatableEditor</compoundname>
     <basecompoundref refid="classwx_grid_cell_editor" prot="public" virt="non-virtual">wxGridCellEditor</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>virtual wxGridActivationResult wxGridCellActivatableEditor::TryActivate</definition>
         <argsstring>(int row, int col, wxGrid *grid, const wxGridActivationSource &amp;actSource)=0</argsstring>
         <name>TryActivate</name>
+        <qualifiedname>wxGridCellActivatableEditor::TryActivate</qualifiedname>
         <reimplements refid="classwx_grid_cell_editor_1a9eb24dbc65c4c07543f4c975f09fedcc">TryActivate</reimplements>
         <param>
           <type>int</type>
@@ -42,6 +43,7 @@
         <definition>virtual void wxGridCellActivatableEditor::DoActivate</definition>
         <argsstring>(int row, int col, wxGrid *grid)=0</argsstring>
         <name>DoActivate</name>
+        <qualifiedname>wxGridCellActivatableEditor::DoActivate</qualifiedname>
         <reimplements refid="classwx_grid_cell_editor_1ac2258168ec052a369b4343bad61a8d99">DoActivate</reimplements>
         <param>
           <type>int</type>
@@ -75,10 +77,6 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>wxClientDataContainer</label>
-        <link refid="classwx_client_data_container"/>
-      </node>
       <node id="1">
         <label>wxGridCellActivatableEditor</label>
         <link refid="classwx_grid_cell_activatable_editor"/>
@@ -96,13 +94,13 @@
       <node id="4">
         <label>wxRefCounter</label>
         <link refid="classwx_ref_counter"/>
+      </node>
+      <node id="3">
+        <label>wxSharedClientDataContainer</label>
+        <link refid="classwx_shared_client_data_container"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3">
-        <label>wxClientDataContainer</label>
-        <link refid="classwx_client_data_container"/>
-      </node>
       <node id="1">
         <label>wxGridCellActivatableEditor</label>
         <link refid="classwx_grid_cell_activatable_editor"/>
@@ -120,6 +118,10 @@
       <node id="4">
         <label>wxRefCounter</label>
         <link refid="classwx_ref_counter"/>
+      </node>
+      <node id="3">
+        <label>wxSharedClientDataContainer</label>
+        <link refid="classwx_shared_client_data_container"/>
       </node>
     </collaborationgraph>
     <location file="interface/wx/grid.h" line="790" column="1" bodyfile="interface/wx/grid.h" bodystart="791" bodyend="806"/>
@@ -132,8 +134,8 @@
       <member refid="classwx_grid_cell_editor_1adc20623daa433958374412a440c2528e" prot="public" virt="virtual"><scope>wxGridCellActivatableEditor</scope><name>Destroy</name></member>
       <member refid="classwx_grid_cell_activatable_editor_1a01d85f8058c5fe22fb911817c3709079" prot="public" virt="pure-virtual"><scope>wxGridCellActivatableEditor</scope><name>DoActivate</name></member>
       <member refid="classwx_grid_cell_editor_1a227445c6c3b66494b2428ecb683a9ae7" prot="public" virt="pure-virtual"><scope>wxGridCellActivatableEditor</scope><name>EndEdit</name></member>
-      <member refid="classwx_client_data_container_1a2acdfa0e91eae2cf20c30cdab94ed76b" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>GetClientData</name></member>
-      <member refid="classwx_client_data_container_1a3ea98fef1730f6b0771e7016214fb992" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>GetClientObject</name></member>
+      <member refid="classwx_shared_client_data_container_1ad6124bb7ad421d7ec732fb0183853c39" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>GetClientData</name></member>
+      <member refid="classwx_shared_client_data_container_1a09efd087e9fa18d133810135ec0aa706" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>GetClientObject</name></member>
       <member refid="classwx_grid_cell_editor_1a4d0da78e0914ba2cefcb074dfa29064e" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>GetControl</name></member>
       <member refid="classwx_ref_counter_1a98ca5fc3fa6219d993dd3654925c46aa" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>GetRefCount</name></member>
       <member refid="classwx_grid_cell_editor_1a2dd2032fe1e396fd30686ff022a99d97" prot="public" virt="pure-virtual"><scope>wxGridCellActivatableEditor</scope><name>GetValue</name></member>
@@ -144,8 +146,8 @@
       <member refid="classwx_grid_cell_editor_1a9e0e19a87a387d243a0c07f12bc0a2de" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>IsCreated</name></member>
       <member refid="classwx_grid_cell_editor_1aa279d3b3e27d688570294c53eca1def4" prot="public" virt="virtual"><scope>wxGridCellActivatableEditor</scope><name>PaintBackground</name></member>
       <member refid="classwx_grid_cell_editor_1a027e54b196a9f30271cfaf28fc1e30b7" prot="public" virt="pure-virtual"><scope>wxGridCellActivatableEditor</scope><name>Reset</name></member>
-      <member refid="classwx_client_data_container_1a3b291dde8d851583b00e6917af539d13" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>SetClientData</name></member>
-      <member refid="classwx_client_data_container_1afc03e080cc61dd9acaac86b76965cbb5" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>SetClientObject</name></member>
+      <member refid="classwx_shared_client_data_container_1a67e9b50a8f4c3d4ba8cd69eb6563911f" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>SetClientData</name></member>
+      <member refid="classwx_shared_client_data_container_1a98df28a082ea03a5cfef744328873ce5" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>SetClientObject</name></member>
       <member refid="classwx_grid_cell_editor_1ae9d8087c6b037194b0c7680d63555145" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>SetControl</name></member>
       <member refid="classwx_grid_cell_editor_1a76508cbb2989ce94aa3082f1a12e789f" prot="public" virt="virtual"><scope>wxGridCellActivatableEditor</scope><name>SetSize</name></member>
       <member refid="classwx_grid_cell_editor_1a1c181892931a4f57289cc27064930b67" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>SetWindow</name></member>
@@ -153,10 +155,8 @@
       <member refid="classwx_grid_cell_editor_1a222488a19f6f7d4562dd2ef390c01b0f" prot="public" virt="virtual"><scope>wxGridCellActivatableEditor</scope><name>StartingClick</name></member>
       <member refid="classwx_grid_cell_editor_1a814292778557067b6068f6ee966985dc" prot="public" virt="virtual"><scope>wxGridCellActivatableEditor</scope><name>StartingKey</name></member>
       <member refid="classwx_grid_cell_activatable_editor_1aa855df176029b7a826fa0dcc947a5de7" prot="public" virt="pure-virtual"><scope>wxGridCellActivatableEditor</scope><name>TryActivate</name></member>
-      <member refid="classwx_client_data_container_1a7de68b5dc45762f7507840d9deac511b" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>wxClientDataContainer</name></member>
       <member refid="classwx_grid_cell_editor_1ae91db451fda342bc5456d38aeec8921a" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>wxGridCellEditor</name></member>
       <member refid="classwx_ref_counter_1aebcddb8241dfea7f60f8e4df6776a0e3" prot="public" virt="non-virtual"><scope>wxGridCellActivatableEditor</scope><name>wxRefCounter</name></member>
-      <member refid="classwx_client_data_container_1a20946ab7128a84681ccb7d5da52ba695" prot="public" virt="virtual"><scope>wxGridCellActivatableEditor</scope><name>~wxClientDataContainer</name></member>
       <member refid="classwx_grid_cell_editor_1a91d23d6330afefa1323a6ca5d397fd2c" prot="protected" virt="virtual"><scope>wxGridCellActivatableEditor</scope><name>~wxGridCellEditor</name></member>
       <member refid="classwx_ref_counter_1aeaa9aceda6421eaa0d693cc29795263a" prot="protected" virt="virtual"><scope>wxGridCellActivatableEditor</scope><name>~wxRefCounter</name></member>
     </listofallmembers>

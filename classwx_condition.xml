@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_condition" kind="class" language="C++" prot="public">
     <compoundname>wxCondition</compoundname>
     <includes local="no">wx/thread.h</includes>
@@ -9,6 +9,7 @@
         <definition>wxCondition::wxCondition</definition>
         <argsstring>(wxMutex &amp;mutex)</argsstring>
         <name>wxCondition</name>
+        <qualifiedname>wxCondition::wxCondition</qualifiedname>
         <param>
           <type><ref refid="classwx_mutex" kindref="compound">wxMutex</ref> &amp;</type>
           <declname>mutex</declname>
@@ -28,6 +29,7 @@
         <definition>wxCondition::~wxCondition</definition>
         <argsstring>()</argsstring>
         <name>~wxCondition</name>
+        <qualifiedname>wxCondition::~wxCondition</qualifiedname>
         <briefdescription>
 <para>Destroys the <ref refid="classwx_condition" kindref="compound">wxCondition</ref> object. </para>
         </briefdescription>
@@ -43,6 +45,7 @@
         <definition>wxCondError wxCondition::Broadcast</definition>
         <argsstring>()</argsstring>
         <name>Broadcast</name>
+        <qualifiedname>wxCondition::Broadcast</qualifiedname>
         <briefdescription>
 <para>Broadcasts to all waiting threads, waking all of them up. </para>
         </briefdescription>
@@ -61,6 +64,7 @@
         <definition>bool wxCondition::IsOk</definition>
         <argsstring>() const</argsstring>
         <name>IsOk</name>
+        <qualifiedname>wxCondition::IsOk</qualifiedname>
         <briefdescription>
 <para>Returns true if the object had been initialized successfully, false if an error occurred. </para>
         </briefdescription>
@@ -75,6 +79,7 @@
         <definition>wxCondError wxCondition::Signal</definition>
         <argsstring>()</argsstring>
         <name>Signal</name>
+        <qualifiedname>wxCondition::Signal</qualifiedname>
         <briefdescription>
 <para>Signals the object waking up at most one thread. </para>
         </briefdescription>
@@ -94,6 +99,7 @@
         <definition>wxCondError wxCondition::Wait</definition>
         <argsstring>()</argsstring>
         <name>Wait</name>
+        <qualifiedname>wxCondition::Wait</qualifiedname>
         <briefdescription>
 <para>Waits until the condition is signalled. </para>
         </briefdescription>
@@ -120,6 +126,7 @@
         <definition>wxCondError wxCondition::Wait</definition>
         <argsstring>(const Functor &amp;predicate)</argsstring>
         <name>Wait</name>
+        <qualifiedname>wxCondition::Wait</qualifiedname>
         <param>
           <type>const Functor &amp;</type>
           <declname>predicate</declname>
@@ -152,6 +159,7 @@
         <definition>wxCondError wxCondition::WaitTimeout</definition>
         <argsstring>(unsigned long milliseconds)</argsstring>
         <name>WaitTimeout</name>
+        <qualifiedname>wxCondition::WaitTimeout</qualifiedname>
         <param>
           <type>unsigned long</type>
           <declname>milliseconds</declname>
@@ -243,7 +251,8 @@ For example, if a worker thread is doing some long task and another thread has t
 <para>Of course, here it would be much better to simply use a joinable thread and call <ref refid="classwx_thread_1ae492e82ab0da11cca59267e003df25ef" kindref="member">wxThread::Wait</ref> on it, but this example does illustrate the importance of properly locking the mutex when using <ref refid="classwx_condition" kindref="compound">wxCondition</ref>.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__threading" kindref="compound">Threading</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_thread" kindref="compound">wxThread</ref>, <ref refid="classwx_mutex" kindref="compound">wxMutex</ref> </para>
 </simplesect>
 </para>

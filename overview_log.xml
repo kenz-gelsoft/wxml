@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_log" kind="page">
     <compoundname>overview_log</compoundname>
     <title>Logging Overview</title>
@@ -29,7 +29,6 @@
 <para>This is a general overview of logging classes provided by wxWidgets. </para>
     </briefdescription>
     <detaileddescription>
-<para>This is a general overview of logging classes provided by wxWidgets.</para>
 <para>The word logging here has a broad sense, including all of the program output, not only non-interactive messages. The logging facilities included in wxWidgets provide the base <ref refid="classwx_log" kindref="compound">wxLog</ref> class which defines the standard interface for a <emphasis>log</emphasis> target as well as several standard implementations of it and a family of functions to use with them.</para>
 <para>First of all, no knowledge of <ref refid="classwx_log" kindref="compound">wxLog</ref> classes is needed to use them. For this, you should only know about <ref refid="group__group__funcmacro__log" kindref="compound">wxLogXXX() functions</ref>. All of them have the same syntax as <emphasis>printf()</emphasis> or <emphasis>vprintf()</emphasis> , i.e. they take the format string as the first argument and respectively a variable number of arguments or a variable argument list pointer. Here are all of them:</para>
 <para><itemizedlist>
@@ -47,7 +46,7 @@
 </listitem>
 <listitem><para><ref refid="interface_2wx_2log_8h_1a28f01715af5aaf37caffdc5bc00fde3f" kindref="member">wxLogSysError()</ref> is mostly used by wxWidgets itself, but might be handy for logging errors after system call (API function) failure. It logs the specified message text as well as the last system error code (<emphasis>errno</emphasis> or Windows&apos; <emphasis>GetLastError()</emphasis> depending on the platform) and the corresponding error message. The second form of this function takes the error code explicitly as the first argument. </para>
 </listitem>
-<listitem><para><ref refid="interface_2wx_2log_8h_1a9c530ae20eb423744f90874d2c97d02b" kindref="member">wxLogDebug()</ref> is <bold>the</bold> right function for debug output. It only does anything at all in the debug mode (when the preprocessor symbol <computeroutput><bold>WXDEBUG</bold></computeroutput> is defined) and expands to nothing in release mode (otherwise). Note that under Windows, you must either run the program under debugger or use a 3rd party program such as DebugView (<ulink url="http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx">http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx</ulink>) to actually see the debug output. </para>
+<listitem><para><ref refid="interface_2wx_2log_8h_1a9c530ae20eb423744f90874d2c97d02b" kindref="member">wxLogDebug()</ref> is <bold>the</bold> right function for debug output. It only does anything at all in the debug mode (when the preprocessor symbol <computeroutput>__WXDEBUG__</computeroutput> is defined) and expands to nothing in release mode (otherwise). Note that under Windows, you must either run the program under debugger or use a 3rd party program such as DebugView (<ulink url="http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx">http://technet.microsoft.com/en-us/sysinternals/bb896647.aspx</ulink>) to actually see the debug output. </para>
 </listitem>
 <listitem><para><ref refid="interface_2wx_2log_8h_1a947e317db477914c12b13c4534867ec9" kindref="member">wxLogTrace()</ref> as <ref refid="interface_2wx_2log_8h_1a9c530ae20eb423744f90874d2c97d02b" kindref="member">wxLogDebug()</ref> only does something in debug build. The reason for making it a separate function from it is that usually there are a lot of trace messages, so it might make sense to separate them from other debug messages which would be flooded in them. Moreover, the second version of this function takes a trace mask as the first argument which allows to further restrict the amount of messages generated.</para>
 </listitem>

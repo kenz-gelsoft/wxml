@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_property_grid" kind="class" language="C++" prot="public">
     <compoundname>wxPropertyGrid</compoundname>
     <basecompoundref refid="classwx_scrolled" prot="public" virt="non-virtual">wxScrolled&lt; wxControl &gt;</basecompoundref>
@@ -14,6 +14,7 @@
         <definition>virtual void wxPropertyGrid::DoShowPropertyError</definition>
         <argsstring>(wxPGProperty *property, const wxString &amp;msg)</argsstring>
         <name>DoShowPropertyError</name>
+        <qualifiedname>wxPropertyGrid::DoShowPropertyError</qualifiedname>
         <param>
           <type><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref> *</type>
           <declname>property</declname>
@@ -41,6 +42,7 @@
         <definition>virtual void wxPropertyGrid::DoHidePropertyError</definition>
         <argsstring>(wxPGProperty *property)</argsstring>
         <name>DoHidePropertyError</name>
+        <qualifiedname>wxPropertyGrid::DoHidePropertyError</qualifiedname>
         <param>
           <type><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref> *</type>
           <declname>property</declname>
@@ -62,6 +64,7 @@
         <definition>virtual wxStatusBar * wxPropertyGrid::GetStatusBar</definition>
         <argsstring>()</argsstring>
         <name>GetStatusBar</name>
+        <qualifiedname>wxPropertyGrid::GetStatusBar</qualifiedname>
         <briefdescription>
 <para>Return <ref refid="classwx_status_bar" kindref="compound">wxStatusBar</ref> that is used by this <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref>. </para>
         </briefdescription>
@@ -77,6 +80,7 @@
         <definition>virtual bool wxPropertyGrid::DoOnValidationFailure</definition>
         <argsstring>(wxPGProperty *property, wxVariant &amp;invalidValue)</argsstring>
         <name>DoOnValidationFailure</name>
+        <qualifiedname>wxPropertyGrid::DoOnValidationFailure</qualifiedname>
         <param>
           <type><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref> *</type>
           <declname>property</declname>
@@ -119,6 +123,7 @@
         <definition>virtual void wxPropertyGrid::DoOnValidationFailureReset</definition>
         <argsstring>(wxPGProperty *property)</argsstring>
         <name>DoOnValidationFailureReset</name>
+        <qualifiedname>wxPropertyGrid::DoOnValidationFailureReset</qualifiedname>
         <param>
           <type><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref> *</type>
           <declname>property</declname>
@@ -145,6 +150,7 @@
         <definition>void wxPropertyGrid::EditorsValueWasModified</definition>
         <argsstring>()</argsstring>
         <name>EditorsValueWasModified</name>
+        <qualifiedname>wxPropertyGrid::EditorsValueWasModified</qualifiedname>
         <briefdescription>
 <para>Call when editor widget&apos;s contents is modified. </para>
         </briefdescription>
@@ -165,6 +171,7 @@
         <definition>void wxPropertyGrid::EditorsValueWasNotModified</definition>
         <argsstring>()</argsstring>
         <name>EditorsValueWasNotModified</name>
+        <qualifiedname>wxPropertyGrid::EditorsValueWasNotModified</qualifiedname>
         <briefdescription>
 <para>Reverse of <ref refid="classwx_property_grid_1a98d434dc2d39b242aa98a0359143d5a3" kindref="member">EditorsValueWasModified()</ref>. </para>
         </briefdescription>
@@ -182,6 +189,7 @@
         <definition>wxVariant wxPropertyGrid::GetUncommittedPropertyValue</definition>
         <argsstring>()</argsstring>
         <name>GetUncommittedPropertyValue</name>
+        <qualifiedname>wxPropertyGrid::GetUncommittedPropertyValue</qualifiedname>
         <briefdescription>
 <para>Returns most up-to-date value of selected property. </para>
         </briefdescription>
@@ -197,6 +205,7 @@
         <definition>bool wxPropertyGrid::IsEditorsValueModified</definition>
         <argsstring>() const</argsstring>
         <name>IsEditorsValueModified</name>
+        <qualifiedname>wxPropertyGrid::IsEditorsValueModified</qualifiedname>
         <briefdescription>
 <para>Returns true if editor&apos;s value was marked modified. </para>
         </briefdescription>
@@ -211,6 +220,7 @@
         <definition>void wxPropertyGrid::ShowPropertyError</definition>
         <argsstring>(wxPGPropArg id, const wxString &amp;msg)</argsstring>
         <name>ShowPropertyError</name>
+        <qualifiedname>wxPropertyGrid::ShowPropertyError</qualifiedname>
         <param>
           <type><ref refid="propgridiface_8h_1a3f566131b8cbb5f0e282b3db4f5c501c" kindref="member">wxPGPropArg</ref></type>
           <declname>id</declname>
@@ -233,6 +243,7 @@
         <definition>void wxPropertyGrid::ValueChangeInEvent</definition>
         <argsstring>(wxVariant variant)</argsstring>
         <name>ValueChangeInEvent</name>
+        <qualifiedname>wxPropertyGrid::ValueChangeInEvent</qualifiedname>
         <param>
           <type><ref refid="classwx_variant" kindref="compound">wxVariant</ref></type>
           <declname>variant</declname>
@@ -252,11 +263,12 @@
         <definition>bool wxPropertyGrid::WasValueChangedInEvent</definition>
         <argsstring>() const</argsstring>
         <name>WasValueChangedInEvent</name>
+        <qualifiedname>wxPropertyGrid::WasValueChangedInEvent</qualifiedname>
         <briefdescription>
-<para>You can use this member function, for instance, to detect in <ref refid="classwx_p_g_property_1a16fbe26240bf47ab0a9a02d21781da73" kindref="member">wxPGProperty::OnEvent()</ref> if <ref refid="classwx_p_g_property_1ae3fbf828db909d9d03f3fd9577cf46b0" kindref="member">wxPGProperty::SetValueInEvent()</ref> was already called in <ref refid="classwx_p_g_editor_1a035fa3bee4ac87e4300df0c637a56261" kindref="member">wxPGEditor::OnEvent()</ref>. </para>
+<para>You can use this member function, for instance, to detect in <ref refid="classwx_p_g_property_1a16fbe26240bf47ab0a9a02d21781da73" kindref="member">wxPGProperty::OnEvent()</ref> if <ref refid="classwx_p_g_property_1a78ece89709724f0343a32e2542855e70" kindref="member">wxPGProperty::SetValueInEvent()</ref> was already called in <ref refid="classwx_p_g_editor_1a035fa3bee4ac87e4300df0c637a56261" kindref="member">wxPGEditor::OnEvent()</ref>. </para>
         </briefdescription>
         <detaileddescription>
-<para>It really only detects if was value was changed using <ref refid="classwx_p_g_property_1ae3fbf828db909d9d03f3fd9577cf46b0" kindref="member">wxPGProperty::SetValueInEvent()</ref>, which is usually used when a &apos;picker&apos; dialog is displayed. If value was written by &quot;normal means&quot; in <ref refid="classwx_p_g_property_1add4f9952c4b23a4b74e6bc82abe2951a" kindref="member">wxPGProperty::StringToValue()</ref> or IntToValue(), then this function will return false (on the other hand, <ref refid="classwx_p_g_property_1a16fbe26240bf47ab0a9a02d21781da73" kindref="member">wxPGProperty::OnEvent()</ref> is not even called in those cases). </para>
+<para>It really only detects if was value was changed using <ref refid="classwx_p_g_property_1a78ece89709724f0343a32e2542855e70" kindref="member">wxPGProperty::SetValueInEvent()</ref>, which is usually used when a &apos;picker&apos; dialog is displayed. If value was written by &quot;normal means&quot; in <ref refid="classwx_p_g_property_1add4f9952c4b23a4b74e6bc82abe2951a" kindref="member">wxPGProperty::StringToValue()</ref> or IntToValue(), then this function will return false (on the other hand, <ref refid="classwx_p_g_property_1a16fbe26240bf47ab0a9a02d21781da73" kindref="member">wxPGProperty::OnEvent()</ref> is not even called in those cases). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -269,6 +281,7 @@
         <definition>wxPropertyGrid::wxPropertyGrid</definition>
         <argsstring>()</argsstring>
         <name>wxPropertyGrid</name>
+        <qualifiedname>wxPropertyGrid::wxPropertyGrid</qualifiedname>
         <briefdescription>
 <para>Two step constructor. </para>
         </briefdescription>
@@ -284,6 +297,7 @@
         <definition>wxPropertyGrid::wxPropertyGrid</definition>
         <argsstring>(wxWindow *parent, wxWindowID id=wxID_ANY, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=wxPG_DEFAULT_STYLE, const wxString &amp;name=wxPropertyGridNameStr)</argsstring>
         <name>wxPropertyGrid</name>
+        <qualifiedname>wxPropertyGrid::wxPropertyGrid</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -331,6 +345,7 @@
         <definition>virtual wxPropertyGrid::~wxPropertyGrid</definition>
         <argsstring>()</argsstring>
         <name>~wxPropertyGrid</name>
+        <qualifiedname>wxPropertyGrid::~wxPropertyGrid</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -345,6 +360,7 @@
         <definition>void wxPropertyGrid::AddActionTrigger</definition>
         <argsstring>(int action, int keycode, int modifiers=0)</argsstring>
         <name>AddActionTrigger</name>
+        <qualifiedname>wxPropertyGrid::AddActionTrigger</qualifiedname>
         <param>
           <type>int</type>
           <declname>action</declname>
@@ -403,6 +419,7 @@
         <definition>bool wxPropertyGrid::AddToSelection</definition>
         <argsstring>(wxPGPropArg id)</argsstring>
         <name>AddToSelection</name>
+        <qualifiedname>wxPropertyGrid::AddToSelection</qualifiedname>
         <param>
           <type><ref refid="propgridiface_8h_1a3f566131b8cbb5f0e282b3db4f5c501c" kindref="member">wxPGPropArg</ref></type>
           <declname>id</declname>
@@ -425,6 +442,7 @@
         <definition>void wxPropertyGrid::BeginLabelEdit</definition>
         <argsstring>(unsigned int colIndex=0)</argsstring>
         <name>BeginLabelEdit</name>
+        <qualifiedname>wxPropertyGrid::BeginLabelEdit</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>colIndex</declname>
@@ -457,6 +475,7 @@
         <definition>bool wxPropertyGrid::ChangePropertyValue</definition>
         <argsstring>(wxPGPropArg id, wxVariant newValue)</argsstring>
         <name>ChangePropertyValue</name>
+        <qualifiedname>wxPropertyGrid::ChangePropertyValue</qualifiedname>
         <param>
           <type><ref refid="propgridiface_8h_1a3f566131b8cbb5f0e282b3db4f5c501c" kindref="member">wxPGPropArg</ref></type>
           <declname>id</declname>
@@ -485,6 +504,7 @@
         <definition>void wxPropertyGrid::CenterSplitter</definition>
         <argsstring>(bool enableAutoResizing=false)</argsstring>
         <name>CenterSplitter</name>
+        <qualifiedname>wxPropertyGrid::CenterSplitter</qualifiedname>
         <param>
           <type>bool</type>
           <declname>enableAutoResizing</declname>
@@ -514,6 +534,7 @@
         <definition>virtual void wxPropertyGrid::Clear</definition>
         <argsstring>()</argsstring>
         <name>Clear</name>
+        <qualifiedname>wxPropertyGrid::Clear</qualifiedname>
         <reimplements refid="classwx_property_grid_interface_1a787e4282dbb85994af0e29a948efa98c">Clear</reimplements>
         <briefdescription>
 <para>Deletes all properties. </para>
@@ -529,6 +550,7 @@
         <definition>void wxPropertyGrid::ClearActionTriggers</definition>
         <argsstring>(int action)</argsstring>
         <name>ClearActionTriggers</name>
+        <qualifiedname>wxPropertyGrid::ClearActionTriggers</qualifiedname>
         <param>
           <type>int</type>
           <declname>action</declname>
@@ -557,6 +579,7 @@
         <definition>virtual bool wxPropertyGrid::CommitChangesFromEditor</definition>
         <argsstring>(wxUint32 flags=0)</argsstring>
         <name>CommitChangesFromEditor</name>
+        <qualifiedname>wxPropertyGrid::CommitChangesFromEditor</qualifiedname>
         <param>
           <type><ref refid="defs_8h_1afdb12e5345c3fae4b537e813df9f02a3" kindref="member">wxUint32</ref></type>
           <declname>flags</declname>
@@ -580,6 +603,7 @@
         <definition>bool wxPropertyGrid::Create</definition>
         <argsstring>(wxWindow *parent, wxWindowID id=wxID_ANY, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=wxPG_DEFAULT_STYLE, const wxString &amp;name=wxPropertyGridNameStr)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxPropertyGrid::Create</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -627,6 +651,7 @@
         <definition>void wxPropertyGrid::DedicateKey</definition>
         <argsstring>(int keycode)</argsstring>
         <name>DedicateKey</name>
+        <qualifiedname>wxPropertyGrid::DedicateKey</qualifiedname>
         <param>
           <type>int</type>
           <declname>keycode</declname>
@@ -647,6 +672,7 @@
         <definition>bool wxPropertyGrid::EnableCategories</definition>
         <argsstring>(bool enable)</argsstring>
         <name>EnableCategories</name>
+        <qualifiedname>wxPropertyGrid::EnableCategories</qualifiedname>
         <param>
           <type>bool</type>
           <declname>enable</declname>
@@ -668,6 +694,7 @@
         <definition>void wxPropertyGrid::EndLabelEdit</definition>
         <argsstring>(bool commit=true)</argsstring>
         <name>EndLabelEdit</name>
+        <qualifiedname>wxPropertyGrid::EndLabelEdit</qualifiedname>
         <param>
           <type>bool</type>
           <declname>commit</declname>
@@ -699,6 +726,7 @@
         <definition>bool wxPropertyGrid::EnsureVisible</definition>
         <argsstring>(wxPGPropArg id)</argsstring>
         <name>EnsureVisible</name>
+        <qualifiedname>wxPropertyGrid::EnsureVisible</qualifiedname>
         <param>
           <type><ref refid="propgridiface_8h_1a3f566131b8cbb5f0e282b3db4f5c501c" kindref="member">wxPGPropArg</ref></type>
           <declname>id</declname>
@@ -720,6 +748,7 @@
         <definition>wxSize wxPropertyGrid::FitColumns</definition>
         <argsstring>()</argsstring>
         <name>FitColumns</name>
+        <qualifiedname>wxPropertyGrid::FitColumns</qualifiedname>
         <briefdescription>
 <para>Reduces column sizes to minimum possible, while still retaining fully visible grid contents (labels, images). </para>
         </briefdescription>
@@ -745,6 +774,7 @@
         <definition>wxTextCtrl * wxPropertyGrid::GetLabelEditor</definition>
         <argsstring>() const</argsstring>
         <name>GetLabelEditor</name>
+        <qualifiedname>wxPropertyGrid::GetLabelEditor</qualifiedname>
         <briefdescription>
 <para>Returns currently active label editor, NULL if none. </para>
         </briefdescription>
@@ -759,6 +789,7 @@
         <definition>wxWindow * wxPropertyGrid::GetPanel</definition>
         <argsstring>()</argsstring>
         <name>GetPanel</name>
+        <qualifiedname>wxPropertyGrid::GetPanel</qualifiedname>
         <briefdescription>
 <para>Returns <ref refid="classwx_window" kindref="compound">wxWindow</ref> that the properties are painted on, and which should be used as the parent for editor controls. </para>
         </briefdescription>
@@ -773,6 +804,7 @@
         <definition>wxColour wxPropertyGrid::GetCaptionBackgroundColour</definition>
         <argsstring>() const</argsstring>
         <name>GetCaptionBackgroundColour</name>
+        <qualifiedname>wxPropertyGrid::GetCaptionBackgroundColour</qualifiedname>
         <briefdescription>
 <para>Returns current category caption background colour. </para>
         </briefdescription>
@@ -787,6 +819,7 @@
         <definition>wxFont &amp; wxPropertyGrid::GetCaptionFont</definition>
         <argsstring>()</argsstring>
         <name>GetCaptionFont</name>
+        <qualifiedname>wxPropertyGrid::GetCaptionFont</qualifiedname>
         <briefdescription>
 <para>Returns current category caption font. </para>
         </briefdescription>
@@ -801,6 +834,7 @@
         <definition>wxColour wxPropertyGrid::GetCaptionForegroundColour</definition>
         <argsstring>() const</argsstring>
         <name>GetCaptionForegroundColour</name>
+        <qualifiedname>wxPropertyGrid::GetCaptionForegroundColour</qualifiedname>
         <briefdescription>
 <para>Returns current category caption text colour. </para>
         </briefdescription>
@@ -815,6 +849,7 @@
         <definition>wxColour wxPropertyGrid::GetCellBackgroundColour</definition>
         <argsstring>() const</argsstring>
         <name>GetCellBackgroundColour</name>
+        <qualifiedname>wxPropertyGrid::GetCellBackgroundColour</qualifiedname>
         <briefdescription>
 <para>Returns current cell background colour. </para>
         </briefdescription>
@@ -829,6 +864,7 @@
         <definition>wxColour wxPropertyGrid::GetCellDisabledTextColour</definition>
         <argsstring>() const</argsstring>
         <name>GetCellDisabledTextColour</name>
+        <qualifiedname>wxPropertyGrid::GetCellDisabledTextColour</qualifiedname>
         <briefdescription>
 <para>Returns current cell text colour when disabled. </para>
         </briefdescription>
@@ -843,6 +879,7 @@
         <definition>wxColour wxPropertyGrid::GetCellTextColour</definition>
         <argsstring>() const</argsstring>
         <name>GetCellTextColour</name>
+        <qualifiedname>wxPropertyGrid::GetCellTextColour</qualifiedname>
         <briefdescription>
 <para>Returns current cell text colour. </para>
         </briefdescription>
@@ -857,6 +894,7 @@
         <definition>unsigned int wxPropertyGrid::GetColumnCount</definition>
         <argsstring>() const</argsstring>
         <name>GetColumnCount</name>
+        <qualifiedname>wxPropertyGrid::GetColumnCount</qualifiedname>
         <briefdescription>
 <para>Returns number of columns currently on grid. </para>
         </briefdescription>
@@ -871,6 +909,7 @@
         <definition>wxColour wxPropertyGrid::GetEmptySpaceColour</definition>
         <argsstring>() const</argsstring>
         <name>GetEmptySpaceColour</name>
+        <qualifiedname>wxPropertyGrid::GetEmptySpaceColour</qualifiedname>
         <briefdescription>
 <para>Returns colour of empty space below properties. </para>
         </briefdescription>
@@ -885,6 +924,7 @@
         <definition>int wxPropertyGrid::GetFontHeight</definition>
         <argsstring>() const</argsstring>
         <name>GetFontHeight</name>
+        <qualifiedname>wxPropertyGrid::GetFontHeight</qualifiedname>
         <briefdescription>
 <para>Returns height of highest characters of used font. </para>
         </briefdescription>
@@ -899,6 +939,7 @@
         <definition>wxPropertyGrid * wxPropertyGrid::GetGrid</definition>
         <argsstring>()</argsstring>
         <name>GetGrid</name>
+        <qualifiedname>wxPropertyGrid::GetGrid</qualifiedname>
         <briefdescription>
 <para>Returns pointer to itself. </para>
         </briefdescription>
@@ -914,6 +955,7 @@
         <definition>wxRect wxPropertyGrid::GetImageRect</definition>
         <argsstring>(wxPGProperty *property, int item) const</argsstring>
         <name>GetImageRect</name>
+        <qualifiedname>wxPropertyGrid::GetImageRect</qualifiedname>
         <param>
           <type><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref> *</type>
           <declname>property</declname>
@@ -954,6 +996,7 @@
         <definition>wxSize wxPropertyGrid::GetImageSize</definition>
         <argsstring>(wxPGProperty *property=NULL, int item=-1) const</argsstring>
         <name>GetImageSize</name>
+        <qualifiedname>wxPropertyGrid::GetImageSize</qualifiedname>
         <param>
           <type><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref> *</type>
           <declname>property</declname>
@@ -996,6 +1039,7 @@
         <definition>wxPGProperty * wxPropertyGrid::GetLastItem</definition>
         <argsstring>(int flags=wxPG_ITERATE_DEFAULT)</argsstring>
         <name>GetLastItem</name>
+        <qualifiedname>wxPropertyGrid::GetLastItem</qualifiedname>
         <param>
           <type>int</type>
           <declname>flags</declname>
@@ -1025,6 +1069,7 @@
         <definition>wxColour wxPropertyGrid::GetLineColour</definition>
         <argsstring>() const</argsstring>
         <name>GetLineColour</name>
+        <qualifiedname>wxPropertyGrid::GetLineColour</qualifiedname>
         <briefdescription>
 <para>Returns colour of lines between cells. </para>
         </briefdescription>
@@ -1039,6 +1084,7 @@
         <definition>wxColour wxPropertyGrid::GetMarginColour</definition>
         <argsstring>() const</argsstring>
         <name>GetMarginColour</name>
+        <qualifiedname>wxPropertyGrid::GetMarginColour</qualifiedname>
         <briefdescription>
 <para>Returns background colour of margin. </para>
         </briefdescription>
@@ -1053,6 +1099,7 @@
         <definition>int wxPropertyGrid::GetMarginWidth</definition>
         <argsstring>() const</argsstring>
         <name>GetMarginWidth</name>
+        <qualifiedname>wxPropertyGrid::GetMarginWidth</qualifiedname>
         <briefdescription>
 <para>Returns margin width. </para>
         </briefdescription>
@@ -1067,6 +1114,7 @@
         <definition>wxPGProperty * wxPropertyGrid::GetRoot</definition>
         <argsstring>() const</argsstring>
         <name>GetRoot</name>
+        <qualifiedname>wxPropertyGrid::GetRoot</qualifiedname>
         <briefdescription>
 <para>Returns &quot;root property&quot;. </para>
         </briefdescription>
@@ -1082,6 +1130,7 @@
         <definition>int wxPropertyGrid::GetRowHeight</definition>
         <argsstring>() const</argsstring>
         <name>GetRowHeight</name>
+        <qualifiedname>wxPropertyGrid::GetRowHeight</qualifiedname>
         <briefdescription>
 <para>Returns height of a single grid row (in pixels). </para>
         </briefdescription>
@@ -1096,6 +1145,7 @@
         <definition>wxPGProperty * wxPropertyGrid::GetSelectedProperty</definition>
         <argsstring>() const</argsstring>
         <name>GetSelectedProperty</name>
+        <qualifiedname>wxPropertyGrid::GetSelectedProperty</qualifiedname>
         <briefdescription>
 <para>Returns currently selected property. </para>
         </briefdescription>
@@ -1110,6 +1160,7 @@
         <definition>wxPGProperty * wxPropertyGrid::GetSelection</definition>
         <argsstring>() const</argsstring>
         <name>GetSelection</name>
+        <qualifiedname>wxPropertyGrid::GetSelection</qualifiedname>
         <briefdescription>
 <para>Returns currently selected property. </para>
         </briefdescription>
@@ -1124,6 +1175,7 @@
         <definition>wxColour wxPropertyGrid::GetSelectionBackgroundColour</definition>
         <argsstring>() const</argsstring>
         <name>GetSelectionBackgroundColour</name>
+        <qualifiedname>wxPropertyGrid::GetSelectionBackgroundColour</qualifiedname>
         <briefdescription>
 <para>Returns current selection background colour. </para>
         </briefdescription>
@@ -1138,6 +1190,7 @@
         <definition>wxColour wxPropertyGrid::GetSelectionForegroundColour</definition>
         <argsstring>() const</argsstring>
         <name>GetSelectionForegroundColour</name>
+        <qualifiedname>wxPropertyGrid::GetSelectionForegroundColour</qualifiedname>
         <briefdescription>
 <para>Returns current selection text colour. </para>
         </briefdescription>
@@ -1152,6 +1205,7 @@
         <definition>wxPGSortCallback wxPropertyGrid::GetSortFunction</definition>
         <argsstring>() const</argsstring>
         <name>GetSortFunction</name>
+        <qualifiedname>wxPropertyGrid::GetSortFunction</qualifiedname>
         <briefdescription>
 <para>Returns the property sort function (default is NULL). </para>
         </briefdescription>
@@ -1169,6 +1223,7 @@
         <definition>int wxPropertyGrid::GetSplitterPosition</definition>
         <argsstring>(unsigned int splitterIndex=0) const</argsstring>
         <name>GetSplitterPosition</name>
+        <qualifiedname>wxPropertyGrid::GetSplitterPosition</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>splitterIndex</declname>
@@ -1188,6 +1243,7 @@
         <definition>wxTextCtrl * wxPropertyGrid::GetEditorTextCtrl</definition>
         <argsstring>() const</argsstring>
         <name>GetEditorTextCtrl</name>
+        <qualifiedname>wxPropertyGrid::GetEditorTextCtrl</qualifiedname>
         <briefdescription>
 <para>Returns <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> active in currently selected property, if any. </para>
         </briefdescription>
@@ -1203,6 +1259,7 @@
         <definition>const wxPGCell &amp; wxPropertyGrid::GetUnspecifiedValueAppearance</definition>
         <argsstring>() const</argsstring>
         <name>GetUnspecifiedValueAppearance</name>
+        <qualifiedname>wxPropertyGrid::GetUnspecifiedValueAppearance</qualifiedname>
         <briefdescription>
 <para>Returns current appearance of unspecified value cells. </para>
         </briefdescription>
@@ -1220,6 +1277,7 @@
         <definition>wxString wxPropertyGrid::GetUnspecifiedValueText</definition>
         <argsstring>(int argFlags=0) const</argsstring>
         <name>GetUnspecifiedValueText</name>
+        <qualifiedname>wxPropertyGrid::GetUnspecifiedValueText</qualifiedname>
         <param>
           <type>int</type>
           <declname>argFlags</declname>
@@ -1249,6 +1307,7 @@
         <definition>int wxPropertyGrid::GetVerticalSpacing</definition>
         <argsstring>() const</argsstring>
         <name>GetVerticalSpacing</name>
+        <qualifiedname>wxPropertyGrid::GetVerticalSpacing</qualifiedname>
         <briefdescription>
 <para>Returns current vertical spacing. </para>
         </briefdescription>
@@ -1263,6 +1322,7 @@
         <definition>wxPropertyGridHitTestResult wxPropertyGrid::HitTest</definition>
         <argsstring>(const wxPoint &amp;pt) const</argsstring>
         <name>HitTest</name>
+        <qualifiedname>wxPropertyGrid::HitTest</qualifiedname>
         <param>
           <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
           <declname>pt</declname>
@@ -1291,6 +1351,7 @@
         <definition>bool wxPropertyGrid::IsAnyModified</definition>
         <argsstring>() const</argsstring>
         <name>IsAnyModified</name>
+        <qualifiedname>wxPropertyGrid::IsAnyModified</qualifiedname>
         <briefdescription>
 <para>Returns true if any property has been modified by the user. </para>
         </briefdescription>
@@ -1305,6 +1366,7 @@
         <definition>bool wxPropertyGrid::IsEditorFocused</definition>
         <argsstring>() const</argsstring>
         <name>IsEditorFocused</name>
+        <qualifiedname>wxPropertyGrid::IsEditorFocused</qualifiedname>
         <briefdescription>
 <para>Returns true if a property editor control has focus. </para>
         </briefdescription>
@@ -1319,6 +1381,7 @@
         <definition>bool wxPropertyGrid::IsFrozen</definition>
         <argsstring>() const</argsstring>
         <name>IsFrozen</name>
+        <qualifiedname>wxPropertyGrid::IsFrozen</qualifiedname>
         <briefdescription>
 <para>Returns true if updating is frozen (i.e. </para>
         </briefdescription>
@@ -1334,6 +1397,7 @@
         <definition>void wxPropertyGrid::MakeColumnEditable</definition>
         <argsstring>(unsigned int column, bool editable=true)</argsstring>
         <name>MakeColumnEditable</name>
+        <qualifiedname>wxPropertyGrid::MakeColumnEditable</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>column</declname>
@@ -1379,6 +1443,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::OnTLPChanging</definition>
         <argsstring>(wxWindow *newTLP)</argsstring>
         <name>OnTLPChanging</name>
+        <qualifiedname>wxPropertyGrid::OnTLPChanging</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>newTLP</declname>
@@ -1410,6 +1475,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::RefreshEditor</definition>
         <argsstring>()</argsstring>
         <name>RefreshEditor</name>
+        <qualifiedname>wxPropertyGrid::RefreshEditor</qualifiedname>
         <briefdescription>
 <para>Refreshes any active editor control. </para>
         </briefdescription>
@@ -1424,6 +1490,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>virtual void wxPropertyGrid::RefreshProperty</definition>
         <argsstring>(wxPGProperty *p)</argsstring>
         <name>RefreshProperty</name>
+        <qualifiedname>wxPropertyGrid::RefreshProperty</qualifiedname>
         <reimplements refid="classwx_property_grid_interface_1aa011608e46ea7ba1503d505c018113a3">RefreshProperty</reimplements>
         <param>
           <type><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref> *</type>
@@ -1443,6 +1510,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::ResetColours</definition>
         <argsstring>()</argsstring>
         <name>ResetColours</name>
+        <qualifiedname>wxPropertyGrid::ResetColours</qualifiedname>
         <briefdescription>
 <para>Resets all colours to the original system values. </para>
         </briefdescription>
@@ -1457,6 +1525,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::ResetColumnSizes</definition>
         <argsstring>(bool enableAutoResizing=false)</argsstring>
         <name>ResetColumnSizes</name>
+        <qualifiedname>wxPropertyGrid::ResetColumnSizes</qualifiedname>
         <param>
           <type>bool</type>
           <declname>enableAutoResizing</declname>
@@ -1488,6 +1557,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>bool wxPropertyGrid::RemoveFromSelection</definition>
         <argsstring>(wxPGPropArg id)</argsstring>
         <name>RemoveFromSelection</name>
+        <qualifiedname>wxPropertyGrid::RemoveFromSelection</qualifiedname>
         <param>
           <type><ref refid="propgridiface_8h_1a3f566131b8cbb5f0e282b3db4f5c501c" kindref="member">wxPGPropArg</ref></type>
           <declname>id</declname>
@@ -1507,6 +1577,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>bool wxPropertyGrid::SelectProperty</definition>
         <argsstring>(wxPGPropArg id, bool focus=false)</argsstring>
         <name>SelectProperty</name>
+        <qualifiedname>wxPropertyGrid::SelectProperty</qualifiedname>
         <param>
           <type><ref refid="propgridiface_8h_1a3f566131b8cbb5f0e282b3db4f5c501c" kindref="member">wxPGPropArg</ref></type>
           <declname>id</declname>
@@ -1557,6 +1628,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetCaptionBackgroundColour</definition>
         <argsstring>(const wxColour &amp;col)</argsstring>
         <name>SetCaptionBackgroundColour</name>
+        <qualifiedname>wxPropertyGrid::SetCaptionBackgroundColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>col</declname>
@@ -1575,6 +1647,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetCaptionTextColour</definition>
         <argsstring>(const wxColour &amp;col)</argsstring>
         <name>SetCaptionTextColour</name>
+        <qualifiedname>wxPropertyGrid::SetCaptionTextColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>col</declname>
@@ -1593,6 +1666,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetCellBackgroundColour</definition>
         <argsstring>(const wxColour &amp;col)</argsstring>
         <name>SetCellBackgroundColour</name>
+        <qualifiedname>wxPropertyGrid::SetCellBackgroundColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>col</declname>
@@ -1612,6 +1686,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetCellDisabledTextColour</definition>
         <argsstring>(const wxColour &amp;col)</argsstring>
         <name>SetCellDisabledTextColour</name>
+        <qualifiedname>wxPropertyGrid::SetCellDisabledTextColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>col</declname>
@@ -1630,6 +1705,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetCellTextColour</definition>
         <argsstring>(const wxColour &amp;col)</argsstring>
         <name>SetCellTextColour</name>
+        <qualifiedname>wxPropertyGrid::SetCellTextColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>col</declname>
@@ -1649,6 +1725,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetColumnCount</definition>
         <argsstring>(int colCount)</argsstring>
         <name>SetColumnCount</name>
+        <qualifiedname>wxPropertyGrid::SetColumnCount</qualifiedname>
         <param>
           <type>int</type>
           <declname>colCount</declname>
@@ -1667,6 +1744,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetCurrentCategory</definition>
         <argsstring>(wxPGPropArg id)</argsstring>
         <name>SetCurrentCategory</name>
+        <qualifiedname>wxPropertyGrid::SetCurrentCategory</qualifiedname>
         <param>
           <type><ref refid="propgridiface_8h_1a3f566131b8cbb5f0e282b3db4f5c501c" kindref="member">wxPGPropArg</ref></type>
           <declname>id</declname>
@@ -1685,6 +1763,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetEmptySpaceColour</definition>
         <argsstring>(const wxColour &amp;col)</argsstring>
         <name>SetEmptySpaceColour</name>
+        <qualifiedname>wxPropertyGrid::SetEmptySpaceColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>col</declname>
@@ -1703,6 +1782,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetLineColour</definition>
         <argsstring>(const wxColour &amp;col)</argsstring>
         <name>SetLineColour</name>
+        <qualifiedname>wxPropertyGrid::SetLineColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>col</declname>
@@ -1721,6 +1801,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetMarginColour</definition>
         <argsstring>(const wxColour &amp;col)</argsstring>
         <name>SetMarginColour</name>
+        <qualifiedname>wxPropertyGrid::SetMarginColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>col</declname>
@@ -1739,6 +1820,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetSelection</definition>
         <argsstring>(const wxArrayPGProperty &amp;newSelection)</argsstring>
         <name>SetSelection</name>
+        <qualifiedname>wxPropertyGrid::SetSelection</qualifiedname>
         <param>
           <type>const wxArrayPGProperty &amp;</type>
           <declname>newSelection</declname>
@@ -1757,6 +1839,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetSelectionBackgroundColour</definition>
         <argsstring>(const wxColour &amp;col)</argsstring>
         <name>SetSelectionBackgroundColour</name>
+        <qualifiedname>wxPropertyGrid::SetSelectionBackgroundColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>col</declname>
@@ -1775,6 +1858,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetSelectionTextColour</definition>
         <argsstring>(const wxColour &amp;col)</argsstring>
         <name>SetSelectionTextColour</name>
+        <qualifiedname>wxPropertyGrid::SetSelectionTextColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>col</declname>
@@ -1793,6 +1877,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetSortFunction</definition>
         <argsstring>(wxPGSortCallback sortFunction)</argsstring>
         <name>SetSortFunction</name>
+        <qualifiedname>wxPropertyGrid::SetSortFunction</qualifiedname>
         <param>
           <type><ref refid="propgriddefs_8h_1aa112317fc96fe18b118f083d6c0c0daf" kindref="member">wxPGSortCallback</ref></type>
           <declname>sortFunction</declname>
@@ -1832,6 +1917,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetSplitterPosition</definition>
         <argsstring>(int newxpos, int col=0)</argsstring>
         <name>SetSplitterPosition</name>
+        <qualifiedname>wxPropertyGrid::SetSplitterPosition</qualifiedname>
         <param>
           <type>int</type>
           <declname>newxpos</declname>
@@ -1858,6 +1944,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetSplitterLeft</definition>
         <argsstring>(bool privateChildrenToo=false)</argsstring>
         <name>SetSplitterLeft</name>
+        <qualifiedname>wxPropertyGrid::SetSplitterLeft</qualifiedname>
         <param>
           <type>bool</type>
           <declname>privateChildrenToo</declname>
@@ -1887,6 +1974,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetUnspecifiedValueAppearance</definition>
         <argsstring>(const wxPGCell &amp;cell)</argsstring>
         <name>SetUnspecifiedValueAppearance</name>
+        <qualifiedname>wxPropertyGrid::SetUnspecifiedValueAppearance</qualifiedname>
         <param>
           <type>const <ref refid="classwx_p_g_cell" kindref="compound">wxPGCell</ref> &amp;</type>
           <declname>cell</declname>
@@ -1911,6 +1999,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetVerticalSpacing</definition>
         <argsstring>(int vspacing)</argsstring>
         <name>SetVerticalSpacing</name>
+        <qualifiedname>wxPropertyGrid::SetVerticalSpacing</qualifiedname>
         <param>
           <type>int</type>
           <declname>vspacing</declname>
@@ -1930,6 +2019,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetVirtualWidth</definition>
         <argsstring>(int width)</argsstring>
         <name>SetVirtualWidth</name>
+        <qualifiedname>wxPropertyGrid::SetVirtualWidth</qualifiedname>
         <param>
           <type>int</type>
           <declname>width</declname>
@@ -1949,6 +2039,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::SetupTextCtrlValue</definition>
         <argsstring>(const wxString &amp;text)</argsstring>
         <name>SetupTextCtrlValue</name>
+        <qualifiedname>wxPropertyGrid::SetupTextCtrlValue</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>text</declname>
@@ -1977,6 +2068,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>bool wxPropertyGrid::UnfocusEditor</definition>
         <argsstring>()</argsstring>
         <name>UnfocusEditor</name>
+        <qualifiedname>wxPropertyGrid::UnfocusEditor</qualifiedname>
         <briefdescription>
 <para>Unfocuses or closes editor if one was open, but does not deselect property. </para>
         </briefdescription>
@@ -1991,6 +2083,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>void wxPropertyGrid::DrawItemAndValueRelated</definition>
         <argsstring>(wxPGProperty *p)</argsstring>
         <name>DrawItemAndValueRelated</name>
+        <qualifiedname>wxPropertyGrid::DrawItemAndValueRelated</qualifiedname>
         <param>
           <type><ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref> *</type>
           <declname>p</declname>
@@ -2011,6 +2104,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>static void wxPropertyGrid::AutoGetTranslation</definition>
         <argsstring>(bool enable)</argsstring>
         <name>AutoGetTranslation</name>
+        <qualifiedname>wxPropertyGrid::AutoGetTranslation</qualifiedname>
         <param>
           <type>bool</type>
           <declname>enable</declname>
@@ -2030,6 +2124,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>static wxPGEditor * wxPropertyGrid::RegisterEditorClass</definition>
         <argsstring>(wxPGEditor *editor, bool noDefCheck=false)</argsstring>
         <name>RegisterEditorClass</name>
+        <qualifiedname>wxPropertyGrid::RegisterEditorClass</qualifiedname>
         <param>
           <type><ref refid="classwx_p_g_editor" kindref="compound">wxPGEditor</ref> *</type>
           <declname>editor</declname>
@@ -2053,6 +2148,7 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
         <definition>static wxPGEditor * wxPropertyGrid::DoRegisterEditorClass</definition>
         <argsstring>(wxPGEditor *editor, const wxString &amp;name, bool noDefCheck=false)</argsstring>
         <name>DoRegisterEditorClass</name>
+        <qualifiedname>wxPropertyGrid::DoRegisterEditorClass</qualifiedname>
         <param>
           <type><ref refid="classwx_p_g_editor" kindref="compound">wxPGEditor</ref> *</type>
           <declname>editor</declname>
@@ -2097,16 +2193,11 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
 </simplesect>
 <heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxpropgrid" kindref="member">wxPropertyGrid</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-propertygrid-msw.png">wxMSW Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-propertygrid-gtk.png">wxGTK Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-propertygrid-mac.png">wxOSX Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly> </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxpropgrid" kindref="member">wxPropertyGrid</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__propgrid" kindref="compound">wxPropertyGrid</ref> <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-propertygrid-msw.png">wxMSW Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-propertygrid-gtk.png">wxGTK Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-propertygrid-mac.png">wxOSX Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly> </para>
 </sect1>
     </detaileddescription>
     <inheritancegraph>
@@ -2339,6 +2430,12 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
       <member refid="classwx_window_1a71f45373a9fc55e128d263391093c32a" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1ad122671fcef564f7e11658c3ee0d4d87" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1aee63c8b1f8055fef76962578aa7f38c1" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>FromDIP</name></member>
+      <member refid="classwx_window_1a144678f0b197268aa9d8d81b76a150a7" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a048d540d731ac83550c206df4af04270" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1ac3f185cef9f6a645be63b9b62afae46a" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a2fe6412d36c2b81c0dd3eeb1dd8bd004" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1af1ddb23778f531a56f2e1aa937a66d9c" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a27efab91147b0ffeee600f02059c23fc" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>FromPhys</name></member>
       <member refid="classwx_window_1a9cf3fd71ffab949cdf06f8f8e2646d56" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>GetAcceleratorTable</name></member>
       <member refid="classwx_window_1a00547805ce11e2ba64607d31fc2c67e2" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>GetAccessible</name></member>
       <member refid="classwx_window_1a64e3f936ab812d24966827ea4e0f15c0" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>GetAutoLayout</name></member>
@@ -2706,13 +2803,13 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
       <member refid="classwx_property_grid_interface_1a129a37f9d87a2a08516772de9860432d" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyAttribute</name></member>
       <member refid="classwx_property_grid_interface_1a9ae755985b70254e3e8a27a629c3fead" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyAttributeAll</name></member>
       <member refid="classwx_property_grid_interface_1a5727a38c6fa10713bac1b4fe6e90991c" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyBackgroundColour</name></member>
-      <member refid="classwx_property_grid_interface_1afd6721e817062d6c9dbb522334c029a0" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyCell</name></member>
+      <member refid="classwx_property_grid_interface_1a3a79220cdab958d7a9e07402f6eb09ed" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyCell</name></member>
       <member refid="classwx_property_grid_interface_1ab65193f9761bc7b63141ff115db00efd" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyClientData</name></member>
       <member refid="classwx_property_grid_interface_1a4ae803a65a42cd1dd1acdf9694718045" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyColoursToDefault</name></member>
       <member refid="classwx_property_grid_interface_1aff961af9dd2787fb97f510ea5ce46407" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyEditor</name></member>
       <member refid="classwx_property_grid_interface_1a7155520a900a212c6ba48924a0398817" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyEditor</name></member>
       <member refid="classwx_property_grid_interface_1a5793ea3ef9afa47fe2c1c5bf437dd583" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyHelpString</name></member>
-      <member refid="classwx_property_grid_interface_1a88befed8aa91d5c6e62844da2166bb3c" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyImage</name></member>
+      <member refid="classwx_property_grid_interface_1a2a028e533e7e9007a96a9dbf105a5060" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyImage</name></member>
       <member refid="classwx_property_grid_interface_1ad7cc77546762cc92e69078d6ac161c63" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyLabel</name></member>
       <member refid="classwx_property_grid_interface_1a51ae4dc2d3732d6e681c5a474abc0da9" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyMaxLength</name></member>
       <member refid="classwx_property_grid_interface_1af7b3c2349b7293076a223720274921e5" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>SetPropertyName</name></member>
@@ -2797,6 +2894,12 @@ Note that <emphasis>column</emphasis> must not be equal to 1, as the second colu
       <member refid="classwx_window_1aef413f1d0252a7a5a29512e8ab5e7c91" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a1771a46c000060619f6e1249ce362433" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a8a4fa47129de552bfec37db8c69688a2" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>ToggleWindowStyle</name></member>
+      <member refid="classwx_window_1a5d3a9450e6b6f44c6b7d0d4a002fa40f" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1afca50ba59976ad9913148fffd38ff0ef" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1ad0bea5e21d33d00d0cf19c011bad39bf" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aaf0ac2191826f233f04bffa900dbc357" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aef56d76b1cacdca83daebffcc385d6db" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1a6797f4c9656276796031b9846ecc20b6" prot="public" virt="non-virtual"><scope>wxPropertyGrid</scope><name>ToPhys</name></member>
       <member refid="classwx_window_1ab8e51f36e7d8790b361c8d8c6f37b1ad" prot="public" virt="virtual"><scope>wxPropertyGrid</scope><name>TransferDataFromWindow</name></member>
       <member refid="classwx_window_1a88cc65e424a129d9b0057756cdb67ec9" prot="public" virt="virtual"><scope>wxPropertyGrid</scope><name>TransferDataToWindow</name></member>
       <member refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" prot="protected" virt="virtual"><scope>wxPropertyGrid</scope><name>TryAfter</name></member>

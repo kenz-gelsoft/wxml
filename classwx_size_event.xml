@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_size_event" kind="class" language="C++" prot="public">
     <compoundname>wxSizeEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxSizeEvent::wxSizeEvent</definition>
         <argsstring>(const wxSize &amp;sz, int id=0)</argsstring>
         <name>wxSizeEvent</name>
+        <qualifiedname>wxSizeEvent::wxSizeEvent</qualifiedname>
         <param>
           <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
           <declname>sz</declname>
@@ -26,13 +27,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4767" column="5"/>
+        <location file="interface/wx/event.h" line="4838" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_size_event_1ae7b854e7945a9cc98b534bcb92297e3b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
         <definition>wxSize wxSizeEvent::GetSize</definition>
         <argsstring>() const</argsstring>
         <name>GetSize</name>
+        <qualifiedname>wxSizeEvent::GetSize</qualifiedname>
         <briefdescription>
 <para>Returns the entire size of the window generating the size change event. </para>
         </briefdescription>
@@ -41,13 +43,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4777" column="12"/>
+        <location file="interface/wx/event.h" line="4848" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_size_event_1a10feb0885d50853a00bf302e1a1c6a22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxSizeEvent::SetSize</definition>
         <argsstring>(wxSize size)</argsstring>
         <name>SetSize</name>
+        <qualifiedname>wxSizeEvent::SetSize</qualifiedname>
         <param>
           <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
           <declname>size</declname>
@@ -58,26 +61,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4778" column="10"/>
+        <location file="interface/wx/event.h" line="4849" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_size_event_1a710e1ca3995033e4c0f2db9937f5a481" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_rect" kindref="compound">wxRect</ref></type>
         <definition>wxRect wxSizeEvent::GetRect</definition>
         <argsstring>() const</argsstring>
         <name>GetRect</name>
+        <qualifiedname>wxSizeEvent::GetRect</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4780" column="12"/>
+        <location file="interface/wx/event.h" line="4851" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_size_event_1aec71605403d6b11aa858d194fd486850" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxSizeEvent::SetRect</definition>
         <argsstring>(wxRect rect)</argsstring>
         <name>SetRect</name>
+        <qualifiedname>wxSizeEvent::SetRect</qualifiedname>
         <param>
           <type><ref refid="classwx_rect" kindref="compound">wxRect</ref></type>
           <declname>rect</declname>
@@ -88,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4781" column="10"/>
+        <location file="interface/wx/event.h" line="4852" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -100,17 +105,17 @@
 <para>Note that the size passed is of the whole window: call <ref refid="classwx_window_1ad34d4bbd6d3064aa56e7a2cc3ee97be3" kindref="member">wxWindow::GetClientSize()</ref> for the area which may be used by the application.</para>
 <para>When a window is resized, usually only a small part of the window is damaged and you may only need to repaint that area. However, if your drawing depends on the size of the window, you may need to clear the DC explicitly and repaint the whole window. In which case, you may need to call <ref refid="classwx_window_1a29dc7251746154c821b17841b9877830" kindref="member">wxWindow::Refresh</ref> to invalidate the entire window.</para>
 <para><bold>Important</bold> : Sizers ( see <ref refid="overview_sizer" kindref="compound">Sizers Overview</ref> ) rely on size events to function correctly. Therefore, in a sizer-based layout, do not forget to call Skip on all size events you catch (and don&apos;t catch size events at all when you don&apos;t need to).</para>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_size_event" kindref="compound">wxSizeEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
-<listitem><para>EVT_SIZE(func): Process a <computeroutput>wxEVT_SIZE</computeroutput> event. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_SIZE(func): Process a <computeroutput>wxEVT_SIZE</computeroutput> event. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_size" kindref="compound">wxSize</ref>, <ref refid="overview_events" kindref="compound">Events and Event Handling</ref> </para>
 </simplesect>
 </para>
@@ -158,7 +163,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="4761" column="1" bodyfile="interface/wx/event.h" bodystart="4762" bodyend="4782"/>
+    <location file="interface/wx/event.h" line="4832" column="1" bodyfile="interface/wx/event.h" bodystart="4833" bodyend="4853"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxSizeEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxSizeEvent</scope><name>Clone</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_palette" kind="class" language="C++" prot="public">
     <compoundname>wxPalette</compoundname>
     <basecompoundref refid="classwx_g_d_i_object" prot="public" virt="non-virtual">wxGDIObject</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxPalette::wxPalette</definition>
         <argsstring>()</argsstring>
         <name>wxPalette</name>
+        <qualifiedname>wxPalette::wxPalette</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -24,6 +25,7 @@
         <definition>wxPalette::wxPalette</definition>
         <argsstring>(const wxPalette &amp;palette)</argsstring>
         <name>wxPalette</name>
+        <qualifiedname>wxPalette::wxPalette</qualifiedname>
         <param>
           <type>const <ref refid="classwx_palette" kindref="compound">wxPalette</ref> &amp;</type>
           <declname>palette</declname>
@@ -52,6 +54,7 @@
         <definition>wxPalette::wxPalette</definition>
         <argsstring>(int n, const unsigned char *red, const unsigned char *green, const unsigned char *blue)</argsstring>
         <name>wxPalette</name>
+        <qualifiedname>wxPalette::wxPalette</qualifiedname>
         <param>
           <type>int</type>
           <declname>n</declname>
@@ -105,7 +108,8 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<bold>wxPerl Note:</bold> In wxPerl this method takes as parameters 3 array references (they must be of the same length).  <simplesect kind="see"><para><ref refid="classwx_palette_1aeb040e229b732bc46dac0dc204f005f4" kindref="member">Create()</ref> </para>
+<bold>wxPerl Note:</bold> In wxPerl this method takes as parameters 3 array references (they must be of the same length). </para>
+<para><simplesect kind="see"><para><ref refid="classwx_palette_1aeb040e229b732bc46dac0dc204f005f4" kindref="member">Create()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -118,6 +122,7 @@
         <definition>virtual wxPalette::~wxPalette</definition>
         <argsstring>()</argsstring>
         <name>~wxPalette</name>
+        <qualifiedname>wxPalette::~wxPalette</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -135,6 +140,7 @@
         <definition>bool wxPalette::Create</definition>
         <argsstring>(int n, const unsigned char *red, const unsigned char *green, const unsigned char *blue)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxPalette::Create</qualifiedname>
         <param>
           <type>int</type>
           <declname>n</declname>
@@ -203,6 +209,7 @@
         <definition>virtual int wxPalette::GetColoursCount</definition>
         <argsstring>() const</argsstring>
         <name>GetColoursCount</name>
+        <qualifiedname>wxPalette::GetColoursCount</qualifiedname>
         <briefdescription>
 <para>Returns number of entries in palette. </para>
         </briefdescription>
@@ -217,6 +224,7 @@
         <definition>int wxPalette::GetPixel</definition>
         <argsstring>(unsigned char red, unsigned char green, unsigned char blue) const</argsstring>
         <name>GetPixel</name>
+        <qualifiedname>wxPalette::GetPixel</qualifiedname>
         <param>
           <type>unsigned char</type>
           <declname>red</declname>
@@ -273,6 +281,7 @@
         <definition>bool wxPalette::GetRGB</definition>
         <argsstring>(int pixel, unsigned char *red, unsigned char *green, unsigned char *blue) const</argsstring>
         <name>GetRGB</name>
+        <qualifiedname>wxPalette::GetRGB</qualifiedname>
         <param>
           <type>int</type>
           <declname>pixel</declname>
@@ -328,7 +337,8 @@
 </parameterlist>
 <simplesect kind="return"><para>true if the operation was successful.</para>
 </simplesect>
-<bold>wxPerl Note:</bold> In wxPerl this method takes only the <emphasis>pixel</emphasis> parameter and returns a 3-element list (or the empty list upon failure).  <simplesect kind="see"><para><ref refid="classwx_palette_1aded666172c65ee06f45c5a2c393dd1a9" kindref="member">GetPixel()</ref> </para>
+<bold>wxPerl Note:</bold> In wxPerl this method takes only the <emphasis>pixel</emphasis> parameter and returns a 3-element list (or the empty list upon failure). </para>
+<para><simplesect kind="see"><para><ref refid="classwx_palette_1aded666172c65ee06f45c5a2c393dd1a9" kindref="member">GetPixel()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -341,6 +351,7 @@
         <definition>virtual bool wxPalette::IsOk</definition>
         <argsstring>() const</argsstring>
         <name>IsOk</name>
+        <qualifiedname>wxPalette::IsOk</qualifiedname>
         <briefdescription>
 <para>Returns true if palette data is present. </para>
         </briefdescription>
@@ -355,6 +366,7 @@
         <definition>wxPalette &amp; wxPalette::operator=</definition>
         <argsstring>(const wxPalette &amp;palette)</argsstring>
         <name>operator=</name>
+        <qualifiedname>wxPalette::operator=</qualifiedname>
         <param>
           <type>const <ref refid="classwx_palette" kindref="compound">wxPalette</ref> &amp;</type>
           <declname>palette</declname>
@@ -377,7 +389,8 @@
 <para>It is likely that in the future the only use for palettes within wxWidgets will be for representing colour indices from images (such as GIF or PNG). The image handlers for these formats have been modified to create a palette if there is such information in the original image file (usually 256 or less colour images). See <ref refid="classwx_image" kindref="compound">wxImage</ref> for more information.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__gdi" kindref="compound">Graphics Device Interface (GDI)</ref></para>
 <para>Predefined objects/pointers: <ref refid="palette_8h_1a2ecbe58191b89a50dd5dd0643e29f708" kindref="member">wxNullPalette</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_d_c_1afc58b0f4653159e713377d38c84a120f" kindref="member">wxDC::SetPalette()</ref>, <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> </para>
 </simplesect>

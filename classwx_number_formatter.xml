@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_number_formatter" kind="class" language="C++" prot="public">
     <compoundname>wxNumberFormatter</compoundname>
     <includes local="no">wx/numformatter.h</includes>
@@ -7,6 +7,7 @@
       <memberdef kind="enum" id="classwx_number_formatter_1a4e7dc96aef2d9dbc6ed7bf3c381b4f6f" prot="public" static="no" strong="no">
         <type></type>
         <name>Style</name>
+        <qualifiedname>wxNumberFormatter::Style</qualifiedname>
         <enumvalue id="classwx_number_formatter_1a4e7dc96aef2d9dbc6ed7bf3c381b4f6fa3332ca1b32bdcd211ad73e046e5d60cd" prot="public">
           <name>Style_None</name>
           <initializer>= 0x00</initializer>
@@ -20,7 +21,7 @@
           <name>Style_WithThousandsSep</name>
           <initializer>= 0x01</initializer>
           <briefdescription>
-<para>If this flag is given, thousands separators will be inserted in the number string representation as defined by the current locale. </para>
+<para>If this flag is given, thousands separators will be inserted in the number string representation as defined by the current UI locale. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -43,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/numformatter.h" line="26" column="5" bodyfile="interface/wx/numformatter.h" bodystart="27" bodyend="53"/>
+        <location file="interface/wx/numformatter.h" line="30" column="5" bodyfile="interface/wx/numformatter.h" bodystart="31" bodyend="57"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -52,6 +53,7 @@
         <definition>static wxString wxNumberFormatter::ToString</definition>
         <argsstring>(long val, int flags=Style_WithThousandsSep)</argsstring>
         <name>ToString</name>
+        <qualifiedname>wxNumberFormatter::ToString</qualifiedname>
         <param>
           <type>long</type>
           <declname>val</declname>
@@ -65,7 +67,7 @@
 <para>Returns string representation of an integer number. </para>
         </briefdescription>
         <detaileddescription>
-<para>By default, the string will use thousands separators if appropriate for the current locale. This can be avoided by passing Style_None as <emphasis>flags</emphasis> in which case the call to the function has exactly the same effect as <computeroutput><ref refid="classwx_string_1addd9ccfa3ae2b7ab2d66bcbf034d0be0" kindref="member">wxString::Format</ref>(&quot;%ld&quot;, val)</computeroutput>.</para>
+<para>By default, the string will use thousands separators if appropriate for the current UI locale. This can be avoided by passing Style_None as <emphasis>flags</emphasis> in which case the call to the function has exactly the same effect as <computeroutput><ref refid="classwx_string_1addd9ccfa3ae2b7ab2d66bcbf034d0be0" kindref="member">wxString::Format</ref>(&quot;%ld&quot;, val)</computeroutput>.</para>
 <para>Notice that calling <ref refid="classwx_number_formatter_1abf3e465bc68a79821b00387271386fd3" kindref="member">ToString()</ref> with a value of type <computeroutput>int</computeroutput> and non-default flags results in ambiguity between this overload and the one below. To resolve it, you need to cast the value to <computeroutput>long</computeroutput>.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -88,13 +90,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/numformatter.h" line="74" column="21"/>
+        <location file="interface/wx/numformatter.h" line="78" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classwx_number_formatter_1ade8a61e97b4619f52381f81d2fe3a37f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>static wxString wxNumberFormatter::ToString</definition>
         <argsstring>(long long val, int flags=Style_WithThousandsSep)</argsstring>
         <name>ToString</name>
+        <qualifiedname>wxNumberFormatter::ToString</qualifiedname>
         <param>
           <type>long long</type>
           <declname>val</declname>
@@ -110,13 +113,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/numformatter.h" line="75" column="21"/>
+        <location file="interface/wx/numformatter.h" line="79" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classwx_number_formatter_1a8034364f3b042b25b27eaf98464c1132" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>static wxString wxNumberFormatter::ToString</definition>
         <argsstring>(unsigned long long val, int flags=Style_WithThousandsSep)</argsstring>
         <name>ToString</name>
+        <qualifiedname>wxNumberFormatter::ToString</qualifiedname>
         <param>
           <type>unsigned long long</type>
           <declname>val</declname>
@@ -132,13 +136,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/numformatter.h" line="76" column="21"/>
+        <location file="interface/wx/numformatter.h" line="80" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classwx_number_formatter_1a42c2c2129c5bf3693e6a3699bae8595f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>static wxString wxNumberFormatter::ToString</definition>
         <argsstring>(double val, int precision, int flags=Style_WithThousandsSep)</argsstring>
         <name>ToString</name>
+        <qualifiedname>wxNumberFormatter::ToString</qualifiedname>
         <param>
           <type>double</type>
           <declname>val</declname>
@@ -185,13 +190,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/numformatter.h" line="90" column="5"/>
+        <location file="interface/wx/numformatter.h" line="94" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_number_formatter_1ae2cbfb849af4721c04ea3219767426d9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>static wxString wxNumberFormatter::Format</definition>
+        <argsstring>(const wxString &amp;format, double val)</argsstring>
+        <name>Format</name>
+        <qualifiedname>wxNumberFormatter::Format</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Format the given number using one of the floating point formats and ensure that the result uses the correct decimal separator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Prefer using <ref refid="classwx_number_formatter_1abf3e465bc68a79821b00387271386fd3" kindref="member">ToString()</ref> if possible, i.e. if format is &quot;%g&quot; or &quot;%.Nf&quot; which are supported by it directly.</para>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/numformatter.h" line="105" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classwx_number_formatter_1aad539451a9ac91198141eead3be4e743" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>static bool wxNumberFormatter::FromString</definition>
         <argsstring>(wxString s, long *val)</argsstring>
         <name>FromString</name>
+        <qualifiedname>wxNumberFormatter::FromString</qualifiedname>
         <param>
           <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
           <declname>s</declname>
@@ -204,7 +237,7 @@
 <para>Parse a string representation of a number possibly including thousands separators. </para>
         </briefdescription>
         <detaileddescription>
-<para>These functions parse number representation in the current locale. On success they return true and store the result at the location pointed to by <emphasis>val</emphasis> (which can&apos;t be NULL), otherwise false is returned.</para>
+<para>These functions parse number representation in the current UI locale. On success they return true and store the result at the location pointed to by <emphasis>val</emphasis> (which can&apos;t be NULL), otherwise false is returned.</para>
 <para>Note that the overload taking unsigned long long value is only available since wxWidgets 3.1.5. Also, unlike <ref refid="classwx_string_1a200096add10bbadacb4143dc06f2b353" kindref="member">wxString::ToULongLong()</ref> and the standard functions such as <computeroutput>strtoul()</computeroutput>, this overload does <emphasis>not</emphasis> accept, i.e. returns false, for the strings starting with the minus sign.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_string_1ad142803e239ff1ba9725b9abed29efc0" kindref="member">wxString::ToLong()</ref>, <ref refid="classwx_string_1a0c719082ab8cde8323ea15f2ed9fb25d" kindref="member">wxString::ToDouble()</ref> </para>
 </simplesect>
@@ -212,13 +245,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/numformatter.h" line="110" column="17"/>
+        <location file="interface/wx/numformatter.h" line="124" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_number_formatter_1ab93af87020d0c4e465c1e458de10f1c1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>static bool wxNumberFormatter::FromString</definition>
         <argsstring>(wxString s, long long *val)</argsstring>
         <name>FromString</name>
+        <qualifiedname>wxNumberFormatter::FromString</qualifiedname>
         <param>
           <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
           <declname>s</declname>
@@ -233,13 +267,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/numformatter.h" line="111" column="17"/>
+        <location file="interface/wx/numformatter.h" line="125" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_number_formatter_1af644880439ff0da11dd976aabac0f900" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>static bool wxNumberFormatter::FromString</definition>
         <argsstring>(wxString s, unsigned long long *val)</argsstring>
         <name>FromString</name>
+        <qualifiedname>wxNumberFormatter::FromString</qualifiedname>
         <param>
           <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
           <declname>s</declname>
@@ -254,13 +289,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/numformatter.h" line="112" column="17"/>
+        <location file="interface/wx/numformatter.h" line="126" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_number_formatter_1abc24487021d98af50ca8465f63a262f1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>static bool wxNumberFormatter::FromString</definition>
         <argsstring>(wxString s, double *val)</argsstring>
         <name>FromString</name>
+        <qualifiedname>wxNumberFormatter::FromString</qualifiedname>
         <param>
           <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
           <declname>s</declname>
@@ -275,34 +311,36 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/numformatter.h" line="113" column="17"/>
+        <location file="interface/wx/numformatter.h" line="127" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_number_formatter_1ae1e22af7b2df6978f19f6a618d25823d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref></type>
         <definition>static wxChar wxNumberFormatter::GetDecimalSeparator</definition>
         <argsstring>()</argsstring>
         <name>GetDecimalSeparator</name>
+        <qualifiedname>wxNumberFormatter::GetDecimalSeparator</qualifiedname>
         <briefdescription>
-<para>Get the decimal separator for the current locale. </para>
+<para>Get the decimal separator for the current UI locale. </para>
         </briefdescription>
         <detaileddescription>
 <para>Decimal separators is always defined and we fall back to returning &apos;.&apos; in case of an error. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/numformatter.h" line="122" column="19"/>
+        <location file="interface/wx/numformatter.h" line="136" column="19"/>
       </memberdef>
       <memberdef kind="function" id="classwx_number_formatter_1a057fac14867aa14f5e0d461b8e8c5a99" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>static bool wxNumberFormatter::GetThousandsSeparatorIfUsed</definition>
         <argsstring>(wxChar *sep)</argsstring>
         <name>GetThousandsSeparatorIfUsed</name>
+        <qualifiedname>wxNumberFormatter::GetThousandsSeparatorIfUsed</qualifiedname>
         <param>
           <type><ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref> *</type>
           <declname>sep</declname>
         </param>
         <briefdescription>
-<para>Get the thousands separator if grouping of the digits is used by the current locale. </para>
+<para>Get the thousands separator if grouping of the digits is used by the current UI locale. </para>
         </briefdescription>
         <detaileddescription>
 <para>The value returned in <emphasis>sep</emphasis> should be only used if the function returns true, otherwise no thousands separator should be used at all.</para>
@@ -311,7 +349,7 @@
 <parametername>sep</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Points to the variable receiving the thousands separator character if it is used by the current locale. May be NULL if only the function return value is needed. </para>
+<para>Points to the variable receiving the thousands separator character if it is used by the current UI locale. May be NULL if only the function return value is needed. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -319,22 +357,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/numformatter.h" line="136" column="17"/>
+        <location file="interface/wx/numformatter.h" line="150" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Helper class for formatting and parsing numbers with thousands separators. </para>
+<para>Formatting and parsing numbers using the current UI locale conventions, including support for using the correct decimal point character and thousands separators. </para>
     </briefdescription>
     <detaileddescription>
 <para>This class contains only static functions, so users must not create instances but directly call the member functions.</para>
-<para><simplesect kind="since"><para>2.9.2</para>
+<para><simplesect kind="see"><para><ref refid="classwx_u_i_locale" kindref="compound">wxUILocale</ref></para>
+</simplesect>
+<simplesect kind="since"><para>2.9.2</para>
 </simplesect>
 <heading level="2"></heading>
 </para>
 <para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> </para>
     </detaileddescription>
-    <location file="interface/wx/numformatter.h" line="20" column="1" bodyfile="interface/wx/numformatter.h" bodystart="21" bodyend="138"/>
+    <location file="interface/wx/numformatter.h" line="24" column="1" bodyfile="interface/wx/numformatter.h" bodystart="25" bodyend="152"/>
     <listofallmembers>
+      <member refid="classwx_number_formatter_1ae2cbfb849af4721c04ea3219767426d9" prot="public" virt="non-virtual"><scope>wxNumberFormatter</scope><name>Format</name></member>
       <member refid="classwx_number_formatter_1aad539451a9ac91198141eead3be4e743" prot="public" virt="non-virtual"><scope>wxNumberFormatter</scope><name>FromString</name></member>
       <member refid="classwx_number_formatter_1ab93af87020d0c4e465c1e458de10f1c1" prot="public" virt="non-virtual"><scope>wxNumberFormatter</scope><name>FromString</name></member>
       <member refid="classwx_number_formatter_1af644880439ff0da11dd976aabac0f900" prot="public" virt="non-virtual"><scope>wxNumberFormatter</scope><name>FromString</name></member>

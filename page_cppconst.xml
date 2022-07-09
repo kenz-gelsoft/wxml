@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="page_cppconst" kind="page">
     <compoundname>page_cppconst</compoundname>
     <title>Preprocessor Symbols</title>
@@ -47,11 +47,10 @@
 <para>These are preprocessor symbols used in the wxWidgets source, grouped by category (and sorted by alphabetical order inside each category). </para>
     </briefdescription>
     <detaileddescription>
-<para>These are preprocessor symbols used in the wxWidgets source, grouped by category (and sorted by alphabetical order inside each category).</para>
 <para>All of these macros except for the <computeroutput>wxUSE_XXX</computeroutput> variety is defined if the corresponding condition is true and undefined if it isn&apos;t, so they should be always tested using #ifdef and not #if.</para>
 <sect1 id="page_cppconst_1page_cppconst_guisystem">
 <title>GUI system</title>
-<para><table rows="23" cols="2"><row>
+<para><table rows="22" cols="2"><row>
 <entry thead="no"><para><bold>WXBASE</bold> </para>
 </entry><entry thead="no"><para>Only wxBase, no GUI features (same as <computeroutput>wxUSE_GUI</computeroutput> == 0) </para>
 </entry></row>
@@ -118,10 +117,6 @@
 <row>
 <entry thead="no"><para><bold>WXPM</bold> </para>
 </entry><entry thead="no"><para>OS/2 native Presentation Manager (not used any longer). </para>
-</entry></row>
-<row>
-<entry thead="no"><para><bold>WXSTUBS</bold> </para>
-</entry><entry thead="no"><para>Stubbed version (&apos;template&apos; wxWin implementation) </para>
 </entry></row>
 <row>
 <entry thead="no"><para><bold>WXXT</bold> </para>
@@ -364,13 +359,13 @@ The convention is to use the <computeroutput>__WX</computeroutput> prefix for th
 <title>Feature Tests</title>
 <para>Some library features may not be always available even if they were selected by the user. To make it possible to check if this is the case, the library predefines the symbols in the form <computeroutput>wxHAS_FEATURE</computeroutput>. Unlike <computeroutput>wxUSE_FEATURE</computeroutput> symbols which are defined by the library user (directly in <computeroutput>setup.h</computeroutput> or by running configure script) and which must be always defined as either 0 or 1, the <computeroutput>wxHAS</computeroutput> symbols are only defined if the corresponding feature is available and not defined at all otherwise.</para>
 <para>Currently the following symbols exist:</para>
-<para><table rows="23" cols="2"><row>
+<para><table rows="27" cols="2"><row>
 <entry thead="no"><para>wxHAS_3STATE_CHECKBOX </para>
 </entry><entry thead="no"><para>Defined if <ref refid="classwx_check_box" kindref="compound">wxCheckBox</ref> supports wxCHK_3STATE flag, i.e. is capable of showing three states and not only the usual two. Currently defined for almost all ports. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxHAS_ATOMIC_OPS </para>
-</entry><entry thead="no"><para>Defined if <ref refid="atomic_8h_1a35470b5fc125b443e73b7967100752d4" kindref="member">wxAtomicInc()</ref> and <ref refid="atomic_8h_1a396a0a6c5b705d46862564f5b16897b2" kindref="member">wxAtomicDec()</ref> functions have an efficient (CPU-specific) implementation. Notice that the functions themselves are always available but can be prohibitively slow to use when implemented in a generic way, using a critical section. </para>
+</entry><entry thead="no"><para>Defined if <ref refid="atomic_8h_1a08129c0e6794c470926a6dc1a88c5451" kindref="member">wxAtomicInc()</ref> and <ref refid="atomic_8h_1a396a0a6c5b705d46862564f5b16897b2" kindref="member">wxAtomicDec()</ref> functions have an efficient (CPU-specific) implementation. Notice that the functions themselves are always available but can be prohibitively slow to use when implemented in a generic way, using a critical section. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxHAS_BITMAPTOGGLEBUTTON </para>
@@ -379,6 +374,14 @@ The convention is to use the <computeroutput>__WX</computeroutput> prefix for th
 <row>
 <entry thead="no"><para>wxHAS_CONFIG_TEMPLATE_RW </para>
 </entry><entry thead="no"><para>Defined if the currently used compiler supports template Read() and Write() methods in wxConfig. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_DEPRECATED_ATTR </para>
+</entry><entry thead="no"><para>Defined if C++14 <computeroutput></computeroutput>[[deprecated]] attribute is supported (this symbol only exists in wxWidgets 3.1.6 or later). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_DPI_INDEPENDENT_PIXELS </para>
+</entry><entry thead="no"><para>Defined if pixel coordinates on the current platform scale with DPI, i.e. if the given length in pixels has the same apparent size on the display independently of the DPI (this symbol only exists in wxWidgets 3.1.6 or later). Note that it should rarely, if ever, be necessary to use this symbol directly, functions such as <ref refid="classwx_window_1a4b0a9da72d28465bdf5c0bfe5661cdf9" kindref="member">wxWindow::FromDIP()</ref> and <ref refid="classwx_bitmap_1ab8db6da1c0bf12acc77975f4b7783e99" kindref="member">wxBitmap::GetLogicalSize()</ref> exist to hide the differences between the platforms with and without DPI-independent pixels. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxHAS_MEMBER_DEFAULT </para>
@@ -421,8 +424,12 @@ The convention is to use the <computeroutput>__WX</computeroutput> prefix for th
 </entry><entry thead="no"><para>Defined if the currently used compiler supports C++11 <computeroutput>nullptr</computeroutput>. </para>
 </entry></row>
 <row>
+<entry thead="no"><para>wxHAS_IMAGE_RESOURCES </para>
+</entry><entry thead="no"><para>Defined if images can be embedded into the program as resources, i.e. without being defined in the program text itself. This is currently the case for MSW and Mac platforms. This constant is available since wxWidgets 3.1.6. </para>
+</entry></row>
+<row>
 <entry thead="no"><para>wxHAS_IMAGES_IN_RESOURCES </para>
-</entry><entry thead="no"><para>Defined if <ulink url="http://en.wikipedia.org/wiki/Resource_(Windows)">Windows resource files</ulink> or OS/2 resource files are available on the current platform. </para>
+</entry><entry thead="no"><para>Defined if <ulink url="http://en.wikipedia.org/wiki/Resource_(Windows)">Windows resource files</ulink> resource files are available on the current platform. Usually wxHAS_IMAGE_RESOURCES should be used instead. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxHAS_POWER_EVENTS </para>
@@ -442,7 +449,11 @@ The convention is to use the <computeroutput>__WX</computeroutput> prefix for th
 </entry></row>
 <row>
 <entry thead="no"><para>wxHAS_REGEX_ADVANCED </para>
-</entry><entry thead="no"><para>Defined if advanced syntax is available in <ref refid="classwx_reg_ex" kindref="compound">wxRegEx</ref>. </para>
+</entry><entry thead="no"><para>Defined if advanced syntax is available in <ref refid="classwx_reg_ex" kindref="compound">wxRegEx</ref>. This is always the case in wxWidgets 3.1.6 and later, so this symbol doesn&apos;t need to be tested any more. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxHAS_SVG </para>
+</entry><entry thead="no"><para>Defined if SVG support (currently only via <ref refid="classwx_bitmap_bundle_1a148dc26191f48f22e57c1ef2d8ff611b" kindref="member">wxBitmapBundle::FromSVG()</ref>) is available. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>wxHAS_TASK_BAR_ICON </para>
@@ -511,7 +522,7 @@ The convention is to use the <computeroutput>__WX</computeroutput> prefix for th
 </sect1>
 <sect1 id="page_cppconst_1page_cppconst_miscellaneous">
 <title>Miscellaneous</title>
-<para><table rows="16" cols="2"><row>
+<para><table rows="17" cols="2"><row>
 <entry thead="no"><para><bold>WXWINDOWS</bold> </para>
 </entry><entry thead="no"><para>always defined in wxWidgets applications, see also wxCHECK_VERSION </para>
 </entry></row>
@@ -574,6 +585,10 @@ The convention is to use the <computeroutput>__WX</computeroutput> prefix for th
 <row>
 <entry thead="no"><para>WXBUILDING </para>
 </entry><entry thead="no"><para>defined when building wxWidgets itself, whether as a static or shared library </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wxICON_IS_BITMAP </para>
+</entry><entry thead="no"><para>defined in the ports where <ref refid="classwx_icon" kindref="compound">wxIcon</ref> inherits from <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> (all but wxMSW currently) </para>
 </entry></row>
 </table>
 </para>

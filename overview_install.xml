@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_install" kind="page">
     <compoundname>overview_install</compoundname>
     <title>Installing wxWidgets</title>
@@ -8,7 +8,7 @@
     <detaileddescription>
 <para><anchor id="overview_install_1md_docs_doxygen_overviews_install"/></para>
 <para>wxWidgets headers and libraries must be available in order to build the applications using it, so the first step when starting to use wxWidgets is to install it. This can be done, for all platforms and library versions, by building wxWidgets from sources, but for the most common platforms pre-built binaries of the libraries are also provided, so the first decision to make is whether to use these binaries or build the library yourself. Building the libraries yourself allows you to compile the latest version using exactly the options you need, and so is the most flexible solution, but using the binaries may be simpler and faster <ndash/> the choice is yours, just follow the instructions in the corresponding section below depending on the approach you prefer. Of course, you only need to do one <emphasis>or</emphasis> the other, <emphasis>not</emphasis> both.</para>
-<sect1 id="overview_install_1autotoc_md9">
+<sect1 id="overview_install_1autotoc_md1">
 <title>Using Binaries</title>
 <para>How to install binaries depends on your platform:</para>
 <para><itemizedlist>
@@ -19,14 +19,14 @@
 </para>
 <para>Additionally, some third-party C++ package managers also provide wxWidgets binaries. For example, please see <ulink url="https://www.wxwidgets.org/blog/2019/01/wxwidgets-and-vcpkg/">this post</ulink> for the instructions about using <ulink url="https://github.com/microsoft/vcpkg">vcpkg</ulink> C++ package manager for installing wxWidgets.</para>
 </sect1>
-<sect1 id="overview_install_1autotoc_md10">
+<sect1 id="overview_install_1autotoc_md2">
 <title>Building from Source</title>
-<sect2 id="overview_install_1autotoc_md11">
+<sect2 id="overview_install_1autotoc_md3">
 <title>Getting the sources</title>
 <para>To build the library you need to get its sources first. The recommended way to do it is to use Git to check them out from the official wxWidgets repository using the following command: <verbatim>$ git clone --recurse-submodules https://github.com/wxWidgets/wxWidgets.git
 </verbatim> Alternatively, you can download the sources from the <ulink url="https://brew.sh/">downloads page</ulink>. Please note that all the source archives in different formats (ZIP, 7z, tar.bz2) contain the same files, but use different line ending formats: Unix (&quot;LF&quot;) for the latter one and DOS (&quot;CR LF&quot;) for the two other ones, and it is usually preferable to choose the format corresponding to the current platform. When downloading the sources with DOS ends of lines, prefer 7z format for much smaller file size.</para>
 </sect2>
-<sect2 id="overview_install_1autotoc_md12">
+<sect2 id="overview_install_1autotoc_md4">
 <title>Selecting the build system</title>
 <para>wxWidgets can be built using <ulink url="https://cmake.org/">CMake</ulink> under all platforms. Please follow <ref refid="overview_cmake" kindref="compound">CMake build instructions</ref> if you prefer to use it.</para>
 <para>Otherwise, please use the appropriate instructions depending on your platform:</para>
@@ -39,20 +39,106 @@
 <para>The wxWidgets ports mentioned above are the main ones, however other variants also exist, see <ref refid="page_port" kindref="compound">platform details</ref> page for the full list.</para>
 </sect2>
 </sect1>
-<sect1 id="overview_install_1autotoc_md13">
-<title>Verifying the Installation</title>
-<para>After installing wxWidgets, it is recommended to check that the library can actually be used by building a minimal wxWidgets program using it, such as <computeroutput>samples/minimal/minimal.cpp</computeroutput> included in wxWidgets distributions.</para>
-<para>You may choose to build this program in any of the following ways:</para>
+<sect1 id="overview_install_1autotoc_md5">
+<title>Building Your Application</title>
+<para>After installing wxWidgets, you need to set up your application to be built using it.</para>
+<para>As previously, if you&apos;re using CMake, please follow the instructions for <ref refid="overview_cmake_1cmake_apps" kindref="member">building your applications with CMake</ref>.</para>
+<para>Note that you can use the provided <computeroutput>samples/minimal/CMakeLists.txt</computeroutput> file to test building the minimal sample using CMake to verify your installation.</para>
+<para>Otherwise, choose the appropriate method for your platform and build system:</para>
+<sect2 id="overview_install_1autotoc_md6">
+<title>Unix, command line</title>
+<para>On any Unix-like system, including macOS and Unix-like environments such as Cygwin or MSYS2 under MSW, very simple applications consisting of a single source file <computeroutput>hello.cpp</computeroutput> can be built directly from the command line using the following command: <verbatim>$ c++ -o hello hello.cpp `wx-config --cxxflags --libs`
+</verbatim> Please note that you <emphasis>must</emphasis> use <computeroutput>wx-config</computeroutput> to obtain the compiler and linker flags in this case. Using this method with <computeroutput>samples/minimal/minimal.cpp</computeroutput> is a simple way of checking that wxWidgets is installed correctly and can be used and it is recommended to try building it, especially if you are new to wxWidgets.</para>
+</sect2>
+<sect2 id="overview_install_1autotoc_md7">
+<title>Unix, with GNU Make</title>
+<para>For more realistic applications under Unix, a makefile is traditionally used for building. For a program consisting of the files <computeroutput>hello.cpp</computeroutput> and <computeroutput>bye.cpp</computeroutput> a minimal makefile could look like the following:</para>
+<para><programlisting filename=".make"><codeline><highlight class="normal">#<sp/>wx-config<sp/>to<sp/>use,<sp/>may<sp/>be<sp/>overridden<sp/>on<sp/>make<sp/>command<sp/>line.</highlight></codeline>
+<codeline><highlight class="normal">WX_CONFIG<sp/>:=<sp/>wx-config</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">WX_CXXFLAGS<sp/>:=<sp/>$(shell<sp/>$(WX_CONFIG)<sp/>--cxxflags)</highlight></codeline>
+<codeline><highlight class="normal">WX_LIBS<sp/>:=<sp/>$(shell<sp/>$(WX_CONFIG)<sp/>--libs)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">OBJECTS<sp/>:=<sp/>hello.o<sp/>bye.o</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">hello:<sp/>$(OBJECTS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(CXX)<sp/>-o<sp/>$@<sp/>$(OBJECTS)<sp/>$(LDFLAGS)<sp/>$(WX_LIBS)<sp/>$(LIBS)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">$(OBJECTS):<sp/>%.o:<sp/>%.cpp</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(CXX)<sp/>-c<sp/>-o<sp/>$@<sp/>$(WX_CXXFLAGS)<sp/>$(CXXFLAGS)<sp/>$&lt;</highlight></codeline>
+</programlisting></para>
+<para>Please refer to <ulink url="https://www.gnu.org/software/make/manual/make.html">the manual</ulink> for more information about writing makefiles for GNU make. Also notice that you need to replace the leading spaces with TABs if you are copy-pasting the makefile above into your own.</para>
+</sect2>
+<sect2 id="overview_install_1autotoc_md8">
+<title>Unix, with autoconf</title>
+<para>For building applications using autoconf, you need to have the following lines in your <computeroutput>configure.ac</computeroutput> file:</para>
+<para><programlisting filename=".configure"><codeline><highlight class="normal">AC_INIT(...)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">dnl<sp/>Add<sp/>support<sp/>for<sp/>--wxdir,<sp/>--wx-config<sp/>and<sp/>other<sp/>options<sp/>allowing<sp/>to<sp/>select</highlight></codeline>
+<codeline><highlight class="normal">dnl<sp/>the<sp/>version<sp/>and<sp/>location<sp/>of<sp/>wxWidgets<sp/>to<sp/>use.</highlight></codeline>
+<codeline><highlight class="normal">WX_CONFIG_OPTIONS</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">...<sp/>other<sp/>preliminary<sp/>macros<sp/>...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">dnl<sp/>A<sp/>C++<sp/>compiler<sp/>is<sp/>required.</highlight></codeline>
+<codeline><highlight class="normal">AC_PROG_CXX</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">dnl<sp/>Find<sp/>wxWidgets<sp/>3.1.6<sp/>or<sp/>exit<sp/>with<sp/>error.<sp/>See<sp/>documentation<sp/>of<sp/>this<sp/>macro</highlight></codeline>
+<codeline><highlight class="normal">dnl<sp/>in<sp/>wxwin.m4<sp/>for<sp/>more<sp/>information,<sp/>notably<sp/>optional<sp/>arguments<sp/>allowing<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">dnl<sp/>select<sp/>the<sp/>required<sp/>libraries<sp/>and<sp/>optional<sp/>libraries<sp/>to<sp/>detect.</highlight></codeline>
+<codeline><highlight class="normal">WX_CONFIG_CHECK([3.1.6],<sp/>[],<sp/>[AC_MSG_FAILURE([wxWidgets<sp/>3.1.6<sp/>or<sp/>later<sp/>not<sp/>found])])</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">dnl<sp/>Use<sp/>wxWidgets<sp/>compilation<sp/>flags<sp/>for<sp/>all<sp/>files<sp/>in<sp/>the<sp/>project.<sp/>If<sp/>you<sp/>also</highlight></codeline>
+<codeline><highlight class="normal">dnl<sp/>use<sp/>automake,<sp/>you<sp/>may<sp/>prefer<sp/>to<sp/>add<sp/>WX_CXXFLAGS<sp/>and<sp/>WX_LIBS<sp/>to<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">dnl<sp/>individual<sp/>target_CXXFLAGS<sp/>and<sp/>target_LIBADD<sp/>or<sp/>target_LDADD<sp/>variables.</highlight></codeline>
+<codeline><highlight class="normal">CPPFLAGS=&quot;$CPPFLAGS<sp/>$WX_CPPFLAGS&quot;</highlight></codeline>
+<codeline><highlight class="normal">CXXFLAGS=&quot;$CXXFLAGS<sp/>$WX_CXXFLAGS&quot;</highlight></codeline>
+<codeline><highlight class="normal">LIBS=&quot;$LIBS<sp/>$WX_LIBS&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">...<sp/>other<sp/>macros<sp/>checking<sp/>for<sp/>headers/libraries<sp/>...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">AC_OUTPUT</highlight></codeline>
+</programlisting></para>
+<para>Note that this assumes that <computeroutput>wxwin.m4</computeroutput> file is available in a standard location, as is the case when using distribution-provided wxWidgets packages or after building wxWidgets from source and using <computeroutput>make install</computeroutput>. If this is not the case, you must copy this file from wxWidgets source directory to the directory containing autoconf macros used by your application (typically <computeroutput>m4</computeroutput>, e.g. if you use <computeroutput>AC_CONFIG_MACRO_DIRS([m4])</computeroutput>).</para>
+</sect2>
+<sect2 id="overview_install_1autotoc_md9">
+<title>MSW, with Microsoft Visual Studio</title>
+<para>For applications using Microsoft Visual Studio IDE, simply add the provided <computeroutput>wxwidgets.props</computeroutput> property sheet file to your project as explained in the <ref refid="plat_msw_install_1msw_build_apps" kindref="member">instructions</ref> and build the project as usual.</para>
+</sect2>
+<sect2 id="overview_install_1autotoc_md10">
+<title>Mac, with Xcode</title>
+<para>If you want to use an environment variable (such as WXWIN) in your xcode project, there are several things you must do.</para>
 <para><itemizedlist>
-<listitem><para>Directly from command line under any Unix-like systems, including macOS and Unix-like environments such as Cygwin or MSYS2 under MSW, just run</para>
-<para>$ c++ -o minimal minimal.cpp <computeroutput>wx-config --cxxflags --libs</computeroutput></para>
-<para>Please note that you <emphasis>must</emphasis> use <computeroutput>wx-config</computeroutput> to obtain the compiler and linker flags in this case.</para>
-</listitem><listitem><para>Using CMake, and the provided <computeroutput>samples/minimal/CMakeLists.txt</computeroutput> file.</para>
-</listitem><listitem><para>Using Microsoft Visual Studio IDE: simply create a new project and add the provided <computeroutput>wxwidgets.props</computeroutput> property sheet file to it as explained in the instructions and build the project as usual.</para>
-</listitem><listitem><para>Using another IDE with wxWidgets support, such as <ulink url="https://brew.sh/">Code::Blocks</ulink> or <ulink url="https://www.macports.org/">CodeLite</ulink>, please use the IDE wizards.</para>
-</listitem><listitem><para>If you use another IDE, under Unix you should run <computeroutput>wx-config --cxxflags</computeroutput> and <computeroutput>wx-config --libs</computeroutput> commands separately and copy-and-paste their output to the &quot;Additional preprocessor options&quot; and &quot;Additional linker options&quot; fields in your IDE, respectively. Under MSW systems you need to configure the IDE using the instructions in the #msw_build_appsmanual setup&quot;&quot; section. </para>
+<listitem><para>Enable the usage of environment variables in xcode:<linebreak/>
+ <computeroutput>defaults write com.apple.dt.Xcode UseSanitizedBuildSystemEnvironment -bool NO</computeroutput></para>
+</listitem><listitem><para>Set the variables for use with the launch agent (application to OSX 10.10 and up)</para>
 </listitem></itemizedlist>
 </para>
+<para><programlisting filename=".xml"><codeline><highlight class="normal">&lt;?</highlight><highlight class="keyword">xml</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">version</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;1.0&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">encoding</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;UTF-8&quot;</highlight><highlight class="normal">?&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;!</highlight><highlight class="keyword">DOCTYPE</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">plist</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">PUBLIC</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;-//Apple//DTD<sp/>PLIST<sp/>1.0//EN&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;</highlight><highlight class="keywordtype">plist</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">version</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;1.0&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;</highlight><highlight class="keywordtype">dict</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;</highlight><highlight class="keywordtype">key</highlight><highlight class="normal">&gt;</highlight><highlight class="keyword">Label</highlight><highlight class="normal">&lt;/</highlight><highlight class="keywordtype">key</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;</highlight><highlight class="keyword">my.startup</highlight><highlight class="normal">&lt;/</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;</highlight><highlight class="keywordtype">key</highlight><highlight class="normal">&gt;</highlight><highlight class="keyword">ProgramArguments</highlight><highlight class="normal">&lt;/</highlight><highlight class="keywordtype">key</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;</highlight><highlight class="keywordtype">array</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;</highlight><highlight class="keyword">sh</highlight><highlight class="normal">&lt;/</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;-</highlight><highlight class="keyword">c</highlight><highlight class="normal">&lt;/</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">launchctl</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">setenv</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">WXWIN</highlight><highlight class="normal"><sp/>/</highlight><highlight class="keyword">Users</highlight><highlight class="normal">/</highlight><highlight class="keyword">dconnet</highlight><highlight class="normal">/</highlight><highlight class="keyword">devtools</highlight><highlight class="normal">/</highlight><highlight class="keyword">wx</highlight><highlight class="normal">/</highlight><highlight class="keyword">wxWidgets-3.1.5</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;/</highlight><highlight class="keywordtype">array</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;</highlight><highlight class="keywordtype">key</highlight><highlight class="normal">&gt;</highlight><highlight class="keyword">RunAtLoad</highlight><highlight class="normal">&lt;/</highlight><highlight class="keywordtype">key</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;</highlight><highlight class="keywordtype">true</highlight><highlight class="normal">/&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/</highlight><highlight class="keywordtype">dict</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/</highlight><highlight class="keywordtype">plist</highlight><highlight class="normal">&gt;</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="overview_install_1autotoc_md11">
+<title>Other IDEs</title>
+<para>If you use an IDE with wxWidgets support, such as <ulink url="https://brew.sh/">Code::Blocks</ulink> or <ulink url="https://www.macports.org/">CodeLite</ulink>, please use the IDE wizards.</para>
+<para>If you use another IDE, under Unix you should run <computeroutput>wx-config --cxxflags</computeroutput> and <computeroutput>wx-config --libs</computeroutput> commands separately and copy-and-paste their output to the &quot;Additional preprocessor options&quot; and &quot;Additional linker options&quot; fields in your IDE, respectively. Under MSW systems you need to configure the IDE using the instructions in the <ref refid="plat_msw_install_1msw_build_apps" kindref="member">"manual setup"</ref> section. </para>
+</sect2>
 </sect1>
     </detaileddescription>
     <location file="docs/doxygen/overviews/install.md"/>

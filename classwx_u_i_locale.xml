@@ -1,0 +1,510 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classwx_u_i_locale" kind="class" language="C++" prot="public">
+    <compoundname>wxUILocale</compoundname>
+    <includes local="no">wx/uilocale.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classwx_u_i_locale_1a86af3ae9d8558b59464028206170a856" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool wxUILocale::UseDefault</definition>
+        <argsstring>()</argsstring>
+        <name>UseDefault</name>
+        <qualifiedname>wxUILocale::UseDefault</qualifiedname>
+        <briefdescription>
+<para>Configure the UI to use the default user locale. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Localized applications should call this functions as early as possible during the program startup, e.g. in the very beginning of the overridden <ref refid="classwx_app_console_1a99953775a2fd83fa2456e390779afe15" kindref="member">wxApp::OnInit()</ref>.</para>
+<para>Note that under most Unix systems (but not macOS) this function changes the C locale to the locale specified by the environment variables and so affects the results of calling C functions such as <computeroutput>sprintf()</computeroutput> etc which can use comma, rather than period, as decimal separator. The <ref refid="classwx_string_1a51469f8fd0373785566002872bedd23a" kindref="member">wxString::ToCDouble()</ref> and <ref refid="classwx_string_1a12be0249db64b0c53339cb79dcaa2add" kindref="member">wxString::FromCDouble()</ref> functions can be used for parsing and formatting floating point numbers using period as decimal separator independently of the current locale.</para>
+<para><simplesect kind="return"><para>true on success or false if the default locale couldn&apos;t be set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="90" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1a45a6f4b512c8e62b33976bf2b82b5da3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classwx_u_i_locale" kindref="compound">wxUILocale</ref> &amp;</type>
+        <definition>static const wxUILocale &amp; wxUILocale::GetCurrent</definition>
+        <argsstring>()</argsstring>
+        <name>GetCurrent</name>
+        <qualifiedname>wxUILocale::GetCurrent</qualifiedname>
+        <briefdescription>
+<para>Get the object corresponding to the currently used locale. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="classwx_u_i_locale_1a86af3ae9d8558b59464028206170a856" kindref="member">UseDefault()</ref> had been called, this object corresponds to the default user locale. Otherwise it corresponds to a generic locale similar to &quot;C&quot; locale, i.e. always uses period as decimal separator and m/d/y date format. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="100" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1a31261862071a177c3a962d459efe9ac3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_u_i_locale" kindref="compound">wxUILocale</ref></type>
+        <definition>static wxUILocale wxUILocale::FromTag</definition>
+        <argsstring>(const wxString &amp;tag)</argsstring>
+        <name>FromTag</name>
+        <qualifiedname>wxUILocale::FromTag</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+<para>Creates the local corresponding to the given language tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is exactly equivalent to using <ref refid="classwx_u_i_locale" kindref="compound">wxUILocale</ref> constructor with the locale identifier returned by <ref refid="classwx_locale_ident_1a2a7412bb33cb7dd006a76f1e2b7e4757" kindref="member">wxLocaleIdent::FromTag()</ref>, but shorter.</para>
+<para>See <ref refid="classwx_locale_ident_1a2a7412bb33cb7dd006a76f1e2b7e4757" kindref="member">wxLocaleIdent::FromTag()</ref> for more information about the syntax of the <emphasis>tag</emphasis> string. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="112" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1acece0301887e211e84dd2be1e525e447" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void wxUILocale::AddLanguage</definition>
+        <argsstring>(const wxLanguageInfo &amp;info)</argsstring>
+        <name>AddLanguage</name>
+        <qualifiedname>wxUILocale::AddLanguage</qualifiedname>
+        <param>
+          <type>const <ref refid="structwx_language_info" kindref="compound">wxLanguageInfo</ref> &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Adds custom, user-defined language to the database of known languages. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This database is used in conjunction with the first form of Init(). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="223" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1ac2fab2f34c3aee1ea4f9ea1079e301d8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structwx_language_info" kindref="compound">wxLanguageInfo</ref> *</type>
+        <definition>static const wxLanguageInfo * wxUILocale::FindLanguageInfo</definition>
+        <argsstring>(const wxString &amp;locale)</argsstring>
+        <name>FindLanguageInfo</name>
+        <qualifiedname>wxUILocale::FindLanguageInfo</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>locale</declname>
+        </param>
+        <briefdescription>
+<para>This function may be used to find the language description structure for the given locale, specified either as a two letter ISO language code (for example, &quot;pt&quot;), a language code followed by the country code (&quot;pt_BR&quot;) or a full, human readable, language description (&quot;Portuguese_Brazil&quot;). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Please note that only the underscore character is supported as the separator between language and region codes.</para>
+<para>Returns the information for the given language or NULL if this language is unknown. Note that even if the returned pointer is valid, the caller should <emphasis>not</emphasis> delete it.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_u_i_locale_1a855bc76217bc3ac94d5cd89518eb3001" kindref="member">GetLanguageInfo()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="239" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1a4b94b655a530037084ede10be40b2224" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structwx_language_info" kindref="compound">wxLanguageInfo</ref> *</type>
+        <definition>static const wxLanguageInfo * wxUILocale::FindLanguageInfo</definition>
+        <argsstring>(const wxLocaleIdent &amp;localeId)</argsstring>
+        <name>FindLanguageInfo</name>
+        <qualifiedname>wxUILocale::FindLanguageInfo</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_locale_ident" kindref="compound">wxLocaleIdent</ref> &amp;</type>
+          <declname>localeId</declname>
+        </param>
+        <briefdescription>
+<para>This function may be used to find the language description structure for the given locale, specified as a locale identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the information for the given language or NULL if this language is unknown. Note that even if the returned pointer is valid, the caller should <emphasis>not</emphasis> delete it.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_u_i_locale_1a855bc76217bc3ac94d5cd89518eb3001" kindref="member">GetLanguageInfo()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="251" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1a855bc76217bc3ac94d5cd89518eb3001" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="structwx_language_info" kindref="compound">wxLanguageInfo</ref> *</type>
+        <definition>static const wxLanguageInfo * wxUILocale::GetLanguageInfo</definition>
+        <argsstring>(int lang)</argsstring>
+        <name>GetLanguageInfo</name>
+        <qualifiedname>wxUILocale::GetLanguageInfo</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>lang</declname>
+        </param>
+        <briefdescription>
+<para>Returns a pointer to <ref refid="structwx_language_info" kindref="compound">wxLanguageInfo</ref> structure containing information about the given language or NULL if this language is unknown. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that even if the returned pointer is valid, the caller should <emphasis>not</emphasis> delete it.</para>
+<para>See <ref refid="classwx_u_i_locale_1acece0301887e211e84dd2be1e525e447" kindref="member">AddLanguage()</ref> for the <ref refid="structwx_language_info" kindref="compound">wxLanguageInfo</ref> description. As with Init(), <computeroutput>wxLANGUAGE_DEFAULT</computeroutput> has the special meaning if passed as an argument to this function and in this case the result of <ref refid="classwx_u_i_locale_1a94aa6848ac10686296d32b15f2ac8f96" kindref="member">GetSystemLanguage()</ref> is used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="263" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1abbc63a7203bb954aa0fa55b8c07f010e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>static wxString wxUILocale::GetLanguageName</definition>
+        <argsstring>(int lang)</argsstring>
+        <name>GetLanguageName</name>
+        <qualifiedname>wxUILocale::GetLanguageName</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>lang</declname>
+        </param>
+        <briefdescription>
+<para>Returns English name of the given language or empty string if this language is unknown. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See <ref refid="classwx_u_i_locale_1a855bc76217bc3ac94d5cd89518eb3001" kindref="member">GetLanguageInfo()</ref> for a remark about special meaning of <computeroutput>wxLANGUAGE_DEFAULT</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="271" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1a9812d0eefe5f03253536bc17e4eb16f9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>static wxString wxUILocale::GetLanguageCanonicalName</definition>
+        <argsstring>(int lang)</argsstring>
+        <name>GetLanguageCanonicalName</name>
+        <qualifiedname>wxUILocale::GetLanguageCanonicalName</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>lang</declname>
+        </param>
+        <briefdescription>
+<para>Returns canonical name (see GetCanonicalName()) of the given language or empty string if this language is unknown. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See <ref refid="classwx_u_i_locale_1a855bc76217bc3ac94d5cd89518eb3001" kindref="member">GetLanguageInfo()</ref> for a remark about special meaning of <computeroutput>wxLANGUAGE_DEFAULT</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="279" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1a94aa6848ac10686296d32b15f2ac8f96" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int wxUILocale::GetSystemLanguage</definition>
+        <argsstring>()</argsstring>
+        <name>GetSystemLanguage</name>
+        <qualifiedname>wxUILocale::GetSystemLanguage</qualifiedname>
+        <briefdescription>
+<para>Tries to detect the user&apos;s default user interface language setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the <ref refid="language_8h_1a7d1c74ce43b2fb7acf7a6fa438c0ee86" kindref="member">wxLanguage</ref> value or <computeroutput>wxLANGUAGE_UNKNOWN</computeroutput> if the language-guessing algorithm failed.</para>
+<para><simplesect kind="note"><para>Where possible this function returns the user&apos;s preferred UI <emphasis>language</emphasis>. This may be, and usually is, the same as the user&apos;s default locale, but it&apos;s not the same thing. If retrieving the preferred UI language is not supported by the operating system (for example, Windows 7 and below), the user&apos;s default <emphasis>locale</emphasis> will be used.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classwx_translations_1adb8979906e44477affb150f12c5f145c" kindref="member">wxTranslations::GetBestTranslation()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="295" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1aed30270c9a87be4356002f61804cbe12" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int wxUILocale::GetSystemLocale</definition>
+        <argsstring>()</argsstring>
+        <name>GetSystemLocale</name>
+        <qualifiedname>wxUILocale::GetSystemLocale</qualifiedname>
+        <briefdescription>
+<para>Tries to detect the user&apos;s default locale setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the <ref refid="language_8h_1a7d1c74ce43b2fb7acf7a6fa438c0ee86" kindref="member">wxLanguage</ref> value or <computeroutput>wxLANGUAGE_UNKNOWN</computeroutput> if the locale-guessing algorithm failed.</para>
+<para><simplesect kind="note"><para>This function works with <emphasis>locales</emphasis> and returns the user&apos;s default locale. This may be, and usually is, the same as their preferred UI language, but it&apos;s not the same thing. Use wxTranslation to obtain <emphasis>language</emphasis> information.</para>
+</simplesect>
+<simplesect kind="since"><para>3.1.7</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classwx_translations_1adb8979906e44477affb150f12c5f145c" kindref="member">wxTranslations::GetBestTranslation()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="312" column="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_u_i_locale_1a6a33c6a661359329c63a4be85069f166" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxUILocale::wxUILocale</definition>
+        <argsstring>(const wxLocaleIdent &amp;localeId)</argsstring>
+        <name>wxUILocale</name>
+        <qualifiedname>wxUILocale::wxUILocale</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_locale_ident" kindref="compound">wxLocaleIdent</ref> &amp;</type>
+          <declname>localeId</declname>
+        </param>
+        <briefdescription>
+<para>Creates the locale corresponding to the given locale identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In the simplest case, this can be used as following: <programlisting><codeline><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_u_i_locale" kindref="compound">wxUILocale</ref><sp/>loc(<ref refid="classwx_locale_ident" kindref="compound">wxLocaleIdent</ref>().Language(</highlight><highlight class="stringliteral">&quot;fr&quot;</highlight><highlight class="normal">));</highlight></codeline>
+</programlisting> see <ref refid="classwx_locale_ident" kindref="compound">wxLocaleIdent</ref> description for more details, including other ways of specifying the locale.</para>
+<para>If <emphasis>localeId</emphasis> is not recognized or not supported, default (&quot;C&quot;) locale is used instead. Additionally, if <emphasis>localeId</emphasis> is empty (see <ref refid="classwx_locale_ident_1af1ba91c28f763f71bf17f6f6213d05fb" kindref="member">wxLocaleIdent::IsEmpty()</ref>), an assertion failure is triggered. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="128" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1a370733e9400cd0510603814f8eac42cb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxUILocale::CompareStrings</definition>
+        <argsstring>(const wxString &amp;lhs, const wxString &amp;rhs, int flags=wxCompare_CaseSensitive) const</argsstring>
+        <name>CompareStrings</name>
+        <qualifiedname>wxUILocale::CompareStrings</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval><ref refid="uilocale_8h_1aedcf2109f459315e1a7f2af73ec9b603af02ed15234cbfc8a4035e7f89cad057e" kindref="member">wxCompare_CaseSensitive</ref></defval>
+        </param>
+        <briefdescription>
+<para>Compares two strings using comparison rules of this locale. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is useful for sorting the strings in the order expected by the user, e.g. by correctly sorting &quot;ä&quot; in the same way as &quot;a&quot; when using German locale, but not when using Swedish one, in which &quot;ä&quot; is sorted after &quot;z&quot;.</para>
+<para>It can be used both with the current locale, and with any other supported locale, even under systems not supporting changing the UI locale, such as macOS.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First comparing string. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second comparing string. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Can be used to specify whether to compare strings case-sensitively (default) or not, by specifying <ref refid="uilocale_8h_1aedcf2109f459315e1a7f2af73ec9b603a28740193ca6fca5c0420d18d67aa79e0" kindref="member">wxCompare_CaseInsensitive</ref> (note that this flag only works under MSW and Mac and is simply ignored under the other platforms). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 if <emphasis>lhs</emphasis> is less than <emphasis>rhs</emphasis>. 0 if <emphasis>lhs</emphasis> is equal to <emphasis>rhs</emphasis>. 1 if <emphasis>lhs</emphasis> is greater than <emphasis>rhs</emphasis>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="156" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1abc1f9365d5bb7a990ddcd8489fbceebe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>wxString wxUILocale::GetName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetName</name>
+        <qualifiedname>wxUILocale::GetName</qualifiedname>
+        <briefdescription>
+<para>Get the platform-dependent name of the current locale. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This name can be used in diagnostic messages. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="164" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1a32a12a34bc673a9d89f0cc2dfdc7cfee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_locale_ident" kindref="compound">wxLocaleIdent</ref></type>
+        <definition>wxLocaleIdent wxUILocale::GetLocaleId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLocaleId</name>
+        <qualifiedname>wxUILocale::GetLocaleId</qualifiedname>
+        <briefdescription>
+<para>Get the locale id from which the current locale was instantiated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="169" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1a469b25c4b1f89ab81f95cc85e41c1a0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>wxString wxUILocale::GetInfo</definition>
+        <argsstring>(wxLocaleInfo index, wxLocaleCategory cat=wxLOCALE_CAT_DEFAULT) const</argsstring>
+        <name>GetInfo</name>
+        <qualifiedname>wxUILocale::GetInfo</qualifiedname>
+        <param>
+          <type><ref refid="intl_8h_1a54d3421c44d428cc5cce0c772d583c34" kindref="member">wxLocaleInfo</ref></type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="intl_8h_1a934e5f080f46c8c1b3c043775466f121" kindref="member">wxLocaleCategory</ref></type>
+          <declname>cat</declname>
+          <defval><ref refid="intl_8h_1a934e5f080f46c8c1b3c043775466f121a45e7bd5d40a1ddb806a54133fd9842d7" kindref="member">wxLOCALE_CAT_DEFAULT</ref></defval>
+        </param>
+        <briefdescription>
+<para>Query the locale for the specified information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function returns the value of the locale-specific option specified by the given <emphasis>index</emphasis>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>One of the elements of wxLocaleInfo enum. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The category to use with the given index or wxLOCALE_CAT_DEFAULT if the index can only apply to a single category. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The option value or empty string if the function failed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="185" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1af6d74d0871228af37cda058ca0231cfd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>wxString wxUILocale::GetLocalizedName</definition>
+        <argsstring>(wxLocaleName name, wxLocaleForm form) const</argsstring>
+        <name>GetLocalizedName</name>
+        <qualifiedname>wxUILocale::GetLocalizedName</qualifiedname>
+        <param>
+          <type><ref refid="intl_8h_1a03a906b02ebe99d58d17224a5831e811" kindref="member">wxLocaleName</ref></type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="intl_8h_1a8471b3bbfebdd6929e2ff1a1c368a76f" kindref="member">wxLocaleForm</ref></type>
+          <declname>form</declname>
+        </param>
+        <briefdescription>
+<para>Query the locale for the specified localized name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>One of the elements of wxLocaleName enum. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>form</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The representation form requested. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The localized name value or empty string if the function failed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="198" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1aed341c0020d5972f0dfa7628f3134a40" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="intl_8h_1a7e30efec05ef9b40b1750ac046400c81" kindref="member">wxLayoutDirection</ref></type>
+        <definition>wxLayoutDirection wxUILocale::GetLayoutDirection</definition>
+        <argsstring>() const</argsstring>
+        <name>GetLayoutDirection</name>
+        <qualifiedname>wxUILocale::GetLayoutDirection</qualifiedname>
+        <briefdescription>
+<para>Query the layout direction of the current locale. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The layout direction or wxLayout_Default if the function failed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="206" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_u_i_locale_1a0f5c0c53592437e2fd4b6d6e369e2080" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxUILocale::IsSupported</definition>
+        <argsstring>() const</argsstring>
+        <name>IsSupported</name>
+        <qualifiedname>wxUILocale::IsSupported</qualifiedname>
+        <briefdescription>
+<para>Return true if locale is supported on the current system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If this function returns <emphasis>false</emphasis>, the other functions of this class, such as <ref refid="classwx_u_i_locale_1a469b25c4b1f89ab81f95cc85e41c1a0a" kindref="member">GetInfo()</ref> and <ref refid="classwx_u_i_locale_1a370733e9400cd0510603814f8eac42cb" kindref="member">CompareStrings()</ref>, behave as in &quot;C&quot; locale, i.e. it&apos;s still safe to call them, but their results don&apos;t reflect the rules for the locale in question, but just use the default (i.e. US English) conventions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="217" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Query and modify locale used for the UI by the current platform. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>UI locale determines all culture-dependent conventions used in the user interface, including numbers, currencies and dates formatting. It also determines the language used by the native dialogs, such as <ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref>, where different labels use the language corresponding to the current UI locale.</para>
+<para>The UI locale is, in general, different from C locale set by the standard <computeroutput>setlocale()</computeroutput> function and affecting C standard library functions such as <computeroutput>printf()</computeroutput>, <computeroutput>scanf()</computeroutput>, <computeroutput>strftime()</computeroutput> and many others. Unfortunately, the relationship between C and UI locales is not the same depending on the platform: with wxGTK they must be the same, but under macOS C locale must not be changed, as doing this exposes bugs in the system. Because of this, applications can&apos;t generally count on C locale being set to any particular value and it is best to avoid using it, including implicitly via the standard C functions, in portable code. Instead, consider using <ref refid="classwx_number_formatter" kindref="compound">wxNumberFormatter</ref> for parsing and formatting numbers according to the current UI locale or <ref refid="classwx_string_1a12be0249db64b0c53339cb79dcaa2add" kindref="member">wxString::FromCDouble()</ref> and <ref refid="classwx_string_1a51469f8fd0373785566002872bedd23a" kindref="member">wxString::ToCDouble()</ref> functions for doing it always using period as decimal separator.</para>
+<para>Localized applications should call <ref refid="classwx_u_i_locale_1a86af3ae9d8558b59464028206170a856" kindref="member">wxUILocale::UseDefault()</ref> on startup to explicitly indicate that they opt-in using the current UI locale, even if this results in changing the global C locale, as is the case in wxGTK. Note that some platforms (MSW and macOS) will use default user locale for their standard dialogs even if this function is not called, but it is still necessary to call it to use the correct number and date formats and to avoid mixing messages in the user language with default formats not corresponding to it.</para>
+<para>Please also note that under macOS to really use the user locale, it must be listed as a supported language in the application <computeroutput>Info.plist</computeroutput> file under <computeroutput>CFBundleLocalizations</computeroutput> key.</para>
+<para>Unlike <ref refid="classwx_locale" kindref="compound">wxLocale</ref> class, this class doesn&apos;t affect the translations used by the application, see <ref refid="classwx_translations" kindref="compound">wxTranslations</ref> for doing this.</para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> <simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/uilocale.h" line="70" column="1" bodyfile="interface/wx/uilocale.h" bodystart="71" bodyend="312"/>
+    <listofallmembers>
+      <member refid="classwx_u_i_locale_1acece0301887e211e84dd2be1e525e447" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>AddLanguage</name></member>
+      <member refid="classwx_u_i_locale_1a370733e9400cd0510603814f8eac42cb" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>CompareStrings</name></member>
+      <member refid="classwx_u_i_locale_1ac2fab2f34c3aee1ea4f9ea1079e301d8" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>FindLanguageInfo</name></member>
+      <member refid="classwx_u_i_locale_1a4b94b655a530037084ede10be40b2224" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>FindLanguageInfo</name></member>
+      <member refid="classwx_u_i_locale_1a31261862071a177c3a962d459efe9ac3" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>FromTag</name></member>
+      <member refid="classwx_u_i_locale_1a45a6f4b512c8e62b33976bf2b82b5da3" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>GetCurrent</name></member>
+      <member refid="classwx_u_i_locale_1a469b25c4b1f89ab81f95cc85e41c1a0a" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>GetInfo</name></member>
+      <member refid="classwx_u_i_locale_1a9812d0eefe5f03253536bc17e4eb16f9" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>GetLanguageCanonicalName</name></member>
+      <member refid="classwx_u_i_locale_1a855bc76217bc3ac94d5cd89518eb3001" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>GetLanguageInfo</name></member>
+      <member refid="classwx_u_i_locale_1abbc63a7203bb954aa0fa55b8c07f010e" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>GetLanguageName</name></member>
+      <member refid="classwx_u_i_locale_1aed341c0020d5972f0dfa7628f3134a40" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>GetLayoutDirection</name></member>
+      <member refid="classwx_u_i_locale_1a32a12a34bc673a9d89f0cc2dfdc7cfee" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>GetLocaleId</name></member>
+      <member refid="classwx_u_i_locale_1af6d74d0871228af37cda058ca0231cfd" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>GetLocalizedName</name></member>
+      <member refid="classwx_u_i_locale_1abc1f9365d5bb7a990ddcd8489fbceebe" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>GetName</name></member>
+      <member refid="classwx_u_i_locale_1a94aa6848ac10686296d32b15f2ac8f96" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>GetSystemLanguage</name></member>
+      <member refid="classwx_u_i_locale_1aed30270c9a87be4356002f61804cbe12" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>GetSystemLocale</name></member>
+      <member refid="classwx_u_i_locale_1a0f5c0c53592437e2fd4b6d6e369e2080" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>IsSupported</name></member>
+      <member refid="classwx_u_i_locale_1a86af3ae9d8558b59464028206170a856" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>UseDefault</name></member>
+      <member refid="classwx_u_i_locale_1a6a33c6a661359329c63a4be85069f166" prot="public" virt="non-virtual"><scope>wxUILocale</scope><name>wxUILocale</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

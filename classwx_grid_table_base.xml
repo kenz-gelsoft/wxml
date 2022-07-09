@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_grid_table_base" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxGridTableBase</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
+    <derivedcompoundref refid="classwx_grid_string_table" prot="public" virt="non-virtual">wxGridStringTable</derivedcompoundref>
     <includes local="no">wx/grid.h</includes>
       <sectiondef kind="user-defined">
       <header>Table Cell Accessors</header>
@@ -11,6 +12,7 @@
         <definition>virtual bool wxGridTableBase::IsEmptyCell</definition>
         <argsstring>(int row, int col)</argsstring>
         <name>IsEmptyCell</name>
+        <qualifiedname>wxGridTableBase::IsEmptyCell</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -34,6 +36,7 @@
         <definition>bool wxGridTableBase::IsEmpty</definition>
         <argsstring>(const wxGridCellCoords &amp;coords)</argsstring>
         <name>IsEmpty</name>
+        <qualifiedname>wxGridTableBase::IsEmpty</qualifiedname>
         <param>
           <type>const <ref refid="classwx_grid_cell_coords" kindref="compound">wxGridCellCoords</ref> &amp;</type>
           <declname>coords</declname>
@@ -53,6 +56,8 @@
         <definition>virtual wxString wxGridTableBase::GetValue</definition>
         <argsstring>(int row, int col)=0</argsstring>
         <name>GetValue</name>
+        <qualifiedname>wxGridTableBase::GetValue</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1aa7d1576f6010b304cdc30a73099bb98f">GetValue</reimplementedby>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -75,6 +80,8 @@
         <definition>virtual void wxGridTableBase::SetValue</definition>
         <argsstring>(int row, int col, const wxString &amp;value)=0</argsstring>
         <name>SetValue</name>
+        <qualifiedname>wxGridTableBase::SetValue</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1ad93a9f51b686e85825d6ef4541cecf7c">SetValue</reimplementedby>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -101,6 +108,7 @@
         <definition>virtual wxString wxGridTableBase::GetTypeName</definition>
         <argsstring>(int row, int col)</argsstring>
         <name>GetTypeName</name>
+        <qualifiedname>wxGridTableBase::GetTypeName</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -124,6 +132,7 @@
         <definition>virtual bool wxGridTableBase::CanGetValueAs</definition>
         <argsstring>(int row, int col, const wxString &amp;typeName)</argsstring>
         <name>CanGetValueAs</name>
+        <qualifiedname>wxGridTableBase::CanGetValueAs</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -151,6 +160,7 @@
         <definition>virtual bool wxGridTableBase::CanSetValueAs</definition>
         <argsstring>(int row, int col, const wxString &amp;typeName)</argsstring>
         <name>CanSetValueAs</name>
+        <qualifiedname>wxGridTableBase::CanSetValueAs</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -180,6 +190,7 @@
         <definition>virtual long wxGridTableBase::GetValueAsLong</definition>
         <argsstring>(int row, int col)</argsstring>
         <name>GetValueAsLong</name>
+        <qualifiedname>wxGridTableBase::GetValueAsLong</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -203,6 +214,7 @@
         <definition>virtual double wxGridTableBase::GetValueAsDouble</definition>
         <argsstring>(int row, int col)</argsstring>
         <name>GetValueAsDouble</name>
+        <qualifiedname>wxGridTableBase::GetValueAsDouble</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -226,6 +238,7 @@
         <definition>virtual bool wxGridTableBase::GetValueAsBool</definition>
         <argsstring>(int row, int col)</argsstring>
         <name>GetValueAsBool</name>
+        <qualifiedname>wxGridTableBase::GetValueAsBool</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -249,6 +262,7 @@
         <definition>virtual void * wxGridTableBase::GetValueAsCustom</definition>
         <argsstring>(int row, int col, const wxString &amp;typeName)</argsstring>
         <name>GetValueAsCustom</name>
+        <qualifiedname>wxGridTableBase::GetValueAsCustom</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -277,6 +291,7 @@
         <definition>virtual void wxGridTableBase::SetValueAsLong</definition>
         <argsstring>(int row, int col, long value)</argsstring>
         <name>SetValueAsLong</name>
+        <qualifiedname>wxGridTableBase::SetValueAsLong</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -304,6 +319,7 @@
         <definition>virtual void wxGridTableBase::SetValueAsDouble</definition>
         <argsstring>(int row, int col, double value)</argsstring>
         <name>SetValueAsDouble</name>
+        <qualifiedname>wxGridTableBase::SetValueAsDouble</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -331,6 +347,7 @@
         <definition>virtual void wxGridTableBase::SetValueAsBool</definition>
         <argsstring>(int row, int col, bool value)</argsstring>
         <name>SetValueAsBool</name>
+        <qualifiedname>wxGridTableBase::SetValueAsBool</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -358,6 +375,7 @@
         <definition>virtual void wxGridTableBase::SetValueAsCustom</definition>
         <argsstring>(int row, int col, const wxString &amp;typeName, void *value)</argsstring>
         <name>SetValueAsCustom</name>
+        <qualifiedname>wxGridTableBase::SetValueAsCustom</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -389,6 +407,7 @@
         <definition>virtual void wxGridTableBase::SetView</definition>
         <argsstring>(wxGrid *grid)</argsstring>
         <name>SetView</name>
+        <qualifiedname>wxGridTableBase::SetView</qualifiedname>
         <param>
           <type><ref refid="classwx_grid" kindref="compound">wxGrid</ref> *</type>
           <declname>grid</declname>
@@ -408,6 +427,7 @@
         <definition>virtual wxGrid * wxGridTableBase::GetView</definition>
         <argsstring>() const</argsstring>
         <name>GetView</name>
+        <qualifiedname>wxGridTableBase::GetView</qualifiedname>
         <briefdescription>
 <para>Returns the last grid passed to <ref refid="classwx_grid_table_base_1a7dfac01d7b0655d3b41d350e2f322f60" kindref="member">SetView()</ref>. </para>
         </briefdescription>
@@ -428,6 +448,8 @@
         <definition>virtual void wxGridTableBase::Clear</definition>
         <argsstring>()</argsstring>
         <name>Clear</name>
+        <qualifiedname>wxGridTableBase::Clear</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1a83c1567bff49b6e71f0acd441c621bca">Clear</reimplementedby>
         <briefdescription>
 <para>Clear the table contents. </para>
         </briefdescription>
@@ -443,6 +465,8 @@
         <definition>virtual bool wxGridTableBase::InsertRows</definition>
         <argsstring>(size_t pos=0, size_t numRows=1)</argsstring>
         <name>InsertRows</name>
+        <qualifiedname>wxGridTableBase::InsertRows</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1aaffc9aa967312749fd08ce34dd32938d">InsertRows</reimplementedby>
         <param>
           <type>size_t</type>
           <declname>pos</declname>
@@ -485,6 +509,8 @@
         <definition>virtual bool wxGridTableBase::AppendRows</definition>
         <argsstring>(size_t numRows=1)</argsstring>
         <name>AppendRows</name>
+        <qualifiedname>wxGridTableBase::AppendRows</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1a66811ce30919a6ed45dba9536e8c8652">AppendRows</reimplementedby>
         <param>
           <type>size_t</type>
           <declname>numRows</declname>
@@ -515,6 +541,8 @@
         <definition>virtual bool wxGridTableBase::DeleteRows</definition>
         <argsstring>(size_t pos=0, size_t numRows=1)</argsstring>
         <name>DeleteRows</name>
+        <qualifiedname>wxGridTableBase::DeleteRows</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1a63b043a2f48f5a4aec7a92f110830a7a">DeleteRows</reimplementedby>
         <param>
           <type>size_t</type>
           <declname>pos</declname>
@@ -557,6 +585,8 @@
         <definition>virtual bool wxGridTableBase::InsertCols</definition>
         <argsstring>(size_t pos=0, size_t numCols=1)</argsstring>
         <name>InsertCols</name>
+        <qualifiedname>wxGridTableBase::InsertCols</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1ae452ad9f669e6c7ad09de3fd7115e90e">InsertCols</reimplementedby>
         <param>
           <type>size_t</type>
           <declname>pos</declname>
@@ -581,6 +611,8 @@
         <definition>virtual bool wxGridTableBase::AppendCols</definition>
         <argsstring>(size_t numCols=1)</argsstring>
         <name>AppendCols</name>
+        <qualifiedname>wxGridTableBase::AppendCols</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1a96ac3ac5fe3871aed18a6e0fdcd329c9">AppendCols</reimplementedby>
         <param>
           <type>size_t</type>
           <declname>numCols</declname>
@@ -600,6 +632,8 @@
         <definition>virtual bool wxGridTableBase::DeleteCols</definition>
         <argsstring>(size_t pos=0, size_t numCols=1)</argsstring>
         <name>DeleteCols</name>
+        <qualifiedname>wxGridTableBase::DeleteCols</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1a27f964b9ea9c709a54814e166dc682ad">DeleteCols</reimplementedby>
         <param>
           <type>size_t</type>
           <declname>pos</declname>
@@ -633,6 +667,8 @@
         <definition>virtual wxString wxGridTableBase::GetRowLabelValue</definition>
         <argsstring>(int row)</argsstring>
         <name>GetRowLabelValue</name>
+        <qualifiedname>wxGridTableBase::GetRowLabelValue</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1a9f8ad94bc8dff183b001d7a38f7f7359">GetRowLabelValue</reimplementedby>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -651,6 +687,8 @@
         <definition>virtual wxString wxGridTableBase::GetColLabelValue</definition>
         <argsstring>(int col)</argsstring>
         <name>GetColLabelValue</name>
+        <qualifiedname>wxGridTableBase::GetColLabelValue</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1a16ea9b1b101ae44fcb78b468e5bd3d22">GetColLabelValue</reimplementedby>
         <param>
           <type>int</type>
           <declname>col</declname>
@@ -669,6 +707,8 @@
         <definition>virtual wxString wxGridTableBase::GetCornerLabelValue</definition>
         <argsstring>() const</argsstring>
         <name>GetCornerLabelValue</name>
+        <qualifiedname>wxGridTableBase::GetCornerLabelValue</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1a70d471f545ab20e4863c371386cc1594">GetCornerLabelValue</reimplementedby>
         <briefdescription>
 <para>Return the label of the grid&apos;s corner. </para>
         </briefdescription>
@@ -686,6 +726,8 @@
         <definition>virtual void wxGridTableBase::SetRowLabelValue</definition>
         <argsstring>(int row, const wxString &amp;label)</argsstring>
         <name>SetRowLabelValue</name>
+        <qualifiedname>wxGridTableBase::SetRowLabelValue</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1af761fd6e62fbdb1051936bc212464bb5">SetRowLabelValue</reimplementedby>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -709,6 +751,8 @@
         <definition>virtual void wxGridTableBase::SetColLabelValue</definition>
         <argsstring>(int col, const wxString &amp;label)</argsstring>
         <name>SetColLabelValue</name>
+        <qualifiedname>wxGridTableBase::SetColLabelValue</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1a77bb41c553a39b59c8526b8fa9a6d8d5">SetColLabelValue</reimplementedby>
         <param>
           <type>int</type>
           <declname>col</declname>
@@ -731,6 +775,8 @@
         <definition>virtual void wxGridTableBase::SetCornerLabelValue</definition>
         <argsstring>(const wxString &amp;)</argsstring>
         <name>SetCornerLabelValue</name>
+        <qualifiedname>wxGridTableBase::SetCornerLabelValue</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1aacfbe20659fbbed99e801c573e73a51b">SetCornerLabelValue</reimplementedby>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
         </param>
@@ -758,6 +804,7 @@
         <definition>void wxGridTableBase::SetAttrProvider</definition>
         <argsstring>(wxGridCellAttrProvider *attrProvider)</argsstring>
         <name>SetAttrProvider</name>
+        <qualifiedname>wxGridTableBase::SetAttrProvider</qualifiedname>
         <param>
           <type><ref refid="classwx_grid_cell_attr_provider" kindref="compound">wxGridCellAttrProvider</ref> *</type>
           <declname>attrProvider</declname>
@@ -777,6 +824,7 @@
         <definition>wxGridCellAttrProvider * wxGridTableBase::GetAttrProvider</definition>
         <argsstring>() const</argsstring>
         <name>GetAttrProvider</name>
+        <qualifiedname>wxGridTableBase::GetAttrProvider</qualifiedname>
         <briefdescription>
 <para>Returns the attribute provider currently being used. </para>
         </briefdescription>
@@ -792,6 +840,7 @@
         <definition>virtual wxGridCellAttr * wxGridTableBase::GetAttr</definition>
         <argsstring>(int row, int col, wxGridCellAttr::wxAttrKind kind)</argsstring>
         <name>GetAttr</name>
+        <qualifiedname>wxGridTableBase::GetAttr</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -820,6 +869,7 @@
         <definition>wxGridCellAttrPtr wxGridTableBase::GetAttrPtr</definition>
         <argsstring>(int row, int col, wxGridCellAttr::wxAttrKind kind)</argsstring>
         <name>GetAttrPtr</name>
+        <qualifiedname>wxGridTableBase::GetAttrPtr</qualifiedname>
         <param>
           <type>int</type>
           <declname>row</declname>
@@ -850,6 +900,7 @@
         <definition>virtual void wxGridTableBase::SetAttr</definition>
         <argsstring>(wxGridCellAttr *attr, int row, int col)</argsstring>
         <name>SetAttr</name>
+        <qualifiedname>wxGridTableBase::SetAttr</qualifiedname>
         <param>
           <type><ref refid="classwx_grid_cell_attr" kindref="compound">wxGridCellAttr</ref> *</type>
           <declname>attr</declname>
@@ -878,6 +929,7 @@
         <definition>virtual void wxGridTableBase::SetRowAttr</definition>
         <argsstring>(wxGridCellAttr *attr, int row)</argsstring>
         <name>SetRowAttr</name>
+        <qualifiedname>wxGridTableBase::SetRowAttr</qualifiedname>
         <param>
           <type><ref refid="classwx_grid_cell_attr" kindref="compound">wxGridCellAttr</ref> *</type>
           <declname>attr</declname>
@@ -902,6 +954,7 @@
         <definition>virtual void wxGridTableBase::SetColAttr</definition>
         <argsstring>(wxGridCellAttr *attr, int col)</argsstring>
         <name>SetColAttr</name>
+        <qualifiedname>wxGridTableBase::SetColAttr</qualifiedname>
         <param>
           <type><ref refid="classwx_grid_cell_attr" kindref="compound">wxGridCellAttr</ref> *</type>
           <declname>attr</declname>
@@ -926,6 +979,7 @@
         <definition>virtual bool wxGridTableBase::CanHaveAttributes</definition>
         <argsstring>()</argsstring>
         <name>CanHaveAttributes</name>
+        <qualifiedname>wxGridTableBase::CanHaveAttributes</qualifiedname>
         <briefdescription>
 <para>Returns true if this table supports attributes or false otherwise. </para>
         </briefdescription>
@@ -941,6 +995,7 @@
         <definition>virtual bool wxGridTableBase::CanMeasureColUsingSameAttr</definition>
         <argsstring>(int col) const</argsstring>
         <name>CanMeasureColUsingSameAttr</name>
+        <qualifiedname>wxGridTableBase::CanMeasureColUsingSameAttr</qualifiedname>
         <param>
           <type>int</type>
           <declname>col</declname>
@@ -966,6 +1021,7 @@
         <definition>wxGridTableBase::wxGridTableBase</definition>
         <argsstring>()</argsstring>
         <name>wxGridTableBase</name>
+        <qualifiedname>wxGridTableBase::wxGridTableBase</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -980,6 +1036,7 @@
         <definition>virtual wxGridTableBase::~wxGridTableBase</definition>
         <argsstring>()</argsstring>
         <name>~wxGridTableBase</name>
+        <qualifiedname>wxGridTableBase::~wxGridTableBase</qualifiedname>
         <briefdescription>
 <para>Destructor frees the attribute provider if it was created. </para>
         </briefdescription>
@@ -994,6 +1051,8 @@
         <definition>virtual int wxGridTableBase::GetNumberRows</definition>
         <argsstring>()=0</argsstring>
         <name>GetNumberRows</name>
+        <qualifiedname>wxGridTableBase::GetNumberRows</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1a851b8fe3b8fd5e78e7a4d2f1f2868212">GetNumberRows</reimplementedby>
         <briefdescription>
 <para>Must be overridden to return the number of rows in the table. </para>
         </briefdescription>
@@ -1009,6 +1068,8 @@
         <definition>virtual int wxGridTableBase::GetNumberCols</definition>
         <argsstring>()=0</argsstring>
         <name>GetNumberCols</name>
+        <qualifiedname>wxGridTableBase::GetNumberCols</qualifiedname>
+        <reimplementedby refid="classwx_grid_string_table_1a5315de5638990a54d6ec97720cb9059f">GetNumberCols</reimplementedby>
         <briefdescription>
 <para>Must be overridden to return the number of columns in the table. </para>
         </briefdescription>
@@ -1024,6 +1085,7 @@
         <definition>int wxGridTableBase::GetRowsCount</definition>
         <argsstring>() const</argsstring>
         <name>GetRowsCount</name>
+        <qualifiedname>wxGridTableBase::GetRowsCount</qualifiedname>
         <briefdescription>
 <para>Return the number of rows in the table. </para>
         </briefdescription>
@@ -1039,6 +1101,7 @@
         <definition>int wxGridTableBase::GetColsCount</definition>
         <argsstring>() const</argsstring>
         <name>GetColsCount</name>
+        <qualifiedname>wxGridTableBase::GetColsCount</qualifiedname>
         <briefdescription>
 <para>Return the number of columns in the table. </para>
         </briefdescription>
@@ -1060,9 +1123,16 @@
 </simplesect>
 <heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__grid" kindref="compound">Grid Related Classes</ref> </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>wxGridStringTable</label>
+        <link refid="classwx_grid_string_table"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="1">
         <label>wxGridTableBase</label>
         <link refid="classwx_grid_table_base"/>

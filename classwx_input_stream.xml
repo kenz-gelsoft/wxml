@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_input_stream" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxInputStream</compoundname>
     <basecompoundref refid="classwx_stream_base" prot="public" virt="non-virtual">wxStreamBase</basecompoundref>
@@ -16,6 +16,7 @@
         <definition>wxInputStream::wxInputStream</definition>
         <argsstring>()</argsstring>
         <name>wxInputStream</name>
+        <qualifiedname>wxInputStream::wxInputStream</qualifiedname>
         <briefdescription>
 <para>Creates a dummy input stream. </para>
         </briefdescription>
@@ -30,6 +31,7 @@
         <definition>virtual wxInputStream::~wxInputStream</definition>
         <argsstring>()</argsstring>
         <name>~wxInputStream</name>
+        <qualifiedname>wxInputStream::~wxInputStream</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -44,6 +46,7 @@
         <definition>virtual bool wxInputStream::CanRead</definition>
         <argsstring>() const</argsstring>
         <name>CanRead</name>
+        <qualifiedname>wxInputStream::CanRead</qualifiedname>
         <briefdescription>
 <para>Returns true if some data is available in the stream right now, so that calling <ref refid="classwx_input_stream_1ae70ea89ff05940bc312216decde6237d" kindref="member">Read()</ref> wouldn&apos;t block. </para>
         </briefdescription>
@@ -58,6 +61,7 @@
         <definition>virtual bool wxInputStream::Eof</definition>
         <argsstring>() const</argsstring>
         <name>Eof</name>
+        <qualifiedname>wxInputStream::Eof</qualifiedname>
         <briefdescription>
 <para>Returns true after an attempt has been made to read past the end of the stream. </para>
         </briefdescription>
@@ -72,6 +76,7 @@
         <definition>int wxInputStream::GetC</definition>
         <argsstring>()</argsstring>
         <name>GetC</name>
+        <qualifiedname>wxInputStream::GetC</qualifiedname>
         <briefdescription>
 <para>Returns the first character in the input queue and removes it, blocking until it appears if necessary. </para>
         </briefdescription>
@@ -87,6 +92,7 @@
         <definition>virtual size_t wxInputStream::LastRead</definition>
         <argsstring>() const</argsstring>
         <name>LastRead</name>
+        <qualifiedname>wxInputStream::LastRead</qualifiedname>
         <briefdescription>
 <para>Returns the last number of bytes read. </para>
         </briefdescription>
@@ -101,6 +107,7 @@
         <definition>virtual char wxInputStream::Peek</definition>
         <argsstring>()</argsstring>
         <name>Peek</name>
+        <qualifiedname>wxInputStream::Peek</qualifiedname>
         <briefdescription>
 <para>Returns the first character in the input queue without removing it. </para>
         </briefdescription>
@@ -115,6 +122,7 @@
         <definition>virtual wxInputStream &amp; wxInputStream::Read</definition>
         <argsstring>(void *buffer, size_t size)</argsstring>
         <name>Read</name>
+        <qualifiedname>wxInputStream::Read</qualifiedname>
         <param>
           <type>void *</type>
           <declname>buffer</declname>
@@ -143,6 +151,7 @@
         <definition>wxInputStream &amp; wxInputStream::Read</definition>
         <argsstring>(wxOutputStream &amp;stream_out)</argsstring>
         <name>Read</name>
+        <qualifiedname>wxInputStream::Read</qualifiedname>
         <param>
           <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> &amp;</type>
           <declname>stream_out</declname>
@@ -165,6 +174,7 @@
         <definition>bool wxInputStream::ReadAll</definition>
         <argsstring>(void *buffer, size_t size)</argsstring>
         <name>ReadAll</name>
+        <qualifiedname>wxInputStream::ReadAll</qualifiedname>
         <param>
           <type>void *</type>
           <declname>buffer</declname>
@@ -194,6 +204,7 @@
         <definition>virtual wxFileOffset wxInputStream::SeekI</definition>
         <argsstring>(wxFileOffset pos, wxSeekMode mode=wxFromStart)</argsstring>
         <name>SeekI</name>
+        <qualifiedname>wxInputStream::SeekI</qualifiedname>
         <param>
           <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
           <declname>pos</declname>
@@ -238,6 +249,7 @@
         <definition>virtual wxFileOffset wxInputStream::TellI</definition>
         <argsstring>() const</argsstring>
         <name>TellI</name>
+        <qualifiedname>wxInputStream::TellI</qualifiedname>
         <briefdescription>
 <para>Returns the current stream position or <ref refid="filefn_8h_1ab184c7199d93541d22ae42e515cbbcb7" kindref="member">wxInvalidOffset</ref> if it&apos;s not available (e.g. </para>
         </briefdescription>
@@ -253,6 +265,7 @@
         <definition>size_t wxInputStream::Ungetch</definition>
         <argsstring>(const void *buffer, size_t size)</argsstring>
         <name>Ungetch</name>
+        <qualifiedname>wxInputStream::Ungetch</qualifiedname>
         <param>
           <type>const void *</type>
           <declname>buffer</declname>
@@ -280,6 +293,7 @@
         <definition>bool wxInputStream::Ungetch</definition>
         <argsstring>(char c)</argsstring>
         <name>Ungetch</name>
+        <qualifiedname>wxInputStream::Ungetch</qualifiedname>
         <param>
           <type>char</type>
           <declname>c</declname>
@@ -300,6 +314,7 @@
         <definition>size_t wxInputStream::OnSysRead</definition>
         <argsstring>(void *buffer, size_t bufsize)=0</argsstring>
         <name>OnSysRead</name>
+        <qualifiedname>wxInputStream::OnSysRead</qualifiedname>
         <param>
           <type>void *</type>
           <declname>buffer</declname>
@@ -328,7 +343,8 @@
 <para>If you want to create your own input stream, you&apos;ll need to derive from this class and implement the protected <ref refid="classwx_input_stream_1a8ebacd18964a4b169a62ad9190cab4d5" kindref="member">OnSysRead()</ref> function only.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__streams" kindref="compound">Streams</ref> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="8">

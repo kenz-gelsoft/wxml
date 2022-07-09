@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_window_disabler" kind="class" language="C++" prot="public">
     <compoundname>wxWindowDisabler</compoundname>
     <includes local="no">wx/utils.h</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classwx_window_disabler_1a1f7e8380ee6f7c3b709a54d68770e08b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_window_disabler_1a1f7e8380ee6f7c3b709a54d68770e08b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxWindowDisabler::wxWindowDisabler</definition>
         <argsstring>(bool disable=true)</argsstring>
         <name>wxWindowDisabler</name>
+        <qualifiedname>wxWindowDisabler::wxWindowDisabler</qualifiedname>
         <param>
           <type>bool</type>
           <declname>disable</declname>
@@ -25,32 +26,40 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/utils.h" line="87" column="5"/>
+        <location file="interface/wx/utils.h" line="87" column="14"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_window_disabler_1ad2ece1cf29a6957b3d8945d5ed0c1b58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_window_disabler_1a5e1fa520ab0c951c858c6f9e9aa34613" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxWindowDisabler::wxWindowDisabler</definition>
-        <argsstring>(wxWindow *winToSkip)</argsstring>
+        <argsstring>(wxWindow *winToSkip, wxWindow *winToSkip2=NULL)</argsstring>
         <name>wxWindowDisabler</name>
+        <qualifiedname>wxWindowDisabler::wxWindowDisabler</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>winToSkip</declname>
+        </param>
+        <param>
+          <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <declname>winToSkip2</declname>
+          <defval>NULL</defval>
         </param>
         <briefdescription>
 <para>Disables all top level windows of the applications with the exception of <emphasis>winToSkip</emphasis> if it is not NULL. </para>
         </briefdescription>
         <detaileddescription>
-<para>Notice that under MSW if <emphasis>winToSkip</emphasis> appears in the taskbar, the user will be able to close the entire application (even though its main window is disabled) by right clicking on the taskbar icon and selecting the appropriate &quot;Close&quot; command from the context menu. To prevent this from happening you may want to use wxFRAME_TOOL_WINDOW, if applicable, or wxFRAME_NO_TASKBAR style when creating the window that will remain enabled. </para>
+<para>Notice that under MSW if <emphasis>winToSkip</emphasis> appears in the taskbar, the user will be able to close the entire application (even though its main window is disabled) by right clicking on the taskbar icon and selecting the appropriate &quot;Close&quot; command from the context menu. To prevent this from happening you may want to use wxFRAME_TOOL_WINDOW, if applicable, or wxFRAME_NO_TASKBAR style when creating the window that will remain enabled.</para>
+<para>The argument <emphasis>winToSkip2</emphasis> may be used to specify another window to leave enabled, if it is non-null. This parameter is only available since wxWidgets 3.1.7. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/utils.h" line="101" column="5"/>
+        <location file="interface/wx/utils.h" line="105" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_window_disabler_1ac75fd30271c477db8606d5dbe2ada483" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxWindowDisabler::~wxWindowDisabler</definition>
         <argsstring>()</argsstring>
         <name>~wxWindowDisabler</name>
+        <qualifiedname>wxWindowDisabler::~wxWindowDisabler</qualifiedname>
         <briefdescription>
 <para>Reenables the windows disabled by the constructor. </para>
         </briefdescription>
@@ -58,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/utils.h" line="106" column="5"/>
+        <location file="interface/wx/utils.h" line="110" column="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -70,15 +79,16 @@
 </simplesect>
 <heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__misc" kindref="compound">Miscellaneous</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_busy_cursor" kindref="compound">wxBusyCursor</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/utils.h" line="76" column="1" bodyfile="interface/wx/utils.h" bodystart="77" bodyend="107"/>
+    <location file="interface/wx/utils.h" line="76" column="1" bodyfile="interface/wx/utils.h" bodystart="77" bodyend="111"/>
     <listofallmembers>
       <member refid="classwx_window_disabler_1a1f7e8380ee6f7c3b709a54d68770e08b" prot="public" virt="non-virtual"><scope>wxWindowDisabler</scope><name>wxWindowDisabler</name></member>
-      <member refid="classwx_window_disabler_1ad2ece1cf29a6957b3d8945d5ed0c1b58" prot="public" virt="non-virtual"><scope>wxWindowDisabler</scope><name>wxWindowDisabler</name></member>
+      <member refid="classwx_window_disabler_1a5e1fa520ab0c951c858c6f9e9aa34613" prot="public" virt="non-virtual"><scope>wxWindowDisabler</scope><name>wxWindowDisabler</name></member>
       <member refid="classwx_window_disabler_1ac75fd30271c477db8606d5dbe2ada483" prot="public" virt="non-virtual"><scope>wxWindowDisabler</scope><name>~wxWindowDisabler</name></member>
     </listofallmembers>
   </compounddef>

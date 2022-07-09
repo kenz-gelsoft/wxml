@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_cmake" kind="page">
     <compoundname>overview_cmake</compoundname>
     <title>CMake Overview</title>
@@ -31,7 +31,7 @@
 </listitem><listitem><para>After that you can run <computeroutput>cmake --build .</computeroutput> to start the build process or directly use your chosen build system.</para>
 </listitem></orderedlist>
 </para>
-<para>Run <computeroutput>cmake --help</computeroutput> to see a list of available generators on your platform. These can than be specified using the -G command line option. On Windows it is recommended to use Visual Studio and on macOS Xcode is recommended. Various build options can be specified using -D see <ulink url="#cmake_options">available options</ulink>.</para>
+<para>Run <computeroutput>cmake --help</computeroutput> to see a list of available generators on your platform. These can than be specified using the -G command line option. On Windows it is recommended to use Visual Studio and on macOS Xcode is recommended. Various build options can be specified using -D see <ref refid="overview_cmake_1cmake_options" kindref="member">available options</ref>.</para>
 <sect2 id="overview_cmake_1cmake_cli_samples">
 <title>Command Line Examples</title>
 <para>Building with tests using <ulink url="https://ninja-build.org/">Ninja</ulink>: <programlisting filename=".sh"><codeline><highlight class="normal">cmake<sp/>-G<sp/>&quot;Ninja&quot;<sp/>~/Downloads/wxWidgets_3.1<sp/>-DwxBUILD_TESTS=ALL</highlight></codeline>
@@ -128,7 +128,8 @@
 </para>
 <sect2 id="overview_cmake_1cmake_find_package">
 <title>Using find_package</title>
-<para>You can use <computeroutput>find_package(wxWidgets)</computeroutput> to use a compiled version of wxWidgets. Have a look at the <ulink url="https://cmake.org/cmake/help/latest/module/FindwxWidgets.html">CMake Documentation</ulink> for detailed instructions.</para>
+<para>You can use <computeroutput>find_package(wxWidgets)</computeroutput> to use a compiled version of wxWidgets. Have a look at the <ulink url="https://cmake.org/cmake/help/latest/module/FindwxWidgets.html">CMake Documentation</ulink> for detailed instructions. wxWidgets also provides an example CMake file in the minimal sample folder.</para>
+<para><emphasis>WARNING</emphasis>: Please note that CMake <computeroutput>findwxWidgets</computeroutput> module unfortunately doesn&apos;t detect wxWidgets 3.2.0 in versions of CMake older than 3.24. You may copy the latest version of <computeroutput>FindwxWidgets.cmake</computeroutput> from <ulink url="https://gitlab.kitware.com/cmake/cmake/-/blob/master/Modules/FindwxWidgets.cmake">CMake sources</ulink> to your system to fix this or, if you build wxWidgets itself using CMake, use <computeroutput>CONFIG</computeroutput> mode of <computeroutput>find_package()</computeroutput> which works even with older CMake versions.</para>
 <para>Your <emphasis>CMakeLists.txt</emphasis> would look like this: <programlisting><codeline><highlight class="normal">...</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">find_package(wxWidgets<sp/>REQUIRED<sp/>COMPONENTS<sp/>net<sp/>core<sp/>base)</highlight></codeline>

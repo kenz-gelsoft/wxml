@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_event_filter" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxEventFilter</compoundname>
     <derivedcompoundref refid="classwx_app_console" prot="public" virt="non-virtual">wxAppConsole</derivedcompoundref>
@@ -8,6 +8,7 @@
       <memberdef kind="enum" id="classwx_event_filter_1a48a152fb0d9e828e530446631630c1b5" prot="public" static="no" strong="no">
         <type></type>
         <name>@16</name>
+        <qualifiedname>wxEventFilter::@16</qualifiedname>
         <enumvalue id="classwx_event_filter_1a48a152fb0d9e828e530446631630c1b5ae3620010ea8dc45c4547052a75fe51da" prot="public">
           <name>Event_Skip</name>
           <initializer>= -1</initializer>
@@ -51,6 +52,7 @@
         <definition>wxEventFilter::wxEventFilter</definition>
         <argsstring>()</argsstring>
         <name>wxEventFilter</name>
+        <qualifiedname>wxEventFilter::wxEventFilter</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -67,6 +69,7 @@
         <definition>virtual wxEventFilter::~wxEventFilter</definition>
         <argsstring>()</argsstring>
         <name>~wxEventFilter</name>
+        <qualifiedname>wxEventFilter::~wxEventFilter</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -82,6 +85,7 @@
         <definition>virtual int wxEventFilter::FilterEvent</definition>
         <argsstring>(wxEvent &amp;event)=0</argsstring>
         <name>FilterEvent</name>
+        <qualifiedname>wxEventFilter::FilterEvent</qualifiedname>
         <reimplementedby refid="classwx_app_console_1ada7ab606e014a10d46e4b3c6f602e20c">FilterEvent</reimplementedby>
         <param>
           <type><ref refid="classwx_event" kindref="compound">wxEvent</ref> &amp;</type>
@@ -155,7 +159,7 @@
 <codeline><highlight class="normal">};</highlight></codeline>
 </programlisting></para>
 <para>Notice that <ref refid="classwx_app" kindref="compound">wxApp</ref> derives from <ref refid="classwx_event_filter" kindref="compound">wxEventFilter</ref> and is registered as an event filter during its creation so you may also override <ref refid="classwx_event_filter_1ae9aee87e6c6c7ff3df84e46a2e3b2c6a" kindref="member">FilterEvent()</ref> method in your wxApp-derived class and, in fact, this is often the most convenient way to do it. However creating a new class deriving directly from <ref refid="classwx_event_filter" kindref="compound">wxEventFilter</ref> allows isolating the event filtering code in its own separate class and also having several independent filters, if necessary.</para>
-<para>&lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="since"><para>2.9.3 </para>
 </simplesect>
 </para>

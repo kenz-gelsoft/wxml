@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_rich_text_printout" kind="class" language="C++" prot="public">
     <compoundname>wxRichTextPrintout</compoundname>
     <basecompoundref refid="classwx_printout" prot="public" virt="non-virtual">wxPrintout</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxRichTextPrintout::wxRichTextPrintout</definition>
         <argsstring>(const wxString &amp;title=&quot;Printout&quot;)</argsstring>
         <name>wxRichTextPrintout</name>
+        <qualifiedname>wxRichTextPrintout::wxRichTextPrintout</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>title</declname>
@@ -29,6 +30,7 @@
         <definition>void wxRichTextPrintout::CalculateScaling</definition>
         <argsstring>(wxDC *dc, wxRect &amp;textRect, wxRect &amp;headerRect, wxRect &amp;footerRect)</argsstring>
         <name>CalculateScaling</name>
+        <qualifiedname>wxRichTextPrintout::CalculateScaling</qualifiedname>
         <param>
           <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> *</type>
           <declname>dc</declname>
@@ -59,6 +61,7 @@
         <definition>const wxRichTextHeaderFooterData &amp; wxRichTextPrintout::GetHeaderFooterData</definition>
         <argsstring>() const</argsstring>
         <name>GetHeaderFooterData</name>
+        <qualifiedname>wxRichTextPrintout::GetHeaderFooterData</qualifiedname>
         <briefdescription>
 <para>Returns the header and footer data associated with the printout. </para>
         </briefdescription>
@@ -73,6 +76,7 @@
         <definition>virtual void wxRichTextPrintout::GetPageInfo</definition>
         <argsstring>(int *minPage, int *maxPage, int *selPageFrom, int *selPageTo)</argsstring>
         <name>GetPageInfo</name>
+        <qualifiedname>wxRichTextPrintout::GetPageInfo</qualifiedname>
         <reimplements refid="classwx_printout_1a3fead3e929153c58b07f3c3521b9fdac">GetPageInfo</reimplements>
         <param>
           <type>int *</type>
@@ -104,6 +108,7 @@
         <definition>wxRichTextBuffer * wxRichTextPrintout::GetRichTextBuffer</definition>
         <argsstring>() const</argsstring>
         <name>GetRichTextBuffer</name>
+        <qualifiedname>wxRichTextPrintout::GetRichTextBuffer</qualifiedname>
         <briefdescription>
 <para>Returns a pointer to the buffer being rendered. </para>
         </briefdescription>
@@ -118,6 +123,7 @@
         <definition>virtual bool wxRichTextPrintout::HasPage</definition>
         <argsstring>(int page)</argsstring>
         <name>HasPage</name>
+        <qualifiedname>wxRichTextPrintout::HasPage</qualifiedname>
         <reimplements refid="classwx_printout_1a7829a7066a496a14d677d4958e28079f">HasPage</reimplements>
         <param>
           <type>int</type>
@@ -137,6 +143,7 @@
         <definition>virtual void wxRichTextPrintout::OnPreparePrinting</definition>
         <argsstring>()</argsstring>
         <name>OnPreparePrinting</name>
+        <qualifiedname>wxRichTextPrintout::OnPreparePrinting</qualifiedname>
         <reimplements refid="classwx_printout_1a68c588cbf1b17a85a88db4738260e01b">OnPreparePrinting</reimplements>
         <briefdescription>
 <para>Prepares for printing, laying out the buffer and calculating pagination. </para>
@@ -152,6 +159,7 @@
         <definition>virtual bool wxRichTextPrintout::OnPrintPage</definition>
         <argsstring>(int page)</argsstring>
         <name>OnPrintPage</name>
+        <qualifiedname>wxRichTextPrintout::OnPrintPage</qualifiedname>
         <reimplements refid="classwx_printout_1abac930e68b063cd609059fa9d96e7831">OnPrintPage</reimplements>
         <param>
           <type>int</type>
@@ -171,6 +179,7 @@
         <definition>void wxRichTextPrintout::SetHeaderFooterData</definition>
         <argsstring>(const wxRichTextHeaderFooterData &amp;data)</argsstring>
         <name>SetHeaderFooterData</name>
+        <qualifiedname>wxRichTextPrintout::SetHeaderFooterData</qualifiedname>
         <param>
           <type>const <ref refid="classwx_rich_text_header_footer_data" kindref="compound">wxRichTextHeaderFooterData</ref> &amp;</type>
           <declname>data</declname>
@@ -189,6 +198,7 @@
         <definition>void wxRichTextPrintout::SetMargins</definition>
         <argsstring>(int top=254, int bottom=254, int left=254, int right=254)</argsstring>
         <name>SetMargins</name>
+        <qualifiedname>wxRichTextPrintout::SetMargins</qualifiedname>
         <param>
           <type>int</type>
           <declname>top</declname>
@@ -224,6 +234,7 @@
         <definition>void wxRichTextPrintout::SetRichTextBuffer</definition>
         <argsstring>(wxRichTextBuffer *buffer)</argsstring>
         <name>SetRichTextBuffer</name>
+        <qualifiedname>wxRichTextPrintout::SetRichTextBuffer</qualifiedname>
         <param>
           <type><ref refid="classwx_rich_text_buffer" kindref="compound">wxRichTextBuffer</ref> *</type>
           <declname>buffer</declname>
@@ -246,7 +257,8 @@
 <para>Instead of using it directly, you should normally use the <ref refid="classwx_rich_text_printing" kindref="compound">wxRichTextPrinting</ref> class.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxrichtext" kindref="member">wxRichText</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxrichtext" kindref="member">wxRichText</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__richtext" kindref="compound">Rich Text</ref> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="3">

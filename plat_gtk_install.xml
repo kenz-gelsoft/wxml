@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="plat_gtk_install" kind="page">
     <compoundname>plat_gtk_install</compoundname>
     <title>wxWidgets for GTK installation</title>
@@ -11,25 +11,30 @@
 <title>Installation</title>
 <sect2 id="plat_gtk_install_1gtk_simple">
 <title>The simplest case</title>
-<para>If you compile wxWidgets on Linux for the first time and don&apos;t like to read install instructions just do the following in wxWidgets directory: <verbatim>&gt; mkdir buildgtk
-&gt; cd buildgtk
-&gt; ../configure --with-gtk
-&gt; make
-&gt; su &lt;type root password&gt;
-&gt; make install
-&gt; ldconfig
-</verbatim> [if you get &quot;ldconfig: command not found&quot;, try using &quot;/sbin/ldconfig&quot;]</para>
-<para>If you don&apos;t do the &apos;make install&apos; part, you can still use the libraries from the buildgtk directory, but they may not be available to other users.</para>
-<para>If you want to remove wxWidgets on Unix you can do this: <verbatim>&gt; su &lt;type root password&gt;
-&gt; make uninstall
-&gt; ldconfig
-</verbatim> Note that by default, GTK 3 is used. GTK 2 can be specified with <ndash/>with-gtk=2.</para>
-<para>If you use CMake, please see <ref refid="overview_cmake" kindref="compound">CMake Overview</ref> for building wxWidgets using it.</para>
+<para>If you compile wxWidgets on Linux for the first time and don&apos;t like to read install instructions just do the following in wxWidgets directory: <verbatim>$ mkdir buildgtk
+$ cd buildgtk
+$ ../configure --with-gtk
+$ make
+$ sudo make install
+$ sudo ldconfig
+</verbatim> (if you get &quot;ldconfig: command not found&quot;, try using <computeroutput>/sbin/ldconfig</computeroutput>)</para>
+<para>If you don&apos;t do the <computeroutput>make install</computeroutput> part, you can still use the libraries from the <computeroutput>buildgtk</computeroutput> directory, but they may not be available to other users.</para>
+<para>Note that by default, GTK 3 is used. GTK 2 can be specified with <computeroutput>--with-gtk=2</computeroutput> configure option.</para>
+<para>If you want to use CMake, please see <ref refid="overview_cmake" kindref="compound">CMake Overview</ref> for building wxWidgets using it.</para>
+</sect2>
+<sect2 id="plat_gtk_install_1gtk_prereq">
+<title>Prerequisites</title>
+<para>To build wxWidgets, you need to have a number of libraries on your system. While all of them may be compiled from source, under Linux systems it is much more common to install the development packages containing the headers and library files.</para>
+<para>At the very least, you will need GTK libraries themselves. Unfortunately the exact package names differ between different Linux distributions, but for Debian and Debian-based distribution these libraries are part of <computeroutput>libgtk-3-dev</computeroutput> package, while in Fedora and other RPM-based distributions the same package is known as <computeroutput>gtk3-devel</computeroutput>.</para>
+<para>For OpenGL support, you need <computeroutput>libgl1-mesa-dev</computeroutput> and <computeroutput>libglu1-mesa-dev</computeroutput> packages under Debian and <computeroutput>mesa-libGL-devel</computeroutput> and <computeroutput>mesa-libGLU-devel</computeroutput> under Fedora. For EGL support, <computeroutput>libegl1-mesa-dev</computeroutput> or <computeroutput>mesa-libEGL-devel</computeroutput> is needed.</para>
+<para><ref refid="classwx_media_ctrl" kindref="compound">wxMediaCtrl</ref> implementation requires GStreamer and its plugins development packages, i.e. either <computeroutput>libgstreamer-plugins-baseVERSION-dev</computeroutput> or <computeroutput>gstreamerVERSION-plugins-base-devel</computeroutput>, where <computeroutput>VERSION</computeroutput> should be 1.0, but 0.10 is still supported as well for compatibility with old systems.</para>
+<para><ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref> requites libcurl development package, e.g. <computeroutput>libcurl4-openssl-dev</computeroutput> or <computeroutput>libcurl-devel</computeroutput>.</para>
+<para><ref refid="classwx_web_view" kindref="compound">wxWebView</ref> requires <computeroutput>libwebkit2gtk-4.0-dev</computeroutput> under Debian and <computeroutput>webkit2gtk3-devel</computeroutput> under Fedora.</para>
+<para>For the different image format libraries (PNG, JPEG, TIFF) as well as zlib, you may install the corresponding <computeroutput>libNAME-dev</computeroutput> or <computeroutput>-devel</computeroutput> libraries or use the built-in versions of them, i.e. the same libraries compiled as part of wxWidgets, instead if you prefer.</para>
 </sect2>
 <sect2 id="plat_gtk_install_1gtk_errors_simple">
 <title>Troubleshooting</title>
-<para>IMPORTANT NOTE:</para>
-<para>When sending bug reports tell us what version of wxWidgets you are using (including the beta) and what compiler on what system. One example: wxGTK 3.0.5, GCC 9.3.1, Fedora 31.</para>
+<para><emphasis>IMPORTANT NOTE:</emphasis> When sending bug reports tell us the exact version of wxWidgets you are using as well as what compiler on what system. One example: wxGTK 3.0.5, GCC 9.3.1, Fedora 31.</para>
 <para>For any configure errors: please look at <computeroutput>config.log</computeroutput> file which was generated during configure run, it usually contains some useful information.</para>
 <para>If configure reports that you don&apos;t have GTK installed, please check that the appropriate <emphasis>development</emphasis> package is available on your system and not just the GTK libraries themselves. You can use <computeroutput>pkg-config --modversion gtk+-3.0</computeroutput> (or <computeroutput>2.0</computeroutput>) to check that this is the case.</para>
 <para>You get errors from make: please use GNU make instead of the native make program. Currently wxWidgets can be built only with GNU make, BSD make and Solaris make. Other versions might work or not.</para>
@@ -40,146 +45,127 @@
 <para>Now create your super-application myfoo.cpp and compile anywhere with <verbatim>g++ myfoo.cpp `wx-config --libs --cxxflags` -o myfoo
 </verbatim></para>
 </sect2>
-<sect2 id="plat_gtk_install_1gtk_cygwin">
-<title>Building wxGTK on Cygwin</title>
-<para>The normal build instructions should work fine on Cygwin. The one difference with Cygwin is that when using the &quot;--enable-shared&quot; configure option (which is the default) the API is exported explicitly using <computeroutput>__declspec(dllexport)</computeroutput> rather than all global symbols being available.</para>
-<para>This shouldn&apos;t make a difference using the library and should be a little more efficient. However if an export attribute has been missed somewhere you will see linking errors. If this happens then you can work around the problem by setting <computeroutput>LDFLAGS=-Wl,--export-all-symbols</computeroutput>. Please also let us know about it on the wx-dev mailing list.</para>
-</sect2>
 <sect2 id="plat_gtk_install_1gtk_options">
 <title>Configure options</title>
 <para>This section documents some of the most important configure options. It is not exhaustive, please refer to <computeroutput>configure --help</computeroutput> for the full list of options.</para>
 <para>Note that the options documented below are given in the form indicating how to change the default behaviour, i.e. if it says &quot;--disable-optimise&quot; it means that optimizations are enabled by default.</para>
 <para>All standard configure options are supported, e.g. you can choose <computeroutput>--prefix</computeroutput> to select the directory to install the libraries to. Also note that cross-compiling is fully supported, just specify the <computeroutput>--host</computeroutput> option as usual (please refer to autoconf manual for more information).</para>
-<para>The following options can be used to specify the kind and number of libraries to build: <verbatim>--disable-shared        Do not create shared libraries, but
-                        build static libraries instead.
-
---enable-monolithic     Build wxWidgets as single library instead
-                        of as several smaller libraries (which is
-                        the default since wxWidgets 2.5.0).
-</verbatim> Options for third party dependencies: wxWidgets may use other libraries present on the current system. For some of these libraries, wxWidgets also provides built-in versions, that can be linked into wx libraries themselves, which can be useful to minimize external dependencies. <verbatim>--disable-sys-libs      Don&apos;t use system libraries when there is
-                        a built-in version included in wxWidgets.
-                        Note that other system libraries can,
-                        and typically will, still be used if
-                        found.
-
---without-libpng        Disables PNG image format code.
-                        Don&apos;t use libpng (although GTK
-                        itself still uses it).
-
---without-libjpeg       Disables JPEG image format code.
-                        Don&apos;t use libjpeg.
-
---without-libtiff       Disables TIFF image format code.
-                        Don&apos;t use libtiff.
-
---without-expat         Disable XML classes based on Expat parser.
-                        Don&apos;t use expat library.
-
---without-liblzma       Disable LZMA compression support.
-                        Don&apos;t use liblzma.
-
---without-libcurl       Don&apos;t use libcurl even if it&apos;s available.
-                        Disables wxWebRequest.
-
---without-opengl        Disable OpenGL integration with wxGLCanvas.
-                        Don&apos;t use OpenGL or EGL libraries.
-
---disable-glcanvasegl   Disable EGL support even if it is available
-                        (it would be used if it is, by default).
-
---disable-mediactrl     Disable wxMediaCtrl.
-                        Don&apos;t use GStreamer libraries.
-
---disable-webview       Disable wxWebView.
-                        Don&apos;t use webkit2gtk and its multiple
-                        dependencies.
-</verbatim> Normally, you won&apos;t have to choose a toolkit, because configure defaults to wxGTK anyhow. However you need to use this option to explicitly specify the version of GTK to use, e.g.: <verbatim>--with-gtk=3            Use GTK 3. Default.
---with-gtk=2            Use GTK 2.
---with-gtk=1            Use GTK 1.2. Obsolete.
-</verbatim> Some other general compilation options: <verbatim>--disable-optimise      Do not optimise the code. Can be useful
-                        for debugging but shouldn&apos;t be used
-                        for production builds.
-
---disable-unicode       Disable Unicode support. Not recommended.
-
---enable-no_rtti        Enable compilation without creation of
-                        C++ RTTI information in object files.
-                        This will speed-up compilation and reduce
-                        binary size.
-
---enable-no_exceptions  Enable compilation without creation of
-                        C++ exception information in object files.
-                        This will speed-up compilation and reduce
-                        binary size.
-
---enable-debug_info     Add debug info to object files and
-                        executables for use with debuggers
-                        such as gdb (or its many frontends).
-
---enable-debug_flag     Define __DEBUG__ and __WXDEBUG__ when
-                        compiling. This enable wxWidgets&apos; very
-                        useful internal debugging tricks (such
-                        as automatically reporting illegal calls)
-                        to work. Note that program and library
-                        must be compiled with the same debug
-                        options.
-
---enable-debug          Same as --enable-debug_info and
-                        --enable-debug_flag together. Unless you have
-                        some very specific needs, you should use this
-                        option instead of --enable-debug_info/flag ones
-                        separately.
-</verbatim> To reduce the final libraries (or executables, when linking statically) size, many wxWidgets features may be disabled. Here is a list of some of them: <verbatim>--disable-pnm           Disables PNM image format code.
-
---disable-gif           Disables GIF image format code.
-
---disable-pcx           Disables PCX image format code.
-
---disable-iff           Disables IFF image format code.
-
---disable-resources     Disables the use of *.wxr type resources.
-
---disable-threads       Disables threads. Will also disable sockets.
-
---disable-sockets       Disables sockets.
-
---disable-dnd           Disables Drag&apos;n&apos;Drop.
-
---disable-clipboard     Disables Clipboard.
-
---disable-streams       Disables the wxStream classes.
-
---disable-file          Disables the wxFile class.
-
---disable-textfile      Disables the wxTextFile class.
-
---disable-intl          Disables the internationalisation.
-
---disable-validators    Disables validators.
-</verbatim> Please remember that the full list of options can be seen in <computeroutput>configure --help</computeroutput> output.</para>
+<para>The following options can be used to specify the kind and number of libraries to build:</para>
+<para><itemizedlist>
+<listitem><para><computeroutput>--disable-shared</computeroutput> <linebreak/>
+ Do not create shared libraries, but build static libraries instead.</para>
+</listitem><listitem><para><computeroutput>--enable-monolithic</computeroutput> <linebreak/>
+ Build wxWidgets as single library instead of as several smaller libraries (which is the default since wxWidgets 2.5.0).</para>
+</listitem></itemizedlist>
+</para>
+<para>Options for third party dependencies: wxWidgets may use other libraries present on the current system, see the <ref refid="plat_gtk_install_1gtk_prereq" kindref="member">prerequisites section above</ref>. For some of these libraries, wxWidgets also provides built-in versions, that can be linked into wx libraries themselves, which can be useful to minimize external dependencies. By default, system versions will be used if available, but <computeroutput>--with-xxx=builtin</computeroutput> configure option may be used to override this.</para>
+<para><itemizedlist>
+<listitem><para><computeroutput>--disable-sys-libs</computeroutput> <linebreak/>
+ Don&apos;t use system libraries when there is a built-in version included in wxWidgets. This is equivalent to using <ndash/>with-xxx=builtin for all libraries that have built-in versions. Note that other system libraries can, and typically will, still be used if found.</para>
+</listitem><listitem><para><computeroutput>--without-libpng</computeroutput> <linebreak/>
+ Disables PNG image format code. Don&apos;t use neither the system nor the builtin libpng (although GTK itself still uses it).</para>
+</listitem><listitem><para><computeroutput>--without-libjpeg</computeroutput> <linebreak/>
+ Disables JPEG image format code. Don&apos;t use libjpeg.</para>
+</listitem><listitem><para><computeroutput>--without-libtiff</computeroutput> <linebreak/>
+ Disables TIFF image format code. Don&apos;t use libtiff.</para>
+</listitem><listitem><para><computeroutput>--without-expat</computeroutput> <linebreak/>
+ Disable XML classes based on Expat parser. Don&apos;t use expat library.</para>
+</listitem><listitem><para><computeroutput>--without-liblzma</computeroutput> <linebreak/>
+ Disable LZMA compression support. Don&apos;t use liblzma.</para>
+</listitem><listitem><para><computeroutput>--without-libcurl</computeroutput> <linebreak/>
+ Don&apos;t use libcurl even if it&apos;s available. Disables <ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref>.</para>
+</listitem><listitem><para><computeroutput>--without-opengl</computeroutput> <linebreak/>
+ Disable OpenGL integration with <ref refid="classwx_g_l_canvas" kindref="compound">wxGLCanvas</ref>. Don&apos;t use OpenGL or EGL libraries.</para>
+</listitem><listitem><para><computeroutput>--disable-glcanvasegl</computeroutput> <linebreak/>
+ Disable EGL support even if it is available (it would be used if it is, by default).</para>
+</listitem><listitem><para><computeroutput>--disable-mediactrl</computeroutput> <linebreak/>
+ Disable <ref refid="classwx_media_ctrl" kindref="compound">wxMediaCtrl</ref>. Don&apos;t use GStreamer libraries.</para>
+</listitem><listitem><para><computeroutput>--disable-webview</computeroutput> <linebreak/>
+ Disable <ref refid="classwx_web_view" kindref="compound">wxWebView</ref>. Don&apos;t use webkit2gtk and its multiple dependencies.</para>
+</listitem></itemizedlist>
+</para>
+<para>Normally, you won&apos;t have to choose a toolkit, because configure defaults to wxGTK anyhow. However you need to use this option to explicitly specify the version of GTK to use, e.g.:</para>
+<para><itemizedlist>
+<listitem><para><computeroutput>--with-gtk=3</computeroutput> <linebreak/>
+ Use GTK 3. Default.</para>
+</listitem><listitem><para><computeroutput>--with-gtk=2</computeroutput> <linebreak/>
+ Use GTK 2.</para>
+</listitem><listitem><para><computeroutput>--with-gtk=1</computeroutput> <linebreak/>
+ Use GTK 1.2. Obsolete.</para>
+</listitem></itemizedlist>
+</para>
+<para>Some other general compilation options:</para>
+<para><itemizedlist>
+<listitem><para><computeroutput>--disable-optimise</computeroutput> <linebreak/>
+ Do not optimise the code. Can be useful for debugging but shouldn&apos;t be used for production builds.</para>
+</listitem><listitem><para><computeroutput>--disable-unicode</computeroutput> <linebreak/>
+ Disable Unicode support. Not recommended.</para>
+</listitem><listitem><para><computeroutput>--enable-no_rtti</computeroutput> <linebreak/>
+ Enable compilation without creation of C++ RTTI information in object files. This will speed-up compilation and reduce binary size.</para>
+</listitem><listitem><para><computeroutput>--enable-no_exceptions</computeroutput> <linebreak/>
+ Enable compilation without creation of C++ exception information in object files. This will speed-up compilation and reduce binary size.</para>
+</listitem><listitem><para><computeroutput>--enable-debug_info</computeroutput> <linebreak/>
+ Add debug info to object files and executables for use with debuggers such as gdb (or its many frontends).</para>
+</listitem><listitem><para><computeroutput>--enable-debug_flag</computeroutput> <linebreak/>
+ Enable internal debugging checks, that are very useful during development and allow to diagnose illegal parameters to wxWidgets functions as long as the application doesn&apos;t predefine <computeroutput>NDEBUG</computeroutput> (see <ref refid="overview_debugging" kindref="compound">Debugging</ref>).</para>
+</listitem><listitem><para><computeroutput>--enable-debug</computeroutput> <linebreak/>
+ Same as <computeroutput>--enable-debug_info</computeroutput> and <computeroutput>--enable-debug_flag</computeroutput> together. Typically this is the option you want to use.</para>
+</listitem></itemizedlist>
+</para>
+<para>To reduce the final libraries (or executables, when linking statically) size, many wxWidgets features may be disabled. Here is a list of some of them:</para>
+<para><itemizedlist>
+<listitem><para><computeroutput>--disable-pnm</computeroutput> <linebreak/>
+ Disables PNM image format code.</para>
+</listitem><listitem><para><computeroutput>--disable-gif</computeroutput> <linebreak/>
+ Disables GIF image format code.</para>
+</listitem><listitem><para><computeroutput>--disable-pcx</computeroutput> <linebreak/>
+ Disables PCX image format code.</para>
+</listitem><listitem><para><computeroutput>--disable-iff</computeroutput> <linebreak/>
+ Disables IFF image format code.</para>
+</listitem><listitem><para><computeroutput>--disable-resources</computeroutput> <linebreak/>
+ Disables the use of *.wxr type resources.</para>
+</listitem><listitem><para><computeroutput>--disable-threads</computeroutput> <linebreak/>
+ Disables threads. Will also disable sockets.</para>
+</listitem><listitem><para><computeroutput>--disable-sockets</computeroutput> <linebreak/>
+ Disables sockets.</para>
+</listitem><listitem><para><computeroutput>--disable-dnd</computeroutput> <linebreak/>
+ Disables Drag&apos;n&apos;Drop.</para>
+</listitem><listitem><para><computeroutput>--disable-clipboard</computeroutput> <linebreak/>
+ Disables Clipboard.</para>
+</listitem><listitem><para><computeroutput>--disable-streams</computeroutput> <linebreak/>
+ Disables the wxStream classes.</para>
+</listitem><listitem><para><computeroutput>--disable-file</computeroutput> <linebreak/>
+ Disables the <ref refid="classwx_file" kindref="compound">wxFile</ref> class.</para>
+</listitem><listitem><para><computeroutput>--disable-textfile</computeroutput> <linebreak/>
+ Disables the <ref refid="classwx_text_file" kindref="compound">wxTextFile</ref> class.</para>
+</listitem><listitem><para><computeroutput>--disable-intl</computeroutput> <linebreak/>
+ Disables the internationalisation.</para>
+</listitem><listitem><para><computeroutput>--disable-validators</computeroutput> <linebreak/>
+ Disables validators.</para>
+</listitem></itemizedlist>
+</para>
+<para>Please remember that the full list of options can be seen in <computeroutput>configure --help</computeroutput> output.</para>
 </sect2>
 <sect2 id="plat_gtk_install_1gtk_compling">
 <title>Building the libraries</title>
 <para>After running configure, just run <computeroutput>make</computeroutput> from the same directory. Building can take some time and it&apos;s strongly recommended to use <computeroutput>--jobs</computeroutput> option with GNU make, e.g. <computeroutput>make -j8</computeroutput> if you have 8 logical CPU cores.</para>
-<para>Then you may install the library and its header files under <computeroutput>/usr/local/include/wx</computeroutput> and <computeroutput>/usr/local/lib</computeroutput> respectively. You have to perform the following command as root, using either <computeroutput>su</computeroutput> or <computeroutput>sudo</computeroutput>: <verbatim>    make install
+<para>Then you may install the library and its header files under <computeroutput>/usr/local/include/wx</computeroutput> and <computeroutput>/usr/local/lib</computeroutput> respectively. You have to perform the following command as root, using either <computeroutput>su</computeroutput> or <computeroutput>sudo</computeroutput>: <verbatim>$ make install
 </verbatim> After installing, you can run <computeroutput>make clean</computeroutput> in the original directory or just remove it entirely if you don&apos;t plan to build wxWidgets again in the near future.</para>
 <para>Note that installing the library is <emphasis>not</emphasis> required and it can also be used from the build directory by simply specifying the full path to <computeroutput>wx-config</computeroutput> script located in it when building your application.</para>
 </sect2>
 <sect2 id="plat_gtk_install_1gtk_new_project">
 <title>Building your project</title>
 <para>You need to use the compilation flags returned by <computeroutput>wx-config --cxxflags</computeroutput> and linking flags returned by <computeroutput>wx-config --libs</computeroutput>, which may be combined into a single invocation: <verbatim>    g++ myfoo.cpp `wx-config --cxxflags --libs` -o myfoo
-</verbatim> A simple makefile for a program using wxWidgets could be written in the following way (note that if you are copying and pasting this into your makefile, the leading spaces must be replaced by a <computeroutput>TAB</computeroutput> character):</para>
-<para><programlisting filename=".make"><codeline><highlight class="normal">program:<sp/>program.o</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(CXX)<sp/>-o<sp/>program<sp/>program.o<sp/>`wx-config<sp/>--libs`</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">program.o:<sp/>program.cpp</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(CXX)<sp/>`wx-config<sp/>--cxxflags`<sp/>-c<sp/>program.cpp<sp/>-o<sp/>program.o</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">clean:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(RM)<sp/>program.o<sp/>program</highlight></codeline>
-<codeline><highlight class="normal">.PHONY:<sp/>clean</highlight></codeline>
-</programlisting></para>
-<para>If your application uses only some of wxWidgets libraries, you can specify required libraries when running wx-config. For example, <computeroutput>wx-config --libs=html,core</computeroutput> will only output link command to link with libraries required by core GUI classes and wxHTML classes. See the manual for more information on the libraries. </para>
+</verbatim> A simple makefile for a program using wxWidgets could be written in the following way (note that if you are copying and pasting this into your makefile, the leading spaces must be replaced by a <computeroutput>TAB</computeroutput> character): <verbatim>program: program.o
+    $(CXX) -o program program.o `wx-config --libs`
+
+program.o: program.cpp
+    $(CXX) `wx-config --cxxflags` -c program.cpp -o program.o
+
+clean:
+    $(RM) program.o program
+.PHONY: clean
+</verbatim> If your application uses only some of wxWidgets libraries, you can specify required libraries when running wx-config. For example, <computeroutput>wx-config --libs=html,core</computeroutput> will only output link command to link with libraries required by core GUI classes and wxHTML classes. See the manual for more information on the libraries. </para>
 </sect2>
 </sect1>
     </detaileddescription>

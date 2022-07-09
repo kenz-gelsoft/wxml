@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_layout_algorithm" kind="class" language="C++" prot="public">
     <compoundname>wxLayoutAlgorithm</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxLayoutAlgorithm::wxLayoutAlgorithm</definition>
         <argsstring>()</argsstring>
         <name>wxLayoutAlgorithm</name>
+        <qualifiedname>wxLayoutAlgorithm::wxLayoutAlgorithm</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -24,6 +25,7 @@
         <definition>virtual wxLayoutAlgorithm::~wxLayoutAlgorithm</definition>
         <argsstring>()</argsstring>
         <name>~wxLayoutAlgorithm</name>
+        <qualifiedname>wxLayoutAlgorithm::~wxLayoutAlgorithm</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -38,6 +40,7 @@
         <definition>bool wxLayoutAlgorithm::LayoutFrame</definition>
         <argsstring>(wxFrame *frame, wxWindow *mainWindow=NULL)</argsstring>
         <name>LayoutFrame</name>
+        <qualifiedname>wxLayoutAlgorithm::LayoutFrame</qualifiedname>
         <param>
           <type><ref refid="classwx_frame" kindref="compound">wxFrame</ref> *</type>
           <declname>frame</declname>
@@ -62,6 +65,7 @@
         <definition>bool wxLayoutAlgorithm::LayoutMDIFrame</definition>
         <argsstring>(wxMDIParentFrame *frame, wxRect *rect=NULL)</argsstring>
         <name>LayoutMDIFrame</name>
+        <qualifiedname>wxLayoutAlgorithm::LayoutMDIFrame</qualifiedname>
         <param>
           <type><ref refid="classwx_m_d_i_parent_frame" kindref="compound">wxMDIParentFrame</ref> *</type>
           <declname>frame</declname>
@@ -86,6 +90,7 @@
         <definition>bool wxLayoutAlgorithm::LayoutWindow</definition>
         <argsstring>(wxWindow *parent, wxWindow *mainWindow=NULL)</argsstring>
         <name>LayoutWindow</name>
+        <qualifiedname>wxLayoutAlgorithm::LayoutWindow</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -119,20 +124,20 @@
 <para><ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref> is quite independent of the way in which wxLayoutAlgorithm::OnCalculateLayout chooses to interpret a window&apos;s size and alignment. Therefore you could implement a different window class with a new wxLayoutAlgorithm::OnCalculateLayout event handler, that has a more sophisticated way of laying out the windows. It might allow specification of whether stretching occurs in the specified orientation, for example, rather than always assuming stretching. (This could, and probably should, be added to the existing implementation).</para>
 <para><simplesect kind="note"><para><ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref> has nothing to do with <ref refid="classwx_layout_constraints" kindref="compound">wxLayoutConstraints</ref>. It is an alternative way of specifying layouts for which the normal constraint system is unsuitable.</para>
 </simplesect>
-<linebreak/>
 <heading level="2">Events emitted by this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_query_layout_info_event" kindref="compound">wxQueryLayoutInfoEvent</ref>&amp;<nonbreakablespace/>event) or void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_calculate_layout_event" kindref="compound">wxCalculateLayoutEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros for events emitted by this class: <itemizedlist>
 <listitem><para>EVT_QUERY_LAYOUT_INFO(func): Process a <computeroutput>wxEVT_QUERY_LAYOUT_INFO</computeroutput> event, to get size, orientation and alignment from a window. See <ref refid="classwx_query_layout_info_event" kindref="compound">wxQueryLayoutInfoEvent</ref>. </para>
 </listitem>
-<listitem><para>EVT_CALCULATE_LAYOUT(func): Process a <computeroutput>wxEVT_CALCULATE_LAYOUT</computeroutput> event, which asks the window to take a &apos;bite&apos; out of a rectangle provided by the algorithm. See <ref refid="classwx_calculate_layout_event" kindref="compound">wxCalculateLayoutEvent</ref>. <linebreak/>
- Note that the algorithm object does not respond to events, but itself generates the previous events in order to calculate window sizes.</para>
+<listitem><para>EVT_CALCULATE_LAYOUT(func): Process a <computeroutput>wxEVT_CALCULATE_LAYOUT</computeroutput> event, which asks the window to take a &apos;bite&apos; out of a rectangle provided by the algorithm. See <ref refid="classwx_calculate_layout_event" kindref="compound">wxCalculateLayoutEvent</ref>. </para>
 </listitem>
 </itemizedlist>
-<heading level="2"></heading>
+Note that the algorithm object does not respond to events, but itself generates the previous events in order to calculate window sizes.</para>
+<para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__winlayout" kindref="compound">Window Layout</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_sash_event" kindref="compound">wxSashEvent</ref>, <ref refid="classwx_sash_layout_window" kindref="compound">wxSashLayoutWindow</ref>, <ref refid="overview_events" kindref="compound">Events and Event Handling</ref> </para>
 </simplesect>
 </para>

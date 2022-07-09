@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_thread_event" kind="class" language="C++" prot="public">
     <compoundname>wxThreadEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxThreadEvent::wxThreadEvent</definition>
         <argsstring>(wxEventType eventType=wxEVT_THREAD, int id=wxID_ANY)</argsstring>
         <name>wxThreadEvent</name>
+        <qualifiedname>wxThreadEvent::wxThreadEvent</qualifiedname>
         <param>
           <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
           <declname>eventType</declname>
@@ -27,13 +28,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3537" column="5"/>
+        <location file="interface/wx/event.h" line="3605" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_thread_event_1a12938fd82b6f61d33c6e7186abe492e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classwx_event" kindref="compound">wxEvent</ref> *</type>
         <definition>virtual wxEvent * wxThreadEvent::Clone</definition>
         <argsstring>() const</argsstring>
         <name>Clone</name>
+        <qualifiedname>wxThreadEvent::Clone</qualifiedname>
         <reimplements refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b">Clone</reimplements>
         <briefdescription>
 <para>Clones this event making sure that all internal members which use COW (only <computeroutput>m_commandString</computeroutput> for now; see <ref refid="overview_refcount" kindref="compound">Reference Counting</ref>) are unshared (see <ref refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" kindref="member">wxObject::UnShare</ref>). </para>
@@ -42,13 +44,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3544" column="21"/>
+        <location file="interface/wx/event.h" line="3612" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classwx_thread_event_1a5e991c0a3ac6bef54f2d1c3c77cff9a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="event_8h_1a685cc8dc6176be3ab0d40e3f72719e7d" kindref="member">wxEventCategory</ref></type>
         <definition>virtual wxEventCategory wxThreadEvent::GetEventCategory</definition>
         <argsstring>() const</argsstring>
         <name>GetEventCategory</name>
+        <qualifiedname>wxThreadEvent::GetEventCategory</qualifiedname>
         <reimplements refid="classwx_event_1ac4958ff6ec32b7f4b23066932d611131">GetEventCategory</reimplements>
         <briefdescription>
 <para>Returns <computeroutput>wxEVT_CATEGORY_THREAD</computeroutput>. </para>
@@ -58,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3552" column="29"/>
+        <location file="interface/wx/event.h" line="3620" column="29"/>
       </memberdef>
       <memberdef kind="function" id="classwx_thread_event_1a4b9b438e229a0f53c97e6058cfc67959" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -70,6 +73,7 @@
         <definition>void wxThreadEvent::SetPayload</definition>
         <argsstring>(const T &amp;payload)</argsstring>
         <name>SetPayload</name>
+        <qualifiedname>wxThreadEvent::SetPayload</qualifiedname>
         <param>
           <type>const T &amp;</type>
           <declname>payload</declname>
@@ -89,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3569" column="10"/>
+        <location file="interface/wx/event.h" line="3637" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_thread_event_1a77f852212ec8f1693a97881f0c1d76ec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -101,6 +105,7 @@
         <definition>T wxThreadEvent::GetPayload</definition>
         <argsstring>() const</argsstring>
         <name>GetPayload</name>
+        <qualifiedname>wxThreadEvent::GetPayload</qualifiedname>
         <briefdescription>
 <para>Get custom data payload. </para>
         </briefdescription>
@@ -116,13 +121,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3583" column="7"/>
+        <location file="interface/wx/event.h" line="3651" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classwx_thread_event_1a82a12193461d981861a8d9c4b6706a15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>long</type>
         <definition>long wxThreadEvent::GetExtraLong</definition>
         <argsstring>() const</argsstring>
         <name>GetExtraLong</name>
+        <qualifiedname>wxThreadEvent::GetExtraLong</qualifiedname>
         <briefdescription>
 <para>Returns extra information integer value. </para>
         </briefdescription>
@@ -130,13 +136,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3588" column="10"/>
+        <location file="interface/wx/event.h" line="3656" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_thread_event_1a7da703415668fd4d715f25c678f1ff33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxThreadEvent::GetInt</definition>
         <argsstring>() const</argsstring>
         <name>GetInt</name>
+        <qualifiedname>wxThreadEvent::GetInt</qualifiedname>
         <briefdescription>
 <para>Returns stored integer value. </para>
         </briefdescription>
@@ -144,13 +151,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3593" column="9"/>
+        <location file="interface/wx/event.h" line="3661" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_thread_event_1afe47d1a134a5119d489ac6d1cda5dd22" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxThreadEvent::GetString</definition>
         <argsstring>() const</argsstring>
         <name>GetString</name>
+        <qualifiedname>wxThreadEvent::GetString</qualifiedname>
         <briefdescription>
 <para>Returns stored string value. </para>
         </briefdescription>
@@ -158,13 +166,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3598" column="14"/>
+        <location file="interface/wx/event.h" line="3666" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_thread_event_1a177554d331bfd911de8d9abcc35660e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxThreadEvent::SetExtraLong</definition>
         <argsstring>(long extraLong)</argsstring>
         <name>SetExtraLong</name>
+        <qualifiedname>wxThreadEvent::SetExtraLong</qualifiedname>
         <param>
           <type>long</type>
           <declname>extraLong</declname>
@@ -176,13 +185,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3604" column="10"/>
+        <location file="interface/wx/event.h" line="3672" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_thread_event_1a6f3846d1860ddbb5fe8f7cdaa5f3c1fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxThreadEvent::SetInt</definition>
         <argsstring>(int intCommand)</argsstring>
         <name>SetInt</name>
+        <qualifiedname>wxThreadEvent::SetInt</qualifiedname>
         <param>
           <type>int</type>
           <declname>intCommand</declname>
@@ -194,13 +204,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3609" column="10"/>
+        <location file="interface/wx/event.h" line="3677" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_thread_event_1a72092085fc4e0837d8e56666cb45f4d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxThreadEvent::SetString</definition>
         <argsstring>(const wxString &amp;string)</argsstring>
         <name>SetString</name>
+        <qualifiedname>wxThreadEvent::SetString</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>string</declname>
@@ -212,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3614" column="10"/>
+        <location file="interface/wx/event.h" line="3682" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -222,7 +233,8 @@
 <para>This event is not natively emitted by any control/class: it is just a helper class for the user. Its most important feature is the <ref refid="classwx_thread_event_1a5e991c0a3ac6bef54f2d1c3c77cff9a2" kindref="member">GetEventCategory()</ref> implementation which allows thread events <bold>NOT</bold> to be processed by <ref refid="classwx_event_loop_base_1afb5ed08160c7e6b1364170af6115af55" kindref="member">wxEventLoopBase::YieldFor</ref> calls (unless the <computeroutput>wxEVT_CATEGORY_THREAD</computeroutput> is specified - which is never in wx code).</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ , \ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref>, <ref refid="group__group__class__threading" kindref="compound">Threading</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_thread" kindref="compound">Multithreading Overview</ref>, <ref refid="classwx_event_loop_base_1afb5ed08160c7e6b1364170af6115af55" kindref="member">wxEventLoopBase::YieldFor</ref></para>
 </simplesect>
 <simplesect kind="since"><para>2.9.0 </para>
@@ -272,7 +284,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="3531" column="1" bodyfile="interface/wx/event.h" bodystart="3532" bodyend="3615"/>
+    <location file="interface/wx/event.h" line="3599" column="1" bodyfile="interface/wx/event.h" bodystart="3600" bodyend="3683"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxThreadEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_thread_event_1a12938fd82b6f61d33c6e7186abe492e0" prot="public" virt="virtual"><scope>wxThreadEvent</scope><name>Clone</name></member>

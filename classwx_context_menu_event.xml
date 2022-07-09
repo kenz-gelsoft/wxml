@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_context_menu_event" kind="class" language="C++" prot="public">
     <compoundname>wxContextMenuEvent</compoundname>
     <basecompoundref refid="classwx_command_event" prot="public" virt="non-virtual">wxCommandEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxContextMenuEvent::wxContextMenuEvent</definition>
         <argsstring>(wxEventType type=wxEVT_NULL, int id=0, const wxPoint &amp;pos=wxDefaultPosition)</argsstring>
         <name>wxContextMenuEvent</name>
+        <qualifiedname>wxContextMenuEvent::wxContextMenuEvent</qualifiedname>
         <param>
           <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
           <declname>type</declname>
@@ -32,13 +33,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3165" column="5"/>
+        <location file="interface/wx/event.h" line="3190" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_context_menu_event_1a6017c932b59f627bc62dbc2f2347f940" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
         <definition>const wxPoint &amp; wxContextMenuEvent::GetPosition</definition>
         <argsstring>() const</argsstring>
         <name>GetPosition</name>
+        <qualifiedname>wxContextMenuEvent::GetPosition</qualifiedname>
         <briefdescription>
 <para>Returns the position in screen coordinates at which the menu should be shown. </para>
         </briefdescription>
@@ -49,13 +51,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3178" column="19"/>
+        <location file="interface/wx/event.h" line="3203" column="19"/>
       </memberdef>
       <memberdef kind="function" id="classwx_context_menu_event_1a24d0fdf2c831940a85b4e80e2c5d15a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxContextMenuEvent::SetPosition</definition>
         <argsstring>(const wxPoint &amp;point)</argsstring>
         <name>SetPosition</name>
+        <qualifiedname>wxContextMenuEvent::SetPosition</qualifiedname>
         <param>
           <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
           <declname>point</declname>
@@ -67,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3183" column="10"/>
+        <location file="interface/wx/event.h" line="3208" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -76,18 +79,17 @@
     <detaileddescription>
 <para>Note that if <ref refid="classwx_context_menu_event_1a6017c932b59f627bc62dbc2f2347f940" kindref="member">wxContextMenuEvent::GetPosition</ref> returns wxDefaultPosition, this means that the event originated from a keyboard context button event, and you should compute a suitable position yourself, for example by calling <ref refid="utils_8h_1a00fef3cd1a110189e737ad7bf948a3d0" kindref="member">wxGetMousePosition()</ref>.</para>
 <para>Notice that the exact sequence of mouse events is different across the platforms. For example, under MSW the context menu event is generated after <computeroutput>EVT_RIGHT_UP</computeroutput> event and only if it was not handled but under GTK the context menu event is generated after <computeroutput>EVT_RIGHT_DOWN</computeroutput> event. This is correct in the sense that it ensures that the context menu is shown according to the current platform UI conventions and also means that you must not handle (or call <ref refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" kindref="member">wxEvent::Skip()</ref> in your handler if you do have one) neither right mouse down nor right mouse up event if you plan on handling <computeroutput>EVT_CONTEXT_MENU</computeroutput> event.</para>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_context_menu_event" kindref="compound">wxContextMenuEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
-<listitem><para>EVT_CONTEXT_MENU(func): A right click (or other context menu command depending on platform) has been detected. <linebreak/>
-</para>
+<listitem><para>EVT_CONTEXT_MENU(func): A right click (or other context menu command depending on platform) has been detected. </para>
 </listitem>
 </itemizedlist>
 <heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>, <ref refid="overview_events" kindref="compound">Events and Event Handling</ref> </para>
 </simplesect>
 </para>
@@ -147,7 +149,7 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="3159" column="1" bodyfile="interface/wx/event.h" bodystart="3160" bodyend="3184"/>
+    <location file="interface/wx/event.h" line="3184" column="1" bodyfile="interface/wx/event.h" bodystart="3185" bodyend="3209"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxContextMenuEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxContextMenuEvent</scope><name>Clone</name></member>

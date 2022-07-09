@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_any_button" kind="class" language="C++" prot="public">
     <compoundname>wxAnyButton</compoundname>
     <basecompoundref refid="classwx_control" prot="public" virt="non-virtual">wxControl</basecompoundref>
@@ -12,6 +12,7 @@
         <definition>wxAnyButton::wxAnyButton</definition>
         <argsstring>()</argsstring>
         <name>wxAnyButton</name>
+        <qualifiedname>wxAnyButton::wxAnyButton</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -25,6 +26,7 @@
         <definition>wxAnyButton::~wxAnyButton</definition>
         <argsstring>()</argsstring>
         <name>~wxAnyButton</name>
+        <qualifiedname>wxAnyButton::~wxAnyButton</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -38,12 +40,13 @@
         <definition>wxBitmap wxAnyButton::GetBitmap</definition>
         <argsstring>() const</argsstring>
         <name>GetBitmap</name>
+        <qualifiedname>wxAnyButton::GetBitmap</qualifiedname>
         <briefdescription>
 <para>Return the bitmap shown by the button. </para>
         </briefdescription>
         <detaileddescription>
 <para>The returned bitmap may be invalid only if the button doesn&apos;t show any images.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_any_button_1a9d4e6eb774aa5d19b6f75c48439d3685" kindref="member">SetBitmap()</ref></para>
+<para><simplesect kind="see"><para><ref refid="classwx_any_button_1acdf75b25b6d948dd5ec4e04292283a70" kindref="member">SetBitmap()</ref></para>
 </simplesect>
 <simplesect kind="since"><para>2.9.1 </para>
 </simplesect>
@@ -58,13 +61,13 @@
         <definition>wxBitmap wxAnyButton::GetBitmapCurrent</definition>
         <argsstring>() const</argsstring>
         <name>GetBitmapCurrent</name>
+        <qualifiedname>wxAnyButton::GetBitmapCurrent</qualifiedname>
         <briefdescription>
-<para>Returns the bitmap used when the mouse is over the button, which may be invalid. </para>
+<para>Returns the bitmap used when the mouse is over the button. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="classwx_any_button_1a7ef165f2a4d309e6ed6ff943a8d21563" kindref="member">SetBitmapCurrent()</ref></para>
-</simplesect>
-<simplesect kind="since"><para>2.9.1 (available as wxBitmapButton::GetBitmapHover() in previous versions) </para>
+<para>The returned bitmap is only valid if <ref refid="classwx_any_button_1a1763182bb87be55f21bf4099d7a168f3" kindref="member">SetBitmapCurrent()</ref> had been previously called.</para>
+<para><simplesect kind="since"><para>2.9.1 (available as wxBitmapButton::GetBitmapHover() in previous versions) </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -77,50 +80,51 @@
         <definition>wxBitmap wxAnyButton::GetBitmapDisabled</definition>
         <argsstring>() const</argsstring>
         <name>GetBitmapDisabled</name>
+        <qualifiedname>wxAnyButton::GetBitmapDisabled</qualifiedname>
         <briefdescription>
-<para>Returns the bitmap for the disabled state, which may be invalid. </para>
+<para>Returns the bitmap used for the disabled state. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="classwx_any_button_1a735a45850008e87e1198db36fcbee0db" kindref="member">SetBitmapDisabled()</ref></para>
-</simplesect>
-<simplesect kind="since"><para>2.9.1 (available in <ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref> only in previous versions) </para>
+<para>The returned bitmap is only valid if <ref refid="classwx_any_button_1abe5111aaa070d4ce9603511210fc39e3" kindref="member">SetBitmapDisabled()</ref> had been previously called.</para>
+<para><simplesect kind="since"><para>2.9.1 (available in <ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref> only in previous versions) </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="61" column="14"/>
+        <location file="interface/wx/anybutton.h" line="62" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_any_button_1a2a622be1e5e410d920aa2fafee528d5f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref></type>
         <definition>wxBitmap wxAnyButton::GetBitmapFocus</definition>
         <argsstring>() const</argsstring>
         <name>GetBitmapFocus</name>
+        <qualifiedname>wxAnyButton::GetBitmapFocus</qualifiedname>
         <briefdescription>
-<para>Returns the bitmap for the focused state, which may be invalid. </para>
+<para>Returns the bitmap used for the focused state. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="classwx_any_button_1adcf9477763500b6fde991d8907a18cca" kindref="member">SetBitmapFocus()</ref></para>
-</simplesect>
-<simplesect kind="since"><para>2.9.1 (available in <ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref> only in previous versions) </para>
+<para>The returned bitmap is only valid if <ref refid="classwx_any_button_1aa2f48cf306eb0375c5ff5a94a9a83970" kindref="member">SetBitmapFocus()</ref> had been previously called.</para>
+<para><simplesect kind="since"><para>2.9.1 (available in <ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref> only in previous versions) </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="70" column="14"/>
+        <location file="interface/wx/anybutton.h" line="72" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_any_button_1a4b0a3f9802c2705fd2712302e5cf04f5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref></type>
         <definition>wxBitmap wxAnyButton::GetBitmapLabel</definition>
         <argsstring>() const</argsstring>
         <name>GetBitmapLabel</name>
+        <qualifiedname>wxAnyButton::GetBitmapLabel</qualifiedname>
         <briefdescription>
 <para>Returns the bitmap for the normal state. </para>
         </briefdescription>
         <detaileddescription>
 <para>This is exactly the same as <ref refid="classwx_any_button_1a0c16ae4c69fec5dc3b4ba0aec9f9f4fa" kindref="member">GetBitmap()</ref> but uses a name backwards-compatible with <ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref>.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_any_button_1a9d4e6eb774aa5d19b6f75c48439d3685" kindref="member">SetBitmap()</ref>, <ref refid="classwx_any_button_1a1efdfd1f222acca40aacad1fe5f8eb17" kindref="member">SetBitmapLabel()</ref></para>
+<para><simplesect kind="see"><para><ref refid="classwx_any_button_1acdf75b25b6d948dd5ec4e04292283a70" kindref="member">SetBitmap()</ref>, <ref refid="classwx_any_button_1affe257f3d018f448ad1e4c2d33ae5e98" kindref="member">SetBitmapLabel()</ref></para>
 </simplesect>
 <simplesect kind="since"><para>2.9.1 (available in <ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref> only in previous versions) </para>
 </simplesect>
@@ -128,34 +132,35 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="82" column="14"/>
+        <location file="interface/wx/anybutton.h" line="84" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_any_button_1aff568c746ab7ddd9d25165a290e01391" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref></type>
         <definition>wxBitmap wxAnyButton::GetBitmapPressed</definition>
         <argsstring>() const</argsstring>
         <name>GetBitmapPressed</name>
+        <qualifiedname>wxAnyButton::GetBitmapPressed</qualifiedname>
         <briefdescription>
-<para>Returns the bitmap for the pressed state, which may be invalid. </para>
+<para>Returns the bitmap used when the button is pressed. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="classwx_any_button_1a414ed38ee5fce39feaf686b7616c0cb6" kindref="member">SetBitmapPressed()</ref></para>
-</simplesect>
-<simplesect kind="since"><para>2.9.1 (available as wxBitmapButton::GetBitmapSelected() in previous versions) </para>
+<para>The returned bitmap is only valid if <ref refid="classwx_any_button_1a92164bbc6a2659f8ac751b146056a6c6" kindref="member">SetBitmapPressed()</ref> had been previously called.</para>
+<para><simplesect kind="since"><para>2.9.1 (available as wxBitmapButton::GetBitmapSelected() in previous versions) </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="92" column="14"/>
+        <location file="interface/wx/anybutton.h" line="95" column="14"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_any_button_1a9d4e6eb774aa5d19b6f75c48439d3685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_any_button_1acdf75b25b6d948dd5ec4e04292283a70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxAnyButton::SetBitmap</definition>
-        <argsstring>(const wxBitmap &amp;bitmap, wxDirection dir=wxLEFT)</argsstring>
+        <argsstring>(const wxBitmapBundle &amp;bitmap, wxDirection dir=wxLEFT)</argsstring>
         <name>SetBitmap</name>
+        <qualifiedname>wxAnyButton::SetBitmap</qualifiedname>
         <param>
-          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>bitmap</declname>
         </param>
         <param>
@@ -167,13 +172,13 @@
 <para>Sets the bitmap to display in the button. </para>
         </briefdescription>
         <detaileddescription>
-<para>The bitmap is displayed together with the button label. This method sets up a single bitmap which is used in all button states, use <ref refid="classwx_any_button_1a735a45850008e87e1198db36fcbee0db" kindref="member">SetBitmapDisabled()</ref>, <ref refid="classwx_any_button_1a414ed38ee5fce39feaf686b7616c0cb6" kindref="member">SetBitmapPressed()</ref>, <ref refid="classwx_any_button_1a7ef165f2a4d309e6ed6ff943a8d21563" kindref="member">SetBitmapCurrent()</ref> or <ref refid="classwx_any_button_1adcf9477763500b6fde991d8907a18cca" kindref="member">SetBitmapFocus()</ref> to change the individual images used in different states.</para>
+<para>The bitmap is displayed together with the button label. This method sets up a single bitmap which is used in all button states, use <ref refid="classwx_any_button_1abe5111aaa070d4ce9603511210fc39e3" kindref="member">SetBitmapDisabled()</ref>, <ref refid="classwx_any_button_1a92164bbc6a2659f8ac751b146056a6c6" kindref="member">SetBitmapPressed()</ref>, <ref refid="classwx_any_button_1a1763182bb87be55f21bf4099d7a168f3" kindref="member">SetBitmapCurrent()</ref> or <ref refid="classwx_any_button_1aa2f48cf306eb0375c5ff5a94a9a83970" kindref="member">SetBitmapFocus()</ref> to change the individual images used in different states.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>bitmap</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The bitmap to display in the button. If the bitmap is invalid, any currently shown bitmaps are removed from the button. </para>
+<para>The bitmap bundle containing the resolution-dependent bitmaps to display in the button. At default DPI, the size of the bitmap is determined by the default bundle size, i.e. the value returned from <ref refid="classwx_bitmap_bundle_1a577a349a985b8c4b477288673072bcdc" kindref="member">wxBitmapBundle::GetDefaultSize()</ref>. If the bitmap bundle is invalid, any currently shown bitmaps are removed from the button. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -193,15 +198,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="116" column="10"/>
+        <location file="interface/wx/anybutton.h" line="122" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_any_button_1a7ef165f2a4d309e6ed6ff943a8d21563" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_any_button_1a1763182bb87be55f21bf4099d7a168f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxAnyButton::SetBitmapCurrent</definition>
-        <argsstring>(const wxBitmap &amp;bitmap)</argsstring>
+        <argsstring>(const wxBitmapBundle &amp;bitmap)</argsstring>
         <name>SetBitmapCurrent</name>
+        <qualifiedname>wxAnyButton::SetBitmapCurrent</qualifiedname>
         <param>
-          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>bitmap</declname>
         </param>
         <briefdescription>
@@ -217,23 +223,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="129" column="10"/>
+        <location file="interface/wx/anybutton.h" line="135" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_any_button_1a735a45850008e87e1198db36fcbee0db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_any_button_1abe5111aaa070d4ce9603511210fc39e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxAnyButton::SetBitmapDisabled</definition>
-        <argsstring>(const wxBitmap &amp;bitmap)</argsstring>
+        <argsstring>(const wxBitmapBundle &amp;bitmap)</argsstring>
         <name>SetBitmapDisabled</name>
+        <qualifiedname>wxAnyButton::SetBitmapDisabled</qualifiedname>
         <param>
-          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>bitmap</declname>
         </param>
         <briefdescription>
 <para>Sets the bitmap for the disabled button appearance. </para>
         </briefdescription>
         <detaileddescription>
-<para>If <emphasis>bitmap</emphasis> is invalid, the disabled bitmap is set to the automatically generated greyed out version of the normal bitmap, i.e. the same bitmap as is used by default if this method is not called at all. Use <ref refid="classwx_any_button_1a9d4e6eb774aa5d19b6f75c48439d3685" kindref="member">SetBitmap()</ref> with an invalid bitmap to remove the bitmap completely (for all states).</para>
-<para><simplesect kind="see"><para><ref refid="classwx_any_button_1a0fcd803db5e971f84df526f092404afa" kindref="member">GetBitmapDisabled()</ref>, <ref refid="classwx_any_button_1a1efdfd1f222acca40aacad1fe5f8eb17" kindref="member">SetBitmapLabel()</ref>, <ref refid="classwx_any_button_1a414ed38ee5fce39feaf686b7616c0cb6" kindref="member">SetBitmapPressed()</ref>, <ref refid="classwx_any_button_1adcf9477763500b6fde991d8907a18cca" kindref="member">SetBitmapFocus()</ref></para>
+<para>If <emphasis>bitmap</emphasis> is invalid, the disabled bitmap is set to the automatically generated greyed out version of the normal bitmap, i.e. the same bitmap as is used by default if this method is not called at all. Use <ref refid="classwx_any_button_1acdf75b25b6d948dd5ec4e04292283a70" kindref="member">SetBitmap()</ref> with an invalid bitmap to remove the bitmap completely (for all states).</para>
+<para><simplesect kind="see"><para><ref refid="classwx_any_button_1a0fcd803db5e971f84df526f092404afa" kindref="member">GetBitmapDisabled()</ref>, <ref refid="classwx_any_button_1affe257f3d018f448ad1e4c2d33ae5e98" kindref="member">SetBitmapLabel()</ref>, <ref refid="classwx_any_button_1a92164bbc6a2659f8ac751b146056a6c6" kindref="member">SetBitmapPressed()</ref>, <ref refid="classwx_any_button_1aa2f48cf306eb0375c5ff5a94a9a83970" kindref="member">SetBitmapFocus()</ref></para>
 </simplesect>
 <simplesect kind="since"><para>2.9.1 (available in <ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref> only in previous versions) </para>
 </simplesect>
@@ -241,15 +248,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="145" column="10"/>
+        <location file="interface/wx/anybutton.h" line="151" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_any_button_1adcf9477763500b6fde991d8907a18cca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_any_button_1aa2f48cf306eb0375c5ff5a94a9a83970" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxAnyButton::SetBitmapFocus</definition>
-        <argsstring>(const wxBitmap &amp;bitmap)</argsstring>
+        <argsstring>(const wxBitmapBundle &amp;bitmap)</argsstring>
         <name>SetBitmapFocus</name>
+        <qualifiedname>wxAnyButton::SetBitmapFocus</qualifiedname>
         <param>
-          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>bitmap</declname>
         </param>
         <briefdescription>
@@ -257,7 +265,7 @@
         </briefdescription>
         <detaileddescription>
 <para>If <emphasis>bitmap</emphasis> is invalid, the normal bitmap will be used in the focused state.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_any_button_1a2a622be1e5e410d920aa2fafee528d5f" kindref="member">GetBitmapFocus()</ref>, <ref refid="classwx_any_button_1a1efdfd1f222acca40aacad1fe5f8eb17" kindref="member">SetBitmapLabel()</ref>, <ref refid="classwx_any_button_1a414ed38ee5fce39feaf686b7616c0cb6" kindref="member">SetBitmapPressed()</ref>, <ref refid="classwx_any_button_1a735a45850008e87e1198db36fcbee0db" kindref="member">SetBitmapDisabled()</ref></para>
+<para><simplesect kind="see"><para><ref refid="classwx_any_button_1a2a622be1e5e410d920aa2fafee528d5f" kindref="member">GetBitmapFocus()</ref>, <ref refid="classwx_any_button_1affe257f3d018f448ad1e4c2d33ae5e98" kindref="member">SetBitmapLabel()</ref>, <ref refid="classwx_any_button_1a92164bbc6a2659f8ac751b146056a6c6" kindref="member">SetBitmapPressed()</ref>, <ref refid="classwx_any_button_1abe5111aaa070d4ce9603511210fc39e3" kindref="member">SetBitmapDisabled()</ref></para>
 </simplesect>
 <simplesect kind="since"><para>2.9.1 (available in <ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref> only in previous versions) </para>
 </simplesect>
@@ -265,15 +273,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="159" column="10"/>
+        <location file="interface/wx/anybutton.h" line="165" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_any_button_1a1efdfd1f222acca40aacad1fe5f8eb17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_any_button_1affe257f3d018f448ad1e4c2d33ae5e98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxAnyButton::SetBitmapLabel</definition>
-        <argsstring>(const wxBitmap &amp;bitmap)</argsstring>
+        <argsstring>(const wxBitmapBundle &amp;bitmap)</argsstring>
         <name>SetBitmapLabel</name>
+        <qualifiedname>wxAnyButton::SetBitmapLabel</qualifiedname>
         <param>
-          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>bitmap</declname>
         </param>
         <briefdescription>
@@ -282,7 +291,7 @@
         <detaileddescription>
 <para><simplesect kind="remark"><para>This is the bitmap used for the unselected state, and for all other states if no other bitmaps are provided.</para>
 </simplesect>
-<simplesect kind="see"><para><ref refid="classwx_any_button_1a9d4e6eb774aa5d19b6f75c48439d3685" kindref="member">SetBitmap()</ref>, <ref refid="classwx_any_button_1a4b0a3f9802c2705fd2712302e5cf04f5" kindref="member">GetBitmapLabel()</ref></para>
+<simplesect kind="see"><para><ref refid="classwx_any_button_1acdf75b25b6d948dd5ec4e04292283a70" kindref="member">SetBitmap()</ref>, <ref refid="classwx_any_button_1a4b0a3f9802c2705fd2712302e5cf04f5" kindref="member">GetBitmapLabel()</ref></para>
 </simplesect>
 <simplesect kind="since"><para>2.9.1 (available in <ref refid="classwx_bitmap_button" kindref="compound">wxBitmapButton</ref> only in previous versions) </para>
 </simplesect>
@@ -290,15 +299,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="171" column="10"/>
+        <location file="interface/wx/anybutton.h" line="177" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_any_button_1a414ed38ee5fce39feaf686b7616c0cb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_any_button_1a92164bbc6a2659f8ac751b146056a6c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxAnyButton::SetBitmapPressed</definition>
-        <argsstring>(const wxBitmap &amp;bitmap)</argsstring>
+        <argsstring>(const wxBitmapBundle &amp;bitmap)</argsstring>
         <name>SetBitmapPressed</name>
+        <qualifiedname>wxAnyButton::SetBitmapPressed</qualifiedname>
         <param>
-          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>bitmap</declname>
         </param>
         <briefdescription>
@@ -311,13 +321,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="179" column="10"/>
+        <location file="interface/wx/anybutton.h" line="185" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_any_button_1ad45ae096a0a0ab0ba89442a34e76b30b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
         <definition>wxSize wxAnyButton::GetBitmapMargins</definition>
         <argsstring>()</argsstring>
         <name>GetBitmapMargins</name>
+        <qualifiedname>wxAnyButton::GetBitmapMargins</qualifiedname>
         <briefdescription>
 <para>Get the margins between the bitmap and the text of the button. </para>
         </briefdescription>
@@ -330,13 +341,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="189" column="12"/>
+        <location file="interface/wx/anybutton.h" line="195" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_any_button_1a6cd7a739c0795b85c82077934f6f8ba6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxAnyButton::SetBitmapMargins</definition>
         <argsstring>(wxCoord x, wxCoord y)</argsstring>
         <name>SetBitmapMargins</name>
+        <qualifiedname>wxAnyButton::SetBitmapMargins</qualifiedname>
         <param>
           <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
           <declname>x</declname>
@@ -350,7 +362,7 @@
         </briefdescription>
         <detaileddescription>
 <para>This method is currently only implemented under MSW. If it is not called, default margin is used around the bitmap.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_any_button_1a9d4e6eb774aa5d19b6f75c48439d3685" kindref="member">SetBitmap()</ref>, <ref refid="classwx_any_button_1a841c7747f78ea37110338b0ce1aa97dd" kindref="member">SetBitmapPosition()</ref></para>
+<para><simplesect kind="see"><para><ref refid="classwx_any_button_1acdf75b25b6d948dd5ec4e04292283a70" kindref="member">SetBitmap()</ref>, <ref refid="classwx_any_button_1a841c7747f78ea37110338b0ce1aa97dd" kindref="member">SetBitmapPosition()</ref></para>
 </simplesect>
 <simplesect kind="since"><para>2.9.1 </para>
 </simplesect>
@@ -358,13 +370,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="202" column="10"/>
+        <location file="interface/wx/anybutton.h" line="208" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_any_button_1ab12a46889cfb85eaa96f1a1dc3a21b8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxAnyButton::SetBitmapMargins</definition>
         <argsstring>(const wxSize &amp;sz)</argsstring>
         <name>SetBitmapMargins</name>
+        <qualifiedname>wxAnyButton::SetBitmapMargins</qualifiedname>
         <param>
           <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
           <declname>sz</declname>
@@ -375,13 +388,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="203" column="10"/>
+        <location file="interface/wx/anybutton.h" line="209" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_any_button_1a841c7747f78ea37110338b0ce1aa97dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxAnyButton::SetBitmapPosition</definition>
         <argsstring>(wxDirection dir)</argsstring>
         <name>SetBitmapPosition</name>
+        <qualifiedname>wxAnyButton::SetBitmapPosition</qualifiedname>
         <param>
           <type><ref refid="defs_8h_1ac0f30319732dcceda470516918ff3556" kindref="member">wxDirection</ref></type>
           <declname>dir</declname>
@@ -406,7 +420,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/anybutton.h" line="218" column="10"/>
+        <location file="interface/wx/anybutton.h" line="224" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -529,7 +543,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/anybutton.h" line="25" column="1" bodyfile="interface/wx/anybutton.h" bodystart="26" bodyend="219"/>
+    <location file="interface/wx/anybutton.h" line="25" column="1" bodyfile="interface/wx/anybutton.h" bodystart="26" bodyend="225"/>
     <listofallmembers>
       <member refid="classwx_window_1a1da8baa734b9872d0c085b86a7b5d817" prot="public" virt="virtual"><scope>wxAnyButton</scope><name>AcceptsFocus</name></member>
       <member refid="classwx_window_1a3a0cb3bd5e82462b19df9f24ad6d9ac4" prot="public" virt="virtual"><scope>wxAnyButton</scope><name>AcceptsFocusFromKeyboard</name></member>
@@ -608,6 +622,12 @@
       <member refid="classwx_window_1a71f45373a9fc55e128d263391093c32a" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1ad122671fcef564f7e11658c3ee0d4d87" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1aee63c8b1f8055fef76962578aa7f38c1" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>FromDIP</name></member>
+      <member refid="classwx_window_1a144678f0b197268aa9d8d81b76a150a7" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a048d540d731ac83550c206df4af04270" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1ac3f185cef9f6a645be63b9b62afae46a" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a2fe6412d36c2b81c0dd3eeb1dd8bd004" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1af1ddb23778f531a56f2e1aa937a66d9c" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a27efab91147b0ffeee600f02059c23fc" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>FromPhys</name></member>
       <member refid="classwx_window_1a9cf3fd71ffab949cdf06f8f8e2646d56" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>GetAcceleratorTable</name></member>
       <member refid="classwx_window_1a00547805ce11e2ba64607d31fc2c67e2" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>GetAccessible</name></member>
       <member refid="classwx_window_1a64e3f936ab812d24966827ea4e0f15c0" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>GetAutoLayout</name></member>
@@ -804,15 +824,15 @@
       <member refid="classwx_window_1ad369fe1db5c20f9d9edff7b5eb1f7226" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetAutoLayout</name></member>
       <member refid="classwx_window_1a37219df52734626e23401fd83b25d8a0" prot="public" virt="virtual"><scope>wxAnyButton</scope><name>SetBackgroundColour</name></member>
       <member refid="classwx_window_1af14f8fd2ed2d30a9bbb5d4f9fd6594ec" prot="public" virt="virtual"><scope>wxAnyButton</scope><name>SetBackgroundStyle</name></member>
-      <member refid="classwx_any_button_1a9d4e6eb774aa5d19b6f75c48439d3685" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmap</name></member>
-      <member refid="classwx_any_button_1a7ef165f2a4d309e6ed6ff943a8d21563" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapCurrent</name></member>
-      <member refid="classwx_any_button_1a735a45850008e87e1198db36fcbee0db" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapDisabled</name></member>
-      <member refid="classwx_any_button_1adcf9477763500b6fde991d8907a18cca" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapFocus</name></member>
-      <member refid="classwx_any_button_1a1efdfd1f222acca40aacad1fe5f8eb17" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapLabel</name></member>
+      <member refid="classwx_any_button_1acdf75b25b6d948dd5ec4e04292283a70" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmap</name></member>
+      <member refid="classwx_any_button_1a1763182bb87be55f21bf4099d7a168f3" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapCurrent</name></member>
+      <member refid="classwx_any_button_1abe5111aaa070d4ce9603511210fc39e3" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapDisabled</name></member>
+      <member refid="classwx_any_button_1aa2f48cf306eb0375c5ff5a94a9a83970" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapFocus</name></member>
+      <member refid="classwx_any_button_1affe257f3d018f448ad1e4c2d33ae5e98" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapLabel</name></member>
       <member refid="classwx_any_button_1a6cd7a739c0795b85c82077934f6f8ba6" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapMargins</name></member>
       <member refid="classwx_any_button_1ab12a46889cfb85eaa96f1a1dc3a21b8f" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapMargins</name></member>
       <member refid="classwx_any_button_1a841c7747f78ea37110338b0ce1aa97dd" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapPosition</name></member>
-      <member refid="classwx_any_button_1a414ed38ee5fce39feaf686b7616c0cb6" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapPressed</name></member>
+      <member refid="classwx_any_button_1a92164bbc6a2659f8ac751b146056a6c6" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetBitmapPressed</name></member>
       <member refid="classwx_window_1a2b8b2e99231a0ec1a05f5066f1b7f3d8" prot="public" virt="virtual"><scope>wxAnyButton</scope><name>SetCanFocus</name></member>
       <member refid="classwx_window_1acfef5e1cada92c73e2937b84ff57ff57" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetCaret</name></member>
       <member refid="classwx_evt_handler_1a82c74f2cebfa02cb3c1563d459c872bf" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>SetClientData</name></member>
@@ -884,6 +904,12 @@
       <member refid="classwx_window_1aef413f1d0252a7a5a29512e8ab5e7c91" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a1771a46c000060619f6e1249ce362433" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a8a4fa47129de552bfec37db8c69688a2" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>ToggleWindowStyle</name></member>
+      <member refid="classwx_window_1a5d3a9450e6b6f44c6b7d0d4a002fa40f" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1afca50ba59976ad9913148fffd38ff0ef" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1ad0bea5e21d33d00d0cf19c011bad39bf" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aaf0ac2191826f233f04bffa900dbc357" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aef56d76b1cacdca83daebffcc385d6db" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1a6797f4c9656276796031b9846ecc20b6" prot="public" virt="non-virtual"><scope>wxAnyButton</scope><name>ToPhys</name></member>
       <member refid="classwx_window_1ab8e51f36e7d8790b361c8d8c6f37b1ad" prot="public" virt="virtual"><scope>wxAnyButton</scope><name>TransferDataFromWindow</name></member>
       <member refid="classwx_window_1a88cc65e424a129d9b0057756cdb67ec9" prot="public" virt="virtual"><scope>wxAnyButton</scope><name>TransferDataToWindow</name></member>
       <member refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" prot="protected" virt="virtual"><scope>wxAnyButton</scope><name>TryAfter</name></member>

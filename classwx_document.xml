@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_document" kind="class" language="C++" prot="public">
     <compoundname>wxDocument</compoundname>
     <basecompoundref refid="classwx_evt_handler" prot="public" virt="non-virtual">wxEvtHandler</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxCommandProcessor* wxDocument::m_commandProcessor</definition>
         <argsstring></argsstring>
         <name>m_commandProcessor</name>
+        <qualifiedname>wxDocument::m_commandProcessor</qualifiedname>
         <briefdescription>
 <para>A pointer to the command processor associated with this document. </para>
         </briefdescription>
@@ -24,6 +25,7 @@
         <definition>wxString wxDocument::m_documentFile</definition>
         <argsstring></argsstring>
         <name>m_documentFile</name>
+        <qualifiedname>wxDocument::m_documentFile</qualifiedname>
         <briefdescription>
 <para>Filename associated with this document (&quot;&quot; if none). </para>
         </briefdescription>
@@ -38,6 +40,7 @@
         <definition>bool wxDocument::m_documentModified</definition>
         <argsstring></argsstring>
         <name>m_documentModified</name>
+        <qualifiedname>wxDocument::m_documentModified</qualifiedname>
         <briefdescription>
 <para>true if the document has been modified, false otherwise. </para>
         </briefdescription>
@@ -52,6 +55,7 @@
         <definition>wxDocTemplate* wxDocument::m_documentTemplate</definition>
         <argsstring></argsstring>
         <name>m_documentTemplate</name>
+        <qualifiedname>wxDocument::m_documentTemplate</qualifiedname>
         <briefdescription>
 <para>A pointer to the template from which this document was created. </para>
         </briefdescription>
@@ -66,6 +70,7 @@
         <definition>wxString wxDocument::m_documentTitle</definition>
         <argsstring></argsstring>
         <name>m_documentTitle</name>
+        <qualifiedname>wxDocument::m_documentTitle</qualifiedname>
         <briefdescription>
 <para>Document title. </para>
         </briefdescription>
@@ -81,6 +86,7 @@
         <definition>wxString wxDocument::m_documentTypeName</definition>
         <argsstring></argsstring>
         <name>m_documentTypeName</name>
+        <qualifiedname>wxDocument::m_documentTypeName</qualifiedname>
         <briefdescription>
 <para>The document type name given to the <ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> constructor, copied to this variable when the document is created. </para>
         </briefdescription>
@@ -96,6 +102,7 @@
         <definition>wxList wxDocument::m_documentViews</definition>
         <argsstring></argsstring>
         <name>m_documentViews</name>
+        <qualifiedname>wxDocument::m_documentViews</qualifiedname>
         <briefdescription>
 <para>List of <ref refid="classwx_view" kindref="compound">wxView</ref> instances associated with this document. </para>
         </briefdescription>
@@ -112,6 +119,7 @@
         <definition>wxDocument::wxDocument</definition>
         <argsstring>(wxDocument *parent=NULL)</argsstring>
         <name>wxDocument</name>
+        <qualifiedname>wxDocument::wxDocument</qualifiedname>
         <param>
           <type><ref refid="classwx_document" kindref="compound">wxDocument</ref> *</type>
           <declname>parent</declname>
@@ -142,6 +150,7 @@
         <definition>virtual wxDocument::~wxDocument</definition>
         <argsstring>()</argsstring>
         <name>~wxDocument</name>
+        <qualifiedname>wxDocument::~wxDocument</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -157,6 +166,7 @@
         <definition>virtual bool wxDocument::AddView</definition>
         <argsstring>(wxView *view)</argsstring>
         <name>AddView</name>
+        <qualifiedname>wxDocument::AddView</qualifiedname>
         <param>
           <type><ref refid="classwx_view" kindref="compound">wxView</ref> *</type>
           <declname>view</declname>
@@ -175,6 +185,7 @@
         <definition>bool wxDocument::AlreadySaved</definition>
         <argsstring>() const</argsstring>
         <name>AlreadySaved</name>
+        <qualifiedname>wxDocument::AlreadySaved</qualifiedname>
         <briefdescription>
 <para>Returns true if the document hasn&apos;t been modified since the last time it had been saved. </para>
         </briefdescription>
@@ -195,6 +206,7 @@
         <definition>void wxDocument::Activate</definition>
         <argsstring>() const</argsstring>
         <name>Activate</name>
+        <qualifiedname>wxDocument::Activate</qualifiedname>
         <briefdescription>
 <para>Activate the first view of the document if any. </para>
         </briefdescription>
@@ -221,6 +233,7 @@
         <definition>virtual bool wxDocument::Close</definition>
         <argsstring>()</argsstring>
         <name>Close</name>
+        <qualifiedname>wxDocument::Close</qualifiedname>
         <briefdescription>
 <para>Closes the document, by calling <ref refid="classwx_document_1a67879e3f2e94bb35e558af46bd847cf6" kindref="member">OnSaveModified()</ref> and then (if this returned true) <ref refid="classwx_document_1a12730179398ba640d78bd9f4ad65dc95" kindref="member">OnCloseDocument()</ref>. </para>
         </briefdescription>
@@ -239,6 +252,7 @@
         <definition>virtual bool wxDocument::DeleteAllViews</definition>
         <argsstring>()</argsstring>
         <name>DeleteAllViews</name>
+        <qualifiedname>wxDocument::DeleteAllViews</qualifiedname>
         <briefdescription>
 <para>Calls <ref refid="classwx_view_1a5fa376b907d166d8aa7842a52161cc42" kindref="member">wxView::Close()</ref> and deletes each view. </para>
         </briefdescription>
@@ -254,6 +268,7 @@
         <definition>virtual bool wxDocument::DeleteContents</definition>
         <argsstring>()</argsstring>
         <name>DeleteContents</name>
+        <qualifiedname>wxDocument::DeleteContents</qualifiedname>
         <briefdescription>
 <para>Virtual method called from <ref refid="classwx_document_1a12730179398ba640d78bd9f4ad65dc95" kindref="member">OnCloseDocument()</ref>. </para>
         </briefdescription>
@@ -271,6 +286,7 @@
         <definition>virtual wxCommandProcessor * wxDocument::GetCommandProcessor</definition>
         <argsstring>() const</argsstring>
         <name>GetCommandProcessor</name>
+        <qualifiedname>wxDocument::GetCommandProcessor</qualifiedname>
         <briefdescription>
 <para>Returns a pointer to the command processor associated with this document. </para>
         </briefdescription>
@@ -288,6 +304,7 @@
         <definition>virtual wxDocManager * wxDocument::GetDocumentManager</definition>
         <argsstring>() const</argsstring>
         <name>GetDocumentManager</name>
+        <qualifiedname>wxDocument::GetDocumentManager</qualifiedname>
         <briefdescription>
 <para>Gets a pointer to the associated document manager. </para>
         </briefdescription>
@@ -302,6 +319,7 @@
         <definition>wxString wxDocument::GetDocumentName</definition>
         <argsstring>() const</argsstring>
         <name>GetDocumentName</name>
+        <qualifiedname>wxDocument::GetDocumentName</qualifiedname>
         <briefdescription>
 <para>Gets the document type name for this document. </para>
         </briefdescription>
@@ -317,6 +335,7 @@
         <definition>bool wxDocument::GetDocumentSaved</definition>
         <argsstring>() const</argsstring>
         <name>GetDocumentSaved</name>
+        <qualifiedname>wxDocument::GetDocumentSaved</qualifiedname>
         <briefdescription>
 <para>Return true if this document had been already saved. </para>
         </briefdescription>
@@ -334,6 +353,7 @@
         <definition>virtual wxDocTemplate * wxDocument::GetDocumentTemplate</definition>
         <argsstring>() const</argsstring>
         <name>GetDocumentTemplate</name>
+        <qualifiedname>wxDocument::GetDocumentTemplate</qualifiedname>
         <briefdescription>
 <para>Gets a pointer to the template that created the document. </para>
         </briefdescription>
@@ -348,6 +368,7 @@
         <definition>virtual wxWindow * wxDocument::GetDocumentWindow</definition>
         <argsstring>() const</argsstring>
         <name>GetDocumentWindow</name>
+        <qualifiedname>wxDocument::GetDocumentWindow</qualifiedname>
         <briefdescription>
 <para>Intended to return a suitable window for using as a parent for document-related dialog boxes. </para>
         </briefdescription>
@@ -363,6 +384,7 @@
         <definition>wxString wxDocument::GetFilename</definition>
         <argsstring>() const</argsstring>
         <name>GetFilename</name>
+        <qualifiedname>wxDocument::GetFilename</qualifiedname>
         <briefdescription>
 <para>Gets the filename associated with this document, or &quot;&quot; if none is associated. </para>
         </briefdescription>
@@ -377,6 +399,7 @@
         <definition>wxView * wxDocument::GetFirstView</definition>
         <argsstring>() const</argsstring>
         <name>GetFirstView</name>
+        <qualifiedname>wxDocument::GetFirstView</qualifiedname>
         <briefdescription>
 <para>A convenience function to get the first view for a document, because in many cases a document will only have a single view. </para>
         </briefdescription>
@@ -394,6 +417,7 @@
         <definition>wxString wxDocument::GetTitle</definition>
         <argsstring>() const</argsstring>
         <name>GetTitle</name>
+        <qualifiedname>wxDocument::GetTitle</qualifiedname>
         <briefdescription>
 <para>Gets the title for this document. </para>
         </briefdescription>
@@ -409,6 +433,7 @@
         <definition>virtual wxString wxDocument::GetUserReadableName</definition>
         <argsstring>() const</argsstring>
         <name>GetUserReadableName</name>
+        <qualifiedname>wxDocument::GetUserReadableName</qualifiedname>
         <briefdescription>
 <para>Return the document name suitable to be shown to the user. </para>
         </briefdescription>
@@ -424,6 +449,7 @@
         <definition>wxViewVector wxDocument::GetViewsVector</definition>
         <argsstring>() const</argsstring>
         <name>GetViewsVector</name>
+        <qualifiedname>wxDocument::GetViewsVector</qualifiedname>
         <briefdescription>
 <para>Returns a vector of <ref refid="classwx_view" kindref="compound">wxView</ref> pointers. </para>
         </briefdescription>
@@ -441,6 +467,7 @@
         <definition>wxList &amp; wxDocument::GetViews</definition>
         <argsstring>()</argsstring>
         <name>GetViews</name>
+        <qualifiedname>wxDocument::GetViews</qualifiedname>
         <briefdescription>
 <para>Returns the list whose elements are the views on the document. </para>
         </briefdescription>
@@ -458,6 +485,7 @@
         <definition>const wxList &amp; wxDocument::GetViews</definition>
         <argsstring>() const</argsstring>
         <name>GetViews</name>
+        <qualifiedname>wxDocument::GetViews</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -471,6 +499,7 @@
         <definition>bool wxDocument::IsChildDocument</definition>
         <argsstring>() const</argsstring>
         <name>IsChildDocument</name>
+        <qualifiedname>wxDocument::IsChildDocument</qualifiedname>
         <briefdescription>
 <para>Returns true if this document is a child document corresponding to a part of the parent document and not a disk file as usual. </para>
         </briefdescription>
@@ -489,6 +518,7 @@
         <definition>virtual bool wxDocument::IsModified</definition>
         <argsstring>() const</argsstring>
         <name>IsModified</name>
+        <qualifiedname>wxDocument::IsModified</qualifiedname>
         <briefdescription>
 <para>Returns true if the document has been modified since the last save, false otherwise. </para>
         </briefdescription>
@@ -507,6 +537,7 @@
         <definition>virtual istream &amp; wxDocument::LoadObject</definition>
         <argsstring>(istream &amp;stream)</argsstring>
         <name>LoadObject</name>
+        <qualifiedname>wxDocument::LoadObject</qualifiedname>
         <param>
           <type>istream &amp;</type>
           <declname>stream</declname>
@@ -529,6 +560,7 @@
         <definition>virtual wxInputStream &amp; wxDocument::LoadObject</definition>
         <argsstring>(wxInputStream &amp;stream)</argsstring>
         <name>LoadObject</name>
+        <qualifiedname>wxDocument::LoadObject</qualifiedname>
         <param>
           <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> &amp;</type>
           <declname>stream</declname>
@@ -546,6 +578,7 @@
         <definition>virtual void wxDocument::Modify</definition>
         <argsstring>(bool modify)</argsstring>
         <name>Modify</name>
+        <qualifiedname>wxDocument::Modify</qualifiedname>
         <param>
           <type>bool</type>
           <declname>modify</declname>
@@ -568,6 +601,7 @@
         <definition>virtual void wxDocument::OnChangedViewList</definition>
         <argsstring>()</argsstring>
         <name>OnChangedViewList</name>
+        <qualifiedname>wxDocument::OnChangedViewList</qualifiedname>
         <briefdescription>
 <para>Called when a view is added to or deleted from this document. </para>
         </briefdescription>
@@ -583,6 +617,7 @@
         <definition>virtual bool wxDocument::OnCloseDocument</definition>
         <argsstring>()</argsstring>
         <name>OnCloseDocument</name>
+        <qualifiedname>wxDocument::OnCloseDocument</qualifiedname>
         <briefdescription>
 <para>This virtual function is called when the document is being closed. </para>
         </briefdescription>
@@ -601,6 +636,7 @@
         <definition>virtual bool wxDocument::OnCreate</definition>
         <argsstring>(const wxString &amp;path, long flags)</argsstring>
         <name>OnCreate</name>
+        <qualifiedname>wxDocument::OnCreate</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>path</declname>
@@ -645,6 +681,7 @@
         <definition>virtual wxCommandProcessor * wxDocument::OnCreateCommandProcessor</definition>
         <argsstring>()</argsstring>
         <name>OnCreateCommandProcessor</name>
+        <qualifiedname>wxDocument::OnCreateCommandProcessor</qualifiedname>
         <briefdescription>
 <para>Override this function if you want a different (or no) command processor to be created when the document is created. </para>
         </briefdescription>
@@ -663,6 +700,7 @@
         <definition>virtual bool wxDocument::OnNewDocument</definition>
         <argsstring>()</argsstring>
         <name>OnNewDocument</name>
+        <qualifiedname>wxDocument::OnNewDocument</qualifiedname>
         <briefdescription>
 <para>The default implementation calls <ref refid="classwx_document_1a67879e3f2e94bb35e558af46bd847cf6" kindref="member">OnSaveModified()</ref> and <ref refid="classwx_document_1afcd7641415f12bc132eb9f668c6a7f81" kindref="member">DeleteContents()</ref>, makes a default title for the document, and notifies the views that the filename (in fact, the title) has changed. </para>
         </briefdescription>
@@ -677,6 +715,7 @@
         <definition>virtual bool wxDocument::OnOpenDocument</definition>
         <argsstring>(const wxString &amp;filename)</argsstring>
         <name>OnOpenDocument</name>
+        <qualifiedname>wxDocument::OnOpenDocument</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filename</declname>
@@ -696,6 +735,7 @@
         <definition>virtual bool wxDocument::OnSaveDocument</definition>
         <argsstring>(const wxString &amp;filename)</argsstring>
         <name>OnSaveDocument</name>
+        <qualifiedname>wxDocument::OnSaveDocument</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filename</declname>
@@ -715,6 +755,7 @@
         <definition>virtual bool wxDocument::OnSaveModified</definition>
         <argsstring>()</argsstring>
         <name>OnSaveModified</name>
+        <qualifiedname>wxDocument::OnSaveModified</qualifiedname>
         <briefdescription>
 <para>If the document has been modified, prompts the user to ask if the changes should be saved. </para>
         </briefdescription>
@@ -730,6 +771,7 @@
         <definition>virtual bool wxDocument::RemoveView</definition>
         <argsstring>(wxView *view)</argsstring>
         <name>RemoveView</name>
+        <qualifiedname>wxDocument::RemoveView</qualifiedname>
         <param>
           <type><ref refid="classwx_view" kindref="compound">wxView</ref> *</type>
           <declname>view</declname>
@@ -752,6 +794,7 @@
         <definition>virtual bool wxDocument::Save</definition>
         <argsstring>()</argsstring>
         <name>Save</name>
+        <qualifiedname>wxDocument::Save</qualifiedname>
         <briefdescription>
 <para>Saves the document by calling <ref refid="classwx_document_1aee86aa837e2ddae59a1336c654e9f94b" kindref="member">OnSaveDocument()</ref> if there is an associated filename, or <ref refid="classwx_document_1a9ef28247525dbf71d8d90b3217785b2f" kindref="member">SaveAs()</ref> if there is no filename. </para>
         </briefdescription>
@@ -766,6 +809,7 @@
         <definition>virtual bool wxDocument::SaveAs</definition>
         <argsstring>()</argsstring>
         <name>SaveAs</name>
+        <qualifiedname>wxDocument::SaveAs</qualifiedname>
         <briefdescription>
 <para>Prompts the user for a file to save to, and then calls <ref refid="classwx_document_1aee86aa837e2ddae59a1336c654e9f94b" kindref="member">OnSaveDocument()</ref>. </para>
         </briefdescription>
@@ -780,6 +824,7 @@
         <definition>virtual bool wxDocument::Revert</definition>
         <argsstring>()</argsstring>
         <name>Revert</name>
+        <qualifiedname>wxDocument::Revert</qualifiedname>
         <briefdescription>
 <para>Discard changes and load last saved version. </para>
         </briefdescription>
@@ -795,6 +840,7 @@
         <definition>virtual ostream &amp; wxDocument::SaveObject</definition>
         <argsstring>(ostream &amp;stream)</argsstring>
         <name>SaveObject</name>
+        <qualifiedname>wxDocument::SaveObject</qualifiedname>
         <param>
           <type>ostream &amp;</type>
           <declname>stream</declname>
@@ -817,6 +863,7 @@
         <definition>virtual wxOutputStream &amp; wxDocument::SaveObject</definition>
         <argsstring>(wxOutputStream &amp;stream)</argsstring>
         <name>SaveObject</name>
+        <qualifiedname>wxDocument::SaveObject</qualifiedname>
         <param>
           <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> &amp;</type>
           <declname>stream</declname>
@@ -834,6 +881,7 @@
         <definition>virtual void wxDocument::SetCommandProcessor</definition>
         <argsstring>(wxCommandProcessor *processor)</argsstring>
         <name>SetCommandProcessor</name>
+        <qualifiedname>wxDocument::SetCommandProcessor</qualifiedname>
         <param>
           <type><ref refid="classwx_command_processor" kindref="compound">wxCommandProcessor</ref> *</type>
           <declname>processor</declname>
@@ -856,6 +904,7 @@
         <definition>void wxDocument::SetDocumentName</definition>
         <argsstring>(const wxString &amp;name)</argsstring>
         <name>SetDocumentName</name>
+        <qualifiedname>wxDocument::SetDocumentName</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>name</declname>
@@ -875,6 +924,7 @@
         <definition>virtual void wxDocument::SetDocumentTemplate</definition>
         <argsstring>(wxDocTemplate *templ)</argsstring>
         <name>SetDocumentTemplate</name>
+        <qualifiedname>wxDocument::SetDocumentTemplate</qualifiedname>
         <param>
           <type><ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> *</type>
           <declname>templ</declname>
@@ -894,6 +944,7 @@
         <definition>void wxDocument::SetDocumentSaved</definition>
         <argsstring>(bool saved=true)</argsstring>
         <name>SetDocumentSaved</name>
+        <qualifiedname>wxDocument::SetDocumentSaved</qualifiedname>
         <param>
           <type>bool</type>
           <declname>saved</declname>
@@ -917,6 +968,7 @@
         <definition>void wxDocument::SetFilename</definition>
         <argsstring>(const wxString &amp;filename, bool notifyViews=false)</argsstring>
         <name>SetFilename</name>
+        <qualifiedname>wxDocument::SetFilename</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filename</declname>
@@ -942,6 +994,7 @@
         <definition>virtual void wxDocument::OnChangeFilename</definition>
         <argsstring>(bool notifyViews)</argsstring>
         <name>OnChangeFilename</name>
+        <qualifiedname>wxDocument::OnChangeFilename</qualifiedname>
         <param>
           <type>bool</type>
           <declname>notifyViews</declname>
@@ -963,6 +1016,7 @@
         <definition>void wxDocument::SetTitle</definition>
         <argsstring>(const wxString &amp;title)</argsstring>
         <name>SetTitle</name>
+        <qualifiedname>wxDocument::SetTitle</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>title</declname>
@@ -982,6 +1036,7 @@
         <definition>virtual void wxDocument::UpdateAllViews</definition>
         <argsstring>(wxView *sender=NULL, wxObject *hint=NULL)</argsstring>
         <name>UpdateAllViews</name>
+        <qualifiedname>wxDocument::UpdateAllViews</qualifiedname>
         <param>
           <type><ref refid="classwx_view" kindref="compound">wxView</ref> *</type>
           <declname>sender</declname>
@@ -1009,6 +1064,7 @@
         <definition>virtual bool wxDocument::DoSaveDocument</definition>
         <argsstring>(const wxString &amp;file)</argsstring>
         <name>DoSaveDocument</name>
+        <qualifiedname>wxDocument::DoSaveDocument</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>file</declname>
@@ -1028,6 +1084,7 @@
         <definition>virtual bool wxDocument::DoOpenDocument</definition>
         <argsstring>(const wxString &amp;file)</argsstring>
         <name>DoOpenDocument</name>
+        <qualifiedname>wxDocument::DoOpenDocument</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>file</declname>
@@ -1051,7 +1108,8 @@
 <para>A normal document is the one created without parent document and is associated with a disk file. Since version 2.9.2 wxWidgets also supports a special kind of documents called <emphasis>child documents</emphasis> which are virtual in the sense that they do not correspond to a file but rather to a part of their parent document. Because of this, the child documents can&apos;t be created directly by user but can only be created by the parent document (usually when it&apos;s being created itself). They also can&apos;t be independently saved. A child document has its own view with the corresponding window. This view can be closed by user but, importantly, is also automatically closed when its parent document is closed. Thus, child documents may be convenient for creating additional windows which need to be closed when the main document is. The docview sample demonstrates this use of child documents by creating a child document containing the information about the parameters of the image opened in the main document.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__docview" kindref="compound">Document/View Framework</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_docview" kindref="compound">Document/View Framework</ref>, <ref refid="classwx_view" kindref="compound">wxView</ref>, <ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref>, <ref refid="classwx_doc_manager" kindref="compound">wxDocManager</ref> </para>
 </simplesect>
 </para>

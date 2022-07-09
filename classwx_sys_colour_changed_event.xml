@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_sys_colour_changed_event" kind="class" language="C++" prot="public">
     <compoundname>wxSysColourChangedEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxSysColourChangedEvent::wxSysColourChangedEvent</definition>
         <argsstring>()</argsstring>
         <name>wxSysColourChangedEvent</name>
+        <qualifiedname>wxSysColourChangedEvent::wxSysColourChangedEvent</qualifiedname>
         <briefdescription>
 <para>Constructor. </para>
         </briefdescription>
@@ -17,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1908" column="5"/>
+        <location file="interface/wx/event.h" line="1933" column="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -28,17 +29,17 @@
 <para>Event handlers for this event can access the new system colour settings through <ref refid="classwx_system_settings_1ab252414b60f16a233bc17df2a19bd804" kindref="member">wxSystemSettings::GetColour()</ref>.</para>
 <para><simplesect kind="remark"><para>The default event handler for this event propagates the event to child windows, since the system events are only sent to top-level windows. If intercepting this event for a top-level window, remember to either call <ref refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" kindref="member">wxEvent::Skip()</ref> on the event, call the base class handler, or pass the event on to the window&apos;s children explicitly.</para>
 </simplesect>
-<linebreak/>
 <heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_sys_colour_changed_event" kindref="compound">wxSysColourChangedEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
-<listitem><para>EVT_SYS_COLOUR_CHANGED(func): Process a <computeroutput>wxEVT_SYS_COLOUR_CHANGED</computeroutput> event. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_SYS_COLOUR_CHANGED(func): Process a <computeroutput>wxEVT_SYS_COLOUR_CHANGED</computeroutput> event. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_events" kindref="compound">Events and Event Handling</ref> </para>
 </simplesect>
 </para>
@@ -86,7 +87,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="1902" column="1" bodyfile="interface/wx/event.h" bodystart="1903" bodyend="1909"/>
+    <location file="interface/wx/event.h" line="1927" column="1" bodyfile="interface/wx/event.h" bodystart="1928" bodyend="1934"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxSysColourChangedEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxSysColourChangedEvent</scope><name>Clone</name></member>

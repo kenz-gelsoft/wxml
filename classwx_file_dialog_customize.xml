@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classwx_file_dialog_customize" kind="class" language="C++" prot="public">
+    <compoundname>wxFileDialogCustomize</compoundname>
+    <includes local="no">wx/filedlgcustomize.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_file_dialog_customize_1a7caa6e2a724b7214cbda0c12f9159fb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_file_dialog_button" kindref="compound">wxFileDialogButton</ref> *</type>
+        <definition>wxFileDialogButton * wxFileDialogCustomize::AddButton</definition>
+        <argsstring>(const wxString &amp;label)</argsstring>
+        <name>AddButton</name>
+        <qualifiedname>wxFileDialogCustomize::AddButton</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+<para>Add a button with the specified label. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/filedlgcustomize.h" line="212" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_file_dialog_customize_1af796c5687bf22611bed7a32653a8862c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_file_dialog_check_box" kindref="compound">wxFileDialogCheckBox</ref> *</type>
+        <definition>wxFileDialogCheckBox * wxFileDialogCustomize::AddCheckBox</definition>
+        <argsstring>(const wxString &amp;label)</argsstring>
+        <name>AddCheckBox</name>
+        <qualifiedname>wxFileDialogCustomize::AddCheckBox</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+<para>Add a checkbox with the specified label. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/filedlgcustomize.h" line="217" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_file_dialog_customize_1a6502b3134277875ddb296dd8bd0c2f64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_file_dialog_radio_button" kindref="compound">wxFileDialogRadioButton</ref> *</type>
+        <definition>wxFileDialogRadioButton * wxFileDialogCustomize::AddRadioButton</definition>
+        <argsstring>(const wxString &amp;label)</argsstring>
+        <name>AddRadioButton</name>
+        <qualifiedname>wxFileDialogCustomize::AddRadioButton</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+<para>Add a radio button with the specified label. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The first radio button added will be initially checked. All the radio buttons added immediately after it will become part of the same radio group and will not be checked, but checking any one of them later will uncheck the first button and all the other ones.</para>
+<para>If two consecutive but distinct radio groups are required, <ref refid="classwx_file_dialog_customize_1abbd6f2af6561870c75b2ac9e5b105933" kindref="member">AddStaticText()</ref> with an empty label can be used to separate them. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/filedlgcustomize.h" line="230" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_file_dialog_customize_1aad15151985101353aa157033855c6207" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_file_dialog_choice" kindref="compound">wxFileDialogChoice</ref> *</type>
+        <definition>wxFileDialogChoice * wxFileDialogCustomize::AddChoice</definition>
+        <argsstring>(size_t n, const wxString *strings)</argsstring>
+        <name>AddChoice</name>
+        <qualifiedname>wxFileDialogCustomize::AddChoice</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> *</type>
+          <declname>strings</declname>
+        </param>
+        <briefdescription>
+<para>Add a read-only combobox with the specified contents. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The combobox doesn&apos;t have any initial selection, i.e. <ref refid="classwx_file_dialog_choice_1afc064d5985d8d1dd3fe348daeb94ffaa" kindref="member">wxFileDialogChoice::GetSelection()</ref> returns <computeroutput>wxNOT_FOUND</computeroutput>, if some item must be selected, use <ref refid="classwx_file_dialog_choice_1ada27caa7448a606d26fa73702f1f8549" kindref="member">wxFileDialogChoice::SetSelection()</ref> explicitly to do it.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of strings, must be positive, as there is no way to add more strings later and creating an empty combobox is not very useful. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strings</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A non-NULL pointer to an array of <emphasis>n</emphasis> strings. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/filedlgcustomize.h" line="245" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_file_dialog_customize_1aab16c1dea27ca3748bee14ffe36262c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_file_dialog_text_ctrl" kindref="compound">wxFileDialogTextCtrl</ref> *</type>
+        <definition>wxFileDialogTextCtrl * wxFileDialogCustomize::AddTextCtrl</definition>
+        <argsstring>(const wxString &amp;label=wxString())</argsstring>
+        <name>AddTextCtrl</name>
+        <qualifiedname>wxFileDialogCustomize::AddTextCtrl</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>label</declname>
+          <defval><ref refid="classwx_string" kindref="compound">wxString</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Add a text control with an optional label preceding it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Unlike all the other functions for adding controls, the <emphasis>label</emphasis> parameter here doesn&apos;t specify the contents of the text control itself, but rather the label appearing before it. Unlike static controls added by <ref refid="classwx_file_dialog_customize_1abbd6f2af6561870c75b2ac9e5b105933" kindref="member">AddStaticText()</ref>, this label is guaranteed to be immediately adjacent to it.</para>
+<para>If <emphasis>label</emphasis> is empty, no label is created. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/filedlgcustomize.h" line="258" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_file_dialog_customize_1abbd6f2af6561870c75b2ac9e5b105933" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_file_dialog_static_text" kindref="compound">wxFileDialogStaticText</ref> *</type>
+        <definition>wxFileDialogStaticText * wxFileDialogCustomize::AddStaticText</definition>
+        <argsstring>(const wxString &amp;label)</argsstring>
+        <name>AddStaticText</name>
+        <qualifiedname>wxFileDialogCustomize::AddStaticText</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+<para>Add a static text with the given contents. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The contents of the static text can be updated later, i.e. it doesn&apos;t need to be actually static. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/filedlgcustomize.h" line="266" column="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Used with <ref refid="classwx_file_dialog_customize_hook" kindref="compound">wxFileDialogCustomizeHook</ref> to add custom controls to <ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>An object of this class is passed to <ref refid="classwx_file_dialog_customize_hook_1a1269e59f30b50994c124db5c7175445b" kindref="member">wxFileDialogCustomizeHook::AddCustomControls()</ref> to allow it to actually add controls to the dialog.</para>
+<para>The pointers returned by the functions of this class belong to wxWidgets and should <emphasis>not</emphasis> be deleted by the application, just as wxWindow-derived objects (even if these controls do not inherit from <ref refid="classwx_window" kindref="compound">wxWindow</ref>). These pointers become invalid when <ref refid="classwx_file_dialog_1a04943e4abb27a197a110898d40ddb4f0" kindref="member">wxFileDialog::ShowModal()</ref> returns, and the dialog containing them is destroyed, and the latest point at which they can be still used is when <ref refid="classwx_file_dialog_customize_hook_1abc1458029f362686eb7b2ea4b6454413" kindref="member">wxFileDialogCustomizeHook::TransferDataFromCustomControls()</ref> is called.</para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__cmndlg" kindref="compound">Common Dialogs</ref></para>
+<para><simplesect kind="see"><para><ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref></para>
+</simplesect>
+<simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/filedlgcustomize.h" line="206" column="1" bodyfile="interface/wx/filedlgcustomize.h" bodystart="207" bodyend="267"/>
+    <listofallmembers>
+      <member refid="classwx_file_dialog_customize_1a7caa6e2a724b7214cbda0c12f9159fb8" prot="public" virt="non-virtual"><scope>wxFileDialogCustomize</scope><name>AddButton</name></member>
+      <member refid="classwx_file_dialog_customize_1af796c5687bf22611bed7a32653a8862c" prot="public" virt="non-virtual"><scope>wxFileDialogCustomize</scope><name>AddCheckBox</name></member>
+      <member refid="classwx_file_dialog_customize_1aad15151985101353aa157033855c6207" prot="public" virt="non-virtual"><scope>wxFileDialogCustomize</scope><name>AddChoice</name></member>
+      <member refid="classwx_file_dialog_customize_1a6502b3134277875ddb296dd8bd0c2f64" prot="public" virt="non-virtual"><scope>wxFileDialogCustomize</scope><name>AddRadioButton</name></member>
+      <member refid="classwx_file_dialog_customize_1abbd6f2af6561870c75b2ac9e5b105933" prot="public" virt="non-virtual"><scope>wxFileDialogCustomize</scope><name>AddStaticText</name></member>
+      <member refid="classwx_file_dialog_customize_1aab16c1dea27ca3748bee14ffe36262c7" prot="public" virt="non-virtual"><scope>wxFileDialogCustomize</scope><name>AddTextCtrl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_persistence_manager" kind="class" language="C++" prot="public">
     <compoundname>wxPersistenceManager</compoundname>
     <includes local="no">wx/persist.h</includes>
@@ -9,6 +9,7 @@
         <definition>static void wxPersistenceManager::Set</definition>
         <argsstring>(wxPersistenceManager &amp;manager)</argsstring>
         <name>Set</name>
+        <qualifiedname>wxPersistenceManager::Set</qualifiedname>
         <param>
           <type><ref refid="classwx_persistence_manager" kindref="compound">wxPersistenceManager</ref> &amp;</type>
           <declname>manager</declname>
@@ -31,6 +32,7 @@
         <definition>static wxPersistenceManager &amp; wxPersistenceManager::Get</definition>
         <argsstring>()</argsstring>
         <name>Get</name>
+        <qualifiedname>wxPersistenceManager::Get</qualifiedname>
         <briefdescription>
 <para>Returns the unique persistence manager object. </para>
         </briefdescription>
@@ -48,6 +50,7 @@
         <definition>void wxPersistenceManager::DisableSaving</definition>
         <argsstring>()</argsstring>
         <name>DisableSaving</name>
+        <qualifiedname>wxPersistenceManager::DisableSaving</qualifiedname>
         <briefdescription>
 <para>Globally disable saving the persistence object properties. </para>
         </briefdescription>
@@ -66,6 +69,7 @@
         <definition>void wxPersistenceManager::DisableRestoring</definition>
         <argsstring>()</argsstring>
         <name>DisableRestoring</name>
+        <qualifiedname>wxPersistenceManager::DisableRestoring</qualifiedname>
         <briefdescription>
 <para>Globally disable restoring the persistence object properties. </para>
         </briefdescription>
@@ -89,6 +93,7 @@
         <definition>wxPersistentObject * wxPersistenceManager::Register</definition>
         <argsstring>(T *obj)</argsstring>
         <name>Register</name>
+        <qualifiedname>wxPersistenceManager::Register</qualifiedname>
         <param>
           <type>T *</type>
           <declname>obj</declname>
@@ -118,6 +123,7 @@
         <definition>wxPersistentObject * wxPersistenceManager::Register</definition>
         <argsstring>(void *obj, wxPersistentObject *po)</argsstring>
         <name>Register</name>
+        <qualifiedname>wxPersistenceManager::Register</qualifiedname>
         <param>
           <type>void *</type>
           <declname>obj</declname>
@@ -160,6 +166,7 @@
         <definition>wxPersistentObject * wxPersistenceManager::Find</definition>
         <argsstring>(void *obj) const</argsstring>
         <name>Find</name>
+        <qualifiedname>wxPersistenceManager::Find</qualifiedname>
         <param>
           <type>void *</type>
           <declname>obj</declname>
@@ -178,6 +185,7 @@
         <definition>void wxPersistenceManager::Unregister</definition>
         <argsstring>(void *obj)</argsstring>
         <name>Unregister</name>
+        <qualifiedname>wxPersistenceManager::Unregister</qualifiedname>
         <param>
           <type>void *</type>
           <declname>obj</declname>
@@ -207,6 +215,7 @@
         <definition>void wxPersistenceManager::Save</definition>
         <argsstring>(void *obj)</argsstring>
         <name>Save</name>
+        <qualifiedname>wxPersistenceManager::Save</qualifiedname>
         <param>
           <type>void *</type>
           <declname>obj</declname>
@@ -238,6 +247,7 @@
         <definition>bool wxPersistenceManager::Restore</definition>
         <argsstring>(void *obj)</argsstring>
         <name>Restore</name>
+        <qualifiedname>wxPersistenceManager::Restore</qualifiedname>
         <param>
           <type>void *</type>
           <declname>obj</declname>
@@ -271,6 +281,7 @@
         <definition>void wxPersistenceManager::SaveAndUnregister</definition>
         <argsstring>(void *obj)</argsstring>
         <name>SaveAndUnregister</name>
+        <qualifiedname>wxPersistenceManager::SaveAndUnregister</qualifiedname>
         <param>
           <type>void *</type>
           <declname>obj</declname>
@@ -294,6 +305,7 @@
         <definition>bool wxPersistenceManager::RegisterAndRestore</definition>
         <argsstring>(T *obj)</argsstring>
         <name>RegisterAndRestore</name>
+        <qualifiedname>wxPersistenceManager::RegisterAndRestore</qualifiedname>
         <param>
           <type>T *</type>
           <declname>obj</declname>
@@ -312,6 +324,7 @@
         <definition>bool wxPersistenceManager::RegisterAndRestore</definition>
         <argsstring>(void *obj, wxPersistentObject *po)</argsstring>
         <name>RegisterAndRestore</name>
+        <qualifiedname>wxPersistenceManager::RegisterAndRestore</qualifiedname>
         <param>
           <type>void *</type>
           <declname>obj</declname>
@@ -335,6 +348,7 @@
         <definition>wxPersistenceManager::wxPersistenceManager</definition>
         <argsstring>()</argsstring>
         <name>wxPersistenceManager</name>
+        <qualifiedname>wxPersistenceManager::wxPersistenceManager</qualifiedname>
         <briefdescription>
 <para>Protected default constructor. </para>
         </briefdescription>
@@ -350,11 +364,12 @@
         <definition>virtual wxConfigBase * wxPersistenceManager::GetConfig</definition>
         <argsstring>() const</argsstring>
         <name>GetConfig</name>
+        <qualifiedname>wxPersistenceManager::GetConfig</qualifiedname>
         <briefdescription>
 <para>Return the config object to use. </para>
         </briefdescription>
         <detaileddescription>
-<para>By default the global wxConfig, returned by wxConfigBase::Get(), is used but a derived class could override this function to return a different one if necessary.</para>
+<para>By default the global wxConfig, returned by <ref refid="classwx_config_base_1ab31367e3dcc02e9df9e76aff92b624b8" kindref="member">wxConfigBase::Get()</ref>, is used but a derived class could override this function to return a different one if necessary.</para>
 <para><simplesect kind="since"><para>2.9.3 </para>
 </simplesect>
 </para>
@@ -368,6 +383,7 @@
         <definition>virtual wxString wxPersistenceManager::GetKey</definition>
         <argsstring>(const wxPersistentObject &amp;who, const wxString &amp;name) const</argsstring>
         <name>GetKey</name>
+        <qualifiedname>wxPersistenceManager::GetKey</qualifiedname>
         <param>
           <type>const <ref refid="classwx_persistent_object" kindref="compound">wxPersistentObject</ref> &amp;</type>
           <declname>who</declname>

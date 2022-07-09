@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_buffered_paint_d_c" kind="class" language="C++" prot="public">
     <compoundname>wxBufferedPaintDC</compoundname>
     <basecompoundref refid="classwx_buffered_d_c" prot="public" virt="non-virtual">wxBufferedDC</basecompoundref>
@@ -11,6 +11,7 @@
         <definition>wxBufferedPaintDC::wxBufferedPaintDC</definition>
         <argsstring>(wxWindow *window, wxBitmap &amp;buffer, int style=wxBUFFER_CLIENT_AREA)</argsstring>
         <name>wxBufferedPaintDC</name>
+        <qualifiedname>wxBufferedPaintDC::wxBufferedPaintDC</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>window</declname>
@@ -39,6 +40,7 @@
         <definition>wxBufferedPaintDC::wxBufferedPaintDC</definition>
         <argsstring>(wxWindow *window, int style=wxBUFFER_CLIENT_AREA)</argsstring>
         <name>wxBufferedPaintDC</name>
+        <qualifiedname>wxBufferedPaintDC::wxBufferedPaintDC</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>window</declname>
@@ -61,6 +63,7 @@
         <definition>virtual wxBufferedPaintDC::~wxBufferedPaintDC</definition>
         <argsstring>()</argsstring>
         <name>~wxBufferedPaintDC</name>
+        <qualifiedname>wxBufferedPaintDC::~wxBufferedPaintDC</qualifiedname>
         <briefdescription>
 <para>Copies everything drawn on the DC so far to the window associated with this object, using a <ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref>. </para>
         </briefdescription>
@@ -78,7 +81,8 @@
 <para>Just use this class instead of <ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref> and make sure <ref refid="classwx_window_1af14f8fd2ed2d30a9bbb5d4f9fd6594ec" kindref="member">wxWindow::SetBackgroundStyle()</ref> is called with wxBG_STYLE_PAINT somewhere in the class initialization code, and that&apos;s all you have to do to (mostly) avoid flicker. The only thing to watch out for is that if you are using this class together with <ref refid="classwx_scrolled" kindref="compound">wxScrolled</ref>, you probably do <bold>not</bold> want to call <ref refid="classwx_scrolled_1ab33dbfe88be5ede4b04de4dcec4830f0" kindref="member">wxScrolled::PrepareDC()</ref> on it as it already does this internally for the real underlying <ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref>.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__dc" kindref="compound">Device Contexts</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_d_c" kindref="compound">wxDC</ref>, <ref refid="classwx_buffered_d_c" kindref="compound">wxBufferedDC</ref>, <ref refid="classwx_auto_buffered_paint_d_c" kindref="compound">wxAutoBufferedPaintDC</ref>, <ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref> </para>
 </simplesect>
 </para>
@@ -222,6 +226,9 @@
       <member refid="classwx_d_c_1a3867f84557ecaf68bfeacffea74e8902" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>EndPage</name></member>
       <member refid="classwx_d_c_1af510e22ffc274d3d3b29659941f2b5a9" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>FloodFill</name></member>
       <member refid="classwx_d_c_1aa3ad38fdcd0e731af94bd9c3189e72e9" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>FloodFill</name></member>
+      <member refid="classwx_d_c_1a3772199152ffa9cedd329f1737ed2056" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>FromDIP</name></member>
+      <member refid="classwx_d_c_1a49f34844c09f1960eeca84bf0db6cd99" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>FromDIP</name></member>
+      <member refid="classwx_d_c_1aef329d3fd4ab4e8e7d6c0ebd35462dc9" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>FromDIP</name></member>
       <member refid="classwx_d_c_1ad29258b841e124462aa74a5581526e9e" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>GetAsBitmap</name></member>
       <member refid="classwx_d_c_1adfd305c5b5bc597f6c976fe511d30d08" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>GetBackground</name></member>
       <member refid="classwx_d_c_1ae4f34b8c09b8f7af5c848906ead10e64" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>GetBackgroundMode</name></member>
@@ -231,6 +238,7 @@
       <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxBufferedPaintDC</scope><name>GetClassInfo</name></member>
       <member refid="classwx_d_c_1a866cebe05c603892235701239f8dbd65" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>GetClippingBox</name></member>
       <member refid="classwx_d_c_1a5a379f8f932a5d7d2e05f0820932f444" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>GetClippingBox</name></member>
+      <member refid="classwx_d_c_1a6c20d102c499c335547b63156d2bb631" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>GetContentScaleFactor</name></member>
       <member refid="classwx_d_c_1a798700d907980c88c717e86a4a06e924" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>GetDepth</name></member>
       <member refid="classwx_d_c_1a1ce47e2939c15b7290540a4ca1736eb5" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>GetDeviceOrigin</name></member>
       <member refid="classwx_d_c_1a159ff92c61d4886e52d688ac4cb1128b" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>GetFont</name></member>
@@ -318,6 +326,9 @@
       <member refid="classwx_d_c_1ad6572581c9d31dc349b6a7462426856c" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>StartDoc</name></member>
       <member refid="classwx_d_c_1a94c855ceb9f2fd5dcd1cf61396c13576" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>StartPage</name></member>
       <member refid="classwx_d_c_1a82801167a35e747218c49aa2161ae4bf" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>StretchBlit</name></member>
+      <member refid="classwx_d_c_1ae512fadbd38d4a82aa10ed2028408da9" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>ToDIP</name></member>
+      <member refid="classwx_d_c_1ac012d95ee8c1b35912ad8e485b6cbbbf" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>ToDIP</name></member>
+      <member refid="classwx_d_c_1a1cf1813ac567d368b0e917d947e6c1fc" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>ToDIP</name></member>
       <member refid="classwx_buffered_d_c_1a6af93506345c418732e857c5551dc30b" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>UnMask</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>UnRef</name></member>
       <member refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" prot="public" virt="non-virtual"><scope>wxBufferedPaintDC</scope><name>UnShare</name></member>

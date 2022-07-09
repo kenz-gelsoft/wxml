@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_file_system_watcher_event" kind="class" language="C++" prot="public">
     <compoundname>wxFileSystemWatcherEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxFileSystemWatcherEvent::wxFileSystemWatcherEvent</definition>
         <argsstring>(int changeType=0, int watchid=wxID_ANY)</argsstring>
         <name>wxFileSystemWatcherEvent</name>
+        <qualifiedname>wxFileSystemWatcherEvent::wxFileSystemWatcherEvent</qualifiedname>
         <param>
           <type>int</type>
           <declname>changeType</declname>
@@ -33,6 +34,7 @@
         <definition>wxFileSystemWatcherEvent::wxFileSystemWatcherEvent</definition>
         <argsstring>(int changeType, wxFSWWarningType warningType, const wxString &amp;errorMsg, int watchid=wxID_ANY)</argsstring>
         <name>wxFileSystemWatcherEvent</name>
+        <qualifiedname>wxFileSystemWatcherEvent::wxFileSystemWatcherEvent</qualifiedname>
         <param>
           <type>int</type>
           <declname>changeType</declname>
@@ -63,6 +65,7 @@
         <definition>wxFileSystemWatcherEvent::wxFileSystemWatcherEvent</definition>
         <argsstring>(int changeType, const wxFileName &amp;path, const wxFileName &amp;newPath, int watchid=wxID_ANY)</argsstring>
         <name>wxFileSystemWatcherEvent</name>
+        <qualifiedname>wxFileSystemWatcherEvent::wxFileSystemWatcherEvent</qualifiedname>
         <param>
           <type>int</type>
           <declname>changeType</declname>
@@ -93,6 +96,7 @@
         <definition>const wxFileName &amp; wxFileSystemWatcherEvent::GetPath</definition>
         <argsstring>() const</argsstring>
         <name>GetPath</name>
+        <qualifiedname>wxFileSystemWatcherEvent::GetPath</qualifiedname>
         <briefdescription>
 <para>Returns the path at which the event occurred. </para>
         </briefdescription>
@@ -107,6 +111,7 @@
         <definition>const wxFileName &amp; wxFileSystemWatcherEvent::GetNewPath</definition>
         <argsstring>() const</argsstring>
         <name>GetNewPath</name>
+        <qualifiedname>wxFileSystemWatcherEvent::GetNewPath</qualifiedname>
         <briefdescription>
 <para>Returns the new path of the renamed file/directory if this is a rename event. </para>
         </briefdescription>
@@ -122,6 +127,7 @@
         <definition>int wxFileSystemWatcherEvent::GetChangeType</definition>
         <argsstring>() const</argsstring>
         <name>GetChangeType</name>
+        <qualifiedname>wxFileSystemWatcherEvent::GetChangeType</qualifiedname>
         <briefdescription>
 <para>Returns the type of file system change that occurred. </para>
         </briefdescription>
@@ -137,6 +143,7 @@
         <definition>bool wxFileSystemWatcherEvent::IsError</definition>
         <argsstring>() const</argsstring>
         <name>IsError</name>
+        <qualifiedname>wxFileSystemWatcherEvent::IsError</qualifiedname>
         <briefdescription>
 <para>Returns <computeroutput>true</computeroutput> if this error is an error event. </para>
         </briefdescription>
@@ -152,6 +159,7 @@
         <definition>wxString wxFileSystemWatcherEvent::GetErrorDescription</definition>
         <argsstring>() const</argsstring>
         <name>GetErrorDescription</name>
+        <qualifiedname>wxFileSystemWatcherEvent::GetErrorDescription</qualifiedname>
         <briefdescription>
 <para>Return a description of the warning or error if this is an error event. </para>
         </briefdescription>
@@ -167,6 +175,7 @@
         <definition>wxFSWWarningType wxFileSystemWatcherEvent::GetWarningType</definition>
         <argsstring>() const</argsstring>
         <name>GetWarningType</name>
+        <qualifiedname>wxFileSystemWatcherEvent::GetWarningType</qualifiedname>
         <briefdescription>
 <para>Return the type of the warning if this event is a warning one. </para>
         </briefdescription>
@@ -185,6 +194,7 @@
         <definition>wxString wxFileSystemWatcherEvent::ToString</definition>
         <argsstring>() const</argsstring>
         <name>ToString</name>
+        <qualifiedname>wxFileSystemWatcherEvent::ToString</qualifiedname>
         <briefdescription>
 <para>Returns a <ref refid="classwx_string" kindref="compound">wxString</ref> describing an event, useful for logging, debugging or testing. </para>
         </briefdescription>
@@ -202,7 +212,8 @@
 <para>Types of events reported may vary depending on a platform, however all platforms report at least creation of new file/directory and access, modification, move (rename) or deletion of an existing one.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_file_system_watcher" kindref="compound">wxFileSystemWatcher</ref> </para>
 </simplesect>
 <simplesect kind="see"><para><ref refid="overview_events" kindref="compound">Events and Event Handling</ref></para>

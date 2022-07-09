@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classwx_bitmap_bundle_impl" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>wxBitmapBundleImpl</compoundname>
+    <basecompoundref refid="classwx_ref_counter" prot="public" virt="non-virtual">wxRefCounter</basecompoundref>
+    <includes local="no">wx/bmpbndl.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_bitmap_bundle_impl_1a921ffd46bba93bde9e0513e7a72d0b58" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
+        <definition>virtual wxSize wxBitmapBundleImpl::GetDefaultSize</definition>
+        <argsstring>() const =0</argsstring>
+        <name>GetDefaultSize</name>
+        <qualifiedname>wxBitmapBundleImpl::GetDefaultSize</qualifiedname>
+        <briefdescription>
+<para>Return the size of the bitmaps represented by this bundle in the default DPI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Must always return a valid size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="488" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_impl_1accea77135c6df90862af7c6b8f2c3ae2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
+        <definition>virtual wxSize wxBitmapBundleImpl::GetPreferredBitmapSizeAtScale</definition>
+        <argsstring>(double scale) const =0</argsstring>
+        <name>GetPreferredBitmapSizeAtScale</name>
+        <qualifiedname>wxBitmapBundleImpl::GetPreferredBitmapSizeAtScale</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+<para>Return the preferred size that should be used at the given scale. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Must always return a valid size. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="495" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_impl_1aa55b288b3c6258610878bbccd494bc33" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref></type>
+        <definition>virtual wxBitmap wxBitmapBundleImpl::GetBitmap</definition>
+        <argsstring>(const wxSize &amp;size)=0</argsstring>
+        <name>GetBitmap</name>
+        <qualifiedname>wxBitmapBundleImpl::GetBitmap</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve the bitmap of exactly the given size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that this function is non-const because it may generate the bitmap on demand and cache it. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="503" column="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classwx_bitmap_bundle_impl_1a7ac7f1fa6f363a1389ec82eca3242939" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
+        <definition>wxSize wxBitmapBundleImpl::DoGetPreferredSize</definition>
+        <argsstring>(double scale) const</argsstring>
+        <name>DoGetPreferredSize</name>
+        <qualifiedname>wxBitmapBundleImpl::DoGetPreferredSize</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+<para>Helper for implementing <ref refid="classwx_bitmap_bundle_impl_1accea77135c6df90862af7c6b8f2c3ae2" kindref="member">GetPreferredBitmapSizeAtScale()</ref> in the derived classes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function implements the standard algorithm used inside wxWidgets itself and tries to find the scale closest to the given one, while also trying to choose one of the available scales, to avoid actually rescaling the bitmaps.</para>
+<para>It relies on <ref refid="classwx_bitmap_bundle_impl_1af042a2632370d92fdd8c546d41683251" kindref="member">GetNextAvailableScale()</ref> to get information about the available bitmaps, so that function must be overridden if this one is used.</para>
+<para>Typically this function is used in the derived classes implementation to forward <ref refid="classwx_bitmap_bundle_impl_1accea77135c6df90862af7c6b8f2c3ae2" kindref="member">GetPreferredBitmapSizeAtScale()</ref> to it and when this is done, <ref refid="classwx_bitmap_bundle_impl_1aa55b288b3c6258610878bbccd494bc33" kindref="member">GetBitmap()</ref> may also use <ref refid="classwx_bitmap_bundle_impl_1a39facd123a2c79adc0302f5176d4342a" kindref="member">GetIndexToUpscale()</ref> to choose the bitmap to upscale if necessary: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyCustomBitmapBundleImpl<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_bitmap_bundle_impl" kindref="compound">wxBitmapBundleImpl</ref></highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_size" kindref="compound">wxSize</ref><sp/><ref refid="classwx_bitmap_bundle_impl_1a921ffd46bba93bde9e0513e7a72d0b58" kindref="member">GetDefaultSize</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classwx_size" kindref="compound">wxSize</ref>(32,<sp/>32);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_size" kindref="compound">wxSize</ref><sp/><ref refid="classwx_bitmap_bundle_impl_1accea77135c6df90862af7c6b8f2c3ae2" kindref="member">GetPreferredBitmapSizeAtScale</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scale)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="defs_8h_1ac105e0280dbaa177535a20d969e401db" kindref="member">wxOVERRIDE</ref></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classwx_bitmap_bundle_impl_1a7ac7f1fa6f363a1389ec82eca3242939" kindref="member">DoGetPreferredSize</ref>(scale);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref><sp/><ref refid="classwx_bitmap_bundle_impl_1aa55b288b3c6258610878bbccd494bc33" kindref="member">GetBitmap</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_size" kindref="compound">wxSize</ref>&amp;<sp/>size)<sp/><ref refid="defs_8h_1ac105e0280dbaa177535a20d969e401db" kindref="member">wxOVERRIDE</ref></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>consistency<sp/>with<sp/>GetNextAvailableScale(),<sp/>we<sp/>must<sp/>have</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bitmap<sp/>variants<sp/>for<sp/>32,<sp/>48<sp/>and<sp/>64px<sp/>sizes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classwx_size" kindref="compound">wxSize</ref><sp/>availableSizes[]<sp/>=<sp/>{<sp/>32,<sp/>48,<sp/>64<sp/>};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>size.y<sp/>&lt;=<sp/>64<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>get<sp/>the<sp/>bitmap<sp/>from<sp/>somewhere<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n<sp/>=<sp/><ref refid="classwx_bitmap_bundle_impl_1a39facd123a2c79adc0302f5176d4342a" kindref="member">GetIndexToUpscale</ref>(size);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bitmap<sp/>=<sp/>...<sp/>get<sp/>bitmap<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>availableSizes[n]<sp/>...;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_bitmap_1a763538fd40a30a6237c795bdb486f14b" kindref="member">wxBitmap::Rescale</ref>(bitmap,<sp/>size);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bitmap;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classwx_bitmap_bundle_impl_1af042a2632370d92fdd8c546d41683251" kindref="member">GetNextAvailableScale</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">&amp;<sp/>i)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="defs_8h_1ac105e0280dbaa177535a20d969e401db" kindref="member">wxOVERRIDE</ref></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>availableScales[]<sp/>=<sp/>{<sp/>1,<sp/>1.5,<sp/>2,<sp/>0<sp/>};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>can<sp/>rely<sp/>on<sp/>not<sp/>being<sp/>called<sp/>again<sp/>once<sp/>we<sp/>return<sp/>0.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>availableScales[i++];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scale</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required scale, typically the same one as passed to <ref refid="classwx_bitmap_bundle_impl_1accea77135c6df90862af7c6b8f2c3ae2" kindref="member">GetPreferredBitmapSizeAtScale()</ref>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="574" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_impl_1a39facd123a2c79adc0302f5176d4342a" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t wxBitmapBundleImpl::GetIndexToUpscale</definition>
+        <argsstring>(const wxSize &amp;size) const</argsstring>
+        <name>GetIndexToUpscale</name>
+        <qualifiedname>wxBitmapBundleImpl::GetIndexToUpscale</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Return the index of the available scale most suitable to be upscaled to the given size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See <ref refid="classwx_bitmap_bundle_impl_1a7ac7f1fa6f363a1389ec82eca3242939" kindref="member">DoGetPreferredSize()</ref> for an example of using this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The required size, typically the same one as passed to <ref refid="classwx_bitmap_bundle_impl_1aa55b288b3c6258610878bbccd494bc33" kindref="member">GetBitmap()</ref></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="587" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_impl_1af042a2632370d92fdd8c546d41683251" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>virtual double wxBitmapBundleImpl::GetNextAvailableScale</definition>
+        <argsstring>(size_t &amp;i) const</argsstring>
+        <name>GetNextAvailableScale</name>
+        <qualifiedname>wxBitmapBundleImpl::GetNextAvailableScale</qualifiedname>
+        <param>
+          <type>size_t &amp;</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Return information about the available bitmaps. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Overriding this function is optional and only needs to be done if either <ref refid="classwx_bitmap_bundle_impl_1a7ac7f1fa6f363a1389ec82eca3242939" kindref="member">DoGetPreferredSize()</ref> or <ref refid="classwx_bitmap_bundle_impl_1a39facd123a2c79adc0302f5176d4342a" kindref="member">GetIndexToUpscale()</ref> are called. If you do override it, this function must return the next available scale or 0.0 if there are no more.</para>
+<para>The returned scales must be in ascending order and the first returned scale, for the initial <emphasis>i</emphasis> value of 0, should be 1. The function must change <emphasis>i</emphasis>, but the values of this index don&apos;t have to be consecutive and it&apos;s only used by this function itself, the caller only initializes it to 0 before the first call.</para>
+<para>See <ref refid="classwx_bitmap_bundle_impl_1a7ac7f1fa6f363a1389ec82eca3242939" kindref="member">DoGetPreferredSize()</ref> for an example of implementing this function.</para>
+<para><simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="607" column="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class for custom implementations of <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class shouldn&apos;t be used directly in the application code, but may be derived from to implement custom bitmap bundles.</para>
+<para>Example of use: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyCustomBitmapBundleImpl<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_bitmap_bundle_impl" kindref="compound">wxBitmapBundleImpl</ref></highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyCustomBitmapBundleImpl()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_size" kindref="compound">wxSize</ref><sp/><ref refid="classwx_bitmap_bundle_impl_1a921ffd46bba93bde9e0513e7a72d0b58" kindref="member">GetDefaultSize</ref>()<sp/>const<sp/><ref refid="defs_8h_1ac105e0280dbaa177535a20d969e401db" kindref="member">wxOVERRIDE</ref></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>determine<sp/>the<sp/>minimum/</highlight><highlight class="keywordflow">default</highlight><highlight class="normal"><sp/>size<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>bitmap<sp/>to<sp/>use<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_size" kindref="compound">wxSize</ref><sp/><ref refid="classwx_bitmap_bundle_impl_1accea77135c6df90862af7c6b8f2c3ae2" kindref="member">GetPreferredBitmapSizeAtScale</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scale)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="defs_8h_1ac105e0280dbaa177535a20d969e401db" kindref="member">wxOVERRIDE</ref></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>it&apos;s<sp/>ok<sp/>to<sp/>scale<sp/>the<sp/>bitmap,<sp/>just<sp/>use<sp/>the<sp/>standard<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>at<sp/>the<sp/>given<sp/>scale:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classwx_bitmap_bundle_impl_1a921ffd46bba93bde9e0513e7a72d0b58" kindref="member">GetDefaultSize</ref>()*scale;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>otherwise,<sp/>an<sp/>existing<sp/>bitmap<sp/>of<sp/>the<sp/>size<sp/>closest<sp/>to<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>one<sp/>above<sp/>would<sp/>need<sp/>to<sp/>be<sp/>found<sp/>and<sp/>its<sp/>size<sp/>returned,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>possibly<sp/>by<sp/>letting<sp/><ref refid="classwx_bitmap_bundle_impl_1a7ac7f1fa6f363a1389ec82eca3242939" kindref="member">DoGetPreferredSize</ref>()<sp/>choose<sp/>it<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref><sp/><ref refid="classwx_bitmap_bundle_impl_1aa55b288b3c6258610878bbccd494bc33" kindref="member">GetBitmap</ref>(const<sp/><ref refid="classwx_size" kindref="compound">wxSize</ref>&amp;<sp/>size)<sp/><ref refid="defs_8h_1ac105e0280dbaa177535a20d969e401db" kindref="member">wxOVERRIDE</ref></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>get<sp/>the<sp/>bitmap<sp/>of<sp/>the<sp/>requested<sp/>size<sp/>from<sp/>somewhere<sp/>and</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cache<sp/>it<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>necessary,<sp/>i.e.<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>getting<sp/>it<sp/>is<sp/>expensive<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">toolBar-&gt;AddTool(<ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbbabade95d4db047c65a8c8e213a6b21f7b" kindref="member">wxID_OPEN</ref>,<sp/><ref refid="classwx_bitmap_bundle_1ab1d0babc46f3176bd4b63ce2750c89d6" kindref="member">wxBitmapBundle::FromImpl</ref>(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyCustomBitmapBundleImpl());</highlight></codeline>
+</programlisting></para>
+<para>Full (but still very simple) example of using it can be found in the toolbar sample code.</para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__gdi" kindref="compound">Graphics Device Interface (GDI)</ref></para>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>wxBitmapBundleImpl</label>
+        <link refid="classwx_bitmap_bundle_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxRefCounter</label>
+        <link refid="classwx_ref_counter"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>wxBitmapBundleImpl</label>
+        <link refid="classwx_bitmap_bundle_impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxRefCounter</label>
+        <link refid="classwx_ref_counter"/>
+      </node>
+    </collaborationgraph>
+    <location file="interface/wx/bmpbndl.h" line="479" column="1" bodyfile="interface/wx/bmpbndl.h" bodystart="480" bodyend="608"/>
+    <listofallmembers>
+      <member refid="classwx_ref_counter_1a803eb5be907b1a342082ceb59c01d8c5" prot="public" virt="non-virtual"><scope>wxBitmapBundleImpl</scope><name>DecRef</name></member>
+      <member refid="classwx_bitmap_bundle_impl_1a7ac7f1fa6f363a1389ec82eca3242939" prot="protected" virt="non-virtual"><scope>wxBitmapBundleImpl</scope><name>DoGetPreferredSize</name></member>
+      <member refid="classwx_bitmap_bundle_impl_1aa55b288b3c6258610878bbccd494bc33" prot="public" virt="pure-virtual"><scope>wxBitmapBundleImpl</scope><name>GetBitmap</name></member>
+      <member refid="classwx_bitmap_bundle_impl_1a921ffd46bba93bde9e0513e7a72d0b58" prot="public" virt="pure-virtual"><scope>wxBitmapBundleImpl</scope><name>GetDefaultSize</name></member>
+      <member refid="classwx_bitmap_bundle_impl_1a39facd123a2c79adc0302f5176d4342a" prot="protected" virt="non-virtual"><scope>wxBitmapBundleImpl</scope><name>GetIndexToUpscale</name></member>
+      <member refid="classwx_bitmap_bundle_impl_1af042a2632370d92fdd8c546d41683251" prot="protected" virt="virtual"><scope>wxBitmapBundleImpl</scope><name>GetNextAvailableScale</name></member>
+      <member refid="classwx_bitmap_bundle_impl_1accea77135c6df90862af7c6b8f2c3ae2" prot="public" virt="pure-virtual"><scope>wxBitmapBundleImpl</scope><name>GetPreferredBitmapSizeAtScale</name></member>
+      <member refid="classwx_ref_counter_1a98ca5fc3fa6219d993dd3654925c46aa" prot="public" virt="non-virtual"><scope>wxBitmapBundleImpl</scope><name>GetRefCount</name></member>
+      <member refid="classwx_ref_counter_1a9fec1fb6f778d9df7a8c046ad6a2d887" prot="public" virt="non-virtual"><scope>wxBitmapBundleImpl</scope><name>IncRef</name></member>
+      <member refid="classwx_ref_counter_1aebcddb8241dfea7f60f8e4df6776a0e3" prot="public" virt="non-virtual"><scope>wxBitmapBundleImpl</scope><name>wxRefCounter</name></member>
+      <member refid="classwx_ref_counter_1aeaa9aceda6421eaa0d693cc29795263a" prot="protected" virt="virtual"><scope>wxBitmapBundleImpl</scope><name>~wxRefCounter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

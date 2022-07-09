@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_file_picker_ctrl" kind="class" language="C++" prot="public">
     <compoundname>wxFilePickerCtrl</compoundname>
     <basecompoundref refid="classwx_picker_base" prot="public" virt="non-virtual">wxPickerBase</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxFilePickerCtrl::wxFilePickerCtrl</definition>
         <argsstring>()</argsstring>
         <name>wxFilePickerCtrl</name>
+        <qualifiedname>wxFilePickerCtrl::wxFilePickerCtrl</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -23,6 +24,7 @@
         <definition>wxFilePickerCtrl::wxFilePickerCtrl</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxString &amp;path=wxEmptyString, const wxString &amp;message=wxFileSelectorPromptStr, const wxString &amp;wildcard=wxFileSelectorDefaultWildcardStr, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=wxFLP_DEFAULT_STYLE, const wxValidator &amp;validator=wxDefaultValidator, const wxString &amp;name=wxFilePickerCtrlNameStr)</argsstring>
         <name>wxFilePickerCtrl</name>
+        <qualifiedname>wxFilePickerCtrl::wxFilePickerCtrl</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -85,6 +87,7 @@
         <definition>bool wxFilePickerCtrl::Create</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxString &amp;path=wxEmptyString, const wxString &amp;message=wxFileSelectorPromptStr, const wxString &amp;wildcard=wxFileSelectorDefaultWildcardStr, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=wxFLP_DEFAULT_STYLE, const wxValidator &amp;validator=wxDefaultValidator, const wxString &amp;name=wxFilePickerCtrlNameStr)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxFilePickerCtrl::Create</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -231,6 +234,7 @@
         <definition>wxFileName wxFilePickerCtrl::GetFileName</definition>
         <argsstring>() const</argsstring>
         <name>GetFileName</name>
+        <qualifiedname>wxFilePickerCtrl::GetFileName</qualifiedname>
         <briefdescription>
 <para>Similar to <ref refid="classwx_file_picker_ctrl_1a38c4aa4c15e6b001aabebcb91f176a89" kindref="member">GetPath()</ref> but returns the path of the currently selected file as a <ref refid="classwx_file_name" kindref="compound">wxFileName</ref> object. </para>
         </briefdescription>
@@ -245,6 +249,7 @@
         <definition>wxString wxFilePickerCtrl::GetPath</definition>
         <argsstring>() const</argsstring>
         <name>GetPath</name>
+        <qualifiedname>wxFilePickerCtrl::GetPath</qualifiedname>
         <briefdescription>
 <para>Returns the absolute path of the currently selected file. </para>
         </briefdescription>
@@ -259,6 +264,7 @@
         <definition>void wxFilePickerCtrl::SetFileName</definition>
         <argsstring>(const wxFileName &amp;filename)</argsstring>
         <name>SetFileName</name>
+        <qualifiedname>wxFilePickerCtrl::SetFileName</qualifiedname>
         <param>
           <type>const <ref refid="classwx_file_name" kindref="compound">wxFileName</ref> &amp;</type>
           <declname>filename</declname>
@@ -277,6 +283,7 @@
         <definition>void wxFilePickerCtrl::SetInitialDirectory</definition>
         <argsstring>(const wxString &amp;dir)</argsstring>
         <name>SetInitialDirectory</name>
+        <qualifiedname>wxFilePickerCtrl::SetInitialDirectory</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>dir</declname>
@@ -299,6 +306,7 @@
         <definition>void wxFilePickerCtrl::SetPath</definition>
         <argsstring>(const wxString &amp;filename)</argsstring>
         <name>SetPath</name>
+        <qualifiedname>wxFilePickerCtrl::SetPath</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filename</declname>
@@ -319,8 +327,7 @@
     </briefdescription>
     <detaileddescription>
 <para>The generic implementation is a button which brings up a <ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref> when clicked. Native implementation may differ but this is usually a (small) widget which give access to the file-chooser dialog. It is only available if <computeroutput>wxUSE_FILEPICKERCTRL</computeroutput> is set to 1 (the default).</para>
-<para><linebreak/>
-<heading level="2">Styles</heading>
+<para><heading level="2">Styles</heading>
 </para>
 <para>This class supports the following styles:</para>
 <para> <itemizedlist>
@@ -338,30 +345,23 @@
 </listitem>
 <listitem><para>wxFLP_CHANGE_DIR: Change current working directory on each user file selection change. </para>
 </listitem>
-<listitem><para>wxFLP_SMALL: Use smaller version of the control with a small &quot;...&quot; button instead of the normal &quot;Browse&quot; one. This flag is new since wxWidgets 2.9.3. <linebreak/>
-</para>
+<listitem><para>wxFLP_SMALL: Use smaller version of the control with a small &quot;...&quot; button instead of the normal &quot;Browse&quot; one. This flag is new since wxWidgets 2.9.3. </para>
 </listitem>
 </itemizedlist>
-<linebreak/>
 <heading level="2">Events emitted by this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_file_dir_picker_event" kindref="compound">wxFileDirPickerEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros for events emitted by this class: <itemizedlist>
-<listitem><para>EVT_FILEPICKER_CHANGED(id,  func): The user changed the file selected in the control either using the button or using text control (see wxFLP_USE_TEXTCTRL; note that in this case the event is fired only if the user&apos;s input is valid, e.g. an existing file path if wxFLP_FILE_MUST_EXIST was given). <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_FILEPICKER_CHANGED(id,  func): The user changed the file selected in the control either using the button or using text control (see wxFLP_USE_TEXTCTRL; note that in this case the event is fired only if the user&apos;s input is valid, e.g. an existing file path if wxFLP_FILE_MUST_EXIST was given). </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-filepickerctrl-msw.png">wxMSW Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-filepickerctrl-gtk.png">wxGTK Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-filepickerctrl-mac.png">wxOSX Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__pickers" kindref="compound">Picker Controls</ref> <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-filepickerctrl-msw.png">wxMSW Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-filepickerctrl-gtk.png">wxGTK Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-filepickerctrl-mac.png">wxOSX Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
 <para><simplesect kind="see"><para><ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref>, <ref refid="classwx_file_dir_picker_event" kindref="compound">wxFileDirPickerEvent</ref> </para>
 </simplesect>
 </para>
@@ -538,6 +538,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1a71f45373a9fc55e128d263391093c32a" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1ad122671fcef564f7e11658c3ee0d4d87" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1aee63c8b1f8055fef76962578aa7f38c1" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>FromDIP</name></member>
+      <member refid="classwx_window_1a144678f0b197268aa9d8d81b76a150a7" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a048d540d731ac83550c206df4af04270" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1ac3f185cef9f6a645be63b9b62afae46a" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a2fe6412d36c2b81c0dd3eeb1dd8bd004" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1af1ddb23778f531a56f2e1aa937a66d9c" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a27efab91147b0ffeee600f02059c23fc" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>FromPhys</name></member>
       <member refid="classwx_window_1a9cf3fd71ffab949cdf06f8f8e2646d56" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>GetAcceleratorTable</name></member>
       <member refid="classwx_window_1a00547805ce11e2ba64607d31fc2c67e2" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>GetAccessible</name></member>
       <member refid="classwx_window_1a64e3f936ab812d24966827ea4e0f15c0" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>GetAutoLayout</name></member>
@@ -821,6 +827,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1aef413f1d0252a7a5a29512e8ab5e7c91" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a1771a46c000060619f6e1249ce362433" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a8a4fa47129de552bfec37db8c69688a2" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>ToggleWindowStyle</name></member>
+      <member refid="classwx_window_1a5d3a9450e6b6f44c6b7d0d4a002fa40f" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1afca50ba59976ad9913148fffd38ff0ef" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1ad0bea5e21d33d00d0cf19c011bad39bf" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aaf0ac2191826f233f04bffa900dbc357" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aef56d76b1cacdca83daebffcc385d6db" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1a6797f4c9656276796031b9846ecc20b6" prot="public" virt="non-virtual"><scope>wxFilePickerCtrl</scope><name>ToPhys</name></member>
       <member refid="classwx_window_1ab8e51f36e7d8790b361c8d8c6f37b1ad" prot="public" virt="virtual"><scope>wxFilePickerCtrl</scope><name>TransferDataFromWindow</name></member>
       <member refid="classwx_window_1a88cc65e424a129d9b0057756cdb67ec9" prot="public" virt="virtual"><scope>wxFilePickerCtrl</scope><name>TransferDataToWindow</name></member>
       <member refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" prot="protected" virt="virtual"><scope>wxFilePickerCtrl</scope><name>TryAfter</name></member>

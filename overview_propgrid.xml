@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_propgrid" kind="page">
     <compoundname>overview_propgrid</compoundname>
     <title>wxPropertyGrid Overview</title>
@@ -171,7 +171,6 @@
 <para><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> is a specialized grid for editing properties - in other words name = value pairs. </para>
     </briefdescription>
     <detaileddescription>
-<para><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> is a specialized grid for editing properties - in other words name = value pairs.</para>
 <para>List of ready-to-use property classes include strings, numbers, flag sets, fonts, colours and many others. It is possible, for example, to categorize properties, set up a complete tree-hierarchy, add more than two columns, and set arbitrary per-property attributes.</para>
 <para>As this version of <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> has some backward-incompatible changes from version 1.4, everybody who need to maintain custom property classes should carefully read final section in <ref refid="overview_propgrid_1propgrid_compat" kindref="member">Changes from wxPropertyGrid 1.4</ref>.</para>
 <para><simplesect kind="see"><para><ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref>, <ref refid="classwx_property_grid_event" kindref="compound">wxPropertyGridEvent</ref>, <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref>, <ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref>, <ref refid="classwx_p_g_property" kindref="compound">wxPGProperty</ref></para>
@@ -227,7 +226,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;first<sp/>one.<sp/>Edit<sp/>it<sp/>by<sp/>clicking<sp/>the<sp/>button.&quot;</highlight><highlight class="normal">));</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>String<sp/>editor<sp/>with<sp/>dir<sp/>selector<sp/>button.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_dir_property" kindref="compound">wxDirProperty</ref>(</highlight><highlight class="stringliteral">&quot;DirProperty&quot;</highlight><highlight class="normal">,<sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,<sp/>::<ref refid="utils_8h_1a18db911e93361ebd5bbfb0d5136ddf5b" kindref="member">wxGetUserHome</ref>())<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_dir_property" kindref="compound">wxDirProperty</ref>(</highlight><highlight class="stringliteral">&quot;DirProperty&quot;</highlight><highlight class="normal">,<sp/><ref refid="propgriddefs_8h_1a02064e949a659998a5b05d94a5203158" kindref="member">wxPG_LABEL</ref>,<sp/><ref refid="utils_8h_1a18db911e93361ebd5bbfb0d5136ddf5b" kindref="member">::wxGetUserHome</ref>())<sp/>);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>wxArrayStringProperty<sp/>embeds<sp/>a<sp/>wxArrayString.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a59678aa1808aa5c567e39f2aad41b70e" kindref="member">Append</ref>(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_array_string_property" kindref="compound">wxArrayStringProperty</ref>(</highlight><highlight class="stringliteral">&quot;Label<sp/>of<sp/>ArrayStringProperty&quot;</highlight><highlight class="normal">,</highlight></codeline>
@@ -646,7 +645,7 @@ Note that in some cases property value can be Null variant, which means that pro
 </sect1>
 <sect1 id="overview_propgrid_1propgrid_cellrender">
 <title>Customizing Individual Cell Appearance</title>
-<para>You can control text colour, background colour, and attached image of each cell in the property grid. Use <ref refid="classwx_property_grid_interface_1afd6721e817062d6c9dbb522334c029a0" kindref="member">wxPropertyGridInterface::SetPropertyCell()</ref> or <ref refid="classwx_p_g_property_1a0ec5afcf091d8100142887f459d3dd52" kindref="member">wxPGProperty::SetCell()</ref> for this purpose.</para>
+<para>You can control text colour, background colour, and attached image of each cell in the property grid. Use <ref refid="classwx_property_grid_interface_1a3a79220cdab958d7a9e07402f6eb09ed" kindref="member">wxPropertyGridInterface::SetPropertyCell()</ref> or <ref refid="classwx_p_g_property_1a0ec5afcf091d8100142887f459d3dd52" kindref="member">wxPGProperty::SetCell()</ref> for this purpose.</para>
 <para>In addition, it is possible to control these characteristics for <ref refid="classwx_p_g_choices" kindref="compound">wxPGChoices</ref> list items. See <ref refid="classwx_p_g_choices" kindref="compound">wxPGChoices</ref> class reference for more info.</para>
 </sect1>
 <sect1 id="overview_propgrid_1propgrid_keyhandling">
@@ -674,7 +673,7 @@ Note that in some cases property value can be Null variant, which means that pro
 <para>In this section are presented miscellaneous ways to have custom appearance and behaviour for your properties without all the necessary hassle of sub-classing a property class etc.</para>
 <sect2 id="overview_propgrid_1propgrid_customimage">
 <title>Setting Value Image</title>
-<para>Every property can have a small value image placed in front of the actual value text. Built-in example of this can be seen with <ref refid="classwx_colour_property" kindref="compound">wxColourProperty</ref> and <ref refid="classwx_image_file_property" kindref="compound">wxImageFileProperty</ref>, but for others it can be set using <ref refid="classwx_property_grid_interface_1a88befed8aa91d5c6e62844da2166bb3c" kindref="member">wxPropertyGrid::SetPropertyImage</ref> method.</para>
+<para>Every property can have a small value image placed in front of the actual value text. Built-in example of this can be seen with <ref refid="classwx_colour_property" kindref="compound">wxColourProperty</ref> and <ref refid="classwx_image_file_property" kindref="compound">wxImageFileProperty</ref>, but for others it can be set using <ref refid="classwx_property_grid_interface_1a2a028e533e7e9007a96a9dbf105a5060" kindref="member">wxPropertyGrid::SetPropertyImage</ref> method.</para>
 </sect2>
 <sect2 id="overview_propgrid_1propgrid_customeditor">
 <title>Setting Property&apos;s Editor Control(s)</title>
@@ -710,7 +709,7 @@ Note that in some cases property value can be Null variant, which means that pro
 <para><ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref> is an efficient multi-page version of <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref>, which can optionally have tool bar for mode and page selection, and a help text box. For more information, see <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref> class reference.</para>
 <sect2 id="overview_propgrid_1propgrid_propgridpage">
 <title>wxPropertyGridPage</title>
-<para><ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> is holder of properties for one page in manager. It is derived from <ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref>, so you can subclass it to process page-specific property grid events. Hand over your page instance in <ref refid="classwx_property_grid_manager_1a7d117fc47f7abaf6af097a3ca56662fe" kindref="member">wxPropertyGridManager::AddPage()</ref>.</para>
+<para><ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> is holder of properties for one page in manager. It is derived from <ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref>, so you can subclass it to process page-specific property grid events. Hand over your page instance in <ref refid="classwx_property_grid_manager_1ade8b566e9b474734a19d3da7819b6741" kindref="member">wxPropertyGridManager::AddPage()</ref>.</para>
 <para>Please note that the <ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> itself only sports subset of <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> API (but unlike manager, this include item iteration). Naturally it inherits from <ref refid="classwx_property_grid_interface" kindref="compound">wxPropertyGridInterface</ref>.</para>
 <para>For more information, see <ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> class reference.</para>
 </sect2>
@@ -721,7 +720,7 @@ Note that in some cases property value can be Null variant, which means that pro
 <para><itemizedlist>
 <listitem><para>Only a small percentage of member functions are virtual. If you need more, just e-mail to wx-dev mailing list.</para>
 </listitem><listitem><para>Data manipulation is done in <ref refid="classwx_property_grid_page_state" kindref="compound">wxPropertyGridPageState</ref> class. So, instead of overriding <ref refid="classwx_property_grid_interface_1a56fec31d497b18e5f13728afc1a38f73" kindref="member">wxPropertyGrid::Insert()</ref>, you&apos;ll probably want to override <ref refid="classwx_property_grid_page_state_1a57d3cd538b2965d9e03a5de6bcef7fd8" kindref="member">wxPropertyGridPageState::DoInsert()</ref>. See header file for details.</para>
-</listitem><listitem><para>Override wxPropertyGrid::CreateState() to instantiate your derivate <ref refid="classwx_property_grid_page_state" kindref="compound">wxPropertyGridPageState</ref>. For <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref>, you&apos;ll need to subclass <ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> instead (since it is derived from <ref refid="classwx_property_grid_page_state" kindref="compound">wxPropertyGridPageState</ref>), and hand over instances in <ref refid="classwx_property_grid_manager_1a7d117fc47f7abaf6af097a3ca56662fe" kindref="member">wxPropertyGridManager::AddPage()</ref> calls.</para>
+</listitem><listitem><para>Override wxPropertyGrid::CreateState() to instantiate your derivate <ref refid="classwx_property_grid_page_state" kindref="compound">wxPropertyGridPageState</ref>. For <ref refid="classwx_property_grid_manager" kindref="compound">wxPropertyGridManager</ref>, you&apos;ll need to subclass <ref refid="classwx_property_grid_page" kindref="compound">wxPropertyGridPage</ref> instead (since it is derived from <ref refid="classwx_property_grid_page_state" kindref="compound">wxPropertyGridPageState</ref>), and hand over instances in <ref refid="classwx_property_grid_manager_1ade8b566e9b474734a19d3da7819b6741" kindref="member">wxPropertyGridManager::AddPage()</ref> calls.</para>
 </listitem><listitem><para>You can use a derivate <ref refid="classwx_property_grid" kindref="compound">wxPropertyGrid</ref> with manager by overriding <ref refid="classwx_property_grid_manager_1a40cd6f856d195d0a7abfb249f1393611" kindref="member">wxPropertyGridManager::CreatePropertyGrid()</ref> member function.</para>
 </listitem></itemizedlist>
 </para>
@@ -744,7 +743,8 @@ Note that in some cases property value can be Null variant, which means that pro
 <para>Following will set all individual bool properties in your control to use check box:</para>
 <para><programlisting><codeline><highlight class="normal">pg-&gt;<ref refid="classwx_property_grid_interface_1a9ae755985b70254e3e8a27a629c3fead" kindref="member">SetPropertyAttributeAll</ref>(<ref refid="property_8h_1a9e92f4867bf9fbc7c71779c74d18ccd1" kindref="member">wxPG_BOOL_USE_CHECKBOX</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 </programlisting></para>
-</listitem><listitem><para>Default item names for <ref refid="classwx_bool_property" kindref="compound">wxBoolProperty</ref> are [&quot;False&quot;, &quot;True&quot;]. This can be changed using static function <ref refid="classwx_property_grid_interface_1ac02e6f40e5c5138a40c99a4f7b98100b" kindref="member">wxPropertyGrid::SetBoolChoices</ref>(trueChoice, falseChoice).</para>
+</listitem><listitem><para>Default item names for <ref refid="classwx_bool_property" kindref="compound">wxBoolProperty</ref> are [&quot;False&quot;, &quot;True&quot;]. This can be changed using static function wxPropertyGrid::SetBoolChoices(trueChoice,
+    falseChoice).</para>
 </listitem></itemizedlist>
 </para>
 </sect2>

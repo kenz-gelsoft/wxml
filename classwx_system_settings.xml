@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_system_settings" kind="class" language="C++" prot="public">
     <compoundname>wxSystemSettings</compoundname>
     <includes local="no">wx/settings.h</includes>
@@ -9,6 +9,7 @@
         <definition>wxSystemSettings::wxSystemSettings</definition>
         <argsstring>()</argsstring>
         <name>wxSystemSettings</name>
+        <qualifiedname>wxSystemSettings::wxSystemSettings</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -26,6 +27,7 @@
         <definition>static wxColour wxSystemSettings::GetColour</definition>
         <argsstring>(wxSystemColour index)</argsstring>
         <name>GetColour</name>
+        <qualifiedname>wxSystemSettings::GetColour</qualifiedname>
         <param>
           <type><ref refid="settings_8h_1a44ad26cbd8d579d1b7eff7015c8bd24b" kindref="member">wxSystemColour</ref></type>
           <declname>index</declname>
@@ -56,6 +58,7 @@
         <definition>static wxFont wxSystemSettings::GetFont</definition>
         <argsstring>(wxSystemFont index)</argsstring>
         <name>GetFont</name>
+        <qualifiedname>wxSystemSettings::GetFont</qualifiedname>
         <param>
           <type><ref refid="settings_8h_1ac542cdc9950a6cf3b7a42f7e77ada05b" kindref="member">wxSystemFont</ref></type>
           <declname>index</declname>
@@ -86,6 +89,7 @@
         <definition>static int wxSystemSettings::GetMetric</definition>
         <argsstring>(wxSystemMetric index, wxWindow *win=NULL)</argsstring>
         <name>GetMetric</name>
+        <qualifiedname>wxSystemSettings::GetMetric</qualifiedname>
         <param>
           <type><ref refid="settings_8h_1a0f2b19d7a3717cdbef5a04cb05ab8f26" kindref="member">wxSystemMetric</ref></type>
           <declname>index</declname>
@@ -101,7 +105,7 @@
         <detaileddescription>
 <para>The value of <emphasis>win</emphasis> determines if the metric returned is a global value or a <ref refid="classwx_window" kindref="compound">wxWindow</ref> based value, in which case it might determine the widget, the display the window is on, or something similar. The window given should be as close to the metric as possible (e.g. a <ref refid="classwx_top_level_window" kindref="compound">wxTopLevelWindow</ref> in case of the wxSYS_CAPTION_Y metric).</para>
 <para><emphasis>index</emphasis> can be one of the <ref refid="settings_8h_1a0f2b19d7a3717cdbef5a04cb05ab8f26" kindref="member">wxSystemMetric</ref> enum values.</para>
-<para><emphasis>win</emphasis> is a pointer to the window for which the metric is requested. Specifying the <emphasis>win</emphasis> parameter is encouraged, because some metrics on some ports are not supported without one,or they might be capable of reporting better values if given one. If a window does not make sense for a metric, one should still be given, as for example it might determine which displays cursor width is requested with wxSYS_CURSOR_X. </para>
+<para><emphasis>win</emphasis> is a pointer to the window for which the metric is requested. Specifying the <emphasis>win</emphasis> parameter is encouraged, because some metrics on some ports are not supported without one, or they might be capable of reporting better values if given one. If a window does not make sense for a metric, one should still be given, as for example it might determine which displays cursor width is requested with wxSYS_CURSOR_X. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -112,6 +116,7 @@
         <definition>static wxSystemScreenType wxSystemSettings::GetScreenType</definition>
         <argsstring>()</argsstring>
         <name>GetScreenType</name>
+        <qualifiedname>wxSystemSettings::GetScreenType</qualifiedname>
         <briefdescription>
 <para>Returns the screen type. </para>
         </briefdescription>
@@ -127,6 +132,7 @@
         <definition>static wxSystemAppearance wxSystemSettings::GetAppearance</definition>
         <argsstring>()</argsstring>
         <name>GetAppearance</name>
+        <qualifiedname>wxSystemSettings::GetAppearance</qualifiedname>
         <briefdescription>
 <para>Returns the object describing the current system appearance. </para>
         </briefdescription>
@@ -144,6 +150,7 @@
         <definition>static bool wxSystemSettings::HasFeature</definition>
         <argsstring>(wxSystemFeature index)</argsstring>
         <name>HasFeature</name>
+        <qualifiedname>wxSystemSettings::HasFeature</qualifiedname>
         <param>
           <type><ref refid="settings_8h_1afc464d07a27e1c7ebf406a1321167bf5" kindref="member">wxSystemFeature</ref></type>
           <declname>index</declname>
@@ -166,7 +173,8 @@
 <para>This can include settings such as standard colours, fonts, and user interface element sizes.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__cfg" kindref="compound">Application and System configuration</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_font" kindref="compound">wxFont</ref>, <ref refid="classwx_colour" kindref="compound">wxColour</ref>, <ref refid="classwx_system_options" kindref="compound">wxSystemOptions</ref> </para>
 </simplesect>
 </para>

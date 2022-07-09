@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_stack_3_01_t_01_4" kind="class" language="C++" prot="public">
     <compoundname>wxStack&lt; T &gt;</compoundname>
     <includes local="no">wx/stack.h</includes>
@@ -14,6 +14,7 @@
         <definition>typedef wxVector&lt;T&gt; wxStack&lt; T &gt;::container_type</definition>
         <argsstring></argsstring>
         <name>container_type</name>
+        <qualifiedname>wxStack&lt; T &gt;::container_type</qualifiedname>
         <briefdescription>
 <para>Type of the underlying container used. </para>
         </briefdescription>
@@ -28,6 +29,7 @@
         <definition>typedef container_type::size_type wxStack&lt; T &gt;::size_type</definition>
         <argsstring></argsstring>
         <name>size_type</name>
+        <qualifiedname>wxStack&lt; T &gt;::size_type</qualifiedname>
         <briefdescription>
 <para>Type returned by <ref refid="classwx_stack_3_01_t_01_4_1a56fdfe807c50b808db0cacea7c621f5e" kindref="member">size()</ref> method. </para>
         </briefdescription>
@@ -42,6 +44,7 @@
         <definition>typedef container_type::value_type wxStack&lt; T &gt;::value_type</definition>
         <argsstring></argsstring>
         <name>value_type</name>
+        <qualifiedname>wxStack&lt; T &gt;::value_type</qualifiedname>
         <briefdescription>
 <para>Type of the elements stored in the stack. </para>
         </briefdescription>
@@ -58,6 +61,7 @@
         <definition>wxStack&lt; T &gt;::wxStack</definition>
         <argsstring>()</argsstring>
         <name>wxStack</name>
+        <qualifiedname>wxStack&lt; T &gt;::wxStack</qualifiedname>
         <briefdescription>
 <para>Stack can be created either empty or initialized with the contents of an existing compatible container. </para>
         </briefdescription>
@@ -72,6 +76,7 @@
         <definition>wxStack&lt; T &gt;::wxStack</definition>
         <argsstring>(const container_type &amp;cont)</argsstring>
         <name>wxStack</name>
+        <qualifiedname>wxStack&lt; T &gt;::wxStack</qualifiedname>
         <param>
           <type>const <ref refid="classwx_stack_3_01_t_01_4_1a2a4f590c8d1c24164868080347d4822d" kindref="member">container_type</ref> &amp;</type>
           <declname>cont</declname>
@@ -89,6 +94,7 @@
         <definition>bool wxStack&lt; T &gt;::empty</definition>
         <argsstring>() const</argsstring>
         <name>empty</name>
+        <qualifiedname>wxStack&lt; T &gt;::empty</qualifiedname>
         <briefdescription>
 <para>Return whether the stack is currently empty. </para>
         </briefdescription>
@@ -103,6 +109,7 @@
         <definition>size_type wxStack&lt; T &gt;::size</definition>
         <argsstring>() const</argsstring>
         <name>size</name>
+        <qualifiedname>wxStack&lt; T &gt;::size</qualifiedname>
         <briefdescription>
 <para>Return the number of elements in the stack. </para>
         </briefdescription>
@@ -117,6 +124,7 @@
         <definition>value_type &amp; wxStack&lt; T &gt;::top</definition>
         <argsstring>()</argsstring>
         <name>top</name>
+        <qualifiedname>wxStack&lt; T &gt;::top</qualifiedname>
         <briefdescription>
 <para>Return the element on top of the stack. </para>
         </briefdescription>
@@ -131,6 +139,7 @@
         <definition>const value_type &amp; wxStack&lt; T &gt;::top</definition>
         <argsstring>()</argsstring>
         <name>top</name>
+        <qualifiedname>wxStack&lt; T &gt;::top</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -144,6 +153,7 @@
         <definition>void wxStack&lt; T &gt;::push</definition>
         <argsstring>(const value_type &amp;val)</argsstring>
         <name>push</name>
+        <qualifiedname>wxStack&lt; T &gt;::push</qualifiedname>
         <param>
           <type>const <ref refid="classwx_stack_3_01_t_01_4_1a9c1bedb7493896bc8e7bfa37c0b1673f" kindref="member">value_type</ref> &amp;</type>
           <declname>val</declname>
@@ -162,6 +172,7 @@
         <definition>void wxStack&lt; T &gt;::pop</definition>
         <argsstring>()</argsstring>
         <name>pop</name>
+        <qualifiedname>wxStack&lt; T &gt;::pop</qualifiedname>
         <briefdescription>
 <para>Removes the element currently on top of the stack. </para>
         </briefdescription>
@@ -180,7 +191,8 @@
 <para>The main difference of this class compared to the standard version is that it always uses <ref refid="classwx_vector_3_01_t_01_4" kindref="compound">wxVector&lt;T&gt;</ref> as the underlying container and doesn&apos;t allow specifying an alternative container type. Another missing part is that the comparison operators between wxStacks are not currently implemented. Other than that, this class is exactly the same as <computeroutput>std::stack</computeroutput>, so please refer to the STL documentation for further information.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/>None; this class implementation is entirely header-based. &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/>None; this class implementation is entirely header-based.</para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__containers" kindref="compound">Containers</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_container" kindref="compound">Container Classes</ref>, <ref refid="classwx_vector_3_01_t_01_4" kindref="compound">wxVector&lt;T&gt;</ref></para>
 </simplesect>
 <simplesect kind="since"><para>2.9.2 </para>

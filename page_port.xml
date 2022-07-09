@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="page_port" kind="page">
     <compoundname>page_port</compoundname>
     <title>Platform Details</title>
@@ -56,7 +56,6 @@
 <para>wxWidgets defines a common API across platforms, but uses the native graphical user interface (GUI) on each platform, so your program will take on the native look and feel that users are familiar with. </para>
     </briefdescription>
     <detaileddescription>
-<para>wxWidgets defines a common API across platforms, but uses the native graphical user interface (GUI) on each platform, so your program will take on the native look and feel that users are familiar with.</para>
 <para>Unfortunately native toolkits and hardware do not always support the functionality that the wxWidgets API requires. This chapter collects notes about differences among supported platforms and ports.</para>
 <sect1 id="page_port_1page_port_wxgtk">
 <title>wxGTK</title>
@@ -70,7 +69,8 @@
 </sect1>
 <sect1 id="page_port_1page_port_wxosx">
 <title>wxOSX/Cocoa</title>
-<para>wxOSX/Cocoa is the port of wxWidgets for the macOS platform. It requires a minimum SDK 10.11, Xcode 7.2.1 or greater (runs under 10.10.5 and higher), and fully supports amd64 as well ARM builds and deploying under 10.10.</para>
+<para>wxOSX/Cocoa is the port of wxWidgets for the macOS platform. It requires a minimum SDK 10.11, Xcode 7.2.1 or greater (runs under 10.10.5 and higher), and supports x86_64 (but not i386) and ARM builds and deploying under 10.10.</para>
+<para>Note that Apple clang must be used to build wxOSX, due to the use of Apple-specific extensions (&quot;blocks&quot;) in the macOS SDK headers, and hence the applications using it must be built using clang as well.</para>
 <para><ref refid="plat_osx_install" kindref="compound">Build and Install Instructions</ref></para>
 </sect1>
 <sect1 id="page_port_1page_port_wxx11">
@@ -87,7 +87,7 @@
 </sect1>
 <sect1 id="page_port_1page_port_wxmsw">
 <title>wxMSW</title>
-<para>wxMSW is a port of wxWidgets for the Windows platforms (Windows XP and later are supported). wxMSW provides native look and feel for each Windows version. This port can be compiled with several compilers including Microsoft VC++ 2003 or later, MinGW, Cygwin as well as cross-compilation with a Linux-hosted MinGW tool chain.</para>
+<para>wxMSW is a port of wxWidgets for the Windows platforms (Windows XP and later are supported). wxMSW provides native look and feel for each Windows version. This port can be compiled with several compilers including Microsoft VC++ 2005 or later, MinGW, Cygwin as well as cross-compilation with a Linux-hosted MinGW tool chain.</para>
 <para><ref refid="plat_msw_install" kindref="compound">Build and Install Instructions</ref></para>
 <para><ref refid="plat_msw_binaries" kindref="compound">Using pre-built binaries</ref></para>
 <sect2 id="page_port_1page_port_wxmsw_resources">

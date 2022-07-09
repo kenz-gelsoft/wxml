@@ -1,9 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_scoped_char_type_buffer" kind="class" language="C++" prot="public">
     <compoundname>wxScopedCharTypeBuffer</compoundname>
-    <derivedcompoundref refid="classwx_char_type_buffer" prot="public" virt="non-virtual">wxCharTypeBuffer&lt; char &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classwx_char_type_buffer" prot="public" virt="non-virtual">wxCharTypeBuffer&lt; wchar_t &gt;</derivedcompoundref>
     <derivedcompoundref refid="classwx_char_type_buffer" prot="public" virt="non-virtual">wxCharTypeBuffer&lt; T &gt;</derivedcompoundref>
     <includes local="no">wx/buffer.h</includes>
     <templateparamlist>
@@ -17,6 +15,7 @@
         <definition>typedef T wxScopedCharTypeBuffer&lt; T &gt;::CharType</definition>
         <argsstring></argsstring>
         <name>CharType</name>
+        <qualifiedname>wxScopedCharTypeBuffer::CharType</qualifiedname>
         <briefdescription>
 <para>Stored characters type. </para>
         </briefdescription>
@@ -33,6 +32,7 @@
         <definition>wxScopedCharTypeBuffer&lt; T &gt;::wxScopedCharTypeBuffer</definition>
         <argsstring>()</argsstring>
         <name>wxScopedCharTypeBuffer</name>
+        <qualifiedname>wxScopedCharTypeBuffer::wxScopedCharTypeBuffer</qualifiedname>
         <briefdescription>
 <para>Default constructor, creates NULL buffer. </para>
         </briefdescription>
@@ -47,6 +47,7 @@
         <definition>wxScopedCharTypeBuffer&lt; T &gt;::wxScopedCharTypeBuffer</definition>
         <argsstring>(const wxScopedCharTypeBuffer &amp;src)</argsstring>
         <name>wxScopedCharTypeBuffer</name>
+        <qualifiedname>wxScopedCharTypeBuffer::wxScopedCharTypeBuffer</qualifiedname>
         <param>
           <type>const <ref refid="classwx_scoped_char_type_buffer" kindref="compound">wxScopedCharTypeBuffer</ref> &amp;</type>
           <declname>src</declname>
@@ -66,6 +67,7 @@
         <definition>wxScopedCharTypeBuffer &amp; wxScopedCharTypeBuffer&lt; T &gt;::operator=</definition>
         <argsstring>(const wxScopedCharTypeBuffer &amp;src)</argsstring>
         <name>operator=</name>
+        <qualifiedname>wxScopedCharTypeBuffer::operator=</qualifiedname>
         <param>
           <type>const <ref refid="classwx_scoped_char_type_buffer" kindref="compound">wxScopedCharTypeBuffer</ref> &amp;</type>
           <declname>src</declname>
@@ -84,6 +86,7 @@
         <definition>wxScopedCharTypeBuffer&lt; T &gt;::~wxScopedCharTypeBuffer</definition>
         <argsstring>()</argsstring>
         <name>~wxScopedCharTypeBuffer</name>
+        <qualifiedname>wxScopedCharTypeBuffer::~wxScopedCharTypeBuffer</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -99,6 +102,7 @@
         <definition>CharType * wxScopedCharTypeBuffer&lt; T &gt;::release</definition>
         <argsstring>() const</argsstring>
         <name>release</name>
+        <qualifiedname>wxScopedCharTypeBuffer::release</qualifiedname>
         <briefdescription>
 <para>Returns the internal pointer and resets the buffer. </para>
         </briefdescription>
@@ -115,6 +119,7 @@
         <definition>void wxScopedCharTypeBuffer&lt; T &gt;::reset</definition>
         <argsstring>()</argsstring>
         <name>reset</name>
+        <qualifiedname>wxScopedCharTypeBuffer::reset</qualifiedname>
         <briefdescription>
 <para>Resets the buffer to NULL, freeing the data if necessary. </para>
         </briefdescription>
@@ -129,6 +134,7 @@
         <definition>CharType * wxScopedCharTypeBuffer&lt; T &gt;::data</definition>
         <argsstring>()</argsstring>
         <name>data</name>
+        <qualifiedname>wxScopedCharTypeBuffer::data</qualifiedname>
         <briefdescription>
 <para>Returns pointer to the stored data. </para>
         </briefdescription>
@@ -143,6 +149,7 @@
         <definition>const CharType * wxScopedCharTypeBuffer&lt; T &gt;::data</definition>
         <argsstring>() const</argsstring>
         <name>data</name>
+        <qualifiedname>wxScopedCharTypeBuffer::data</qualifiedname>
         <briefdescription>
 <para>Returns const pointer to the stored data. </para>
         </briefdescription>
@@ -157,6 +164,7 @@
         <definition>size_t wxScopedCharTypeBuffer&lt; T &gt;::length</definition>
         <argsstring>() const</argsstring>
         <name>length</name>
+        <qualifiedname>wxScopedCharTypeBuffer::length</qualifiedname>
         <briefdescription>
 <para>Returns length of the string stored. </para>
         </briefdescription>
@@ -171,6 +179,7 @@
         <definition>wxScopedCharTypeBuffer&lt; T &gt;::operator const CharType *</definition>
         <argsstring>() const</argsstring>
         <name>operator const CharType *</name>
+        <qualifiedname>wxScopedCharTypeBuffer::operator const CharType *</qualifiedname>
         <briefdescription>
 <para>Implicit conversion to C string. </para>
         </briefdescription>
@@ -185,6 +194,7 @@
         <definition>CharType wxScopedCharTypeBuffer&lt; T &gt;::operator[]</definition>
         <argsstring>(size_t n) const</argsstring>
         <name>operator[]</name>
+        <qualifiedname>wxScopedCharTypeBuffer::operator[]</qualifiedname>
         <param>
           <type>size_t</type>
           <declname>n</declname>
@@ -205,6 +215,7 @@
         <definition>static const wxScopedCharTypeBuffer wxScopedCharTypeBuffer&lt; T &gt;::CreateNonOwned</definition>
         <argsstring>(const CharType *str, size_t len=wxNO_LEN)</argsstring>
         <name>CreateNonOwned</name>
+        <qualifiedname>wxScopedCharTypeBuffer::CreateNonOwned</qualifiedname>
         <param>
           <type>const <ref refid="classwx_scoped_char_type_buffer_1af80c4ff48b92f8e01b6167ff0468e213" kindref="member">CharType</ref> *</type>
           <declname>str</declname>
@@ -247,6 +258,7 @@
         <definition>static const wxScopedCharTypeBuffer wxScopedCharTypeBuffer&lt; T &gt;::CreateOwned</definition>
         <argsstring>(CharType *str, size_t len=wxNO_LEN)</argsstring>
         <name>CreateOwned</name>
+        <qualifiedname>wxScopedCharTypeBuffer::CreateOwned</qualifiedname>
         <param>
           <type><ref refid="classwx_scoped_char_type_buffer_1af80c4ff48b92f8e01b6167ff0468e213" kindref="member">CharType</ref> *</type>
           <declname>str</declname>
@@ -307,29 +319,12 @@
 </simplesect>
 <heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/>None; this class implementation is entirely header-based. &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/>None; this class implementation is entirely header-based.</para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__data" kindref="compound">Data Structures</ref> </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>wxCharBuffer</label>
-        <link refid="classwx_char_buffer"/>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>wxCharTypeBuffer&lt; T &gt;</label>
-        <link refid="classwx_char_type_buffer"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="2">
-        <label>wxCharTypeBuffer&lt; char &gt;</label>
-        <link refid="classwx_char_type_buffer"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>wxCharTypeBuffer&lt; wchar_t &gt;</label>
+        <label>wxCharTypeBuffer&lt; T &gt;</label>
         <link refid="classwx_char_type_buffer"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
@@ -337,12 +332,6 @@
       <node id="1">
         <label>wxScopedCharTypeBuffer&lt; T &gt;</label>
         <link refid="classwx_scoped_char_type_buffer"/>
-      </node>
-      <node id="5">
-        <label>wxWCharBuffer</label>
-        <link refid="classwx_w_char_buffer"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
       </node>
     </inheritancegraph>
     <location file="interface/wx/buffer.h" line="45" column="1" bodyfile="interface/wx/buffer.h" bodystart="46" bodyend="126"/>

@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classwx_file_dialog_customize_hook" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>wxFileDialogCustomizeHook</compoundname>
+    <includes local="no">wx/filedlgcustomize.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_file_dialog_customize_hook_1a1269e59f30b50994c124db5c7175445b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void wxFileDialogCustomizeHook::AddCustomControls</definition>
+        <argsstring>(wxFileDialogCustomize &amp;customizer)=0</argsstring>
+        <name>AddCustomControls</name>
+        <qualifiedname>wxFileDialogCustomizeHook::AddCustomControls</qualifiedname>
+        <param>
+          <type><ref refid="classwx_file_dialog_customize" kindref="compound">wxFileDialogCustomize</ref> &amp;</type>
+          <declname>customizer</declname>
+        </param>
+        <briefdescription>
+<para>Must be overridden to add custom controls to the dialog using the provided customizer object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call <ref refid="classwx_file_dialog_customize" kindref="compound">wxFileDialogCustomize</ref> functions to add controls and possibly bind to their events.</para>
+<para>Note that there is no possibility to define the custom controls layout, they will appear more or less consecutively, but the exact layout is determined by the current platform. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/filedlgcustomize.h" line="367" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_file_dialog_customize_hook_1a853376bdb78b1ff526e92eb54c617239" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void wxFileDialogCustomizeHook::UpdateCustomControls</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateCustomControls</name>
+        <qualifiedname>wxFileDialogCustomizeHook::UpdateCustomControls</qualifiedname>
+        <briefdescription>
+<para>May be overridden to update the custom controls whenever something changes in the dialog. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is called when the user selects a file, changes the directory or changes the current filter in the dialog, for example. It can be used to update the custom controls state depending on the currently selected file, for example.</para>
+<para>Note that it is <emphasis>not</emphasis> necessarily called when the value of a custom control changes.</para>
+<para>Base class version does nothing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/filedlgcustomize.h" line="383" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_file_dialog_customize_hook_1abc1458029f362686eb7b2ea4b6454413" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void wxFileDialogCustomizeHook::TransferDataFromCustomControls</definition>
+        <argsstring>()</argsstring>
+        <name>TransferDataFromCustomControls</name>
+        <qualifiedname>wxFileDialogCustomizeHook::TransferDataFromCustomControls</qualifiedname>
+        <briefdescription>
+<para>Should typically be overridden to save the values of the custom controls when the dialog is accepted. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Custom controls are destroyed and cannot be used any longer once <ref refid="classwx_file_dialog_1a04943e4abb27a197a110898d40ddb4f0" kindref="member">wxFileDialog::ShowModal()</ref> returns, so their values must be retrieved in this function, which is called just before this happens.</para>
+<para>This function is <emphasis>not</emphasis> called if the user cancels the dialog.</para>
+<para>Base class version does nothing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/filedlgcustomize.h" line="397" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class for customization hooks used with <ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classwx_file_dialog_customize_hook" kindref="compound">wxFileDialogCustomizeHook</ref> is an abstract base class, i.e. in order to use a concrete class inheriting from it and implementing its pure virtual <ref refid="classwx_file_dialog_customize_hook_1a1269e59f30b50994c124db5c7175445b" kindref="member">AddCustomControls()</ref> function must be defined. Then an object of this class should be passed to <ref refid="classwx_file_dialog_1ab02b1018e1e045904656e1d094010bc2" kindref="member">wxFileDialog::SetCustomizeHook()</ref>, which will result in its <ref refid="classwx_file_dialog_customize_hook_1a1269e59f30b50994c124db5c7175445b" kindref="member">AddCustomControls()</ref> being called before the dialog is shown, <ref refid="classwx_file_dialog_customize_hook_1a853376bdb78b1ff526e92eb54c617239" kindref="member">UpdateCustomControls()</ref> being called whenever something changes in the dialog while it is shown and, finally, <ref refid="classwx_file_dialog_customize_hook_1abc1458029f362686eb7b2ea4b6454413" kindref="member">TransferDataFromCustomControls()</ref> being called when the user accepts their choice in the dialog.</para>
+<para>Putting all this together, here is an example of customizing the file dialog using this class: <programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">EncryptHook<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classwx_file_dialog_customize_hook" kindref="compound">wxFileDialogCustomizeHook</ref></highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Override<sp/>to<sp/>add<sp/>custom<sp/>controls<sp/>using<sp/>the<sp/>provided<sp/>customizer<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classwx_file_dialog_customize_hook_1a1269e59f30b50994c124db5c7175445b" kindref="member">AddCustomControls</ref>(<ref refid="classwx_file_dialog_customize" kindref="compound">wxFileDialogCustomize</ref>&amp;<sp/>customizer)</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Suppose<sp/>we<sp/>can<sp/>encrypt<sp/>files<sp/>when<sp/>saving<sp/>them.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_checkbox<sp/>=<sp/>customizer.<ref refid="classwx_file_dialog_customize_1af796c5687bf22611bed7a32653a8862c" kindref="member">AddCheckBox</ref>(</highlight><highlight class="stringliteral">&quot;Encrypt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>While<sp/>m_checkbox<sp/>is<sp/>not<sp/>a<sp/>wxCheckBox,<sp/>it<sp/>looks<sp/>almost<sp/>like<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>and,<sp/>in<sp/>particular,<sp/>we<sp/>can<sp/>bind<sp/>to<sp/>custom<sp/>control<sp/>events<sp/>as<sp/>usual.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_checkbox-&gt;<ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">Bind</ref>(<ref refid="event_8h_1accf64434c71cb08ee891e5f8b705ed1c" kindref="member">wxEVT_CHECKBOX</ref>,<sp/>[</highlight><highlight class="keyword">this</highlight><highlight class="normal">](<ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>&amp;<sp/>event)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>can<sp/>also<sp/>call<sp/>wxWindow-like<sp/>functions<sp/>on<sp/>them.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_button-&gt;Enable(event.<ref refid="classwx_command_event_1a3e5510a00ebb9fb5e7bf7dc5e89f3588" kindref="member">IsChecked</ref>());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>encryption<sp/>parameters<sp/>can<sp/>be<sp/>edited<sp/>in<sp/>a<sp/>dedicated<sp/>dialog.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_button<sp/>=<sp/>customizer.<ref refid="classwx_file_dialog_customize_1a7caa6e2a724b7214cbda0c12f9159fb8" kindref="member">AddButton</ref>(</highlight><highlight class="stringliteral">&quot;Parameters...&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_button-&gt;<ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">Bind</ref>(<ref refid="event_8h_1a62a4c9136f7d27fa4cfff45a4d09104a" kindref="member">wxEVT_BUTTON</ref>,<sp/>[](<ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>&amp;)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>show<sp/>the<sp/>encryption<sp/>parameters<sp/>dialog<sp/>here<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Override<sp/>to<sp/>save<sp/>the<sp/>values<sp/>of<sp/>the<sp/>custom<sp/>controls.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classwx_file_dialog_customize_hook_1abc1458029f362686eb7b2ea4b6454413" kindref="member">TransferDataFromCustomControls</ref>()</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Save<sp/>the<sp/>checkbox<sp/>value,<sp/>as<sp/>we<sp/>won&apos;t<sp/>be<sp/>able<sp/>to<sp/>use<sp/>it<sp/>any<sp/>more</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>once<sp/>this<sp/>function<sp/>returns.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_encrypt<sp/>=<sp/>m_checkbox-&gt;GetValue();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Just<sp/>a<sp/>simple<sp/>accessor<sp/>to<sp/>get<sp/>the<sp/>results.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>Encrypt()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_encrypt;<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_file_dialog_button" kindref="compound">wxFileDialogButton</ref>*<sp/>m_button;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_file_dialog_check_box" kindref="compound">wxFileDialogCheckBox</ref>*<sp/>m_checkbox;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_encrypt<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SomeFunc()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref><sp/>dialog(NULL,<sp/></highlight><highlight class="stringliteral">&quot;Save<sp/>document&quot;</highlight><highlight class="normal">,<sp/><ref refid="classwx_string" kindref="compound">wxString</ref>(),<sp/></highlight><highlight class="stringliteral">&quot;file.my&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;My<sp/>files<sp/>(*.my)|*.my&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="filedlg_8h_1af9bdc3014f3d54c426b6d2df10de4960aac29a39c558c3709c8bffaf012c90aec" kindref="member">wxFD_SAVE</ref><sp/>|<sp/><ref refid="filedlg_8h_1af9bdc3014f3d54c426b6d2df10de4960a5f106d797bb886352a221437ffa39715" kindref="member">wxFD_OVERWRITE_PROMPT</ref>);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>object<sp/>may<sp/>be<sp/>destroyed<sp/>before<sp/>the<sp/>dialog,<sp/>but<sp/>must<sp/>remain</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>alive<sp/>until<sp/>ShowModal()<sp/>returns.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EncryptHook<sp/>customizeHook;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dialog.SetCustomizeHook(customHook);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>dialog.ShowModal()<sp/>==<sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbbaeeb1bdf97306d7f0fdffb62c8af3d02f" kindref="member">wxID_OK</ref><sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>customizeHook.Encrypt()<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>save<sp/>with<sp/>encryption<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>save<sp/>without<sp/>encryption<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__cmndlg" kindref="compound">Common Dialogs</ref></para>
+<para><simplesect kind="see"><para><ref refid="classwx_file_dialog" kindref="compound">wxFileDialog</ref></para>
+</simplesect>
+<simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/filedlgcustomize.h" line="353" column="1" bodyfile="interface/wx/filedlgcustomize.h" bodystart="354" bodyend="398"/>
+    <listofallmembers>
+      <member refid="classwx_file_dialog_customize_hook_1a1269e59f30b50994c124db5c7175445b" prot="public" virt="pure-virtual"><scope>wxFileDialogCustomizeHook</scope><name>AddCustomControls</name></member>
+      <member refid="classwx_file_dialog_customize_hook_1abc1458029f362686eb7b2ea4b6454413" prot="public" virt="virtual"><scope>wxFileDialogCustomizeHook</scope><name>TransferDataFromCustomControls</name></member>
+      <member refid="classwx_file_dialog_customize_hook_1a853376bdb78b1ff526e92eb54c617239" prot="public" virt="virtual"><scope>wxFileDialogCustomizeHook</scope><name>UpdateCustomControls</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

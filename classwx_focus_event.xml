@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_focus_event" kind="class" language="C++" prot="public">
     <compoundname>wxFocusEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxFocusEvent::wxFocusEvent</definition>
         <argsstring>(wxEventType eventType=wxEVT_NULL, int id=0)</argsstring>
         <name>wxFocusEvent</name>
+        <qualifiedname>wxFocusEvent::wxFocusEvent</qualifiedname>
         <param>
           <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
           <declname>eventType</declname>
@@ -27,13 +28,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3268" column="5"/>
+        <location file="interface/wx/event.h" line="3293" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_focus_event_1a395fb0d49e650fc1900be64cfafedc7c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
         <definition>wxWindow * wxFocusEvent::GetWindow</definition>
         <argsstring>() const</argsstring>
         <name>GetWindow</name>
+        <qualifiedname>wxFocusEvent::GetWindow</qualifiedname>
         <briefdescription>
 <para>Returns the window associated with this event, that is the window which had the focus before for the <computeroutput>wxEVT_SET_FOCUS</computeroutput> event and the window which is going to receive focus for the <computeroutput>wxEVT_KILL_FOCUS</computeroutput> one. </para>
         </briefdescription>
@@ -42,13 +44,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3277" column="14"/>
+        <location file="interface/wx/event.h" line="3302" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_focus_event_1a0761d1e6d4d6e987ad4e2a8ee9e63f32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxFocusEvent::SetWindow</definition>
         <argsstring>(wxWindow *win)</argsstring>
         <name>SetWindow</name>
+        <qualifiedname>wxFocusEvent::SetWindow</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>win</declname>
@@ -59,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3279" column="10"/>
+        <location file="interface/wx/event.h" line="3304" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -69,19 +72,19 @@
 <para>The window losing focus receives a &quot;kill focus&quot; event while the window gaining it gets a &quot;set focus&quot; one.</para>
 <para>Notice that the set focus event happens both when the user gives focus to the window (whether using the mouse or keyboard) and when it is done from the program itself using <ref refid="classwx_window_1a697f9f8d3ff389790f1c74b59bcb1d75" kindref="member">wxWindow::SetFocus</ref>.</para>
 <para>The focus event handlers should almost invariably call <ref refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" kindref="member">wxEvent::Skip()</ref> on their event argument to allow the default handling to take place. Failure to do this may result in incorrect behaviour of the native controls. Also note that wxEVT_KILL_FOCUS handler must not call <ref refid="classwx_window_1a697f9f8d3ff389790f1c74b59bcb1d75" kindref="member">wxWindow::SetFocus()</ref> as this, again, is not supported by all native controls. If you need to do this, consider using the <ref refid="classwx_idle_event_1sec_delayed_action" kindref="member">Delayed Action Mechanism</ref> described in <ref refid="classwx_idle_event" kindref="compound">wxIdleEvent</ref> documentation.</para>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_focus_event" kindref="compound">wxFocusEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
 <listitem><para>EVT_SET_FOCUS(func): Process a <computeroutput>wxEVT_SET_FOCUS</computeroutput> event. </para>
 </listitem>
-<listitem><para>EVT_KILL_FOCUS(func): Process a <computeroutput>wxEVT_KILL_FOCUS</computeroutput> event. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_KILL_FOCUS(func): Process a <computeroutput>wxEVT_KILL_FOCUS</computeroutput> event. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_events" kindref="compound">Events and Event Handling</ref> </para>
 </simplesect>
 </para>
@@ -129,7 +132,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="3262" column="1" bodyfile="interface/wx/event.h" bodystart="3263" bodyend="3280"/>
+    <location file="interface/wx/event.h" line="3287" column="1" bodyfile="interface/wx/event.h" bodystart="3288" bodyend="3305"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxFocusEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxFocusEvent</scope><name>Clone</name></member>

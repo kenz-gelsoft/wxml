@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="page_build_liblzma" kind="page">
     <compoundname>page_build_liblzma</compoundname>
     <title>Using LZMA compression with liblzma</title>
@@ -7,7 +7,6 @@
 <para>To use <ref refid="classwx_l_z_m_a_input_stream" kindref="compound">wxLZMAInputStream</ref> and <ref refid="classwx_l_z_m_a_output_stream" kindref="compound">wxLZMAOutputStream</ref> classes, a public domain liblzma library is required when building wxWidgets. </para>
     </briefdescription>
     <detaileddescription>
-<para>To use <ref refid="classwx_l_z_m_a_input_stream" kindref="compound">wxLZMAInputStream</ref> and <ref refid="classwx_l_z_m_a_output_stream" kindref="compound">wxLZMAOutputStream</ref> classes, a public domain liblzma library is required when building wxWidgets.</para>
 <para>This guide explains how to make liblzma available and let wxWidgets build system use it. The exact steps depend on the operating system and compiler used, please refer to the section appropriate for your environment below.</para>
 <sect1 id="page_build_liblzma_1page_build_liblzma_unix">
 <title>Unix-like operating system (including Cygwin)</title>
@@ -18,9 +17,16 @@
 <codeline><highlight class="normal">$<sp/>make<sp/>install</highlight></codeline>
 </programlisting></para>
 <para>commands sequence.</para>
-<para>As wxWidgets is built using either configure or CMake under Unix-like systems, there is nothing special to do to let wxWidgets use liblzma, as it will be detected automatically <ndash/> just check the end of configure or CMake output to confirm that it was found. If this is not the case because the library was installed in some non-default location, you need to provide <computeroutput>CPPFLAGS</computeroutput> and <computeroutput>LDFLAGS</computeroutput> on configure command line, e.g.:</para>
-<para><programlisting><codeline><highlight class="normal">$<sp/>../configure<sp/>CPPFLAGS=-I/opt/liblzma/include<sp/>LDFLAGS=-L/opt/liblzma/lib</highlight></codeline>
+<sect2 id="page_build_liblzma_1page_build_liblzma_configure">
+<title>Use liblzma with configure</title>
+<para>Pass <computeroutput>--with-liblzma</computeroutput> option to configure to enable liblzma and check the end of configure output to confirm that it was found. If this is not the case because the library was installed in some non-default location, you need to provide <computeroutput>CPPFLAGS</computeroutput> and <computeroutput>LDFLAGS</computeroutput> on configure command line, e.g.:</para>
+<para><programlisting><codeline><highlight class="normal">$<sp/>../configure<sp/>--with-liblzma<sp/>CPPFLAGS=-I/opt/liblzma/include<sp/>LDFLAGS=-L/opt/liblzma/lib</highlight></codeline>
 </programlisting></para>
+</sect2>
+<sect2 id="page_build_liblzma_1page_build_liblzma_cmake">
+<title>Use liblzma with CMake</title>
+<para>When using CMake, add <computeroutput>-DwxUSE_LIBLZMA=ON</computeroutput> to CMake command line to enable using liblzma.</para>
+</sect2>
 </sect1>
 <sect1 id="page_build_liblzma_1page_build_liblzma_msw">
 <title>MSW not using configure</title>
@@ -34,6 +40,7 @@
 <codeline><highlight class="normal">&gt;<sp/>.\bootstrap-vcpkg.bat</highlight></codeline>
 <codeline><highlight class="normal">&gt;<sp/>.\vcpkg<sp/>integrate<sp/>install</highlight></codeline>
 <codeline><highlight class="normal">&gt;<sp/>.\vcpkg<sp/>install<sp/>liblzma</highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>.\vcpkg<sp/>install<sp/>liblzma:x64-windows</highlight></codeline>
 </programlisting></para>
 <para>Afterwards, liblzma headers and libraries (in DLL form) will be available to all C++ Visual Studio projects, including wxWidgets, so you just need to build it as usual, i.e. by opening <computeroutput>build/msw/wx_vcXX.sln</computeroutput> file and building it.</para>
 </sect2>
@@ -47,12 +54,12 @@
 </programlisting></para>
 <para>If you built liblzma as a static library, change <computeroutput>CPPFLAGS</computeroutput> to also include <computeroutput>-DLZMA_API_STATIC</computeroutput>.</para>
 <para>When building wxWidgets with MSVC project files, you must update them to use liblzma. For this, start by copying build\msw\wx_setup.props file to build\msw\wx_local.props, if you don&apos;t have the latter file yet. Then open this file in your favourite editor and locate the <computeroutput>Link</computeroutput> tag inside an <computeroutput>ItemDefinitionGroup</computeroutput> tag and add a new <computeroutput>AdditionalIncludeDirectories</computeroutput> line inside the <computeroutput>ClCompile</computeroutput> tag as well as add <computeroutput>liblzma.lib</computeroutput> to the <computeroutput>AdditionalDependencies</computeroutput> tag under <computeroutput>Link</computeroutput> itself. The result should look like the following, assuming liblzma sources are in c:\src\liblzma:</para>
-<para><programlisting><codeline><highlight class="normal">&lt;ItemDefinitionGroup&gt;</highlight></codeline>
+<para><programlisting filename=".unparsed"><codeline><highlight class="normal">&lt;ItemDefinitionGroup&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;ClCompile&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...<sp/>any<sp/>existing<sp/>lines<sp/>here<sp/>...</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;AdditionalIncludeDirectories&gt;c:\src\liblzma\src\liblzma\api;%(AdditionalIncludeDirectories)&lt;/AdditionalIncludeDirectories&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;!--</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Uncomment<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>line<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">,<sp/>and<sp/>only<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">,<sp/>you<sp/>link<sp/>with<sp/>liblzma<sp/>statically.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Uncomment<sp/>this<sp/>line<sp/>if,<sp/>and<sp/>only<sp/>if,<sp/>you<sp/>link<sp/>with<sp/>liblzma<sp/>statically.</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;PreprocessorDefinitions&gt;LZMA_API_STATIC;%(PreprocessorDefinitions)&lt;/PreprocessorDefinitions&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>--&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;/ClCompile&gt;</highlight></codeline>

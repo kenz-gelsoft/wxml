@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_zip_input_stream" kind="class" language="C++" prot="public">
     <compoundname>wxZipInputStream</compoundname>
     <basecompoundref refid="classwx_archive_input_stream" prot="public" virt="non-virtual">wxArchiveInputStream</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxZipInputStream::wxZipInputStream</definition>
         <argsstring>(wxInputStream &amp;stream, wxMBConv &amp;conv=wxConvLocal)</argsstring>
         <name>wxZipInputStream</name>
+        <qualifiedname>wxZipInputStream::wxZipInputStream</qualifiedname>
         <param>
           <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> &amp;</type>
           <declname>stream</declname>
@@ -34,6 +35,7 @@
         <definition>wxZipInputStream::wxZipInputStream</definition>
         <argsstring>(wxInputStream *stream, wxMBConv &amp;conv=wxConvLocal)</argsstring>
         <name>wxZipInputStream</name>
+        <qualifiedname>wxZipInputStream::wxZipInputStream</qualifiedname>
         <param>
           <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> *</type>
           <declname>stream</declname>
@@ -56,6 +58,7 @@
         <definition>bool wxZipInputStream::CloseEntry</definition>
         <argsstring>()</argsstring>
         <name>CloseEntry</name>
+        <qualifiedname>wxZipInputStream::CloseEntry</qualifiedname>
         <reimplements refid="classwx_archive_input_stream_1a091c14b91d891de1014a53251dc7835e">CloseEntry</reimplements>
         <briefdescription>
 <para>Closes the current entry. </para>
@@ -72,6 +75,7 @@
         <definition>wxString wxZipInputStream::GetComment</definition>
         <argsstring>()</argsstring>
         <name>GetComment</name>
+        <qualifiedname>wxZipInputStream::GetComment</qualifiedname>
         <briefdescription>
 <para>Returns the zip comment. </para>
         </briefdescription>
@@ -87,6 +91,7 @@
         <definition>wxZipEntry * wxZipInputStream::GetNextEntry</definition>
         <argsstring>()</argsstring>
         <name>GetNextEntry</name>
+        <qualifiedname>wxZipInputStream::GetNextEntry</qualifiedname>
         <briefdescription>
 <para>Closes the current entry if one is open, then reads the meta-data for the next entry and returns it in a <ref refid="classwx_zip_entry" kindref="compound">wxZipEntry</ref> object, giving away ownership. </para>
         </briefdescription>
@@ -102,6 +107,7 @@
         <definition>int wxZipInputStream::GetTotalEntries</definition>
         <argsstring>()</argsstring>
         <name>GetTotalEntries</name>
+        <qualifiedname>wxZipInputStream::GetTotalEntries</qualifiedname>
         <briefdescription>
 <para>For a zip on a seekable stream returns the total number of entries in the zip. </para>
         </briefdescription>
@@ -117,6 +123,7 @@
         <definition>bool wxZipInputStream::OpenEntry</definition>
         <argsstring>(wxZipEntry &amp;entry)</argsstring>
         <name>OpenEntry</name>
+        <qualifiedname>wxZipInputStream::OpenEntry</qualifiedname>
         <param>
           <type><ref refid="classwx_zip_entry" kindref="compound">wxZipEntry</ref> &amp;</type>
           <declname>entry</declname>
@@ -143,7 +150,8 @@
 <para>Note that in general zip entries are not seekable, and <ref refid="classwx_input_stream_1a989ed0f85fe7340cc0996bbcee03822d" kindref="member">wxZipInputStream::SeekI()</ref> always returns <ref refid="filefn_8h_1ab184c7199d93541d22ae42e515cbbcb7" kindref="member">wxInvalidOffset</ref>.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ , \ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__archive" kindref="compound">Archive support</ref>, <ref refid="group__group__class__streams" kindref="compound">Streams</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_archive" kindref="compound">Archive Formats</ref>, <ref refid="classwx_zip_entry" kindref="compound">wxZipEntry</ref>, <ref refid="classwx_zip_output_stream" kindref="compound">wxZipOutputStream</ref> </para>
 </simplesect>
 </para>

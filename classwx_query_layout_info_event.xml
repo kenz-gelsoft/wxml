@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_query_layout_info_event" kind="class" language="C++" prot="public">
     <compoundname>wxQueryLayoutInfoEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxQueryLayoutInfoEvent::wxQueryLayoutInfoEvent</definition>
         <argsstring>(wxWindowID id=0)</argsstring>
         <name>wxQueryLayoutInfoEvent</name>
+        <qualifiedname>wxQueryLayoutInfoEvent::wxQueryLayoutInfoEvent</qualifiedname>
         <param>
           <type><ref refid="windowid_8h_1ae8091432cc2cb2485d45f2302fb51133" kindref="member">wxWindowID</ref></type>
           <declname>id</declname>
@@ -29,6 +30,7 @@
         <definition>wxLayoutAlignment wxQueryLayoutInfoEvent::GetAlignment</definition>
         <argsstring>() const</argsstring>
         <name>GetAlignment</name>
+        <qualifiedname>wxQueryLayoutInfoEvent::GetAlignment</qualifiedname>
         <briefdescription>
 <para>Specifies the alignment of the window (which side of the remaining parent client area the window sticks to). </para>
         </briefdescription>
@@ -44,6 +46,7 @@
         <definition>int wxQueryLayoutInfoEvent::GetFlags</definition>
         <argsstring>() const</argsstring>
         <name>GetFlags</name>
+        <qualifiedname>wxQueryLayoutInfoEvent::GetFlags</qualifiedname>
         <briefdescription>
 <para>Returns the flags associated with this event. </para>
         </briefdescription>
@@ -59,6 +62,7 @@
         <definition>wxLayoutOrientation wxQueryLayoutInfoEvent::GetOrientation</definition>
         <argsstring>() const</argsstring>
         <name>GetOrientation</name>
+        <qualifiedname>wxQueryLayoutInfoEvent::GetOrientation</qualifiedname>
         <briefdescription>
 <para>Returns the orientation that the event handler specified to the event object. </para>
         </briefdescription>
@@ -74,6 +78,7 @@
         <definition>int wxQueryLayoutInfoEvent::GetRequestedLength</definition>
         <argsstring>() const</argsstring>
         <name>GetRequestedLength</name>
+        <qualifiedname>wxQueryLayoutInfoEvent::GetRequestedLength</qualifiedname>
         <briefdescription>
 <para>Returns the requested length of the window in the direction of the window orientation. </para>
         </briefdescription>
@@ -89,6 +94,7 @@
         <definition>wxSize wxQueryLayoutInfoEvent::GetSize</definition>
         <argsstring>() const</argsstring>
         <name>GetSize</name>
+        <qualifiedname>wxQueryLayoutInfoEvent::GetSize</qualifiedname>
         <briefdescription>
 <para>Returns the size that the event handler specified to the event object as being the requested size of the window. </para>
         </briefdescription>
@@ -103,6 +109,7 @@
         <definition>void wxQueryLayoutInfoEvent::SetAlignment</definition>
         <argsstring>(wxLayoutAlignment alignment)</argsstring>
         <name>SetAlignment</name>
+        <qualifiedname>wxQueryLayoutInfoEvent::SetAlignment</qualifiedname>
         <param>
           <type><ref refid="laywin_8h_1aa71c9fda256582eb60acb5f99ed9de95" kindref="member">wxLayoutAlignment</ref></type>
           <declname>alignment</declname>
@@ -122,6 +129,7 @@
         <definition>void wxQueryLayoutInfoEvent::SetFlags</definition>
         <argsstring>(int flags)</argsstring>
         <name>SetFlags</name>
+        <qualifiedname>wxQueryLayoutInfoEvent::SetFlags</qualifiedname>
         <param>
           <type>int</type>
           <declname>flags</declname>
@@ -141,6 +149,7 @@
         <definition>void wxQueryLayoutInfoEvent::SetOrientation</definition>
         <argsstring>(wxLayoutOrientation orientation)</argsstring>
         <name>SetOrientation</name>
+        <qualifiedname>wxQueryLayoutInfoEvent::SetOrientation</qualifiedname>
         <param>
           <type><ref refid="laywin_8h_1a2ce484ea253c6640705f6c33a9b7d16b" kindref="member">wxLayoutOrientation</ref></type>
           <declname>orientation</declname>
@@ -160,6 +169,7 @@
         <definition>void wxQueryLayoutInfoEvent::SetRequestedLength</definition>
         <argsstring>(int length)</argsstring>
         <name>SetRequestedLength</name>
+        <qualifiedname>wxQueryLayoutInfoEvent::SetRequestedLength</qualifiedname>
         <param>
           <type>int</type>
           <declname>length</declname>
@@ -179,6 +189,7 @@
         <definition>void wxQueryLayoutInfoEvent::SetSize</definition>
         <argsstring>(const wxSize &amp;size)</argsstring>
         <name>SetSize</name>
+        <qualifiedname>wxQueryLayoutInfoEvent::SetSize</qualifiedname>
         <param>
           <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
           <declname>size</declname>
@@ -198,17 +209,17 @@
     </briefdescription>
     <detaileddescription>
 <para>More precisely, the event is sent by the OnCalculateLayout handler which is itself invoked by <ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref>.</para>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_query_layout_info_event" kindref="compound">wxQueryLayoutInfoEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
-<listitem><para>EVT_QUERY_LAYOUT_INFO(func): Process a <computeroutput>wxEVT_QUERY_LAYOUT_INFO</computeroutput> event, to get size, orientation and alignment from a window. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_QUERY_LAYOUT_INFO(func): Process a <computeroutput>wxEVT_QUERY_LAYOUT_INFO</computeroutput> event, to get size, orientation and alignment from a window. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_calculate_layout_event" kindref="compound">wxCalculateLayoutEvent</ref>, <ref refid="classwx_sash_layout_window" kindref="compound">wxSashLayoutWindow</ref>, <ref refid="classwx_layout_algorithm" kindref="compound">wxLayoutAlgorithm</ref>. </para>
 </simplesect>
 </para>

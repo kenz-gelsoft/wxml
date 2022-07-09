@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_file_system_watcher" kind="class" language="C++" prot="public">
     <compoundname>wxFileSystemWatcher</compoundname>
     <basecompoundref refid="classwx_evt_handler" prot="public" virt="non-virtual">wxEvtHandler</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxFileSystemWatcher::wxFileSystemWatcher</definition>
         <argsstring>()</argsstring>
         <name>wxFileSystemWatcher</name>
+        <qualifiedname>wxFileSystemWatcher::wxFileSystemWatcher</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -24,6 +25,7 @@
         <definition>virtual wxFileSystemWatcher::~wxFileSystemWatcher</definition>
         <argsstring>()</argsstring>
         <name>~wxFileSystemWatcher</name>
+        <qualifiedname>wxFileSystemWatcher::~wxFileSystemWatcher</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -39,6 +41,7 @@
         <definition>virtual bool wxFileSystemWatcher::Add</definition>
         <argsstring>(const wxFileName &amp;path, int events=wxFSW_EVENT_ALL)</argsstring>
         <name>Add</name>
+        <qualifiedname>wxFileSystemWatcher::Add</qualifiedname>
         <param>
           <type>const <ref refid="classwx_file_name" kindref="compound">wxFileName</ref> &amp;</type>
           <declname>path</declname>
@@ -82,6 +85,7 @@
         <definition>virtual bool wxFileSystemWatcher::AddTree</definition>
         <argsstring>(const wxFileName &amp;path, int events=wxFSW_EVENT_ALL, const wxString &amp;filter=wxEmptyString)</argsstring>
         <name>AddTree</name>
+        <qualifiedname>wxFileSystemWatcher::AddTree</qualifiedname>
         <param>
           <type>const <ref refid="classwx_file_name" kindref="compound">wxFileName</ref> &amp;</type>
           <declname>path</declname>
@@ -113,6 +117,7 @@
         <definition>virtual bool wxFileSystemWatcher::Remove</definition>
         <argsstring>(const wxFileName &amp;path)</argsstring>
         <name>Remove</name>
+        <qualifiedname>wxFileSystemWatcher::Remove</qualifiedname>
         <param>
           <type>const <ref refid="classwx_file_name" kindref="compound">wxFileName</ref> &amp;</type>
           <declname>path</declname>
@@ -132,6 +137,7 @@
         <definition>virtual bool wxFileSystemWatcher::RemoveTree</definition>
         <argsstring>(const wxFileName &amp;path)</argsstring>
         <name>RemoveTree</name>
+        <qualifiedname>wxFileSystemWatcher::RemoveTree</qualifiedname>
         <param>
           <type>const <ref refid="classwx_file_name" kindref="compound">wxFileName</ref> &amp;</type>
           <declname>path</declname>
@@ -151,6 +157,7 @@
         <definition>virtual bool wxFileSystemWatcher::RemoveAll</definition>
         <argsstring>()</argsstring>
         <name>RemoveAll</name>
+        <qualifiedname>wxFileSystemWatcher::RemoveAll</qualifiedname>
         <briefdescription>
 <para>Clears the list of currently watched paths. </para>
         </briefdescription>
@@ -165,6 +172,7 @@
         <definition>int wxFileSystemWatcher::GetWatchedPathsCount</definition>
         <argsstring>() const</argsstring>
         <name>GetWatchedPathsCount</name>
+        <qualifiedname>wxFileSystemWatcher::GetWatchedPathsCount</qualifiedname>
         <briefdescription>
 <para>Returns the number of currently watched paths. </para>
         </briefdescription>
@@ -182,6 +190,7 @@
         <definition>int wxFileSystemWatcher::GetWatchedPaths</definition>
         <argsstring>(wxArrayString *paths) const</argsstring>
         <name>GetWatchedPaths</name>
+        <qualifiedname>wxFileSystemWatcher::GetWatchedPaths</qualifiedname>
         <param>
           <type><ref refid="classwx_array_string" kindref="compound">wxArrayString</ref> *</type>
           <declname>paths</declname>
@@ -201,6 +210,7 @@
         <definition>void wxFileSystemWatcher::SetOwner</definition>
         <argsstring>(wxEvtHandler *handler)</argsstring>
         <name>SetOwner</name>
+        <qualifiedname>wxFileSystemWatcher::SetOwner</qualifiedname>
         <param>
           <type><ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref> *</type>
           <declname>handler</declname>
@@ -228,7 +238,8 @@ For the full list of change types that are reported see wxFSWFlags.</para>
 <para>This class notifies the application about the file system changes by sending events of <ref refid="classwx_file_system_watcher_event" kindref="compound">wxFileSystemWatcherEvent</ref> class. By default these events are sent to the <ref refid="classwx_file_system_watcher" kindref="compound">wxFileSystemWatcher</ref> object itself so you can derive from it and use the event table <computeroutput>EVT_FSWATCHER</computeroutput> macro to handle these events in a derived class method. Alternatively, you can use <ref refid="classwx_file_system_watcher_1a70156ba21bd8b6ee2753d2ee437dcbfe" kindref="member">wxFileSystemWatcher::SetOwner()</ref> to send the events to another object. Or you could use <ref refid="classwx_evt_handler_1a0f30c8fa5583b4a5f661897d63de3b62" kindref="member">wxEvtHandler::Bind()</ref> with <computeroutput>wxEVT_FSWATCHER</computeroutput> to handle these events in any other object. See the fswatcher sample for an example of the latter approach.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__file" kindref="compound">File Handling</ref></para>
 <para><simplesect kind="since"><para>2.9.1 </para>
 </simplesect>
 </para>

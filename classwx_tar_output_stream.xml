@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_tar_output_stream" kind="class" language="C++" prot="public">
     <compoundname>wxTarOutputStream</compoundname>
     <basecompoundref refid="classwx_archive_output_stream" prot="public" virt="non-virtual">wxArchiveOutputStream</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxTarOutputStream::wxTarOutputStream</definition>
         <argsstring>(wxOutputStream &amp;stream, wxTarFormat format=wxTAR_PAX, wxMBConv &amp;conv=wxConvLocal)</argsstring>
         <name>wxTarOutputStream</name>
+        <qualifiedname>wxTarOutputStream::wxTarOutputStream</qualifiedname>
         <param>
           <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> &amp;</type>
           <declname>stream</declname>
@@ -43,6 +44,7 @@
         <definition>wxTarOutputStream::wxTarOutputStream</definition>
         <argsstring>(wxOutputStream *stream, wxTarFormat format=wxTAR_PAX, wxMBConv &amp;conv=wxConvLocal)</argsstring>
         <name>wxTarOutputStream</name>
+        <qualifiedname>wxTarOutputStream::wxTarOutputStream</qualifiedname>
         <param>
           <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> *</type>
           <declname>stream</declname>
@@ -70,6 +72,7 @@
         <definition>virtual wxTarOutputStream::~wxTarOutputStream</definition>
         <argsstring>()</argsstring>
         <name>~wxTarOutputStream</name>
+        <qualifiedname>wxTarOutputStream::~wxTarOutputStream</qualifiedname>
         <briefdescription>
 <para>The destructor calls <ref refid="classwx_tar_output_stream_1a28f6073ef5557fb488b1a7142d0ba882" kindref="member">Close()</ref> to finish writing the tar if it has not been called already. </para>
         </briefdescription>
@@ -84,6 +87,7 @@
         <definition>bool wxTarOutputStream::Close</definition>
         <argsstring>()</argsstring>
         <name>Close</name>
+        <qualifiedname>wxTarOutputStream::Close</qualifiedname>
         <reimplements refid="classwx_archive_output_stream_1a2d6ec4ddefa626a2400985c676bfbfea">Close</reimplements>
         <briefdescription>
 <para>Finishes writing the tar, returning true if successful. </para>
@@ -100,6 +104,7 @@
         <definition>bool wxTarOutputStream::CloseEntry</definition>
         <argsstring>()</argsstring>
         <name>CloseEntry</name>
+        <qualifiedname>wxTarOutputStream::CloseEntry</qualifiedname>
         <reimplements refid="classwx_archive_output_stream_1a497dca3a3860f375c58488f78e0a75ad">CloseEntry</reimplements>
         <briefdescription>
 <para>Close the current entry. </para>
@@ -116,6 +121,7 @@
         <definition>bool wxTarOutputStream::CopyArchiveMetaData</definition>
         <argsstring>(wxTarInputStream &amp;s)</argsstring>
         <name>CopyArchiveMetaData</name>
+        <qualifiedname>wxTarOutputStream::CopyArchiveMetaData</qualifiedname>
         <param>
           <type><ref refid="classwx_tar_input_stream" kindref="compound">wxTarInputStream</ref> &amp;</type>
           <declname>s</declname>
@@ -135,6 +141,7 @@
         <definition>bool wxTarOutputStream::CopyEntry</definition>
         <argsstring>(wxTarEntry *entry, wxTarInputStream &amp;inputStream)</argsstring>
         <name>CopyEntry</name>
+        <qualifiedname>wxTarOutputStream::CopyEntry</qualifiedname>
         <param>
           <type><ref refid="classwx_tar_entry" kindref="compound">wxTarEntry</ref> *</type>
           <declname>entry</declname>
@@ -160,6 +167,7 @@
         <definition>int wxTarOutputStream::GetBlockingFactor</definition>
         <argsstring>() const</argsstring>
         <name>GetBlockingFactor</name>
+        <qualifiedname>wxTarOutputStream::GetBlockingFactor</qualifiedname>
         <briefdescription>
 <para>The tar is zero padded to round its size up to <emphasis>BlockingFactor</emphasis> * 512 bytes. </para>
         </briefdescription>
@@ -175,6 +183,7 @@
         <definition>void wxTarOutputStream::SetBlockingFactor</definition>
         <argsstring>(int factor)</argsstring>
         <name>SetBlockingFactor</name>
+        <qualifiedname>wxTarOutputStream::SetBlockingFactor</qualifiedname>
         <param>
           <type>int</type>
           <declname>factor</declname>
@@ -192,6 +201,7 @@
         <definition>bool wxTarOutputStream::PutNextDirEntry</definition>
         <argsstring>(const wxString &amp;name, const wxDateTime &amp;dt=wxDateTime::Now())</argsstring>
         <name>PutNextDirEntry</name>
+        <qualifiedname>wxTarOutputStream::PutNextDirEntry</qualifiedname>
         <reimplements refid="classwx_archive_output_stream_1ab27a35cd63e39dd9cccfc1b5566478f5">PutNextDirEntry</reimplements>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
@@ -217,6 +227,7 @@
         <definition>bool wxTarOutputStream::PutNextEntry</definition>
         <argsstring>(wxTarEntry *entry)</argsstring>
         <name>PutNextEntry</name>
+        <qualifiedname>wxTarOutputStream::PutNextEntry</qualifiedname>
         <param>
           <type><ref refid="classwx_tar_entry" kindref="compound">wxTarEntry</ref> *</type>
           <declname>entry</declname>
@@ -235,6 +246,7 @@
         <definition>bool wxTarOutputStream::PutNextEntry</definition>
         <argsstring>(const wxString &amp;name, const wxDateTime &amp;dt=wxDateTime::Now(), wxFileOffset size=wxInvalidOffset)</argsstring>
         <name>PutNextEntry</name>
+        <qualifiedname>wxTarOutputStream::PutNextEntry</qualifiedname>
         <reimplements refid="classwx_archive_output_stream_1ae10bb31a9edecd54b739d4504734bc46">PutNextEntry</reimplements>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
@@ -267,7 +279,8 @@
 <para><ref refid="classwx_tar_output_stream_1ae4c7956c1ab3b4c4b41df71ad093c3ec" kindref="member">wxTarOutputStream::PutNextEntry()</ref> is used to create a new entry in the output tar, then the entry&apos;s data is written to the <ref refid="classwx_tar_output_stream" kindref="compound">wxTarOutputStream</ref>. Another call to <ref refid="classwx_tar_output_stream_1ae4c7956c1ab3b4c4b41df71ad093c3ec" kindref="member">wxTarOutputStream::PutNextEntry()</ref> closes the current entry and begins the next.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__streams" kindref="compound">Streams</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_archive" kindref="compound">Archive Formats</ref>, <ref refid="classwx_tar_entry" kindref="compound">wxTarEntry</ref>, <ref refid="classwx_tar_input_stream" kindref="compound">wxTarInputStream</ref> </para>
 </simplesect>
 </para>

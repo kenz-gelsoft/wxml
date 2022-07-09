@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_container" kind="page">
     <compoundname>overview_container</compoundname>
     <title>Container Classes</title>
@@ -17,7 +17,6 @@
 <para>For historical reasons, wxWidgets uses custom container classes internally. </para>
     </briefdescription>
     <detaileddescription>
-<para>For historical reasons, wxWidgets uses custom container classes internally.</para>
 <para>This was unfortunately unavoidable during a long time when the standard library wasn&apos;t widely available and can&apos;t be easily changed even now that it is for compatibility reasons. If you are building your own version of the library and don&apos;t care about compatibility nor slight (less than 5%) size penalty imposed by the use of STL classes, you may choose to use the &quot;STL&quot; build of wxWidgets in which these custom classes are replaced with their standard counterparts and only read the section <ref refid="overview_container_1overview_container_std" kindref="member">STL Build</ref> explaining how to do it.</para>
 <para>Otherwise you will need to know about the custom wxWidgets container classes such as <ref refid="classwx_list_3_01_t_01_4" kindref="compound">wxList&lt;T&gt;</ref> and <ref refid="classwx_array_3_01_t_01_4" kindref="compound">wxArray&lt;T&gt;</ref> if only to use wxWidgets functions that work with them, e.g. <ref refid="classwx_window_1aa4a60f01732ad3cb027cdf37c50a339d" kindref="member">wxWindow::GetChildren()</ref>, and you should find the information about using these classes below useful.</para>
 <para>Notice that we recommend that you use standard classes directly in your own code instead of the container classes provided by wxWidgets in any case as the standard classes are easier to use and may also be safer because of extra run-time checks they may perform as well as more efficient.</para>

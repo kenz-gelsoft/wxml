@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_scrolling" kind="page">
     <compoundname>overview_scrolling</compoundname>
     <title>Scrolled Windows</title>
@@ -17,7 +17,6 @@
 <para>Scrollbars come in various guises in wxWidgets. </para>
     </briefdescription>
     <detaileddescription>
-<para>Scrollbars come in various guises in wxWidgets.</para>
 <para>All windows have the potential to show a vertical scrollbar and/or a horizontal scrollbar: it is a basic capability of a window. However, in practice, not all windows do make use of scrollbars, such as a single-line <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>.</para>
 <para>Because any class derived from <ref refid="classwx_window" kindref="compound">wxWindow</ref> may have scrollbars, there are functions to manipulate the scrollbars and event handlers to intercept scroll events. But just because a window generates a scroll event, doesn&apos;t mean that the window necessarily handles it and physically scrolls the window. The base class <ref refid="classwx_window" kindref="compound">wxWindow</ref> in fact doesn&apos;t have any default functionality to handle scroll events. If you created a <ref refid="classwx_window" kindref="compound">wxWindow</ref> object with scrollbars, and then clicked on the scrollbars, nothing at all would happen. This is deliberate, because the <emphasis>interpretation</emphasis> of scroll events varies from one window class to another.</para>
 <para><ref refid="group__group__class__miscwnd_1ga695bec5996cd4d5512d1a01cfdcf96a5" kindref="member">wxScrolledWindow</ref> (formerly wxCanvas) is an example of a window that adds functionality to make scrolling really work. It assumes that scrolling happens in consistent units, not different-sized jumps, and that page size is represented by the visible portion of the window. It is suited to drawing applications, but perhaps not so suitable for a sophisticated editor in which the amount scrolled may vary according to the size of text on a given line. For this, you would derive from <ref refid="classwx_window" kindref="compound">wxWindow</ref> and implement scrolling yourself. <ref refid="classwx_grid" kindref="compound">wxGrid</ref> is an example of a class that implements its own scrolling, largely because columns and rows can vary in size.</para>

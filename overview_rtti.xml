@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_rtti" kind="page">
     <compoundname>overview_rtti</compoundname>
     <title>Runtime Type Information (RTTI)</title>
@@ -17,7 +17,6 @@
 <para>One of the failings of C++ used to be that no runtime information was provided about a class and its position in the inheritance hierarchy. </para>
     </briefdescription>
     <detaileddescription>
-<para>One of the failings of C++ used to be that no runtime information was provided about a class and its position in the inheritance hierarchy.</para>
 <para>Another, which still persists, is that instances of a class cannot be created just by knowing the name of a class, which makes facilities such as persistent storage hard to implement.</para>
 <para>Most C++ GUI frameworks overcome these limitations by means of a set of macros and functions and wxWidgets is no exception. As it originated before the addition of RTTI to the C++ standard and as support for it is still missing from some (albeit old) compilers, wxWidgets doesn&apos;t (yet) use it, but provides its own macro-based RTTI system.</para>
 <para>In the future, the standard C++ RTTI will be used though and you&apos;re encouraged to use whenever possible the wxDynamicCast macro which, for the implementations that support it, is defined just as dynamic_cast and uses wxWidgets RTTI for all the others. This macro is limited to wxWidgets classes only and only works with pointers (unlike the real dynamic_cast which also accepts references).</para>

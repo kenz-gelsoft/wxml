@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classwx_text_proof_options" kind="class" language="C++" prot="public">
+    <compoundname>wxTextProofOptions</compoundname>
+    <includes local="no">wx/textctrl.h</includes>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classwx_text_proof_options_1a378717bbce293cc99a87a289342cdb0a" prot="private" static="yes" const="no" explicit="no" inline="no" refqual="lvalue" virt="non-virtual">
+        <type><ref refid="classwx_text_proof_options" kindref="compound">wxTextProofOptions</ref></type>
+        <definition>static wxTextProofOptions wxTextProofOptions::Default</definition>
+        <argsstring>() static wxTextProofOptions Disable() wxTextProofOptions &amp;SpellCheck(bool enable</argsstring>
+        <name>Default</name>
+        <qualifiedname>wxTextProofOptions::Default</qualifiedname>
+        <briefdescription>
+<para>Create an object corresponding to the default checks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The returned object enables spelling checks and disables grammar checks. Create an object disabling all checks.</para>
+<para>The returned object can be passed to <ref refid="classwx_text_ctrl_1ae59dab77ddefd0df3b3b2e6495c43653" kindref="member">wxTextCtrl::EnableProofCheck()</ref> to disable all checks in the text control. Enable / disable spell checking for this control. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/textctrl.h" line="1018" column="31"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classwx_text_proof_options_1abfebad61da57625c954a72248b0f3e90" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxTextProofOptions::IsGrammarCheckEnabled</definition>
+        <argsstring>() const</argsstring>
+        <name>IsGrammarCheckEnabled</name>
+        <qualifiedname>wxTextProofOptions::IsGrammarCheckEnabled</qualifiedname>
+        <briefdescription>
+<para>Return true if grammar checking is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/textctrl.h" line="1045" column="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class provides a convenient means of passing multiple parameters to <ref refid="classwx_text_ctrl_1ae59dab77ddefd0df3b3b2e6495c43653" kindref="member">wxTextCtrl::EnableProofCheck()</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>By default, i.e. when calling EnableProofCheck() without any parameters, <ref refid="classwx_text_proof_options_1a378717bbce293cc99a87a289342cdb0a" kindref="member">Default()</ref> proof options are used, which enable spelling (but not grammar) checks for the current language.</para>
+<para>However it is also possible to customize the options:</para>
+<para><programlisting><codeline><highlight class="normal">textctrl-&gt;EnableProofCheck(<ref refid="classwx_text_proof_options_1a378717bbce293cc99a87a289342cdb0a" kindref="member">wxTextProofOptions::Default</ref>().Language(</highlight><highlight class="stringliteral">&quot;fr&quot;</highlight><highlight class="normal">).GrammarCheck());</highlight></codeline>
+</programlisting></para>
+<para>or disable the all checks entirely:</para>
+<para><programlisting><codeline><highlight class="normal">textctrl-&gt;EnableProofCheck(wxTextProofOptions::Disable());</highlight></codeline>
+</programlisting></para>
+<para>Note that this class has no public constructor, except for the copy constructor, so its objects can only be created using the static factory methods <ref refid="classwx_text_proof_options_1a378717bbce293cc99a87a289342cdb0a" kindref="member">Default()</ref> or Disable().</para>
+<para><simplesect kind="see"><para><ref refid="classwx_text_ctrl_1ae59dab77ddefd0df3b3b2e6495c43653" kindref="member">wxTextCtrl::EnableProofCheck()</ref>, <ref refid="classwx_text_ctrl_1a2d76825c71aa93fc512c69cd3597de26" kindref="member">wxTextCtrl::GetProofCheckOptions()</ref>.</para>
+</simplesect>
+<simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/textctrl.h" line="1011" column="1" bodyfile="interface/wx/textctrl.h" bodystart="1012" bodyend="1049"/>
+    <listofallmembers>
+      <member refid="classwx_text_proof_options_1a378717bbce293cc99a87a289342cdb0a" prot="private" virt="non-virtual"><scope>wxTextProofOptions</scope><name>Default</name></member>
+      <member refid="classwx_text_proof_options_1abfebad61da57625c954a72248b0f3e90" prot="private" virt="non-virtual"><scope>wxTextProofOptions</scope><name>IsGrammarCheckEnabled</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
