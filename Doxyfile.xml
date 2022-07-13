@@ -1,17 +1,29 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxyfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="doxyfile.xsd" version="1.9.2" xml:lang="en-US">
+<doxyfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="doxyfile.xsd" version="1.9.4" xml:lang="en-US">
   <option  id='DOXYFILE_ENCODING' default='yes' type='string'><value><![CDATA[UTF-8]]></value></option>
   <option  id='PROJECT_NAME' default='no' type='string'><value><![CDATA[wxWidgets]]></value></option>
-  <option  id='PROJECT_NUMBER' default='no' type='string'><value><![CDATA[3.1.5]]></value></option>
+  <option  id='PROJECT_NUMBER' default='no' type='string'><value><![CDATA[3.2.0]]></value></option>
   <option  id='PROJECT_BRIEF' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='PROJECT_LOGO' default='no' type='string'><value><![CDATA[logo.png]]></value></option>
   <option  id='OUTPUT_DIRECTORY' default='no' type='string'><value><![CDATA[out]]></value></option>
   <option  id='CREATE_SUBDIRS' default='yes' type='bool'><value>NO</value></option>
+  <option  id='CREATE_SUBDIRS_LEVEL' default='yes' type='int'><value>8</value></option>
   <option  id='ALLOW_UNICODE_NAMES' default='yes' type='bool'><value>NO</value></option>
   <option  id='OUTPUT_LANGUAGE' default='yes' type='string'><value>English</value></option>
   <option  id='BRIEF_MEMBER_DESC' default='yes' type='bool'><value>YES</value></option>
   <option  id='REPEAT_BRIEF' default='yes' type='bool'><value>YES</value></option>
-  <option  id='ABBREVIATE_BRIEF' default='no' type='stringlist'>
+  <option  id='ABBREVIATE_BRIEF' default='yes' type='stringlist'>
+    <value><![CDATA["The $name class"]]></value>
+    <value><![CDATA["The $name widget"]]></value>
+    <value><![CDATA["The $name file"]]></value>
+    <value><![CDATA[is]]></value>
+    <value><![CDATA[provides]]></value>
+    <value><![CDATA[specifies]]></value>
+    <value><![CDATA[contains]]></value>
+    <value><![CDATA[represents]]></value>
+    <value><![CDATA[a]]></value>
+    <value><![CDATA[an]]></value>
+    <value><![CDATA[the]]></value>
   </option>
   <option  id='ALWAYS_DETAILED_SEC' default='no' type='bool'><value>YES</value></option>
   <option  id='INLINE_INHERITED_MEMB' default='yes' type='bool'><value>NO</value></option>
@@ -20,8 +32,8 @@
     <value><![CDATA[../..]]></value>
   </option>
   <option  id='STRIP_FROM_INC_PATH' default='no' type='stringlist'>
-    <value><![CDATA[/Users/kenz/src/wxRust2/wxWidgets-3.1.5/include/]]></value>
-    <value><![CDATA[/Users/kenz/src/wxRust2/wxWidgets-3.1.5/interface/]]></value>
+    <value><![CDATA[/Users/kenz/src/wxWidgets/include/]]></value>
+    <value><![CDATA[/Users/kenz/src/wxWidgets/interface/]]></value>
   </option>
   <option  id='SHORT_NAMES' default='yes' type='bool'><value>NO</value></option>
   <option  id='JAVADOC_AUTOBRIEF' default='no' type='bool'><value>YES</value></option>
@@ -33,33 +45,33 @@
   <option  id='SEPARATE_MEMBER_PAGES' default='yes' type='bool'><value>NO</value></option>
   <option  id='TAB_SIZE' default='yes' type='int'><value>4</value></option>
   <option  id='ALIASES' default='no' type='stringlist'>
-    <value><![CDATA["beginEventEmissionTable=\n<h2>Events emitted by this class</h2><p>Event macros for events emitted by this class:</p><div>"]]></value>
-    <value><![CDATA["beginEventEmissionTable{1}=\n<h2>Events emitted by this class</h2><p>The following event handler macros redirect the events to member function handlers '<b>func</b>' with prototypes like: <div class='eventHandler'><span>void&nbsp;handlerFuncName(\1&&nbsp;event)</span></div></p>Event macros for events emitted by this class:<div>"]]></value>
-    <value><![CDATA["beginEventEmissionTable{2}=\n<h2>Events emitted by this class</h2><p>The following event handler macros redirect the events to member function handlers '<b>func</b>' with prototypes like: <div class='eventHandler'><span>void&nbsp;handlerFuncName(\1&&nbsp;event)</span> or <span>void&nbsp;handlerFuncName(\2&&nbsp;event)</span></div></p>Event macros for events emitted by this class:<div>"]]></value>
-    <value><![CDATA["beginEventTable{1}=\n<h2>Events using this class</h2><p>The following event handler macros redirect the events to member function handlers '<b>func</b>' with prototypes like: <div class='eventHandler'><span>void&nbsp;handlerFuncName(\1&&nbsp;event)</span></div></p>Event macros:<div>"]]></value>
-    <value><![CDATA["beginEventTable{2}=\n<h2>Events using this class</h2><p>The following event handler macros redirect the events to member function handlers '<b>func</b>' with prototypes like: <div class='eventHandler'><span>void&nbsp;handlerFuncName(\1&&nbsp;event)</span> or <span>void&nbsp;handlerFuncName(\2&&nbsp;event)</span></div></p>Event macros:<div>"]]></value>
+    <value><![CDATA["beginEventEmissionTable=^^<h2>Events emitted by this class</h2><p>Event macros for events emitted by this class:</p><div>"]]></value>
+    <value><![CDATA["beginEventEmissionTable{1}=^^<h2>Events emitted by this class</h2><p>The following event handler macros redirect the events to member function handlers '<b>func</b>' with prototypes like: <div class='eventHandler'><span>void&nbsp;handlerFuncName(\1&&nbsp;event)</span></div></p>Event macros for events emitted by this class:<div>"]]></value>
+    <value><![CDATA["beginEventEmissionTable{2}=^^<h2>Events emitted by this class</h2><p>The following event handler macros redirect the events to member function handlers '<b>func</b>' with prototypes like: <div class='eventHandler'><span>void&nbsp;handlerFuncName(\1&&nbsp;event)</span> or <span>void&nbsp;handlerFuncName(\2&&nbsp;event)</span></div></p>Event macros for events emitted by this class:<div>"]]></value>
+    <value><![CDATA["beginEventTable{1}=^^<h2>Events using this class</h2><p>The following event handler macros redirect the events to member function handlers '<b>func</b>' with prototypes like: <div class='eventHandler'><span>void&nbsp;handlerFuncName(\1&&nbsp;event)</span></div></p>Event macros:<div>"]]></value>
+    <value><![CDATA["beginEventTable{2}=^^<h2>Events using this class</h2><p>The following event handler macros redirect the events to member function handlers '<b>func</b>' with prototypes like: <div class='eventHandler'><span>void&nbsp;handlerFuncName(\1&&nbsp;event)</span> or <span>void&nbsp;handlerFuncName(\2&&nbsp;event)</span></div></p>Event macros:<div>"]]></value>
     <value><![CDATA["event{1}=</div>\li <span class='event'>\1</span>:<div class='eventDesc'>"]]></value>
     <value><![CDATA["event{2}=</div>\li <span class='event'>\1, \2</span>:<div class='eventDesc'>"]]></value>
     <value><![CDATA["event{3}=</div>\li <span class='event'>\1, \2, \3</span>:<div class='eventDesc'>"]]></value>
     <value><![CDATA["event{4}=</div>\li <span class='event'>\1, \2, \3, \4</span>:<div class='eventDesc'>"]]></value>
-    <value><![CDATA[endEventTable=</div>\n]]></value>
-    <value><![CDATA["beginStyleTable=\n<h2>Styles</h2><p>This class supports the following styles:</p><div>"]]></value>
+    <value><![CDATA[endEventTable=</div>^^]]></value>
+    <value><![CDATA["beginStyleTable=^^<h2>Styles</h2><p>This class supports the following styles:</p><div>"]]></value>
     <value><![CDATA["style{1}=</div>\li <span class='style'>\1</span>:<div class='styleDesc'>"]]></value>
-    <value><![CDATA[endStyleTable=</div>\n]]></value>
-    <value><![CDATA["beginExtraStyleTable=\n<hr><h2>Extra Styles</h2><p>This class supports the following extra styles:</p><div>"]]></value>
-    <value><![CDATA[endExtraStyleTable=</div>\n]]></value>
+    <value><![CDATA[endStyleTable=</div>^^]]></value>
+    <value><![CDATA["beginExtraStyleTable=^^<hr><h2>Extra Styles</h2><p>This class supports the following extra styles:</p><div>"]]></value>
+    <value><![CDATA[endExtraStyleTable=</div>^^]]></value>
     <value><![CDATA[beginFlagTable=<div>]]></value>
     <value><![CDATA["flag{1}=</div>\li <span class='flag'>\1</span>:<div class='flagDesc'>"]]></value>
-    <value><![CDATA[endFlagTable=</div>\n]]></value>
-    <value><![CDATA["appearance{1}=\htmlonly<div class='appearance'><span class='appearance'>Appearance:</span><table><tr><td>\endhtmlonly\n\image html appear-\1-msw.png \"wxMSW Appearance\"\n\htmlonly</td><td>\endhtmlonly\n\image html appear-\1-gtk.png \"wxGTK Appearance\"\n\htmlonly</td><td>\endhtmlonly\n\image html appear-\1-mac.png \"wxOSX Appearance\"\n\htmlonly</td></tr></table></div>\endhtmlonly"]]></value>
-    <value><![CDATA["genericAppearance{1}=\htmlonly<div class='appearance'><span class='appearance'>Appearance:</span><table class='appearance'><tr><td>\endhtmlonly\n\image html generic/\1.png \"Generic Appearance\"\n\htmlonly</td></tr></table></div>\endhtmlonly"]]></value>
-    <value><![CDATA["appearance_brief{2}=\htmlonly<div class='appearance_brief'><table><tr><td>\endhtmlonly\n\1\htmlonly</td><td>\endhtmlonly\n\image html appear-\2-msw.png\n\htmlonly</td><td>\endhtmlonly\n\image html appear-\2-gtk.png\n\htmlonly</td><td>\endhtmlonly\n\image html appear-\2-mac.png\n\htmlonly</td></tr></table></div>\endhtmlonly"]]></value>
-    <value><![CDATA["genericAppearance_brief{2}=\htmlonly<div class='appearance_brief'><table><tr><td>\endhtmlonly\n\1\htmlonly</td><td>\endhtmlonly\n\image html generic/\2.png\n\htmlonly</td></tr></table></div>\endhtmlonly"]]></value>
+    <value><![CDATA[endFlagTable=</div>^^]]></value>
+    <value><![CDATA["appearance{1}=\htmlonly<div class='appearance'><span class='appearance'>Appearance:</span><table><tr><td>\endhtmlonly^^\image html appear-\1-msw.png \"wxMSW Appearance\"^^\htmlonly</td><td>\endhtmlonly^^\image html appear-\1-gtk.png \"wxGTK Appearance\"^^\htmlonly</td><td>\endhtmlonly^^\image html appear-\1-mac.png \"wxOSX Appearance\"^^\htmlonly</td></tr></table></div>\endhtmlonly"]]></value>
+    <value><![CDATA["genericAppearance{1}=\htmlonly<div class='appearance'><span class='appearance'>Appearance:</span><table class='appearance'><tr><td>\endhtmlonly^^\image html generic/\1.png \"Generic Appearance\"^^\htmlonly</td></tr></table></div>\endhtmlonly"]]></value>
+    <value><![CDATA["appearance_brief{2}=\htmlonly<div class='appearance_brief'><table><tr><td>\endhtmlonly^^\1\htmlonly</td><td>\endhtmlonly^^\image html appear-\2-msw.png ^^\htmlonly</td><td>\endhtmlonly^^\image html appear-\2-gtk.png ^^\htmlonly</td><td>\endhtmlonly^^\image html appear-\2-mac.png ^^\htmlonly</td></tr></table></div>\endhtmlonly"]]></value>
+    <value><![CDATA["genericAppearance_brief{2}=\htmlonly<div class='appearance_brief'><table><tr><td>\endhtmlonly^^\1\htmlonly</td><td>\endhtmlonly^^\image html generic/\2.png ^^\htmlonly</td></tr></table></div>\endhtmlonly"]]></value>
     <value><![CDATA["member_group_name{2}=<a name='\1'></a> \name \2"]]></value>
     <value><![CDATA["ref_member_group{2}=<a href='#\1' class='el'>\2</a>"]]></value>
-    <value><![CDATA["category{1}=\ingroup group_class_\1 \n<div><span class='category'>Category:</span>&nbsp;&nbsp;<span class='category_text'>\ref group_class_\1</span></div>"]]></value>
-    <value><![CDATA["category{2}=\ingroup group_class_\1 group_class_\2 \n<div><span class='category'>Category:</span>&nbsp;&nbsp;<span class='category_text'>\ref group_class_\1, \ref group_class_\2</span></div>"]]></value>
-    <value><![CDATA["category{3}=\ingroup group_class_\1 group_class_\2 group_class_\3 \n<div><span class='category'>Category:</span>&nbsp;&nbsp;<span class='category_text'>\ref group_class_\1, \ref group_class_\2, \ref group_class_\3</span></div>"]]></value>
+    <value><![CDATA["category{1}=\ingroup group_class_\1 ^^<div><span class='category'>Category:</span>&nbsp;&nbsp;<span class='category_text'>\ref group_class_\1</span></div>"]]></value>
+    <value><![CDATA["category{2}=\ingroup group_class_\1 group_class_\2 ^^<div><span class='category'>Category:</span>&nbsp;&nbsp;<span class='category_text'>\ref group_class_\1, \ref group_class_\2</span></div>"]]></value>
+    <value><![CDATA["category{3}=\ingroup group_class_\1 group_class_\2 group_class_\3 ^^<div><span class='category'>Category:</span>&nbsp;&nbsp;<span class='category_text'>\ref group_class_\1, \ref group_class_\2, \ref group_class_\3</span></div>"]]></value>
     <value><![CDATA["library{1}=<h2></h2><div><span class='lib'>Library:</span>&nbsp;&nbsp;<span class='lib_text'>\ref page_libs_\1</span></div>"]]></value>
     <value><![CDATA["nolibrary=<h2></h2><div><span class='lib'>Library:</span>&nbsp;&nbsp;<span class='lib_text'>None; this class implementation is entirely header-based.</span></div>"]]></value>
     <value><![CDATA["stdobjects=<span class='stdobj'>Predefined objects/pointers:</span>"]]></value>
@@ -71,7 +83,7 @@
     <value><![CDATA["onlyfor{2}=<div><span class='avail'>Availability:</span>&nbsp;&nbsp;only available for the \ref page_port_\1, \ref page_port_\2 ports.</div>       \xmlonly <onlyfor>\1,\2</onlyfor> \endxmlonly"]]></value>
     <value><![CDATA["onlyfor{3}=<div><span class='avail'>Availability:</span>&nbsp;&nbsp;only available for the \ref page_port_\1, \ref page_port_\2, \ref page_port_\3 ports.</div>       \xmlonly <onlyfor>\1,\2,\3</onlyfor> \endxmlonly"]]></value>
     <value><![CDATA["onlyfor{4}=<div><span class='avail'>Availability:</span>&nbsp;&nbsp;only available for the \ref page_port_\1, \ref page_port_\2, \ref page_port_\3, \ref page_port_\4 ports.</div>       \xmlonly <onlyfor>\1,\2,\3,\4</onlyfor> \endxmlonly"]]></value>
-    <value><![CDATA["header{1}=Include file:\n \verbatim #include <\1> \endverbatim"]]></value>
+    <value><![CDATA["header{1}=Include file:^^ \verbatim #include <\1> \endverbatim"]]></value>
     <value><![CDATA["true=<span class='literal'>true</span>"]]></value>
     <value><![CDATA["false=<span class='literal'>false</span>"]]></value>
     <value><![CDATA["NULL=<span class='literal'>NULL</span>"]]></value>
@@ -99,6 +111,12 @@
     <value><![CDATA["row3col{8}=<tr><td>\1</td> <td>\2</td> <td>\3,\4,\5,\6,\7,\8</td></tr>"]]></value>
     <value><![CDATA["row3col{9}=<tr><td>\1</td> <td>\2</td> <td>\3,\4,\5,\6,\7,\8,\9</td></tr>"]]></value>
     <value><![CDATA["row3col{10}=<tr><td>\1</td> <td>\2</td> <td>\3,\4,\5,\6,\7,\8,\9,\10</td></tr>"]]></value>
+    <value><![CDATA["row3col{11}=<tr><td>\1</td> <td>\2</td> <td>\3,\4,\5,\6,\7,\8,\9,\10,\11</td></tr>"]]></value>
+    <value><![CDATA["row3col{12}=<tr><td>\1</td> <td>\2</td> <td>\3,\4,\5,\6,\7,\8,\9,\10,\11,\12</td></tr>"]]></value>
+    <value><![CDATA["row3col{13}=<tr><td>\1</td> <td>\2</td> <td>\3,\4,\5,\6,\7,\8,\9,\10,\11,\12,\13</td></tr>"]]></value>
+    <value><![CDATA["row3col{14}=<tr><td>\1</td> <td>\2</td> <td>\3,\4,\5,\6,\7,\8,\9,\10,\11,\12,\13,\14</td></tr>"]]></value>
+    <value><![CDATA["row3col{15}=<tr><td>\1</td> <td>\2</td> <td>\3,\4,\5,\6,\7,\8,\9,\10,\11,\12,\13,\14,\15</td></tr>"]]></value>
+    <value><![CDATA["row3col{16}=<tr><td>\1</td> <td>\2</td> <td>\3,\4,\5,\6,\7,\8,\9,\10,\11,\12,\13,\14,\15,\16</td></tr>"]]></value>
     <value><![CDATA["hdr3col{3}=<tr><th>\1</th> <th>\2</th> <th>\3</th></tr>"]]></value>
     <value><![CDATA[endTable=</table>]]></value>
     <value><![CDATA["beginDefList=<table class='doclist' border='1' cellspacing='0'>"]]></value>
@@ -112,7 +130,7 @@
     <value><![CDATA["itemdef{9}=<tr><td><span class='itemdef'>\1</span></td> <td>\2,\3,\4,\5,\6,\7,\8,\9</td></tr>"]]></value>
     <value><![CDATA["itemdef{10}=<tr><td><span class='itemdef'>\1</span></td> <td>\2,\3,\4,\5,\6,\7,\8,\9,\10</td></tr>"]]></value>
     <value><![CDATA[endDefList=</table>]]></value>
-    <value><![CDATA["stock{3}=<tr><td><span class='itemdef'>\1</span></td> <td> @image html gtk-\2.png\n</td><td>\3</td></tr>"]]></value>
+    <value><![CDATA["stock{3}=<tr><td><span class='itemdef'>\1</span></td> <td>\2</td> <td> @image html gtk-\3.png </td></tr>"]]></value>
     <value><![CDATA["beginWxPerlOnly=\if WXPERL_MANUAL <b>wxPerl Note:</b>"]]></value>
     <value><![CDATA[endWxPerlOnly=\endif]]></value>
     <value><![CDATA[leftCurly={]]></value>
@@ -197,6 +215,7 @@
   <option  id='WARN_NO_PARAMDOC' default='no' type='bool'><value>YES</value></option>
   <option  id='WARN_AS_ERROR' default='yes' type='string'><value>NO</value></option>
   <option  id='WARN_FORMAT' default='yes' type='string'><value><![CDATA["$file:$line: $text"]]></value></option>
+  <option  id='WARN_LINE_FORMAT' default='yes' type='string'><value><![CDATA["at line $line of file $file"]]></value></option>
   <option  id='WARN_LOGFILE' default='no' type='string'><value><![CDATA[doxygen.log]]></value></option>
   <option  id='INPUT' default='no' type='stringlist'>
     <value><![CDATA[mainpages]]></value>
@@ -261,9 +280,12 @@
   <option  id='HTML_FOOTER' default='no' type='string'><value><![CDATA[custom_footer.html]]></value></option>
   <option  id='HTML_STYLESHEET' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='HTML_EXTRA_STYLESHEET' default='no' type='stringlist'>
+    <value><![CDATA[doxygen-awesome-css/doxygen-awesome.css]]></value>
     <value><![CDATA[extra_stylesheet.css]]></value>
   </option>
   <option  id='HTML_EXTRA_FILES' default='no' type='stringlist'>
+    <value><![CDATA[doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js]]></value>
+    <value><![CDATA[doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js]]></value>
     <value><![CDATA[wxwidgets.js]]></value>
   </option>
   <option  id='HTML_COLORSTYLE_HUE' default='yes' type='int'><value>220</value></option>
@@ -274,7 +296,8 @@
   <option  id='HTML_DYNAMIC_SECTIONS' default='no' type='bool'><value>YES</value></option>
   <option  id='HTML_INDEX_NUM_ENTRIES' default='yes' type='int'><value>100</value></option>
   <option  id='GENERATE_DOCSET' default='yes' type='bool'><value>NO</value></option>
-  <option  id='DOCSET_FEEDNAME' default='no' type='string'><value><![CDATA["wxWidgets 3.1"]]></value></option>
+  <option  id='DOCSET_FEEDNAME' default='no' type='string'><value><![CDATA["wxWidgets 3.2"]]></value></option>
+  <option  id='DOCSET_FEEDURL' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='DOCSET_BUNDLE_ID' default='no' type='string'><value><![CDATA[org.wxwidgets.doxygen.wx31]]></value></option>
   <option  id='DOCSET_PUBLISHER_ID' default='no' type='string'><value><![CDATA[org.wxwidgets.doxygen]]></value></option>
   <option  id='DOCSET_PUBLISHER_NAME' default='no' type='string'><value><![CDATA[wxWidgets]]></value></option>
@@ -301,6 +324,7 @@
   <option  id='ENUM_VALUES_PER_LINE' default='no' type='int'><value>1</value></option>
   <option  id='TREEVIEW_WIDTH' default='yes' type='int'><value>250</value></option>
   <option  id='EXT_LINKS_IN_WINDOW' default='no' type='bool'><value>YES</value></option>
+  <option  id='OBFUSCATE_EMAILS' default='yes' type='bool'><value>YES</value></option>
   <option  id='HTML_FORMULA_FORMAT' default='yes' type='string'><value>png</value></option>
   <option  id='FORMULA_FONTSIZE' default='yes' type='int'><value>10</value></option>
   <option  id='FORMULA_TRANSPARENT' default='yes' type='bool'><value>YES</value></option>
@@ -385,7 +409,6 @@
   <option  id='ALLEXTERNALS' default='yes' type='bool'><value>NO</value></option>
   <option  id='EXTERNAL_GROUPS' default='yes' type='bool'><value>YES</value></option>
   <option  id='EXTERNAL_PAGES' default='yes' type='bool'><value>YES</value></option>
-  <option  id='CLASS_DIAGRAMS' default='yes' type='bool'><value>YES</value></option>
   <option  id='DIA_PATH' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='HIDE_UNDOC_RELATIONS' default='yes' type='bool'><value>YES</value></option>
   <option  id='HAVE_DOT' default='no' type='bool'><value>YES</value></option>
@@ -393,7 +416,7 @@
   <option  id='DOT_FONTNAME' default='yes' type='string'><value><![CDATA[Helvetica]]></value></option>
   <option  id='DOT_FONTSIZE' default='yes' type='int'><value>10</value></option>
   <option  id='DOT_FONTPATH' default='yes' type='string'><value><![CDATA[]]></value></option>
-  <option  id='CLASS_GRAPH' default='yes' type='bool'><value>YES</value></option>
+  <option  id='CLASS_GRAPH' default='yes' type='string'><value>YES</value></option>
   <option  id='COLLABORATION_GRAPH' default='no' type='bool'><value>NO</value></option>
   <option  id='GROUP_GRAPHS' default='no' type='bool'><value>NO</value></option>
   <option  id='UML_LOOK' default='yes' type='bool'><value>NO</value></option>
@@ -407,7 +430,8 @@
   <option  id='CALLER_GRAPH' default='yes' type='bool'><value>NO</value></option>
   <option  id='GRAPHICAL_HIERARCHY' default='no' type='bool'><value>NO</value></option>
   <option  id='DIRECTORY_GRAPH' default='no' type='bool'><value>NO</value></option>
-  <option  id='DOT_IMAGE_FORMAT' default='yes' type='string'><value>png</value></option>
+  <option  id='DIR_GRAPH_MAX_DEPTH' default='yes' type='int'><value>1</value></option>
+  <option  id='DOT_IMAGE_FORMAT' default='no' type='string'><value>svg</value></option>
   <option  id='INTERACTIVE_SVG' default='yes' type='bool'><value>NO</value></option>
   <option  id='DOT_PATH' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='DOTFILE_DIRS' default='yes' type='stringlist'>
@@ -420,9 +444,9 @@
   <option  id='PLANTUML_CFG_FILE' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='PLANTUML_INCLUDE_PATH' default='yes' type='stringlist'>
   </option>
-  <option  id='DOT_GRAPH_MAX_NODES' default='yes' type='int'><value>50</value></option>
+  <option  id='DOT_GRAPH_MAX_NODES' default='no' type='int'><value>150</value></option>
   <option  id='MAX_DOT_GRAPH_DEPTH' default='no' type='int'><value>1000</value></option>
-  <option  id='DOT_TRANSPARENT' default='yes' type='bool'><value>NO</value></option>
+  <option  id='DOT_TRANSPARENT' default='no' type='bool'><value>YES</value></option>
   <option  id='DOT_MULTI_TARGETS' default='yes' type='bool'><value>NO</value></option>
   <option  id='GENERATE_LEGEND' default='yes' type='bool'><value>YES</value></option>
   <option  id='DOT_CLEANUP' default='yes' type='bool'><value>YES</value></option>

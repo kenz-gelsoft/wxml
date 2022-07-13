@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_thread" kind="page">
     <compoundname>overview_thread</compoundname>
     <title>Multithreading Overview</title>
@@ -13,7 +13,6 @@
 <para>wxWidgets provides a complete set of classes encapsulating objects necessary in multi-threaded (MT) applications: the <ref refid="classwx_thread" kindref="compound">wxThread</ref> class itself and different synchronization objects: mutexes (see <ref refid="classwx_mutex" kindref="compound">wxMutex</ref>) and critical sections (see <ref refid="classwx_critical_section" kindref="compound">wxCriticalSection</ref>) with conditions (see <ref refid="classwx_condition" kindref="compound">wxCondition</ref>). </para>
     </briefdescription>
     <detaileddescription>
-<para>wxWidgets provides a complete set of classes encapsulating objects necessary in multi-threaded (MT) applications: the <ref refid="classwx_thread" kindref="compound">wxThread</ref> class itself and different synchronization objects: mutexes (see <ref refid="classwx_mutex" kindref="compound">wxMutex</ref>) and critical sections (see <ref refid="classwx_critical_section" kindref="compound">wxCriticalSection</ref>) with conditions (see <ref refid="classwx_condition" kindref="compound">wxCondition</ref>).</para>
 <para>The thread API in wxWidgets resembles to POSIX1.c threads API (a.k.a. pthreads), although several functions have different names and some features inspired by Win32 thread API are there as well.</para>
 <para>These classes hopefully make writing MT programs easier and they also provide some extra error checking (compared to the native - be it Win32 or Posix - thread API), however it is still a non-trivial undertaking especially for large projects. Before starting an MT application (or starting to add MT features to an existing one) it is worth asking oneself if there is no easier and safer way to implement the same functionality. Of course, in some situations threads really make sense (classical example is a server application which launches a new thread for each new client), but in others it might be an overkill. On the other hand, the recent evolution of the computer hardware shows an important trend towards multi-core systems, which are better exploited using multiple threads (e.g. you may want to split a long task among as many threads as many CPU (cores) the system reports; see <ref refid="classwx_thread_1a21ccbc2f91bed8d65aeada49a7f8335d" kindref="member">wxThread::GetCPUCount</ref>).</para>
 <para>To implement non-blocking operations <emphasis>without</emphasis> using multiple threads you have two possible implementation choices:</para>

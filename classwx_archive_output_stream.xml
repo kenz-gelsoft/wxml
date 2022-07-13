@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_archive_output_stream" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxArchiveOutputStream</compoundname>
     <basecompoundref refid="classwx_filter_output_stream" prot="public" virt="non-virtual">wxFilterOutputStream</basecompoundref>
@@ -12,6 +12,7 @@
         <definition>virtual wxArchiveOutputStream::~wxArchiveOutputStream</definition>
         <argsstring>()</argsstring>
         <name>~wxArchiveOutputStream</name>
+        <qualifiedname>wxArchiveOutputStream::~wxArchiveOutputStream</qualifiedname>
         <briefdescription>
 <para>Calls <ref refid="classwx_archive_output_stream_1a2d6ec4ddefa626a2400985c676bfbfea" kindref="member">Close()</ref> if it has not already been called. </para>
         </briefdescription>
@@ -26,6 +27,7 @@
         <definition>virtual bool wxArchiveOutputStream::Close</definition>
         <argsstring>()</argsstring>
         <name>Close</name>
+        <qualifiedname>wxArchiveOutputStream::Close</qualifiedname>
         <reimplements refid="classwx_output_stream_1a1c306ce99990d525921f8f6ae8432083">Close</reimplements>
         <reimplementedby refid="classwx_tar_output_stream_1a28f6073ef5557fb488b1a7142d0ba882">Close</reimplementedby>
         <reimplementedby refid="classwx_zip_output_stream_1a8c1c85831fa28ddca211200fd315ad04">Close</reimplementedby>
@@ -47,6 +49,7 @@
         <definition>virtual bool wxArchiveOutputStream::CloseEntry</definition>
         <argsstring>()=0</argsstring>
         <name>CloseEntry</name>
+        <qualifiedname>wxArchiveOutputStream::CloseEntry</qualifiedname>
         <reimplementedby refid="classwx_tar_output_stream_1a4d4e378698566f70790534d259688349">CloseEntry</reimplementedby>
         <reimplementedby refid="classwx_zip_output_stream_1aa8c78bdb0eba298b9a3648756b3562bd">CloseEntry</reimplementedby>
         <briefdescription>
@@ -64,6 +67,7 @@
         <definition>virtual bool wxArchiveOutputStream::CopyArchiveMetaData</definition>
         <argsstring>(wxArchiveInputStream &amp;stream)=0</argsstring>
         <name>CopyArchiveMetaData</name>
+        <qualifiedname>wxArchiveOutputStream::CopyArchiveMetaData</qualifiedname>
         <param>
           <type><ref refid="classwx_archive_input_stream" kindref="compound">wxArchiveInputStream</ref> &amp;</type>
           <declname>stream</declname>
@@ -85,6 +89,7 @@
         <definition>virtual bool wxArchiveOutputStream::CopyEntry</definition>
         <argsstring>(wxArchiveEntry *entry, wxArchiveInputStream &amp;stream)=0</argsstring>
         <name>CopyEntry</name>
+        <qualifiedname>wxArchiveOutputStream::CopyEntry</qualifiedname>
         <param>
           <type><ref refid="classwx_archive_entry" kindref="compound">wxArchiveEntry</ref> *</type>
           <declname>entry</declname>
@@ -110,6 +115,7 @@
         <definition>virtual bool wxArchiveOutputStream::PutNextDirEntry</definition>
         <argsstring>(const wxString &amp;name, const wxDateTime &amp;dt=wxDateTime::Now())=0</argsstring>
         <name>PutNextDirEntry</name>
+        <qualifiedname>wxArchiveOutputStream::PutNextDirEntry</qualifiedname>
         <reimplementedby refid="classwx_tar_output_stream_1a98ea36fbcd08c6c7ae82eaafdd5eb789">PutNextDirEntry</reimplementedby>
         <reimplementedby refid="classwx_zip_output_stream_1a8b92bb0f3837e79f8a289c9cecde7d3d">PutNextDirEntry</reimplementedby>
         <param>
@@ -136,6 +142,7 @@
         <definition>virtual bool wxArchiveOutputStream::PutNextEntry</definition>
         <argsstring>(wxArchiveEntry *entry)=0</argsstring>
         <name>PutNextEntry</name>
+        <qualifiedname>wxArchiveOutputStream::PutNextEntry</qualifiedname>
         <param>
           <type><ref refid="classwx_archive_entry" kindref="compound">wxArchiveEntry</ref> *</type>
           <declname>entry</declname>
@@ -155,6 +162,7 @@
         <definition>virtual bool wxArchiveOutputStream::PutNextEntry</definition>
         <argsstring>(const wxString &amp;name, const wxDateTime &amp;dt=wxDateTime::Now(), wxFileOffset size=wxInvalidOffset)=0</argsstring>
         <name>PutNextEntry</name>
+        <qualifiedname>wxArchiveOutputStream::PutNextEntry</qualifiedname>
         <reimplementedby refid="classwx_tar_output_stream_1a088d0f85e66a41388866edfa9512d7ee">PutNextEntry</reimplementedby>
         <reimplementedby refid="classwx_zip_output_stream_1a4190f1b14a18d059689406951de42442">PutNextEntry</reimplementedby>
         <param>
@@ -189,7 +197,8 @@
 <para><ref refid="classwx_archive_output_stream_1a4a5dd11b0dbd57b78a94315c9e841ceb" kindref="member">wxArchiveOutputStream::PutNextEntry</ref> is used to create a new entry in the output archive, then the entry&apos;s data is written to the <ref refid="classwx_archive_output_stream" kindref="compound">wxArchiveOutputStream</ref>. Another call to <ref refid="classwx_archive_output_stream_1a4a5dd11b0dbd57b78a94315c9e841ceb" kindref="member">PutNextEntry()</ref> closes the current entry and begins the next.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ , \ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__archive" kindref="compound">Archive support</ref>, <ref refid="group__group__class__streams" kindref="compound">Streams</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_archive" kindref="compound">Archive Formats</ref>, <ref refid="classwx_archive_entry" kindref="compound">wxArchiveEntry</ref>, <ref refid="classwx_archive_input_stream" kindref="compound">wxArchiveInputStream</ref> </para>
 </simplesect>
 </para>

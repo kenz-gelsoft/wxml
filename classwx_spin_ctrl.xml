@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_spin_ctrl" kind="class" language="C++" prot="public">
     <compoundname>wxSpinCtrl</compoundname>
     <basecompoundref refid="classwx_control" prot="public" virt="non-virtual">wxControl</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxSpinCtrl::wxSpinCtrl</definition>
         <argsstring>()</argsstring>
         <name>wxSpinCtrl</name>
+        <qualifiedname>wxSpinCtrl::wxSpinCtrl</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -24,6 +25,7 @@
         <definition>wxSpinCtrl::wxSpinCtrl</definition>
         <argsstring>(wxWindow *parent, wxWindowID id=wxID_ANY, const wxString &amp;value=wxEmptyString, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=wxSP_ARROW_KEYS, int min=0, int max=100, int initial=0, const wxString &amp;name=&quot;wxSpinCtrl&quot;)</argsstring>
         <name>wxSpinCtrl</name>
+        <qualifiedname>wxSpinCtrl::wxSpinCtrl</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -172,6 +174,7 @@
         <definition>bool wxSpinCtrl::Create</definition>
         <argsstring>(wxWindow *parent, wxWindowID id=wxID_ANY, const wxString &amp;value=wxEmptyString, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=wxSP_ARROW_KEYS, int min=0, int max=100, int initial=0, const wxString &amp;name=&quot;wxSpinCtrl&quot;)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxSpinCtrl::Create</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -236,6 +239,7 @@
         <definition>int wxSpinCtrl::GetBase</definition>
         <argsstring>() const</argsstring>
         <name>GetBase</name>
+        <qualifiedname>wxSpinCtrl::GetBase</qualifiedname>
         <briefdescription>
 <para>Returns the numerical base being currently used, 10 by default. </para>
         </briefdescription>
@@ -255,6 +259,7 @@
         <definition>int wxSpinCtrl::GetMax</definition>
         <argsstring>() const</argsstring>
         <name>GetMax</name>
+        <qualifiedname>wxSpinCtrl::GetMax</qualifiedname>
         <briefdescription>
 <para>Gets maximal allowable value. </para>
         </briefdescription>
@@ -269,6 +274,7 @@
         <definition>int wxSpinCtrl::GetMin</definition>
         <argsstring>() const</argsstring>
         <name>GetMin</name>
+        <qualifiedname>wxSpinCtrl::GetMin</qualifiedname>
         <briefdescription>
 <para>Gets minimal allowable value. </para>
         </briefdescription>
@@ -278,11 +284,30 @@
         </inbodydescription>
         <location file="interface/wx/spinctrl.h" line="134" column="9"/>
       </memberdef>
+      <memberdef kind="function" id="classwx_spin_ctrl_1a17f12115a3492e6467c74d156846530e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>wxString wxSpinCtrl::GetTextValue</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTextValue</name>
+        <qualifiedname>wxSpinCtrl::GetTextValue</qualifiedname>
+        <briefdescription>
+<para>Returns the text in the text entry part of the control. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/spinctrl.h" line="141" column="14"/>
+      </memberdef>
       <memberdef kind="function" id="classwx_spin_ctrl_1aa8ec6e624432bf37b0172a15a913f015" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxSpinCtrl::GetValue</definition>
         <argsstring>() const</argsstring>
         <name>GetValue</name>
+        <qualifiedname>wxSpinCtrl::GetValue</qualifiedname>
         <briefdescription>
 <para>Gets the value of the spin control. </para>
         </briefdescription>
@@ -290,13 +315,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/spinctrl.h" line="139" column="9"/>
+        <location file="interface/wx/spinctrl.h" line="146" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_spin_ctrl_1acc3fd5019913f6cad352aec6eb74e82a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wxSpinCtrl::GetIncrement</definition>
+        <argsstring>() const</argsstring>
+        <name>GetIncrement</name>
+        <qualifiedname>wxSpinCtrl::GetIncrement</qualifiedname>
+        <briefdescription>
+<para>Get the value for increment for a spin control. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default value is 1 but it can be changed using <ref refid="classwx_spin_ctrl_1a5e937d934546ee3c24f1ff2a26888433" kindref="member">SetIncrement()</ref>.</para>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/spinctrl.h" line="155" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_spin_ctrl_1af02b12c3d75a1ea24cbcfb9580d51eb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool wxSpinCtrl::SetBase</definition>
         <argsstring>(int base)</argsstring>
         <name>SetBase</name>
+        <qualifiedname>wxSpinCtrl::SetBase</qualifiedname>
         <param>
           <type>int</type>
           <declname>base</declname>
@@ -326,13 +371,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/spinctrl.h" line="164" column="10"/>
+        <location file="interface/wx/spinctrl.h" line="180" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_spin_ctrl_1ab2b5d966f0895c5cc4d54a9cfd1817dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxSpinCtrl::SetRange</definition>
         <argsstring>(int minVal, int maxVal)</argsstring>
         <name>SetRange</name>
+        <qualifiedname>wxSpinCtrl::SetRange</qualifiedname>
         <param>
           <type>int</type>
           <declname>minVal</declname>
@@ -352,13 +398,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/spinctrl.h" line="177" column="10"/>
+        <location file="interface/wx/spinctrl.h" line="193" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_spin_ctrl_1a2dbe44ee75161f54840339a2d340a6eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxSpinCtrl::SetSelection</definition>
         <argsstring>(long from, long to)</argsstring>
         <name>SetSelection</name>
+        <qualifiedname>wxSpinCtrl::SetSelection</qualifiedname>
         <param>
           <type>long</type>
           <declname>from</declname>
@@ -378,13 +425,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/spinctrl.h" line="187" column="18"/>
+        <location file="interface/wx/spinctrl.h" line="203" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_spin_ctrl_1a1e60208c58820d18cd5b5df3bf91d414" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxSpinCtrl::SetValue</definition>
         <argsstring>(const wxString &amp;text)</argsstring>
         <name>SetValue</name>
+        <qualifiedname>wxSpinCtrl::SetValue</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>text</declname>
@@ -393,18 +441,19 @@
 <para>Sets the value of the spin control. </para>
         </briefdescription>
         <detaileddescription>
-<para>It is recommended to use the overload taking an integer value instead.</para>
+<para>It is recommended to use the overload taking an integer value instead. If <emphasis>text</emphasis> doesn&apos;t represent a valid number, it may not be shown in the text part of the control at all (only empty string is guaranteed to be supported under all platforms) and the numeric value will be changed to <ref refid="classwx_spin_ctrl_1aea5251458d11a4c6a8508aea736e6350" kindref="member">GetMin()</ref>.</para>
 <para>Notice that, unlike <ref refid="classwx_text_entry_1a90f876b2dd83ba5c97ba0c193b386e9f" kindref="member">wxTextCtrl::SetValue()</ref>, but like most of the other setter methods in wxWidgets, calling this method does not generate any events as events are only generated for the user actions. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/spinctrl.h" line="198" column="18"/>
+        <location file="interface/wx/spinctrl.h" line="218" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classwx_spin_ctrl_1a523f4c9064dfc399bc7dae67d5d6da59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxSpinCtrl::SetValue</definition>
         <argsstring>(int value)</argsstring>
         <name>SetValue</name>
+        <qualifiedname>wxSpinCtrl::SetValue</qualifiedname>
         <param>
           <type>int</type>
           <declname>value</declname>
@@ -417,15 +466,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/spinctrl.h" line="205" column="10"/>
+        <location file="interface/wx/spinctrl.h" line="225" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_spin_ctrl_1a5e937d934546ee3c24f1ff2a26888433" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxSpinCtrl::SetIncrement</definition>
+        <argsstring>(int value)</argsstring>
+        <name>SetIncrement</name>
+        <qualifiedname>wxSpinCtrl::SetIncrement</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Sets the increment for the control. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The increment is the number by which the value changes when the up or down arrow is used.</para>
+<para>The default is 1, but it can be useful to set it to a higher value when using the control for bigger numbers.</para>
+<para>Note that it is still possible to enter any value (in the valid range) into the control manually, whatever is the value of the increment.</para>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/spinctrl.h" line="241" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="classwx_spin_ctrl" kindref="compound">wxSpinCtrl</ref> combines <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref> and <ref refid="classwx_spin_button" kindref="compound">wxSpinButton</ref> in one control. </para>
     </briefdescription>
     <detaileddescription>
-<para><linebreak/>
-<heading level="2">Styles</heading>
+<para><heading level="2">Styles</heading>
 </para>
 <para>This class supports the following styles:</para>
 <para> <itemizedlist>
@@ -439,31 +512,24 @@
 </listitem>
 <listitem><para>wxALIGN_CENTRE_HORIZONTAL: Same as wxTE_CENTRE for <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>: the text is centered. </para>
 </listitem>
-<listitem><para>wxALIGN_RIGHT: Same as wxTE_RIGHT for <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>: the text is right aligned. <linebreak/>
-</para>
+<listitem><para>wxALIGN_RIGHT: Same as wxTE_RIGHT for <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>: the text is right aligned. </para>
 </listitem>
 </itemizedlist>
-<linebreak/>
 <heading level="2">Events emitted by this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_spin_event" kindref="compound">wxSpinEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros for events emitted by this class: <itemizedlist>
-<listitem><para>EVT_SPINCTRL(id,  func): Process a wxEVT_SPINCTRL event, which is generated whenever the numeric value of the spin control is updated. <linebreak/>
- You may also use the <ref refid="classwx_spin_button" kindref="compound">wxSpinButton</ref> event macros, however the corresponding events will not be generated under all platforms. Finally, if the user modifies the text in the edit part of the spin control directly, the EVT_TEXT is generated, like for the <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>. When the use enters text into the text area, the text is not validated until the control loses focus (e.g. by using the TAB key). The value is then adjusted to the range and a <ref refid="classwx_spin_event" kindref="compound">wxSpinEvent</ref> sent then if the value is different from the last value sent.</para>
+<listitem><para>EVT_SPINCTRL(id,  func): Process a wxEVT_SPINCTRL event, which is generated whenever the numeric value of the spin control is updated. </para>
 </listitem>
 </itemizedlist>
-<heading level="2"></heading>
+You may also use the <ref refid="classwx_spin_button" kindref="compound">wxSpinButton</ref> event macros, however the corresponding events will not be generated under all platforms. Finally, if the user modifies the text in the edit part of the spin control directly, the EVT_TEXT is generated, like for the <ref refid="classwx_text_ctrl" kindref="compound">wxTextCtrl</ref>. When the use enters text into the text area, the text is not validated until the control loses focus (e.g. by using the TAB key). The value is then adjusted to the range and a <ref refid="classwx_spin_event" kindref="compound">wxSpinEvent</ref> sent then if the value is different from the last value sent.</para>
+<para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-spinctrl-msw.png">wxMSW Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-spinctrl-gtk.png">wxGTK Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-spinctrl-mac.png">wxOSX Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__ctrl" kindref="compound">Controls</ref> <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-spinctrl-msw.png">wxMSW Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-spinctrl-gtk.png">wxGTK Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-spinctrl-mac.png">wxOSX Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
 <para><simplesect kind="see"><para><ref refid="classwx_spin_button" kindref="compound">wxSpinButton</ref>, <ref refid="classwx_spin_ctrl_double" kindref="compound">wxSpinCtrlDouble</ref>, <ref refid="classwx_control" kindref="compound">wxControl</ref> </para>
 </simplesect>
 </para>
@@ -547,7 +613,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/spinctrl.h" line="53" column="1" bodyfile="interface/wx/spinctrl.h" bodystart="54" bodyend="206"/>
+    <location file="interface/wx/spinctrl.h" line="53" column="1" bodyfile="interface/wx/spinctrl.h" bodystart="54" bodyend="242"/>
     <listofallmembers>
       <member refid="classwx_window_1a1da8baa734b9872d0c085b86a7b5d817" prot="public" virt="virtual"><scope>wxSpinCtrl</scope><name>AcceptsFocus</name></member>
       <member refid="classwx_window_1a3a0cb3bd5e82462b19df9f24ad6d9ac4" prot="public" virt="virtual"><scope>wxSpinCtrl</scope><name>AcceptsFocusFromKeyboard</name></member>
@@ -627,6 +693,12 @@
       <member refid="classwx_window_1a71f45373a9fc55e128d263391093c32a" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1ad122671fcef564f7e11658c3ee0d4d87" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1aee63c8b1f8055fef76962578aa7f38c1" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>FromDIP</name></member>
+      <member refid="classwx_window_1a144678f0b197268aa9d8d81b76a150a7" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a048d540d731ac83550c206df4af04270" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1ac3f185cef9f6a645be63b9b62afae46a" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a2fe6412d36c2b81c0dd3eeb1dd8bd004" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1af1ddb23778f531a56f2e1aa937a66d9c" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a27efab91147b0ffeee600f02059c23fc" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>FromPhys</name></member>
       <member refid="classwx_window_1a9cf3fd71ffab949cdf06f8f8e2646d56" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetAcceleratorTable</name></member>
       <member refid="classwx_window_1a00547805ce11e2ba64607d31fc2c67e2" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetAccessible</name></member>
       <member refid="classwx_window_1a64e3f936ab812d24966827ea4e0f15c0" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetAutoLayout</name></member>
@@ -672,6 +744,7 @@
       <member refid="classwx_window_1acb28971fe25abd1f5c6d768e203a042a" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetHelpText</name></member>
       <member refid="classwx_window_1a7d11a419fede5049d7c12c337e5f5dfc" prot="public" virt="virtual"><scope>wxSpinCtrl</scope><name>GetHelpTextAtPoint</name></member>
       <member refid="classwx_window_1a79037f68b290bba5811628ec67bf3b24" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetId</name></member>
+      <member refid="classwx_spin_ctrl_1acc3fd5019913f6cad352aec6eb74e82a" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetIncrement</name></member>
       <member refid="classwx_control_1a9d03cd7f44c4bb1722f39fbc7a5d8cbd" prot="public" virt="virtual"><scope>wxSpinCtrl</scope><name>GetLabel</name></member>
       <member refid="classwx_control_1a4ec6a7ee61553cd1df77d50491cee820" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetLabelText</name></member>
       <member refid="classwx_control_1ae892fefe6b88168c158e11e975633665" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetLabelText</name></member>
@@ -712,6 +785,7 @@
       <member refid="classwx_window_1ae05f09350b273af1c47a82253538c5c4" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetSizer</name></member>
       <member refid="classwx_window_1a4220668e42f3a173bf29d335da4db2c3" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetTextExtent</name></member>
       <member refid="classwx_window_1a69fc79069821a633eba9c5d917fd8b7b" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetTextExtent</name></member>
+      <member refid="classwx_spin_ctrl_1a17f12115a3492e6467c74d156846530e" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetTextValue</name></member>
       <member refid="classwx_window_1a578145344f92cfee755a9c87f6703432" prot="public" virt="virtual"><scope>wxSpinCtrl</scope><name>GetThemeEnabled</name></member>
       <member refid="classwx_window_1a5192577a8c6d35a73a1cde9acfe03dd4" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetToolTip</name></member>
       <member refid="classwx_window_1a7e7c9a92f9efbb47073704646db1344e" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>GetToolTipText</name></member>
@@ -842,6 +916,7 @@
       <member refid="classwx_window_1a69f1e1c7ddd370d72e68c70f13ac8de9" prot="public" virt="virtual"><scope>wxSpinCtrl</scope><name>SetForegroundColour</name></member>
       <member refid="classwx_window_1a4c1a2cbc7363237b3a7c70af4e702c72" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>SetHelpText</name></member>
       <member refid="classwx_window_1a7f27d0faed14effa013381bdc40e1bcd" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>SetId</name></member>
+      <member refid="classwx_spin_ctrl_1a5e937d934546ee3c24f1ff2a26888433" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>SetIncrement</name></member>
       <member refid="classwx_window_1ae6dfe0b0d4a8c666b21ce8df8d96727b" prot="protected" virt="virtual"><scope>wxSpinCtrl</scope><name>SetInitialBestSize</name></member>
       <member refid="classwx_window_1a1b309ca50ba87e34f968c83b79af1397" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>SetInitialSize</name></member>
       <member refid="classwx_control_1a2c2ae20554e7db5e765f163022ce09c0" prot="public" virt="virtual"><scope>wxSpinCtrl</scope><name>SetLabel</name></member>
@@ -896,6 +971,12 @@
       <member refid="classwx_window_1aef413f1d0252a7a5a29512e8ab5e7c91" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a1771a46c000060619f6e1249ce362433" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a8a4fa47129de552bfec37db8c69688a2" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>ToggleWindowStyle</name></member>
+      <member refid="classwx_window_1a5d3a9450e6b6f44c6b7d0d4a002fa40f" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1afca50ba59976ad9913148fffd38ff0ef" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1ad0bea5e21d33d00d0cf19c011bad39bf" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aaf0ac2191826f233f04bffa900dbc357" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aef56d76b1cacdca83daebffcc385d6db" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1a6797f4c9656276796031b9846ecc20b6" prot="public" virt="non-virtual"><scope>wxSpinCtrl</scope><name>ToPhys</name></member>
       <member refid="classwx_window_1ab8e51f36e7d8790b361c8d8c6f37b1ad" prot="public" virt="virtual"><scope>wxSpinCtrl</scope><name>TransferDataFromWindow</name></member>
       <member refid="classwx_window_1a88cc65e424a129d9b0057756cdb67ec9" prot="public" virt="virtual"><scope>wxSpinCtrl</scope><name>TransferDataToWindow</name></member>
       <member refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" prot="protected" virt="virtual"><scope>wxSpinCtrl</scope><name>TryAfter</name></member>

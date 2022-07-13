@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_scoped_ptr" kind="class" language="C++" prot="public">
     <compoundname>wxScopedPtr</compoundname>
     <derivedcompoundref refid="classwx_scoped_tied_ptr" prot="public" virt="non-virtual">wxScopedTiedPtr</derivedcompoundref>
@@ -10,6 +10,7 @@
         <definition>wxScopedPtr::wxScopedPtr</definition>
         <argsstring>(type *T=NULL)</argsstring>
         <name>wxScopedPtr</name>
+        <qualifiedname>wxScopedPtr::wxScopedPtr</qualifiedname>
         <param>
           <type>type *</type>
           <declname>T</declname>
@@ -30,6 +31,7 @@
         <definition>wxScopedPtr::~wxScopedPtr</definition>
         <argsstring>()</argsstring>
         <name>~wxScopedPtr</name>
+        <qualifiedname>wxScopedPtr::~wxScopedPtr</qualifiedname>
         <briefdescription>
 <para>Destructor frees the pointer help by this object if it is not NULL. </para>
         </briefdescription>
@@ -44,6 +46,7 @@
         <definition>T * wxScopedPtr::get</definition>
         <argsstring>() const</argsstring>
         <name>get</name>
+        <qualifiedname>wxScopedPtr::get</qualifiedname>
         <briefdescription>
 <para>This operator gets the pointer stored in the smart pointer or returns NULL if there is none. </para>
         </briefdescription>
@@ -58,6 +61,7 @@
         <definition>T &amp; wxScopedPtr::operator*</definition>
         <argsstring>() const</argsstring>
         <name>operator*</name>
+        <qualifiedname>wxScopedPtr::operator*</qualifiedname>
         <briefdescription>
 <para>This operator works like the standard C++ pointer operator to return the object being pointed to by the pointer. </para>
         </briefdescription>
@@ -73,6 +77,7 @@
         <definition>T * wxScopedPtr::operator-&gt;</definition>
         <argsstring>() const</argsstring>
         <name>operator-&gt;</name>
+        <qualifiedname>wxScopedPtr::operator-&gt;</qualifiedname>
         <briefdescription>
 <para>Smart pointer member access. </para>
         </briefdescription>
@@ -89,6 +94,7 @@
         <definition>T * wxScopedPtr::release</definition>
         <argsstring>()</argsstring>
         <name>release</name>
+        <qualifiedname>wxScopedPtr::release</qualifiedname>
         <briefdescription>
 <para>Returns the currently hold pointer and resets the smart pointer object to NULL. </para>
         </briefdescription>
@@ -106,6 +112,7 @@
         <definition>wxScopedPtr::reset</definition>
         <argsstring>(T *p=NULL)</argsstring>
         <name>reset</name>
+        <qualifiedname>wxScopedPtr::reset</qualifiedname>
         <param>
           <type>T *</type>
           <declname>p</declname>
@@ -128,6 +135,7 @@
         <definition>wxScopedPtr::swap</definition>
         <argsstring>(wxScopedPtr &amp;other)</argsstring>
         <name>swap</name>
+        <qualifiedname>wxScopedPtr::swap</qualifiedname>
         <param>
           <type><ref refid="classwx_scoped_ptr" kindref="compound">wxScopedPtr</ref> &amp;</type>
           <declname>other</declname>
@@ -190,7 +198,8 @@
 </programlisting> Once again, in this cass <computeroutput>CLASSNAME</computeroutput> will be <computeroutput>TYPEPtr</computeroutput>.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__smartpointers" kindref="compound">Smart Pointers</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_scoped_array" kindref="compound">wxScopedArray</ref> </para>
 </simplesect>
 </para>

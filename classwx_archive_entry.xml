@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_archive_entry" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxArchiveEntry</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -12,6 +12,7 @@
         <definition>wxArchiveEntry * wxArchiveEntry::Clone</definition>
         <argsstring>() const</argsstring>
         <name>Clone</name>
+        <qualifiedname>wxArchiveEntry::Clone</qualifiedname>
         <briefdescription>
 <para>Returns a copy of this entry object. </para>
         </briefdescription>
@@ -26,6 +27,7 @@
         <definition>virtual wxDateTime wxArchiveEntry::GetDateTime</definition>
         <argsstring>() const =0</argsstring>
         <name>GetDateTime</name>
+        <qualifiedname>wxArchiveEntry::GetDateTime</qualifiedname>
         <briefdescription>
 <para>Gets the entry&apos;s timestamp. </para>
         </briefdescription>
@@ -40,6 +42,7 @@
         <definition>virtual void wxArchiveEntry::SetDateTime</definition>
         <argsstring>(const wxDateTime &amp;dt)=0</argsstring>
         <name>SetDateTime</name>
+        <qualifiedname>wxArchiveEntry::SetDateTime</qualifiedname>
         <param>
           <type>const <ref refid="classwx_date_time" kindref="compound">wxDateTime</ref> &amp;</type>
           <declname>dt</declname>
@@ -58,6 +61,7 @@
         <definition>virtual wxString wxArchiveEntry::GetName</definition>
         <argsstring>(wxPathFormat format=wxPATH_NATIVE) const =0</argsstring>
         <name>GetName</name>
+        <qualifiedname>wxArchiveEntry::GetName</qualifiedname>
         <param>
           <type><ref refid="filename_8h_1a0f0d9c04938ef2820d1ff7ed6b97bf00" kindref="member">wxPathFormat</ref></type>
           <declname>format</declname>
@@ -79,6 +83,7 @@
         <definition>virtual void wxArchiveEntry::SetName</definition>
         <argsstring>(const wxString &amp;name, wxPathFormat format=wxPATH_NATIVE)=0</argsstring>
         <name>SetName</name>
+        <qualifiedname>wxArchiveEntry::SetName</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>name</declname>
@@ -106,6 +111,7 @@
         <definition>virtual wxFileOffset wxArchiveEntry::GetSize</definition>
         <argsstring>() const =0</argsstring>
         <name>GetSize</name>
+        <qualifiedname>wxArchiveEntry::GetSize</qualifiedname>
         <reimplementedby refid="classwx_tar_entry_1a521dda6a657aff6e16d80ede50e4d792">GetSize</reimplementedby>
         <briefdescription>
 <para>Returns the size of the entry&apos;s data in bytes. </para>
@@ -121,6 +127,7 @@
         <definition>virtual void wxArchiveEntry::SetSize</definition>
         <argsstring>(wxFileOffset size)=0</argsstring>
         <name>SetSize</name>
+        <qualifiedname>wxArchiveEntry::SetSize</qualifiedname>
         <reimplementedby refid="classwx_tar_entry_1a4c6ea65856ecc69cb3a33753a7f35027">SetSize</reimplementedby>
         <param>
           <type><ref refid="filefn_8h_1a69d831b3febabc149c67b716c8e22de5" kindref="member">wxFileOffset</ref></type>
@@ -140,6 +147,7 @@
         <definition>virtual wxPathFormat wxArchiveEntry::GetInternalFormat</definition>
         <argsstring>() const =0</argsstring>
         <name>GetInternalFormat</name>
+        <qualifiedname>wxArchiveEntry::GetInternalFormat</qualifiedname>
         <briefdescription>
 <para>Returns the path format used internally within the archive to store filenames. </para>
         </briefdescription>
@@ -154,6 +162,7 @@
         <definition>virtual wxString wxArchiveEntry::GetInternalName</definition>
         <argsstring>() const =0</argsstring>
         <name>GetInternalName</name>
+        <qualifiedname>wxArchiveEntry::GetInternalName</qualifiedname>
         <reimplementedby refid="classwx_tar_entry_1abc46e348fa6569bb179daef72725ee34">GetInternalName</reimplementedby>
         <reimplementedby refid="classwx_zip_entry_1ad8f72d27b65c6d90d3530d08d499b112">GetInternalName</reimplementedby>
         <briefdescription>
@@ -175,6 +184,7 @@
         <definition>virtual wxFileOffset wxArchiveEntry::GetOffset</definition>
         <argsstring>() const =0</argsstring>
         <name>GetOffset</name>
+        <qualifiedname>wxArchiveEntry::GetOffset</qualifiedname>
         <briefdescription>
 <para>Returns a numeric value unique to the entry within the archive. </para>
         </briefdescription>
@@ -189,6 +199,7 @@
         <definition>virtual bool wxArchiveEntry::IsDir</definition>
         <argsstring>() const =0</argsstring>
         <name>IsDir</name>
+        <qualifiedname>wxArchiveEntry::IsDir</qualifiedname>
         <briefdescription>
 <para>Returns true if this is a directory entry. </para>
         </briefdescription>
@@ -207,6 +218,7 @@
         <definition>virtual void wxArchiveEntry::SetIsDir</definition>
         <argsstring>(bool isDir=true)=0</argsstring>
         <name>SetIsDir</name>
+        <qualifiedname>wxArchiveEntry::SetIsDir</qualifiedname>
         <param>
           <type>bool</type>
           <declname>isDir</declname>
@@ -227,6 +239,7 @@
         <definition>virtual bool wxArchiveEntry::IsReadOnly</definition>
         <argsstring>() const =0</argsstring>
         <name>IsReadOnly</name>
+        <qualifiedname>wxArchiveEntry::IsReadOnly</qualifiedname>
         <briefdescription>
 <para>Returns true if the entry is a read-only file. </para>
         </briefdescription>
@@ -241,6 +254,7 @@
         <definition>virtual void wxArchiveEntry::SetIsReadOnly</definition>
         <argsstring>(bool isReadOnly=true)=0</argsstring>
         <name>SetIsReadOnly</name>
+        <qualifiedname>wxArchiveEntry::SetIsReadOnly</qualifiedname>
         <param>
           <type>bool</type>
           <declname>isReadOnly</declname>
@@ -260,6 +274,7 @@
         <definition>void wxArchiveEntry::SetNotifier</definition>
         <argsstring>(wxArchiveNotifier &amp;notifier)</argsstring>
         <name>SetNotifier</name>
+        <qualifiedname>wxArchiveEntry::SetNotifier</qualifiedname>
         <param>
           <type><ref refid="classwx_archive_notifier" kindref="compound">wxArchiveNotifier</ref> &amp;</type>
           <declname>notifier</declname>
@@ -280,6 +295,7 @@
         <definition>virtual void wxArchiveEntry::UnsetNotifier</definition>
         <argsstring>()</argsstring>
         <name>UnsetNotifier</name>
+        <qualifiedname>wxArchiveEntry::UnsetNotifier</qualifiedname>
         <reimplementedby refid="classwx_zip_entry_1a86eb2049bacf2398b878ff4021c9259f">UnsetNotifier</reimplementedby>
         <briefdescription>
 <para>Unsets the notifier eventually attached to this entry. </para>
@@ -308,7 +324,8 @@
 </itemizedlist>
 <heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ , \ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__archive" kindref="compound">Archive support</ref>, <ref refid="group__group__class__streams" kindref="compound">Streams</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_archive" kindref="compound">Archive Formats</ref>, <ref refid="overview_archive_1overview_archive_generic" kindref="member">Generic Archive Programming</ref>, <ref refid="classwx_archive_input_stream" kindref="compound">wxArchiveInputStream</ref>, <ref refid="classwx_archive_output_stream" kindref="compound">wxArchiveOutputStream</ref>, <ref refid="classwx_archive_notifier" kindref="compound">wxArchiveNotifier</ref> </para>
 </simplesect>
 </para>

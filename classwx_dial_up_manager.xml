@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_dial_up_manager" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxDialUpManager</compoundname>
     <includes local="no">wx/dialup.h</includes>
@@ -9,6 +9,7 @@
         <definition>virtual wxDialUpManager::~wxDialUpManager</definition>
         <argsstring>()</argsstring>
         <name>~wxDialUpManager</name>
+        <qualifiedname>wxDialUpManager::~wxDialUpManager</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -23,6 +24,7 @@
         <definition>virtual bool wxDialUpManager::CancelDialing</definition>
         <argsstring>()=0</argsstring>
         <name>CancelDialing</name>
+        <qualifiedname>wxDialUpManager::CancelDialing</qualifiedname>
         <briefdescription>
 <para>Cancel dialing the number initiated with <ref refid="classwx_dial_up_manager_1a8c94f29ebc0d535ed4c54b9f04b0e67d" kindref="member">Dial()</ref> with async parameter equal to true. </para>
         </briefdescription>
@@ -42,6 +44,7 @@
         <definition>virtual bool wxDialUpManager::Dial</definition>
         <argsstring>(const wxString &amp;nameOfISP=wxEmptyString, const wxString &amp;username=wxEmptyString, const wxString &amp;password=wxEmptyString, bool async=true)=0</argsstring>
         <name>Dial</name>
+        <qualifiedname>wxDialUpManager::Dial</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>nameOfISP</declname>
@@ -80,6 +83,7 @@
         <definition>virtual void wxDialUpManager::DisableAutoCheckOnlineStatus</definition>
         <argsstring>()=0</argsstring>
         <name>DisableAutoCheckOnlineStatus</name>
+        <qualifiedname>wxDialUpManager::DisableAutoCheckOnlineStatus</qualifiedname>
         <briefdescription>
 <para>Disable automatic check for connection status change - notice that the <computeroutput>wxEVT_DIALUP_XXX</computeroutput> events won&apos;t be sent any more neither. </para>
         </briefdescription>
@@ -94,6 +98,7 @@
         <definition>virtual bool wxDialUpManager::EnableAutoCheckOnlineStatus</definition>
         <argsstring>(size_t nSeconds=60)=0</argsstring>
         <name>EnableAutoCheckOnlineStatus</name>
+        <qualifiedname>wxDialUpManager::EnableAutoCheckOnlineStatus</qualifiedname>
         <param>
           <type>size_t</type>
           <declname>nSeconds</declname>
@@ -117,6 +122,7 @@
         <definition>virtual size_t wxDialUpManager::GetISPNames</definition>
         <argsstring>(wxArrayString &amp;names) const =0</argsstring>
         <name>GetISPNames</name>
+        <qualifiedname>wxDialUpManager::GetISPNames</qualifiedname>
         <param>
           <type><ref refid="classwx_array_string" kindref="compound">wxArrayString</ref> &amp;</type>
           <declname>names</declname>
@@ -136,6 +142,7 @@
         <definition>virtual bool wxDialUpManager::HangUp</definition>
         <argsstring>()=0</argsstring>
         <name>HangUp</name>
+        <qualifiedname>wxDialUpManager::HangUp</qualifiedname>
         <briefdescription>
 <para>Hang up the currently active dial up connection. </para>
         </briefdescription>
@@ -150,6 +157,7 @@
         <definition>virtual bool wxDialUpManager::IsAlwaysOnline</definition>
         <argsstring>() const =0</argsstring>
         <name>IsAlwaysOnline</name>
+        <qualifiedname>wxDialUpManager::IsAlwaysOnline</qualifiedname>
         <briefdescription>
 <para>Returns true if the computer has a permanent network connection (i.e. </para>
         </briefdescription>
@@ -168,6 +176,7 @@
         <definition>virtual bool wxDialUpManager::IsDialing</definition>
         <argsstring>() const =0</argsstring>
         <name>IsDialing</name>
+        <qualifiedname>wxDialUpManager::IsDialing</qualifiedname>
         <briefdescription>
 <para>Returns true if (async) dialing is in progress. </para>
         </briefdescription>
@@ -185,6 +194,7 @@
         <definition>virtual bool wxDialUpManager::IsOk</definition>
         <argsstring>() const =0</argsstring>
         <name>IsOk</name>
+        <qualifiedname>wxDialUpManager::IsOk</qualifiedname>
         <briefdescription>
 <para>Returns true if the dialup manager was initialized correctly. </para>
         </briefdescription>
@@ -200,6 +210,7 @@
         <definition>virtual bool wxDialUpManager::IsOnline</definition>
         <argsstring>() const =0</argsstring>
         <name>IsOnline</name>
+        <qualifiedname>wxDialUpManager::IsOnline</qualifiedname>
         <briefdescription>
 <para>Returns true if the computer is connected to the network: under Windows, this just means that a RAS connection exists, under Unix we check that the &quot;well-known host&quot; (as specified by <ref refid="classwx_dial_up_manager_1a5feb6ba7f390d50be7eae85920a2230e" kindref="member">SetWellKnownHost()</ref>) is reachable. </para>
         </briefdescription>
@@ -214,6 +225,7 @@
         <definition>virtual void wxDialUpManager::SetConnectCommand</definition>
         <argsstring>(const wxString &amp;commandDial=&quot;/usr/bin/pon&quot;, const wxString &amp;commandHangup=&quot;/usr/bin/poff&quot;)=0</argsstring>
         <name>SetConnectCommand</name>
+        <qualifiedname>wxDialUpManager::SetConnectCommand</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>commandDial</declname>
@@ -239,6 +251,7 @@
         <definition>virtual void wxDialUpManager::SetOnlineStatus</definition>
         <argsstring>(bool isOnline=true)=0</argsstring>
         <name>SetOnlineStatus</name>
+        <qualifiedname>wxDialUpManager::SetOnlineStatus</qualifiedname>
         <param>
           <type>bool</type>
           <declname>isOnline</declname>
@@ -262,6 +275,7 @@
         <definition>virtual void wxDialUpManager::SetWellKnownHost</definition>
         <argsstring>(const wxString &amp;hostname, int portno=80)=0</argsstring>
         <name>SetWellKnownHost</name>
+        <qualifiedname>wxDialUpManager::SetWellKnownHost</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>hostname</declname>
@@ -288,6 +302,7 @@
         <definition>static wxDialUpManager * wxDialUpManager::Create</definition>
         <argsstring>()</argsstring>
         <name>Create</name>
+        <qualifiedname>wxDialUpManager::Create</qualifiedname>
         <briefdescription>
 <para>This function should create and return the object of the platform-specific class derived from <ref refid="classwx_dial_up_manager" kindref="compound">wxDialUpManager</ref>. </para>
         </briefdescription>
@@ -306,19 +321,19 @@
 <para>in the case of the modem).</para>
 <para>The program may also wish to be notified about the change in the connection status (for example, to perform some action when the user connects to the network the next time or, on the contrary, to stop receiving data from the net when the user hangs up the modem). For this, you need to use one of the event macros described below.</para>
 <para>This class is different from other wxWidgets classes in that there is at most one instance of this class in the program accessed via <ref refid="classwx_dial_up_manager_1aebcb6d60546ca1f46ba667d1af3706e6" kindref="member">Create()</ref> and you can&apos;t create the objects of this class directly.</para>
-<para><linebreak/>
-<heading level="2">Events emitted by this class</heading>
+<para><heading level="2">Events emitted by this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_dial_up_event" kindref="compound">wxDialUpEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros for events emitted by this class: <itemizedlist>
 <listitem><para>EVT_DIALUP_CONNECTED(func): A connection with the network was established. </para>
 </listitem>
-<listitem><para>EVT_DIALUP_DISCONNECTED(func): The connection with the network was lost. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_DIALUP_DISCONNECTED(func): The connection with the network was lost. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__net" kindref="compound">Networking</ref></para>
 <para><simplesect kind="see"><para><ref refid="page_samples_1page_samples_dialup" kindref="member">Dialup Sample</ref>, <ref refid="classwx_dial_up_event" kindref="compound">wxDialUpEvent</ref> </para>
 </simplesect>
 </para>

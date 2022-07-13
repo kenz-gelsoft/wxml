@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_xrcformat" kind="page">
     <compoundname>overview_xrcformat</compoundname>
     <title>XRC File Format</title>
@@ -90,6 +90,10 @@
         <name>Image List</name>
         <reference>overview_xrcformat_1overview_xrcformat_type_imagelist</reference>
     </tocsect>
+      <tocsect>
+        <name>Accelerators List</name>
+        <reference>overview_xrcformat_1overview_xrcformat_type_extra_accels</reference>
+    </tocsect>
     </tableofcontents>
     </tocsect>
       <tocsect>
@@ -165,10 +169,6 @@
         <reference>overview_xrcformat_1xrc_wxchoicebook</reference>
     </tocsect>
       <tocsect>
-        <name>wxCommandLinkButton</name>
-        <reference>overview_xrcformat_1xrc_wxcommandlinkbutton</reference>
-    </tocsect>
-      <tocsect>
         <name>wxCollapsiblePane</name>
         <reference>overview_xrcformat_1xrc_wxcollapsiblepane</reference>
     </tocsect>
@@ -183,6 +183,10 @@
       <tocsect>
         <name>wxComboCtrl</name>
         <reference>overview_xrcformat_1xrc_wxcomboctrl</reference>
+    </tocsect>
+      <tocsect>
+        <name>wxCommandLinkButton</name>
+        <reference>overview_xrcformat_1xrc_wxcommandlinkbutton</reference>
     </tocsect>
       <tocsect>
         <name>wxDataViewCtrl</name>
@@ -407,6 +411,10 @@
         <reference>overview_xrcformat_1xrc_wxstatictext</reference>
     </tocsect>
       <tocsect>
+        <name>wxStyledTextCtrl</name>
+        <reference>overview_xrcformat_1xrc_wxstyledtextctrl</reference>
+    </tocsect>
+      <tocsect>
         <name>wxTextCtrl</name>
         <reference>overview_xrcformat_1xrc_wxtextctrl</reference>
     </tocsect>
@@ -539,7 +547,6 @@
 <para>This document describes the format of XRC resource files, as used by <ref refid="classwx_xml_resource" kindref="compound">wxXmlResource</ref>. </para>
     </briefdescription>
     <detaileddescription>
-<para>This document describes the format of XRC resource files, as used by <ref refid="classwx_xml_resource" kindref="compound">wxXmlResource</ref>.</para>
 <para>Formal description in the form of a RELAX NG schema is located in the <computeroutput>misc/schema</computeroutput> subdirectory of the wxWidgets sources.</para>
 <para>XRC file is a XML file with all of its elements in the <computeroutput><ulink url="http://www.wxwidgets.org/wxxrc">http://www.wxwidgets.org/wxxrc</ulink></computeroutput> namespace. For backward compatibility, <computeroutput><ulink url="http://www.wxwindows.org/wxxrc">http://www.wxwindows.org/wxxrc</ulink></computeroutput> namespace is accepted as well (and treated as identical to <computeroutput><ulink url="http://www.wxwidgets.org/wxxrc">http://www.wxwidgets.org/wxxrc</ulink></computeroutput>), but it shouldn&apos;t be used in new XRC files.</para>
 <para>XRC file contains definitions for one or more <emphasis>objects</emphasis> <ndash/> typically windows. The objects may themselves contain child objects.</para>
@@ -707,8 +714,8 @@ Some examples: <programlisting><codeline><highlight class="normal">&lt;fg&gt;red
 </entry><entry thead="no"><para>tab  </para>
 </entry></row>
 <row>
-<entry thead="no"><para> &quot;\\&quot; </para>
-</entry><entry thead="no"><para>&quot;\&quot;  </para>
+<entry thead="no"><para> "\" </para>
+</entry><entry thead="no"><para>backslash  </para>
 </entry></row>
 </table>
 </para>
@@ -737,12 +744,20 @@ Some examples: <programlisting><codeline><highlight class="normal">&lt;fg&gt;red
 </sect2>
 <sect2 id="overview_xrcformat_1overview_xrcformat_type_bitmap">
 <title>Bitmap</title>
-<para>Bitmap properties contain specification of a single bitmap or icon. In the most basic form, their text value is simply a relative filename (or another <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref> URL) of the bitmap to use. For example: <programlisting><codeline><highlight class="normal">&lt;</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tool&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;wxID_NEW&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<para>Bitmap properties contain specification of a single bitmap, icon, a set of bitmaps or SVG file. In the most basic form, their text value is simply a relative URL of the bitmap to use. For example: <programlisting><codeline><highlight class="normal">&lt;</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tool&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;wxID_NEW&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;tooltip&gt;New&lt;/tooltip&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;bitmap&gt;</highlight><highlight class="keyword">new</highlight><highlight class="normal">.png&lt;/bitmap&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">&gt;</highlight></codeline>
-</programlisting> The value is interpreted as path relative to the location of XRC file where the reference occurs.</para>
+</programlisting> The value is interpreted as path relative to the location of XRC file where the reference occurs, but notice that it is still an URL and not just a filename, which means that the characters special in the URLs, such as <computeroutput>&apos;#&apos;</computeroutput> must be percent-encoded, e.g. here is the correct way to specify a bitmap with the path <computeroutput>&quot;images/#1/tool.png&quot;</computeroutput> in XRC: <programlisting><codeline><highlight class="normal">&lt;</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;tool&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;first&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;bitmap&gt;images/%231/tool.png&lt;/bitmap&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">&gt;</highlight></codeline>
+</programlisting></para>
 <para>Bitmap file paths can include environment variables that are expanded if wxXRC_USE_ENVVARS was passed to the <ref refid="classwx_xml_resource" kindref="compound">wxXmlResource</ref> constructor.</para>
+<para>It is possible to specify the multi-resolution bitmap by a set of bitmaps or an SVG file, which are mutually exclusive. The set of bitmaps should contain one or more relative URLs of a bitmap, separated by <computeroutput>&apos;</computeroutput>;&apos;. For example, to specify two bitmaps, to be used in standard and 200% DPI scaling respectively, you could write: <programlisting><codeline><highlight class="normal">&lt;bitmap&gt;</highlight><highlight class="keyword">new</highlight><highlight class="normal">.png;new_2x.png&lt;/bitmap&gt;</highlight></codeline>
+</programlisting></para>
+<para>Here the first bitmap is special, as its size determines the logical size of the bitmap. In other words, this bitmap is the one used when DPI scaling is not in effect. Any subsequent bitmaps can come in any order and will be used when the DPI scaling factor is equal, or at least close, to the ratio of their size to the size of the first bitmap. Using <computeroutput>_2x</computeroutput> naming convention here is common, but <emphasis>not</emphasis> required, the names of the bitmaps can be arbitrary, e.g. <programlisting><codeline><highlight class="normal">&lt;bitmap&gt;new_32x32.png;new_64x64.png&lt;/bitmap&gt;</highlight></codeline>
+</programlisting> would work just as well. When using SVG file you must also specify <computeroutput>default_size</computeroutput> attribute (even if the size is specified in SVG file, it may be different from the size needed here): <programlisting><codeline><highlight class="normal">&lt;bitmap<sp/>default_size=</highlight><highlight class="stringliteral">&quot;32,32&quot;</highlight><highlight class="normal">&gt;</highlight><highlight class="keyword">new</highlight><highlight class="normal">.svg&lt;/bitmap&gt;</highlight></codeline>
+</programlisting></para>
 <para>Alternatively, it is possible to specify the bitmap using <ref refid="classwx_art_provider" kindref="compound">wxArtProvider</ref> IDs. In this case, the property element has no textual value (filename) and instead has the <computeroutput>stock_id</computeroutput> XML attribute that contains stock art ID as accepted by <ref refid="classwx_art_provider_1a405ecf7cdead6dbfb092376a51a856c4" kindref="member">wxArtProvider::GetBitmap()</ref>. This can be either custom value (if the app uses app-specific art provider) or one of the predefined wxART_XXX constants.</para>
 <para>Optionally, <computeroutput>stock_client</computeroutput> attribute may be specified too and contain one of the predefined wxArtClient values. If it is not specified, the default client ID most appropriate in the context where the bitmap is referenced will be used. In most cases, specifying <computeroutput>stock_client</computeroutput> is not needed.</para>
 <para>Examples of stock bitmaps usage: <programlisting><codeline><highlight class="normal">&lt;bitmap<sp/>stock_id=</highlight><highlight class="stringliteral">&quot;fixed-width&quot;</highlight><highlight class="normal">/&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>custom<sp/>app-specific<sp/>art<sp/>--&gt;</highlight></codeline>
@@ -768,7 +783,7 @@ Some examples: <programlisting><codeline><highlight class="normal">&lt;fg&gt;red
 <title>Font</title>
 <para>XRC uses similar, but more flexible, abstract description of fonts to that used by <ref refid="classwx_font" kindref="compound">wxFont</ref> class. A font can be described either in terms of its elementary properties, or it can be derived from one of system fonts or the parent window font.</para>
 <para>The font property element is a &quot;composite&quot; element: unlike majority of properties, it doesn&apos;t have text value but contains several child elements instead. These children are handled in the same way as object properties and can be one of the following &quot;sub-properties&quot;:</para>
-<para><table rows="11" cols="3"><row>
+<para><table rows="12" cols="3"><row>
 <entry thead="yes"><para>property </para>
 </entry><entry thead="yes"><para>type </para>
 </entry><entry thead="yes"><para>description </para>
@@ -781,7 +796,12 @@ Some examples: <programlisting><codeline><highlight class="normal">&lt;fg&gt;red
 <row>
 <entry thead="no"><para>style </para>
 </entry><entry thead="no"><para>enum </para>
-</entry><entry thead="no"><para>One of &quot;normal&quot;, &quot;italic&quot; or &quot;slant&quot; (default: normal). @row3col{weight, enum or integer, One of &quot;thin&quot;, &quot;extralight&quot;, &quot;light&quot;, &quot;normal&quot;, &quot;medium&quot;, &quot;semibold&quot;, &quot;bold&quot;, &quot;extrabold&quot;, &quot;heavy&quot;, &quot;extraheavy&quot;, corresponding to the similarly named elements of <ref refid="interface_2wx_2font_8h_1a7cc37d08c7e84370f4fcc175b557a022" kindref="member">wxFontWeight</ref> enum, or a numeric value between 1 and 1000 (default: normal). Note that versions of wxWidgets until 3.1.2 only supported &quot;light&quot;, &quot;normal&quot; and &quot;bold&quot; values for weight.} </para>
+</entry><entry thead="no"><para>One of &quot;normal&quot;, &quot;italic&quot; or &quot;slant&quot; (default: normal). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>weight </para>
+</entry><entry thead="no"><para>enum or integer </para>
+</entry><entry thead="no"><para>One of &quot;thin&quot;, &quot;extralight&quot;, &quot;light&quot;, &quot;normal&quot;, &quot;medium&quot;, &quot;semibold&quot;, &quot;bold&quot;, &quot;extrabold&quot;, &quot;heavy&quot;, &quot;extraheavy&quot;, corresponding to the similarly named elements of <ref refid="interface_2wx_2font_8h_1a7cc37d08c7e84370f4fcc175b557a022" kindref="member">wxFontWeight</ref> enum, or a numeric value between 1 and 1000 (default: normal). Note that versions of wxWidgets until 3.1.2 only supported &quot;light&quot;, &quot;normal&quot; and &quot;bold&quot; values for weight. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>family </para>
@@ -796,7 +816,9 @@ Some examples: <programlisting><codeline><highlight class="normal">&lt;fg&gt;red
 <row>
 <entry thead="no"><para>strikethrough </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bool" kindref="member">Boolean</ref> </para>
-</entry><entry thead="no"><para>Whether the strikethrough font should be used (default: 0). This property is only supported since wxWidgets 3.1.2. </para>
+</entry><entry thead="no"><para>Whether the strikethrough font should be used (default: 0). <simplesect kind="since"><para>3.1.2 </para>
+</simplesect>
+</para>
 </entry></row>
 <row>
 <entry thead="no"><para>face </para>
@@ -876,6 +898,28 @@ Some examples: <programlisting><codeline><highlight class="normal">&lt;fg&gt;red
 <codeline><highlight class="normal">&lt;/imagelist&gt;</highlight></codeline>
 </programlisting></para>
 </sect2>
+<sect2 id="overview_xrcformat_1overview_xrcformat_type_extra_accels">
+<title>Accelerators List</title>
+<para>Defines a list of <ref refid="classwx_menu_item" kindref="compound">wxMenuItem</ref>&apos;s extra accelerators.</para>
+<para>The extra-accels property element is a &quot;composite&quot; element: it contains one or more <computeroutput>&lt;accel&gt;</computeroutput> &quot;sub-properties&quot;:</para>
+<para><table rows="2" cols="3"><row>
+<entry thead="yes"><para>property </para>
+</entry><entry thead="yes"><para>type </para>
+</entry><entry thead="yes"><para>description </para>
+</entry></row>
+<row>
+<entry thead="no"><para>accel </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_text_notrans" kindref="member">Non-Translatable Text</ref> </para>
+</entry><entry thead="no"><para><ref refid="classwx_menu_item" kindref="compound">wxMenuItem</ref>&apos;s accelerator (default: none). </para>
+</entry></row>
+</table>
+</para>
+<para>Example: <programlisting><codeline><highlight class="normal">&lt;extra-accels&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;accel&gt;Ctrl-W&lt;/accel&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;accel&gt;Shift-Ctrl-W&lt;/accel&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/extra-accels&gt;</highlight></codeline>
+</programlisting></para>
+</sect2>
 </sect1>
 <sect1 id="overview_xrcformat_1overview_xrcformat_windows">
 <title>Controls and Windows</title>
@@ -951,7 +995,9 @@ Some examples: <programlisting><codeline><highlight class="normal">&lt;fg&gt;red
 <row>
 <entry thead="no"><para>variant </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_string" kindref="member">String</ref> </para>
-</entry><entry thead="no"><para>Window variant (see <ref refid="classwx_window_1acd955418c336e73b3e32cadf1ca46e29" kindref="member">wxWindow::SetWindowVariant()</ref>), one of &quot;normal&quot;, &quot;small&quot;, &quot;mini&quot; or &quot;large&quot; (default: &quot;normal&quot;) (new since wxWidgets 3.0.2). </para>
+</entry><entry thead="no"><para>Window variant (see <ref refid="classwx_window_1acd955418c336e73b3e32cadf1ca46e29" kindref="member">wxWindow::SetWindowVariant()</ref>), one of &quot;normal&quot;, &quot;small&quot;, &quot;mini&quot; or &quot;large&quot; (default: &quot;normal&quot;) <simplesect kind="since"><para>3.0.2 </para>
+</simplesect>
+</para>
 </entry></row>
 <row>
 <entry thead="no"><para>font </para>
@@ -1202,6 +1248,20 @@ Some examples: <programlisting><codeline><highlight class="normal">&lt;fg&gt;red
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxauinotebook">
 <title>wxAuiNotebook</title>
+<para><table rows="2" cols="3"><row>
+<entry thead="yes"><para>property </para>
+</entry><entry thead="yes"><para>type </para>
+</entry><entry thead="yes"><para>description </para>
+</entry></row>
+<row>
+<entry thead="no"><para>art-provider </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_string" kindref="member">String</ref> </para>
+</entry><entry thead="no"><para>One of <computeroutput>default</computeroutput> for <ref refid="classwx_aui_default_tab_art" kindref="compound">wxAuiDefaultTabArt</ref> or <computeroutput>simple</computeroutput> for <ref refid="classwx_aui_simple_tab_art" kindref="compound">wxAuiSimpleTabArt</ref> (default: <computeroutput>default</computeroutput>). <simplesect kind="since"><para>3.2.0 </para>
+</simplesect>
+</para>
+</entry></row>
+</table>
+</para>
 <para>A <ref refid="classwx_aui_notebook" kindref="compound">wxAuiNotebook</ref> can have one or more child objects of the <computeroutput>notebookpage</computeroutput> pseudo-class. <computeroutput>notebookpage</computeroutput> objects have the following properties:</para>
 <para><table rows="4" cols="3"><row>
 <entry thead="yes"><para>property </para>
@@ -1318,7 +1378,9 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <row>
 <entry thead="no"><para>close </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bool" kindref="member">Boolean</ref> </para>
-</entry><entry thead="no"><para>If set, this is a special &quot;Close&quot; button using system-defined appearance, see <ref refid="classwx_bitmap_button_1a1807c52c68f2dbeeea42cdd8302356a6" kindref="member">wxBitmapButton::NewCloseButton()</ref>. If this property is set, <computeroutput>bitmap</computeroutput> and <computeroutput>style</computeroutput> are ignored and shouldn&apos;t be used. Available since wxWidgets 3.1.5. </para>
+</entry><entry thead="no"><para>If set, this is a special &quot;Close&quot; button using system-defined appearance, see <ref refid="classwx_bitmap_button_1a1807c52c68f2dbeeea42cdd8302356a6" kindref="member">wxBitmapButton::NewCloseButton()</ref>. If this property is set, <computeroutput>bitmap</computeroutput> and <computeroutput>style</computeroutput> are ignored and shouldn&apos;t be used. <simplesect kind="since"><para>3.1.5 </para>
+</simplesect>
+</para>
 </entry></row>
 <row>
 <entry thead="no"><para>bitmap </para>
@@ -1326,9 +1388,9 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </entry><entry thead="no"><para>Bitmap to show on the button (default: none). </para>
 </entry></row>
 <row>
-<entry thead="no"><para>selected </para>
+<entry thead="no"><para>pressed </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
-</entry><entry thead="no"><para>Bitmap to show when the button is selected (default: none, same as <computeroutput>bitmap</computeroutput>). </para>
+</entry><entry thead="no"><para>Bitmap to show when the button is pressed (default: none, same as <computeroutput>bitmap</computeroutput>). This property exists since wxWidgets 3.1.6, but the equivalent (and still supported) &quot;selected&quot; property can be used in the older versions. </para>
 </entry></row>
 <row>
 <entry thead="no"><para>focus </para>
@@ -1341,9 +1403,9 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </entry><entry thead="no"><para>Bitmap to show when the button is disabled (default: none, same as <computeroutput>bitmap</computeroutput>). </para>
 </entry></row>
 <row>
-<entry thead="no"><para>hover </para>
+<entry thead="no"><para>current </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
-</entry><entry thead="no"><para>Bitmap to show when mouse cursor hovers above the bitmap (default: none, same as <computeroutput>bitmap</computeroutput>). </para>
+</entry><entry thead="no"><para>Bitmap to show when mouse cursor hovers above the bitmap (default: none, same as <computeroutput>bitmap</computeroutput>). This property exists since wxWidgets 3.1.6, but the equivalent (and still supported) &quot;hover&quot; property can be used in the older versions. </para>
 </entry></row>
 </table>
 </para>
@@ -1401,7 +1463,7 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxbitmaptogglebutton">
 <title>wxBitmapToggleButton</title>
-<para><table rows="3" cols="3"><row>
+<para><table rows="8" cols="3"><row>
 <entry thead="yes"><para>property </para>
 </entry><entry thead="yes"><para>type </para>
 </entry><entry thead="yes"><para>description </para>
@@ -1410,6 +1472,41 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <entry thead="no"><para>bitmap </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
 </entry><entry thead="no"><para>Label to display on the button (default: none). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>pressed </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button is pressed (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>focus </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button has focus (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>disabled </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button is disabled (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>current </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the mouse cursor hovers above the bitmap (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>margins </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_size" kindref="member">Size</ref> </para>
+</entry><entry thead="no"><para>Set the margins between the bitmap and the text of the button. This method is currently only implemented under MSW. If it is not called, a default margin is used around the bitmap. <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
 </entry></row>
 <row>
 <entry thead="no"><para>checked </para>
@@ -1421,7 +1518,7 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxbutton">
 <title>wxButton</title>
-<para><table rows="5" cols="3"><row>
+<para><table rows="10" cols="3"><row>
 <entry thead="yes"><para>property </para>
 </entry><entry thead="yes"><para>type </para>
 </entry><entry thead="yes"><para>description </para>
@@ -1435,6 +1532,41 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <entry thead="no"><para>bitmap </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
 </entry><entry thead="no"><para>Bitmap to display in the button (optional). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>pressed </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button is pressed (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>focus </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button has focus (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>disabled </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button is disabled (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>current </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the mouse cursor hovers above the bitmap (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>margins </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_size" kindref="member">Size</ref> </para>
+</entry><entry thead="no"><para>Set the margins between the bitmap and the text of the button. This method is currently only implemented under MSW. If it is not called, a default margin is used around the bitmap. <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
 </entry></row>
 <row>
 <entry thead="no"><para>bitmapposition </para>
@@ -1467,8 +1599,8 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </entry></row>
 <row>
 <entry thead="no"><para>checked </para>
-</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bool" kindref="member">Boolean</ref> </para>
-</entry><entry thead="no"><para>Should the checkbox be checked initially (default: 0)? </para>
+</entry><entry thead="no"><para>integer </para>
+</entry><entry thead="no"><para>Sets the initial state of the checkbox. 0 is unchecked (default), 1 is checked, and since wxWidgets 3.1.7, 2 sets the undetermined state of a 3-state checkbox. </para>
 </entry></row>
 </table>
 </para>
@@ -1575,38 +1707,6 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </para>
 <para>Each <computeroutput>choicebookpage</computeroutput> has exactly one non-toplevel window as its child.</para>
 </sect3>
-<sect3 id="overview_xrcformat_1xrc_wxcommandlinkbutton">
-<title>wxCommandLinkButton</title>
-<para>The <ref refid="classwx_command_link_button" kindref="compound">wxCommandLinkButton</ref> contains a main title-like <computeroutput>label</computeroutput> and an optional <computeroutput>note</computeroutput> for longer description. The main <computeroutput>label</computeroutput> and the <computeroutput>note</computeroutput> can be concatenated into a single string using a new line character between them (notice that the <computeroutput>note</computeroutput> part can have more new lines in it).</para>
-<para>Since wxWidgets 3.1.5 it also supports <computeroutput>default</computeroutput> and <computeroutput>bitmap</computeroutput> properties, just as <ref refid="overview_xrcformat_1xrc_wxbutton" kindref="member">wxButton</ref> <ref refid="classwx_button" kindref="compound">wxButton</ref>.</para>
-<para><table rows="5" cols="3"><row>
-<entry thead="yes"><para>property </para>
-</entry><entry thead="yes"><para>type </para>
-</entry><entry thead="yes"><para>description </para>
-</entry></row>
-<row>
-<entry thead="no"><para>label </para>
-</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_text" kindref="member">Text</ref> </para>
-</entry><entry thead="no"><para>First line of text on the button, typically the label of an action that will be made when the button is pressed (default: empty).  </para>
-</entry></row>
-<row>
-<entry thead="no"><para>note </para>
-</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_text" kindref="member">Text</ref> </para>
-</entry><entry thead="no"><para>Second line of text describing the action performed when the button is pressed (default: none).  </para>
-</entry></row>
-<row>
-<entry thead="no"><para>bitmap </para>
-</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
-</entry><entry thead="no"><para>Bitmap to display in the button (optional). </para>
-</entry></row>
-<row>
-<entry thead="no"><para>default </para>
-</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bool" kindref="member">Boolean</ref> </para>
-</entry><entry thead="no"><para>Should this button be the default button in dialog (default: 0)? </para>
-</entry></row>
-</table>
-</para>
-</sect3>
 <sect3 id="overview_xrcformat_1xrc_wxcollapsiblepane">
 <title>wxCollapsiblePane</title>
 <para><table rows="3" cols="3"><row>
@@ -1695,6 +1795,69 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </table>
 </para>
 </sect3>
+<sect3 id="overview_xrcformat_1xrc_wxcommandlinkbutton">
+<title>wxCommandLinkButton</title>
+<para>The <ref refid="classwx_command_link_button" kindref="compound">wxCommandLinkButton</ref> contains a main title-like <computeroutput>label</computeroutput> and an optional <computeroutput>note</computeroutput> for longer description. The main <computeroutput>label</computeroutput> and the <computeroutput>note</computeroutput> can be concatenated into a single string using a new line character between them (notice that the <computeroutput>note</computeroutput> part can have more new lines in it).</para>
+<para><table rows="9" cols="3"><row>
+<entry thead="yes"><para>property </para>
+</entry><entry thead="yes"><para>type </para>
+</entry><entry thead="yes"><para>description </para>
+</entry></row>
+<row>
+<entry thead="no"><para>label </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_text" kindref="member">Text</ref> </para>
+</entry><entry thead="no"><para>First line of text on the button, typically the label of an action that will be made when the button is pressed (default: empty).  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>note </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_text" kindref="member">Text</ref> </para>
+</entry><entry thead="no"><para>Second line of text describing the action performed when the button is pressed (default: none).  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>bitmap </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to display in the button (optional). <simplesect kind="since"><para>3.1.5 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>pressed </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button is pressed (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>focus </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button has focus (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>disabled </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button is disabled (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>current </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the mouse cursor hovers above the bitmap (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>default </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bool" kindref="member">Boolean</ref> </para>
+</entry><entry thead="no"><para>Should this button be the default button in dialog (default: 0)? <simplesect kind="since"><para>3.1.5 </para>
+</simplesect>
+</para>
+</entry></row>
+</table>
+</para>
+</sect3>
 <sect3 id="overview_xrcformat_1xrc_wxdataviewctrl">
 <title>wxDataViewCtrl</title>
 <para>No additional properties.</para>
@@ -1720,7 +1883,20 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxdatepickerctrl">
 <title>wxDatePickerCtrl</title>
-<para>No additional properties.</para>
+<para><table rows="2" cols="3"><row>
+<entry thead="yes"><para>property </para>
+</entry><entry thead="yes"><para>type </para>
+</entry><entry thead="yes"><para>description </para>
+</entry></row>
+<row>
+<entry thead="no"><para>null-text </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_string" kindref="member">String</ref> </para>
+</entry><entry thead="no"><para>Set the text to show when there is no valid value (default: empty). Only used if the control has wxDP_ALLOWNONE style. Currently implemented on MSW, ignored elsewhere. <simplesect kind="since"><para>3.1.5. </para>
+</simplesect>
+</para>
+</entry></row>
+</table>
+</para>
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxdialog">
 <title>wxDialog</title>
@@ -2161,7 +2337,7 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <row>
 <entry thead="no"><para>width </para>
 </entry><entry thead="no"><para>integer </para>
-</entry><entry thead="no"><para>The column width.  </para>
+</entry><entry thead="no"><para>The column width. <computeroutput>wxLIST_DEFAULT_COL_WIDTH</computeroutput> is used by default.  </para>
 </entry></row>
 <row>
 <entry thead="no"><para>image </para>
@@ -2293,7 +2469,7 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <para>A menu object can have one or more child objects of the <ref refid="classwx_menu_item" kindref="compound">wxMenuItem</ref> or <ref refid="classwx_menu" kindref="compound">wxMenu</ref> classes or <computeroutput>break</computeroutput> or <computeroutput>separator</computeroutput> pseudo-classes.</para>
 <para>The <computeroutput>separator</computeroutput> pseudo-class is used to insert separators into the menu and has neither properties nor children. Likewise, <computeroutput>break</computeroutput> inserts a break (see <ref refid="classwx_menu_1a3728d2f96ee825b042e0b6d0e08d21d3" kindref="member">wxMenu::Break()</ref>).</para>
 <para><ref refid="classwx_menu_item" kindref="compound">wxMenuItem</ref> objects support the following properties:</para>
-<para><table rows="10" cols="3"><row>
+<para><table rows="11" cols="3"><row>
 <entry thead="yes"><para>property </para>
 </entry><entry thead="yes"><para>type </para>
 </entry><entry thead="yes"><para>description </para>
@@ -2307,6 +2483,13 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <entry thead="no"><para>accel </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_text_notrans" kindref="member">Non-Translatable Text</ref> </para>
 </entry><entry thead="no"><para>Item&apos;s accelerator (default: none). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>extra-accels </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_extra_accels" kindref="member">Accelerators List</ref> </para>
+</entry><entry thead="no"><para>List of item&apos;s extra accelerators. Such accelerators will not be shown in item&apos;s label, but still will work. (default: none). <simplesect kind="since"><para>3.1.6. </para>
+</simplesect>
+</para>
 </entry></row>
 <row>
 <entry thead="no"><para>radio </para>
@@ -2351,6 +2534,10 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <codeline><highlight class="normal"><sp/><sp/>&lt;</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;wxMenuItem&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;wxID_FIND&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;label&gt;_Find...&lt;/label&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;accel&gt;Ctrl-F&lt;/accel&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;extra-accels&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&lt;accel&gt;Ctrl-W&lt;/accel&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&lt;accel&gt;Shift-Ctrl-W&lt;/accel&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/extra-accels&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;/</highlight><highlight class="keywordtype">object</highlight><highlight class="normal">&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;separator&quot;</highlight><highlight class="normal">/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">=</highlight><highlight class="stringliteral">&quot;wxMenuItem&quot;</highlight><highlight class="normal"><sp/>name=</highlight><highlight class="stringliteral">&quot;menu_fuzzy&quot;</highlight><highlight class="normal">&gt;</highlight></codeline>
@@ -2788,7 +2975,7 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxrichtextctrl">
 <title>wxRichTextCtrl</title>
-<para><table rows="3" cols="3"><row>
+<para><table rows="2" cols="3"><row>
 <entry thead="yes"><para>property </para>
 </entry><entry thead="yes"><para>type </para>
 </entry><entry thead="yes"><para>description </para>
@@ -2798,17 +2985,15 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_text" kindref="member">Text</ref> </para>
 </entry><entry thead="no"><para>Initial value of the control (default: empty). </para>
 </entry></row>
-<row>
-<entry thead="no"><para>maxlength </para>
-</entry><entry thead="no"><para>integer </para>
-</entry><entry thead="no"><para>Maximum length of the text entered (default: unlimited). </para>
-</entry></row>
 </table>
 </para>
-<para>Notice that <ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref> support in XRC is available in wxWidgets 2.9.5 and later only and you need to explicitly register its handler using <programlisting><codeline><highlight class="preprocessor">#include<sp/>&lt;wx/xrc/xh_richtext.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<para>Notice that you need to explicitly register the handler using <programlisting><codeline><highlight class="preprocessor">#include<sp/>&lt;wx/xrc/xh_richtext.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">AddHandler(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_rich_text_ctrl" kindref="compound">wxRichTextCtrl</ref>);</highlight></codeline>
+<codeline><highlight class="normal">AddHandler(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>wxRichTextCtrlXmlHandler);</highlight></codeline>
 </programlisting> to use it.</para>
+<para><simplesect kind="since"><para>2.9.5</para>
+</simplesect>
+</para>
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxscrollbar">
 <title>wxScrollBar</title>
@@ -2963,7 +3148,7 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxspinbutton">
 <title>wxSpinButton</title>
-<para><table rows="4" cols="3"><row>
+<para><table rows="5" cols="3"><row>
 <entry thead="yes"><para>property </para>
 </entry><entry thead="yes"><para>type </para>
 </entry><entry thead="yes"><para>description </para>
@@ -2983,6 +3168,13 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </entry><entry thead="no"><para>integer </para>
 </entry><entry thead="no"><para>Maximum allowed value (default: 100). </para>
 </entry></row>
+<row>
+<entry thead="no"><para>inc </para>
+</entry><entry thead="no"><para>integer </para>
+</entry><entry thead="no"><para>Increment (default: 1). <simplesect kind="since"><para>3.1.6. </para>
+</simplesect>
+</para>
+</entry></row>
 </table>
 </para>
 </sect3>
@@ -2998,14 +3190,23 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxspinctrldouble">
 <title>wxSpinCtrlDouble</title>
-<para><ref refid="classwx_spin_ctrl_double" kindref="compound">wxSpinCtrlDouble</ref> supports the same properties as <ref refid="overview_xrcformat_1xrc_wxspinbutton" kindref="member">wxSpinButton</ref> but <computeroutput>value</computeroutput>, <computeroutput>min</computeroutput> and <emphasis>max</emphasis> are all of type float instead of int. There is one additional property: <table rows="1" cols="3"><row>
+<para><ref refid="classwx_spin_ctrl_double" kindref="compound">wxSpinCtrlDouble</ref> supports the same properties as <ref refid="overview_xrcformat_1xrc_wxspinbutton" kindref="member">wxSpinButton</ref> but <computeroutput>value</computeroutput>, <computeroutput>min</computeroutput> and <emphasis>max</emphasis> are all of type float instead of int. There is one additional property: <table rows="2" cols="3"><row>
 <entry thead="no"><para>inc </para>
 </entry><entry thead="no"><para>float </para>
 </entry><entry thead="no"><para>The amount by which the number is changed by a single arrow press. </para>
 </entry></row>
+<row>
+<entry thead="no"><para>digits </para>
+</entry><entry thead="no"><para>integer </para>
+</entry><entry thead="no"><para>Sets the precision of the value of the spin control (default: 0). <simplesect kind="since"><para>3.1.7. </para>
+</simplesect>
+</para>
+</entry></row>
 </table>
 </para>
-<para>This handler was added in wxWidgets 3.1.1.</para>
+<para><simplesect kind="since"><para>3.1.1.</para>
+</simplesect>
+</para>
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxsplitterwindow">
 <title>wxSplitterWindow</title>
@@ -3053,7 +3254,9 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <row>
 <entry thead="no"><para>hint </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_text" kindref="member">Text</ref> </para>
-</entry><entry thead="no"><para>Descriptive text shown in the empty control (default: &quot;Search&quot;). This property is new since wxWidgets 3.1.1. </para>
+</entry><entry thead="no"><para>Descriptive text shown in the empty control (default: &quot;Search&quot;). <simplesect kind="since"><para>3.1.1. </para>
+</simplesect>
+</para>
 </entry></row>
 </table>
 </para>
@@ -3137,6 +3340,25 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </table>
 </para>
 </sect3>
+<sect3 id="overview_xrcformat_1xrc_wxstyledtextctrl">
+<title>wxStyledTextCtrl</title>
+<para><table rows="2" cols="3"><row>
+<entry thead="yes"><para>property </para>
+</entry><entry thead="yes"><para>type </para>
+</entry><entry thead="yes"><para>description </para>
+</entry></row>
+<row>
+<entry thead="no"><para>wrapmode </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_style" kindref="member">Style</ref> </para>
+</entry><entry thead="no"><para>Set wrapmode to wxSTC_WRAP_WORD to enable wrapping on word or style boundaries, wxSTC_WRAP_CHAR to enable wrapping between any characters, wxSTC_WRAP_WHITESPACE to enable wrapping on whitespace, and wxSTC_WRAP_NONE to disable line wrapping (default: wxSTC_WRAP_NONE). </para>
+</entry></row>
+</table>
+</para>
+<para>Notice that <ref refid="classwx_styled_text_ctrl" kindref="compound">wxStyledTextCtrl</ref> support in XRC is available in wxWidgets 3.1.6 and later only and you need to explicitly register its handler using <programlisting><codeline><highlight class="preprocessor">#include<sp/>&lt;wx/xrc/xh_styledtextctrl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">AddHandler(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>wxStyledTextCtrlXmlHandler);</highlight></codeline>
+</programlisting> to use it.</para>
+</sect3>
 <sect3 id="overview_xrcformat_1xrc_wxtextctrl">
 <title>wxTextCtrl</title>
 <para><table rows="5" cols="3"><row>
@@ -3162,7 +3384,9 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <row>
 <entry thead="no"><para>hint </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_text" kindref="member">Text</ref> </para>
-</entry><entry thead="no"><para>Hint shown in empty control (new since wxWidgets 3.0.1). </para>
+</entry><entry thead="no"><para>Hint shown in empty control. <simplesect kind="since"><para>3.0.1 </para>
+</simplesect>
+</para>
 </entry></row>
 </table>
 </para>
@@ -3173,7 +3397,7 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxtogglebutton">
 <title>wxToggleButton</title>
-<para><table rows="5" cols="3"><row>
+<para><table rows="10" cols="3"><row>
 <entry thead="yes"><para>property </para>
 </entry><entry thead="yes"><para>type </para>
 </entry><entry thead="yes"><para>description </para>
@@ -3196,6 +3420,41 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </para>
 </entry></row>
 <row>
+<entry thead="no"><para>pressed </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button is pressed (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>focus </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button has focus (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>disabled </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the button is disabled (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>current </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
+</entry><entry thead="no"><para>Bitmap to show when the mouse cursor hovers above the bitmap (default: none, same as <computeroutput>bitmap</computeroutput>). <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>margins </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_size" kindref="member">Size</ref> </para>
+</entry><entry thead="no"><para>Set the margins between the bitmap and the text of the button. This method is currently only implemented under MSW. If it is not called, a default margin is used around the bitmap. <simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
 <entry thead="no"><para>bitmapposition </para>
 </entry><entry thead="no"><para><computeroutput>wxLEFT|wxRIGHT|wxTOP|wxBOTTOM</computeroutput>  </para>
 </entry><entry thead="no"><para>Position of the bitmap in the button, see <ref refid="classwx_any_button_1a841c7747f78ea37110338b0ce1aa97dd" kindref="member">wxButton::SetBitmapPosition()</ref> (default: wxLEFT). <simplesect kind="since"><para>3.1.1 </para>
@@ -3214,8 +3473,8 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </entry></row>
 <row>
 <entry thead="no"><para>bitmapsize </para>
-</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_size" kindref="member">Size</ref> </para>
-</entry><entry thead="no"><para>Size of toolbar bitmaps (default: not set). </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_pair_ints" kindref="member">Pair of integers</ref> </para>
+</entry><entry thead="no"><para>Size of toolbar bitmaps in pixels. Note that these are physical pixels, as they typically correspond to the size of available bitmaps, and <emphasis>not</emphasis> DIPs, i.e. not depending on the current DPI value. In particular, &quot;d&quot; suffix is invalid and cannot be used here (default: not set). </para>
 </entry></row>
 <row>
 <entry thead="no"><para>margins </para>
@@ -3275,7 +3534,9 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <row>
 <entry thead="no"><para>dropdown </para>
 </entry><entry thead="no"><para>see below </para>
-</entry><entry thead="no"><para>Item&apos;s kind is wxITEM_DROPDOWN (default: 0)? (only available since wxWidgets 2.9.0) </para>
+</entry><entry thead="no"><para>Item&apos;s kind is wxITEM_DROPDOWN (default: 0)? <simplesect kind="since"><para>2.9.0 </para>
+</simplesect>
+</para>
 </entry></row>
 <row>
 <entry thead="no"><para>tooltip </para>
@@ -3295,7 +3556,9 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <row>
 <entry thead="no"><para>checked </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bool" kindref="member">Boolean</ref> </para>
-</entry><entry thead="no"><para>Is the tool initially checked (default: 0)? (only available since wxWidgets 2.9.3) </para>
+</entry><entry thead="no"><para>Is the tool initially checked (default: 0)? <simplesect kind="since"><para>2.9.3 </para>
+</simplesect>
+</para>
 </entry></row>
 </table>
 </para>
@@ -3506,7 +3769,7 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </sect3>
 <sect3 id="overview_xrcformat_1xrc_wxwizard">
 <title>wxWizard</title>
-<para><table rows="2" cols="3"><row>
+<para><table rows="6" cols="3"><row>
 <entry thead="yes"><para>property </para>
 </entry><entry thead="yes"><para>type </para>
 </entry><entry thead="yes"><para>description </para>
@@ -3515,6 +3778,34 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <entry thead="no"><para>bitmap </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_bitmap" kindref="member">Bitmap</ref> </para>
 </entry><entry thead="no"><para>Bitmap to display on the left side of the wizard (default: none). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>border </para>
+</entry><entry thead="no"><para>integer </para>
+</entry><entry thead="no"><para>Sets width of border around page area. (default: 0). <simplesect kind="since"><para>3.2.0 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>bitmap-placement </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_style" kindref="member">Style</ref> </para>
+</entry><entry thead="no"><para>Sets the flags indicating how the wizard or page bitmap should be expanded and positioned to fit the page height. By default, placement is 0 (no expansion is done). See <ref refid="classwx_wizard_1a862344eb45f192916e6b6ca83b588eb6" kindref="member">wxWizard::SetBitmapPlacement()</ref> <simplesect kind="since"><para>3.2.0 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>bitmap-minwidth </para>
+</entry><entry thead="no"><para>integer </para>
+</entry><entry thead="no"><para>Sets the minimum width for the bitmap that will be constructed to contain the actual wizard or page bitmap if a non-zero bitmap placement flag has been set. <simplesect kind="since"><para>3.2.0 </para>
+</simplesect>
+</para>
+</entry></row>
+<row>
+<entry thead="no"><para>bitmap-bg </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_colour" kindref="member">Colour</ref> </para>
+</entry><entry thead="no"><para>Sets the colour that should be used to fill the area not taken up by the wizard or page bitmap, if a non-zero bitmap placement flag has been set. <simplesect kind="since"><para>3.2.0 </para>
+</simplesect>
+</para>
 </entry></row>
 </table>
 </para>
@@ -3589,7 +3880,7 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <row>
 <entry thead="no"><para>ratio </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_pair_ints" kindref="member">Pair of integers</ref> </para>
-</entry><entry thead="no"><para>Item ratio, see wxSizer::SetRatio() (default: no ratio). </para>
+</entry><entry thead="no"><para>Item ratio, see <ref refid="classwx_sizer_item_1ae761aa97de98f606d86419dbced0672d" kindref="member">wxSizerItem::SetRatio()</ref> (default: no ratio). </para>
 </entry></row>
 <row>
 <entry thead="no"><para>cellpos </para>
@@ -3700,7 +3991,9 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <row>
 <entry thead="no"><para>windowlabel </para>
 </entry><entry thead="no"><para>any window </para>
-</entry><entry thead="no"><para>Window to be used instead of the plain text label (default: none). This property is only available since wxWidgets 3.1.1.} </para>
+</entry><entry thead="no"><para>Window to be used instead of the plain text label (default: none). <simplesect kind="since"><para>3.1.1 </para>
+</simplesect>
+</para>
 </entry></row>
 </table>
 </para>
@@ -3765,12 +4058,16 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <row>
 <entry thead="no"><para>flexibledirection </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_style" kindref="member">Style</ref> </para>
-</entry><entry thead="no"><para>Flexible direction, <computeroutput>wxVERTICAL</computeroutput>, <computeroutput>wxHORIZONTAL</computeroutput> or <computeroutput>wxBOTH</computeroutput> (default). This property is only available since wxWidgets 2.9.5. </para>
+</entry><entry thead="no"><para>Flexible direction, <computeroutput>wxVERTICAL</computeroutput>, <computeroutput>wxHORIZONTAL</computeroutput> or <computeroutput>wxBOTH</computeroutput> (default). <simplesect kind="since"><para>2.9.5 </para>
+</simplesect>
+</para>
 </entry></row>
 <row>
 <entry thead="no"><para>nonflexiblegrowmode </para>
 </entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_style" kindref="member">Style</ref> </para>
-</entry><entry thead="no"><para>Grow mode in the non-flexible direction, <computeroutput>wxFLEX_GROWMODE_NONE</computeroutput>, <computeroutput>wxFLEX_GROWMODE_SPECIFIED</computeroutput> (default) or <computeroutput>wxFLEX_GROWMODE_ALL</computeroutput>. This property is only available since wxWidgets 2.9.5. </para>
+</entry><entry thead="no"><para>Grow mode in the non-flexible direction, <computeroutput>wxFLEX_GROWMODE_NONE</computeroutput>, <computeroutput>wxFLEX_GROWMODE_SPECIFIED</computeroutput> (default) or <computeroutput>wxFLEX_GROWMODE_ALL</computeroutput>. <simplesect kind="since"><para>2.9.5 </para>
+</simplesect>
+</para>
 </entry></row>
 <row>
 <entry thead="no"><para>growablerows </para>
@@ -3787,7 +4084,7 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 </sect2>
 <sect2 id="overview_xrcformat_1overview_xrcformat_wxgridbagsizer">
 <title>wxGridBagSizer</title>
-<para><table rows="7" cols="3"><row>
+<para><table rows="8" cols="3"><row>
 <entry thead="yes"><para>property </para>
 </entry><entry thead="yes"><para>type </para>
 </entry><entry thead="yes"><para>description </para>
@@ -3821,6 +4118,13 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <entry thead="no"><para>growablecols </para>
 </entry><entry thead="no"><para>comma-separated integers list </para>
 </entry><entry thead="no"><para>Comma-separated list of indexes of columns that are growable, optionally the proportion can be appended after each number separated by a <computeroutput></computeroutput>: (default: none). </para>
+</entry></row>
+<row>
+<entry thead="no"><para>empty_cellsize </para>
+</entry><entry thead="no"><para><ref refid="overview_xrcformat_1overview_xrcformat_type_size" kindref="member">Size</ref> </para>
+</entry><entry thead="no"><para>Size used for cells in the grid with no item. (default: <computeroutput>wxDefaultSize</computeroutput>). <simplesect kind="since"><para>3.2.0 </para>
+</simplesect>
+</para>
 </entry></row>
 </table>
 </para>
@@ -4000,7 +4304,7 @@ Refer to the section <ref refid="overview_xrcformat_1xrc_wxtoolbar" kindref="mem
 <para>This section describes differences in older revisions of XRC format (i.e. files with older values of <computeroutput>version</computeroutput> attribute of <computeroutput>&lt;resource&gt;</computeroutput>).</para>
 <sect2 id="overview_xrcformat_1overview_xrcformat_pre_v2530">
 <title>Versions Before 2.5.3.0</title>
-<para>Version 2.5.3.0 introduced C-like handling of &quot;\\&quot; in text. In older versions, &quot;\n&quot;, &quot;\t&quot; and &quot;\r&quot; escape sequences were replaced with respective characters in the same matter it&apos;s done in C, but &quot;\\&quot; was left intact instead of being replaced with single &quot;\&quot;, as one would expect. Starting with 2.5.3.0, all of them are handled in C-like manner.</para>
+<para>Version 2.5.3.0 introduced C-like handling of "\\" in text. In older versions, &quot;\n&quot;, &quot;\t&quot; and &quot;\r&quot; escape sequences were replaced with respective characters in the same matter as it&apos;s done in C, but "\\" was left intact instead of being replaced with a single "\", as one would expect. Starting with 2.5.3.0, all of them are handled in C-like manner.</para>
 </sect2>
 <sect2 id="overview_xrcformat_1overview_xrcformat_pre_v2301">
 <title>Versions Before 2.3.0.1</title>

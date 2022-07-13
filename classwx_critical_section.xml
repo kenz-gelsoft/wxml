@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_critical_section" kind="class" language="C++" prot="public">
     <compoundname>wxCriticalSection</compoundname>
     <includes local="no">wx/thread.h</includes>
@@ -9,6 +9,7 @@
         <definition>wxCriticalSection::wxCriticalSection</definition>
         <argsstring>(wxCriticalSectionType critSecType=wxCRITSEC_DEFAULT)</argsstring>
         <name>wxCriticalSection</name>
+        <qualifiedname>wxCriticalSection::wxCriticalSection</qualifiedname>
         <param>
           <type><ref refid="interface_2wx_2thread_8h_1ad32912ed5726dfd2d4c24bdafbedac2e" kindref="member">wxCriticalSectionType</ref></type>
           <declname>critSecType</declname>
@@ -29,6 +30,7 @@
         <definition>wxCriticalSection::~wxCriticalSection</definition>
         <argsstring>()</argsstring>
         <name>~wxCriticalSection</name>
+        <qualifiedname>wxCriticalSection::~wxCriticalSection</qualifiedname>
         <briefdescription>
 <para>Destructor frees the resources. </para>
         </briefdescription>
@@ -43,6 +45,7 @@
         <definition>void wxCriticalSection::Enter</definition>
         <argsstring>()</argsstring>
         <name>Enter</name>
+        <qualifiedname>wxCriticalSection::Enter</qualifiedname>
         <briefdescription>
 <para>Enter the critical section (same as locking a mutex): if another thread has already entered it, this call will block until the other thread calls <ref refid="classwx_critical_section_1a9710ab7240b29a653fd9233c12aadba6" kindref="member">Leave()</ref>. </para>
         </briefdescription>
@@ -60,6 +63,7 @@
         <definition>bool wxCriticalSection::TryEnter</definition>
         <argsstring>()</argsstring>
         <name>TryEnter</name>
+        <qualifiedname>wxCriticalSection::TryEnter</qualifiedname>
         <briefdescription>
 <para>Try to enter the critical section (same as trying to lock a mutex). </para>
         </briefdescription>
@@ -78,6 +82,7 @@
         <definition>void wxCriticalSection::Leave</definition>
         <argsstring>()</argsstring>
         <name>Leave</name>
+        <qualifiedname>wxCriticalSection::Leave</qualifiedname>
         <briefdescription>
 <para>Leave the critical section allowing other threads use the global data protected by it. </para>
         </briefdescription>
@@ -98,7 +103,8 @@
 <para>Finally, you should try to use <ref refid="classwx_critical_section_locker" kindref="compound">wxCriticalSectionLocker</ref> class whenever possible instead of directly using <ref refid="classwx_critical_section" kindref="compound">wxCriticalSection</ref> for the same reasons <ref refid="classwx_mutex_locker" kindref="compound">wxMutexLocker</ref> is preferable to <ref refid="classwx_mutex" kindref="compound">wxMutex</ref> - please see <ref refid="classwx_mutex" kindref="compound">wxMutex</ref> for an example.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__threading" kindref="compound">Threading</ref></para>
 <para><simplesect kind="note"><para>Critical sections can be used before the wxWidgets library is fully initialized. In particular, it&apos;s safe to create global <ref refid="classwx_critical_section" kindref="compound">wxCriticalSection</ref> instances.</para>
 </simplesect>
 <simplesect kind="see"><para><ref refid="classwx_thread" kindref="compound">wxThread</ref>, <ref refid="classwx_condition" kindref="compound">wxCondition</ref>, <ref refid="classwx_critical_section_locker" kindref="compound">wxCriticalSectionLocker</ref> </para>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_string_buffer" kind="class" language="C++" prot="public">
     <compoundname>wxStringBuffer</compoundname>
     <includes local="no">wx/string.h</includes>
@@ -9,6 +9,7 @@
         <definition>wxStringBuffer::wxStringBuffer</definition>
         <argsstring>(wxString &amp;str, size_t len)</argsstring>
         <name>wxStringBuffer</name>
+        <qualifiedname>wxStringBuffer::wxStringBuffer</qualifiedname>
         <param>
           <type><ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>str</declname>
@@ -25,13 +26,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/string.h" line="2052" column="5"/>
+        <location file="interface/wx/string.h" line="2085" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_string_buffer_1ae7801d52c22c50d100b2a2a5fdb6dccc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxStringBuffer::~wxStringBuffer</definition>
         <argsstring>()</argsstring>
         <name>~wxStringBuffer</name>
+        <qualifiedname>wxStringBuffer::~wxStringBuffer</qualifiedname>
         <briefdescription>
 <para>Restores the string passed to the constructor to the usable state by calling <ref refid="classwx_string_1a3783b441b540bac783a8e5a2cceaae7d" kindref="member">wxString::UngetWriteBuf()</ref> on it. </para>
         </briefdescription>
@@ -39,13 +41,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/string.h" line="2058" column="5"/>
+        <location file="interface/wx/string.h" line="2091" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_string_buffer_1af4f3ca87dac6b7242a62ba44da45adad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="chartype_8h_1af558f1d34fbf3cf5e3258e42a40875fd" kindref="member">wxStringCharType</ref> *</type>
         <definition>wxStringCharType * wxStringBuffer::operator wxStringCharType *</definition>
         <argsstring>()</argsstring>
         <name>operator wxStringCharType *</name>
+        <qualifiedname>wxStringBuffer::operator wxStringCharType *</qualifiedname>
         <briefdescription>
 <para>Returns the writable pointer to a buffer of the size at least equal to the length specified in the constructor. </para>
         </briefdescription>
@@ -53,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/string.h" line="2064" column="22"/>
+        <location file="interface/wx/string.h" line="2097" column="22"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -69,9 +72,10 @@
 <para>Note that the exact usage of this depends on whether or not <computeroutput>wxUSE_STL</computeroutput> is enabled. If <computeroutput>wxUSE_STL</computeroutput> is enabled, <ref refid="classwx_string_buffer" kindref="compound">wxStringBuffer</ref> creates a separate empty character buffer, and if <computeroutput>wxUSE_STL</computeroutput> is disabled, it uses GetWriteBuf() from <ref refid="classwx_string" kindref="compound">wxString</ref>, keeping the same buffer <ref refid="classwx_string" kindref="compound">wxString</ref> uses intact. In other words, relying on <ref refid="classwx_string_buffer" kindref="compound">wxStringBuffer</ref> containing the old <ref refid="classwx_string" kindref="compound">wxString</ref> data is not a good idea if you want to build your program both with and without <computeroutput>wxUSE_STL</computeroutput>.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__data" kindref="compound">Data Structures</ref> </para>
     </detaileddescription>
-    <location file="interface/wx/string.h" line="2043" column="1" bodyfile="interface/wx/string.h" bodystart="2044" bodyend="2065"/>
+    <location file="interface/wx/string.h" line="2076" column="1" bodyfile="interface/wx/string.h" bodystart="2077" bodyend="2098"/>
     <listofallmembers>
       <member refid="classwx_string_buffer_1af4f3ca87dac6b7242a62ba44da45adad" prot="public" virt="non-virtual"><scope>wxStringBuffer</scope><name>operator wxStringCharType *</name></member>
       <member refid="classwx_string_buffer_1a159851a3c6348a37975ca3fdeca8ba74" prot="public" virt="non-virtual"><scope>wxStringBuffer</scope><name>wxStringBuffer</name></member>

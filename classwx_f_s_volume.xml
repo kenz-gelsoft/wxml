@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_f_s_volume" kind="class" language="C++" prot="public">
     <compoundname>wxFSVolume</compoundname>
     <includes local="no">wx/volume.h</includes>
@@ -9,6 +9,7 @@
         <definition>wxFSVolume::wxFSVolume</definition>
         <argsstring>()</argsstring>
         <name>wxFSVolume</name>
+        <qualifiedname>wxFSVolume::wxFSVolume</qualifiedname>
         <briefdescription>
 <para>Default ctor. </para>
         </briefdescription>
@@ -24,6 +25,7 @@
         <definition>wxFSVolume::wxFSVolume</definition>
         <argsstring>(const wxString &amp;name)</argsstring>
         <name>wxFSVolume</name>
+        <qualifiedname>wxFSVolume::wxFSVolume</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>name</declname>
@@ -42,6 +44,7 @@
         <definition>bool wxFSVolume::Create</definition>
         <argsstring>(const wxString &amp;name)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxFSVolume::Create</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>name</declname>
@@ -60,6 +63,7 @@
         <definition>bool wxFSVolume::IsOk</definition>
         <argsstring>() const</argsstring>
         <name>IsOk</name>
+        <qualifiedname>wxFSVolume::IsOk</qualifiedname>
         <briefdescription>
 <para>Is this a valid volume? </para>
         </briefdescription>
@@ -74,6 +78,7 @@
         <definition>wxFSVolumeKind wxFSVolume::GetKind</definition>
         <argsstring>() const</argsstring>
         <name>GetKind</name>
+        <qualifiedname>wxFSVolume::GetKind</qualifiedname>
         <briefdescription>
 <para>Returns the kind of this volume. </para>
         </briefdescription>
@@ -88,6 +93,7 @@
         <definition>int wxFSVolume::GetFlags</definition>
         <argsstring>() const</argsstring>
         <name>GetFlags</name>
+        <qualifiedname>wxFSVolume::GetFlags</qualifiedname>
         <briefdescription>
 <para>Returns the flags of this volume. </para>
         </briefdescription>
@@ -103,6 +109,7 @@
         <definition>bool wxFSVolume::IsWritable</definition>
         <argsstring>() const</argsstring>
         <name>IsWritable</name>
+        <qualifiedname>wxFSVolume::IsWritable</qualifiedname>
         <briefdescription>
 <para>Returns true if this volume is writable. </para>
         </briefdescription>
@@ -117,6 +124,7 @@
         <definition>wxString wxFSVolume::GetName</definition>
         <argsstring>() const</argsstring>
         <name>GetName</name>
+        <qualifiedname>wxFSVolume::GetName</qualifiedname>
         <briefdescription>
 <para>Returns the name of the volume; this is the internal name for the volume used by the operating system. </para>
         </briefdescription>
@@ -131,6 +139,7 @@
         <definition>wxString wxFSVolume::GetDisplayName</definition>
         <argsstring>() const</argsstring>
         <name>GetDisplayName</name>
+        <qualifiedname>wxFSVolume::GetDisplayName</qualifiedname>
         <briefdescription>
 <para>Returns the name of the volume meant to be shown to the user. </para>
         </briefdescription>
@@ -145,6 +154,7 @@
         <definition>wxIcon wxFSVolume::GetIcon</definition>
         <argsstring>(wxFSIconType type) const</argsstring>
         <name>GetIcon</name>
+        <qualifiedname>wxFSVolume::GetIcon</qualifiedname>
         <param>
           <type><ref refid="volume_8h_1a25716a00b483e0fd09f520c53cca04c3" kindref="member">wxFSIconType</ref></type>
           <declname>type</declname>
@@ -153,11 +163,12 @@
 <para>This function is available only when <computeroutput>wxUSE_GUI</computeroutput> is <computeroutput>1</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns the icon used by the native toolkit for the given file system type. </para>
+<para>Returns the icon used by the native toolkit for the given file system type.</para>
+<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor>  </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/volume.h" line="142" column="12"/>
+        <location file="interface/wx/volume.h" line="144" column="12"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -166,6 +177,7 @@
         <definition>static wxArrayString wxFSVolume::GetVolumes</definition>
         <argsstring>(int flagsSet=wxFS_VOL_MOUNTED, int flagsUnset=0)</argsstring>
         <name>GetVolumes</name>
+        <qualifiedname>wxFSVolume::GetVolumes</qualifiedname>
         <param>
           <type>int</type>
           <declname>flagsSet</declname>
@@ -193,6 +205,7 @@
         <definition>static void wxFSVolume::CancelSearch</definition>
         <argsstring>()</argsstring>
         <name>CancelSearch</name>
+        <qualifiedname>wxFSVolume::CancelSearch</qualifiedname>
         <briefdescription>
 <para>Stops execution of <ref refid="classwx_f_s_volume_1a313138cace5f2dc3f8e263435e0a9c87" kindref="member">GetVolumes()</ref> called previously (should be called from another thread, of course). </para>
         </briefdescription>
@@ -208,12 +221,13 @@
     </briefdescription>
     <detaileddescription>
 <para>Unix ports of wxWidgets do not have the concept of volumes and thus do not implement <ref refid="classwx_f_s_volume" kindref="compound">wxFSVolume</ref>.</para>
-<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor> </para>
+<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref>, <ref refid="page_port_1page_port_wxosx" kindref="member">wxOSX/Cocoa</ref> ports.  <onlyfor>wxmsw,wxosx</onlyfor> </para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__misc" kindref="compound">Miscellaneous</ref> </para>
     </detaileddescription>
-    <location file="interface/wx/volume.h" line="66" column="1" bodyfile="interface/wx/volume.h" bodystart="67" bodyend="143"/>
+    <location file="interface/wx/volume.h" line="66" column="1" bodyfile="interface/wx/volume.h" bodystart="67" bodyend="145"/>
     <listofallmembers>
       <member refid="classwx_f_s_volume_1a0a43342c22263988ce38996ee5ee37af" prot="public" virt="non-virtual"><scope>wxFSVolume</scope><name>CancelSearch</name></member>
       <member refid="classwx_f_s_volume_1adfb2a7c227e86b1705bb6550ee6a991e" prot="public" virt="non-virtual"><scope>wxFSVolume</scope><name>Create</name></member>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="uilocale_8h" kind="file" language="C++">
+    <compoundname>uilocale.h</compoundname>
+    <innerclass refid="classwx_u_i_locale" prot="public">wxUILocale</innerclass>
+    <innerclass refid="classwx_locale_ident" prot="public">wxLocaleIdent</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="uilocale_8h_1aedcf2109f459315e1a7f2af73ec9b603" prot="public" static="no" strong="no">
+        <type></type>
+        <name>@53</name>
+        <enumvalue id="uilocale_8h_1aedcf2109f459315e1a7f2af73ec9b603af02ed15234cbfc8a4035e7f89cad057e" prot="public">
+          <name>wxCompare_CaseSensitive</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Compare strings case-sensitively, this is the default. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uilocale_8h_1aedcf2109f459315e1a7f2af73ec9b603a28740193ca6fca5c0420d18d67aa79e0" prot="public">
+          <name>wxCompare_CaseInsensitive</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Ignore strings case when comparing. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>Note that this flag is not supported under POSIX systems, where it is simply ignored. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Flags for <ref refid="classwx_u_i_locale_1a370733e9400cd0510603814f8eac42cb" kindref="member">wxUILocale::CompareStrings()</ref> function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="15" column="1" bodyfile="interface/wx/uilocale.h" bodystart="16" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="uilocale_8h_1adbb4995788c100e88d5da231430d6308" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>wxString wxGetUIDateFormat</definition>
+        <argsstring>()</argsstring>
+        <name>wxGetUIDateFormat</name>
+        <briefdescription>
+<para>Return the format to use for formatting user-visible dates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a simple wrapper function normally calling <ref refid="classwx_u_i_locale_1a469b25c4b1f89ab81f95cc85e41c1a0a" kindref="member">wxUILocale::GetInfo()</ref> with wxLOCALE_SHORT_DATE_FMT argument, but which is also available when <computeroutput>wxUSE_INTL==0</computeroutput>, i.e. support for internationalization is disabled at compile-time, in which case it returns <computeroutput>x</computeroutput> string, i.e. uses the current C locale formatting rather than UI locale.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_date_time_1a6a60f071d74712eba58153113f5af23a" kindref="member">wxDateTime::Format()</ref></para>
+</simplesect>
+<simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/uilocale.h" line="327" column="10" declfile="interface/wx/uilocale.h" declline="327" declcolumn="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="interface/wx/uilocale.h"/>
+  </compounddef>
+</doxygen>

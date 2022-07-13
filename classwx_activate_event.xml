@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_activate_event" kind="class" language="C++" prot="public">
     <compoundname>wxActivateEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -8,6 +8,7 @@
       <memberdef kind="enum" id="classwx_activate_event_1ab612aed0b0c8e37279438fae68ee59f1" prot="public" static="no" strong="no">
         <type></type>
         <name>Reason</name>
+        <qualifiedname>wxActivateEvent::Reason</qualifiedname>
         <enumvalue id="classwx_activate_event_1ab612aed0b0c8e37279438fae68ee59f1ac883a610e778359e41f645d5854aa91f" prot="public">
           <name>Reason_Mouse</name>
           <briefdescription>
@@ -35,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3091" column="5" bodyfile="interface/wx/event.h" bodystart="3092" bodyend="3097"/>
+        <location file="interface/wx/event.h" line="3116" column="5" bodyfile="interface/wx/event.h" bodystart="3117" bodyend="3122"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -44,6 +45,7 @@
         <definition>wxActivateEvent::wxActivateEvent</definition>
         <argsstring>(wxEventType eventType=wxEVT_NULL, bool active=true, int id=0, Reason ActivationReason=Reason_Unknown)</argsstring>
         <name>wxActivateEvent</name>
+        <qualifiedname>wxActivateEvent::wxActivateEvent</qualifiedname>
         <param>
           <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
           <declname>eventType</declname>
@@ -71,13 +73,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3102" column="5"/>
+        <location file="interface/wx/event.h" line="3127" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_activate_event_1a27c26e49ca21fca595e075343425b209" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool wxActivateEvent::GetActive</definition>
         <argsstring>() const</argsstring>
         <name>GetActive</name>
+        <qualifiedname>wxActivateEvent::GetActive</qualifiedname>
         <briefdescription>
 <para>Returns true if the application or window is being activated, false otherwise. </para>
         </briefdescription>
@@ -85,13 +88,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3108" column="10"/>
+        <location file="interface/wx/event.h" line="3133" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_activate_event_1a05cc1552d0cf3bd90992a7738d100fcc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_activate_event_1ab612aed0b0c8e37279438fae68ee59f1" kindref="member">Reason</ref></type>
         <definition>Reason wxActivateEvent::GetActivationReason</definition>
         <argsstring>() const</argsstring>
         <name>GetActivationReason</name>
+        <qualifiedname>wxActivateEvent::GetActivationReason</qualifiedname>
         <briefdescription>
 <para>Allows checking if the window was activated by clicking it with the mouse or in some other way. </para>
         </briefdescription>
@@ -104,15 +108,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3123" column="12"/>
+        <location file="interface/wx/event.h" line="3148" column="12"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>An activate event is sent when a window or application is being activated or deactivated. </para>
     </briefdescription>
     <detaileddescription>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_activate_event" kindref="compound">wxActivateEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
@@ -120,14 +123,15 @@
 </listitem>
 <listitem><para>EVT_ACTIVATE_APP(func): Process a <computeroutput>wxEVT_ACTIVATE_APP</computeroutput> event. This event is received by the wxApp-derived instance only. </para>
 </listitem>
-<listitem><para>EVT_HIBERNATE(func): Process a hibernate event, supplying the member function. This event applies to <ref refid="classwx_app" kindref="compound">wxApp</ref> only, and only on Windows SmartPhone and PocketPC. It is generated when the system is low on memory; the application should free up as much memory as possible, and restore full working state when it receives a <computeroutput>wxEVT_ACTIVATE</computeroutput> or <computeroutput>wxEVT_ACTIVATE_APP</computeroutput> event. <linebreak/>
- <simplesect kind="note"><para>Until wxWidgets 3.1.0 activation events could be sent by wxMSW when the window was minimized. This reflected the native MSW behaviour but was often surprising and unexpected, so starting from 3.1.0 such events are not sent any more when the window is in the minimized state.</para>
+<listitem><para>EVT_HIBERNATE(func): Process a hibernate event, supplying the member function. This event applies to <ref refid="classwx_app" kindref="compound">wxApp</ref> only, and only on Windows SmartPhone and PocketPC. It is generated when the system is low on memory; the application should free up as much memory as possible, and restore full working state when it receives a <computeroutput>wxEVT_ACTIVATE</computeroutput> or <computeroutput>wxEVT_ACTIVATE_APP</computeroutput> event. </para>
+</listitem>
+</itemizedlist>
+<simplesect kind="note"><para>Until wxWidgets 3.1.0 activation events could be sent by wxMSW when the window was minimized. This reflected the native MSW behaviour but was often surprising and unexpected, so starting from 3.1.0 such events are not sent any more when the window is in the minimized state.</para>
 </simplesect>
 <heading level="2"></heading>
 </para>
-</listitem>
-</itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_events" kindref="compound">Events and Event Handling</ref>, <ref refid="classwx_app_1a348fc5b1285b0f71bfc87bd59667af48" kindref="member">wxApp::IsActive</ref> </para>
 </simplesect>
 </para>
@@ -175,7 +179,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="3081" column="1" bodyfile="interface/wx/event.h" bodystart="3082" bodyend="3124"/>
+    <location file="interface/wx/event.h" line="3106" column="1" bodyfile="interface/wx/event.h" bodystart="3107" bodyend="3149"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxActivateEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxActivateEvent</scope><name>Clone</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_sash_event" kind="class" language="C++" prot="public">
     <compoundname>wxSashEvent</compoundname>
     <basecompoundref refid="classwx_command_event" prot="public" virt="non-virtual">wxCommandEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxSashEvent::wxSashEvent</definition>
         <argsstring>(int id=0, wxSashEdgePosition edge=wxSASH_NONE)</argsstring>
         <name>wxSashEvent</name>
+        <qualifiedname>wxSashEvent::wxSashEvent</qualifiedname>
         <param>
           <type>int</type>
           <declname>id</declname>
@@ -34,6 +35,7 @@
         <definition>wxRect wxSashEvent::GetDragRect</definition>
         <argsstring>() const</argsstring>
         <name>GetDragRect</name>
+        <qualifiedname>wxSashEvent::GetDragRect</qualifiedname>
         <briefdescription>
 <para>Returns the rectangle representing the new size the window would be if the resize was applied. </para>
         </briefdescription>
@@ -49,6 +51,7 @@
         <definition>wxSashDragStatus wxSashEvent::GetDragStatus</definition>
         <argsstring>() const</argsstring>
         <name>GetDragStatus</name>
+        <qualifiedname>wxSashEvent::GetDragStatus</qualifiedname>
         <briefdescription>
 <para>Returns the status of the sash: one of wxSASH_STATUS_OK, wxSASH_STATUS_OUT_OF_RANGE. </para>
         </briefdescription>
@@ -64,6 +67,7 @@
         <definition>wxSashEdgePosition wxSashEvent::GetEdge</definition>
         <argsstring>() const</argsstring>
         <name>GetEdge</name>
+        <qualifiedname>wxSashEvent::GetEdge</qualifiedname>
         <briefdescription>
 <para>Returns the dragged edge. </para>
         </briefdescription>
@@ -79,6 +83,7 @@
         <definition>void wxSashEvent::SetEdge</definition>
         <argsstring>(wxSashEdgePosition edge)</argsstring>
         <name>SetEdge</name>
+        <qualifiedname>wxSashEvent::SetEdge</qualifiedname>
         <param>
           <type><ref refid="sashwin_8h_1afb600316dcb731728456186c369bf455" kindref="member">wxSashEdgePosition</ref></type>
           <declname>edge</declname>
@@ -96,6 +101,7 @@
         <definition>void wxSashEvent::SetDragRect</definition>
         <argsstring>(const wxRect &amp;rect)</argsstring>
         <name>SetDragRect</name>
+        <qualifiedname>wxSashEvent::SetDragRect</qualifiedname>
         <param>
           <type>const <ref refid="classwx_rect" kindref="compound">wxRect</ref> &amp;</type>
           <declname>rect</declname>
@@ -113,6 +119,7 @@
         <definition>void wxSashEvent::SetDragStatus</definition>
         <argsstring>(wxSashDragStatus status)</argsstring>
         <name>SetDragStatus</name>
+        <qualifiedname>wxSashEvent::SetDragStatus</qualifiedname>
         <param>
           <type><ref refid="sashwin_8h_1a2085e8b6992690a1660956bebad50ee1" kindref="member">wxSashDragStatus</ref></type>
           <declname>status</declname>
@@ -132,19 +139,19 @@
     <detaileddescription>
 <para><simplesect kind="remark"><para>When a sash belonging to a sash window is dragged by the user, and then released, this event is sent to the window, where it may be processed by an event table entry in a derived class, a plug-in event handler or an ancestor class. Note that the <ref refid="classwx_sash_window" kindref="compound">wxSashWindow</ref> doesn&apos;t change the window&apos;s size itself. It relies on the application&apos;s event handler to do that. This is because the application may have to handle other consequences of the resize, or it may wish to veto it altogether. The event handler should look at the drag rectangle: see <ref refid="classwx_sash_event_1ad0024bf96bb56ab47374490a9370fa66" kindref="member">wxSashEvent::GetDragRect</ref> to see what the new size of the window would be if the resize were to be applied. It should also call <ref refid="classwx_sash_event_1a8ed71197b8918ae8ddfc39a7ff5c2e77" kindref="member">wxSashEvent::GetDragStatus</ref> to see whether the drag was OK or out of the current allowed range.</para>
 </simplesect>
-<linebreak/>
 <heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_sash_event" kindref="compound">wxSashEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
 <listitem><para>EVT_SASH_DRAGGED(id,  func): Process a <computeroutput>wxEVT_SASH_DRAGGED</computeroutput> event, when the user has finished dragging a sash. </para>
 </listitem>
-<listitem><para>EVT_SASH_DRAGGED_RANGE(id1,  id2,  func): Process a <computeroutput>wxEVT_SASH_DRAGGED_RANGE</computeroutput> event, when the user has finished dragging a sash. The event handler is called when windows with ids in the given range have their sashes dragged. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_SASH_DRAGGED_RANGE(id1,  id2,  func): Process a <computeroutput>wxEVT_SASH_DRAGGED_RANGE</computeroutput> event, when the user has finished dragging a sash. The event handler is called when windows with ids in the given range have their sashes dragged. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_sash_window" kindref="compound">wxSashWindow</ref>, <ref refid="overview_events" kindref="compound">Events and Event Handling</ref> </para>
 </simplesect>
 </para>

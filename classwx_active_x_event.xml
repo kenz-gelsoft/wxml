@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_active_x_event" kind="class" language="C++" prot="public">
     <compoundname>wxActiveXEvent</compoundname>
     <basecompoundref refid="classwx_command_event" prot="public" virt="non-virtual">wxCommandEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>DISPID wxActiveXEvent::GetDispatchId</definition>
         <argsstring>(int idx) const</argsstring>
         <name>GetDispatchId</name>
+        <qualifiedname>wxActiveXEvent::GetDispatchId</qualifiedname>
         <param>
           <type>int</type>
           <declname>idx</declname>
@@ -29,6 +30,7 @@
         <definition>size_t wxActiveXEvent::ParamCount</definition>
         <argsstring>() const</argsstring>
         <name>ParamCount</name>
+        <qualifiedname>wxActiveXEvent::ParamCount</qualifiedname>
         <briefdescription>
 <para>Obtains the number of parameters passed through the ActiveX event. </para>
         </briefdescription>
@@ -43,6 +45,7 @@
         <definition>wxString wxActiveXEvent::ParamName</definition>
         <argsstring>(size_t idx) const</argsstring>
         <name>ParamName</name>
+        <qualifiedname>wxActiveXEvent::ParamName</qualifiedname>
         <param>
           <type>size_t</type>
           <declname>idx</declname>
@@ -61,6 +64,7 @@
         <definition>wxString wxActiveXEvent::ParamType</definition>
         <argsstring>(size_t idx) const</argsstring>
         <name>ParamType</name>
+        <qualifiedname>wxActiveXEvent::ParamType</qualifiedname>
         <param>
           <type>size_t</type>
           <declname>idx</declname>
@@ -79,6 +83,7 @@
         <definition>wxVariant wxActiveXEvent::operator[]</definition>
         <argsstring>(size_t idx)</argsstring>
         <name>operator[]</name>
+        <qualifiedname>wxActiveXEvent::operator[]</qualifiedname>
         <param>
           <type>size_t</type>
           <declname>idx</declname>
@@ -97,6 +102,7 @@
         <definition>wxActiveXEventNativeMSW * wxActiveXEvent::GetNativeParameters</definition>
         <argsstring>() const</argsstring>
         <name>GetNativeParameters</name>
+        <qualifiedname>wxActiveXEvent::GetNativeParameters</qualifiedname>
         <briefdescription>
 <para>Obtain the original MSW parameters for the event. </para>
         </briefdescription>
@@ -115,19 +121,19 @@
     </briefdescription>
     <detaileddescription>
 <para>ActiveX events are basically a function call with the parameters passed through an array of wxVariants along with a return value that is a <ref refid="classwx_variant" kindref="compound">wxVariant</ref> itself. What type the parameters or return value are depends on the context (i.e. what the .idl specifies).</para>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_active_x_event" kindref="compound">wxActiveXEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
-<listitem><para>EVT_ACTIVEX(func): Sent when the ActiveX control hosted by <ref refid="classwx_active_x_container" kindref="compound">wxActiveXContainer</ref> receives an ActiveX event. <linebreak/>
- ActiveX event parameters can get extremely complex and may be beyond the abilities of <ref refid="classwx_variant" kindref="compound">wxVariant</ref>. If &apos;operator[]&apos; fails, prints an error messages or crashes the application, event handlers should use <ref refid="classwx_active_x_event_1a610af0c5a723962d5e072cd1dcf08017" kindref="member">GetNativeParameters()</ref> instead to obtain the original event information. Calls to operator[] and GetNativeParmeters() can be mixed. It is valid to handle some parameters of an event with operator[] and others directly through <ref refid="classwx_active_x_event_1a610af0c5a723962d5e072cd1dcf08017" kindref="member">GetNativeParameters()</ref>. It is <bold>not</bold> valid however to manipulate the same parameter using both approaches at the same time.</para>
+<listitem><para>EVT_ACTIVEX(func): Sent when the ActiveX control hosted by <ref refid="classwx_active_x_container" kindref="compound">wxActiveXContainer</ref> receives an ActiveX event. </para>
 </listitem>
 </itemizedlist>
-Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor> </para>
+ActiveX event parameters can get extremely complex and may be beyond the abilities of <ref refid="classwx_variant" kindref="compound">wxVariant</ref>. If &apos;operator[]&apos; fails, prints an error messages or crashes the application, event handlers should use <ref refid="classwx_active_x_event_1a610af0c5a723962d5e072cd1dcf08017" kindref="member">GetNativeParameters()</ref> instead to obtain the original event information. Calls to operator[] and GetNativeParmeters() can be mixed. It is valid to handle some parameters of an event with operator[] and others directly through <ref refid="classwx_active_x_event_1a610af0c5a723962d5e072cd1dcf08017" kindref="member">GetNativeParameters()</ref>. It is <bold>not</bold> valid however to manipulate the same parameter using both approaches at the same time.</para>
+<para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor> </para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">

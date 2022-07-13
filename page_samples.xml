@@ -1,9 +1,17 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="page_samples" kind="page">
     <compoundname>page_samples</compoundname>
     <title>Samples Overview</title>
     <tableofcontents>
+      <tocsect>
+        <name>Building and running the samples</name>
+        <reference>page_samples_1page_samples_building</reference>
+    </tocsect>
+      <tocsect>
+        <name>Overview of the available samples</name>
+        <reference>page_samples_1page_samples_overview</reference>
+    </tocsect>
       <tocsect>
         <name>Accessibility Sample</name>
         <reference>page_samples_1page_samples_access</reference>
@@ -334,12 +342,32 @@
     </tocsect>
     </tableofcontents>
     <briefdescription>
-<para>Probably the best way to learn wxWidgets is by reading the source of some 80+ samples provided with it. </para>
+<para>Arguably the best way to learn wxWidgets is by reading the sources of many samples, or examples, provided with it. </para>
     </briefdescription>
     <detaileddescription>
-<para>Probably the best way to learn wxWidgets is by reading the source of some 80+ samples provided with it.</para>
 <para>Many aspects of wxWidgets programming can be learned from them, but sometimes it is not simple to just choose the right sample to look at. This overview aims at describing what each sample does/demonstrates to make it easier to find the relevant one if a simple grep through all sources didn&apos;t help. They also provide some notes about using the samples and what features of wxWidgets are they supposed to test.</para>
-<para>There are currently more than 80 different samples as part of wxWidgets: the list in this page is not complete! You should start your tour of wxWidgets with the <ref refid="page_samples_1page_samples_minimal" kindref="member">Minimal Sample</ref> which is the wxWidgets version of &quot;Hello,
+<para>Notice that all wxWidgets samples mentioned here can be found in <computeroutput>samples</computeroutput> subdirectory of the library distribution. When a <computeroutput>foobar</computeroutput> sample is mentioned below, its sources can be found in <computeroutput>samples/foobar</computeroutput> directory of your wxWidgets tree. If you installed wxWidgets from a binary package, you might not have this directory. In this case, you may view the samples online at <ulink url="https://github.com/wxWidgets/wxWidgets/tree/master/samples/">https://github.com/wxWidgets/wxWidgets/tree/master/samples/</ulink> but you need to download the source distribution in order to be able to build them (highly recommended).</para>
+<sect1 id="page_samples_1page_samples_building">
+<title>Building and running the samples</title>
+<para>Although reading the samples code can be very useful, it may not be sufficient and often it is even more useful to experiment by making a small change to a sample and checking how it works when running the sample.</para>
+<para>Before being able to run them, you need to be able build the sample you&apos;re interested in. The right way to do it depends on the way you built wxWidgets itself (see <ref refid="overview_install" kindref="compound">Installing wxWidgets</ref> for more details):</para>
+<para><itemizedlist>
+<listitem><para>Under Microsoft Windows (MSW):<itemizedlist>
+<listitem><para>If you&apos;re using Microsoft Visual C++ compiler (MSVC), you need to use <computeroutput>makefile.vc</computeroutput> from the directory of the sample to build it. Open &quot;Developer Command Prompt&quot;, navigate to the sample directory and run <computeroutput>nmake -f makefile.vc</computeroutput> command with the additional arguments corresponding to your library build, e.g. <computeroutput>BUILD=debug</computeroutput>. See <ref refid="plat_msw_install_1msw_build_msvs" kindref="member">MSVS instructions</ref> for more information.</para>
+</listitem><listitem><para>If you&apos;re using MinGW, use <computeroutput>makefile.gcc</computeroutput> in the sample directory in a similar way. Note that if you use MSYS2 or another Unix-like environment for building, you should use the Unix instructions below instead.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Under Unix systems (including macOS):<itemizedlist>
+<listitem><para>If you installed wxWidgets from your distribution binaries, you can use <computeroutput>makefile.unx</computeroutput> in the sample directory to build it using the version of wxWidgets already installed on your system. Use <computeroutput>make -f makefile.unx</computeroutput> in the sample directory to build it.</para>
+</listitem><listitem><para>If you built wxWidgets from source using configure, you may use <computeroutput>Makefile</computeroutput> in the directory with the same name as the sample directory, but under the <emphasis>build</emphasis> directory, i.e. the one where you ran configure, and <emphasis>not</emphasis> under the source directory. Just run <computeroutput>make</computeroutput> to build the sample in the build directory subdirectory, e.g. <computeroutput>~/build/wx/samples/minimal</computeroutput>. You can also build all the samples at once by doing <computeroutput>make samples</computeroutput>, but be warned that this might take some time on older and slower machines.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="page_samples_1page_samples_overview">
+<title>Overview of the available samples</title>
+<para>There are currently almost 100 different samples as part of wxWidgets: the list in this page is not complete! You should start your tour of wxWidgets with the <ref refid="page_samples_1page_samples_minimal" kindref="member">Minimal Sample</ref> which is the wxWidgets version of &quot;Hello,
 world!&quot;. It shows the basic structure of wxWidgets program and is the most commented sample of all - looking at its source code is recommended.</para>
 <para>The next most useful sample is <ref refid="page_samples_1page_samples_widgets" kindref="member">Widgets Sample</ref> which shows many of wxWidgets controls, such as buttons, text entry zones, list boxes, check boxes, combo boxes etc. It is organized in many different source files, one per each control, which makes it easier to study it, and also allows to change various control styles and call its methods interactively.</para>
 <para>Other, more complicated controls, have their own samples. In this category you may find the following samples showing the corresponding controls:</para>
@@ -357,10 +385,8 @@ world!&quot;. It shows the basic structure of wxWidgets program and is the most 
 <listitem><para><ref refid="classwx_web_view" kindref="compound">wxWebView</ref>: <ref refid="page_samples_1page_samples_webview" kindref="member">wxWebView Sample</ref></para>
 </listitem>
 </itemizedlist>
-Notice that all wxWidgets samples mentioned above can be found in <computeroutput>samples</computeroutput> subdirectory of the library distribution. When a <computeroutput>foobar</computeroutput> sample is mentioned below, its sources can be found in <computeroutput>samples/foobar</computeroutput> directory of your wxWidgets tree. If you installed wxWidgets from a binary package, you might not have this directory. In this case, you may view the samples online at <ulink url="https://github.com/wxWidgets/wxWidgets/tree/master/samples/">https://github.com/wxWidgets/wxWidgets/tree/master/samples/</ulink> but you need to download the source distribution in order to be able to build them (highly recommended).</para>
-<para>Final advice is to do a search in the entire samples directory if you can&apos;t find the sample showing the control you are interested in by name. Most classes contained in wxWidgets occur in at least one of the samples.</para>
-<para><xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>Write descriptions for the samples who description started with &quot;This sample demonstrates&quot;, they are semi-auto generated.</para>
-</xrefdescription></xrefsect></para>
+Final advice is to do a search in the entire samples directory if you can&apos;t find the sample showing the control you are interested in by name. Most classes contained in wxWidgets occur in at least one of the samples.</para>
+</sect1>
 <sect1 id="page_samples_1page_samples_access">
 <title>Accessibility Sample</title>
 <para>This sample shows how you can use the <ref refid="classwx_accessible" kindref="compound">wxAccessible</ref> classes in a simple GUI program.</para>
@@ -739,8 +765,9 @@ Notice that all wxWidgets samples mentioned above can be found in <computeroutpu
 </sect1>
 <sect1 id="page_samples_1page_samples_shaped">
 <title>Shaped Window Sample</title>
-<para>This sample demonstrates how to implement a shaped or transparent window, and a window showing/hiding with effect.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_non_owned_window_1a7f223eadbd72caea66efcb0b55e89613" kindref="member">wxTopLevelWindow::SetShape()</ref>, <ref refid="classwx_top_level_window_1a8e37aff45a001a83ff49745298a6978e" kindref="member">wxTopLevelWindow::SetTransparent()</ref>, <ref refid="classwx_window_1a596b1715edfc7609f352b2e000ecbaec" kindref="member">wxWindow::ShowWithEffect()</ref>, <ref refid="classwx_window_1a5326fbb26557a224507a1c06e5640e89" kindref="member">wxWindow::HideWithEffect()</ref></para>
+<para>This sample demonstrates Showing unusual, e.g. shaped or semi-transparent windows.</para>
+<para>This sample shows windows with non-rectangular shapes and non-opaque windows as well as how the windows can be shown with a special effect.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_non_owned_window_1a7f223eadbd72caea66efcb0b55e89613" kindref="member">wxTopLevelWindow::SetShape()</ref>, <ref refid="classwx_top_level_window_1a8e37aff45a001a83ff49745298a6978e" kindref="member">wxTopLevelWindow::SetTransparent()</ref>, <ref refid="classwx_window_1a596b1715edfc7609f352b2e000ecbaec" kindref="member">wxWindow::ShowWithEffect()</ref>, <ref refid="classwx_window_1a5326fbb26557a224507a1c06e5640e89" kindref="member">wxWindow::HideWithEffect()</ref>, <ref refid="classwx_window_1af14f8fd2ed2d30a9bbb5d4f9fd6594ec" kindref="member">wxWindow::SetBackgroundStyle()</ref></para>
 </simplesect>
 <emphasis>Location:</emphasis> <computeroutput>samples/shaped</computeroutput> subdirectory of your wxWidgets installation or <ulink url="https://github.com/wxWidgets/wxWidgets/tree/master/samples/shaped">https://github.com/wxWidgets/wxWidgets/tree/master/samples/shaped</ulink></para>
 </sect1>
@@ -831,7 +858,7 @@ Notice that all wxWidgets samples mentioned above can be found in <computeroutpu
 </listitem>
 <listitem><para>Using <computeroutput>EVT_UPDATE_UI</computeroutput> handler for automatically enabling/disabling toolbar buttons without having to explicitly call EnableTool. This is done in MyFrame::OnUpdateCopyAndCut(). </para>
 </listitem>
-<listitem><para>Using <ref refid="classwx_tool_bar_1aea3c91f9b3d7505e4b511f678883c73d" kindref="member">wxToolBar::DeleteTool()</ref> and <ref refid="classwx_tool_bar_1a0fad28bbc55a43bd745408443ea248cf" kindref="member">wxToolBar::InsertTool()</ref> to dynamically update the toolbar.</para>
+<listitem><para>Using <ref refid="classwx_tool_bar_1aea3c91f9b3d7505e4b511f678883c73d" kindref="member">wxToolBar::DeleteTool()</ref> and <ref refid="classwx_tool_bar_1a4e662a923f34ccbc0d8141312cc3e1be" kindref="member">wxToolBar::InsertTool()</ref> to dynamically update the toolbar.</para>
 </listitem>
 </itemizedlist>
 Some buttons in the main toolbar are check buttons, i.e. they stay checked when pressed. On the platforms which support it, the sample also adds a combobox to the toolbar showing how you can use arbitrary controls and not only buttons in it.</para>
@@ -847,7 +874,7 @@ Some buttons in the main toolbar are check buttons, i.e. they stay checked when 
 <sect1 id="page_samples_1page_samples_typetest">
 <title>Types Sample</title>
 <para>This sample demonstrates wxWidgets types.</para>
-<para><xrefsect id="todo_1_todo000002"><xreftitle>Todo</xreftitle><xrefdescription><para>This sample isn&apos;t very didactive; it&apos;s more than a set of tests rather than a sample and thus should be rewritten with CppUnit and moved under &quot;tests&quot;</para>
+<para><xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>This sample isn&apos;t very didactive; it&apos;s more than a set of tests rather than a sample and thus should be rewritten with CppUnit and moved under &quot;tests&quot;</para>
 </xrefdescription></xrefsect></para>
 <para><emphasis>Location:</emphasis> <computeroutput>samples/typetest</computeroutput> subdirectory of your wxWidgets installation or <ulink url="https://github.com/wxWidgets/wxWidgets/tree/master/samples/typetest">https://github.com/wxWidgets/wxWidgets/tree/master/samples/typetest</ulink></para>
 </sect1>

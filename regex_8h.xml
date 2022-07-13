@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="regex_8h" kind="file" language="C++">
     <compoundname>regex.h</compoundname>
     <innerclass refid="classwx_reg_ex" prot="public">wxRegEx</innerclass>
@@ -14,24 +14,28 @@
 <para>Use extended regex syntax. </para>
           </briefdescription>
           <detaileddescription>
+<para>This is the default and doesn&apos;t need to be specified. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="regex_8h_1afa231099d07583c3ed0981e0bb665f55aec7f73604dcde7bce8d3d3092713a297" prot="public">
           <name>wxRE_ADVANCED</name>
           <initializer>= 1</initializer>
           <briefdescription>
-<para>Use advanced RE syntax (built-in regex only). </para>
+<para>Use advanced regex syntax. </para>
           </briefdescription>
           <detaileddescription>
+<para>This flag is synonym for wxRE_EXTENDED and doesn&apos;t need to be specified as this is the default syntax. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="regex_8h_1afa231099d07583c3ed0981e0bb665f55a23d45b8284e94faf21613e2b64f4fa75" prot="public">
           <name>wxRE_BASIC</name>
           <initializer>= 2</initializer>
           <briefdescription>
-<para>Use basic RE syntax. </para>
+<para>Use basic regex syntax. </para>
           </briefdescription>
           <detaileddescription>
+<para>Use basic regular expression syntax, close to its POSIX definition, but with some extensions still available.</para>
+<para>The word start/end boundary assertions <computeroutput>\&lt;</computeroutput> and <computeroutput>\&gt;</computeroutput> are only available when using basic syntax, use <computeroutput>[[:&lt;:]]</computeroutput> and <computeroutput>[[:&gt;:]]</computeroutput> or just more general word boundary assertion <computeroutput>\b</computeroutput> when not using it. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="regex_8h_1afa231099d07583c3ed0981e0bb665f55a1d2ce37b6045ba6e09edefc7bc9cd445" prot="public">
@@ -56,11 +60,10 @@
           <name>wxRE_NEWLINE</name>
           <initializer>= 16</initializer>
           <briefdescription>
-<para>If not set, treat &apos;<linebreak/>
-&apos; as an ordinary character, otherwise it is special: it is not matched by &apos;. </para>
+<para>If not set, treat <computeroutput>\n</computeroutput> as an ordinary character. </para>
           </briefdescription>
           <detaileddescription>
-<para>&apos; and &apos;^&apos; and &apos;$&apos; always match after/before it regardless of the setting of wxRE_NOT[BE]OL. </para>
+<para>Otherwise <computeroutput>\n</computeroutput> is special: it is not matched by <computeroutput>.</computeroutput> and <computeroutput>^</computeroutput> and <computeroutput>$</computeroutput> always match after/before it regardless of the setting of <ref refid="regex_8h_1a394b3903fbf00ba2b6243f60689a5a5fa96a026b9a23dcd8ad5fe610d33bcef29" kindref="member">wxRE_NOTBOL</ref> and <ref refid="regex_8h_1a394b3903fbf00ba2b6243f60689a5a5fab2e5288cbbb01be1c08018519a67f3b3" kindref="member">wxRE_NOTEOL</ref>. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="regex_8h_1afa231099d07583c3ed0981e0bb665f55a2acc242d92915c6dc6f507d6be56b171" prot="public">
@@ -80,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/regex.h" line="13" column="1" bodyfile="interface/wx/regex.h" bodystart="14" bodyend="39"/>
+        <location file="interface/wx/regex.h" line="13" column="1" bodyfile="interface/wx/regex.h" bodystart="14" bodyend="59"/>
       </memberdef>
       <memberdef kind="enum" id="regex_8h_1a394b3903fbf00ba2b6243f60689a5a5f" prot="public" static="no" strong="no">
         <type></type>
@@ -103,6 +106,20 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="regex_8h_1a394b3903fbf00ba2b6243f60689a5a5fa9a2a67de1ec7d904ba6405b4648dff82" prot="public">
+          <name>wxRE_NOTEMPTY</name>
+          <initializer>= 128</initializer>
+          <briefdescription>
+<para>Don&apos;t accept empty string as a valid match. </para>
+          </briefdescription>
+          <detaileddescription>
+<para>If the regex matches an empty string, try alternatives, if there are any, or fail.</para>
+<para>This flag is not supported if PCRE support is turned off.</para>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para><anchor id="regex_8h_1wxRE_NOT_FLAGS"/></para>
         </briefdescription>
@@ -111,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/regex.h" line="48" column="1" bodyfile="interface/wx/regex.h" bodystart="49" bodyend="55"/>
+        <location file="interface/wx/regex.h" line="68" column="1" bodyfile="interface/wx/regex.h" bodystart="69" bodyend="87"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_doc_template" kind="class" language="C++" prot="public">
     <compoundname>wxDocTemplate</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxString wxDocTemplate::m_defaultExt</definition>
         <argsstring></argsstring>
         <name>m_defaultExt</name>
+        <qualifiedname>wxDocTemplate::m_defaultExt</qualifiedname>
         <briefdescription>
 <para>The default extension for files of this type. </para>
         </briefdescription>
@@ -24,6 +25,7 @@
         <definition>wxString wxDocTemplate::m_description</definition>
         <argsstring></argsstring>
         <name>m_description</name>
+        <qualifiedname>wxDocTemplate::m_description</qualifiedname>
         <briefdescription>
 <para>A short description of this template. </para>
         </briefdescription>
@@ -38,6 +40,7 @@
         <definition>wxString wxDocTemplate::m_directory</definition>
         <argsstring></argsstring>
         <name>m_directory</name>
+        <qualifiedname>wxDocTemplate::m_directory</qualifiedname>
         <briefdescription>
 <para>The default directory for files of this type. </para>
         </briefdescription>
@@ -52,6 +55,7 @@
         <definition>wxClassInfo* wxDocTemplate::m_docClassInfo</definition>
         <argsstring></argsstring>
         <name>m_docClassInfo</name>
+        <qualifiedname>wxDocTemplate::m_docClassInfo</qualifiedname>
         <briefdescription>
 <para>Run-time class information that allows document instances to be constructed dynamically. </para>
         </briefdescription>
@@ -66,6 +70,7 @@
         <definition>wxString wxDocTemplate::m_docTypeName</definition>
         <argsstring></argsstring>
         <name>m_docTypeName</name>
+        <qualifiedname>wxDocTemplate::m_docTypeName</qualifiedname>
         <briefdescription>
 <para>The named type of the document associated with this template. </para>
         </briefdescription>
@@ -80,6 +85,7 @@
         <definition>wxDocTemplate* wxDocTemplate::m_documentManager</definition>
         <argsstring></argsstring>
         <name>m_documentManager</name>
+        <qualifiedname>wxDocTemplate::m_documentManager</qualifiedname>
         <briefdescription>
 <para>A pointer to the document manager for which this template was created. </para>
         </briefdescription>
@@ -94,6 +100,7 @@
         <definition>wxString wxDocTemplate::m_fileFilter</definition>
         <argsstring></argsstring>
         <name>m_fileFilter</name>
+        <qualifiedname>wxDocTemplate::m_fileFilter</qualifiedname>
         <briefdescription>
 <para>The file filter (such as &quot;*.txt&quot;) to be used in file selector dialogs. </para>
         </briefdescription>
@@ -108,6 +115,7 @@
         <definition>long wxDocTemplate::m_flags</definition>
         <argsstring></argsstring>
         <name>m_flags</name>
+        <qualifiedname>wxDocTemplate::m_flags</qualifiedname>
         <briefdescription>
 <para>The flags passed to the constructor. </para>
         </briefdescription>
@@ -122,6 +130,7 @@
         <definition>wxClassInfo* wxDocTemplate::m_viewClassInfo</definition>
         <argsstring></argsstring>
         <name>m_viewClassInfo</name>
+        <qualifiedname>wxDocTemplate::m_viewClassInfo</qualifiedname>
         <briefdescription>
 <para>Run-time class information that allows view instances to be constructed dynamically. </para>
         </briefdescription>
@@ -136,6 +145,7 @@
         <definition>wxString wxDocTemplate::m_viewTypeName</definition>
         <argsstring></argsstring>
         <name>m_viewTypeName</name>
+        <qualifiedname>wxDocTemplate::m_viewTypeName</qualifiedname>
         <briefdescription>
 <para>The named type of the view associated with this template. </para>
         </briefdescription>
@@ -152,6 +162,7 @@
         <definition>wxDocTemplate::wxDocTemplate</definition>
         <argsstring>(wxDocManager *manager, const wxString &amp;descr, const wxString &amp;filter, const wxString &amp;dir, const wxString &amp;ext, const wxString &amp;docTypeName, const wxString &amp;viewTypeName, wxClassInfo *docClassInfo=0, wxClassInfo *viewClassInfo=0, long flags=wxTEMPLATE_VISIBLE)</argsstring>
         <name>wxDocTemplate</name>
+        <qualifiedname>wxDocTemplate::wxDocTemplate</qualifiedname>
         <param>
           <type><ref refid="classwx_doc_manager" kindref="compound">wxDocManager</ref> *</type>
           <declname>manager</declname>
@@ -289,9 +300,14 @@
 <bold>wxPerl Note:</bold></para>
 <para>In wxPerl <emphasis>docClassInfo</emphasis> and <emphasis>viewClassInfo</emphasis> can be either <computeroutput>Wx::ClassInfo</computeroutput> objects or strings containing the name of the perl packages which are to be used as <computeroutput>Wx::Document</computeroutput> and <computeroutput>Wx::View</computeroutput> classes (they must have a constructor named new); as an example:</para>
 <para><itemizedlist>
-<listitem><para>Wx::DocTemplate-&gt;new(docmgr, descr, filter, dir, ext, docTypeName, viewTypeName, docClassInfo, viewClassInfo, flags): will construct document and view objects from the class information.</para>
-</listitem><listitem><para>Wx::DocTemplate-&gt;new(docmgr, descr, filter, dir, ext, docTypeName, viewTypeName, docClassName, viewClassName, flags): will construct document and view objects from perl packages.</para>
-</listitem><listitem><para>Wx::DocTemplate-&gt;new(docmgr, descr, filter, dir, ext, docTypeName, viewTypeName): in this case <computeroutput>Wx::DocTemplate::CreateDocument()</computeroutput> and <computeroutput>Wx::DocTemplate::CreateView()</computeroutput> must be overridden  </para>
+<listitem><para>Wx::DocTemplate-&gt;new(docmgr, descr, filter, dir, ext,
+  docTypeName, viewTypeName, docClassInfo, viewClassInfo,
+  flags): will construct document and view objects from the class information.</para>
+</listitem><listitem><para>Wx::DocTemplate-&gt;new(docmgr, descr, filter, dir, ext,
+  docTypeName, viewTypeName, docClassName, viewClassName,
+  flags): will construct document and view objects from perl packages.</para>
+</listitem><listitem><para>Wx::DocTemplate-&gt;new(docmgr, descr, filter, dir, ext,
+  docTypeName, viewTypeName): in this case <computeroutput>Wx::DocTemplate::CreateDocument()</computeroutput> and <computeroutput>Wx::DocTemplate::CreateView()</computeroutput> must be overridden  </para>
 </listitem></itemizedlist>
 </para>
         </detaileddescription>
@@ -304,6 +320,7 @@
         <definition>virtual wxDocTemplate::~wxDocTemplate</definition>
         <argsstring>()</argsstring>
         <name>~wxDocTemplate</name>
+        <qualifiedname>wxDocTemplate::~wxDocTemplate</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -318,6 +335,7 @@
         <definition>virtual wxDocument * wxDocTemplate::CreateDocument</definition>
         <argsstring>(const wxString &amp;path, long flags=0)</argsstring>
         <name>CreateDocument</name>
+        <qualifiedname>wxDocTemplate::CreateDocument</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>path</declname>
@@ -343,6 +361,7 @@
         <definition>virtual wxView * wxDocTemplate::CreateView</definition>
         <argsstring>(wxDocument *doc, long flags=0)</argsstring>
         <name>CreateView</name>
+        <qualifiedname>wxDocTemplate::CreateView</qualifiedname>
         <param>
           <type><ref refid="classwx_document" kindref="compound">wxDocument</ref> *</type>
           <declname>doc</declname>
@@ -368,6 +387,7 @@
         <definition>virtual bool wxDocTemplate::FileMatchesTemplate</definition>
         <argsstring>(const wxString &amp;path)</argsstring>
         <name>FileMatchesTemplate</name>
+        <qualifiedname>wxDocTemplate::FileMatchesTemplate</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>path</declname>
@@ -396,6 +416,7 @@
         <definition>wxString wxDocTemplate::GetDefaultExtension</definition>
         <argsstring>() const</argsstring>
         <name>GetDefaultExtension</name>
+        <qualifiedname>wxDocTemplate::GetDefaultExtension</qualifiedname>
         <briefdescription>
 <para>Returns the default file extension for the document data, as passed to the document template constructor. </para>
         </briefdescription>
@@ -410,6 +431,7 @@
         <definition>wxString wxDocTemplate::GetDescription</definition>
         <argsstring>() const</argsstring>
         <name>GetDescription</name>
+        <qualifiedname>wxDocTemplate::GetDescription</qualifiedname>
         <briefdescription>
 <para>Returns the text description of this template, as passed to the document template constructor. </para>
         </briefdescription>
@@ -424,6 +446,7 @@
         <definition>wxString wxDocTemplate::GetDirectory</definition>
         <argsstring>() const</argsstring>
         <name>GetDirectory</name>
+        <qualifiedname>wxDocTemplate::GetDirectory</qualifiedname>
         <briefdescription>
 <para>Returns the default directory, as passed to the document template constructor. </para>
         </briefdescription>
@@ -438,6 +461,7 @@
         <definition>wxClassInfo * wxDocTemplate::GetDocClassInfo</definition>
         <argsstring>() const</argsstring>
         <name>GetDocClassInfo</name>
+        <qualifiedname>wxDocTemplate::GetDocClassInfo</qualifiedname>
         <briefdescription>
 <para>Returns the run-time class information that allows document instances to be constructed dynamically, as passed to the document template constructor. </para>
         </briefdescription>
@@ -452,6 +476,7 @@
         <definition>wxDocManager * wxDocTemplate::GetDocumentManager</definition>
         <argsstring>() const</argsstring>
         <name>GetDocumentManager</name>
+        <qualifiedname>wxDocTemplate::GetDocumentManager</qualifiedname>
         <briefdescription>
 <para>Returns a pointer to the document manager instance for which this template was created. </para>
         </briefdescription>
@@ -466,6 +491,7 @@
         <definition>virtual wxString wxDocTemplate::GetDocumentName</definition>
         <argsstring>() const</argsstring>
         <name>GetDocumentName</name>
+        <qualifiedname>wxDocTemplate::GetDocumentName</qualifiedname>
         <briefdescription>
 <para>Returns the document type name, as passed to the document template constructor. </para>
         </briefdescription>
@@ -480,6 +506,7 @@
         <definition>wxString wxDocTemplate::GetFileFilter</definition>
         <argsstring>() const</argsstring>
         <name>GetFileFilter</name>
+        <qualifiedname>wxDocTemplate::GetFileFilter</qualifiedname>
         <briefdescription>
 <para>Returns the file filter, as passed to the document template constructor. </para>
         </briefdescription>
@@ -494,6 +521,7 @@
         <definition>long wxDocTemplate::GetFlags</definition>
         <argsstring>() const</argsstring>
         <name>GetFlags</name>
+        <qualifiedname>wxDocTemplate::GetFlags</qualifiedname>
         <briefdescription>
 <para>Returns the flags, as passed to the document template constructor. </para>
         </briefdescription>
@@ -508,6 +536,7 @@
         <definition>wxPageSetupDialogData &amp; wxDocTemplate::GetPageSetupDialogData</definition>
         <argsstring>()</argsstring>
         <name>GetPageSetupDialogData</name>
+        <qualifiedname>wxDocTemplate::GetPageSetupDialogData</qualifiedname>
         <briefdescription>
 <para>Returns a reference to the <ref refid="classwx_page_setup_dialog_data" kindref="compound">wxPageSetupDialogData</ref> associated with the printing operations of this document manager. </para>
         </briefdescription>
@@ -522,6 +551,7 @@
         <definition>const wxPageSetupDialogData &amp; wxDocTemplate::GetPageSetupDialogData</definition>
         <argsstring>() const</argsstring>
         <name>GetPageSetupDialogData</name>
+        <qualifiedname>wxDocTemplate::GetPageSetupDialogData</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -535,6 +565,7 @@
         <definition>wxClassInfo * wxDocTemplate::GetViewClassInfo</definition>
         <argsstring>() const</argsstring>
         <name>GetViewClassInfo</name>
+        <qualifiedname>wxDocTemplate::GetViewClassInfo</qualifiedname>
         <briefdescription>
 <para>Returns the run-time class information that allows view instances to be constructed dynamically, as passed to the document template constructor. </para>
         </briefdescription>
@@ -549,6 +580,7 @@
         <definition>virtual wxString wxDocTemplate::GetViewName</definition>
         <argsstring>() const</argsstring>
         <name>GetViewName</name>
+        <qualifiedname>wxDocTemplate::GetViewName</qualifiedname>
         <briefdescription>
 <para>Returns the view type name, as passed to the document template constructor. </para>
         </briefdescription>
@@ -563,6 +595,7 @@
         <definition>virtual bool wxDocTemplate::InitDocument</definition>
         <argsstring>(wxDocument *doc, const wxString &amp;path, long flags=0)</argsstring>
         <name>InitDocument</name>
+        <qualifiedname>wxDocTemplate::InitDocument</qualifiedname>
         <param>
           <type><ref refid="classwx_document" kindref="compound">wxDocument</ref> *</type>
           <declname>doc</declname>
@@ -620,6 +653,7 @@
         <definition>bool wxDocTemplate::IsVisible</definition>
         <argsstring>() const</argsstring>
         <name>IsVisible</name>
+        <qualifiedname>wxDocTemplate::IsVisible</qualifiedname>
         <briefdescription>
 <para>Returns true if the document template can be shown in user dialogs, false otherwise. </para>
         </briefdescription>
@@ -634,6 +668,7 @@
         <definition>void wxDocTemplate::SetDefaultExtension</definition>
         <argsstring>(const wxString &amp;ext)</argsstring>
         <name>SetDefaultExtension</name>
+        <qualifiedname>wxDocTemplate::SetDefaultExtension</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>ext</declname>
@@ -652,6 +687,7 @@
         <definition>void wxDocTemplate::SetDescription</definition>
         <argsstring>(const wxString &amp;descr)</argsstring>
         <name>SetDescription</name>
+        <qualifiedname>wxDocTemplate::SetDescription</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>descr</declname>
@@ -670,6 +706,7 @@
         <definition>void wxDocTemplate::SetDirectory</definition>
         <argsstring>(const wxString &amp;dir)</argsstring>
         <name>SetDirectory</name>
+        <qualifiedname>wxDocTemplate::SetDirectory</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>dir</declname>
@@ -688,6 +725,7 @@
         <definition>void wxDocTemplate::SetDocumentManager</definition>
         <argsstring>(wxDocManager *manager)</argsstring>
         <name>SetDocumentManager</name>
+        <qualifiedname>wxDocTemplate::SetDocumentManager</qualifiedname>
         <param>
           <type><ref refid="classwx_doc_manager" kindref="compound">wxDocManager</ref> *</type>
           <declname>manager</declname>
@@ -707,6 +745,7 @@
         <definition>void wxDocTemplate::SetFileFilter</definition>
         <argsstring>(const wxString &amp;filter)</argsstring>
         <name>SetFileFilter</name>
+        <qualifiedname>wxDocTemplate::SetFileFilter</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filter</declname>
@@ -725,6 +764,7 @@
         <definition>void wxDocTemplate::SetFlags</definition>
         <argsstring>(long flags)</argsstring>
         <name>SetFlags</name>
+        <qualifiedname>wxDocTemplate::SetFlags</qualifiedname>
         <param>
           <type>long</type>
           <declname>flags</declname>
@@ -745,7 +785,8 @@
     <detaileddescription>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__docview" kindref="compound">Document/View Framework</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_docview_1overview_docview_wxdoctemplate" kindref="member">wxDocTemplate Overview</ref>, <ref refid="classwx_document" kindref="compound">wxDocument</ref>, <ref refid="classwx_view" kindref="compound">wxView</ref> </para>
 </simplesect>
 </para>

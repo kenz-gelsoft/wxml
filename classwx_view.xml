@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_view" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxView</compoundname>
     <basecompoundref refid="classwx_evt_handler" prot="public" virt="non-virtual">wxEvtHandler</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxDocument* wxView::m_viewDocument</definition>
         <argsstring></argsstring>
         <name>m_viewDocument</name>
+        <qualifiedname>wxView::m_viewDocument</qualifiedname>
         <briefdescription>
 <para>The document associated with this view. </para>
         </briefdescription>
@@ -25,6 +26,7 @@
         <definition>wxFrame* wxView::m_viewFrame</definition>
         <argsstring></argsstring>
         <name>m_viewFrame</name>
+        <qualifiedname>wxView::m_viewFrame</qualifiedname>
         <briefdescription>
 <para>Frame associated with the view, if any. </para>
         </briefdescription>
@@ -39,6 +41,7 @@
         <definition>wxString wxView::m_viewTypeName</definition>
         <argsstring></argsstring>
         <name>m_viewTypeName</name>
+        <qualifiedname>wxView::m_viewTypeName</qualifiedname>
         <briefdescription>
 <para>The view type name given to the <ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> constructor, copied to this variable when the view is created. </para>
         </briefdescription>
@@ -56,6 +59,7 @@
         <definition>wxView::wxView</definition>
         <argsstring>()</argsstring>
         <name>wxView</name>
+        <qualifiedname>wxView::wxView</qualifiedname>
         <briefdescription>
 <para>Constructor. </para>
         </briefdescription>
@@ -71,6 +75,7 @@
         <definition>virtual wxView::~wxView</definition>
         <argsstring>()</argsstring>
         <name>~wxView</name>
+        <qualifiedname>wxView::~wxView</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -86,6 +91,7 @@
         <definition>virtual void wxView::Activate</definition>
         <argsstring>(bool activate)</argsstring>
         <name>Activate</name>
+        <qualifiedname>wxView::Activate</qualifiedname>
         <param>
           <type>bool</type>
           <declname>activate</declname>
@@ -107,6 +113,7 @@
         <definition>virtual bool wxView::Close</definition>
         <argsstring>(bool deleteWindow=true)</argsstring>
         <name>Close</name>
+        <qualifiedname>wxView::Close</qualifiedname>
         <param>
           <type>bool</type>
           <declname>deleteWindow</declname>
@@ -130,6 +137,7 @@
         <definition>wxDocument * wxView::GetDocument</definition>
         <argsstring>() const</argsstring>
         <name>GetDocument</name>
+        <qualifiedname>wxView::GetDocument</qualifiedname>
         <briefdescription>
 <para>Gets a pointer to the document associated with the view. </para>
         </briefdescription>
@@ -144,6 +152,7 @@
         <definition>wxDocManager * wxView::GetDocumentManager</definition>
         <argsstring>() const</argsstring>
         <name>GetDocumentManager</name>
+        <qualifiedname>wxView::GetDocumentManager</qualifiedname>
         <briefdescription>
 <para>Returns a pointer to the document manager instance associated with this view. </para>
         </briefdescription>
@@ -158,6 +167,7 @@
         <definition>wxWindow * wxView::GetFrame</definition>
         <argsstring>() const</argsstring>
         <name>GetFrame</name>
+        <qualifiedname>wxView::GetFrame</qualifiedname>
         <briefdescription>
 <para>Gets the frame associated with the view (if any). </para>
         </briefdescription>
@@ -173,6 +183,7 @@
         <definition>wxString wxView::GetViewName</definition>
         <argsstring>() const</argsstring>
         <name>GetViewName</name>
+        <qualifiedname>wxView::GetViewName</qualifiedname>
         <briefdescription>
 <para>Gets the name associated with the view (passed to the <ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> constructor). </para>
         </briefdescription>
@@ -188,6 +199,7 @@
         <definition>virtual void wxView::OnActivateView</definition>
         <argsstring>(bool activate, wxView *activeView, wxView *deactiveView)</argsstring>
         <name>OnActivateView</name>
+        <qualifiedname>wxView::OnActivateView</qualifiedname>
         <param>
           <type>bool</type>
           <declname>activate</declname>
@@ -215,6 +227,7 @@
         <definition>virtual void wxView::OnChangeFilename</definition>
         <argsstring>()</argsstring>
         <name>OnChangeFilename</name>
+        <qualifiedname>wxView::OnChangeFilename</qualifiedname>
         <briefdescription>
 <para>Called when the filename has changed. </para>
         </briefdescription>
@@ -230,6 +243,7 @@
         <definition>virtual bool wxView::OnClose</definition>
         <argsstring>(bool deleteWindow)</argsstring>
         <name>OnClose</name>
+        <qualifiedname>wxView::OnClose</qualifiedname>
         <param>
           <type>bool</type>
           <declname>deleteWindow</declname>
@@ -250,6 +264,7 @@
         <definition>virtual void wxView::OnClosingDocument</definition>
         <argsstring>()</argsstring>
         <name>OnClosingDocument</name>
+        <qualifiedname>wxView::OnClosingDocument</qualifiedname>
         <briefdescription>
 <para>Override this to clean up the view when the document is being closed. </para>
         </briefdescription>
@@ -264,6 +279,7 @@
         <definition>virtual bool wxView::OnCreate</definition>
         <argsstring>(wxDocument *doc, long flags)</argsstring>
         <name>OnCreate</name>
+        <qualifiedname>wxView::OnCreate</qualifiedname>
         <param>
           <type><ref refid="classwx_document" kindref="compound">wxDocument</ref> *</type>
           <declname>doc</declname>
@@ -288,6 +304,7 @@
         <definition>virtual wxPrintout * wxView::OnCreatePrintout</definition>
         <argsstring>()</argsstring>
         <name>OnCreatePrintout</name>
+        <qualifiedname>wxView::OnCreatePrintout</qualifiedname>
         <briefdescription>
 <para>If the printing framework is enabled in the library, this function returns a <ref refid="classwx_printout" kindref="compound">wxPrintout</ref> object for the purposes of printing. </para>
         </briefdescription>
@@ -305,6 +322,7 @@
         <definition>virtual void wxView::OnDraw</definition>
         <argsstring>(wxDC *dc)=0</argsstring>
         <name>OnDraw</name>
+        <qualifiedname>wxView::OnDraw</qualifiedname>
         <param>
           <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> *</type>
           <declname>dc</declname>
@@ -323,6 +341,7 @@
         <definition>virtual void wxView::OnUpdate</definition>
         <argsstring>(wxView *sender, wxObject *hint=0)</argsstring>
         <name>OnUpdate</name>
+        <qualifiedname>wxView::OnUpdate</qualifiedname>
         <param>
           <type><ref refid="classwx_view" kindref="compound">wxView</ref> *</type>
           <declname>sender</declname>
@@ -364,6 +383,7 @@
         <definition>virtual void wxView::SetDocument</definition>
         <argsstring>(wxDocument *doc)</argsstring>
         <name>SetDocument</name>
+        <qualifiedname>wxView::SetDocument</qualifiedname>
         <param>
           <type><ref refid="classwx_document" kindref="compound">wxDocument</ref> *</type>
           <declname>doc</declname>
@@ -383,6 +403,7 @@
         <definition>void wxView::SetFrame</definition>
         <argsstring>(wxWindow *frame)</argsstring>
         <name>SetFrame</name>
+        <qualifiedname>wxView::SetFrame</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>frame</declname>
@@ -403,6 +424,7 @@
         <definition>void wxView::SetViewName</definition>
         <argsstring>(const wxString &amp;name)</argsstring>
         <name>SetViewName</name>
+        <qualifiedname>wxView::SetViewName</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>name</declname>
@@ -425,7 +447,8 @@
 <para>It is part of the document/view framework supported by wxWidgets, and cooperates with the <ref refid="classwx_document" kindref="compound">wxDocument</ref>, <ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref> and <ref refid="classwx_doc_manager" kindref="compound">wxDocManager</ref> classes.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__docview" kindref="compound">Document/View Framework</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_docview_1overview_docview_wxview" kindref="member">wxView Overview</ref>, <ref refid="classwx_document" kindref="compound">wxDocument</ref>, <ref refid="classwx_doc_template" kindref="compound">wxDocTemplate</ref>, <ref refid="classwx_doc_manager" kindref="compound">wxDocManager</ref> </para>
 </simplesect>
 </para>

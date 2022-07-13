@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_conv_auto" kind="class" language="C++" prot="public">
     <compoundname>wxConvAuto</compoundname>
     <basecompoundref refid="classwx_m_b_conv" prot="public" virt="non-virtual">wxMBConv</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxConvAuto::wxConvAuto</definition>
         <argsstring>(wxFontEncoding enc=wxFONTENCODING_DEFAULT)</argsstring>
         <name>wxConvAuto</name>
+        <qualifiedname>wxConvAuto::wxConvAuto</qualifiedname>
         <param>
           <type><ref refid="interface_2wx_2font_8h_1a09016a7497d1ec6defdf13fd6439acca" kindref="member">wxFontEncoding</ref></type>
           <declname>enc</declname>
@@ -32,6 +33,7 @@
         <definition>wxBOM wxConvAuto::GetBOM</definition>
         <argsstring>() const</argsstring>
         <name>GetBOM</name>
+        <qualifiedname>wxConvAuto::GetBOM</qualifiedname>
         <briefdescription>
 <para>Return the detected BOM type. </para>
         </briefdescription>
@@ -50,6 +52,7 @@
         <definition>wxBOM wxConvAuto::GetEncoding</definition>
         <argsstring>() const</argsstring>
         <name>GetEncoding</name>
+        <qualifiedname>wxConvAuto::GetEncoding</qualifiedname>
         <briefdescription>
 <para>Return the detected encoding. </para>
         </briefdescription>
@@ -68,6 +71,7 @@
         <definition>bool wxConvAuto::IsUsingFallbackEncoding</definition>
         <argsstring>() const</argsstring>
         <name>IsUsingFallbackEncoding</name>
+        <qualifiedname>wxConvAuto::IsUsingFallbackEncoding</qualifiedname>
         <briefdescription>
 <para>Check if the fall-back encoding is used. </para>
         </briefdescription>
@@ -85,6 +89,7 @@
         <definition>const char * wxConvAuto::GetBOMChars</definition>
         <argsstring>(wxBOM bom, size_t *count)</argsstring>
         <name>GetBOMChars</name>
+        <qualifiedname>wxConvAuto::GetBOMChars</qualifiedname>
         <param>
           <type><ref refid="convauto_8h_1af393832da543c9238919f38be4536f60" kindref="member">wxBOM</ref></type>
           <declname>bom</declname>
@@ -132,6 +137,7 @@
         <definition>static void wxConvAuto::DisableFallbackEncoding</definition>
         <argsstring>()</argsstring>
         <name>DisableFallbackEncoding</name>
+        <qualifiedname>wxConvAuto::DisableFallbackEncoding</qualifiedname>
         <briefdescription>
 <para>Disable the use of the fall back encoding: if the input doesn&apos;t have a BOM and is not valid UTF-8, the conversion will fail. </para>
         </briefdescription>
@@ -146,6 +152,7 @@
         <definition>static wxFontEncoding wxConvAuto::GetFallbackEncoding</definition>
         <argsstring>()</argsstring>
         <name>GetFallbackEncoding</name>
+        <qualifiedname>wxConvAuto::GetFallbackEncoding</qualifiedname>
         <briefdescription>
 <para>Returns the encoding used by default by <ref refid="classwx_conv_auto" kindref="compound">wxConvAuto</ref> if no other encoding is explicitly specified in constructor. </para>
         </briefdescription>
@@ -161,6 +168,7 @@
         <definition>static void wxConvAuto::SetFallbackEncoding</definition>
         <argsstring>(wxFontEncoding enc)</argsstring>
         <name>SetFallbackEncoding</name>
+        <qualifiedname>wxConvAuto::SetFallbackEncoding</qualifiedname>
         <param>
           <type><ref refid="interface_2wx_2font_8h_1a09016a7497d1ec6defdf13fd6439acca" kindref="member">wxFontEncoding</ref></type>
           <declname>enc</declname>
@@ -181,6 +189,7 @@
         <definition>static wxBOM wxConvAuto::DetectBOM</definition>
         <argsstring>(const char *src, size_t srcLen)</argsstring>
         <name>DetectBOM</name>
+        <qualifiedname>wxConvAuto::DetectBOM</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>src</declname>
@@ -212,7 +221,8 @@
 <para>This class is used by default in wxWidgets classes and functions reading text from files such as <ref refid="classwx_file" kindref="compound">wxFile</ref>, <ref refid="classwx_f_file" kindref="compound">wxFFile</ref>, <ref refid="classwx_text_file" kindref="compound">wxTextFile</ref>, <ref refid="classwx_file_config" kindref="compound">wxFileConfig</ref> and various stream classes so the encoding set with its <ref refid="classwx_conv_auto_1a5c3f9760a2ae03fbf4748423367e7903" kindref="member">SetFallbackEncoding()</ref> method will affect how these classes treat input files. In particular, use this method to change the fall-back multibyte encoding used to interpret the contents of the files whose contents isn&apos;t valid UTF-8 or to disallow it completely.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__data" kindref="compound">Data Structures</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_mbconv" kindref="compound">wxMBConv Overview</ref> </para>
 </simplesect>
 </para>

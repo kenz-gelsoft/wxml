@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_socket_base" kind="class" language="C++" prot="public">
     <compoundname>wxSocketBase</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -14,6 +14,7 @@
         <definition>wxSocketBase::wxSocketBase</definition>
         <argsstring>()</argsstring>
         <name>wxSocketBase</name>
+        <qualifiedname>wxSocketBase::wxSocketBase</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -29,6 +30,7 @@
         <definition>virtual wxSocketBase::~wxSocketBase</definition>
         <argsstring>()</argsstring>
         <name>~wxSocketBase</name>
+        <qualifiedname>wxSocketBase::~wxSocketBase</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -44,6 +46,7 @@
         <definition>bool wxSocketBase::Destroy</definition>
         <argsstring>()</argsstring>
         <name>Destroy</name>
+        <qualifiedname>wxSocketBase::Destroy</qualifiedname>
         <briefdescription>
 <para>Destroys the socket safely. </para>
         </briefdescription>
@@ -63,6 +66,7 @@
         <definition>static bool wxSocketBase::Initialize</definition>
         <argsstring>()</argsstring>
         <name>Initialize</name>
+        <qualifiedname>wxSocketBase::Initialize</qualifiedname>
         <briefdescription>
 <para>Perform the initialization needed in order to use the sockets. </para>
         </briefdescription>
@@ -83,6 +87,7 @@
         <definition>static void wxSocketBase::Shutdown</definition>
         <argsstring>()</argsstring>
         <name>Shutdown</name>
+        <qualifiedname>wxSocketBase::Shutdown</qualifiedname>
         <briefdescription>
 <para>Shut down the sockets. </para>
         </briefdescription>
@@ -102,6 +107,7 @@
         <definition>bool wxSocketBase::Error</definition>
         <argsstring>() const</argsstring>
         <name>Error</name>
+        <qualifiedname>wxSocketBase::Error</qualifiedname>
         <briefdescription>
 <para>Returns true if an error occurred in the last IO operation. </para>
         </briefdescription>
@@ -117,6 +123,7 @@
         <definition>virtual bool wxSocketBase::GetLocal</definition>
         <argsstring>(wxSockAddress &amp;addr) const</argsstring>
         <name>GetLocal</name>
+        <qualifiedname>wxSocketBase::GetLocal</qualifiedname>
         <param>
           <type><ref refid="classwx_sock_address" kindref="compound">wxSockAddress</ref> &amp;</type>
           <declname>addr</declname>
@@ -138,6 +145,7 @@
         <definition>virtual bool wxSocketBase::GetPeer</definition>
         <argsstring>(wxSockAddress &amp;addr) const</argsstring>
         <name>GetPeer</name>
+        <qualifiedname>wxSocketBase::GetPeer</qualifiedname>
         <param>
           <type><ref refid="classwx_sock_address" kindref="compound">wxSockAddress</ref> &amp;</type>
           <declname>addr</declname>
@@ -159,6 +167,7 @@
         <definition>long wxSocketBase::GetTimeout</definition>
         <argsstring>() const</argsstring>
         <name>GetTimeout</name>
+        <qualifiedname>wxSocketBase::GetTimeout</qualifiedname>
         <briefdescription>
 <para>Return the socket timeout in seconds. </para>
         </briefdescription>
@@ -174,6 +183,7 @@
         <definition>bool wxSocketBase::IsConnected</definition>
         <argsstring>() const</argsstring>
         <name>IsConnected</name>
+        <qualifiedname>wxSocketBase::IsConnected</qualifiedname>
         <briefdescription>
 <para>Returns true if the socket is connected. </para>
         </briefdescription>
@@ -188,6 +198,7 @@
         <definition>bool wxSocketBase::IsData</definition>
         <argsstring>()</argsstring>
         <name>IsData</name>
+        <qualifiedname>wxSocketBase::IsData</qualifiedname>
         <briefdescription>
 <para>Check if the socket can be currently read or written. </para>
         </briefdescription>
@@ -203,6 +214,7 @@
         <definition>bool wxSocketBase::IsDisconnected</definition>
         <argsstring>() const</argsstring>
         <name>IsDisconnected</name>
+        <qualifiedname>wxSocketBase::IsDisconnected</qualifiedname>
         <briefdescription>
 <para>Returns true if the socket is not connected. </para>
         </briefdescription>
@@ -217,6 +229,7 @@
         <definition>bool wxSocketBase::IsOk</definition>
         <argsstring>() const</argsstring>
         <name>IsOk</name>
+        <qualifiedname>wxSocketBase::IsOk</qualifiedname>
         <briefdescription>
 <para>Returns true if the socket is initialized and ready and false in other cases. </para>
         </briefdescription>
@@ -234,12 +247,13 @@
         <definition>wxUint32 wxSocketBase::LastCount</definition>
         <argsstring>() const</argsstring>
         <name>LastCount</name>
+        <qualifiedname>wxSocketBase::LastCount</qualifiedname>
         <briefdescription>
 <para>Returns the number of bytes read or written by the last IO call. </para>
         </briefdescription>
         <detaileddescription>
 <para>Use this function to get the number of bytes actually transferred after using one of the following IO calls: <ref refid="classwx_socket_base_1a50dbb2d0ad42a0c970177c284cb76309" kindref="member">Discard()</ref>, <ref refid="classwx_socket_base_1ab8bb6646627bbf4b2929bb6f799aa754" kindref="member">Peek()</ref>, <ref refid="classwx_socket_base_1a83eb0c25689eaa910d6618ebb8491d32" kindref="member">Read()</ref>, <ref refid="classwx_socket_base_1aec5e4d770aff8f385bfcf5ae2909d2d0" kindref="member">ReadMsg()</ref>, <ref refid="classwx_socket_base_1a74f146f45415bb4be3d83e12034cdd85" kindref="member">Unread()</ref>, <ref refid="classwx_socket_base_1ab71d54333d9bb0a59da25db2251e0b52" kindref="member">Write()</ref>, <ref refid="classwx_socket_base_1a4819a705c641f8df9b42446ca6fae697" kindref="member">WriteMsg()</ref>.</para>
-<para><xrefsect id="deprecated_1_deprecated000066"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is kept mostly for backwards compatibility. Use <ref refid="classwx_socket_base_1a91b13644fcdc43bff9d67347101642a0" kindref="member">LastReadCount()</ref> or <ref refid="classwx_socket_base_1a416a04dbfcd89aea7fe5e5aa305b64e7" kindref="member">LastWriteCount()</ref> instead. <ref refid="classwx_socket_base_1ae81333cc7920ce24f0cb579f21f92ebb" kindref="member">LastCount()</ref> is still needed for use with less commonly used functions: <ref refid="classwx_socket_base_1a50dbb2d0ad42a0c970177c284cb76309" kindref="member">Discard()</ref>, <ref refid="classwx_socket_base_1ab8bb6646627bbf4b2929bb6f799aa754" kindref="member">Peek()</ref>, and <ref refid="classwx_socket_base_1a74f146f45415bb4be3d83e12034cdd85" kindref="member">Unread()</ref>. </para>
+<para><xrefsect id="deprecated_1_deprecated000070"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is kept mostly for backwards compatibility. Use <ref refid="classwx_socket_base_1a91b13644fcdc43bff9d67347101642a0" kindref="member">LastReadCount()</ref> or <ref refid="classwx_socket_base_1a416a04dbfcd89aea7fe5e5aa305b64e7" kindref="member">LastWriteCount()</ref> instead. <ref refid="classwx_socket_base_1ae81333cc7920ce24f0cb579f21f92ebb" kindref="member">LastCount()</ref> is still needed for use with less commonly used functions: <ref refid="classwx_socket_base_1a50dbb2d0ad42a0c970177c284cb76309" kindref="member">Discard()</ref>, <ref refid="classwx_socket_base_1ab8bb6646627bbf4b2929bb6f799aa754" kindref="member">Peek()</ref>, and <ref refid="classwx_socket_base_1a74f146f45415bb4be3d83e12034cdd85" kindref="member">Unread()</ref>. </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -251,6 +265,7 @@
         <definition>wxUint32 wxSocketBase::LastReadCount</definition>
         <argsstring>() const</argsstring>
         <name>LastReadCount</name>
+        <qualifiedname>wxSocketBase::LastReadCount</qualifiedname>
         <briefdescription>
 <para>Returns the number of bytes read by the last <ref refid="classwx_socket_base_1a83eb0c25689eaa910d6618ebb8491d32" kindref="member">Read()</ref> or <ref refid="classwx_socket_base_1aec5e4d770aff8f385bfcf5ae2909d2d0" kindref="member">ReadMsg()</ref> call (receive direction only). </para>
         </briefdescription>
@@ -270,6 +285,7 @@
         <definition>wxUint32 wxSocketBase::LastWriteCount</definition>
         <argsstring>() const</argsstring>
         <name>LastWriteCount</name>
+        <qualifiedname>wxSocketBase::LastWriteCount</qualifiedname>
         <briefdescription>
 <para>Returns the number of bytes written by the last <ref refid="classwx_socket_base_1ab71d54333d9bb0a59da25db2251e0b52" kindref="member">Write()</ref> or <ref refid="classwx_socket_base_1a4819a705c641f8df9b42446ca6fae697" kindref="member">WriteMsg()</ref> call (transmit direction only). </para>
         </briefdescription>
@@ -288,6 +304,7 @@
         <definition>wxSocketError wxSocketBase::LastError</definition>
         <argsstring>() const</argsstring>
         <name>LastError</name>
+        <qualifiedname>wxSocketBase::LastError</qualifiedname>
         <briefdescription>
 <para>Returns the last wxSocket error. </para>
         </briefdescription>
@@ -306,6 +323,7 @@
         <definition>void wxSocketBase::RestoreState</definition>
         <argsstring>()</argsstring>
         <name>RestoreState</name>
+        <qualifiedname>wxSocketBase::RestoreState</qualifiedname>
         <briefdescription>
 <para>Restore the previous state of the socket, as saved with <ref refid="classwx_socket_base_1af227621ab1ee04542063fe91ea281e49" kindref="member">SaveState()</ref>. </para>
         </briefdescription>
@@ -324,6 +342,7 @@
         <definition>void wxSocketBase::SaveState</definition>
         <argsstring>()</argsstring>
         <name>SaveState</name>
+        <qualifiedname>wxSocketBase::SaveState</qualifiedname>
         <briefdescription>
 <para>Save the current state of the socket in a stack. </para>
         </briefdescription>
@@ -347,6 +366,7 @@
         <definition>virtual bool wxSocketBase::Close</definition>
         <argsstring>()</argsstring>
         <name>Close</name>
+        <qualifiedname>wxSocketBase::Close</qualifiedname>
         <reimplementedby refid="classwx_f_t_p_1ae7e072cefb173542f20946cd50ef6213">Close</reimplementedby>
         <briefdescription>
 <para>Shut down the socket, disabling further transmission and reception of data and disable events for the socket and frees the associated system resources. </para>
@@ -366,6 +386,7 @@
         <definition>void wxSocketBase::ShutdownOutput</definition>
         <argsstring>()</argsstring>
         <name>ShutdownOutput</name>
+        <qualifiedname>wxSocketBase::ShutdownOutput</qualifiedname>
         <briefdescription>
 <para>Shuts down the writing end of the socket. </para>
         </briefdescription>
@@ -381,6 +402,7 @@
         <definition>wxSocketBase &amp; wxSocketBase::Discard</definition>
         <argsstring>()</argsstring>
         <name>Discard</name>
+        <qualifiedname>wxSocketBase::Discard</qualifiedname>
         <briefdescription>
 <para>Delete all bytes in the incoming queue. </para>
         </briefdescription>
@@ -398,6 +420,7 @@
         <definition>wxSocketFlags wxSocketBase::GetFlags</definition>
         <argsstring>() const</argsstring>
         <name>GetFlags</name>
+        <qualifiedname>wxSocketBase::GetFlags</qualifiedname>
         <briefdescription>
 <para>Returns current IO flags, as set with <ref refid="classwx_socket_base_1aa11d1db40c87c8e06e3f9849a08abafc" kindref="member">SetFlags()</ref> </para>
         </briefdescription>
@@ -412,6 +435,7 @@
         <definition>void wxSocketBase::InterruptWait</definition>
         <argsstring>()</argsstring>
         <name>InterruptWait</name>
+        <qualifiedname>wxSocketBase::InterruptWait</qualifiedname>
         <briefdescription>
 <para>Use this function to interrupt any wait operation currently in progress. </para>
         </briefdescription>
@@ -430,6 +454,7 @@
         <definition>wxSocketBase &amp; wxSocketBase::Peek</definition>
         <argsstring>(void *buffer, wxUint32 nbytes)</argsstring>
         <name>Peek</name>
+        <qualifiedname>wxSocketBase::Peek</qualifiedname>
         <param>
           <type>void *</type>
           <declname>buffer</declname>
@@ -479,6 +504,7 @@
         <definition>wxSocketBase &amp; wxSocketBase::Read</definition>
         <argsstring>(void *buffer, wxUint32 nbytes)</argsstring>
         <name>Read</name>
+        <qualifiedname>wxSocketBase::Read</qualifiedname>
         <param>
           <type>void *</type>
           <declname>buffer</declname>
@@ -526,6 +552,7 @@
         <definition>wxSocketBase &amp; wxSocketBase::ReadMsg</definition>
         <argsstring>(void *buffer, wxUint32 nbytes)</argsstring>
         <name>ReadMsg</name>
+        <qualifiedname>wxSocketBase::ReadMsg</qualifiedname>
         <param>
           <type>void *</type>
           <declname>buffer</declname>
@@ -575,6 +602,7 @@
         <definition>void wxSocketBase::SetFlags</definition>
         <argsstring>(wxSocketFlags flags)</argsstring>
         <name>SetFlags</name>
+        <qualifiedname>wxSocketBase::SetFlags</qualifiedname>
         <param>
           <type>wxSocketFlags</type>
           <declname>flags</declname>
@@ -597,11 +625,10 @@
 </listitem>
 <listitem><para>wxSOCKET_BROADCAST: Switches the socket to broadcast mode. </para>
 </listitem>
-<listitem><para>wxSOCKET_NOBIND: Stops the socket from being bound to a specific adapter (normally used in conjunction with <bold>wxSOCKET_BROADCAST</bold>). <linebreak/>
- For more information on socket events see <ref refid="socket_8h_1wxSocketFlags" kindref="member">wxSocketFlags</ref> . </para>
+<listitem><para>wxSOCKET_NOBIND: Stops the socket from being bound to a specific adapter (normally used in conjunction with <bold>wxSOCKET_BROADCAST</bold>). </para>
 </listitem>
 </itemizedlist>
-</para>
+For more information on socket events see <ref refid="socket_8h_1wxSocketFlags" kindref="member">wxSocketFlags</ref> . </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -612,6 +639,7 @@
         <definition>virtual bool wxSocketBase::SetLocal</definition>
         <argsstring>(const wxIPV4address &amp;local)</argsstring>
         <name>SetLocal</name>
+        <qualifiedname>wxSocketBase::SetLocal</qualifiedname>
         <param>
           <type>const <ref refid="classwx_i_p_v4address" kindref="compound">wxIPV4address</ref> &amp;</type>
           <declname>local</declname>
@@ -631,6 +659,7 @@
         <definition>void wxSocketBase::SetTimeout</definition>
         <argsstring>(long seconds)</argsstring>
         <name>SetTimeout</name>
+        <qualifiedname>wxSocketBase::SetTimeout</qualifiedname>
         <param>
           <type>long</type>
           <declname>seconds</declname>
@@ -650,6 +679,7 @@
         <definition>wxSocketBase &amp; wxSocketBase::Unread</definition>
         <argsstring>(const void *buffer, wxUint32 nbytes)</argsstring>
         <name>Unread</name>
+        <qualifiedname>wxSocketBase::Unread</qualifiedname>
         <param>
           <type>const void *</type>
           <declname>buffer</declname>
@@ -698,6 +728,7 @@
         <definition>bool wxSocketBase::Wait</definition>
         <argsstring>(long seconds=-1, long millisecond=0)</argsstring>
         <name>Wait</name>
+        <qualifiedname>wxSocketBase::Wait</qualifiedname>
         <param>
           <type>long</type>
           <declname>seconds</declname>
@@ -757,6 +788,7 @@ Note that it is recommended to use the individual <bold>WaitForXXX()</bold> func
         <definition>bool wxSocketBase::WaitForLost</definition>
         <argsstring>(long seconds=-1, long millisecond=0)</argsstring>
         <name>WaitForLost</name>
+        <qualifiedname>wxSocketBase::WaitForLost</qualifiedname>
         <param>
           <type>long</type>
           <declname>seconds</declname>
@@ -804,6 +836,7 @@ Note that it is recommended to use the individual <bold>WaitForXXX()</bold> func
         <definition>bool wxSocketBase::WaitForRead</definition>
         <argsstring>(long seconds=-1, long millisecond=0)</argsstring>
         <name>WaitForRead</name>
+        <qualifiedname>wxSocketBase::WaitForRead</qualifiedname>
         <param>
           <type>long</type>
           <declname>seconds</declname>
@@ -852,6 +885,7 @@ Note that it is recommended to use the individual <bold>WaitForXXX()</bold> func
         <definition>bool wxSocketBase::WaitForWrite</definition>
         <argsstring>(long seconds=-1, long millisecond=0)</argsstring>
         <name>WaitForWrite</name>
+        <qualifiedname>wxSocketBase::WaitForWrite</qualifiedname>
         <param>
           <type>long</type>
           <declname>seconds</declname>
@@ -900,6 +934,7 @@ Note that it is recommended to use the individual <bold>WaitForXXX()</bold> func
         <definition>wxSocketBase &amp; wxSocketBase::Write</definition>
         <argsstring>(const void *buffer, wxUint32 nbytes)</argsstring>
         <name>Write</name>
+        <qualifiedname>wxSocketBase::Write</qualifiedname>
         <param>
           <type>const void *</type>
           <declname>buffer</declname>
@@ -949,6 +984,7 @@ The exact behaviour of <ref refid="classwx_socket_base_1ab71d54333d9bb0a59da25db
         <definition>wxSocketBase &amp; wxSocketBase::WriteMsg</definition>
         <argsstring>(const void *buffer, wxUint32 nbytes)</argsstring>
         <name>WriteMsg</name>
+        <qualifiedname>wxSocketBase::WriteMsg</qualifiedname>
         <param>
           <type>const void *</type>
           <declname>buffer</declname>
@@ -1004,6 +1040,7 @@ The exact behaviour of <ref refid="classwx_socket_base_1ab71d54333d9bb0a59da25db
         <definition>void * wxSocketBase::GetClientData</definition>
         <argsstring>() const</argsstring>
         <name>GetClientData</name>
+        <qualifiedname>wxSocketBase::GetClientData</qualifiedname>
         <briefdescription>
 <para>Returns a pointer of the client data for this socket, as set with <ref refid="classwx_socket_base_1a5695e6dc7db8e4119caf3c81dcbc7306" kindref="member">SetClientData()</ref> </para>
         </briefdescription>
@@ -1018,6 +1055,7 @@ The exact behaviour of <ref refid="classwx_socket_base_1ab71d54333d9bb0a59da25db
         <definition>void wxSocketBase::Notify</definition>
         <argsstring>(bool notify)</argsstring>
         <name>Notify</name>
+        <qualifiedname>wxSocketBase::Notify</qualifiedname>
         <param>
           <type>bool</type>
           <declname>notify</declname>
@@ -1037,6 +1075,7 @@ The exact behaviour of <ref refid="classwx_socket_base_1ab71d54333d9bb0a59da25db
         <definition>void wxSocketBase::SetClientData</definition>
         <argsstring>(void *data)</argsstring>
         <name>SetClientData</name>
+        <qualifiedname>wxSocketBase::SetClientData</qualifiedname>
         <param>
           <type>void *</type>
           <declname>data</declname>
@@ -1056,6 +1095,7 @@ The exact behaviour of <ref refid="classwx_socket_base_1ab71d54333d9bb0a59da25db
         <definition>void wxSocketBase::SetEventHandler</definition>
         <argsstring>(wxEvtHandler &amp;handler, int id=-1)</argsstring>
         <name>SetEventHandler</name>
+        <qualifiedname>wxSocketBase::SetEventHandler</qualifiedname>
         <param>
           <type><ref refid="classwx_evt_handler" kindref="compound">wxEvtHandler</ref> &amp;</type>
           <declname>handler</declname>
@@ -1100,6 +1140,7 @@ The exact behaviour of <ref refid="classwx_socket_base_1ab71d54333d9bb0a59da25db
         <definition>void wxSocketBase::SetNotify</definition>
         <argsstring>(wxSocketEventFlags flags)</argsstring>
         <name>SetNotify</name>
+        <qualifiedname>wxSocketBase::SetNotify</qualifiedname>
         <param>
           <type><ref refid="socket_8h_1a2ec8996eecae7da1c5fa77c88a45a353" kindref="member">wxSocketEventFlags</ref></type>
           <declname>flags</declname>
@@ -1116,11 +1157,11 @@ The exact behaviour of <ref refid="classwx_socket_base_1ab71d54333d9bb0a59da25db
 </listitem>
 <listitem><para>wxSOCKET_CONNECTION_FLAG: to receive <bold>wxSOCKET_CONNECTION</bold>. </para>
 </listitem>
-<listitem><para>wxSOCKET_LOST_FLAG: to receive <bold>wxSOCKET_LOST</bold>. <linebreak/>
- For example:</para>
+<listitem><para>wxSOCKET_LOST_FLAG: to receive <bold>wxSOCKET_LOST</bold>. </para>
 </listitem>
 </itemizedlist>
-<programlisting><codeline><highlight class="normal">sock.SetNotify(wxSOCKET_INPUT_FLAG<sp/>|<sp/>wxSOCKET_LOST_FLAG);</highlight></codeline>
+For example:</para>
+<para><programlisting><codeline><highlight class="normal">sock.SetNotify(wxSOCKET_INPUT_FLAG<sp/>|<sp/>wxSOCKET_LOST_FLAG);</highlight></codeline>
 <codeline><highlight class="normal">sock.Notify(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 </programlisting></para>
 <para>In this example, the user will be notified about incoming socket data and whenever the connection is closed.</para>
@@ -1135,6 +1176,7 @@ The exact behaviour of <ref refid="classwx_socket_base_1ab71d54333d9bb0a59da25db
         <definition>wxSOCKET_T wxSocketBase::GetSocket</definition>
         <argsstring>() const</argsstring>
         <name>GetSocket</name>
+        <qualifiedname>wxSocketBase::GetSocket</qualifiedname>
         <briefdescription>
 <para>Returns the native socket descriptor. </para>
         </briefdescription>
@@ -1159,17 +1201,17 @@ The exact behaviour of <ref refid="classwx_socket_base_1ab71d54333d9bb0a59da25db
     <detaileddescription>
 <para><simplesect kind="note"><para>When using wxSocket from multiple threads, even implicitly (e.g. by using <ref refid="classwx_f_t_p" kindref="compound">wxFTP</ref> or <ref refid="classwx_h_t_t_p" kindref="compound">wxHTTP</ref> in another thread) you must initialize the sockets from the main thread by calling <ref refid="classwx_socket_base_1a4c4c4cc8e1fcd824ef621b0f3d17b29f" kindref="member">Initialize()</ref> before creating the other ones.</para>
 </simplesect>
-<linebreak/>
 <heading level="2">Events emitted by this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_socket_event" kindref="compound">wxSocketEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros for events emitted by this class: <itemizedlist>
-<listitem><para>EVT_SOCKET(id,  func): Process a <computeroutput>wxEVT_SOCKET</computeroutput> event. See <ref refid="socket_8h_1wxSocketEventFlags" kindref="member">wxSocketEventFlags</ref> and <ref refid="socket_8h_1wxSocketFlags" kindref="member">wxSocketFlags</ref> for more info. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_SOCKET(id,  func): Process a <computeroutput>wxEVT_SOCKET</computeroutput> event. See <ref refid="socket_8h_1wxSocketEventFlags" kindref="member">wxSocketEventFlags</ref> and <ref refid="socket_8h_1wxSocketFlags" kindref="member">wxSocketFlags</ref> for more info. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxnet" kindref="member">wxNet</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxnet" kindref="member">wxNet</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__net" kindref="compound">Networking</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_socket_event" kindref="compound">wxSocketEvent</ref>, <ref refid="classwx_socket_client" kindref="compound">wxSocketClient</ref>, <ref refid="classwx_socket_server" kindref="compound">wxSocketServer</ref>, <ref refid="page_samples_1page_samples_sockets" kindref="member">Sockets Sample</ref>, <ref refid="socket_8h_1wxSocketFlags" kindref="member">wxSocketFlags</ref>, <ref refid="socket_8h_1a2ec8996eecae7da1c5fa77c88a45a353" kindref="member">wxSocketEventFlags</ref>, <ref refid="socket_8h_1aec4f3fb4ed18dd9b1fe503750ec4e0f6" kindref="member">wxSocketError</ref> </para>
 </simplesect>
 </para>

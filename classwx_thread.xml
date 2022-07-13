@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_thread" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxThread</compoundname>
     <includes local="no">wx/thread.h</includes>
@@ -9,6 +9,7 @@
         <definition>typedef void* wxThread::ExitCode</definition>
         <argsstring></argsstring>
         <name>ExitCode</name>
+        <qualifiedname>wxThread::ExitCode</qualifiedname>
         <briefdescription>
 <para>The return type for the thread functions. </para>
         </briefdescription>
@@ -25,6 +26,7 @@
         <definition>wxThread::wxThread</definition>
         <argsstring>(wxThreadKind kind=wxTHREAD_DETACHED)</argsstring>
         <name>wxThread</name>
+        <qualifiedname>wxThread::wxThread</qualifiedname>
         <param>
           <type><ref refid="interface_2wx_2thread_8h_1a0dc9a167e8d084946512da99b37b5fd0" kindref="member">wxThreadKind</ref></type>
           <declname>kind</declname>
@@ -50,6 +52,7 @@
         <definition>virtual wxThread::~wxThread</definition>
         <argsstring>()</argsstring>
         <name>~wxThread</name>
+        <qualifiedname>wxThread::~wxThread</qualifiedname>
         <briefdescription>
 <para>The destructor frees the resources associated with the thread. </para>
         </briefdescription>
@@ -66,6 +69,7 @@
         <definition>wxThreadError wxThread::Create</definition>
         <argsstring>(unsigned int stackSize=0)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxThread::Create</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>stackSize</declname>
@@ -97,6 +101,7 @@
         <definition>wxThreadError wxThread::Delete</definition>
         <argsstring>(ExitCode *rc=NULL, wxThreadWait waitMode=wxTHREAD_WAIT_DEFAULT)</argsstring>
         <name>Delete</name>
+        <qualifiedname>wxThread::Delete</qualifiedname>
         <param>
           <type><ref refid="classwx_thread_1ade9497fa072fe19481086e6486dcc028" kindref="member">ExitCode</ref> *</type>
           <declname>rc</declname>
@@ -142,6 +147,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>wxThreadIdType wxThread::GetId</definition>
         <argsstring>() const</argsstring>
         <name>GetId</name>
+        <qualifiedname>wxThread::GetId</qualifiedname>
         <briefdescription>
 <para>Gets the thread identifier: this is a platform dependent number that uniquely identifies the thread throughout the system during its existence (i.e. the thread identifiers may be reused). </para>
         </briefdescription>
@@ -156,6 +162,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>WXHANDLE wxThread::MSWGetHandle</definition>
         <argsstring>() const</argsstring>
         <name>MSWGetHandle</name>
+        <qualifiedname>wxThread::MSWGetHandle</qualifiedname>
         <briefdescription>
 <para>Gets the native thread handle. </para>
         </briefdescription>
@@ -174,6 +181,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>wxThreadKind wxThread::GetKind</definition>
         <argsstring>() const</argsstring>
         <name>GetKind</name>
+        <qualifiedname>wxThread::GetKind</qualifiedname>
         <briefdescription>
 <para>Returns the thread kind as it was given in the ctor. </para>
         </briefdescription>
@@ -191,6 +199,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>unsigned int wxThread::GetPriority</definition>
         <argsstring>() const</argsstring>
         <name>GetPriority</name>
+        <qualifiedname>wxThread::GetPriority</qualifiedname>
         <briefdescription>
 <para>Gets the priority of the thread, between 0 (lowest) and 100 (highest). </para>
         </briefdescription>
@@ -208,6 +217,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>bool wxThread::IsAlive</definition>
         <argsstring>() const</argsstring>
         <name>IsAlive</name>
+        <qualifiedname>wxThread::IsAlive</qualifiedname>
         <briefdescription>
 <para>Returns true if the thread is alive (i.e. started and not terminating). </para>
         </briefdescription>
@@ -223,6 +233,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>bool wxThread::IsDetached</definition>
         <argsstring>() const</argsstring>
         <name>IsDetached</name>
+        <qualifiedname>wxThread::IsDetached</qualifiedname>
         <briefdescription>
 <para>Returns true if the thread is of the detached kind, false if it is a joinable one. </para>
         </briefdescription>
@@ -237,6 +248,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>bool wxThread::IsPaused</definition>
         <argsstring>() const</argsstring>
         <name>IsPaused</name>
+        <qualifiedname>wxThread::IsPaused</qualifiedname>
         <briefdescription>
 <para>Returns true if the thread is paused. </para>
         </briefdescription>
@@ -251,6 +263,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>bool wxThread::IsRunning</definition>
         <argsstring>() const</argsstring>
         <name>IsRunning</name>
+        <qualifiedname>wxThread::IsRunning</qualifiedname>
         <briefdescription>
 <para>Returns true if the thread is running. </para>
         </briefdescription>
@@ -266,6 +279,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>wxThreadError wxThread::Kill</definition>
         <argsstring>()</argsstring>
         <name>Kill</name>
+        <qualifiedname>wxThread::Kill</qualifiedname>
         <briefdescription>
 <para>Immediately terminates the target thread. </para>
         </briefdescription>
@@ -284,6 +298,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>wxThreadError wxThread::Pause</definition>
         <argsstring>()</argsstring>
         <name>Pause</name>
+        <qualifiedname>wxThread::Pause</qualifiedname>
         <briefdescription>
 <para>Suspends the thread. </para>
         </briefdescription>
@@ -300,6 +315,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>wxThreadError wxThread::Resume</definition>
         <argsstring>()</argsstring>
         <name>Resume</name>
+        <qualifiedname>wxThread::Resume</qualifiedname>
         <briefdescription>
 <para>Resumes a thread suspended by the call to <ref refid="classwx_thread_1a8c6d835578dde71dd2c241c38336a4ba" kindref="member">Pause()</ref>. </para>
         </briefdescription>
@@ -315,6 +331,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>wxThreadError wxThread::Run</definition>
         <argsstring>()</argsstring>
         <name>Run</name>
+        <qualifiedname>wxThread::Run</qualifiedname>
         <briefdescription>
 <para>Starts the thread execution. </para>
         </briefdescription>
@@ -332,6 +349,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>void wxThread::SetPriority</definition>
         <argsstring>(unsigned int priority)</argsstring>
         <name>SetPriority</name>
+        <qualifiedname>wxThread::SetPriority</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>priority</declname>
@@ -357,6 +375,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>virtual bool wxThread::TestDestroy</definition>
         <argsstring>()</argsstring>
         <name>TestDestroy</name>
+        <qualifiedname>wxThread::TestDestroy</qualifiedname>
         <briefdescription>
 <para>This function should be called periodically by the thread to ensure that calls to <ref refid="classwx_thread_1a8c6d835578dde71dd2c241c38336a4ba" kindref="member">Pause()</ref> and <ref refid="classwx_thread_1a40ef94232664185b4f1f8693eebeba86" kindref="member">Delete()</ref> will work. </para>
         </briefdescription>
@@ -372,6 +391,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>ExitCode wxThread::Wait</definition>
         <argsstring>(wxThreadWait flags=wxTHREAD_WAIT_DEFAULT)</argsstring>
         <name>Wait</name>
+        <qualifiedname>wxThread::Wait</qualifiedname>
         <param>
           <type><ref refid="interface_2wx_2thread_8h_1a180bd0d42ba227657c3ad00194371a87" kindref="member">wxThreadWait</ref></type>
           <declname>flags</declname>
@@ -406,6 +426,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>static int wxThread::GetCPUCount</definition>
         <argsstring>()</argsstring>
         <name>GetCPUCount</name>
+        <qualifiedname>wxThread::GetCPUCount</qualifiedname>
         <briefdescription>
 <para>Returns the number of system CPUs or -1 if the value is unknown. </para>
         </briefdescription>
@@ -424,6 +445,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>static wxThreadIdType wxThread::GetCurrentId</definition>
         <argsstring>()</argsstring>
         <name>GetCurrentId</name>
+        <qualifiedname>wxThread::GetCurrentId</qualifiedname>
         <briefdescription>
 <para>Returns the platform specific thread ID of the current thread as a long. </para>
         </briefdescription>
@@ -442,6 +464,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>static wxThreadIdType wxThread::GetMainId</definition>
         <argsstring>()</argsstring>
         <name>GetMainId</name>
+        <qualifiedname>wxThread::GetMainId</qualifiedname>
         <briefdescription>
 <para>Returns the thread ID of the main thread. </para>
         </briefdescription>
@@ -461,6 +484,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>static bool wxThread::IsMain</definition>
         <argsstring>()</argsstring>
         <name>IsMain</name>
+        <qualifiedname>wxThread::IsMain</qualifiedname>
         <briefdescription>
 <para>Returns true if the calling thread is the main application thread. </para>
         </briefdescription>
@@ -479,6 +503,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>static bool wxThread::SetConcurrency</definition>
         <argsstring>(size_t level)</argsstring>
         <name>SetConcurrency</name>
+        <qualifiedname>wxThread::SetConcurrency</qualifiedname>
         <param>
           <type>size_t</type>
           <declname>level</declname>
@@ -501,6 +526,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>static void wxThread::Sleep</definition>
         <argsstring>(unsigned long milliseconds)</argsstring>
         <name>Sleep</name>
+        <qualifiedname>wxThread::Sleep</qualifiedname>
         <param>
           <type>unsigned long</type>
           <declname>milliseconds</declname>
@@ -520,6 +546,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>static wxThread * wxThread::This</definition>
         <argsstring>()</argsstring>
         <name>This</name>
+        <qualifiedname>wxThread::This</qualifiedname>
         <briefdescription>
 <para>Return the thread object for the calling thread. </para>
         </briefdescription>
@@ -535,6 +562,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>static void wxThread::Yield</definition>
         <argsstring>()</argsstring>
         <name>Yield</name>
+        <qualifiedname>wxThread::Yield</qualifiedname>
         <briefdescription>
 <para>Give the rest of the thread&apos;s time-slice to the system allowing the other threads to run. </para>
         </briefdescription>
@@ -556,6 +584,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>virtual ExitCode wxThread::Entry</definition>
         <argsstring>()=0</argsstring>
         <name>Entry</name>
+        <qualifiedname>wxThread::Entry</qualifiedname>
         <briefdescription>
 <para>This is the entry point of the thread. </para>
         </briefdescription>
@@ -572,6 +601,7 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <definition>void wxThread::Exit</definition>
         <argsstring>(ExitCode exitcode=0)</argsstring>
         <name>Exit</name>
+        <qualifiedname>wxThread::Exit</qualifiedname>
         <param>
           <type><ref refid="classwx_thread_1ade9497fa072fe19481086e6486dcc028" kindref="member">ExitCode</ref></type>
           <declname>exitcode</declname>
@@ -587,6 +617,68 @@ See <ref refid="classwx_thread_1thread_deletion" kindref="member">wxThread Delet
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/thread.h" line="1387" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_thread_1a390d12e553ec0d40640c3bb3f0906290" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxThread::SetName</definition>
+        <argsstring>(const wxString &amp;name)</argsstring>
+        <name>SetName</name>
+        <qualifiedname>wxThread::SetName</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Sets an internal name for the thread, which enables the debugger to show the name along with the list of threads, as long as both the OS and the debugger support this. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The thread name may also be visible in list of processes and in crash dumps (also in release builds).</para>
+<para>This function is protected, as it should be called from a derived class, in the context of the derived thread. A good place to call this function is at the beginning of your <ref refid="classwx_thread_1af50fa7d3ac55002e367e79989b9cbc5d" kindref="member">Entry()</ref> function.</para>
+<para>For portable code, the name should be in ASCII. On Linux the length is truncated to 15 characters, on other platforms the name can be longer than that.</para>
+<para><simplesect kind="return"><para>Either:<itemizedlist>
+<listitem><para>false: Failure or missing implementation for this OS.</para>
+</listitem><listitem><para>true: Success or undetectable failure.</para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/thread.h" line="1409" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classwx_thread_1a8f2777c91a260536c83bf50c9c3a6215" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool wxThread::SetNameForCurrent</definition>
+        <argsstring>(const wxString &amp;name)</argsstring>
+        <name>SetNameForCurrent</name>
+        <qualifiedname>wxThread::SetNameForCurrent</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Sets an internal name for the current thread, which may be a <ref refid="classwx_thread" kindref="compound">wxThread</ref> or any other kind of thread; e.g. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>an std::thread.</para>
+<para><simplesect kind="return"><para>Either:<itemizedlist>
+<listitem><para>false: Failure or missing implementation for this OS.</para>
+</listitem><listitem><para>true: Success or undetectable failure.</para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/thread.h" line="1421" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -789,13 +881,14 @@ While it makes it much easier to share common data between several threads, it a
 <para>Usually you only need to notify the main thread, in which case you can post an event to it via <ref refid="event_8h_1ae921d7bd0e52fedbf3f253d2c408bce1" kindref="member">wxQueueEvent()</ref>. In the case of secondary threads you can call a routine of another class when the thread is about to complete processing and/or set the value of a variable, possibly using mutexes (see <ref refid="classwx_mutex" kindref="compound">wxMutex</ref>) and/or other synchronization means if necessary.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__threading" kindref="compound">Threading</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_thread_helper" kindref="compound">wxThreadHelper</ref>, <ref refid="classwx_mutex" kindref="compound">wxMutex</ref>, <ref refid="classwx_condition" kindref="compound">wxCondition</ref>, <ref refid="classwx_critical_section" kindref="compound">wxCriticalSection</ref>, <ref refid="overview_thread" kindref="compound">Multithreading Overview</ref> </para>
 </simplesect>
 </para>
 </sect1>
     </detaileddescription>
-    <location file="interface/wx/thread.h" line="1010" column="1" bodyfile="interface/wx/thread.h" bodystart="1011" bodyend="1388"/>
+    <location file="interface/wx/thread.h" line="1010" column="1" bodyfile="interface/wx/thread.h" bodystart="1011" bodyend="1422"/>
     <listofallmembers>
       <member refid="classwx_thread_1a88051a33aa3fa9ca9392ac7d47b43cf4" prot="public" virt="non-virtual"><scope>wxThread</scope><name>Create</name></member>
       <member refid="classwx_thread_1a40ef94232664185b4f1f8693eebeba86" prot="public" virt="non-virtual"><scope>wxThread</scope><name>Delete</name></member>
@@ -819,6 +912,8 @@ While it makes it much easier to share common data between several threads, it a
       <member refid="classwx_thread_1afe81d37cd6cb6d5eb142773fb2c94562" prot="public" virt="non-virtual"><scope>wxThread</scope><name>Resume</name></member>
       <member refid="classwx_thread_1a5d894750ffaac8fc42ee85aeff8bb4c0" prot="public" virt="non-virtual"><scope>wxThread</scope><name>Run</name></member>
       <member refid="classwx_thread_1a09dfe3800bbfad53be303a4608d52959" prot="public" virt="non-virtual"><scope>wxThread</scope><name>SetConcurrency</name></member>
+      <member refid="classwx_thread_1a390d12e553ec0d40640c3bb3f0906290" prot="protected" virt="non-virtual"><scope>wxThread</scope><name>SetName</name></member>
+      <member refid="classwx_thread_1a8f2777c91a260536c83bf50c9c3a6215" prot="protected" virt="non-virtual"><scope>wxThread</scope><name>SetNameForCurrent</name></member>
       <member refid="classwx_thread_1a6236828fe98e81103219a519fbd7091d" prot="public" virt="non-virtual"><scope>wxThread</scope><name>SetPriority</name></member>
       <member refid="classwx_thread_1a9ae47b39270c54dba5534af31f885ec6" prot="public" virt="non-virtual"><scope>wxThread</scope><name>Sleep</name></member>
       <member refid="classwx_thread_1a9a3acec44b06b2a2430c5659991a3eac" prot="public" virt="virtual"><scope>wxThread</scope><name>TestDestroy</name></member>

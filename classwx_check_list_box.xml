@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_check_list_box" kind="class" language="C++" prot="public">
     <compoundname>wxCheckListBox</compoundname>
     <basecompoundref refid="classwx_list_box" prot="public" virt="non-virtual">wxListBox</basecompoundref>
@@ -11,6 +11,7 @@
         <definition>wxCheckListBox::wxCheckListBox</definition>
         <argsstring>()</argsstring>
         <name>wxCheckListBox</name>
+        <qualifiedname>wxCheckListBox::wxCheckListBox</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -25,6 +26,7 @@
         <definition>wxCheckListBox::wxCheckListBox</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, int n=0, const wxString choices[]=NULL, long style=0, const wxValidator &amp;validator=wxDefaultValidator, const wxString &amp;name=&quot;listBox&quot;)</argsstring>
         <name>wxCheckListBox</name>
+        <qualifiedname>wxCheckListBox::wxCheckListBox</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -157,6 +159,7 @@
         <definition>wxCheckListBox::wxCheckListBox</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxPoint &amp;pos, const wxSize &amp;size, const wxArrayString &amp;choices, long style=0, const wxValidator &amp;validator=wxDefaultValidator, const wxString &amp;name=&quot;listBox&quot;)</argsstring>
         <name>wxCheckListBox</name>
+        <qualifiedname>wxCheckListBox::wxCheckListBox</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -272,6 +275,7 @@
         <definition>bool wxCheckListBox::Create</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, int nStrings=0, const wxString choices[]=NULL, long style=0, const wxValidator &amp;validator=wxDefaultValidator, const wxString &amp;name=wxListBoxNameStr)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxCheckListBox::Create</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -329,6 +333,7 @@
         <definition>bool wxCheckListBox::Create</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxPoint &amp;pos, const wxSize &amp;size, const wxArrayString &amp;choices, long style=0, const wxValidator &amp;validator=wxDefaultValidator, const wxString &amp;name=wxListBoxNameStr)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxCheckListBox::Create</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -377,6 +382,7 @@
         <definition>virtual wxCheckListBox::~wxCheckListBox</definition>
         <argsstring>()</argsstring>
         <name>~wxCheckListBox</name>
+        <qualifiedname>wxCheckListBox::~wxCheckListBox</qualifiedname>
         <briefdescription>
 <para>Destructor, destroying the list box. </para>
         </briefdescription>
@@ -391,6 +397,7 @@
         <definition>void wxCheckListBox::Check</definition>
         <argsstring>(unsigned int item, bool check=true)</argsstring>
         <name>Check</name>
+        <qualifiedname>wxCheckListBox::Check</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>item</declname>
@@ -433,6 +440,7 @@
         <definition>bool wxCheckListBox::IsChecked</definition>
         <argsstring>(unsigned int item) const</argsstring>
         <name>IsChecked</name>
+        <qualifiedname>wxCheckListBox::IsChecked</qualifiedname>
         <param>
           <type>unsigned int</type>
           <declname>item</declname>
@@ -461,6 +469,7 @@
         <definition>unsigned int wxCheckListBox::GetCheckedItems</definition>
         <argsstring>(wxArrayInt &amp;checkedItems) const</argsstring>
         <name>GetCheckedItems</name>
+        <qualifiedname>wxCheckListBox::GetCheckedItems</qualifiedname>
         <param>
           <type><ref refid="dynarray_8h_1add87f199292e36ee87efd6d7f0d4ee66" kindref="member">wxArrayInt</ref> &amp;</type>
           <declname>checkedItems</declname>
@@ -496,26 +505,20 @@
     </briefdescription>
     <detaileddescription>
 <para>When using this class under Windows wxWidgets must be compiled with wxUSE_OWNER_DRAWN set to 1.</para>
-<para><linebreak/>
-<heading level="2">Events emitted by this class</heading>
+<para><heading level="2">Events emitted by this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros for events emitted by this class: <itemizedlist>
-<listitem><para>EVT_CHECKLISTBOX(id,  func): Process a <computeroutput>wxEVT_CHECKLISTBOX</computeroutput> event, when an item in the check list box is checked or unchecked. <ref refid="classwx_command_event_1a24ad2aab26646c762ca3092a7ffd5ccd" kindref="member">wxCommandEvent::GetInt()</ref> will contain the index of the item that was checked or unchecked. <ref refid="classwx_command_event_1a3e5510a00ebb9fb5e7bf7dc5e89f3588" kindref="member">wxCommandEvent::IsChecked()</ref> is not valid! Use <ref refid="classwx_check_list_box_1ad170533dca59d6b1a2c2919777498fe1" kindref="member">wxCheckListBox::IsChecked()</ref> instead. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_CHECKLISTBOX(id,  func): Process a <computeroutput>wxEVT_CHECKLISTBOX</computeroutput> event, when an item in the check list box is checked or unchecked. <ref refid="classwx_command_event_1a24ad2aab26646c762ca3092a7ffd5ccd" kindref="member">wxCommandEvent::GetInt()</ref> will contain the index of the item that was checked or unchecked. <ref refid="classwx_command_event_1a3e5510a00ebb9fb5e7bf7dc5e89f3588" kindref="member">wxCommandEvent::IsChecked()</ref> is not valid! Use <ref refid="classwx_check_list_box_1ad170533dca59d6b1a2c2919777498fe1" kindref="member">wxCheckListBox::IsChecked()</ref> instead. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-checklistbox-msw.png">wxMSW Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-checklistbox-gtk.png">wxGTK Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-checklistbox-mac.png">wxOSX Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__ctrl" kindref="compound">Controls</ref> <htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-checklistbox-msw.png">wxMSW Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-checklistbox-gtk.png">wxGTK Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-checklistbox-mac.png">wxOSX Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
 <para><simplesect kind="see"><para><ref refid="classwx_list_box" kindref="compound">wxListBox</ref>, <ref refid="classwx_choice" kindref="compound">wxChoice</ref>, <ref refid="classwx_combo_box" kindref="compound">wxComboBox</ref>, <ref refid="classwx_list_ctrl" kindref="compound">wxListCtrl</ref>, <ref refid="classwx_command_event" kindref="compound">wxCommandEvent</ref> </para>
 </simplesect>
 </para>
@@ -739,6 +742,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1a71f45373a9fc55e128d263391093c32a" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1ad122671fcef564f7e11658c3ee0d4d87" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1aee63c8b1f8055fef76962578aa7f38c1" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>FromDIP</name></member>
+      <member refid="classwx_window_1a144678f0b197268aa9d8d81b76a150a7" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a048d540d731ac83550c206df4af04270" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1ac3f185cef9f6a645be63b9b62afae46a" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a2fe6412d36c2b81c0dd3eeb1dd8bd004" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1af1ddb23778f531a56f2e1aa937a66d9c" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a27efab91147b0ffeee600f02059c23fc" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>FromPhys</name></member>
       <member refid="classwx_window_1a9cf3fd71ffab949cdf06f8f8e2646d56" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>GetAcceleratorTable</name></member>
       <member refid="classwx_window_1a00547805ce11e2ba64607d31fc2c67e2" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>GetAccessible</name></member>
       <member refid="classwx_window_1a64e3f936ab812d24966827ea4e0f15c0" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>GetAutoLayout</name></member>
@@ -911,7 +920,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1a22a22c1e23ca05776707e7999d8047fe" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>Move</name></member>
       <member refid="classwx_window_1a79e66079125e8420de269811bdb6f2b6" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>MoveAfterInTabOrder</name></member>
       <member refid="classwx_window_1af2b92f61cd9f9e2e0efe4cce307e25b1" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>MoveBeforeInTabOrder</name></member>
-      <member refid="classwx_list_box_1a251572e7c5a80b18b8170f8577edd1c4" prot="public" virt="virtual"><scope>wxCheckListBox</scope><name>MSWSetTabStops</name></member>
+      <member refid="classwx_list_box_1a87b55d157694fe7a0987c146bf6ac3b1" prot="public" virt="virtual"><scope>wxCheckListBox</scope><name>MSWSetTabStops</name></member>
       <member refid="classwx_window_1a86904f6785df4af6036b33383490a805" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>Navigate</name></member>
       <member refid="classwx_window_1aa58039c8fc65e19160becf510ee1d1d5" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>NavigateIn</name></member>
       <member refid="classwx_window_1a8175da594e6045635a1d1cfe775cdddb" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>NewControlId</name></member>
@@ -1046,6 +1055,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1aef413f1d0252a7a5a29512e8ab5e7c91" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a1771a46c000060619f6e1249ce362433" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a8a4fa47129de552bfec37db8c69688a2" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>ToggleWindowStyle</name></member>
+      <member refid="classwx_window_1a5d3a9450e6b6f44c6b7d0d4a002fa40f" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1afca50ba59976ad9913148fffd38ff0ef" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1ad0bea5e21d33d00d0cf19c011bad39bf" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aaf0ac2191826f233f04bffa900dbc357" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aef56d76b1cacdca83daebffcc385d6db" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1a6797f4c9656276796031b9846ecc20b6" prot="public" virt="non-virtual"><scope>wxCheckListBox</scope><name>ToPhys</name></member>
       <member refid="classwx_window_1ab8e51f36e7d8790b361c8d8c6f37b1ad" prot="public" virt="virtual"><scope>wxCheckListBox</scope><name>TransferDataFromWindow</name></member>
       <member refid="classwx_window_1a88cc65e424a129d9b0057756cdb67ec9" prot="public" virt="virtual"><scope>wxCheckListBox</scope><name>TransferDataToWindow</name></member>
       <member refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" prot="protected" virt="virtual"><scope>wxCheckListBox</scope><name>TryAfter</name></member>

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="atomic_8h" kind="file" language="C++">
     <compoundname>atomic.h</compoundname>
       <sectiondef kind="func">
-      <memberdef kind="function" id="atomic_8h_1a35470b5fc125b443e73b7967100752d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void wxAtomicInc</definition>
+      <memberdef kind="function" id="atomic_8h_1a08129c0e6794c470926a6dc1a88c5451" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="defs_8h_1a5c084575ef1ffaa7586dda7e4b22d78a" kindref="member">wxInt32</ref></type>
+        <definition>wxInt32 wxAtomicInc</definition>
         <argsstring>(wxAtomicInt &amp;value)</argsstring>
         <name>wxAtomicInc</name>
         <param>
@@ -16,13 +16,15 @@
 <para>This function increments <emphasis>value</emphasis> in an atomic manner. </para>
         </briefdescription>
         <detaileddescription>
-<para>Whenever possible wxWidgets provides an efficient, CPU-specific, implementation of this function. If such implementation is available, the symbol wxHAS_ATOMIC_OPS is defined. Otherwise this function still exists but is implemented in a generic way using a critical section which can be prohibitively expensive for use in performance-sensitive code.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/atomic.h&gt; </verbatim> </para>
+<para><simplesect kind="note"><para>It is recommended to use <computeroutput>std::atomic</computeroutput> available in C++11 and later instead of this function in any new code.</para>
+</simplesect>
+Whenever possible wxWidgets provides an efficient, CPU-specific, implementation of this function. If such implementation is available, the symbol wxHAS_ATOMIC_OPS is defined. Otherwise this function still exists but is implemented in a generic way using a critical section which can be prohibitively expensive for use in performance-sensitive code.</para>
+<para>Returns the new value after the increment (the return value is only available since wxWidgets 3.1.7, this function doesn&apos;t return anything in previous versions of the library).</para>
+<para>Include file: <verbatim>#include &lt;wx/atomic.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/atomic.h" line="27" column="6" declfile="interface/wx/atomic.h" declline="27" declcolumn="6"/>
+        <location file="interface/wx/atomic.h" line="34" column="9" declfile="interface/wx/atomic.h" declline="34" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="atomic_8h_1a396a0a6c5b705d46862564f5b16897b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a5c084575ef1ffaa7586dda7e4b22d78a" kindref="member">wxInt32</ref></type>
@@ -37,15 +39,14 @@
 <para>This function decrements value in an atomic manner. </para>
         </briefdescription>
         <detaileddescription>
-<para>Returns 0 if value is 0 after decrement or any non-zero value (not necessarily equal to the value of the variable) otherwise.</para>
-<para><simplesect kind="see"><para><ref refid="atomic_8h_1a35470b5fc125b443e73b7967100752d4" kindref="member">wxAtomicInc</ref></para>
+<para>Returns the new value after decrementing it.</para>
+<para><simplesect kind="see"><para><ref refid="atomic_8h_1a08129c0e6794c470926a6dc1a88c5451" kindref="member">wxAtomicInc</ref></para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/atomic.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/atomic.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/atomic.h" line="39" column="9" declfile="interface/wx/atomic.h" declline="39" declcolumn="9"/>
+        <location file="interface/wx/atomic.h" line="45" column="9" declfile="interface/wx/atomic.h" declline="45" declcolumn="9"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

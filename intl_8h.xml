@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="intl_8h" kind="file" language="C++">
     <compoundname>intl.h</compoundname>
     <innerclass refid="structwx_language_info" prot="public">wxLanguageInfo</innerclass>
@@ -37,6 +37,71 @@
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/intl.h" line="13" column="1" bodyfile="interface/wx/intl.h" bodystart="14" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="enum" id="intl_8h_1a2ad08b53ee3dae2159fc14c2df11b0cf" prot="public" static="no" strong="no">
+        <type></type>
+        <name>wxLocaleTagType</name>
+        <enumvalue id="intl_8h_1a2ad08b53ee3dae2159fc14c2df11b0cfa37ef91c998af761245393ab2d8a022c9" prot="public">
+          <name>wxLOCALE_TAGTYPE_DEFAULT</name>
+          <briefdescription>
+<para>Default (tag as given or else same as wxLOCALE_TAGTYPE_SYSTEM) </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="intl_8h_1a2ad08b53ee3dae2159fc14c2df11b0cfa7a0f8d5eaed7652defcb60f12b8ebe6b" prot="public">
+          <name>wxLOCALE_TAGTYPE_SYSTEM</name>
+          <briefdescription>
+<para>Default type of the system (platform-dependent). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="intl_8h_1a2ad08b53ee3dae2159fc14c2df11b0cfab3d15ca1a6fc96ce2c5da5a80f5e44eb" prot="public">
+          <name>wxLOCALE_TAGTYPE_BCP47</name>
+          <briefdescription>
+<para>BCP47-like type: &lt;language&gt;[-&lt;script&gt;][-&lt;region&gt;][-&lt;modifier&gt;]. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="intl_8h_1a2ad08b53ee3dae2159fc14c2df11b0cfa0a60f4009bb2386c64fcc586cc6c3502" prot="public">
+          <name>wxLOCALE_TAGTYPE_MACOS</name>
+          <briefdescription>
+<para>macOS type: &lt;language&gt;[-&lt;script&gt;][_&lt;region&gt;]. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="intl_8h_1a2ad08b53ee3dae2159fc14c2df11b0cfac38960cd32744e8b94e8b45c06b8aa88" prot="public">
+          <name>wxLOCALE_TAGTYPE_POSIX</name>
+          <briefdescription>
+<para>POSIX type: &lt;language&gt;_&lt;region&gt;[.&lt;charset&gt;][@{&lt;scriptalias&gt;|&lt;modifier&gt;}]. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="intl_8h_1a2ad08b53ee3dae2159fc14c2df11b0cfa96e08eb5a11510e294194e80a2df32e0" prot="public">
+          <name>wxLOCALE_TAGTYPE_WINDOWS</name>
+          <briefdescription>
+<para>Windows type: &lt;language&gt;[-&lt;script&gt;][-&lt;region&gt;][-&lt;extension&gt;][_&lt;sortorder&gt;]. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The type of a locale tag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classwx_locale_ident_1a409c9e6041462bb909625cdd86ba8aca" kindref="member">wxLocaleIdent::GetTag()</ref> </para>
+</simplesect>
+<simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/intl.h" line="109" column="1" bodyfile="interface/wx/intl.h" bodystart="110" bodyend="128"/>
       </memberdef>
       <memberdef kind="enum" id="intl_8h_1a934e5f080f46c8c1b3c043775466f121" prot="public" static="no" strong="no">
         <type></type>
@@ -81,13 +146,13 @@
 <para>The category of locale settings. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="classwx_locale_1acd6eccc8900847c0a29e7a4598c7d83f" kindref="member">wxLocale::GetInfo()</ref> </para>
+<para><simplesect kind="see"><para><ref refid="classwx_locale_1acd6eccc8900847c0a29e7a4598c7d83f" kindref="member">wxLocale::GetInfo()</ref>, <ref refid="classwx_u_i_locale_1a469b25c4b1f89ab81f95cc85e41c1a0a" kindref="member">wxUILocale::GetInfo()</ref> </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/intl.h" line="74" column="1" bodyfile="interface/wx/intl.h" bodystart="75" bodyend="97"/>
+        <location file="interface/wx/intl.h" line="136" column="1" bodyfile="interface/wx/intl.h" bodystart="137" bodyend="159"/>
       </memberdef>
       <memberdef kind="enum" id="intl_8h_1a54d3421c44d428cc5cce0c772d583c34" prot="public" static="no" strong="no">
         <type></type>
@@ -98,7 +163,8 @@
 <para>The thousands separator. </para>
           </briefdescription>
           <detaileddescription>
-<para>This value can be used with either wxLOCALE_CAT_NUMBER or wxLOCALE_CAT_MONEY categories. </para>
+<para>This value can be used with either wxLOCALE_CAT_NUMBER or wxLOCALE_CAT_MONEY categories.</para>
+<para>By default, i.e. when wxLOCALE_CAT_DEFAULT is used, the separator for numbers is returned. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="intl_8h_1a54d3421c44d428cc5cce0c772d583c34a186483393ab9221beff2222851c3bbda" prot="public">
@@ -107,7 +173,8 @@
 <para>The character used as decimal point. </para>
           </briefdescription>
           <detaileddescription>
-<para>This value can be used with either wxLOCALE_CAT_NUMBER or wxLOCALE_CAT_MONEY categories. </para>
+<para>This value can be used with either wxLOCALE_CAT_NUMBER or wxLOCALE_CAT_MONEY categories.</para>
+<para>By default, i.e. when wxLOCALE_CAT_DEFAULT is used, the decimal point for numbers is returned. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="intl_8h_1a54d3421c44d428cc5cce0c772d583c34a2652cb37b07518c06fe850d3216e6cc8" prot="public">
@@ -160,11 +227,90 @@
         </briefdescription>
         <detaileddescription>
 <para>Note that for the <computeroutput>wxLOCALE_*_FMT</computeroutput> constants (the date and time formats), the strings returned by <ref refid="classwx_locale_1acd6eccc8900847c0a29e7a4598c7d83f" kindref="member">wxLocale::GetInfo()</ref> use strftime() or, equivalently, <ref refid="classwx_date_time_1a6a60f071d74712eba58153113f5af23a" kindref="member">wxDateTime::Format()</ref> format. If the relevant format couldn&apos;t be determined, an empty string is returned <ndash/> there is no fallback value so that the application could determine the best course of actions itself in such case.</para>
-<para>All of these values are used with <computeroutput>wxLOCALE_CAT_DATE</computeroutput> in <ref refid="classwx_locale_1acd6eccc8900847c0a29e7a4598c7d83f" kindref="member">wxLocale::GetInfo()</ref> or, more typically, with <computeroutput>wxLOCALE_CAT_DEFAULT</computeroutput> as they only apply to a single category. </para>
+<para>All of these values are used with <computeroutput>wxLOCALE_CAT_DATE</computeroutput> in <ref refid="classwx_locale_1acd6eccc8900847c0a29e7a4598c7d83f" kindref="member">wxLocale::GetInfo()</ref> or, more typically, with <computeroutput>wxLOCALE_CAT_DEFAULT</computeroutput> as they only apply to a single category.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_u_i_locale_1a469b25c4b1f89ab81f95cc85e41c1a0a" kindref="member">wxUILocale::GetInfo()</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/intl.h" line="112" column="1" bodyfile="interface/wx/intl.h" bodystart="113" bodyend="160"/>
+        <location file="interface/wx/intl.h" line="176" column="1" bodyfile="interface/wx/intl.h" bodystart="177" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="enum" id="intl_8h_1a03a906b02ebe99d58d17224a5831e811" prot="public" static="no" strong="no">
+        <type></type>
+        <name>wxLocaleName</name>
+        <enumvalue id="intl_8h_1a03a906b02ebe99d58d17224a5831e811a88436124693ec4b8f8feaf3d35779c7a" prot="public">
+          <name>wxLOCALE_NAME_LOCALE</name>
+          <briefdescription>
+<para>Display name of a locale. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="intl_8h_1a03a906b02ebe99d58d17224a5831e811ab4d6aa50c62e61bc1fecad5edbe3e29b" prot="public">
+          <name>wxLOCALE_NAME_LANGUAGE</name>
+          <briefdescription>
+<para>Display name of the language of a locale. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="intl_8h_1a03a906b02ebe99d58d17224a5831e811ab67fe73f7d28314d33954e6c70acbff9" prot="public">
+          <name>wxLOCALE_NAME_COUNTRY</name>
+          <briefdescription>
+<para>Display name of the country/region of a locale. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The values understood by <ref refid="classwx_u_i_locale_1af6d74d0871228af37cda058ca0231cfd" kindref="member">wxUILocale::GetLocalizedName()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The corresponding strings can be used to display the information in the UI.</para>
+<para><simplesect kind="since"><para>3.1.6</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classwx_u_i_locale_1af6d74d0871228af37cda058ca0231cfd" kindref="member">wxUILocale::GetLocalizedName()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/intl.h" line="242" column="1" bodyfile="interface/wx/intl.h" bodystart="243" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="enum" id="intl_8h_1a8471b3bbfebdd6929e2ff1a1c368a76f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>wxLocaleForm</name>
+        <enumvalue id="intl_8h_1a8471b3bbfebdd6929e2ff1a1c368a76fad7a12675194c633017ec8d94a28aaf68" prot="public">
+          <name>wxLOCALE_FORM_NATIVE</name>
+          <briefdescription>
+<para>Name should be returned in the language of the locale itself. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="intl_8h_1a8471b3bbfebdd6929e2ff1a1c368a76faa0718832d25f258da872f140e653e083" prot="public">
+          <name>wxLOCALE_FORM_ENGLISH</name>
+          <briefdescription>
+<para>Name should be returned in English. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The values understood by <ref refid="classwx_u_i_locale_1af6d74d0871228af37cda058ca0231cfd" kindref="member">wxUILocale::GetLocalizedName()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The values specify the form of a localized name.</para>
+<para><simplesect kind="since"><para>3.1.6</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classwx_u_i_locale_1af6d74d0871228af37cda058ca0231cfd" kindref="member">wxUILocale::GetLocalizedName()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/intl.h" line="267" column="1" bodyfile="interface/wx/intl.h" bodystart="268" bodyend="274"/>
       </memberdef>
       <memberdef kind="enum" id="intl_8h_1afb64604cab524627489a96f6826055df" prot="public" static="no" strong="no">
         <type></type>
@@ -193,7 +339,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/intl.h" line="217" column="1" bodyfile="interface/wx/intl.h" bodystart="218" bodyend="221"/>
+        <location file="interface/wx/intl.h" line="340" column="1" bodyfile="interface/wx/intl.h" bodystart="341" bodyend="344"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -209,7 +355,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/intl.h" line="530" column="10" declfile="interface/wx/intl.h" declline="530" declcolumn="10"/>
+        <location file="interface/wx/intl.h" line="656" column="10" declfile="interface/wx/intl.h" declline="656" declcolumn="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

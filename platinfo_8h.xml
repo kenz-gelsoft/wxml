@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="platinfo_8h" kind="file" language="C++">
     <compoundname>platinfo.h</compoundname>
     <innerclass refid="structwx_linux_distribution_info" prot="public">wxLinuxDistributionInfo</innerclass>
@@ -13,7 +13,7 @@
           <name>wxOS_UNKNOWN</name>
           <initializer>= 0</initializer>
           <briefdescription>
-<para>returned on error </para>
+<para>Returned on error. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -49,7 +49,7 @@
           <name>wxOS_WINDOWS_NT</name>
           <initializer>= 1 &lt;&lt; 3</initializer>
           <briefdescription>
-<para>Windows NT family (XP/Vista/7/8/10) </para>
+<para>Windows NT family (XP/Vista/7/8/10/11) </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -340,7 +340,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000052"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use wxBitness instead. </para>
+<para><xrefsect id="deprecated_1_deprecated000055"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use wxBitness instead. </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -398,6 +398,29 @@
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/platinfo.h" line="111" column="1" bodyfile="interface/wx/platinfo.h" bodystart="112" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__group__class__cfg_1ga9b959e9faf597ee217872770ec78d560" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxIsRunningUnderWine</definition>
+        <argsstring>()</argsstring>
+        <name>wxIsRunningUnderWine</name>
+        <briefdescription>
+<para>Returns true only for MSW programs running under Wine. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function can be used to check for some functionality not implemented when using Wine.</para>
+<para><simplesect kind="since"><para>3.1.6</para>
+</simplesect>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__cfg" kindref="compound">Application and System configuration</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/platinfo.h" line="653" column="6" declfile="interface/wx/platinfo.h" declline="653" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

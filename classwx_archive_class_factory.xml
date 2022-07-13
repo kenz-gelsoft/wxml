@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_archive_class_factory" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxArchiveClassFactory</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -12,6 +12,7 @@
         <definition>bool wxArchiveClassFactory::CanHandle</definition>
         <argsstring>(const wxString &amp;protocol, wxStreamProtocolType type=wxSTREAM_PROTOCOL) const</argsstring>
         <name>CanHandle</name>
+        <qualifiedname>wxArchiveClassFactory::CanHandle</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>protocol</declname>
@@ -36,6 +37,7 @@
         <definition>wxMBConv &amp; wxArchiveClassFactory::GetConv</definition>
         <argsstring>() const</argsstring>
         <name>GetConv</name>
+        <qualifiedname>wxArchiveClassFactory::GetConv</qualifiedname>
         <briefdescription>
 <para>Returns the <ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> object that the created streams will use when translating meta-data. </para>
         </briefdescription>
@@ -51,6 +53,7 @@
         <definition>void wxArchiveClassFactory::SetConv</definition>
         <argsstring>(wxMBConv &amp;conv)</argsstring>
         <name>SetConv</name>
+        <qualifiedname>wxArchiveClassFactory::SetConv</qualifiedname>
         <param>
           <type><ref refid="classwx_m_b_conv" kindref="compound">wxMBConv</ref> &amp;</type>
           <declname>conv</declname>
@@ -69,6 +72,7 @@
         <definition>const wxArchiveClassFactory * wxArchiveClassFactory::GetNext</definition>
         <argsstring>() const</argsstring>
         <name>GetNext</name>
+        <qualifiedname>wxArchiveClassFactory::GetNext</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -82,6 +86,7 @@
         <definition>virtual wxString wxArchiveClassFactory::GetInternalName</definition>
         <argsstring>(const wxString &amp;name, wxPathFormat format=wxPATH_NATIVE) const =0</argsstring>
         <name>GetInternalName</name>
+        <qualifiedname>wxArchiveClassFactory::GetInternalName</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>name</declname>
@@ -105,6 +110,7 @@
         <definition>wxString wxArchiveClassFactory::GetProtocol</definition>
         <argsstring>() const</argsstring>
         <name>GetProtocol</name>
+        <qualifiedname>wxArchiveClassFactory::GetProtocol</qualifiedname>
         <briefdescription>
 <para>Returns the <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref> protocol supported by this factory. </para>
         </briefdescription>
@@ -121,6 +127,7 @@
         <definition>virtual const wxChar ** wxArchiveClassFactory::GetProtocols</definition>
         <argsstring>(wxStreamProtocolType type=wxSTREAM_PROTOCOL) const =0</argsstring>
         <name>GetProtocols</name>
+        <qualifiedname>wxArchiveClassFactory::GetProtocols</qualifiedname>
         <param>
           <type><ref refid="interface_2wx_2stream_8h_1af43964582cc2e87658bf792727dceff8" kindref="member">wxStreamProtocolType</ref></type>
           <declname>type</declname>
@@ -147,6 +154,7 @@
         <definition>wxArchiveEntry * wxArchiveClassFactory::NewEntry</definition>
         <argsstring>() const</argsstring>
         <name>NewEntry</name>
+        <qualifiedname>wxArchiveClassFactory::NewEntry</qualifiedname>
         <briefdescription>
 <para>Create a new <ref refid="classwx_archive_entry" kindref="compound">wxArchiveEntry</ref> object of the appropriate type. </para>
         </briefdescription>
@@ -161,6 +169,7 @@
         <definition>wxArchiveInputStream * wxArchiveClassFactory::NewStream</definition>
         <argsstring>(wxInputStream &amp;stream) const</argsstring>
         <name>NewStream</name>
+        <qualifiedname>wxArchiveClassFactory::NewStream</qualifiedname>
         <param>
           <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> &amp;</type>
           <declname>stream</declname>
@@ -180,6 +189,7 @@
         <definition>wxArchiveOutputStream * wxArchiveClassFactory::NewStream</definition>
         <argsstring>(wxOutputStream &amp;stream) const</argsstring>
         <name>NewStream</name>
+        <qualifiedname>wxArchiveClassFactory::NewStream</qualifiedname>
         <param>
           <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> &amp;</type>
           <declname>stream</declname>
@@ -197,6 +207,7 @@
         <definition>wxArchiveInputStream * wxArchiveClassFactory::NewStream</definition>
         <argsstring>(wxInputStream *stream) const</argsstring>
         <name>NewStream</name>
+        <qualifiedname>wxArchiveClassFactory::NewStream</qualifiedname>
         <param>
           <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> *</type>
           <declname>stream</declname>
@@ -214,6 +225,7 @@
         <definition>wxArchiveOutputStream * wxArchiveClassFactory::NewStream</definition>
         <argsstring>(wxOutputStream *stream) const</argsstring>
         <name>NewStream</name>
+        <qualifiedname>wxArchiveClassFactory::NewStream</qualifiedname>
         <param>
           <type><ref refid="classwx_output_stream" kindref="compound">wxOutputStream</ref> *</type>
           <declname>stream</declname>
@@ -231,6 +243,7 @@
         <definition>void wxArchiveClassFactory::PushFront</definition>
         <argsstring>()</argsstring>
         <name>PushFront</name>
+        <qualifiedname>wxArchiveClassFactory::PushFront</qualifiedname>
         <briefdescription>
 <para>Adds this class factory to the list returned by <ref refid="classwx_archive_class_factory_1ae4352734a45f0257c3d260daaef6a73b" kindref="member">GetFirst()</ref> or <ref refid="classwx_archive_class_factory_1a195777ed4a768085e9245735f12f6748" kindref="member">GetNext()</ref>. </para>
         </briefdescription>
@@ -247,6 +260,7 @@
         <definition>void wxArchiveClassFactory::Remove</definition>
         <argsstring>()</argsstring>
         <name>Remove</name>
+        <qualifiedname>wxArchiveClassFactory::Remove</qualifiedname>
         <briefdescription>
 <para>Removes this class factory from the list returned by <ref refid="classwx_archive_class_factory_1ae4352734a45f0257c3d260daaef6a73b" kindref="member">GetFirst()</ref> and <ref refid="classwx_archive_class_factory_1a195777ed4a768085e9245735f12f6748" kindref="member">GetNext()</ref>. </para>
         </briefdescription>
@@ -264,6 +278,7 @@
         <definition>static const wxArchiveClassFactory * wxArchiveClassFactory::Find</definition>
         <argsstring>(const wxString &amp;protocol, wxStreamProtocolType type=wxSTREAM_PROTOCOL)</argsstring>
         <name>Find</name>
+        <qualifiedname>wxArchiveClassFactory::Find</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>protocol</declname>
@@ -289,6 +304,7 @@
         <definition>static const wxArchiveClassFactory * wxArchiveClassFactory::GetFirst</definition>
         <argsstring>()</argsstring>
         <name>GetFirst</name>
+        <qualifiedname>wxArchiveClassFactory::GetFirst</qualifiedname>
         <briefdescription>
 <para>GetFirst and GetNext can be used to enumerate the available factories. </para>
         </briefdescription>
@@ -322,7 +338,8 @@
 <para>The available factories can be enumerated using <ref refid="classwx_archive_class_factory_1ae4352734a45f0257c3d260daaef6a73b" kindref="member">wxArchiveClassFactory::GetFirst()</ref> and <ref refid="classwx_archive_class_factory_1a195777ed4a768085e9245735f12f6748" kindref="member">wxArchiveClassFactory::GetNext()</ref>.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ , \ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__archive" kindref="compound">Archive support</ref>, <ref refid="group__group__class__streams" kindref="compound">Streams</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_archive" kindref="compound">Archive Formats</ref>, <ref refid="overview_archive_1overview_archive_generic" kindref="member">Generic Archive Programming</ref>, <ref refid="classwx_archive_entry" kindref="compound">wxArchiveEntry</ref>, <ref refid="classwx_archive_input_stream" kindref="compound">wxArchiveInputStream</ref>, <ref refid="classwx_archive_output_stream" kindref="compound">wxArchiveOutputStream</ref>, <ref refid="classwx_filter_class_factory" kindref="compound">wxFilterClassFactory</ref> </para>
 </simplesect>
 </para>

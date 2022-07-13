@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_html_window_interface" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxHtmlWindowInterface</compoundname>
     <derivedcompoundref refid="classwx_html_window" prot="public" virt="non-virtual">wxHtmlWindow</derivedcompoundref>
@@ -8,6 +8,7 @@
       <memberdef kind="enum" id="classwx_html_window_interface_1abee7411cdffad251a5ac7b831aacef70" prot="public" static="no" strong="no">
         <type></type>
         <name>HTMLCursor</name>
+        <qualifiedname>wxHtmlWindowInterface::HTMLCursor</qualifiedname>
         <enumvalue id="classwx_html_window_interface_1abee7411cdffad251a5ac7b831aacef70a2e6f776e0650c0b81c3ef41b8ef76a0d" prot="public">
           <name>HTMLCursor_Default</name>
           <briefdescription>
@@ -48,6 +49,7 @@
         <definition>wxHtmlWindowInterface::wxHtmlWindowInterface</definition>
         <argsstring>()</argsstring>
         <name>wxHtmlWindowInterface</name>
+        <qualifiedname>wxHtmlWindowInterface::wxHtmlWindowInterface</qualifiedname>
         <briefdescription>
 <para>Ctor. </para>
         </briefdescription>
@@ -62,6 +64,7 @@
         <definition>virtual wxHtmlWindowInterface::~wxHtmlWindowInterface</definition>
         <argsstring>()</argsstring>
         <name>~wxHtmlWindowInterface</name>
+        <qualifiedname>wxHtmlWindowInterface::~wxHtmlWindowInterface</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -75,6 +78,7 @@
         <definition>virtual void wxHtmlWindowInterface::SetHTMLWindowTitle</definition>
         <argsstring>(const wxString &amp;title)=0</argsstring>
         <name>SetHTMLWindowTitle</name>
+        <qualifiedname>wxHtmlWindowInterface::SetHTMLWindowTitle</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>title</declname>
@@ -93,6 +97,7 @@
         <definition>virtual void wxHtmlWindowInterface::OnHTMLLinkClicked</definition>
         <argsstring>(const wxHtmlLinkInfo &amp;link)=0</argsstring>
         <name>OnHTMLLinkClicked</name>
+        <qualifiedname>wxHtmlWindowInterface::OnHTMLLinkClicked</qualifiedname>
         <param>
           <type>const <ref refid="classwx_html_link_info" kindref="compound">wxHtmlLinkInfo</ref> &amp;</type>
           <declname>link</declname>
@@ -121,6 +126,7 @@
         <definition>virtual wxHtmlOpeningStatus wxHtmlWindowInterface::OnHTMLOpeningURL</definition>
         <argsstring>(wxHtmlURLType type, const wxString &amp;url, wxString *redirect) const =0</argsstring>
         <name>OnHTMLOpeningURL</name>
+        <qualifiedname>wxHtmlWindowInterface::OnHTMLOpeningURL</qualifiedname>
         <param>
           <type><ref refid="htmlpars_8h_1a6e895f8a11485532a3cb67ecec03d4fa" kindref="member">wxHtmlURLType</ref></type>
           <declname>type</declname>
@@ -176,6 +182,7 @@
         <definition>virtual wxPoint wxHtmlWindowInterface::HTMLCoordsToWindow</definition>
         <argsstring>(wxHtmlCell *cell, const wxPoint &amp;pos) const =0</argsstring>
         <name>HTMLCoordsToWindow</name>
+        <qualifiedname>wxHtmlWindowInterface::HTMLCoordsToWindow</qualifiedname>
         <param>
           <type><ref refid="classwx_html_cell" kindref="compound">wxHtmlCell</ref> *</type>
           <declname>cell</declname>
@@ -198,6 +205,7 @@
         <definition>virtual wxWindow * wxHtmlWindowInterface::GetHTMLWindow</definition>
         <argsstring>()=0</argsstring>
         <name>GetHTMLWindow</name>
+        <qualifiedname>wxHtmlWindowInterface::GetHTMLWindow</qualifiedname>
         <briefdescription>
 <para>Returns the window used for rendering (may be NULL). </para>
         </briefdescription>
@@ -212,6 +220,7 @@
         <definition>virtual wxColour wxHtmlWindowInterface::GetHTMLBackgroundColour</definition>
         <argsstring>() const =0</argsstring>
         <name>GetHTMLBackgroundColour</name>
+        <qualifiedname>wxHtmlWindowInterface::GetHTMLBackgroundColour</qualifiedname>
         <briefdescription>
 <para>Returns background colour to use by default. </para>
         </briefdescription>
@@ -226,6 +235,7 @@
         <definition>virtual void wxHtmlWindowInterface::SetHTMLBackgroundColour</definition>
         <argsstring>(const wxColour &amp;clr)=0</argsstring>
         <name>SetHTMLBackgroundColour</name>
+        <qualifiedname>wxHtmlWindowInterface::SetHTMLBackgroundColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>clr</declname>
@@ -239,13 +249,14 @@
         </inbodydescription>
         <location file="interface/wx/html/htmlwin.h" line="83" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_html_window_interface_1a5747c4d798059d2976eb7594e8bb9745" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classwx_html_window_interface_1a0322ed1128c7cea35db435e627663d60" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void wxHtmlWindowInterface::SetHTMLBackgroundImage</definition>
-        <argsstring>(const wxBitmap &amp;bmpBg)=0</argsstring>
+        <argsstring>(const wxBitmapBundle &amp;bmpBg)=0</argsstring>
         <name>SetHTMLBackgroundImage</name>
+        <qualifiedname>wxHtmlWindowInterface::SetHTMLBackgroundImage</qualifiedname>
         <param>
-          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>bmpBg</declname>
         </param>
         <briefdescription>
@@ -262,6 +273,7 @@
         <definition>virtual void wxHtmlWindowInterface::SetHTMLStatusText</definition>
         <argsstring>(const wxString &amp;text)=0</argsstring>
         <name>SetHTMLStatusText</name>
+        <qualifiedname>wxHtmlWindowInterface::SetHTMLStatusText</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>text</declname>
@@ -280,6 +292,7 @@
         <definition>virtual wxCursor wxHtmlWindowInterface::GetHTMLCursor</definition>
         <argsstring>(wxHtmlWindowInterface::HTMLCursor type) const =0</argsstring>
         <name>GetHTMLCursor</name>
+        <qualifiedname>wxHtmlWindowInterface::GetHTMLCursor</qualifiedname>
         <param>
           <type><ref refid="classwx_html_window_interface_1abee7411cdffad251a5ac7b831aacef70" kindref="member">wxHtmlWindowInterface::HTMLCursor</ref></type>
           <declname>type</declname>
@@ -325,7 +338,7 @@
       <member refid="classwx_html_window_interface_1a8f9b772badc2d3a49a3df2538ec9f554" prot="public" virt="pure-virtual"><scope>wxHtmlWindowInterface</scope><name>OnHTMLLinkClicked</name></member>
       <member refid="classwx_html_window_interface_1aeda08ee928e2072e6d679f3018298503" prot="public" virt="pure-virtual"><scope>wxHtmlWindowInterface</scope><name>OnHTMLOpeningURL</name></member>
       <member refid="classwx_html_window_interface_1ac88a65e20b777047f01f64ca92f741ee" prot="public" virt="pure-virtual"><scope>wxHtmlWindowInterface</scope><name>SetHTMLBackgroundColour</name></member>
-      <member refid="classwx_html_window_interface_1a5747c4d798059d2976eb7594e8bb9745" prot="public" virt="pure-virtual"><scope>wxHtmlWindowInterface</scope><name>SetHTMLBackgroundImage</name></member>
+      <member refid="classwx_html_window_interface_1a0322ed1128c7cea35db435e627663d60" prot="public" virt="pure-virtual"><scope>wxHtmlWindowInterface</scope><name>SetHTMLBackgroundImage</name></member>
       <member refid="classwx_html_window_interface_1aeeb79b04e19931b44cec467237a160ce" prot="public" virt="pure-virtual"><scope>wxHtmlWindowInterface</scope><name>SetHTMLStatusText</name></member>
       <member refid="classwx_html_window_interface_1a8ce342fb0439b76675c6b58a7e13b677" prot="public" virt="pure-virtual"><scope>wxHtmlWindowInterface</scope><name>SetHTMLWindowTitle</name></member>
       <member refid="classwx_html_window_interface_1ab788f844e826335587566046af381aae" prot="public" virt="non-virtual"><scope>wxHtmlWindowInterface</scope><name>wxHtmlWindowInterface</name></member>

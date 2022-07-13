@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_t_c_p_client" kind="class" language="C++" prot="public">
     <compoundname>wxTCPClient</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxTCPClient::wxTCPClient</definition>
         <argsstring>()</argsstring>
         <name>wxTCPClient</name>
+        <qualifiedname>wxTCPClient::wxTCPClient</qualifiedname>
         <briefdescription>
 <para>Constructs a client object. </para>
         </briefdescription>
@@ -24,6 +25,7 @@
         <definition>virtual wxConnectionBase * wxTCPClient::MakeConnection</definition>
         <argsstring>(const wxString &amp;host, const wxString &amp;service, const wxString &amp;topic)</argsstring>
         <name>MakeConnection</name>
+        <qualifiedname>wxTCPClient::MakeConnection</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>host</declname>
@@ -52,6 +54,7 @@
         <definition>virtual wxConnectionBase * wxTCPClient::OnMakeConnection</definition>
         <argsstring>()</argsstring>
         <name>OnMakeConnection</name>
+        <qualifiedname>wxTCPClient::OnMakeConnection</qualifiedname>
         <briefdescription>
 <para>The type of <ref refid="classwx_t_c_p_connection" kindref="compound">wxTCPConnection</ref> returned from a <ref refid="classwx_t_c_p_client_1ae593b86dbd60f5b76bcbe5195efd2085" kindref="member">MakeConnection()</ref> call can be altered by deriving the <bold>OnMakeConnection</bold> member to return your own derived connection object. </para>
         </briefdescription>
@@ -68,6 +71,7 @@
         <definition>virtual bool wxTCPClient::ValidHost</definition>
         <argsstring>(const wxString &amp;host)</argsstring>
         <name>ValidHost</name>
+        <qualifiedname>wxTCPClient::ValidHost</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>host</declname>
@@ -91,7 +95,8 @@
 <para>To create a client which can communicate with a suitable server, you need to derive a class from <ref refid="classwx_t_c_p_connection" kindref="compound">wxTCPConnection</ref> and another from <ref refid="classwx_t_c_p_client" kindref="compound">wxTCPClient</ref>. The custom <ref refid="classwx_t_c_p_connection" kindref="compound">wxTCPConnection</ref> class will intercept communications in a &apos;conversation&apos; with a server, and the custom <ref refid="classwx_t_c_p_server" kindref="compound">wxTCPServer</ref> is required so that a user-overridden <ref refid="classwx_t_c_p_client_1afe08632168886c1853a5c0358278ed67" kindref="member">wxTCPClient::OnMakeConnection()</ref> member can return a <ref refid="classwx_t_c_p_connection" kindref="compound">wxTCPConnection</ref> of the required class, when a connection is made.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxnet" kindref="member">wxNet</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxnet" kindref="member">wxNet</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__net" kindref="compound">Networking</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_t_c_p_server" kindref="compound">wxTCPServer</ref>, <ref refid="classwx_t_c_p_connection" kindref="compound">wxTCPConnection</ref>, <ref refid="overview_ipc" kindref="compound">Interprocess Communication</ref> </para>
 </simplesect>
 </para>

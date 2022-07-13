@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_key_event" kind="class" language="C++" prot="public">
     <compoundname>wxKeyEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -11,6 +11,7 @@
         <definition>wxKeyEvent::wxKeyEvent</definition>
         <argsstring>(wxEventType keyEventType=wxEVT_NULL)</argsstring>
         <name>wxKeyEvent</name>
+        <qualifiedname>wxKeyEvent::wxKeyEvent</qualifiedname>
         <param>
           <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
           <declname>keyEventType</declname>
@@ -24,13 +25,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1480" column="5"/>
+        <location file="interface/wx/event.h" line="1496" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxKeyEvent::GetKeyCode</definition>
         <argsstring>() const</argsstring>
         <name>GetKeyCode</name>
+        <qualifiedname>wxKeyEvent::GetKeyCode</qualifiedname>
         <briefdescription>
 <para>Returns the key code of the key that generated this event. </para>
         </briefdescription>
@@ -75,13 +77,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1538" column="9"/>
+        <location file="interface/wx/event.h" line="1554" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_key_event_1a1fdf62ae59cc6e39aaea7bfe75f57706" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool wxKeyEvent::IsKeyInCategory</definition>
         <argsstring>(int category) const</argsstring>
         <name>IsKeyInCategory</name>
+        <qualifiedname>wxKeyEvent::IsKeyInCategory</qualifiedname>
         <param>
           <type>int</type>
           <declname>category</declname>
@@ -105,13 +108,32 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1548" column="10"/>
+        <location file="interface/wx/event.h" line="1564" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_key_event_1a3d71d5e2e0f0045310974a7460b5976e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxKeyEvent::IsAutoRepeat</definition>
+        <argsstring>() const</argsstring>
+        <name>IsAutoRepeat</name>
+        <qualifiedname>wxKeyEvent::IsAutoRepeat</qualifiedname>
+        <briefdescription>
+<para>Returns true if this event is an auto-repeat of the key, false if this is the initial key press. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>3.1.6 Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxosx" kindref="member">wxOSX/Cocoa</ref>, <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref>, <ref refid="page_port_1page_port_wxQt" kindref="member">wxQt</ref> ports.  <onlyfor>wxosx,wxmsw,wxQt</onlyfor>  </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/event.h" line="1573" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_key_event_1ad96e42664e12bc376660890d2e585ccc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
         <definition>wxPoint wxKeyEvent::GetPosition</definition>
         <argsstring>() const</argsstring>
         <name>GetPosition</name>
+        <qualifiedname>wxKeyEvent::GetPosition</qualifiedname>
         <briefdescription>
 <para>Obtains the position (in client coordinates) at which the key was pressed. </para>
         </briefdescription>
@@ -121,13 +143,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1561" column="13"/>
+        <location file="interface/wx/event.h" line="1586" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_key_event_1a5b307d2ab78138d67b3dc93fe85a3d74" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxKeyEvent::GetPosition</definition>
         <argsstring>(wxCoord *x, wxCoord *y) const</argsstring>
         <name>GetPosition</name>
+        <qualifiedname>wxKeyEvent::GetPosition</qualifiedname>
         <param>
           <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref> *</type>
           <declname>x</declname>
@@ -142,13 +165,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1562" column="10"/>
+        <location file="interface/wx/event.h" line="1587" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_key_event_1a45762aa4caa39a298a3552f592391936" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1afdb12e5345c3fae4b537e813df9f02a3" kindref="member">wxUint32</ref></type>
         <definition>wxUint32 wxKeyEvent::GetRawKeyCode</definition>
         <argsstring>() const</argsstring>
         <name>GetRawKeyCode</name>
+        <qualifiedname>wxKeyEvent::GetRawKeyCode</qualifiedname>
         <briefdescription>
 <para>Returns the raw key code for this event. </para>
         </briefdescription>
@@ -163,13 +187,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1583" column="14"/>
+        <location file="interface/wx/event.h" line="1608" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_key_event_1ada8b7b7e11a342497bab90b086810d61" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1afdb12e5345c3fae4b537e813df9f02a3" kindref="member">wxUint32</ref></type>
         <definition>wxUint32 wxKeyEvent::GetRawKeyFlags</definition>
         <argsstring>() const</argsstring>
         <name>GetRawKeyFlags</name>
+        <qualifiedname>wxKeyEvent::GetRawKeyFlags</qualifiedname>
         <briefdescription>
 <para>Returns the low level key flags for this event. </para>
         </briefdescription>
@@ -184,13 +209,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1602" column="14"/>
+        <location file="interface/wx/event.h" line="1627" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref></type>
         <definition>wxChar wxKeyEvent::GetUnicodeKey</definition>
         <argsstring>() const</argsstring>
         <name>GetUnicodeKey</name>
+        <qualifiedname>wxKeyEvent::GetUnicodeKey</qualifiedname>
         <briefdescription>
 <para>Returns the Unicode character corresponding to this key event. </para>
         </briefdescription>
@@ -200,13 +226,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1614" column="12"/>
+        <location file="interface/wx/event.h" line="1639" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_key_event_1a0bf492d5a1bcf0b071e72d4c9099afc9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
         <definition>wxCoord wxKeyEvent::GetX</definition>
         <argsstring>() const</argsstring>
         <name>GetX</name>
+        <qualifiedname>wxKeyEvent::GetX</qualifiedname>
         <briefdescription>
 <para>Returns the X position (in client coordinates) of the event. </para>
         </briefdescription>
@@ -217,13 +244,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1621" column="13"/>
+        <location file="interface/wx/event.h" line="1646" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_key_event_1a79e7bde4b39389e1198a1e9a3fb77159" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="defs_8h_1a11f6efc0e8d8d680f3ec8e82aa4f1770" kindref="member">wxCoord</ref></type>
         <definition>wxCoord wxKeyEvent::GetY</definition>
         <argsstring>() const</argsstring>
         <name>GetY</name>
+        <qualifiedname>wxKeyEvent::GetY</qualifiedname>
         <briefdescription>
 <para>Returns the Y position (in client coordinates) of the event. </para>
         </briefdescription>
@@ -234,13 +262,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1628" column="13"/>
+        <location file="interface/wx/event.h" line="1653" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_key_event_1a4a7060ef0054d681cf8685e0467a663e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxKeyEvent::DoAllowNextEvent</definition>
         <argsstring>()</argsstring>
         <name>DoAllowNextEvent</name>
+        <qualifiedname>wxKeyEvent::DoAllowNextEvent</qualifiedname>
         <briefdescription>
 <para>Allow normal key events generation. </para>
         </briefdescription>
@@ -253,13 +282,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1646" column="10"/>
+        <location file="interface/wx/event.h" line="1671" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_key_event_1ae4406a48bc998d66cf636fb7bc856c52" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool wxKeyEvent::IsNextEventAllowed</definition>
         <argsstring>() const</argsstring>
         <name>IsNextEventAllowed</name>
+        <qualifiedname>wxKeyEvent::IsNextEventAllowed</qualifiedname>
         <briefdescription>
 <para>Returns true if <ref refid="classwx_key_event_1a4a7060ef0054d681cf8685e0467a663e" kindref="member">DoAllowNextEvent()</ref> had been called, false by default. </para>
         </briefdescription>
@@ -271,15 +301,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="1656" column="10"/>
+        <location file="interface/wx/event.h" line="1681" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>This event class contains information about key press and release events. </para>
     </briefdescription>
     <detaileddescription>
-<para>The main information carried by this event is the key being pressed or released. It can be accessed using either <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> function or <ref refid="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" kindref="member">GetUnicodeKey()</ref>. For the printable characters, the latter should be used as it works for any keys, including non-Latin-1 characters that can be entered when using national keyboard layouts. <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> should be used to handle special characters (such as cursor arrows keys or <computeroutput>HOME</computeroutput> or <computeroutput>INS</computeroutput> and so on) which correspond to <ref refid="defs_8h_1a41c4609211685cff198618963ec8f77d" kindref="member">wxKeyCode</ref> enum elements above the <computeroutput>WXK_START</computeroutput> constant. While <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> also returns the character code for Latin-1 keys for compatibility, it doesn&apos;t work for Unicode characters in general and will return <computeroutput>WXK_NONE</computeroutput> for any non-Latin-1 ones. For this reason, it&apos;s recommended to always use <ref refid="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" kindref="member">GetUnicodeKey()</ref> and only fall back to <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> if <ref refid="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" kindref="member">GetUnicodeKey()</ref> returned <computeroutput>WXK_NONE</computeroutput> meaning that the event corresponds to a non-printable special keys.</para>
-<para>While both of these functions can be used with the events of <computeroutput>wxEVT_KEY_DOWN</computeroutput>, <computeroutput>wxEVT_KEY_UP</computeroutput> and <computeroutput>wxEVT_CHAR</computeroutput> types, the values returned by them are different for the first two events and the last one. For the latter, the key returned corresponds to the character that would appear in e.g. a text zone if the user pressed the key in it. As such, its value depends on the current state of the Shift key and, for the letters, on the state of Caps Lock modifier. For example, if <computeroutput>A</computeroutput> key is pressed without Shift being held down, <ref refid="classwx_key_event" kindref="compound">wxKeyEvent</ref> of type <computeroutput>wxEVT_CHAR</computeroutput> generated for this key press will return (from either <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> or <ref refid="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" kindref="member">GetUnicodeKey()</ref> as their meanings coincide for ASCII characters) key code of 97 corresponding the ASCII value of <computeroutput>a</computeroutput>. And if the same key is pressed but with Shift being held (or Caps Lock being active), then the key could would be 65, i.e. ASCII value of capital <computeroutput>A</computeroutput>.</para>
+<para>The main information carried by this event is the key being pressed or released. It can be accessed using one of <ref refid="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" kindref="member">GetUnicodeKey()</ref>, <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> or <ref refid="classwx_key_event_1a45762aa4caa39a298a3552f592391936" kindref="member">GetRawKeyCode()</ref> functions. For the printable characters, <ref refid="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" kindref="member">GetUnicodeKey()</ref> should be used as it works for any keys, including non-Latin-1 characters that can be entered when using national keyboard layouts. <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> should be used to handle special characters (such as cursor arrows keys or <computeroutput>HOME</computeroutput> or <computeroutput>INS</computeroutput> and so on) which correspond to <ref refid="defs_8h_1a41c4609211685cff198618963ec8f77d" kindref="member">wxKeyCode</ref> enum elements above the <computeroutput>WXK_START</computeroutput> constant. While <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> also returns the character code for Latin-1 keys for compatibility, it doesn&apos;t work for Unicode characters in general and will return <computeroutput>WXK_NONE</computeroutput> for any non-Latin-1 ones. If both <ref refid="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" kindref="member">GetUnicodeKey()</ref> and <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> return <computeroutput>WXK_NONE</computeroutput> then the key has no <computeroutput>WXK_xxx</computeroutput> mapping and <ref refid="classwx_key_event_1a45762aa4caa39a298a3552f592391936" kindref="member">GetRawKeyCode()</ref> can be used to distinguish between keys, but raw key codes are platform specific. For these reasons, it is recommended to always use <ref refid="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" kindref="member">GetUnicodeKey()</ref> and only fall back to <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> if <ref refid="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" kindref="member">GetUnicodeKey()</ref> returned <computeroutput>WXK_NONE</computeroutput>, meaning that the event corresponds to a non-printable special keys, then optionally check <ref refid="classwx_key_event_1a45762aa4caa39a298a3552f592391936" kindref="member">GetRawKeyCode()</ref> if <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> also returned <computeroutput>WXK_NONE</computeroutput> or simply ignore that key.</para>
+<para>While these three functions can be used with the events of <computeroutput>wxEVT_KEY_DOWN</computeroutput>, <computeroutput>wxEVT_KEY_UP</computeroutput> and <computeroutput>wxEVT_CHAR</computeroutput> types, the values returned by them are different for the first two events and the last one. For the latter, the key returned corresponds to the character that would appear in e.g. a text zone if the user pressed the key in it. As such, its value depends on the current state of the Shift key and, for the letters, on the state of Caps Lock modifier. For example, if <computeroutput>A</computeroutput> key is pressed without Shift being held down, <ref refid="classwx_key_event" kindref="compound">wxKeyEvent</ref> of type <computeroutput>wxEVT_CHAR</computeroutput> generated for this key press will return (from either <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> or <ref refid="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" kindref="member">GetUnicodeKey()</ref> as their meanings coincide for ASCII characters) key code of 97 corresponding the ASCII value of <computeroutput>a</computeroutput>. And if the same key is pressed but with Shift being held (or Caps Lock being active), then the key could would be 65, i.e. ASCII value of capital <computeroutput>A</computeroutput>.</para>
 <para>However for the key down and up events the returned key code will instead be <computeroutput>A</computeroutput> independently of the state of the modifier keys i.e. it depends only on physical key being pressed and is not translated to its logical representation using the current keyboard state. Such untranslated key codes are defined as follows:<itemizedlist>
 <listitem><para>For the letters they correspond to the <emphasis>upper</emphasis> case value of the letter.</para>
 </listitem><listitem><para>For the other alphanumeric keys (e.g. <computeroutput>7</computeroutput> or <computeroutput>+</computeroutput>), the untranslated key code corresponds to the character produced by the key when it is pressed without Shift. E.g. in standard US keyboard layout the untranslated key code for the key <computeroutput>=/+</computeroutput> in the upper right corner of the keyboard is 61 which is the ASCII value of <computeroutput>=</computeroutput>.</para>
@@ -287,6 +317,7 @@
 </listitem></itemizedlist>
 </para>
 <para>Notice that the first rule applies to all Unicode letters, not just the usual Latin-1 ones. However for non-Latin-1 letters only <ref refid="classwx_key_event_1ae69f43abcdb6862c550c4f9b94f87ec5" kindref="member">GetUnicodeKey()</ref> can be used to retrieve the key code as <ref refid="classwx_key_event_1a460e06e32b36973a63a02958ce4528b9" kindref="member">GetKeyCode()</ref> just returns <computeroutput>WXK_NONE</computeroutput> in this case.</para>
+<para>Also, note that <computeroutput>wxEVT_CHAR</computeroutput> events are not generated for keys which do not have a wxWidgets mapping, so <ref refid="classwx_key_event_1a45762aa4caa39a298a3552f592391936" kindref="member">GetRawKeyCode()</ref> should never be required for this event.</para>
 <para>To summarize: you should handle <computeroutput>wxEVT_CHAR</computeroutput> if you need the translated key and <computeroutput>wxEVT_KEY_DOWN</computeroutput> if you only need the value of the key itself, independent of the current keyboard state.</para>
 <para><simplesect kind="note"><para>Not all key down events may be generated by the user. As an example, <computeroutput>wxEVT_KEY_DOWN</computeroutput> with <computeroutput>=</computeroutput> key code can be generated using the standard US keyboard layout but not using the German one because the <computeroutput>=</computeroutput> key corresponds to Shift-0 key combination in this layout and the key code for it is <computeroutput>0</computeroutput>, not <computeroutput>=</computeroutput>. Because of this you should avoid requiring your users to type key events that might be impossible to enter on their keyboard.</para>
 </simplesect>
@@ -300,7 +331,6 @@ Another difference between key and char events is that another kind of translati
 </simplesect>
 <simplesect kind="note"><para>For Windows programmers: The key and char events in wxWidgets are similar to but slightly different from Windows <computeroutput>WM_KEYDOWN</computeroutput> and <computeroutput>WM_CHAR</computeroutput> events. In particular, Alt-x combination will generate a char event in wxWidgets (unless it is used as an accelerator) and almost all keys, including ones without ASCII equivalents, generate char events too.</para>
 </simplesect>
-<linebreak/>
 <heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_key_event" kindref="compound">wxKeyEvent</ref>&amp;<nonbreakablespace/>event)</para>
@@ -311,14 +341,15 @@ Another difference between key and char events is that another kind of translati
 </listitem>
 <listitem><para>EVT_CHAR(func): Process a <computeroutput>wxEVT_CHAR</computeroutput> event. </para>
 </listitem>
-<listitem><para>EVT_CHAR_HOOK(func): Process a <computeroutput>wxEVT_CHAR_HOOK</computeroutput> event. Unlike all the other key events, this event is propagated upwards the window hierarchy which allows intercepting it in the parent window of the focused window to which it is sent initially (if there is no focused window, this event is sent to the <ref refid="classwx_app" kindref="compound">wxApp</ref> global object). It is also generated before any other key events and so gives the parent window an opportunity to modify the keyboard handling of its children, e.g. it is used internally by wxWidgets in some ports to intercept pressing Esc key in any child of a dialog to close the dialog itself when it&apos;s pressed. By default, if this event is handled, i.e. the handler doesn&apos;t call <ref refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" kindref="member">wxEvent::Skip()</ref>, neither <computeroutput>wxEVT_KEY_DOWN</computeroutput> nor <computeroutput>wxEVT_CHAR</computeroutput> events will be generated (although <computeroutput>wxEVT_KEY_UP</computeroutput> still will be), i.e. it replaces the normal key events. However by calling the special <ref refid="classwx_key_event_1a4a7060ef0054d681cf8685e0467a663e" kindref="member">DoAllowNextEvent()</ref> method you can handle <computeroutput>wxEVT_CHAR_HOOK</computeroutput> and still allow normal events generation. This is something that is rarely useful but can be required if you need to prevent a parent <computeroutput>wxEVT_CHAR_HOOK</computeroutput> handler from running without suppressing the normal key events. Finally notice that this event is not generated when the mouse is captured as it is considered that the window which has the capture should receive all the keyboard events too without allowing its parent <ref refid="classwx_top_level_window" kindref="compound">wxTopLevelWindow</ref> to interfere with their processing. <linebreak/>
- <simplesect kind="see"><para><ref refid="classwx_keyboard_state" kindref="compound">wxKeyboardState</ref></para>
+<listitem><para>EVT_CHAR_HOOK(func): Process a <computeroutput>wxEVT_CHAR_HOOK</computeroutput> event. Unlike all the other key events, this event is propagated upwards the window hierarchy which allows intercepting it in the parent window of the focused window to which it is sent initially (if there is no focused window, this event is sent to the <ref refid="classwx_app" kindref="compound">wxApp</ref> global object). It is also generated before any other key events and so gives the parent window an opportunity to modify the keyboard handling of its children, e.g. it is used internally by wxWidgets in some ports to intercept pressing Esc key in any child of a dialog to close the dialog itself when it&apos;s pressed. By default, if this event is handled, i.e. the handler doesn&apos;t call <ref refid="classwx_event_1a98eb20b76106f9a933c2eb3ee119f66c" kindref="member">wxEvent::Skip()</ref>, neither <computeroutput>wxEVT_KEY_DOWN</computeroutput> nor <computeroutput>wxEVT_CHAR</computeroutput> events will be generated (although <computeroutput>wxEVT_KEY_UP</computeroutput> still will be), i.e. it replaces the normal key events. However by calling the special <ref refid="classwx_key_event_1a4a7060ef0054d681cf8685e0467a663e" kindref="member">DoAllowNextEvent()</ref> method you can handle <computeroutput>wxEVT_CHAR_HOOK</computeroutput> and still allow normal events generation. This is something that is rarely useful but can be required if you need to prevent a parent <computeroutput>wxEVT_CHAR_HOOK</computeroutput> handler from running without suppressing the normal key events. Finally notice that this event is not generated when the mouse is captured as it is considered that the window which has the capture should receive all the keyboard events too without allowing its parent <ref refid="classwx_top_level_window" kindref="compound">wxTopLevelWindow</ref> to interfere with their processing. </para>
+</listitem>
+</itemizedlist>
+<simplesect kind="see"><para><ref refid="classwx_keyboard_state" kindref="compound">wxKeyboardState</ref></para>
 </simplesect>
 <heading level="2"></heading>
 </para>
-</listitem>
-</itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -375,7 +406,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="1472" column="1" bodyfile="interface/wx/event.h" bodystart="1474" bodyend="1657"/>
+    <location file="interface/wx/event.h" line="1488" column="1" bodyfile="interface/wx/event.h" bodystart="1490" bodyend="1682"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxKeyEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_keyboard_state_1a21f4762d6874787de9408bffe49474bb" prot="public" virt="non-virtual"><scope>wxKeyEvent</scope><name>AltDown</name></member>
@@ -405,6 +436,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_key_event_1a79e7bde4b39389e1198a1e9a3fb77159" prot="public" virt="non-virtual"><scope>wxKeyEvent</scope><name>GetY</name></member>
       <member refid="classwx_keyboard_state_1acfaeb807c52ca591c78c4464abd32baa" prot="public" virt="non-virtual"><scope>wxKeyEvent</scope><name>HasAnyModifiers</name></member>
       <member refid="classwx_keyboard_state_1ae4ae63d5a16031599f78bf6254337fba" prot="public" virt="non-virtual"><scope>wxKeyEvent</scope><name>HasModifiers</name></member>
+      <member refid="classwx_key_event_1a3d71d5e2e0f0045310974a7460b5976e" prot="public" virt="non-virtual"><scope>wxKeyEvent</scope><name>IsAutoRepeat</name></member>
       <member refid="classwx_event_1a31f6a4377d6d36964b8eae4e56ec43e0" prot="public" virt="non-virtual"><scope>wxKeyEvent</scope><name>IsCommandEvent</name></member>
       <member refid="classwx_key_event_1a1fdf62ae59cc6e39aaea7bfe75f57706" prot="public" virt="non-virtual"><scope>wxKeyEvent</scope><name>IsKeyInCategory</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxKeyEvent</scope><name>IsKindOf</name></member>

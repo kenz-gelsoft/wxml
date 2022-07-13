@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_app_traits" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxAppTraits</compoundname>
     <includes local="no">wx/apptrait.h</includes>
@@ -9,6 +9,7 @@
         <definition>virtual wxConfigBase * wxAppTraits::CreateConfig</definition>
         <argsstring>()</argsstring>
         <name>CreateConfig</name>
+        <qualifiedname>wxAppTraits::CreateConfig</qualifiedname>
         <briefdescription>
 <para>Called by wxWidgets to create the default configuration object for the application. </para>
         </briefdescription>
@@ -25,6 +26,7 @@
         <definition>virtual wxEventLoopBase * wxAppTraits::CreateEventLoop</definition>
         <argsstring>()=0</argsstring>
         <name>CreateEventLoop</name>
+        <qualifiedname>wxAppTraits::CreateEventLoop</qualifiedname>
         <briefdescription>
 <para>Used by wxWidgets to create the main event loop used by <ref refid="classwx_app_console_1ac05a28c7cdb529f2cdfe77b3431c385c" kindref="member">wxApp::OnRun()</ref>. </para>
         </briefdescription>
@@ -40,6 +42,7 @@
         <definition>virtual wxFontMapper * wxAppTraits::CreateFontMapper</definition>
         <argsstring>()=0</argsstring>
         <name>CreateFontMapper</name>
+        <qualifiedname>wxAppTraits::CreateFontMapper</qualifiedname>
         <briefdescription>
 <para>Creates the global font mapper object used for encodings/charset mapping. </para>
         </briefdescription>
@@ -54,6 +57,7 @@
         <definition>virtual wxLog * wxAppTraits::CreateLogTarget</definition>
         <argsstring>()=0</argsstring>
         <name>CreateLogTarget</name>
+        <qualifiedname>wxAppTraits::CreateLogTarget</qualifiedname>
         <briefdescription>
 <para>Creates a <ref refid="classwx_log" kindref="compound">wxLog</ref> class for the application to use for logging errors. </para>
         </briefdescription>
@@ -72,6 +76,7 @@
         <definition>virtual wxMessageOutput * wxAppTraits::CreateMessageOutput</definition>
         <argsstring>()=0</argsstring>
         <name>CreateMessageOutput</name>
+        <qualifiedname>wxAppTraits::CreateMessageOutput</qualifiedname>
         <briefdescription>
 <para>Creates the global object used for printing out messages. </para>
         </briefdescription>
@@ -86,6 +91,7 @@
         <definition>virtual wxRendererNative * wxAppTraits::CreateRenderer</definition>
         <argsstring>()=0</argsstring>
         <name>CreateRenderer</name>
+        <qualifiedname>wxAppTraits::CreateRenderer</qualifiedname>
         <briefdescription>
 <para>Returns the renderer to use for drawing the generic controls (return value may be NULL in which case the default renderer for the current platform is used); this is used in GUI mode only and always returns NULL in console. </para>
         </briefdescription>
@@ -103,6 +109,7 @@
         <definition>virtual wxString wxAppTraits::GetDesktopEnvironment</definition>
         <argsstring>() const =0</argsstring>
         <name>GetDesktopEnvironment</name>
+        <qualifiedname>wxAppTraits::GetDesktopEnvironment</qualifiedname>
         <briefdescription>
 <para>This method returns the name of the desktop environment currently running in a Unix desktop. </para>
         </briefdescription>
@@ -118,6 +125,7 @@
         <definition>virtual wxStandardPaths &amp; wxAppTraits::GetStandardPaths</definition>
         <argsstring>()</argsstring>
         <name>GetStandardPaths</name>
+        <qualifiedname>wxAppTraits::GetStandardPaths</qualifiedname>
         <briefdescription>
 <para>Returns the <ref refid="classwx_standard_paths" kindref="compound">wxStandardPaths</ref> object for the application. </para>
         </briefdescription>
@@ -136,6 +144,7 @@
         <definition>virtual wxPortId wxAppTraits::GetToolkitVersion</definition>
         <argsstring>(int *major=NULL, int *minor=NULL, int *micro=NULL) const =0</argsstring>
         <name>GetToolkitVersion</name>
+        <qualifiedname>wxAppTraits::GetToolkitVersion</qualifiedname>
         <param>
           <type>int *</type>
           <declname>major</declname>
@@ -168,6 +177,7 @@
         <definition>virtual bool wxAppTraits::HasStderr</definition>
         <argsstring>()=0</argsstring>
         <name>HasStderr</name>
+        <qualifiedname>wxAppTraits::HasStderr</qualifiedname>
         <briefdescription>
 <para>Returns true if <computeroutput>fprintf(stderr)</computeroutput> goes somewhere, false otherwise. </para>
         </briefdescription>
@@ -182,6 +192,7 @@
         <definition>virtual bool wxAppTraits::IsUsingUniversalWidgets</definition>
         <argsstring>() const =0</argsstring>
         <name>IsUsingUniversalWidgets</name>
+        <qualifiedname>wxAppTraits::IsUsingUniversalWidgets</qualifiedname>
         <briefdescription>
 <para>Returns true if the library was built as wxUniversal. </para>
         </briefdescription>
@@ -197,6 +208,7 @@
         <definition>virtual bool wxAppTraits::ShowAssertDialog</definition>
         <argsstring>(const wxString &amp;msg)=0</argsstring>
         <name>ShowAssertDialog</name>
+        <qualifiedname>wxAppTraits::ShowAssertDialog</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>msg</declname>
@@ -216,6 +228,7 @@
         <definition>virtual bool wxAppTraits::SafeMessageBox</definition>
         <argsstring>(const wxString &amp;text, const wxString &amp;title)=0</argsstring>
         <name>SafeMessageBox</name>
+        <qualifiedname>wxAppTraits::SafeMessageBox</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>text</declname>
@@ -262,6 +275,7 @@
         <definition>virtual wxString wxAppTraits::GetAssertStackTrace</definition>
         <argsstring>()</argsstring>
         <name>GetAssertStackTrace</name>
+        <qualifiedname>wxAppTraits::GetAssertStackTrace</qualifiedname>
         <briefdescription>
 <para>Helper function mostly useful for derived classes <ref refid="classwx_app_traits_1aa78351c01a20e5b1f4bd50283b4ddfbb" kindref="member">ShowAssertDialog()</ref> implementation. </para>
         </briefdescription>
@@ -285,7 +299,8 @@
 <para>Note that <ref refid="classwx_app_traits" kindref="compound">wxAppTraits</ref> is an abstract class since it contains many pure virtual functions. In fact, by default, wxWidgets creates a <computeroutput>wxConsoleAppTraits</computeroutput> object for console applications (i.e. those applications linked against wxBase library only - see the <ref refid="page_libs" kindref="compound">Library List</ref> page) and a <computeroutput>wxGUIAppTraits</computeroutput> object for GUI applications. Both these classes are derived by <ref refid="classwx_app_traits" kindref="compound">wxAppTraits</ref> and represent concrete implementation of the <ref refid="classwx_app_traits" kindref="compound">wxAppTraits</ref> interface.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__cfg" kindref="compound">Application and System configuration</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_app" kindref="compound">wxApp Overview</ref>, <ref refid="classwx_app" kindref="compound">wxApp</ref> </para>
 </simplesect>
 </para>

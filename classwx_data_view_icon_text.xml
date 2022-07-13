@@ -1,24 +1,25 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_data_view_icon_text" kind="class" language="C++" prot="public">
     <compoundname>wxDataViewIconText</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
     <includes local="no">wx/dataview.h</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classwx_data_view_icon_text_1a9554b1e5627ed2aa932742b017e20c8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_data_view_icon_text_1a1de5295b0774784c21a4d5d694df4725" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxDataViewIconText::wxDataViewIconText</definition>
-        <argsstring>(const wxString &amp;text=wxEmptyString, const wxIcon &amp;icon=wxNullIcon)</argsstring>
+        <argsstring>(const wxString &amp;text=wxEmptyString, const wxBitmapBundle &amp;bitmap=wxBitmapBundle())</argsstring>
         <name>wxDataViewIconText</name>
+        <qualifiedname>wxDataViewIconText::wxDataViewIconText</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>text</declname>
           <defval><ref refid="interface_2wx_2string_8h_1a9a321d587166a30017b608dd2d234033" kindref="member">wxEmptyString</ref></defval>
         </param>
         <param>
-          <type>const <ref refid="classwx_icon" kindref="compound">wxIcon</ref> &amp;</type>
-          <declname>icon</declname>
-          <defval><ref refid="icon_8h_1a953854798a8dfd400777318358dad5b6" kindref="member">wxNullIcon</ref></defval>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
+          <declname>bitmap</declname>
+          <defval><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref>()</defval>
         </param>
         <briefdescription>
 <para>Constructor. </para>
@@ -27,13 +28,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="3685" column="5"/>
+        <location file="interface/wx/dataview.h" line="3733" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_icon_text_1aa32e3db38e83550e99367f88965be72c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxDataViewIconText::wxDataViewIconText</definition>
         <argsstring>(const wxDataViewIconText &amp;other)</argsstring>
         <name>wxDataViewIconText</name>
+        <qualifiedname>wxDataViewIconText::wxDataViewIconText</qualifiedname>
         <param>
           <type>const <ref refid="classwx_data_view_icon_text" kindref="compound">wxDataViewIconText</ref> &amp;</type>
           <declname>other</declname>
@@ -44,27 +46,48 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="3687" column="5"/>
+        <location file="interface/wx/dataview.h" line="3735" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_data_view_icon_text_1a31b8b44a078a7be8ca8a1170c7d5ba5b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>const <ref refid="classwx_icon" kindref="compound">wxIcon</ref> &amp;</type>
-        <definition>const wxIcon &amp; wxDataViewIconText::GetIcon</definition>
+      <memberdef kind="function" id="classwx_data_view_icon_text_1ad5e60844191755e2dbdd02a91cf857a4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
+        <definition>const wxBitmapBundle &amp; wxDataViewIconText::GetBitmapBundle</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBitmapBundle</name>
+        <qualifiedname>wxDataViewIconText::GetBitmapBundle</qualifiedname>
+        <briefdescription>
+<para>Gets the associated image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/dataview.h" line="3743" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_data_view_icon_text_1a433e73cfdc8c9cfd1a56aa1c16c9ab6d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_icon" kindref="compound">wxIcon</ref></type>
+        <definition>wxIcon wxDataViewIconText::GetIcon</definition>
         <argsstring>() const</argsstring>
         <name>GetIcon</name>
+        <qualifiedname>wxDataViewIconText::GetIcon</qualifiedname>
         <briefdescription>
 <para>Gets the icon. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function can only return the icon in the size appropriate for the standard 100% DPI scaling, use <ref refid="classwx_data_view_icon_text_1ad5e60844191755e2dbdd02a91cf857a4" kindref="member">GetBitmapBundle()</ref> to retrieve image representation suitable for another DPI scaling value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="3693" column="18"/>
+        <location file="interface/wx/dataview.h" line="3752" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_icon_text_1a809d7a78491a83b2b25d99f96d81b570" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxDataViewIconText::GetText</definition>
         <argsstring>() const</argsstring>
         <name>GetText</name>
+        <qualifiedname>wxDataViewIconText::GetText</qualifiedname>
         <briefdescription>
 <para>Gets the text. </para>
         </briefdescription>
@@ -72,13 +95,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="3698" column="14"/>
+        <location file="interface/wx/dataview.h" line="3757" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_data_view_icon_text_1af640b312840b9b957d868778236fd8ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxDataViewIconText::SetBitmapBundle</definition>
+        <argsstring>(const wxBitmapBundle &amp;bitmap)</argsstring>
+        <name>SetBitmapBundle</name>
+        <qualifiedname>wxDataViewIconText::SetBitmapBundle</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
+          <declname>bitmap</declname>
+        </param>
+        <briefdescription>
+<para>Sets the associated image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function allows to provide several representations of the same image, so that the most appropriate one for the current DPI scaling could be used, and so should be preferred to <ref refid="classwx_data_view_icon_text_1a1d24b561ea0d4b524f2cae323d0063e0" kindref="member">SetIcon()</ref>.</para>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/dataview.h" line="3768" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_icon_text_1a1d24b561ea0d4b524f2cae323d0063e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxDataViewIconText::SetIcon</definition>
         <argsstring>(const wxIcon &amp;icon)</argsstring>
         <name>SetIcon</name>
+        <qualifiedname>wxDataViewIconText::SetIcon</qualifiedname>
         <param>
           <type>const <ref refid="classwx_icon" kindref="compound">wxIcon</ref> &amp;</type>
           <declname>icon</declname>
@@ -87,16 +134,18 @@
 <para>Set the icon. </para>
         </briefdescription>
         <detaileddescription>
+<para>Use <ref refid="classwx_data_view_icon_text_1af640b312840b9b957d868778236fd8ab" kindref="member">SetBitmapBundle()</ref> instead to allow specifying different image representations for different DPI scaling values. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="3703" column="10"/>
+        <location file="interface/wx/dataview.h" line="3776" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_data_view_icon_text_1a506b582c8fd74deff82806efa898813d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxDataViewIconText::SetText</definition>
         <argsstring>(const wxString &amp;text)</argsstring>
         <name>SetText</name>
+        <qualifiedname>wxDataViewIconText::SetText</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>text</declname>
@@ -108,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="3708" column="10"/>
+        <location file="interface/wx/dataview.h" line="3781" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -118,7 +167,8 @@
 <para>This class can be converted to and from a <ref refid="classwx_variant" kindref="compound">wxVariant</ref>.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__dvc" kindref="compound">wxDataViewCtrl Related Classes</ref> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -151,13 +201,14 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/dataview.h" line="3678" column="1" bodyfile="interface/wx/dataview.h" bodystart="3679" bodyend="3709"/>
+    <location file="interface/wx/dataview.h" line="3726" column="1" bodyfile="interface/wx/dataview.h" bodystart="3727" bodyend="3782"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxDataViewIconText</scope><name>AllocExclusive</name></member>
       <member refid="classwx_object_1ac9c60b64c3757a5818b1123b197cd50d" prot="protected" virt="virtual"><scope>wxDataViewIconText</scope><name>CloneRefData</name></member>
       <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxDataViewIconText</scope><name>CreateRefData</name></member>
+      <member refid="classwx_data_view_icon_text_1ad5e60844191755e2dbdd02a91cf857a4" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>GetBitmapBundle</name></member>
       <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxDataViewIconText</scope><name>GetClassInfo</name></member>
-      <member refid="classwx_data_view_icon_text_1a31b8b44a078a7be8ca8a1170c7d5ba5b" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>GetIcon</name></member>
+      <member refid="classwx_data_view_icon_text_1a433e73cfdc8c9cfd1a56aa1c16c9ab6d" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>GetIcon</name></member>
       <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>GetRefData</name></member>
       <member refid="classwx_data_view_icon_text_1a809d7a78491a83b2b25d99f96d81b570" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>GetText</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>IsKindOf</name></member>
@@ -166,12 +217,13 @@
       <member refid="classwx_object_1a07b8f34f5afc5743195c5fed052f55d3" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>operator delete</name></member>
       <member refid="classwx_object_1a48f4a0e3f8d737ca8d6cd04c1bbf08f0" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>operator new</name></member>
       <member refid="classwx_object_1a2f6f1aa51fe9fc2b1415ca4211a90e9e" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>Ref</name></member>
+      <member refid="classwx_data_view_icon_text_1af640b312840b9b957d868778236fd8ab" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>SetBitmapBundle</name></member>
       <member refid="classwx_data_view_icon_text_1a1d24b561ea0d4b524f2cae323d0063e0" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>SetIcon</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>SetRefData</name></member>
       <member refid="classwx_data_view_icon_text_1a506b582c8fd74deff82806efa898813d" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>SetText</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>UnRef</name></member>
       <member refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>UnShare</name></member>
-      <member refid="classwx_data_view_icon_text_1a9554b1e5627ed2aa932742b017e20c8e" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>wxDataViewIconText</name></member>
+      <member refid="classwx_data_view_icon_text_1a1de5295b0774784c21a4d5d694df4725" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>wxDataViewIconText</name></member>
       <member refid="classwx_data_view_icon_text_1aa32e3db38e83550e99367f88965be72c" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>wxDataViewIconText</name></member>
       <member refid="classwx_object_1acaa378363a28af421ab56ad7b46eadf0" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>wxObject</name></member>
       <member refid="classwx_object_1a4721b4dc9b7aff0f30904ba2ea3954cf" prot="public" virt="non-virtual"><scope>wxDataViewIconText</scope><name>wxObject</name></member>

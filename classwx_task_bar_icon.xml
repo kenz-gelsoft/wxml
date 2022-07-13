@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_task_bar_icon" kind="class" language="C++" prot="public">
     <compoundname>wxTaskBarIcon</compoundname>
     <basecompoundref refid="classwx_evt_handler" prot="public" virt="non-virtual">wxEvtHandler</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxTaskBarIcon::wxTaskBarIcon</definition>
         <argsstring>(wxTaskBarIconType iconType=wxTBI_DEFAULT_TYPE)</argsstring>
         <name>wxTaskBarIcon</name>
+        <qualifiedname>wxTaskBarIcon::wxTaskBarIcon</qualifiedname>
         <param>
           <type><ref refid="taskbar_8h_1a51fd8660b8ae3cd5773bc21a02883db2" kindref="member">wxTaskBarIconType</ref></type>
           <declname>iconType</declname>
@@ -30,6 +31,7 @@
         <definition>virtual wxTaskBarIcon::~wxTaskBarIcon</definition>
         <argsstring>()</argsstring>
         <name>~wxTaskBarIcon</name>
+        <qualifiedname>wxTaskBarIcon::~wxTaskBarIcon</qualifiedname>
         <briefdescription>
 <para>Destroys the <ref refid="classwx_task_bar_icon" kindref="compound">wxTaskBarIcon</ref> object, removing the icon if not already removed. </para>
         </briefdescription>
@@ -44,6 +46,7 @@
         <definition>void wxTaskBarIcon::Destroy</definition>
         <argsstring>()</argsstring>
         <name>Destroy</name>
+        <qualifiedname>wxTaskBarIcon::Destroy</qualifiedname>
         <briefdescription>
 <para>This method is similar to <ref refid="classwx_window_1a6bf0c5be864544d9ce0560087667b7fc" kindref="member">wxWindow::Destroy</ref> and can be used to schedule the task bar icon object for the delayed destruction: it will be deleted during the next event loop iteration, which allows the task bar icon to process any pending events for it before being destroyed. </para>
         </briefdescription>
@@ -58,8 +61,9 @@
         <definition>bool wxTaskBarIcon::IsIconInstalled</definition>
         <argsstring>() const</argsstring>
         <name>IsIconInstalled</name>
+        <qualifiedname>wxTaskBarIcon::IsIconInstalled</qualifiedname>
         <briefdescription>
-<para>Returns true if <ref refid="classwx_task_bar_icon_1a95251b440ebda58172c4398c68e525e7" kindref="member">SetIcon()</ref> was called with no subsequent <ref refid="classwx_task_bar_icon_1ae2144fbd2527eff10fe4b7ec8e96ecdc" kindref="member">RemoveIcon()</ref>. </para>
+<para>Returns true if <ref refid="classwx_task_bar_icon_1a7a77fb5c59a7be91aa8954f582f0f8a1" kindref="member">SetIcon()</ref> was called with no subsequent <ref refid="classwx_task_bar_icon_1ae2144fbd2527eff10fe4b7ec8e96ecdc" kindref="member">RemoveIcon()</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -72,6 +76,7 @@
         <definition>bool wxTaskBarIcon::IsOk</definition>
         <argsstring>() const</argsstring>
         <name>IsOk</name>
+        <qualifiedname>wxTaskBarIcon::IsOk</qualifiedname>
         <briefdescription>
 <para>Returns true if the object initialized successfully. </para>
         </briefdescription>
@@ -86,6 +91,7 @@
         <definition>virtual bool wxTaskBarIcon::PopupMenu</definition>
         <argsstring>(wxMenu *menu)</argsstring>
         <name>PopupMenu</name>
+        <qualifiedname>wxTaskBarIcon::PopupMenu</qualifiedname>
         <param>
           <type><ref refid="classwx_menu" kindref="compound">wxMenu</ref> *</type>
           <declname>menu</declname>
@@ -108,8 +114,9 @@
         <definition>virtual bool wxTaskBarIcon::RemoveIcon</definition>
         <argsstring>()</argsstring>
         <name>RemoveIcon</name>
+        <qualifiedname>wxTaskBarIcon::RemoveIcon</qualifiedname>
         <briefdescription>
-<para>Removes the icon previously set with <ref refid="classwx_task_bar_icon_1a95251b440ebda58172c4398c68e525e7" kindref="member">SetIcon()</ref>. </para>
+<para>Removes the icon previously set with <ref refid="classwx_task_bar_icon_1a7a77fb5c59a7be91aa8954f582f0f8a1" kindref="member">SetIcon()</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -117,13 +124,14 @@
         </inbodydescription>
         <location file="interface/wx/taskbar.h" line="137" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_task_bar_icon_1a95251b440ebda58172c4398c68e525e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_task_bar_icon_1a7a77fb5c59a7be91aa8954f582f0f8a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
         <definition>virtual bool wxTaskBarIcon::SetIcon</definition>
-        <argsstring>(const wxIcon &amp;icon, const wxString &amp;tooltip=wxEmptyString)</argsstring>
+        <argsstring>(const wxBitmapBundle &amp;icon, const wxString &amp;tooltip=wxEmptyString)</argsstring>
         <name>SetIcon</name>
+        <qualifiedname>wxTaskBarIcon::SetIcon</qualifiedname>
         <param>
-          <type>const <ref refid="classwx_icon" kindref="compound">wxIcon</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>icon</declname>
         </param>
         <param>
@@ -147,6 +155,7 @@
         <definition>static bool wxTaskBarIcon::IsAvailable</definition>
         <argsstring>()</argsstring>
         <name>IsAvailable</name>
+        <qualifiedname>wxTaskBarIcon::IsAvailable</qualifiedname>
         <briefdescription>
 <para>Returns true if system tray is available in the desktop environment the app runs under. </para>
         </briefdescription>
@@ -172,6 +181,7 @@
         <definition>virtual wxMenu * wxTaskBarIcon::CreatePopupMenu</definition>
         <argsstring>()</argsstring>
         <name>CreatePopupMenu</name>
+        <qualifiedname>wxTaskBarIcon::CreatePopupMenu</qualifiedname>
         <briefdescription>
 <para>Called by the library when the user requests popup menu if <ref refid="classwx_task_bar_icon_1a0022afe20843a4571d9ed31ee1565f3a" kindref="member">GetPopupMenu()</ref> is not overridden. </para>
         </briefdescription>
@@ -188,6 +198,7 @@
         <definition>virtual wxMenu * wxTaskBarIcon::GetPopupMenu</definition>
         <argsstring>()</argsstring>
         <name>GetPopupMenu</name>
+        <qualifiedname>wxTaskBarIcon::GetPopupMenu</qualifiedname>
         <briefdescription>
 <para>Called by the library when the user requests popup menu. </para>
         </briefdescription>
@@ -212,8 +223,7 @@
 <title>X Window System Note</title>
 <para>Under X Window System, the window manager must support either the &quot;System Tray Protocol&quot; (see <ulink url="http://freedesktop.org/wiki/Specifications/systemtray-spec">http://freedesktop.org/wiki/Specifications/systemtray-spec</ulink>) by freedesktop.org (WMs used by modern desktop environments such as GNOME &gt;= 2, KDE &gt;= 3 and XFCE &gt;= 4 all do) or the older methods used in GNOME 1.2 and KDE 1 and 2.</para>
 <para>If it doesn&apos;t, the icon will appear as a toplevel window on user&apos;s desktop. Because not all window managers have system tray, there&apos;s no guarantee that <ref refid="classwx_task_bar_icon" kindref="compound">wxTaskBarIcon</ref> will work correctly under X Window System and so the applications should use it only as an optional component of their user interface. The user should be required to explicitly enable the taskbar icon on Unix, it shouldn&apos;t be on by default.</para>
-<para><linebreak/>
-<heading level="2">Events emitted by this class</heading>
+<para><heading level="2">Events emitted by this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_task_bar_icon_event" kindref="compound">wxTaskBarIconEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros for events emitted by this class: Note that not all ports are required to send these events and so it&apos;s better to override <ref refid="classwx_task_bar_icon_1ae6ce4b6c448fe7a2e84a0d0e7cbe41f3" kindref="member">wxTaskBarIcon::CreatePopupMenu()</ref> or <ref refid="classwx_task_bar_icon_1a0022afe20843a4571d9ed31ee1565f3a" kindref="member">wxTaskBarIcon::GetPopupMenu()</ref> if all that the application does is that it shows a popup menu in reaction to mouse click. <itemizedlist>
@@ -231,12 +241,13 @@
 </listitem>
 <listitem><para>EVT_TASKBAR_RIGHT_DCLICK(func): Process a <computeroutput>wxEVT_TASKBAR_RIGHT_DCLICK</computeroutput> event. </para>
 </listitem>
-<listitem><para>EVT_TASKBAR_CLICK(func): This is a synonym for either EVT_TASKBAR_RIGHT_DOWN or UP depending on the platform, use this event macro to catch the event which should result in the menu being displayed on the current platform. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_TASKBAR_CLICK(func): This is a synonym for either EVT_TASKBAR_RIGHT_DOWN or UP depending on the platform, use this event macro to catch the event which should result in the menu being displayed on the current platform. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__misc" kindref="compound">Miscellaneous</ref> </para>
 </sect1>
     </detaileddescription>
     <inheritancegraph>
@@ -343,7 +354,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_evt_handler_1a82c74f2cebfa02cb3c1563d459c872bf" prot="public" virt="non-virtual"><scope>wxTaskBarIcon</scope><name>SetClientData</name></member>
       <member refid="classwx_evt_handler_1af1e33a06087b8b2ddc43c7d15a91b326" prot="public" virt="non-virtual"><scope>wxTaskBarIcon</scope><name>SetClientObject</name></member>
       <member refid="classwx_evt_handler_1a7388ae19c8657e5656471b658c320036" prot="public" virt="non-virtual"><scope>wxTaskBarIcon</scope><name>SetEvtHandlerEnabled</name></member>
-      <member refid="classwx_task_bar_icon_1a95251b440ebda58172c4398c68e525e7" prot="public" virt="virtual"><scope>wxTaskBarIcon</scope><name>SetIcon</name></member>
+      <member refid="classwx_task_bar_icon_1a7a77fb5c59a7be91aa8954f582f0f8a1" prot="public" virt="virtual"><scope>wxTaskBarIcon</scope><name>SetIcon</name></member>
       <member refid="classwx_evt_handler_1a68e2ef2d2b7d68c4c9c18ca92933031b" prot="public" virt="virtual"><scope>wxTaskBarIcon</scope><name>SetNextHandler</name></member>
       <member refid="classwx_evt_handler_1aff0d1836464be82e2ad723ad3a58eccc" prot="public" virt="virtual"><scope>wxTaskBarIcon</scope><name>SetPreviousHandler</name></member>
       <member refid="classwx_object_1afab780710f2adc1bb33310e27590140b" prot="public" virt="non-virtual"><scope>wxTaskBarIcon</scope><name>SetRefData</name></member>

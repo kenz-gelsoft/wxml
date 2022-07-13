@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_web_request_event" kind="class" language="C++" prot="public">
     <compoundname>wxWebRequestEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>const void * wxWebRequestEvent::GetDataBuffer</definition>
         <argsstring>() const</argsstring>
         <name>GetDataBuffer</name>
+        <qualifiedname>wxWebRequestEvent::GetDataBuffer</qualifiedname>
         <briefdescription>
 <para>Only for <computeroutput>wxEVT_WEBREQUEST_DATA</computeroutput> events. </para>
         </briefdescription>
@@ -18,13 +19,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webrequest.h" line="830" column="16"/>
+        <location file="interface/wx/webrequest.h" line="837" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_request_event_1a9bd0bb22eda096e6f23adb87c2f7b5c5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>size_t</type>
         <definition>size_t wxWebRequestEvent::GetDataSize</definition>
         <argsstring>() const</argsstring>
         <name>GetDataSize</name>
+        <qualifiedname>wxWebRequestEvent::GetDataSize</qualifiedname>
         <briefdescription>
 <para>Only for <computeroutput>wxEVT_WEBREQUEST_DATA</computeroutput> events. </para>
         </briefdescription>
@@ -33,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webrequest.h" line="832" column="12"/>
+        <location file="interface/wx/webrequest.h" line="839" column="12"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -42,6 +44,7 @@
         <definition>wxWebRequest::State wxWebRequestEvent::GetState</definition>
         <argsstring>() const</argsstring>
         <name>GetState</name>
+        <qualifiedname>wxWebRequestEvent::GetState</qualifiedname>
         <briefdescription>
 <para>Return the current state of the request. </para>
         </briefdescription>
@@ -51,11 +54,30 @@
         </inbodydescription>
         <location file="interface/wx/webrequest.h" line="801" column="25"/>
       </memberdef>
+      <memberdef kind="function" id="classwx_web_request_event_1a52b08447ddaaf71c6011739b62769d42" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref> &amp;</type>
+        <definition>const wxWebRequest &amp; wxWebRequestEvent::GetRequest</definition>
+        <argsstring>() const</argsstring>
+        <name>GetRequest</name>
+        <qualifiedname>wxWebRequestEvent::GetRequest</qualifiedname>
+        <briefdescription>
+<para>Returns a reference to the <computeroutput><ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref></computeroutput> object which initiated this event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/webrequest.h" line="808" column="24"/>
+      </memberdef>
       <memberdef kind="function" id="classwx_web_request_event_1a5517ecf0db821d0f5d8adb10a4a2bd04" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_web_response" kindref="compound">wxWebResponse</ref> &amp;</type>
         <definition>const wxWebResponse &amp; wxWebRequestEvent::GetResponse</definition>
         <argsstring>() const</argsstring>
         <name>GetResponse</name>
+        <qualifiedname>wxWebRequestEvent::GetResponse</qualifiedname>
         <briefdescription>
 <para>The response with the state set to <computeroutput>State_Complete</computeroutput> or empty response object for other events. </para>
         </briefdescription>
@@ -63,13 +85,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webrequest.h" line="807" column="25"/>
+        <location file="interface/wx/webrequest.h" line="814" column="25"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_request_event_1a5e1ca859b12c825a9c61e0552f6ae920" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
         <definition>const wxString &amp; wxWebRequestEvent::GetErrorDescription</definition>
         <argsstring>() const</argsstring>
         <name>GetErrorDescription</name>
+        <qualifiedname>wxWebRequestEvent::GetErrorDescription</qualifiedname>
         <briefdescription>
 <para>A textual error description for a client side error in case of <computeroutput>State_Failed</computeroutput>. </para>
         </briefdescription>
@@ -77,13 +100,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webrequest.h" line="813" column="20"/>
+        <location file="interface/wx/webrequest.h" line="820" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classwx_web_request_event_1ad375b9e12d7abd1ca3fab0223bbfdb35" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
         <definition>const wxString &amp; wxWebRequestEvent::GetDataFile</definition>
         <argsstring>() const</argsstring>
         <name>GetDataFile</name>
+        <qualifiedname>wxWebRequestEvent::GetDataFile</qualifiedname>
         <briefdescription>
 <para>Returns the full path of a temporary file containing the response data when the state is <computeroutput>State_Completed</computeroutput> and storage is <computeroutput>Storage_File</computeroutput>. </para>
         </briefdescription>
@@ -92,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/webrequest.h" line="823" column="20"/>
+        <location file="interface/wx/webrequest.h" line="830" column="20"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -103,7 +127,8 @@
 </simplesect>
 <heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxnet" kindref="member">wxNet</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxnet" kindref="member">wxNet</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__net" kindref="compound">Networking</ref>, <ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref> </para>
 </simplesect>
 </para>
@@ -151,7 +176,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/webrequest.h" line="795" column="1" bodyfile="interface/wx/webrequest.h" bodystart="796" bodyend="834"/>
+    <location file="interface/wx/webrequest.h" line="795" column="1" bodyfile="interface/wx/webrequest.h" bodystart="796" bodyend="841"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxWebRequestEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxWebRequestEvent</scope><name>Clone</name></member>
@@ -168,6 +193,7 @@
       <member refid="classwx_event_1aa46a14bdca4d0ebcd4f42e5805db1df9" prot="public" virt="non-virtual"><scope>wxWebRequestEvent</scope><name>GetEventUserData</name></member>
       <member refid="classwx_event_1ac5fa5c10d4845d903e58026a42b403c7" prot="public" virt="non-virtual"><scope>wxWebRequestEvent</scope><name>GetId</name></member>
       <member refid="classwx_object_1a0e06d77b52ee4c44a31c7cb62c9a4b68" prot="public" virt="non-virtual"><scope>wxWebRequestEvent</scope><name>GetRefData</name></member>
+      <member refid="classwx_web_request_event_1a52b08447ddaaf71c6011739b62769d42" prot="public" virt="non-virtual"><scope>wxWebRequestEvent</scope><name>GetRequest</name></member>
       <member refid="classwx_web_request_event_1a5517ecf0db821d0f5d8adb10a4a2bd04" prot="public" virt="non-virtual"><scope>wxWebRequestEvent</scope><name>GetResponse</name></member>
       <member refid="classwx_event_1aa770dbcd0f1714ba097836af6534b4c5" prot="public" virt="non-virtual"><scope>wxWebRequestEvent</scope><name>GetSkipped</name></member>
       <member refid="classwx_web_request_event_1a6023bb924ca04864135b18dcc850eb75" prot="public" virt="non-virtual"><scope>wxWebRequestEvent</scope><name>GetState</name></member>

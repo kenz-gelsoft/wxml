@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_printing" kind="page">
     <compoundname>overview_printing</compoundname>
     <title>Printing Framework Overview</title>
@@ -49,7 +49,6 @@
 <para>The printing framework relies on the application to provide classes whose member functions can respond to particular requests, such as &apos;print this page&apos; or &apos;does this page exist in the document?&apos;. </para>
     </briefdescription>
     <detaileddescription>
-<para>The printing framework relies on the application to provide classes whose member functions can respond to particular requests, such as &apos;print this page&apos; or &apos;does this page exist in the document?&apos;.</para>
 <para>This method allows wxWidgets to take over the housekeeping duties of turning preview pages, calling the print dialog box, creating the printer device context, and so on: the application can concentrate on the rendering of the information onto a device context.</para>
 <para>In most cases, the only class you will need to derive from is <ref refid="classwx_printout" kindref="compound">wxPrintout</ref>; all others will be used as-is.</para>
 <para>A brief description of each class&apos;s role and how they work together follows.</para>
@@ -72,11 +71,9 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Pass<sp/>two<sp/>printout<sp/>objects:<sp/>for<sp/>preview,<sp/>and<sp/>possible<sp/>printing.</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_print_preview" kindref="compound">wxPrintPreview</ref><sp/>*preview<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_print_preview" kindref="compound">wxPrintPreview</ref>(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyPrintout,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MyPrintout);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_preview_frame" kindref="compound">wxPreviewFrame</ref><sp/>*frame<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classwx_preview_frame" kindref="compound">wxPreviewFrame</ref>(preview,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Demo<sp/>Print<sp/>Preview&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_point" kindref="compound">wxPoint</ref>(100,<sp/>100),</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_size" kindref="compound">wxSize</ref>(600,<sp/>650));</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="classwx_frame_1a39b18ed552aabaf2a1bc4af7cc924a0f" kindref="member">Centre</ref>(<ref refid="defs_8h_1a1e6994f40bd9cb140e292afb165af971a31055fdab980125bf5a575f776066097" kindref="member">wxBOTH</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Demo<sp/>Print<sp/>Preview&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="classwx_preview_frame_1a3906d261e406fb21c4bdff861063fb31" kindref="member">Initialize</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="classwx_frame_1a39b18ed552aabaf2a1bc4af7cc924a0f" kindref="member">Centre</ref>(<ref refid="defs_8h_1a1e6994f40bd9cb140e292afb165af971a31055fdab980125bf5a575f776066097" kindref="member">wxBOTH</ref>);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>frame-&gt;<ref refid="classwx_window_1a7fbc92ce240a8d4f6956b6e0276ef07f" kindref="member">Show</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>

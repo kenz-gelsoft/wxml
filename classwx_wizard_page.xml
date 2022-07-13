@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_wizard_page" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxWizardPage</compoundname>
     <basecompoundref refid="classwx_panel" prot="public" virt="non-virtual">wxPanel</basecompoundref>
@@ -11,6 +11,7 @@
         <definition>wxWizardPage::wxWizardPage</definition>
         <argsstring>()</argsstring>
         <name>wxWizardPage</name>
+        <qualifiedname>wxWizardPage::wxWizardPage</qualifiedname>
         <briefdescription>
 <para>Default constructor. </para>
         </briefdescription>
@@ -20,19 +21,20 @@
         </inbodydescription>
         <location file="interface/wx/wizard.h" line="55" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_wizard_page_1a70b0d8c32609973ef9457a841d25607d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_wizard_page_1ad97b8a748a21fca5fa244f363b99e2e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxWizardPage::wxWizardPage</definition>
-        <argsstring>(wxWizard *parent, const wxBitmap &amp;bitmap=wxNullBitmap)</argsstring>
+        <argsstring>(wxWizard *parent, const wxBitmapBundle &amp;bitmap=wxBitmapBundle())</argsstring>
         <name>wxWizardPage</name>
+        <qualifiedname>wxWizardPage::wxWizardPage</qualifiedname>
         <param>
           <type><ref refid="classwx_wizard" kindref="compound">wxWizard</ref> *</type>
           <declname>parent</declname>
         </param>
         <param>
-          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>bitmap</declname>
-          <defval><ref refid="interface_2wx_2bitmap_8h_1a2947690e84b8fdb2e37b79a4af8f8a21" kindref="member">wxNullBitmap</ref></defval>
+          <defval><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref>()</defval>
         </param>
         <briefdescription>
 <para>Constructor accepts an optional bitmap which will be used for this page instead of the default one for this wizard (note that all bitmaps used should be of the same size). </para>
@@ -62,19 +64,20 @@
         </inbodydescription>
         <location file="interface/wx/wizard.h" line="68" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_wizard_page_1a9d3637f9f504c75ff9dfd906bf2e7492" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classwx_wizard_page_1a8d8433183ab5eda79a883eec9ff28562" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool wxWizardPage::Create</definition>
-        <argsstring>(wxWizard *parent, const wxBitmap &amp;bitmap=wxNullBitmap)</argsstring>
+        <argsstring>(wxWizard *parent, const wxBitmapBundle &amp;bitmap=wxBitmapBundle())</argsstring>
         <name>Create</name>
+        <qualifiedname>wxWizardPage::Create</qualifiedname>
         <param>
           <type><ref refid="classwx_wizard" kindref="compound">wxWizard</ref> *</type>
           <declname>parent</declname>
         </param>
         <param>
-          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>bitmap</declname>
-          <defval><ref refid="interface_2wx_2bitmap_8h_1a2947690e84b8fdb2e37b79a4af8f8a21" kindref="member">wxNullBitmap</ref></defval>
+          <defval><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref>()</defval>
         </param>
         <briefdescription>
 <para>Creates the wizard page. </para>
@@ -109,6 +112,7 @@
         <definition>virtual wxBitmap wxWizardPage::GetBitmap</definition>
         <argsstring>() const</argsstring>
         <name>GetBitmap</name>
+        <qualifiedname>wxWizardPage::GetBitmap</qualifiedname>
         <briefdescription>
 <para>This method is called by <ref refid="classwx_wizard" kindref="compound">wxWizard</ref> to get the bitmap to display alongside the page. </para>
         </briefdescription>
@@ -126,6 +130,7 @@
         <definition>virtual wxWizardPage * wxWizardPage::GetNext</definition>
         <argsstring>() const =0</argsstring>
         <name>GetNext</name>
+        <qualifiedname>wxWizardPage::GetNext</qualifiedname>
         <briefdescription>
 <para>Get the page which should be shown when the user chooses the <computeroutput>&quot;Next&quot;</computeroutput> button: if NULL is returned, this button will be disabled. </para>
         </briefdescription>
@@ -144,6 +149,7 @@
         <definition>virtual wxWizardPage * wxWizardPage::GetPrev</definition>
         <argsstring>() const =0</argsstring>
         <name>GetPrev</name>
+        <qualifiedname>wxWizardPage::GetPrev</qualifiedname>
         <briefdescription>
 <para>Get the page which should be shown when the user chooses the <computeroutput>&quot;Back&quot;</computeroutput> button: if NULL is returned, this button will be disabled. </para>
         </briefdescription>
@@ -169,7 +175,8 @@
 <para>To use this class, you must override <ref refid="classwx_wizard_page_1a044b9309f55069341c17cd4748a86e92" kindref="member">wxWizardPage::GetPrev()</ref> and <ref refid="classwx_wizard_page_1a1046455b7c16d356f265c429a7da2270" kindref="member">wxWizardPage::GetNext()</ref> pure virtual functions (or you may use <ref refid="classwx_wizard_page_simple" kindref="compound">wxWizardPageSimple</ref> instead). <ref refid="classwx_wizard_page_1a4acbde71fe16e2d9f1ef1d41066fc434" kindref="member">wxWizardPage::GetBitmap()</ref> can also be overridden, but this should be very rarely needed.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__miscwnd" kindref="compound">Miscellaneous Windows</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_wizard" kindref="compound">wxWizard</ref>, <ref refid="page_samples_1page_samples_wizard" kindref="member">Wizard Sample</ref> </para>
 </simplesect>
 </para>
@@ -299,7 +306,7 @@
       <member refid="classwx_window_1ad70d63964459bb21f81bc0b1f09e84f4" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ConvertDialogToPixels</name></member>
       <member refid="classwx_window_1a321de67666eff37b39556802c8029201" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ConvertPixelsToDialog</name></member>
       <member refid="classwx_window_1a533552c4673c7a11f05bf9261b4dff5c" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ConvertPixelsToDialog</name></member>
-      <member refid="classwx_wizard_page_1a9d3637f9f504c75ff9dfd906bf2e7492" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>Create</name></member>
+      <member refid="classwx_wizard_page_1a8d8433183ab5eda79a883eec9ff28562" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>Create</name></member>
       <member refid="classwx_panel_1a3ff58c601a52262e03abf84d3896ff2f" prot="public" virt="non-virtual" ambiguityscope="wxPanel::"><scope>wxWizardPage</scope><name>Create</name></member>
       <member refid="classwx_object_1a9c38fc7f7d0dd40d5d83f3eedf1fb817" prot="protected" virt="virtual"><scope>wxWizardPage</scope><name>CreateRefData</name></member>
       <member refid="classwx_evt_handler_1a6e7f9cf4ebd0623c1d94979855d096f8" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>DeletePendingEvents</name></member>
@@ -336,6 +343,12 @@
       <member refid="classwx_window_1a71f45373a9fc55e128d263391093c32a" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1ad122671fcef564f7e11658c3ee0d4d87" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1aee63c8b1f8055fef76962578aa7f38c1" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>FromDIP</name></member>
+      <member refid="classwx_window_1a144678f0b197268aa9d8d81b76a150a7" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a048d540d731ac83550c206df4af04270" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1ac3f185cef9f6a645be63b9b62afae46a" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a2fe6412d36c2b81c0dd3eeb1dd8bd004" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1af1ddb23778f531a56f2e1aa937a66d9c" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a27efab91147b0ffeee600f02059c23fc" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>FromPhys</name></member>
       <member refid="classwx_window_1a9cf3fd71ffab949cdf06f8f8e2646d56" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>GetAcceleratorTable</name></member>
       <member refid="classwx_window_1a00547805ce11e2ba64607d31fc2c67e2" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>GetAccessible</name></member>
       <member refid="classwx_window_1a64e3f936ab812d24966827ea4e0f15c0" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>GetAutoLayout</name></member>
@@ -593,6 +606,12 @@
       <member refid="classwx_window_1aef413f1d0252a7a5a29512e8ab5e7c91" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a1771a46c000060619f6e1249ce362433" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a8a4fa47129de552bfec37db8c69688a2" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ToggleWindowStyle</name></member>
+      <member refid="classwx_window_1a5d3a9450e6b6f44c6b7d0d4a002fa40f" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1afca50ba59976ad9913148fffd38ff0ef" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1ad0bea5e21d33d00d0cf19c011bad39bf" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aaf0ac2191826f233f04bffa900dbc357" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aef56d76b1cacdca83daebffcc385d6db" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1a6797f4c9656276796031b9846ecc20b6" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>ToPhys</name></member>
       <member refid="classwx_window_1ab8e51f36e7d8790b361c8d8c6f37b1ad" prot="public" virt="virtual"><scope>wxWizardPage</scope><name>TransferDataFromWindow</name></member>
       <member refid="classwx_window_1a88cc65e424a129d9b0057756cdb67ec9" prot="public" virt="virtual"><scope>wxWizardPage</scope><name>TransferDataToWindow</name></member>
       <member refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" prot="protected" virt="virtual"><scope>wxWizardPage</scope><name>TryAfter</name></member>
@@ -621,7 +640,7 @@
       <member refid="classwx_window_1a695200a4915b934926dcf32afa44544c" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>wxWindow</name></member>
       <member refid="classwx_window_1a7799009b10d1765d1bbb6db4994f922e" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>wxWindow</name></member>
       <member refid="classwx_wizard_page_1a176b471671f9ba8e40e7c3b709d7550b" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>wxWizardPage</name></member>
-      <member refid="classwx_wizard_page_1a70b0d8c32609973ef9457a841d25607d" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>wxWizardPage</name></member>
+      <member refid="classwx_wizard_page_1ad97b8a748a21fca5fa244f363b99e2e1" prot="public" virt="non-virtual"><scope>wxWizardPage</scope><name>wxWizardPage</name></member>
       <member refid="classwx_evt_handler_1a372d2239d91521eddc8fd2715fcab584" prot="public" virt="virtual"><scope>wxWizardPage</scope><name>~wxEvtHandler</name></member>
       <member refid="classwx_object_1a2a51aa8bfbab47ca2f051bcf84b3f35b" prot="public" virt="virtual"><scope>wxWizardPage</scope><name>~wxObject</name></member>
       <member refid="classwx_panel_1a8feabacc22645e4c331516a652a2002d" prot="public" virt="virtual"><scope>wxWizardPage</scope><name>~wxPanel</name></member>

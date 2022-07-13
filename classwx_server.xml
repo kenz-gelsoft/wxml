@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_server" kind="class" language="C++" prot="public">
     <compoundname>wxServer</compoundname>
     <includes local="no">wx/ipc.h</includes>
@@ -9,6 +9,7 @@
         <definition>wxServer::wxServer</definition>
         <argsstring>()</argsstring>
         <name>wxServer</name>
+        <qualifiedname>wxServer::wxServer</qualifiedname>
         <briefdescription>
 <para>Constructs a server object. </para>
         </briefdescription>
@@ -23,6 +24,7 @@
         <definition>bool wxServer::Create</definition>
         <argsstring>(const wxString &amp;service)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxServer::Create</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>service</declname>
@@ -43,6 +45,7 @@
         <definition>virtual wxConnectionBase * wxServer::OnAcceptConnection</definition>
         <argsstring>(const wxString &amp;topic)</argsstring>
         <name>OnAcceptConnection</name>
+        <qualifiedname>wxServer::OnAcceptConnection</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>topic</declname>
@@ -67,7 +70,8 @@
 <para>To create a server which can communicate with a suitable client, you need to derive a class from <ref refid="classwx_connection" kindref="compound">wxConnection</ref> and another from <ref refid="classwx_server" kindref="compound">wxServer</ref>. The custom <ref refid="classwx_connection" kindref="compound">wxConnection</ref> class will intercept communications in a &apos;conversation&apos; with a client, and the custom <ref refid="classwx_server" kindref="compound">wxServer</ref> is required so that a user-overridden <ref refid="classwx_server_1a4422a224618f5d655ffbb59bec6735e0" kindref="member">wxServer::OnAcceptConnection</ref> member can return a <ref refid="classwx_connection" kindref="compound">wxConnection</ref> of the required class, when a connection is made. Look at the IPC sample and the <ref refid="overview_ipc" kindref="compound">Interprocess Communication</ref> for an example of how to do this.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__ipc" kindref="compound">Interprocess Communication</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_client" kindref="compound">wxClient</ref>, <ref refid="classwx_connection" kindref="compound">wxConnection</ref>, IPC, <ref refid="overview_ipc" kindref="compound">Interprocess Communication</ref> </para>
 </simplesect>
 </para>

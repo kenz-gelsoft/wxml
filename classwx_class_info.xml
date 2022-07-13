@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_class_info" kind="class" language="C++" prot="public">
     <compoundname>wxClassInfo</compoundname>
     <includes local="no">wx/object.h</includes>
@@ -9,6 +9,7 @@
         <definition>wxClassInfo::wxClassInfo</definition>
         <argsstring>(const wxChar *className, const wxClassInfo *baseClass1, const wxClassInfo *baseClass2, int size, wxObjectConstructorFn fn)</argsstring>
         <name>wxClassInfo</name>
+        <qualifiedname>wxClassInfo::wxClassInfo</qualifiedname>
         <param>
           <type>const <ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref> *</type>
           <declname>className</declname>
@@ -44,6 +45,7 @@
         <definition>wxObject * wxClassInfo::CreateObject</definition>
         <argsstring>() const</argsstring>
         <name>CreateObject</name>
+        <qualifiedname>wxClassInfo::CreateObject</qualifiedname>
         <briefdescription>
 <para>Creates an object of the appropriate kind. </para>
         </briefdescription>
@@ -61,6 +63,7 @@
         <definition>const wxChar * wxClassInfo::GetBaseClassName1</definition>
         <argsstring>() const</argsstring>
         <name>GetBaseClassName1</name>
+        <qualifiedname>wxClassInfo::GetBaseClassName1</qualifiedname>
         <briefdescription>
 <para>Returns the name of the first base class (NULL if none). </para>
         </briefdescription>
@@ -75,6 +78,7 @@
         <definition>const wxChar * wxClassInfo::GetBaseClassName2</definition>
         <argsstring>() const</argsstring>
         <name>GetBaseClassName2</name>
+        <qualifiedname>wxClassInfo::GetBaseClassName2</qualifiedname>
         <briefdescription>
 <para>Returns the name of the second base class (NULL if none). </para>
         </briefdescription>
@@ -89,6 +93,7 @@
         <definition>const wxChar * wxClassInfo::GetClassName</definition>
         <argsstring>() const</argsstring>
         <name>GetClassName</name>
+        <qualifiedname>wxClassInfo::GetClassName</qualifiedname>
         <briefdescription>
 <para>Returns the string form of the class name. </para>
         </briefdescription>
@@ -103,6 +108,7 @@
         <definition>int wxClassInfo::GetSize</definition>
         <argsstring>() const</argsstring>
         <name>GetSize</name>
+        <qualifiedname>wxClassInfo::GetSize</qualifiedname>
         <briefdescription>
 <para>Returns the size of the class. </para>
         </briefdescription>
@@ -117,6 +123,7 @@
         <definition>bool wxClassInfo::IsDynamic</definition>
         <argsstring>() const</argsstring>
         <name>IsDynamic</name>
+        <qualifiedname>wxClassInfo::IsDynamic</qualifiedname>
         <briefdescription>
 <para>Returns true if this class info can create objects of the associated class. </para>
         </briefdescription>
@@ -131,6 +138,7 @@
         <definition>bool wxClassInfo::IsKindOf</definition>
         <argsstring>(const wxClassInfo *info) const</argsstring>
         <name>IsKindOf</name>
+        <qualifiedname>wxClassInfo::IsKindOf</qualifiedname>
         <param>
           <type>const <ref refid="classwx_class_info" kindref="compound">wxClassInfo</ref> *</type>
           <declname>info</declname>
@@ -151,6 +159,7 @@
         <definition>static wxClassInfo * wxClassInfo::FindClass</definition>
         <argsstring>(const wxString &amp;className)</argsstring>
         <name>FindClass</name>
+        <qualifiedname>wxClassInfo::FindClass</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>className</declname>
@@ -172,7 +181,8 @@
 <para>Instances of this class are not generally defined directly by an application, but indirectly through use of macros such as <ref refid="object_8h_1a9c252d076397bec5ac241272a7a60747" kindref="member">wxDECLARE_DYNAMIC_CLASS</ref> and <ref refid="object_8h_1a4cbf0c21eb5986eb489dc67450eab1d1" kindref="member">wxIMPLEMENT_DYNAMIC_CLASS</ref>.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__rtti" kindref="compound">Runtime Type Information (RTTI)</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_rtti_1overview_rtti_classinfo" kindref="member">wxClassInfo</ref>, <ref refid="classwx_object" kindref="compound">wxObject</ref> </para>
 </simplesect>
 </para>

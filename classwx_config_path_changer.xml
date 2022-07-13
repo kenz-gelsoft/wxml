@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_config_path_changer" kind="class" language="C++" prot="public">
     <compoundname>wxConfigPathChanger</compoundname>
     <includes local="no">wx/config.h</includes>
@@ -9,6 +9,7 @@
         <definition>wxConfigPathChanger::wxConfigPathChanger</definition>
         <argsstring>(const wxConfigBase *pContainer, const wxString &amp;strEntry)</argsstring>
         <name>wxConfigPathChanger</name>
+        <qualifiedname>wxConfigPathChanger::wxConfigPathChanger</qualifiedname>
         <param>
           <type>const <ref refid="classwx_config_base" kindref="compound">wxConfigBase</ref> *</type>
           <declname>pContainer</declname>
@@ -21,19 +22,20 @@
 <para>Changes the path of the given <ref refid="classwx_config_base" kindref="compound">wxConfigBase</ref> object so that the key <emphasis>strEntry</emphasis> is accessible (for read or write). </para>
         </briefdescription>
         <detaileddescription>
-<para>In other words, the ctor uses <ref refid="classwx_config_base_1ad290d3fe7fad4f39a4bb2959db89b379" kindref="member">wxConfigBase::SetPath()</ref> with everything which precedes the last slash of <emphasis>strEntry</emphasis>, so that: <programlisting><codeline><highlight class="normal"><ref refid="classwx_config_path_changer_1a60bd80a11d785b8ca7c4cb9fb97dd6a9" kindref="member">wxConfigPathChanger</ref>(wxConfigBase::Get(),<sp/></highlight><highlight class="stringliteral">&quot;/MyProgram/SomeKeyName&quot;</highlight><highlight class="normal">);</highlight></codeline>
-</programlisting> has the same effect of: <programlisting><codeline><highlight class="normal"><ref refid="classwx_config_path_changer_1a60bd80a11d785b8ca7c4cb9fb97dd6a9" kindref="member">wxConfigPathChanger</ref>(wxConfigBase::Get(),<sp/></highlight><highlight class="stringliteral">&quot;/MyProgram/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<para>In other words, the ctor uses <ref refid="classwx_config_base_1ad290d3fe7fad4f39a4bb2959db89b379" kindref="member">wxConfigBase::SetPath()</ref> with everything which precedes the last slash of <emphasis>strEntry</emphasis>, so that: <programlisting><codeline><highlight class="normal"><ref refid="classwx_config_path_changer_1a60bd80a11d785b8ca7c4cb9fb97dd6a9" kindref="member">wxConfigPathChanger</ref>(<ref refid="classwx_config_base_1ab31367e3dcc02e9df9e76aff92b624b8" kindref="member">wxConfigBase::Get</ref>(),<sp/></highlight><highlight class="stringliteral">&quot;/MyProgram/SomeKeyName&quot;</highlight><highlight class="normal">);</highlight></codeline>
+</programlisting> has the same effect of: <programlisting><codeline><highlight class="normal"><ref refid="classwx_config_path_changer_1a60bd80a11d785b8ca7c4cb9fb97dd6a9" kindref="member">wxConfigPathChanger</ref>(<ref refid="classwx_config_base_1ab31367e3dcc02e9df9e76aff92b624b8" kindref="member">wxConfigBase::Get</ref>(),<sp/></highlight><highlight class="stringliteral">&quot;/MyProgram/&quot;</highlight><highlight class="normal">);</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/config.h" line="997" column="5"/>
+        <location file="interface/wx/config.h" line="998" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_config_path_changer_1a09ab9763983e12e69a03c45c68e39a4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxConfigPathChanger::~wxConfigPathChanger</definition>
         <argsstring>()</argsstring>
         <name>~wxConfigPathChanger</name>
+        <qualifiedname>wxConfigPathChanger::~wxConfigPathChanger</qualifiedname>
         <briefdescription>
 <para>Restores the path selected, inside the wxConfig object passed to the ctor, to the path which was selected when the <ref refid="classwx_config_path_changer" kindref="compound">wxConfigPathChanger</ref> ctor was called. </para>
         </briefdescription>
@@ -41,13 +43,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/config.h" line="1003" column="5"/>
+        <location file="interface/wx/config.h" line="1004" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_config_path_changer_1a41bf0a05349dfabea458dd693a8415ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
         <definition>const wxString &amp; wxConfigPathChanger::Name</definition>
         <argsstring>() const</argsstring>
         <name>Name</name>
+        <qualifiedname>wxConfigPathChanger::Name</qualifiedname>
         <briefdescription>
 <para>Returns the name of the key which was passed to the ctor. </para>
         </briefdescription>
@@ -56,13 +59,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/config.h" line="1009" column="20"/>
+        <location file="interface/wx/config.h" line="1010" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classwx_config_path_changer_1ad5fb2a36e44d511dba8a575667c4ff1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxConfigPathChanger::UpdateIfDeleted</definition>
         <argsstring>()</argsstring>
         <name>UpdateIfDeleted</name>
+        <qualifiedname>wxConfigPathChanger::UpdateIfDeleted</qualifiedname>
         <briefdescription>
 <para>This method must be called if the original path inside the wxConfig object (i.e. </para>
         </briefdescription>
@@ -72,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/config.h" line="1020" column="10"/>
+        <location file="interface/wx/config.h" line="1021" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -100,9 +104,10 @@
 </programlisting></para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__cfg" kindref="compound">Application and System configuration</ref> </para>
     </detaileddescription>
-    <location file="interface/wx/config.h" line="979" column="1" bodyfile="interface/wx/config.h" bodystart="980" bodyend="1021"/>
+    <location file="interface/wx/config.h" line="980" column="1" bodyfile="interface/wx/config.h" bodystart="981" bodyend="1022"/>
     <listofallmembers>
       <member refid="classwx_config_path_changer_1a41bf0a05349dfabea458dd693a8415ac" prot="public" virt="non-virtual"><scope>wxConfigPathChanger</scope><name>Name</name></member>
       <member refid="classwx_config_path_changer_1ad5fb2a36e44d511dba8a575667c4ff1f" prot="public" virt="non-virtual"><scope>wxConfigPathChanger</scope><name>UpdateIfDeleted</name></member>

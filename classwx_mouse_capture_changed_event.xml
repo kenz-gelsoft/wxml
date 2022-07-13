@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_mouse_capture_changed_event" kind="class" language="C++" prot="public">
     <compoundname>wxMouseCaptureChangedEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxMouseCaptureChangedEvent::wxMouseCaptureChangedEvent</definition>
         <argsstring>(wxWindowID windowId=0, wxWindow *gainedCapture=NULL)</argsstring>
         <name>wxMouseCaptureChangedEvent</name>
+        <qualifiedname>wxMouseCaptureChangedEvent::wxMouseCaptureChangedEvent</qualifiedname>
         <param>
           <type><ref refid="windowid_8h_1ae8091432cc2cb2485d45f2302fb51133" kindref="member">wxWindowID</ref></type>
           <declname>windowId</declname>
@@ -27,13 +28,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4383" column="5"/>
+        <location file="interface/wx/event.h" line="4451" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_mouse_capture_changed_event_1a403f9904cb2e746ae5cb052fdb328f4a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
         <definition>wxWindow * wxMouseCaptureChangedEvent::GetCapturedWindow</definition>
         <argsstring>() const</argsstring>
         <name>GetCapturedWindow</name>
+        <qualifiedname>wxMouseCaptureChangedEvent::GetCapturedWindow</qualifiedname>
         <briefdescription>
 <para>Returns the window that gained the capture, or NULL if it was a non-wxWidgets window. </para>
         </briefdescription>
@@ -41,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4390" column="14"/>
+        <location file="interface/wx/event.h" line="4458" column="14"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -50,17 +52,17 @@
     <detaileddescription>
 <para>This is called even if <ref refid="classwx_window_1adcc538819c11ecb3bd3e4e5d13c5ba7a" kindref="member">wxWindow::ReleaseMouse</ref> was called by the application code. Handling this event allows an application to cater for unexpected capture releases which might otherwise confuse mouse handling code.</para>
 <para>Availability:<nonbreakablespace/><nonbreakablespace/>only available for the <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> port.  <onlyfor>wxmsw</onlyfor> </para>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_mouse_capture_changed_event" kindref="compound">wxMouseCaptureChangedEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
-<listitem><para>EVT_MOUSE_CAPTURE_CHANGED(func): Process a <computeroutput>wxEVT_MOUSE_CAPTURE_CHANGED</computeroutput> event. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_MOUSE_CAPTURE_CHANGED(func): Process a <computeroutput>wxEVT_MOUSE_CAPTURE_CHANGED</computeroutput> event. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_mouse_capture_lost_event" kindref="compound">wxMouseCaptureLostEvent</ref>, <ref refid="overview_events" kindref="compound">Events and Event Handling</ref>, <ref refid="classwx_window_1a5c72c6260a73ef77bb0b1f7ec85fcfef" kindref="member">wxWindow::CaptureMouse</ref>, <ref refid="classwx_window_1adcc538819c11ecb3bd3e4e5d13c5ba7a" kindref="member">wxWindow::ReleaseMouse</ref>, <ref refid="classwx_window_1a2a226e6e116858bdeb04f51f815eba03" kindref="member">wxWindow::GetCapture</ref> </para>
 </simplesect>
 </para>
@@ -108,7 +110,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="4377" column="1" bodyfile="interface/wx/event.h" bodystart="4378" bodyend="4391"/>
+    <location file="interface/wx/event.h" line="4445" column="1" bodyfile="interface/wx/event.h" bodystart="4446" bodyend="4459"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxMouseCaptureChangedEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxMouseCaptureChangedEvent</scope><name>Clone</name></member>

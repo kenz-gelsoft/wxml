@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_memory_f_s_handler" kind="class" language="C++" prot="public">
     <compoundname>wxMemoryFSHandler</compoundname>
     <basecompoundref refid="classwx_file_system_handler" prot="public" virt="non-virtual">wxFileSystemHandler</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxMemoryFSHandler::wxMemoryFSHandler</definition>
         <argsstring>()</argsstring>
         <name>wxMemoryFSHandler</name>
+        <qualifiedname>wxMemoryFSHandler::wxMemoryFSHandler</qualifiedname>
         <briefdescription>
 <para>Constructor. </para>
         </briefdescription>
@@ -26,6 +27,7 @@
         <definition>static void wxMemoryFSHandler::AddFile</definition>
         <argsstring>(const wxString &amp;filename, wxImage &amp;image, wxBitmapType type)</argsstring>
         <name>AddFile</name>
+        <qualifiedname>wxMemoryFSHandler::AddFile</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filename</declname>
@@ -43,6 +45,7 @@
         </briefdescription>
         <detaileddescription>
 <para>Stored data (bitmap, text or raw data) will be copied into private memory stream and available under name <computeroutput>&quot;memory:&quot;</computeroutput> + <emphasis>filename</emphasis>.</para>
+<para>When using the overload taking <computeroutput><ref refid="classwx_string" kindref="compound">wxString</ref></computeroutput> data, if the string contains only Latin-1 characters (which includes strings created using <ref refid="classwx_string_1a5aedc23e9cc2774237d99148d0622661" kindref="member">wxString::From8BitData()</ref>), its data is used as is. Otherwise, the UTF-8 representation of the string is stored as the data associated with the given <emphasis>filename</emphasis>.</para>
 <para><simplesect kind="note"><para>you must use a <emphasis>type</emphasis> value (aka image format) that wxWidgets can save (e.g. JPG, PNG, see <ref refid="classwx_image" kindref="compound">wxImage</ref> documentation)!</para>
 </simplesect>
 <simplesect kind="see"><para><ref refid="classwx_memory_f_s_handler_1a1a4c2fa90f2d747eeaf532decd14eda7" kindref="member">AddFileWithMimeType()</ref> </para>
@@ -51,13 +54,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fs_mem.h" line="91" column="17"/>
+        <location file="interface/wx/fs_mem.h" line="97" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_f_s_handler_1adf1fa7dd553e0ae001d458e8114c98b5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void wxMemoryFSHandler::AddFile</definition>
         <argsstring>(const wxString &amp;filename, const wxBitmap &amp;bitmap, wxBitmapType type)</argsstring>
         <name>AddFile</name>
+        <qualifiedname>wxMemoryFSHandler::AddFile</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filename</declname>
@@ -76,13 +80,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fs_mem.h" line="92" column="17"/>
+        <location file="interface/wx/fs_mem.h" line="98" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_f_s_handler_1ade9cfc9ef242c0ffeed481ac12f90c06" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void wxMemoryFSHandler::AddFile</definition>
         <argsstring>(const wxString &amp;filename, const wxString &amp;textdata)</argsstring>
         <name>AddFile</name>
+        <qualifiedname>wxMemoryFSHandler::AddFile</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filename</declname>
@@ -97,13 +102,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fs_mem.h" line="93" column="17"/>
+        <location file="interface/wx/fs_mem.h" line="99" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_f_s_handler_1aa7182560600cd91c981fdc7a3f45a9ce" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void wxMemoryFSHandler::AddFile</definition>
         <argsstring>(const wxString &amp;filename, const void *binarydata, size_t size)</argsstring>
         <name>AddFile</name>
+        <qualifiedname>wxMemoryFSHandler::AddFile</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filename</declname>
@@ -122,13 +128,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fs_mem.h" line="94" column="17"/>
+        <location file="interface/wx/fs_mem.h" line="100" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_f_s_handler_1a1a4c2fa90f2d747eeaf532decd14eda7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void wxMemoryFSHandler::AddFileWithMimeType</definition>
         <argsstring>(const wxString &amp;filename, const wxString &amp;textdata, const wxString &amp;mimetype)</argsstring>
         <name>AddFileWithMimeType</name>
+        <qualifiedname>wxMemoryFSHandler::AddFileWithMimeType</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filename</declname>
@@ -154,13 +161,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fs_mem.h" line="109" column="17"/>
+        <location file="interface/wx/fs_mem.h" line="115" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_f_s_handler_1a1e1d1e096824bb42d787d1c1f42c015a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void wxMemoryFSHandler::AddFileWithMimeType</definition>
         <argsstring>(const wxString &amp;filename, const void *binarydata, size_t size, const wxString &amp;mimetype)</argsstring>
         <name>AddFileWithMimeType</name>
+        <qualifiedname>wxMemoryFSHandler::AddFileWithMimeType</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filename</declname>
@@ -183,13 +191,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fs_mem.h" line="112" column="17"/>
+        <location file="interface/wx/fs_mem.h" line="118" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_f_s_handler_1ac570d507c7e570153a77fadf416ccacd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void wxMemoryFSHandler::RemoveFile</definition>
         <argsstring>(const wxString &amp;filename)</argsstring>
         <name>RemoveFile</name>
+        <qualifiedname>wxMemoryFSHandler::RemoveFile</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>filename</declname>
@@ -201,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/fs_mem.h" line="121" column="17"/>
+        <location file="interface/wx/fs_mem.h" line="127" column="17"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -256,7 +265,8 @@
 </programlisting></para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__vfs" kindref="compound">Virtual File System</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_memory_f_s_handler_1a1a4c2fa90f2d747eeaf532decd14eda7" kindref="member">wxMemoryFSHandler::AddFileWithMimeType</ref> </para>
 </simplesect>
 </para>
@@ -304,7 +314,7 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/fs_mem.h" line="71" column="1" bodyfile="interface/wx/fs_mem.h" bodystart="72" bodyend="122"/>
+    <location file="interface/wx/fs_mem.h" line="71" column="1" bodyfile="interface/wx/fs_mem.h" bodystart="72" bodyend="128"/>
     <listofallmembers>
       <member refid="classwx_memory_f_s_handler_1a3f492723f5ae6353c6f2ef8ce8af676b" prot="public" virt="non-virtual"><scope>wxMemoryFSHandler</scope><name>AddFile</name></member>
       <member refid="classwx_memory_f_s_handler_1adf1fa7dd553e0ae001d458e8114c98b5" prot="public" virt="non-virtual"><scope>wxMemoryFSHandler</scope><name>AddFile</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_animation_ctrl" kind="class" language="C++" prot="public">
     <compoundname>wxAnimationCtrl</compoundname>
     <basecompoundref refid="classwx_control" prot="public" virt="non-virtual">wxControl</basecompoundref>
@@ -11,6 +11,7 @@
         <definition>wxAnimationCtrl::wxAnimationCtrl</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxAnimation &amp;anim=wxNullAnimation, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=wxAC_DEFAULT_STYLE, const wxString &amp;name=wxAnimationCtrlNameStr)</argsstring>
         <name>wxAnimationCtrl</name>
+        <qualifiedname>wxAnimationCtrl::wxAnimationCtrl</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -58,6 +59,7 @@
         <definition>bool wxAnimationCtrl::Create</definition>
         <argsstring>(wxWindow *parent, wxWindowID id, const wxAnimation &amp;anim=wxNullAnimation, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=wxAC_DEFAULT_STYLE, const wxString &amp;name=wxAnimationCtrlNameStr)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxAnimationCtrl::Create</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -166,6 +168,7 @@
         <definition>wxAnimation wxAnimationCtrl::CreateAnimation</definition>
         <argsstring>() const</argsstring>
         <name>CreateAnimation</name>
+        <qualifiedname>wxAnimationCtrl::CreateAnimation</qualifiedname>
         <briefdescription>
 <para>Create a new animation object compatible with this control. </para>
         </briefdescription>
@@ -186,6 +189,7 @@
         <definition>virtual wxAnimation wxAnimationCtrl::GetAnimation</definition>
         <argsstring>() const</argsstring>
         <name>GetAnimation</name>
+        <qualifiedname>wxAnimationCtrl::GetAnimation</qualifiedname>
         <briefdescription>
 <para>Returns the animation associated with this control. </para>
         </briefdescription>
@@ -200,8 +204,9 @@
         <definition>wxBitmap wxAnimationCtrl::GetInactiveBitmap</definition>
         <argsstring>() const</argsstring>
         <name>GetInactiveBitmap</name>
+        <qualifiedname>wxAnimationCtrl::GetInactiveBitmap</qualifiedname>
         <briefdescription>
-<para>Returns the inactive bitmap shown in this control when the; see <ref refid="classwx_animation_ctrl_1a78b7609f0b79aaf816cc4959676aeee9" kindref="member">SetInactiveBitmap()</ref> for more info. </para>
+<para>Returns the inactive bitmap shown in this control when the; see <ref refid="classwx_animation_ctrl_1ad91f77e32a65d9194c0757d9d4c29c27" kindref="member">SetInactiveBitmap()</ref> for more info. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -214,6 +219,7 @@
         <definition>virtual bool wxAnimationCtrl::IsPlaying</definition>
         <argsstring>() const</argsstring>
         <name>IsPlaying</name>
+        <qualifiedname>wxAnimationCtrl::IsPlaying</qualifiedname>
         <briefdescription>
 <para>Returns true if the animation is being played. </para>
         </briefdescription>
@@ -228,6 +234,7 @@
         <definition>virtual bool wxAnimationCtrl::LoadFile</definition>
         <argsstring>(const wxString &amp;file, wxAnimationType animType=wxANIMATION_TYPE_ANY)</argsstring>
         <name>LoadFile</name>
+        <qualifiedname>wxAnimationCtrl::LoadFile</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>file</declname>
@@ -252,6 +259,7 @@
         <definition>virtual bool wxAnimationCtrl::Load</definition>
         <argsstring>(wxInputStream &amp;file, wxAnimationType animType=wxANIMATION_TYPE_ANY)</argsstring>
         <name>Load</name>
+        <qualifiedname>wxAnimationCtrl::Load</qualifiedname>
         <param>
           <type><ref refid="classwx_input_stream" kindref="compound">wxInputStream</ref> &amp;</type>
           <declname>file</declname>
@@ -276,6 +284,7 @@
         <definition>virtual bool wxAnimationCtrl::Play</definition>
         <argsstring>()</argsstring>
         <name>Play</name>
+        <qualifiedname>wxAnimationCtrl::Play</qualifiedname>
         <briefdescription>
 <para>Starts playing the animation. </para>
         </briefdescription>
@@ -291,6 +300,7 @@
         <definition>virtual void wxAnimationCtrl::SetAnimation</definition>
         <argsstring>(const wxAnimation &amp;anim)</argsstring>
         <name>SetAnimation</name>
+        <qualifiedname>wxAnimationCtrl::SetAnimation</qualifiedname>
         <param>
           <type>const <ref refid="classwx_animation" kindref="compound">wxAnimation</ref> &amp;</type>
           <declname>anim</declname>
@@ -299,19 +309,20 @@
 <para>Sets the animation to play in this control. </para>
         </briefdescription>
         <detaileddescription>
-<para>If the previous animation is being played, it&apos;s <ref refid="classwx_animation_ctrl_1aa7849c5941a6d8b6143c6c5dec6118a8" kindref="member">Stop()</ref> stopped. Until <ref refid="classwx_animation_ctrl_1ace0ae1bf6e30458cc5da6b4696c9b2fa" kindref="member">Play()</ref> isn&apos;t called, a static image, the first frame of the given animation or the background colour will be shown (see <ref refid="classwx_animation_ctrl_1a78b7609f0b79aaf816cc4959676aeee9" kindref="member">SetInactiveBitmap()</ref> for more info). </para>
+<para>If the previous animation is being played, it&apos;s <ref refid="classwx_animation_ctrl_1aa7849c5941a6d8b6143c6c5dec6118a8" kindref="member">Stop()</ref> stopped. Until <ref refid="classwx_animation_ctrl_1ace0ae1bf6e30458cc5da6b4696c9b2fa" kindref="member">Play()</ref> isn&apos;t called, a static image, the first frame of the given animation or the background colour will be shown (see <ref refid="classwx_animation_ctrl_1ad91f77e32a65d9194c0757d9d4c29c27" kindref="member">SetInactiveBitmap()</ref> for more info). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/animate.h" line="179" column="18"/>
       </memberdef>
-      <memberdef kind="function" id="classwx_animation_ctrl_1a78b7609f0b79aaf816cc4959676aeee9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classwx_animation_ctrl_1ad91f77e32a65d9194c0757d9d4c29c27" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>virtual void wxAnimationCtrl::SetInactiveBitmap</definition>
-        <argsstring>(const wxBitmap &amp;bmp)</argsstring>
+        <argsstring>(const wxBitmapBundle &amp;bmp)</argsstring>
         <name>SetInactiveBitmap</name>
+        <qualifiedname>wxAnimationCtrl::SetInactiveBitmap</qualifiedname>
         <param>
-          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
           <declname>bmp</declname>
         </param>
         <briefdescription>
@@ -331,11 +342,12 @@
         <definition>virtual void wxAnimationCtrl::Stop</definition>
         <argsstring>()</argsstring>
         <name>Stop</name>
+        <qualifiedname>wxAnimationCtrl::Stop</qualifiedname>
         <briefdescription>
 <para>Stops playing the animation. </para>
         </briefdescription>
         <detaileddescription>
-<para>The control will show the first frame of the animation, a custom static image or the window&apos;s background colour as specified by the last <ref refid="classwx_animation_ctrl_1a78b7609f0b79aaf816cc4959676aeee9" kindref="member">SetInactiveBitmap()</ref> call. </para>
+<para>The control will show the first frame of the animation, a custom static image or the window&apos;s background colour as specified by the last <ref refid="classwx_animation_ctrl_1ad91f77e32a65d9194c0757d9d4c29c27" kindref="member">SetInactiveBitmap()</ref> call. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -348,6 +360,7 @@
         <definition>static wxAnimation wxAnimationCtrl::CreateCompatibleAnimation</definition>
         <argsstring>()</argsstring>
         <name>CreateCompatibleAnimation</name>
+        <qualifiedname>wxAnimationCtrl::CreateCompatibleAnimation</qualifiedname>
         <briefdescription>
 <para>Create a new animation object compatible with this control. </para>
         </briefdescription>
@@ -370,30 +383,24 @@
 <para>This control is useful to display a (small) animation while doing a long task (e.g. a &quot;throbber&quot;).</para>
 <para>It is only available if <computeroutput>wxUSE_ANIMATIONCTRL</computeroutput> is set to 1 (the default).</para>
 <para>For the platforms where this control has a native implementation, it may have only limited support for the animation types, see <computeroutput><ref refid="classwx_generic_animation_ctrl" kindref="compound">wxGenericAnimationCtrl</ref></computeroutput> if you need to support all of them.</para>
-<para><linebreak/>
-<heading level="2">Styles</heading>
+<para><heading level="2">Styles</heading>
 </para>
 <para>This class supports the following styles:</para>
 <para> <itemizedlist>
 <listitem><para>wxAC_DEFAULT_STYLE: The default style: wxBORDER_NONE. </para>
 </listitem>
-<listitem><para>wxAC_NO_AUTORESIZE: By default, the control will adjust its size to exactly fit to the size of the animation when SetAnimation is called. If this style flag is given, the control will not change its size <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>wxAC_NO_AUTORESIZE: By default, the control will adjust its size to exactly fit to the size of the animation when SetAnimation is called. If this style flag is given, the control will not change its size </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__ctrl" kindref="compound">Controls</ref></para>
 <para>Implementations:<nonbreakablespace/><nonbreakablespace/>native under <ref refid="page_port_1page_port_wxgtk" kindref="member">wxGTK</ref>, <ref refid="page_port_1page_port_wxmsw" kindref="member">wxMSW</ref> ports; a generic implementation is used elsewhere.</para>
-<para><htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-animationctrl-msw.png">wxMSW Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-animationctrl-gtk.png">wxGTK Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;td&gt;</htmlonly><linebreak/>
-<image type="html" name="appear-animationctrl-mac.png">wxOSX Appearance</image>
-<linebreak/>
-<htmlonly>&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
+<para><htmlonly> &lt;div class=&apos;appearance&apos;&gt;&lt;span class=&apos;appearance&apos;&gt;Appearance:&lt;/span&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-animationctrl-msw.png">wxMSW Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-animationctrl-gtk.png">wxGTK Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;td&gt;</htmlonly> <image type="html" name="appear-animationctrl-mac.png">wxOSX Appearance</image>
+ <htmlonly> &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</htmlonly></para>
 <para><simplesect kind="see"><para><ref refid="classwx_animation" kindref="compound">wxAnimation</ref>, <ref refid="page_samples_1page_samples_animate" kindref="member">Animation Sample</ref> </para>
 </simplesect>
 </para>
@@ -565,6 +572,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1a71f45373a9fc55e128d263391093c32a" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1ad122671fcef564f7e11658c3ee0d4d87" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1aee63c8b1f8055fef76962578aa7f38c1" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>FromDIP</name></member>
+      <member refid="classwx_window_1a144678f0b197268aa9d8d81b76a150a7" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a048d540d731ac83550c206df4af04270" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1ac3f185cef9f6a645be63b9b62afae46a" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a2fe6412d36c2b81c0dd3eeb1dd8bd004" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1af1ddb23778f531a56f2e1aa937a66d9c" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a27efab91147b0ffeee600f02059c23fc" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>FromPhys</name></member>
       <member refid="classwx_window_1a9cf3fd71ffab949cdf06f8f8e2646d56" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>GetAcceleratorTable</name></member>
       <member refid="classwx_window_1a00547805ce11e2ba64607d31fc2c67e2" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>GetAccessible</name></member>
       <member refid="classwx_animation_ctrl_1a9707db53ae6f626153972734bcc4af38" prot="public" virt="virtual"><scope>wxAnimationCtrl</scope><name>GetAnimation</name></member>
@@ -782,7 +795,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1a69f1e1c7ddd370d72e68c70f13ac8de9" prot="public" virt="virtual"><scope>wxAnimationCtrl</scope><name>SetForegroundColour</name></member>
       <member refid="classwx_window_1a4c1a2cbc7363237b3a7c70af4e702c72" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>SetHelpText</name></member>
       <member refid="classwx_window_1a7f27d0faed14effa013381bdc40e1bcd" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>SetId</name></member>
-      <member refid="classwx_animation_ctrl_1a78b7609f0b79aaf816cc4959676aeee9" prot="public" virt="virtual"><scope>wxAnimationCtrl</scope><name>SetInactiveBitmap</name></member>
+      <member refid="classwx_animation_ctrl_1ad91f77e32a65d9194c0757d9d4c29c27" prot="public" virt="virtual"><scope>wxAnimationCtrl</scope><name>SetInactiveBitmap</name></member>
       <member refid="classwx_window_1ae6dfe0b0d4a8c666b21ce8df8d96727b" prot="protected" virt="virtual"><scope>wxAnimationCtrl</scope><name>SetInitialBestSize</name></member>
       <member refid="classwx_window_1a1b309ca50ba87e34f968c83b79af1397" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>SetInitialSize</name></member>
       <member refid="classwx_control_1a2c2ae20554e7db5e765f163022ce09c0" prot="public" virt="virtual"><scope>wxAnimationCtrl</scope><name>SetLabel</name></member>
@@ -834,6 +847,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1aef413f1d0252a7a5a29512e8ab5e7c91" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a1771a46c000060619f6e1249ce362433" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>ToDIP</name></member>
       <member refid="classwx_window_1a8a4fa47129de552bfec37db8c69688a2" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>ToggleWindowStyle</name></member>
+      <member refid="classwx_window_1a5d3a9450e6b6f44c6b7d0d4a002fa40f" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1afca50ba59976ad9913148fffd38ff0ef" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1ad0bea5e21d33d00d0cf19c011bad39bf" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aaf0ac2191826f233f04bffa900dbc357" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aef56d76b1cacdca83daebffcc385d6db" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1a6797f4c9656276796031b9846ecc20b6" prot="public" virt="non-virtual"><scope>wxAnimationCtrl</scope><name>ToPhys</name></member>
       <member refid="classwx_window_1ab8e51f36e7d8790b361c8d8c6f37b1ad" prot="public" virt="virtual"><scope>wxAnimationCtrl</scope><name>TransferDataFromWindow</name></member>
       <member refid="classwx_window_1a88cc65e424a129d9b0057756cdb67ec9" prot="public" virt="virtual"><scope>wxAnimationCtrl</scope><name>TransferDataToWindow</name></member>
       <member refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" prot="protected" virt="virtual"><scope>wxAnimationCtrl</scope><name>TryAfter</name></member>

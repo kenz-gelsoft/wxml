@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_memory_d_c" kind="class" language="C++" prot="public">
     <compoundname>wxMemoryDC</compoundname>
     <basecompoundref refid="classwx_d_c" prot="public" virt="non-virtual">wxDC</basecompoundref>
@@ -11,6 +11,7 @@
         <definition>wxMemoryDC::wxMemoryDC</definition>
         <argsstring>()</argsstring>
         <name>wxMemoryDC</name>
+        <qualifiedname>wxMemoryDC::wxMemoryDC</qualifiedname>
         <briefdescription>
 <para>Constructs a new memory device context. </para>
         </briefdescription>
@@ -19,13 +20,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dcmemory.h" line="56" column="5"/>
+        <location file="interface/wx/dcmemory.h" line="75" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_d_c_1aaa30d5e8f9caa2a3a727296226488a8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxMemoryDC::wxMemoryDC</definition>
         <argsstring>(wxDC *dc)</argsstring>
         <name>wxMemoryDC</name>
+        <qualifiedname>wxMemoryDC::wxMemoryDC</qualifiedname>
         <param>
           <type><ref refid="classwx_d_c" kindref="compound">wxDC</ref> *</type>
           <declname>dc</declname>
@@ -38,13 +40,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dcmemory.h" line="67" column="5"/>
+        <location file="interface/wx/dcmemory.h" line="86" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_d_c_1ab6d6febe55bb6fbbac655cdaf1a719d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>wxMemoryDC::wxMemoryDC</definition>
         <argsstring>(wxBitmap &amp;bitmap)</argsstring>
         <name>wxMemoryDC</name>
+        <qualifiedname>wxMemoryDC::wxMemoryDC</qualifiedname>
         <param>
           <type><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
           <declname>bitmap</declname>
@@ -57,38 +60,36 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dcmemory.h" line="76" column="5"/>
+        <location file="interface/wx/dcmemory.h" line="95" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_d_c_1a93d218796ba9359eb4aec2ae46a813e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxMemoryDC::SelectObject</definition>
         <argsstring>(wxBitmap &amp;bitmap)</argsstring>
         <name>SelectObject</name>
+        <qualifiedname>wxMemoryDC::SelectObject</qualifiedname>
         <param>
           <type><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
           <declname>bitmap</declname>
         </param>
         <briefdescription>
-<para>Works exactly like <ref refid="classwx_memory_d_c_1a148ceba1c29d4a78fca6026a90e2ee5f" kindref="member">SelectObjectAsSource()</ref> but this is the function you should use when you select a bitmap because you want to modify it, e.g. </para>
+<para>Allow using this device context object to modify the given bitmap contents. </para>
         </briefdescription>
         <detaileddescription>
-<para>drawing on this DC.</para>
-<para>Using <ref refid="classwx_memory_d_c_1a148ceba1c29d4a78fca6026a90e2ee5f" kindref="member">SelectObjectAsSource()</ref> when modifying the bitmap may incur some problems related to <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> being a reference counted object (see <ref refid="overview_refcount" kindref="compound">Reference Counting</ref>).</para>
+<para>Note that if you need to only use the existing bitmap contents instead of modifying it, you should use <ref refid="classwx_memory_d_c_1a148ceba1c29d4a78fca6026a90e2ee5f" kindref="member">SelectObjectAsSource()</ref> instead.</para>
 <para>Before using the updated bitmap data, make sure to select it out of context first either by selecting <ref refid="interface_2wx_2bitmap_8h_1a2947690e84b8fdb2e37b79a4af8f8a21" kindref="member">wxNullBitmap</ref> into the device context or destroying the device context entirely.</para>
-<para>If the bitmap is already selected in this device context, nothing is done. If it is selected in another context, the function asserts and drawing on the bitmap won&apos;t work correctly.</para>
-<para><simplesect kind="see"><para><ref refid="classwx_d_c_1af982eb2d3b10c5617ef3559d51a1defc" kindref="member">wxDC::DrawBitmap()</ref> </para>
-</simplesect>
-</para>
+<para>If the bitmap is already selected in this device context, nothing is done. If it is selected in another context, the function asserts and drawing on the bitmap won&apos;t work correctly. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dcmemory.h" line="97" column="10"/>
+        <location file="interface/wx/dcmemory.h" line="112" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_d_c_1a148ceba1c29d4a78fca6026a90e2ee5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxMemoryDC::SelectObjectAsSource</definition>
         <argsstring>(const wxBitmap &amp;bitmap)</argsstring>
         <name>SelectObjectAsSource</name>
+        <qualifiedname>wxMemoryDC::SelectObjectAsSource</qualifiedname>
         <param>
           <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
           <declname>bitmap</declname>
@@ -97,18 +98,21 @@
 <para>Selects the given bitmap into the device context, to use as the memory bitmap. </para>
         </briefdescription>
         <detaileddescription>
-<para>Selecting the bitmap into a memory DC allows you to draw into the DC (and therefore the bitmap) and also to use <ref refid="classwx_d_c_1a12bed94a15136b9080683f4151042a34" kindref="member">wxDC::Blit()</ref> to copy the bitmap to a window. For this purpose, you may find <ref refid="classwx_d_c_1a890d011a03308a28039d4940dd04264e" kindref="member">wxDC::DrawIcon()</ref> easier to use instead.</para>
-<para>If the argument is <ref refid="interface_2wx_2bitmap_8h_1a2947690e84b8fdb2e37b79a4af8f8a21" kindref="member">wxNullBitmap</ref> (or some other uninitialised <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>) the current bitmap is selected out of the device context, and the original bitmap restored, allowing the current bitmap to be destroyed safely. </para>
+<para>Selecting the bitmap as source into a memory DC allows you to copy its contents to another device context using <ref refid="classwx_d_c_1a12bed94a15136b9080683f4151042a34" kindref="member">wxDC::Blit()</ref>. Note that using <ref refid="classwx_d_c_1af982eb2d3b10c5617ef3559d51a1defc" kindref="member">wxDC::DrawBitmap()</ref> or <ref refid="classwx_d_c_1a890d011a03308a28039d4940dd04264e" kindref="member">wxDC::DrawIcon()</ref> is a simpler way to do the same thing.</para>
+<para><simplesect kind="note"><para>Modifying a bitmap selected only as a source may not work correctly and can notably modify the other bitmaps sharing the same data due to the use of reference counting (see <ref refid="overview_refcount" kindref="compound">Reference Counting</ref>).</para>
+</simplesect>
+If the argument is <ref refid="interface_2wx_2bitmap_8h_1a2947690e84b8fdb2e37b79a4af8f8a21" kindref="member">wxNullBitmap</ref> (or some other uninitialised <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>) the current bitmap is selected out of the device context, allowing the current bitmap to be destroyed safely. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dcmemory.h" line="111" column="10"/>
+        <location file="interface/wx/dcmemory.h" line="131" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_d_c_1abfc29bdb24e4dba3dad63e8022030c11" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
         <definition>const wxBitmap &amp; wxMemoryDC::GetSelectedBitmap</definition>
         <argsstring>() const</argsstring>
         <name>GetSelectedBitmap</name>
+        <qualifiedname>wxMemoryDC::GetSelectedBitmap</qualifiedname>
         <briefdescription>
 <para>Get the selected bitmap. </para>
         </briefdescription>
@@ -116,20 +120,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dcmemory.h" line="116" column="20"/>
+        <location file="interface/wx/dcmemory.h" line="136" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classwx_memory_d_c_1ae6038a7b3bf925b43bfb6a13ed20c36d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
         <definition>wxBitmap &amp; wxMemoryDC::GetSelectedBitmap</definition>
         <argsstring>()</argsstring>
         <name>GetSelectedBitmap</name>
+        <qualifiedname>wxMemoryDC::GetSelectedBitmap</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dcmemory.h" line="117" column="14"/>
+        <location file="interface/wx/dcmemory.h" line="137" column="14"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -151,9 +156,23 @@
 <para><programlisting><codeline><highlight class="normal">temp_dc.<ref refid="classwx_memory_d_c_1a93d218796ba9359eb4aec2ae46a813e6" kindref="member">SelectObject</ref>(<ref refid="interface_2wx_2bitmap_8h_1a2947690e84b8fdb2e37b79a4af8f8a21" kindref="member">wxNullBitmap</ref>);</highlight></codeline>
 </programlisting></para>
 <para>This happens automatically when <ref refid="classwx_memory_d_c" kindref="compound">wxMemoryDC</ref> object goes out of scope.</para>
+<para>Note that the scaling factor of the bitmap determines the scaling factor used by this device context, so when using a memory device context as a back buffer for a window, you should typically create the bitmap using the same scale factor as used by the window, e.g. <programlisting><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MyWindow::OnPaint(<ref refid="classwx_paint_event" kindref="compound">wxPaintEvent</ref>&amp;)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref><sp/>bmp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bmp.<ref refid="classwx_bitmap_1a975c964214c3b77f1d639c1c85ebc4a5" kindref="member">CreateWithDIPSize</ref>(GetClientSize(),<sp/>GetDPIScaleFactor());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classwx_memory_d_c" kindref="compound">wxMemoryDC</ref><sp/>memdc(bmp);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>use<sp/>memdc<sp/>to<sp/>draw<sp/>on<sp/>the<sp/>bitmap<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_paint_d_c" kindref="compound">wxPaintDC</ref><sp/>dc(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dc.DrawBitmap(bmp,<sp/><ref refid="classwx_point" kindref="compound">wxPoint</ref>(0,<sp/>0));</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__dc" kindref="compound">Device Contexts</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>, <ref refid="classwx_d_c" kindref="compound">wxDC</ref> </para>
 </simplesect>
 </para>
@@ -219,7 +238,7 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/dcmemory.h" line="46" column="1" bodyfile="interface/wx/dcmemory.h" bodystart="47" bodyend="119"/>
+    <location file="interface/wx/dcmemory.h" line="65" column="1" bodyfile="interface/wx/dcmemory.h" bodystart="66" bodyend="139"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxMemoryDC</scope><name>AllocExclusive</name></member>
       <member refid="classwx_d_c_1a12bed94a15136b9080683f4151042a34" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>Blit</name></member>
@@ -285,6 +304,9 @@
       <member refid="classwx_d_c_1a3867f84557ecaf68bfeacffea74e8902" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>EndPage</name></member>
       <member refid="classwx_d_c_1af510e22ffc274d3d3b29659941f2b5a9" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>FloodFill</name></member>
       <member refid="classwx_d_c_1aa3ad38fdcd0e731af94bd9c3189e72e9" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>FloodFill</name></member>
+      <member refid="classwx_d_c_1a3772199152ffa9cedd329f1737ed2056" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>FromDIP</name></member>
+      <member refid="classwx_d_c_1a49f34844c09f1960eeca84bf0db6cd99" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>FromDIP</name></member>
+      <member refid="classwx_d_c_1aef329d3fd4ab4e8e7d6c0ebd35462dc9" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>FromDIP</name></member>
       <member refid="classwx_d_c_1ad29258b841e124462aa74a5581526e9e" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>GetAsBitmap</name></member>
       <member refid="classwx_d_c_1adfd305c5b5bc597f6c976fe511d30d08" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>GetBackground</name></member>
       <member refid="classwx_d_c_1ae4f34b8c09b8f7af5c848906ead10e64" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>GetBackgroundMode</name></member>
@@ -294,6 +316,7 @@
       <member refid="classwx_object_1a9fd1bc8bc3a47c6e14e679a80e3cb8f4" prot="public" virt="virtual"><scope>wxMemoryDC</scope><name>GetClassInfo</name></member>
       <member refid="classwx_d_c_1a866cebe05c603892235701239f8dbd65" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>GetClippingBox</name></member>
       <member refid="classwx_d_c_1a5a379f8f932a5d7d2e05f0820932f444" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>GetClippingBox</name></member>
+      <member refid="classwx_d_c_1a6c20d102c499c335547b63156d2bb631" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>GetContentScaleFactor</name></member>
       <member refid="classwx_d_c_1a798700d907980c88c717e86a4a06e924" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>GetDepth</name></member>
       <member refid="classwx_d_c_1a1ce47e2939c15b7290540a4ca1736eb5" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>GetDeviceOrigin</name></member>
       <member refid="classwx_d_c_1a159ff92c61d4886e52d688ac4cb1128b" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>GetFont</name></member>
@@ -377,6 +400,9 @@
       <member refid="classwx_d_c_1ad6572581c9d31dc349b6a7462426856c" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>StartDoc</name></member>
       <member refid="classwx_d_c_1a94c855ceb9f2fd5dcd1cf61396c13576" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>StartPage</name></member>
       <member refid="classwx_d_c_1a82801167a35e747218c49aa2161ae4bf" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>StretchBlit</name></member>
+      <member refid="classwx_d_c_1ae512fadbd38d4a82aa10ed2028408da9" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>ToDIP</name></member>
+      <member refid="classwx_d_c_1ac012d95ee8c1b35912ad8e485b6cbbbf" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>ToDIP</name></member>
+      <member refid="classwx_d_c_1a1cf1813ac567d368b0e917d947e6c1fc" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>ToDIP</name></member>
       <member refid="classwx_object_1af51efc6b1ae632fc7f0cd7ebbce9fa36" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>UnRef</name></member>
       <member refid="classwx_object_1a74b40e42d19a4b9e9bec0b57d62a5725" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>UnShare</name></member>
       <member refid="classwx_memory_d_c_1a381e4c13a2df5b4915789b26fe43fd8b" prot="public" virt="non-virtual"><scope>wxMemoryDC</scope><name>wxMemoryDC</name></member>

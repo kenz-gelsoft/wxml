@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_module" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxModule</compoundname>
     <basecompoundref refid="classwx_object" prot="public" virt="non-virtual">wxObject</basecompoundref>
@@ -11,6 +11,7 @@
         <definition>wxModule::wxModule</definition>
         <argsstring>()</argsstring>
         <name>wxModule</name>
+        <qualifiedname>wxModule::wxModule</qualifiedname>
         <briefdescription>
 <para>Constructs a <ref refid="classwx_module" kindref="compound">wxModule</ref> object. </para>
         </briefdescription>
@@ -25,6 +26,7 @@
         <definition>virtual wxModule::~wxModule</definition>
         <argsstring>()</argsstring>
         <name>~wxModule</name>
+        <qualifiedname>wxModule::~wxModule</qualifiedname>
         <briefdescription>
 <para>Destructor. </para>
         </briefdescription>
@@ -39,6 +41,7 @@
         <definition>virtual void wxModule::OnExit</definition>
         <argsstring>()=0</argsstring>
         <name>OnExit</name>
+        <qualifiedname>wxModule::OnExit</qualifiedname>
         <briefdescription>
 <para>Provide this function with appropriate cleanup for your module. </para>
         </briefdescription>
@@ -53,6 +56,7 @@
         <definition>virtual bool wxModule::OnInit</definition>
         <argsstring>()=0</argsstring>
         <name>OnInit</name>
+        <qualifiedname>wxModule::OnInit</qualifiedname>
         <briefdescription>
 <para>Provide this function with appropriate initialization for your module. </para>
         </briefdescription>
@@ -70,6 +74,7 @@
         <definition>void wxModule::AddDependency</definition>
         <argsstring>(wxClassInfo *dep)</argsstring>
         <name>AddDependency</name>
+        <qualifiedname>wxModule::AddDependency</qualifiedname>
         <param>
           <type><ref refid="classwx_class_info" kindref="compound">wxClassInfo</ref> *</type>
           <declname>dep</declname>
@@ -99,6 +104,7 @@
         <definition>void wxModule::AddDependency</definition>
         <argsstring>(const char *classname)</argsstring>
         <name>AddDependency</name>
+        <qualifiedname>wxModule::AddDependency</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>classname</declname>
@@ -153,7 +159,7 @@
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyModule()<sp/>{<sp/><ref refid="classwx_module_1a943494994b76ddaefebf95345c5a05ec" kindref="member">AddDependency</ref>(<ref refid="object_8h_1acee897a7d4e704e1aa53568220f2396e" kindref="member">wxCLASSINFO</ref>(wxDDEModule));<sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classwx_module_1a297484b97a61428afecdaae4f8854d99" kindref="member">OnInit</ref>()<sp/>{<sp/>...<sp/>code<sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>DDE<sp/>...<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classwx_module_1a297484b97a61428afecdaae4f8854d99" kindref="member">OnInit</ref>()<sp/>{<sp/>...<sp/>code<sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">DDE<sp/>...<sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classwx_module_1ab7615e407981a1ab0dd2b5f0a6f760c3" kindref="member">OnExit</ref>()<sp/>{<sp/>...<sp/>}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
@@ -168,7 +174,7 @@
 <codeline><highlight class="normal">{</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyModule2()<sp/>{<sp/><ref refid="classwx_module_1a943494994b76ddaefebf95345c5a05ec" kindref="member">AddDependency</ref>(</highlight><highlight class="stringliteral">&quot;wxDDEModule&quot;</highlight><highlight class="normal">);<sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classwx_module_1a297484b97a61428afecdaae4f8854d99" kindref="member">OnInit</ref>()<sp/>{<sp/>...<sp/>code<sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>DDE<sp/>...<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classwx_module_1a297484b97a61428afecdaae4f8854d99" kindref="member">OnInit</ref>()<sp/>{<sp/>...<sp/>code<sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">DDE<sp/>...<sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classwx_module_1ab7615e407981a1ab0dd2b5f0a6f760c3" kindref="member">OnExit</ref>()<sp/>{<sp/>...<sp/>}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
@@ -179,7 +185,8 @@
 </programlisting></para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__appmanagement" kindref="compound">Application and Process Management</ref> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="3">

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_platform_info" kind="class" language="C++" prot="public">
     <compoundname>wxPlatformInfo</compoundname>
     <includes local="no">wx/platinfo.h</includes>
@@ -10,10 +10,11 @@
         <definition>wxArchitecture wxPlatformInfo::GetArchitecture</definition>
         <argsstring>() const</argsstring>
         <name>GetArchitecture</name>
+        <qualifiedname>wxPlatformInfo::GetArchitecture</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000055"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_platform_info_1a26182a170d7f7f3e33dc7396b843f6f8" kindref="member">GetBitness()</ref> instead. </para>
+<para><xrefsect id="deprecated_1_deprecated000058"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_platform_info_1a26182a170d7f7f3e33dc7396b843f6f8" kindref="member">GetBitness()</ref> instead. </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -25,6 +26,7 @@
         <definition>wxBitness wxPlatformInfo::GetBitness</definition>
         <argsstring>() const</argsstring>
         <name>GetBitness</name>
+        <qualifiedname>wxPlatformInfo::GetBitness</qualifiedname>
         <briefdescription>
 <para>Returns the architecture bitness ID of this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -42,6 +44,7 @@
         <definition>wxEndianness wxPlatformInfo::GetEndianness</definition>
         <argsstring>() const</argsstring>
         <name>GetEndianness</name>
+        <qualifiedname>wxPlatformInfo::GetEndianness</qualifiedname>
         <briefdescription>
 <para>Returns the endianness ID of this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -56,11 +59,12 @@
         <definition>wxString wxPlatformInfo::GetCpuArchitectureName</definition>
         <argsstring>() const</argsstring>
         <name>GetCpuArchitectureName</name>
+        <qualifiedname>wxPlatformInfo::GetCpuArchitectureName</qualifiedname>
         <briefdescription>
 <para>Returns the CPU architecture name, if available. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="utils_8h_1a89d84f575fabf9f9a58381e0f3859044" kindref="member">wxGetCpuArchitectureName()</ref></para>
+<para><simplesect kind="see"><para><ref refid="utils_8h_1a89d84f575fabf9f9a58381e0f3859044" kindref="member">wxGetCpuArchitectureName()</ref>, <ref refid="classwx_platform_info_1a63c71134a0ead9136de1f953c20fbfd8" kindref="member">GetNativeCpuArchitectureName()</ref></para>
 </simplesect>
 <simplesect kind="since"><para>3.1.5 </para>
 </simplesect>
@@ -70,11 +74,32 @@
         </inbodydescription>
         <location file="interface/wx/platinfo.h" line="417" column="14"/>
       </memberdef>
+      <memberdef kind="function" id="classwx_platform_info_1a63c71134a0ead9136de1f953c20fbfd8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
+        <definition>wxString wxPlatformInfo::GetNativeCpuArchitectureName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNativeCpuArchitectureName</name>
+        <qualifiedname>wxPlatformInfo::GetNativeCpuArchitectureName</qualifiedname>
+        <briefdescription>
+<para>Returns the native CPU architecture name, if available. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="since"><para>3.1.6</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="utils_8h_1a072c63d761e79fbb3f1df871dbc3a1f9" kindref="member">wxGetNativeCpuArchitectureName()</ref>, <ref refid="classwx_platform_info_1a9bfd8bc53bae1eed17da722d91fc3abf" kindref="member">GetCpuArchitectureName()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/platinfo.h" line="426" column="14"/>
+      </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a642f20e054367d13a86ba989d9638cdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxPlatformInfo::GetOSMajorVersion</definition>
         <argsstring>() const</argsstring>
         <name>GetOSMajorVersion</name>
+        <qualifiedname>wxPlatformInfo::GetOSMajorVersion</qualifiedname>
         <briefdescription>
 <para>Returns the run-time major version of the OS associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -85,13 +110,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="425" column="9"/>
+        <location file="interface/wx/platinfo.h" line="434" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1af73fcccd3de26814ae5d358b3c7b55c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxPlatformInfo::GetOSMinorVersion</definition>
         <argsstring>() const</argsstring>
         <name>GetOSMinorVersion</name>
+        <qualifiedname>wxPlatformInfo::GetOSMinorVersion</qualifiedname>
         <briefdescription>
 <para>Returns the run-time minor version of the OS associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -102,13 +128,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="433" column="9"/>
+        <location file="interface/wx/platinfo.h" line="442" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a8778691d322cc8e8937a4a8db81c4447" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxPlatformInfo::GetOSMicroVersion</definition>
         <argsstring>() const</argsstring>
         <name>GetOSMicroVersion</name>
+        <qualifiedname>wxPlatformInfo::GetOSMicroVersion</qualifiedname>
         <briefdescription>
 <para>Returns the run-time micro version of the OS associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -121,13 +148,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="443" column="9"/>
+        <location file="interface/wx/platinfo.h" line="452" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1acc6cc20c1f923a11a78205275497aa21" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fd" kindref="member">wxOperatingSystemId</ref></type>
         <definition>wxOperatingSystemId wxPlatformInfo::GetOperatingSystemId</definition>
         <argsstring>() const</argsstring>
         <name>GetOperatingSystemId</name>
+        <qualifiedname>wxPlatformInfo::GetOperatingSystemId</qualifiedname>
         <briefdescription>
 <para>Returns the operating system ID of this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -136,13 +164,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="450" column="25"/>
+        <location file="interface/wx/platinfo.h" line="459" column="25"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1ac958a18bbea5aefc218ed02a053d2985" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxPlatformInfo::GetOperatingSystemDescription</definition>
         <argsstring>() const</argsstring>
         <name>GetOperatingSystemDescription</name>
+        <qualifiedname>wxPlatformInfo::GetOperatingSystemDescription</qualifiedname>
         <briefdescription>
 <para>Returns the description of the operating system of this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -151,13 +180,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="457" column="14"/>
+        <location file="interface/wx/platinfo.h" line="466" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a8c9b1af7cd71eea864ad9dfd722e3754" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="platinfo_8h_1a4acbc14b366d6ce2875f809be384757b" kindref="member">wxPortId</ref></type>
         <definition>wxPortId wxPlatformInfo::GetPortId</definition>
         <argsstring>() const</argsstring>
         <name>GetPortId</name>
+        <qualifiedname>wxPlatformInfo::GetPortId</qualifiedname>
         <briefdescription>
 <para>Returns the wxWidgets port ID associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -165,13 +195,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="462" column="14"/>
+        <location file="interface/wx/platinfo.h" line="471" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a849b6e214a5ce6d5a062b6b35841c0a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structwx_linux_distribution_info" kindref="compound">wxLinuxDistributionInfo</ref></type>
         <definition>wxLinuxDistributionInfo wxPlatformInfo::GetLinuxDistributionInfo</definition>
         <argsstring>() const</argsstring>
         <name>GetLinuxDistributionInfo</name>
+        <qualifiedname>wxPlatformInfo::GetLinuxDistributionInfo</qualifiedname>
         <briefdescription>
 <para>Returns the Linux distribution info associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -180,13 +211,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="469" column="29"/>
+        <location file="interface/wx/platinfo.h" line="478" column="29"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a3b83bf0e23db37c813fda31ba3dd0e87" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxPlatformInfo::GetDesktopEnvironment</definition>
         <argsstring>() const</argsstring>
         <name>GetDesktopEnvironment</name>
+        <qualifiedname>wxPlatformInfo::GetDesktopEnvironment</qualifiedname>
         <briefdescription>
 <para>Returns the desktop environment associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -195,13 +227,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="476" column="14"/>
+        <location file="interface/wx/platinfo.h" line="485" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a5f6c0841665788991828e7b3babd182b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxPlatformInfo::GetToolkitMajorVersion</definition>
         <argsstring>() const</argsstring>
         <name>GetToolkitMajorVersion</name>
+        <qualifiedname>wxPlatformInfo::GetToolkitMajorVersion</qualifiedname>
         <briefdescription>
 <para>Returns the run-time major version of the toolkit associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -213,13 +246,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="489" column="9"/>
+        <location file="interface/wx/platinfo.h" line="498" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a255f42b8a23fd88b958e110f3a4ae625" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxPlatformInfo::GetToolkitMinorVersion</definition>
         <argsstring>() const</argsstring>
         <name>GetToolkitMinorVersion</name>
+        <qualifiedname>wxPlatformInfo::GetToolkitMinorVersion</qualifiedname>
         <briefdescription>
 <para>Returns the run-time minor version of the toolkit associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -231,13 +265,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="502" column="9"/>
+        <location file="interface/wx/platinfo.h" line="511" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a9f0dc09d4cc8a1971b1f4e0725927d00" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxPlatformInfo::GetToolkitMicroVersion</definition>
         <argsstring>() const</argsstring>
         <name>GetToolkitMicroVersion</name>
+        <qualifiedname>wxPlatformInfo::GetToolkitMicroVersion</qualifiedname>
         <briefdescription>
 <para>Returns the run-time micro version of the toolkit associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -251,7 +286,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="517" column="9"/>
+        <location file="interface/wx/platinfo.h" line="526" column="9"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -261,21 +296,23 @@
         <definition>wxString wxPlatformInfo::GetArchName</definition>
         <argsstring>() const</argsstring>
         <name>GetArchName</name>
+        <qualifiedname>wxPlatformInfo::GetArchName</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000056"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_platform_info_1a4e0ea021618d8c08f5f09c13ae53211d" kindref="member">GetBitnessName()</ref> instead. </para>
+<para><xrefsect id="deprecated_1_deprecated000059"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_platform_info_1a4e0ea021618d8c08f5f09c13ae53211d" kindref="member">GetBitnessName()</ref> instead. </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="530" column="14"/>
+        <location file="interface/wx/platinfo.h" line="539" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a471b5bc166d35d6ef178fac388fcc56c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxPlatformInfo::GetBitnessName</definition>
         <argsstring>() const</argsstring>
         <name>GetBitnessName</name>
+        <qualifiedname>wxPlatformInfo::GetBitnessName</qualifiedname>
         <briefdescription>
 <para>Returns the name for the architecture bitness of this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -286,13 +323,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="537" column="14"/>
+        <location file="interface/wx/platinfo.h" line="546" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1ad6711a3bbecef87732c1daec4a3ed467" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxPlatformInfo::GetEndiannessName</definition>
         <argsstring>() const</argsstring>
         <name>GetEndiannessName</name>
+        <qualifiedname>wxPlatformInfo::GetEndiannessName</qualifiedname>
         <briefdescription>
 <para>Returns the name for the endianness of this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -300,13 +338,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="542" column="14"/>
+        <location file="interface/wx/platinfo.h" line="551" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1aecba4621d85e8d7ef61213ce8db9e5d5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxPlatformInfo::GetOperatingSystemFamilyName</definition>
         <argsstring>() const</argsstring>
         <name>GetOperatingSystemFamilyName</name>
+        <qualifiedname>wxPlatformInfo::GetOperatingSystemFamilyName</qualifiedname>
         <briefdescription>
 <para>Returns the operating system family name of the OS associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -314,13 +353,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="548" column="14"/>
+        <location file="interface/wx/platinfo.h" line="557" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a1007f20d01f763269dc10f6491afcc92" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxPlatformInfo::GetOperatingSystemIdName</definition>
         <argsstring>() const</argsstring>
         <name>GetOperatingSystemIdName</name>
+        <qualifiedname>wxPlatformInfo::GetOperatingSystemIdName</qualifiedname>
         <briefdescription>
 <para>Returns the operating system name of the OS associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -328,13 +368,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="554" column="14"/>
+        <location file="interface/wx/platinfo.h" line="563" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a1a9dadf5e1977c81319b185413269776" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxPlatformInfo::GetPortIdName</definition>
         <argsstring>() const</argsstring>
         <name>GetPortIdName</name>
+        <qualifiedname>wxPlatformInfo::GetPortIdName</qualifiedname>
         <briefdescription>
 <para>Returns the name of the wxWidgets port ID associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -342,13 +383,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="560" column="14"/>
+        <location file="interface/wx/platinfo.h" line="569" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1af2c377f64ddd7c9fb9211491171fa012" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref></type>
         <definition>wxString wxPlatformInfo::GetPortIdShortName</definition>
         <argsstring>() const</argsstring>
         <name>GetPortIdShortName</name>
+        <qualifiedname>wxPlatformInfo::GetPortIdShortName</qualifiedname>
         <briefdescription>
 <para>Returns the short name of the wxWidgets port ID associated with this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> instance. </para>
         </briefdescription>
@@ -356,7 +398,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="566" column="14"/>
+        <location file="interface/wx/platinfo.h" line="575" column="14"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -366,6 +408,7 @@
         <definition>void wxPlatformInfo::SetArchitecture</definition>
         <argsstring>(wxArchitecture n)</argsstring>
         <name>SetArchitecture</name>
+        <qualifiedname>wxPlatformInfo::SetArchitecture</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1ab2b4836af7d22393b06c1d4f110bdb4c" kindref="member">wxArchitecture</ref></type>
           <declname>n</declname>
@@ -373,18 +416,19 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000057"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_platform_info_1a427251088f300ebdbdba6c0717266c1a" kindref="member">SetBitness()</ref> instead. </para>
+<para><xrefsect id="deprecated_1_deprecated000060"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_platform_info_1a427251088f300ebdbdba6c0717266c1a" kindref="member">SetBitness()</ref> instead. </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="580" column="10"/>
+        <location file="interface/wx/platinfo.h" line="589" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a427251088f300ebdbdba6c0717266c1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxPlatformInfo::SetBitness</definition>
         <argsstring>(wxBitness n)</argsstring>
         <name>SetBitness</name>
+        <qualifiedname>wxPlatformInfo::SetBitness</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1a3e0e8b583386e102c89d8d9a4e3147a1" kindref="member">wxBitness</ref></type>
           <declname>n</declname>
@@ -399,13 +443,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="587" column="10"/>
+        <location file="interface/wx/platinfo.h" line="596" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1aa8c63894983b04e8db7fb46a896464a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxPlatformInfo::SetEndianness</definition>
         <argsstring>(wxEndianness n)</argsstring>
         <name>SetEndianness</name>
+        <qualifiedname>wxPlatformInfo::SetEndianness</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1a604702957b3c219643e1c989766f7047" kindref="member">wxEndianness</ref></type>
           <declname>n</declname>
@@ -417,13 +462,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="592" column="10"/>
+        <location file="interface/wx/platinfo.h" line="601" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a1ca7d1ba6f7df058bc6773670564ce6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxPlatformInfo::SetOSVersion</definition>
         <argsstring>(int major, int minor, int micro=0)</argsstring>
         <name>SetOSVersion</name>
+        <qualifiedname>wxPlatformInfo::SetOSVersion</qualifiedname>
         <param>
           <type>int</type>
           <declname>major</declname>
@@ -444,13 +490,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="598" column="10"/>
+        <location file="interface/wx/platinfo.h" line="607" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a573b7a06315e62379186dfdd60ee6b86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxPlatformInfo::SetOperatingSystemId</definition>
         <argsstring>(wxOperatingSystemId n)</argsstring>
         <name>SetOperatingSystemId</name>
+        <qualifiedname>wxPlatformInfo::SetOperatingSystemId</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fd" kindref="member">wxOperatingSystemId</ref></type>
           <declname>n</declname>
@@ -462,13 +509,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="603" column="10"/>
+        <location file="interface/wx/platinfo.h" line="612" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1ae3a93e4ad2948a54b9e3f9eb69bfc9fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxPlatformInfo::SetPortId</definition>
         <argsstring>(wxPortId n)</argsstring>
         <name>SetPortId</name>
+        <qualifiedname>wxPlatformInfo::SetPortId</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1a4acbc14b366d6ce2875f809be384757b" kindref="member">wxPortId</ref></type>
           <declname>n</declname>
@@ -480,13 +528,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="608" column="10"/>
+        <location file="interface/wx/platinfo.h" line="617" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1adb644e3c3121f4cc9dff75297e5c81e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxPlatformInfo::SetToolkitVersion</definition>
         <argsstring>(int major, int minor, int micro=0)</argsstring>
         <name>SetToolkitVersion</name>
+        <qualifiedname>wxPlatformInfo::SetToolkitVersion</qualifiedname>
         <param>
           <type>int</type>
           <declname>major</declname>
@@ -507,13 +556,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="613" column="10"/>
+        <location file="interface/wx/platinfo.h" line="622" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a0609911ec48b004aac3f89a69e8537b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxPlatformInfo::SetOperatingSystemDescription</definition>
         <argsstring>(const wxString &amp;desc)</argsstring>
         <name>SetOperatingSystemDescription</name>
+        <qualifiedname>wxPlatformInfo::SetOperatingSystemDescription</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>desc</declname>
@@ -525,13 +575,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="618" column="10"/>
+        <location file="interface/wx/platinfo.h" line="627" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a8355d5c12d826b85502c8c431a105bfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxPlatformInfo::SetDesktopEnvironment</definition>
         <argsstring>(const wxString &amp;de)</argsstring>
         <name>SetDesktopEnvironment</name>
+        <qualifiedname>wxPlatformInfo::SetDesktopEnvironment</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>de</declname>
@@ -543,13 +594,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="623" column="10"/>
+        <location file="interface/wx/platinfo.h" line="632" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_platform_info_1a7eab116cfe3bd22cd2c189ec95d39f84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxPlatformInfo::SetLinuxDistributionInfo</definition>
         <argsstring>(const wxLinuxDistributionInfo &amp;di)</argsstring>
         <name>SetLinuxDistributionInfo</name>
+        <qualifiedname>wxPlatformInfo::SetLinuxDistributionInfo</qualifiedname>
         <param>
           <type>const <ref refid="structwx_linux_distribution_info" kindref="compound">wxLinuxDistributionInfo</ref> &amp;</type>
           <declname>di</declname>
@@ -561,7 +613,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/platinfo.h" line="628" column="10"/>
+        <location file="interface/wx/platinfo.h" line="637" column="10"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -573,6 +625,7 @@
         <definition>static wxBitness wxPlatformInfo::GetBitness</definition>
         <argsstring>(const wxString &amp;bitness)</argsstring>
         <name>GetBitness</name>
+        <qualifiedname>wxPlatformInfo::GetBitness</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>bitness</declname>
@@ -595,6 +648,7 @@
         <definition>static wxArchitecture wxPlatformInfo::GetArch</definition>
         <argsstring>(const wxString &amp;arch)</argsstring>
         <name>GetArch</name>
+        <qualifiedname>wxPlatformInfo::GetArch</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>arch</declname>
@@ -602,7 +656,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000053"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_platform_info_1a26182a170d7f7f3e33dc7396b843f6f8" kindref="member">GetBitness()</ref> instead. </para>
+<para><xrefsect id="deprecated_1_deprecated000056"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_platform_info_1a26182a170d7f7f3e33dc7396b843f6f8" kindref="member">GetBitness()</ref> instead. </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -614,6 +668,7 @@
         <definition>static wxEndianness wxPlatformInfo::GetEndianness</definition>
         <argsstring>(const wxString &amp;end)</argsstring>
         <name>GetEndianness</name>
+        <qualifiedname>wxPlatformInfo::GetEndianness</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>end</declname>
@@ -633,6 +688,7 @@
         <definition>static wxOperatingSystemId wxPlatformInfo::GetOperatingSystemId</definition>
         <argsstring>(const wxString &amp;name)</argsstring>
         <name>GetOperatingSystemId</name>
+        <qualifiedname>wxPlatformInfo::GetOperatingSystemId</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>name</declname>
@@ -651,6 +707,7 @@
         <definition>static wxPortId wxPlatformInfo::GetPortId</definition>
         <argsstring>(const wxString &amp;portname)</argsstring>
         <name>GetPortId</name>
+        <qualifiedname>wxPlatformInfo::GetPortId</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>portname</declname>
@@ -674,6 +731,7 @@
         <definition>static wxString wxPlatformInfo::GetArchName</definition>
         <argsstring>(wxArchitecture arch)</argsstring>
         <name>GetArchName</name>
+        <qualifiedname>wxPlatformInfo::GetArchName</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1ab2b4836af7d22393b06c1d4f110bdb4c" kindref="member">wxArchitecture</ref></type>
           <declname>arch</declname>
@@ -681,7 +739,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000054"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_platform_info_1a4e0ea021618d8c08f5f09c13ae53211d" kindref="member">GetBitnessName()</ref> instead. </para>
+<para><xrefsect id="deprecated_1_deprecated000057"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <ref refid="classwx_platform_info_1a4e0ea021618d8c08f5f09c13ae53211d" kindref="member">GetBitnessName()</ref> instead. </para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -693,6 +751,7 @@
         <definition>static wxString wxPlatformInfo::GetBitnessName</definition>
         <argsstring>(wxBitness bitness)</argsstring>
         <name>GetBitnessName</name>
+        <qualifiedname>wxPlatformInfo::GetBitnessName</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1a3e0e8b583386e102c89d8d9a4e3147a1" kindref="member">wxBitness</ref></type>
           <declname>bitness</declname>
@@ -714,6 +773,7 @@
         <definition>static wxString wxPlatformInfo::GetEndiannessName</definition>
         <argsstring>(wxEndianness end)</argsstring>
         <name>GetEndiannessName</name>
+        <qualifiedname>wxPlatformInfo::GetEndiannessName</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1a604702957b3c219643e1c989766f7047" kindref="member">wxEndianness</ref></type>
           <declname>end</declname>
@@ -732,6 +792,7 @@
         <definition>static wxString wxPlatformInfo::GetOperatingSystemFamilyName</definition>
         <argsstring>(wxOperatingSystemId os)</argsstring>
         <name>GetOperatingSystemFamilyName</name>
+        <qualifiedname>wxPlatformInfo::GetOperatingSystemFamilyName</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fd" kindref="member">wxOperatingSystemId</ref></type>
           <declname>os</declname>
@@ -750,6 +811,7 @@
         <definition>static wxString wxPlatformInfo::GetOperatingSystemIdName</definition>
         <argsstring>(wxOperatingSystemId os)</argsstring>
         <name>GetOperatingSystemIdName</name>
+        <qualifiedname>wxPlatformInfo::GetOperatingSystemIdName</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1ae1234f6be0bdb09c90c9ba78251056fd" kindref="member">wxOperatingSystemId</ref></type>
           <declname>os</declname>
@@ -769,6 +831,7 @@
         <definition>static wxString wxPlatformInfo::GetPortIdName</definition>
         <argsstring>(wxPortId port, bool usingUniversal)</argsstring>
         <name>GetPortIdName</name>
+        <qualifiedname>wxPlatformInfo::GetPortIdName</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1a4acbc14b366d6ce2875f809be384757b" kindref="member">wxPortId</ref></type>
           <declname>port</declname>
@@ -793,6 +856,7 @@
         <definition>static wxString wxPlatformInfo::GetPortIdShortName</definition>
         <argsstring>(wxPortId port, bool usingUniversal)</argsstring>
         <name>GetPortIdShortName</name>
+        <qualifiedname>wxPlatformInfo::GetPortIdShortName</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1a4acbc14b366d6ce2875f809be384757b" kindref="member">wxPortId</ref></type>
           <declname>port</declname>
@@ -817,6 +881,7 @@
         <definition>static wxString wxPlatformInfo::GetOperatingSystemDirectory</definition>
         <argsstring>()</argsstring>
         <name>GetOperatingSystemDirectory</name>
+        <qualifiedname>wxPlatformInfo::GetOperatingSystemDirectory</qualifiedname>
         <briefdescription>
 <para>Returns the operating system directory. </para>
         </briefdescription>
@@ -834,6 +899,7 @@
         <definition>wxPlatformInfo::wxPlatformInfo</definition>
         <argsstring>()</argsstring>
         <name>wxPlatformInfo</name>
+        <qualifiedname>wxPlatformInfo::wxPlatformInfo</qualifiedname>
         <briefdescription>
 <para>Initializes the instance with the values corresponding to the currently running platform. </para>
         </briefdescription>
@@ -852,6 +918,7 @@
         <definition>wxPlatformInfo::wxPlatformInfo</definition>
         <argsstring>(wxPortId pid, int tkMajor=-1, int tkMinor=-1, wxOperatingSystemId id=wxOS_UNKNOWN, int osMajor=-1, int osMinor=-1, wxBitness bitness=wxBITNESS_INVALID, wxEndianness endian=wxENDIAN_INVALID)</argsstring>
         <name>wxPlatformInfo</name>
+        <qualifiedname>wxPlatformInfo::wxPlatformInfo</qualifiedname>
         <param>
           <type><ref refid="platinfo_8h_1a4acbc14b366d6ce2875f809be384757b" kindref="member">wxPortId</ref></type>
           <declname>pid</declname>
@@ -905,6 +972,7 @@
         <definition>bool wxPlatformInfo::CheckOSVersion</definition>
         <argsstring>(int major, int minor, int micro=0) const</argsstring>
         <name>CheckOSVersion</name>
+        <qualifiedname>wxPlatformInfo::CheckOSVersion</qualifiedname>
         <param>
           <type>int</type>
           <declname>major</declname>
@@ -935,6 +1003,7 @@
         <definition>bool wxPlatformInfo::CheckToolkitVersion</definition>
         <argsstring>(int major, int minor, int micro=0) const</argsstring>
         <name>CheckToolkitVersion</name>
+        <qualifiedname>wxPlatformInfo::CheckToolkitVersion</qualifiedname>
         <param>
           <type>int</type>
           <declname>major</declname>
@@ -965,6 +1034,7 @@
         <definition>bool wxPlatformInfo::IsOk</definition>
         <argsstring>() const</argsstring>
         <name>IsOk</name>
+        <qualifiedname>wxPlatformInfo::IsOk</qualifiedname>
         <briefdescription>
 <para>Returns true if this instance is fully initialized with valid values. </para>
         </briefdescription>
@@ -979,6 +1049,7 @@
         <definition>bool wxPlatformInfo::IsUsingUniversalWidgets</definition>
         <argsstring>() const</argsstring>
         <name>IsUsingUniversalWidgets</name>
+        <qualifiedname>wxPlatformInfo::IsUsingUniversalWidgets</qualifiedname>
         <briefdescription>
 <para>Returns true if this <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> describes wxUniversal build. </para>
         </briefdescription>
@@ -993,6 +1064,7 @@
         <definition>bool wxPlatformInfo::operator!=</definition>
         <argsstring>(const wxPlatformInfo &amp;t) const</argsstring>
         <name>operator!=</name>
+        <qualifiedname>wxPlatformInfo::operator!=</qualifiedname>
         <param>
           <type>const <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> &amp;</type>
           <declname>t</declname>
@@ -1012,6 +1084,7 @@
         <definition>bool wxPlatformInfo::operator==</definition>
         <argsstring>(const wxPlatformInfo &amp;t) const</argsstring>
         <name>operator==</name>
+        <qualifiedname>wxPlatformInfo::operator==</qualifiedname>
         <param>
           <type>const <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> &amp;</type>
           <declname>t</declname>
@@ -1033,6 +1106,7 @@
         <definition>static const wxPlatformInfo &amp; wxPlatformInfo::Get</definition>
         <argsstring>()</argsstring>
         <name>Get</name>
+        <qualifiedname>wxPlatformInfo::Get</qualifiedname>
         <briefdescription>
 <para>Returns the global <ref refid="classwx_platform_info" kindref="compound">wxPlatformInfo</ref> object, initialized with the values for the currently running platform. </para>
         </briefdescription>
@@ -1053,12 +1127,13 @@
 </programlisting></para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__cfg" kindref="compound">Application and System configuration</ref></para>
 <para><simplesect kind="see"><para><ref refid="utils_8h_1a46ce8b844446a6cfcff8dde6122d7932" kindref="member">wxGetOsVersion()</ref>, <ref refid="utils_8h_1accf71bf91abcb6469e6b812acf40bd38" kindref="member">wxIsPlatformLittleEndian()</ref>, <ref refid="utils_8h_1a56083f0f3875e40b13aa6094e283584e" kindref="member">wxIsPlatform64Bit()</ref>, <ref refid="classwx_app_traits" kindref="compound">wxAppTraits</ref>, <ref refid="group__group__funcmacro__networkuseros" kindref="compound">Network, User and OS</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="interface/wx/platinfo.h" line="206" column="1" bodyfile="interface/wx/platinfo.h" bodystart="207" bodyend="631"/>
+    <location file="interface/wx/platinfo.h" line="206" column="1" bodyfile="interface/wx/platinfo.h" bodystart="207" bodyend="640"/>
     <listofallmembers>
       <member refid="classwx_platform_info_1a17a32adef45952f22818612ecdeb8727" prot="public" virt="non-virtual"><scope>wxPlatformInfo</scope><name>CheckOSVersion</name></member>
       <member refid="classwx_platform_info_1a32bc1519ae9305e4a3dca22ca154e73b" prot="public" virt="non-virtual"><scope>wxPlatformInfo</scope><name>CheckToolkitVersion</name></member>
@@ -1078,6 +1153,7 @@
       <member refid="classwx_platform_info_1a4562d7febedc9e8dbadcc8acdb7d129b" prot="public" virt="non-virtual"><scope>wxPlatformInfo</scope><name>GetEndiannessName</name></member>
       <member refid="classwx_platform_info_1ad6711a3bbecef87732c1daec4a3ed467" prot="public" virt="non-virtual"><scope>wxPlatformInfo</scope><name>GetEndiannessName</name></member>
       <member refid="classwx_platform_info_1a849b6e214a5ce6d5a062b6b35841c0a8" prot="public" virt="non-virtual"><scope>wxPlatformInfo</scope><name>GetLinuxDistributionInfo</name></member>
+      <member refid="classwx_platform_info_1a63c71134a0ead9136de1f953c20fbfd8" prot="public" virt="non-virtual"><scope>wxPlatformInfo</scope><name>GetNativeCpuArchitectureName</name></member>
       <member refid="classwx_platform_info_1ac958a18bbea5aefc218ed02a053d2985" prot="public" virt="non-virtual"><scope>wxPlatformInfo</scope><name>GetOperatingSystemDescription</name></member>
       <member refid="classwx_platform_info_1acafecf367278fceae4fc205d03fb695c" prot="public" virt="non-virtual"><scope>wxPlatformInfo</scope><name>GetOperatingSystemDirectory</name></member>
       <member refid="classwx_platform_info_1aaa7f7f09e9378bb43d2849b13dbc1f91" prot="public" virt="non-virtual"><scope>wxPlatformInfo</scope><name>GetOperatingSystemFamilyName</name></member>

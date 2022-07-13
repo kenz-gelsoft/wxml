@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_data_view_bitmap_renderer" kind="class" language="C++" prot="public">
     <compoundname>wxDataViewBitmapRenderer</compoundname>
     <basecompoundref refid="classwx_data_view_renderer" prot="public" virt="non-virtual">wxDataViewRenderer</basecompoundref>
@@ -10,17 +10,19 @@
         <definition>static wxString wxDataViewBitmapRenderer::GetDefaultType</definition>
         <argsstring>()</argsstring>
         <name>GetDefaultType</name>
+        <qualifiedname>wxDataViewBitmapRenderer::GetDefaultType</qualifiedname>
         <briefdescription>
 <para>Returns the <ref refid="classwx_variant" kindref="compound">wxVariant</ref> type used with this renderer. </para>
         </briefdescription>
         <detaileddescription>
+<para>Note that the value returned by this function has changed from &quot;wxBitmap&quot; to &quot;wxBitmapBundle&quot; in wxWidgets 3.1.7, however the exact value shouldn&apos;t matter, as it is only supposed to be used as the value for the first constructor argument.</para>
 <para><simplesect kind="since"><para>3.1.0 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2705" column="21"/>
+        <location file="interface/wx/dataview.h" line="2756" column="21"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -29,6 +31,7 @@
         <definition>wxDataViewBitmapRenderer::wxDataViewBitmapRenderer</definition>
         <argsstring>(const wxString &amp;varianttype=GetDefaultType(), wxDataViewCellMode mode=wxDATAVIEW_CELL_INERT, int align=wxDVR_DEFAULT_ALIGNMENT)</argsstring>
         <name>wxDataViewBitmapRenderer</name>
+        <qualifiedname>wxDataViewBitmapRenderer::wxDataViewBitmapRenderer</qualifiedname>
         <param>
           <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
           <declname>varianttype</declname>
@@ -51,16 +54,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/dataview.h" line="2710" column="5"/>
+        <location file="interface/wx/dataview.h" line="2761" column="5"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>This class is used by <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> to render bitmap controls. </para>
+<para>This class is used by <ref refid="classwx_data_view_ctrl" kindref="compound">wxDataViewCtrl</ref> to render bitmaps. </para>
     </briefdescription>
     <detaileddescription>
+<para>This renderer accepts <ref refid="classwx_variant" kindref="compound">wxVariant</ref> objects storing <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>, <ref refid="classwx_icon" kindref="compound">wxIcon</ref> or <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> inside them, with the latter being preferred as it allows the renderer to automatically select the bitmap of the best matching size depending on the current DPI.</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt; </para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__dvc" kindref="compound">wxDataViewCtrl Related Classes</ref> </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -105,7 +110,7 @@
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/dataview.h" line="2697" column="1" bodyfile="interface/wx/dataview.h" bodystart="2698" bodyend="2713"/>
+    <location file="interface/wx/dataview.h" line="2743" column="1" bodyfile="interface/wx/dataview.h" bodystart="2744" bodyend="2764"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxDataViewBitmapRenderer</scope><name>AllocExclusive</name></member>
       <member refid="classwx_data_view_renderer_1a179780588351469d8c21a66bc2bc2b3d" prot="public" virt="virtual"><scope>wxDataViewBitmapRenderer</scope><name>CancelEditing</name></member>
@@ -129,6 +134,7 @@
       <member refid="classwx_data_view_renderer_1aaa95f8d49da1b296df8bedd1f76ecc28" prot="public" virt="non-virtual"><scope>wxDataViewBitmapRenderer</scope><name>GetVariantType</name></member>
       <member refid="classwx_data_view_renderer_1a7e5388a6978cd5577440bf58a03e2288" prot="protected" virt="non-virtual"><scope>wxDataViewBitmapRenderer</scope><name>GetView</name></member>
       <member refid="classwx_data_view_renderer_1a71ba6f4bc0c54b83540660cdf40a64d0" prot="public" virt="virtual"><scope>wxDataViewBitmapRenderer</scope><name>HasEditorCtrl</name></member>
+      <member refid="classwx_data_view_renderer_1a04ec07fe8f62bb2366ccbd7d1b6d2da8" prot="public" virt="virtual"><scope>wxDataViewBitmapRenderer</scope><name>IsCompatibleVariantType</name></member>
       <member refid="classwx_object_1a3c7115ef4132dcee0c4fc34e84d7fced" prot="public" virt="non-virtual"><scope>wxDataViewBitmapRenderer</scope><name>IsKindOf</name></member>
       <member refid="classwx_object_1a059373c494c2369d7db2a556efef8ecf" prot="public" virt="non-virtual"><scope>wxDataViewBitmapRenderer</scope><name>IsSameAs</name></member>
       <member refid="classwx_object_1a9e31954530a0abd54982effc443ed2b8" prot="protected" virt="non-virtual"><scope>wxDataViewBitmapRenderer</scope><name>m_refData</name></member>

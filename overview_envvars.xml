@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="overview_envvars" kind="page">
     <compoundname>overview_envvars</compoundname>
     <title>Environment Variables</title>
@@ -7,8 +7,7 @@
 <para>This section describes all environment variables that affect execution of wxWidgets programs. </para>
     </briefdescription>
     <detaileddescription>
-<para>This section describes all environment variables that affect execution of wxWidgets programs.</para>
-<para><table rows="3" cols="2"><row>
+<para><table rows="4" cols="2"><row>
 <entry thead="no"><para>WXTRACE </para>
 </entry><entry thead="no"><para>(Debug build only.) This variable can be set to a comma-separated list of trace masks used in wxLogTrace calls; <ref refid="classwx_log_1a4c11ee23ce5264b6c5921a17610cda13" kindref="member">wxLog::AddTraceMask</ref> is called for every mask in the list during wxWidgets initialization. </para>
 </entry></row>
@@ -19,6 +18,10 @@
 <row>
 <entry thead="no"><para>WXWEBREQUEST_BACKEND </para>
 </entry><entry thead="no"><para>This variable can be set to override the choice of the default backend used by <ref refid="classwx_web_request" kindref="compound">wxWebRequest</ref>, see <ref refid="classwx_web_session_1aff8b2fcc0382122703b67bd4b106c417" kindref="member">wxWebSession::New()</ref>. Most common use is to set it to <computeroutput>&quot;CURL&quot;</computeroutput> to force using libcurl-based implementation under MSW or macOS platforms where the native implementation would be chosen by default. </para>
+</entry></row>
+<row>
+<entry thead="no"><para>WXSUPPRESS_SIZER_FLAGS_CHECK </para>
+</entry><entry thead="no"><para>If set, disables asserts about using invalid sizer flags in the code. This can be helpful when running older programs recompiled with wxWidgets 3.1 or later, as these asserts are mostly harmless and can be safely ignored if the code works as expected. </para>
 </entry></row>
 </table>
 </para>

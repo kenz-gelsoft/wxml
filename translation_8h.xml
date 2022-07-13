@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="translation_8h" kind="file" language="C++">
     <compoundname>translation.h</compoundname>
     <innerclass refid="classwx_translations" prot="public">wxTranslations</innerclass>
@@ -19,8 +19,7 @@
         <detaileddescription>
 <para><simplesect kind="return"><para>A const <ref refid="classwx_string" kindref="compound">wxString</ref>.</para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/intl.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/intl.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -88,12 +87,28 @@ Include file:<linebreak/>
 <para>Note that if you simply omit <ref refid="translation_8h_1ab8862de0f74049708bfea75ae9e14c45" kindref="member">wxTRANSLATE()</ref> above, those strings would not be marked for translation, and would therefore not be included in the message catalog. Consequently, <ref refid="translation_8h_1a460d07961e771004f3e8535ec4ce428f" kindref="member">wxGetTranslation()</ref> would not find translations for them.</para>
 <para><simplesect kind="return"><para>A const wxChar*.</para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/intl.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/intl.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="interface/wx/translation.h" line="522" column="9" bodyfile="interface/wx/translation.h" bodystart="522" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="translation_8h_1aa328f9b9a221bd2f4cbc47b195ebd351" prot="public" static="no">
+        <name>wxTRANSLATE_IN_CONTEXT</name>
+        <param><defname>context</defname></param>
+        <param><defname>string</defname></param>
+        <briefdescription>
+<para>This macro doesn&apos;t do anything in the program code <ndash/> it simply expands to the value of its argument. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Similar to <ref refid="translation_8h_1ab8862de0f74049708bfea75ae9e14c45" kindref="member">wxTRANSLATE()</ref>, but with a context argument. Both the context and string need to be string literals. Be sure to use the same context when calling <ref refid="translation_8h_1a460d07961e771004f3e8535ec4ce428f" kindref="member">wxGetTranslation()</ref>.</para>
+<para><simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/translation.h" line="534" column="9" bodyfile="interface/wx/translation.h" bodystart="534" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -128,12 +143,11 @@ Include file:<linebreak/>
 </simplesect>
 <simplesect kind="see"><para>wxGetTranslation(const wxString&amp;, const wxString&amp;, unsigned, const wxString&amp;)</para>
 </simplesect>
-Include file:<linebreak/>
- <verbatim>#include &lt;wx/intl.h&gt; </verbatim> </para>
+Include file: <verbatim>#include &lt;wx/intl.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/translation.h" line="561" column="16" declfile="interface/wx/translation.h" declline="561" declcolumn="16"/>
+        <location file="interface/wx/translation.h" line="573" column="16" declfile="interface/wx/translation.h" declline="573" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="translation_8h_1af4330cc4a14c99c954935c0747c9131f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
@@ -169,12 +183,11 @@ Include file:<linebreak/>
 <para>This version is used when retrieving translation of string that has different singular and plural forms in English or different plural forms in some other language. Like wxGetTranslation(const wxString&amp;,const wxString&amp;), the <emphasis>string</emphasis> parameter must contain the singular form of the string to be converted and is used as the key for the search in the catalog. The <emphasis>plural</emphasis> parameter is the plural form (in English). The parameter <emphasis>n</emphasis> is used to determine the plural form. If no message catalog is found, <emphasis>string</emphasis> is returned if &quot;n == 1&quot;, otherwise <emphasis>plural</emphasis> is returned.</para>
 <para>See GNU gettext Manual for additional information on plural forms handling: <ulink url="http://www.gnu.org/software/gettext/manual/gettext.html#Plural-forms">http://www.gnu.org/software/gettext/manual/gettext.html#Plural-forms</ulink> For a shorter alternative see the <ref refid="translation_8h_1adc7c2f1bab3914af93feb47945003409" kindref="member">wxPLURAL()</ref> macro.</para>
 <para>This function is thread-safe.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/intl.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/intl.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/translation.h" line="587" column="16" declfile="interface/wx/translation.h" declline="587" declcolumn="16"/>
+        <location file="interface/wx/translation.h" line="599" column="16" declfile="interface/wx/translation.h" declline="599" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="translation_8h_1a63ac344fa98fcb51cef18e5a9b8a916d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
@@ -191,12 +204,11 @@ Include file:<linebreak/>
         <detaileddescription>
 <para>This macro expands into a call to <ref refid="translation_8h_1a460d07961e771004f3e8535ec4ce428f" kindref="member">wxGetTranslation()</ref>, so it marks the message for the extraction by <computeroutput>xgettext</computeroutput> just as <ref refid="translation_8h_1ab8862de0f74049708bfea75ae9e14c45" kindref="member">wxTRANSLATE()</ref> does, but also returns the translation of the string for the current locale during execution.</para>
 <para>This macro is thread-safe.</para>
-<para>Include file:<linebreak/>
- <verbatim>#include &lt;wx/intl.h&gt; </verbatim> </para>
+<para>Include file: <verbatim>#include &lt;wx/intl.h&gt; </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/translation.h" line="604" column="16" declfile="interface/wx/translation.h" declline="604" declcolumn="16"/>
+        <location file="interface/wx/translation.h" line="616" column="16" declfile="interface/wx/translation.h" declline="616" declcolumn="16"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

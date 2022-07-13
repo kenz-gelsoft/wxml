@@ -1,0 +1,881 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="classwx_bitmap_bundle" kind="class" language="C++" prot="public">
+    <compoundname>wxBitmapBundle</compoundname>
+    <includes local="no">wx/bmpbndl.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a147abda71276821e3957be38e9b9baa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxBitmapBundle::wxBitmapBundle</definition>
+        <argsstring>()</argsstring>
+        <name>wxBitmapBundle</name>
+        <qualifiedname>wxBitmapBundle::wxBitmapBundle</qualifiedname>
+        <briefdescription>
+<para>Default constructor constructs an empty bundle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>An empty bundle can&apos;t be used for anything, but can be assigned something else later. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="102" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a922b10aa1d1127d38a169fc2281a2e03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxBitmapBundle::wxBitmapBundle</definition>
+        <argsstring>(const wxBitmap &amp;bitmap)</argsstring>
+        <name>wxBitmapBundle</name>
+        <qualifiedname>wxBitmapBundle::wxBitmapBundle</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <declname>bitmap</declname>
+        </param>
+        <briefdescription>
+<para>Conversion constructor from a single bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor does the same thing as <ref refid="classwx_bitmap_bundle_1a17e765ddbd5b3ffa3946be04b7ea5137" kindref="member">FromBitmap()</ref> and only exists for interoperability with the existing code using <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="110" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a26700eb799253754c332308ee469ad11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxBitmapBundle::wxBitmapBundle</definition>
+        <argsstring>(const wxIcon &amp;icon)</argsstring>
+        <name>wxBitmapBundle</name>
+        <qualifiedname>wxBitmapBundle::wxBitmapBundle</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_icon" kindref="compound">wxIcon</ref> &amp;</type>
+          <declname>icon</declname>
+        </param>
+        <briefdescription>
+<para>Conversion constructor from a single icon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor does the same thing as <ref refid="classwx_bitmap_bundle_1a17e765ddbd5b3ffa3946be04b7ea5137" kindref="member">FromBitmap()</ref> and only exists for interoperability with the existing code using <ref refid="classwx_icon" kindref="compound">wxIcon</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="118" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a5e5fa07df8d5e5d60b107f5949f5d12d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxBitmapBundle::wxBitmapBundle</definition>
+        <argsstring>(const wxImage &amp;image)</argsstring>
+        <name>wxBitmapBundle</name>
+        <qualifiedname>wxBitmapBundle::wxBitmapBundle</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_image" kindref="compound">wxImage</ref> &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+<para>Conversion constructor from a single image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Similarly to the constructor from <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>, this constructor only exists for interoperability with the existing code using <ref refid="classwx_image" kindref="compound">wxImage</ref> and can be replaced with more readable <ref refid="classwx_bitmap_bundle_1a01b30c8f19d1b36addf9553a3e33833a" kindref="member">FromImage()</ref> in the new code. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="127" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1aeb9d813e1163b586497c2a86ee7eb2b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxBitmapBundle::wxBitmapBundle</definition>
+        <argsstring>(const char *const *xpm)</argsstring>
+        <name>wxBitmapBundle</name>
+        <qualifiedname>wxBitmapBundle::wxBitmapBundle</qualifiedname>
+        <param>
+          <type>const char *const *</type>
+          <declname>xpm</declname>
+        </param>
+        <briefdescription>
+<para>Conversion constructor from XPM data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor overload exists only for compatibility with the existing code passing XPM data (e.g. <computeroutput>foo_xpm</computeroutput> after including <computeroutput>foo.xpm</computeroutput>) directly to the functions expecting a bitmap. Don&apos;t use it in the new code, as it is likely to be deprecated in the future.</para>
+<para><simplesect kind="since"><para>3.2.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="139" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a11d8e7869e602087cc5552b34e4b6230" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>wxBitmapBundle::wxBitmapBundle</definition>
+        <argsstring>(const wxBitmapBundle &amp;other)</argsstring>
+        <name>wxBitmapBundle</name>
+        <qualifiedname>wxBitmapBundle::wxBitmapBundle</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor creates a copy of another bundle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="144" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a40752e57066dc8e22a74a952c9cecad5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
+        <definition>wxBitmapBundle &amp; wxBitmapBundle::operator=</definition>
+        <argsstring>(const wxBitmapBundle &amp;other)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>wxBitmapBundle::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Assignment operator makes this bundle a copy of another bundle. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="149" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1abf7f9c0159c67f3efea55a964b4fe5d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wxBitmapBundle::Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <qualifiedname>wxBitmapBundle::Clear</qualifiedname>
+        <briefdescription>
+<para>Clear the existing bundle contents. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>After calling this function <ref refid="classwx_bitmap_bundle_1a4055896cbaba793a70ef23668b7250bd" kindref="member">IsOk()</ref> returns false.</para>
+<para>This is the same as assigning a default-constructed bitmap bundle to this object but slightly more explicit.</para>
+<para><simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="313" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a4055896cbaba793a70ef23668b7250bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxBitmapBundle::IsOk</definition>
+        <argsstring>() const</argsstring>
+        <name>IsOk</name>
+        <qualifiedname>wxBitmapBundle::IsOk</qualifiedname>
+        <briefdescription>
+<para>Check if bitmap bundle is non-empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Return true if the bundle contains any bitmaps or false if it is empty. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="321" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a577a349a985b8c4b477288673072bcdc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
+        <definition>wxSize wxBitmapBundle::GetDefaultSize</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDefaultSize</name>
+        <qualifiedname>wxBitmapBundle::GetDefaultSize</qualifiedname>
+        <briefdescription>
+<para>Get the size of the bitmap represented by this bundle in default resolution or, equivalently, at 100% scaling. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When creating the bundle from a number of bitmaps, this will be just the size of the smallest bitmap in it.</para>
+<para>Note that this function is mostly used by wxWidgets itself and not the application. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="333" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1ab1b530e0df1b57afe08b2615a2d41ab4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
+        <definition>wxSize wxBitmapBundle::GetPreferredBitmapSizeAtScale</definition>
+        <argsstring>(double scale) const</argsstring>
+        <name>GetPreferredBitmapSizeAtScale</name>
+        <qualifiedname>wxBitmapBundle::GetPreferredBitmapSizeAtScale</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+<para>Get the size that would be best to use for this bundle at the given DPI scaling factor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For bundles containing some number of the fixed-size bitmaps, this function returns the size of an existing bitmap closest to the ideal size at the given scale, i.e. <ref refid="classwx_bitmap_bundle_1a577a349a985b8c4b477288673072bcdc" kindref="member">GetDefaultSize()</ref> multiplied by <emphasis>scale</emphasis>.</para>
+<para>Passing a size returned by this function to <ref refid="classwx_bitmap_bundle_1a4b05aed3535a217093cff3f604bbe918" kindref="member">GetBitmap()</ref> ensures that bitmap doesn&apos;t need to be rescaled, which typically significantly lowers its quality. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="347" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a718bffe698fa7093570968817e9bcf90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
+        <definition>wxSize wxBitmapBundle::GetPreferredBitmapSizeFor</definition>
+        <argsstring>(const wxWindow *window) const</argsstring>
+        <name>GetPreferredBitmapSizeFor</name>
+        <qualifiedname>wxBitmapBundle::GetPreferredBitmapSizeFor</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Get the size that would be best to use for this bundle at the DPI scaling factor used by the given window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is just a convenient wrapper for <ref refid="classwx_bitmap_bundle_1ab1b530e0df1b57afe08b2615a2d41ab4" kindref="member">GetPreferredBitmapSizeAtScale()</ref> calling that function with the result of <ref refid="classwx_window_1a43bfd56d59b728157f95c838f981872c" kindref="member">wxWindow::GetDPIScaleFactor()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Non-null and fully created window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="358" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a7334c0d48ad8b53a21d315d6eaed75b8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_size" kindref="compound">wxSize</ref></type>
+        <definition>wxSize wxBitmapBundle::GetPreferredLogicalSizeFor</definition>
+        <argsstring>(const wxWindow *window) const</argsstring>
+        <name>GetPreferredLogicalSizeFor</name>
+        <qualifiedname>wxBitmapBundle::GetPreferredLogicalSizeFor</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Get the size that would be best to use for this bundle at the DPI scaling factor used by the given window in logical size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is just call <ref refid="classwx_bitmap_bundle_1ab1b530e0df1b57afe08b2615a2d41ab4" kindref="member">GetPreferredBitmapSizeAtScale()</ref> with the result of <ref refid="classwx_window_1a43bfd56d59b728157f95c838f981872c" kindref="member">wxWindow::GetDPIScaleFactor()</ref> and convert returned value with <ref refid="classwx_window_1a144678f0b197268aa9d8d81b76a150a7" kindref="member">wxWindow::FromPhys()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Non-null and fully created window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="370" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a4b05aed3535a217093cff3f604bbe918" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref></type>
+        <definition>wxBitmap wxBitmapBundle::GetBitmap</definition>
+        <argsstring>(const wxSize &amp;size) const</argsstring>
+        <name>GetBitmap</name>
+        <qualifiedname>wxBitmapBundle::GetBitmap</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Get bitmap of the specified size, creating a new bitmap from the closest available size by rescaling it if necessary. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is mostly used by wxWidgets itself and not the application. As all bitmaps created by it dynamically are currently cached, avoid calling it for many different sizes if you do use it, as this will create many bitmaps that will never be deleted and will consume resources until the application termination.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the bitmap to return, in physical pixels. If this parameter is wxDefaultSize, default bundle size is used. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="385" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a2b427e6ad729074b042acdd805c91e46" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref></type>
+        <definition>wxBitmap wxBitmapBundle::GetBitmapFor</definition>
+        <argsstring>(const wxWindow *window) const</argsstring>
+        <name>GetBitmapFor</name>
+        <qualifiedname>wxBitmapBundle::GetBitmapFor</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Get bitmap of the size appropriate for the DPI scaling used by the given window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This helper function simply combines <ref refid="classwx_bitmap_bundle_1a718bffe698fa7093570968817e9bcf90" kindref="member">GetPreferredBitmapSizeFor()</ref> and <ref refid="classwx_bitmap_bundle_1a4b05aed3535a217093cff3f604bbe918" kindref="member">GetBitmap()</ref>, i.e. it returns a (normally unscaled) bitmap from the bundle of the closest size to the size that should be used at the DPI scaling of the provided window.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Non-null and fully created window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="398" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a8da4786c0260adb65d5a4caedd7ef944" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_icon" kindref="compound">wxIcon</ref></type>
+        <definition>wxIcon wxBitmapBundle::GetIcon</definition>
+        <argsstring>(const wxSize &amp;size) const</argsstring>
+        <name>GetIcon</name>
+        <qualifiedname>wxBitmapBundle::GetIcon</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Get icon of the specified size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is just a convenient wrapper for <ref refid="classwx_bitmap_bundle_1a4b05aed3535a217093cff3f604bbe918" kindref="member">GetBitmap()</ref> and simply converts the returned bitmap to <ref refid="classwx_icon" kindref="compound">wxIcon</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="406" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a8306317d34c3abc57254834998224498" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_icon" kindref="compound">wxIcon</ref></type>
+        <definition>wxIcon wxBitmapBundle::GetIconFor</definition>
+        <argsstring>(const wxWindow *window) const</argsstring>
+        <name>GetIconFor</name>
+        <qualifiedname>wxBitmapBundle::GetIconFor</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+<para>Get icon of the size appropriate for the DPI scaling used by the given window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is similar to <ref refid="classwx_bitmap_bundle_1a2b427e6ad729074b042acdd805c91e46" kindref="member">GetBitmapFor()</ref>, but returns a <ref refid="classwx_icon" kindref="compound">wxIcon</ref>, as <ref refid="classwx_bitmap_bundle_1a8da4786c0260adb65d5a4caedd7ef944" kindref="member">GetIcon()</ref> does.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Non-null and fully created window. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="417" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a307c73ddb5c04414303418146b54e40e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool wxBitmapBundle::IsSameAs</definition>
+        <argsstring>(const wxBitmapBundle &amp;other) const</argsstring>
+        <name>IsSameAs</name>
+        <qualifiedname>wxBitmapBundle::IsSameAs</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Check if the two bundles refer to the same object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Bundles are considered to be same only if they actually use the same underlying object, i.e. are copies of each other. If the two bundles were independently constructed, they&apos;re <emphasis>not</emphasis> considered to be the same, even if they were created from the same bitmap. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="427" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a4e46fb7cee28a465150c2233b3f0698f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromBitmaps</definition>
+        <argsstring>(const wxVector&lt; wxBitmap &gt; &amp;bitmaps)</argsstring>
+        <name>FromBitmaps</name>
+        <qualifiedname>wxBitmapBundle::FromBitmaps</qualifiedname>
+        <param>
+          <type>const wxVector&lt; <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &gt; &amp;</type>
+          <declname>bitmaps</declname>
+        </param>
+        <briefdescription>
+<para>Create a bundle from the given collection of bitmaps. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the <emphasis>bitmaps</emphasis> vector is empty, an invalid, empty bundle is returned, otherwise initialize the bundle with all the bitmaps in this vector which must be themselves valid. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="159" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a2ac52084fc3b501fbabd3c952f264d30" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromBitmaps</definition>
+        <argsstring>(const wxBitmap &amp;bitmap1, const wxBitmap &amp;bitmap2)</argsstring>
+        <name>FromBitmaps</name>
+        <qualifiedname>wxBitmapBundle::FromBitmaps</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <declname>bitmap1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <declname>bitmap2</declname>
+        </param>
+        <briefdescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="162" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a17e765ddbd5b3ffa3946be04b7ea5137" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromBitmap</definition>
+        <argsstring>(const wxBitmap &amp;bitmap)</argsstring>
+        <name>FromBitmap</name>
+        <qualifiedname>wxBitmapBundle::FromBitmap</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> &amp;</type>
+          <declname>bitmap</declname>
+        </param>
+        <briefdescription>
+<para>Create a bundle from a single bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is only useful for compatibility with the existing code using <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref>.</para>
+<para>If <emphasis>bitmap</emphasis> is invalid, empty bundle is returned. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="173" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a1208f457855de2a641cf5c523cf287d1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromIconBundle</definition>
+        <argsstring>(const wxIconBundle &amp;iconBundle)</argsstring>
+        <name>FromIconBundle</name>
+        <qualifiedname>wxBitmapBundle::FromIconBundle</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_icon_bundle" kindref="compound">wxIconBundle</ref> &amp;</type>
+          <declname>iconBundle</declname>
+        </param>
+        <briefdescription>
+<para>Create a bundle from an icon bundle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If <emphasis>iconBundle</emphasis> is invalid or empty, empty bundle is returned.</para>
+<para><simplesect kind="since"><para>3.1.7 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="182" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a01b30c8f19d1b36addf9553a3e33833a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromImage</definition>
+        <argsstring>(const wxImage &amp;image)</argsstring>
+        <name>FromImage</name>
+        <qualifiedname>wxBitmapBundle::FromImage</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_image" kindref="compound">wxImage</ref> &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+<para>Create a bundle from a single image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is only useful for compatibility with the existing code using <ref refid="classwx_image" kindref="compound">wxImage</ref>.</para>
+<para>If <emphasis>image</emphasis> is invalid, empty bundle is returned. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="192" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1ab1d0babc46f3176bd4b63ce2750c89d6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromImpl</definition>
+        <argsstring>(wxBitmapBundleImpl *impl)</argsstring>
+        <name>FromImpl</name>
+        <qualifiedname>wxBitmapBundle::FromImpl</qualifiedname>
+        <param>
+          <type><ref refid="classwx_bitmap_bundle_impl" kindref="compound">wxBitmapBundleImpl</ref> *</type>
+          <declname>impl</declname>
+        </param>
+        <briefdescription>
+<para>Create a bundle from a custom bitmap bundle implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function can be used to create bundles implementing custom logic for creating the bitmaps, e.g. creating them on the fly rather than using predefined bitmaps.</para>
+<para>See <ref refid="classwx_bitmap_bundle_impl" kindref="compound">wxBitmapBundleImpl</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>impl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid, i.e. non-null, pointer. This function takes ownership of it, so the caller must <emphasis>not</emphasis> call DecRef() on it. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="206" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1af5521b4db71cbca163f54ecb1d2ad69d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromResources</definition>
+        <argsstring>(const wxString &amp;name)</argsstring>
+        <name>FromResources</name>
+        <qualifiedname>wxBitmapBundle::FromResources</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Create a bundle from the bitmaps in the application resources. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function can only be used on the platforms supporting storing bitmaps in resources, and currently only works under MSW and MacOS and returns an empty bundle on the other platforms.</para>
+<para>Under MSW, for this function to create a valid bundle, you must have <computeroutput>RCDATA</computeroutput> resource with the given <emphasis>name</emphasis> in your application resource file (with the extension <computeroutput></computeroutput>.rc) containing PNG file, and any other resources using <emphasis>name</emphasis> as prefix and suffix with the scale, e.g. &quot;_2x&quot; or &quot;_1_5x&quot; (for 150% DPI) will be also loaded as part of the bundle.</para>
+<para><simplesect kind="see"><para><ref refid="classwx_bitmap_bundle_1ac0b9721c5265240ec7a9728ba6be0fe1" kindref="member">FromSVGResource()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="223" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1aef5f4778d6fd9463128d68d9e280c67a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromFiles</definition>
+        <argsstring>(const wxString &amp;path, const wxString &amp;filename, const wxString &amp;extension=&quot;png&quot;)</argsstring>
+        <name>FromFiles</name>
+        <qualifiedname>wxBitmapBundle::FromFiles</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>extension</declname>
+          <defval>&quot;png&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Create a bundle from bitmaps stored as files. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Looking in <emphasis>path</emphasis> for files using <emphasis>filename</emphasis> as prefix and potentionally a suffix with scale, e.g. &quot;_2x&quot; or &quot;@2x&quot;</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path of the directory containing the files </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bitmap&apos;s filename without any scale suffix </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>extension</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File extension, without leading dot (<computeroutput>png</computeroutput> by default) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="235" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1af5f2d82a22c4a5903dc95569f8556e3e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromFiles</definition>
+        <argsstring>(const wxString &amp;fullpathname)</argsstring>
+        <name>FromFiles</name>
+        <qualifiedname>wxBitmapBundle::FromFiles</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>fullpathname</declname>
+        </param>
+        <briefdescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="238" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1a148dc26191f48f22e57c1ef2d8ff611b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromSVG</definition>
+        <argsstring>(char *data, const wxSize &amp;sizeDef)</argsstring>
+        <name>FromSVG</name>
+        <qualifiedname>wxBitmapBundle::FromSVG</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
+          <declname>sizeDef</declname>
+        </param>
+        <briefdescription>
+<para>Create a bundle from the SVG image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Please note that the current implementation uses NanoSVG library (<ulink url="https://github.com/memononen/nanosvg">https://github.com/memononen/nanosvg</ulink>) for parsing and rasterizing SVG images which imposes the following limitations:</para>
+<para><itemizedlist>
+<listitem><para>Text elements are not supported at all.</para>
+</listitem><listitem><para>SVG 1.1 filters are not supported.</para>
+</listitem></itemizedlist>
+</para>
+<para>These limitations will be relaxed in the future wxWidgets versions.</para>
+<para>Please also note that this method is only available in the ports providing raw bitmap access via <ref refid="classwx_pixel_data" kindref="compound">wxPixelData</ref>. This is the case for all tier-1 ports, but not all of them, check if <computeroutput>wxHAS_SVG</computeroutput> is defined before using this method if for maximum portability.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This data may, or not, have the XML document preamble, i.e. it can start either with <computeroutput>&quot;&lt;?xml&quot;</computeroutput> processing instruction or directly with <computeroutput>svg</computeroutput> tag. Notice that two overloads of this function, taking const and non-const data, are provided: as the current implementation modifies the data while parsing, using the non-const variant is more efficient, as it avoids making copy of the data, but the data is consumed by it and can&apos;t be reused any more. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sizeDef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The default size to return from <ref refid="classwx_bitmap_bundle_1a577a349a985b8c4b477288673072bcdc" kindref="member">GetDefaultSize()</ref> for this bundle. As SVG images usually don&apos;t have any natural default size, it should be provided when creating the bundle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="269" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1ad7add757fd27af9ad000750cef9c61f9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromSVG</definition>
+        <argsstring>(const char *data, const wxSize &amp;sizeDef)</argsstring>
+        <name>FromSVG</name>
+        <qualifiedname>wxBitmapBundle::FromSVG</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
+          <declname>sizeDef</declname>
+        </param>
+        <briefdescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="272" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1ac0b99263576f8c11815ab60cfbb573ab" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromSVGFile</definition>
+        <argsstring>(const wxString &amp;path, const wxSize &amp;sizeDef)</argsstring>
+        <name>FromSVGFile</name>
+        <qualifiedname>wxBitmapBundle::FromSVGFile</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
+          <declname>sizeDef</declname>
+        </param>
+        <briefdescription>
+<para>Create a bundle from the SVG image loaded from the given file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function loads the SVG data from the given <emphasis>path</emphasis> and calls <ref refid="classwx_bitmap_bundle_1a148dc26191f48f22e57c1ef2d8ff611b" kindref="member">FromSVG()</ref> with it. As it is just a wrapper for <ref refid="classwx_bitmap_bundle_1a148dc26191f48f22e57c1ef2d8ff611b" kindref="member">FromSVG()</ref>, please see that function documentation for more information about SVG support.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to the SVG file. Notice that it should a local file, not an URL. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sizeDef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The default size to return from <ref refid="classwx_bitmap_bundle_1a577a349a985b8c4b477288673072bcdc" kindref="member">GetDefaultSize()</ref> for this bundle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="286" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classwx_bitmap_bundle_1ac0b9721c5265240ec7a9728ba6be0fe1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref></type>
+        <definition>static wxBitmapBundle wxBitmapBundle::FromSVGResource</definition>
+        <argsstring>(const wxString &amp;name, const wxSize &amp;sizeDef)</argsstring>
+        <name>FromSVGResource</name>
+        <qualifiedname>wxBitmapBundle::FromSVGResource</qualifiedname>
+        <param>
+          <type>const <ref refid="classwx_string" kindref="compound">wxString</ref> &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classwx_size" kindref="compound">wxSize</ref> &amp;</type>
+          <declname>sizeDef</declname>
+        </param>
+        <briefdescription>
+<para>Create a bundle from the SVG image loaded from an application resource. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Available only on the platforms supporting images in resources, i.e., MSW and MacOS.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>On MSW, it must be a resource with <computeroutput>RT_RCDATA</computeroutput> type. On MacOS, it must be a file with an extension &quot;svg&quot; placed in the &quot;Resources&quot; subdirectory of the application bundle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sizeDef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The default size to return from <ref refid="classwx_bitmap_bundle_1a577a349a985b8c4b477288673072bcdc" kindref="member">GetDefaultSize()</ref> for this bundle.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="classwx_bitmap_bundle_1af5521b4db71cbca163f54ecb1d2ad69d" kindref="member">FromResources()</ref>, <ref refid="classwx_bitmap_bundle_1ac0b99263576f8c11815ab60cfbb573ab" kindref="member">FromSVGFile()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="interface/wx/bmpbndl.h" line="301" column="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains representations of the same bitmap in different resolutions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class generalizes <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> for applications supporting multiple DPIs and allows to operate with multiple versions of the same bitmap, in the sizes appropriate to the currently used display resolution, as a single unit. Notably, an entire <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> can be passed to functions such as <ref refid="classwx_tool_bar_1a47f5a68ad5f1182ab241dd3abfe7ac6c" kindref="member">wxToolBar::AddTool()</ref> to allow toolbar to select the best available bitmap to be shown.</para>
+<para>Objects of this class are typically created by the application and then passed to wxWidgets functions, but not used by the application itself. Currently bitmap bundles can be created from: <verbatim>- A vector of bitmaps, of any provenance.
+- A single wxBitmap or wxImage for backwards compatibility.
+</verbatim> More functions for creating bitmap bundles will be added in the future.</para>
+<para>Objects of <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> class have value-like semantics, i.e. they can be copied around freely (and cheaply) and don&apos;t need to be allocated on the heap. However they usually are created using static factory functions (known as &quot;pseudo-constructors&quot;) such as <ref refid="classwx_bitmap_bundle_1a4e46fb7cee28a465150c2233b3f0698f" kindref="member">FromBitmaps()</ref> instead of using the real constructors.</para>
+<para>Example of using this class to initialize a toolbar in a frame constructor: <programlisting><codeline><highlight class="normal">MyFrame::MyFrame()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classwx_frame" kindref="compound">wxFrame</ref>(nullptr,<sp/><ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbba1f375b01ea03a713bbb7e32a36a2589c" kindref="member">wxID_ANY</ref>,<sp/></highlight><highlight class="stringliteral">&quot;My<sp/>frame&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classwx_tool_bar" kindref="compound">wxToolBar</ref>*<sp/>toolBar<sp/>=<sp/>CreateToolBar();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wxVector&lt;wxBitmap&gt;<sp/>bitmaps;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bitmaps.push_back(<ref refid="gdicmn_8h_1a30fc362d22b3045f58aed54fc808f203" kindref="member">wxBITMAP_PNG</ref>(open_32x32));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bitmaps.push_back(<ref refid="gdicmn_8h_1a30fc362d22b3045f58aed54fc808f203" kindref="member">wxBITMAP_PNG</ref>(open_48x48));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bitmaps.push_back(<ref refid="gdicmn_8h_1a30fc362d22b3045f58aed54fc808f203" kindref="member">wxBITMAP_PNG</ref>(open_64x64));</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>toolBar-&gt;<ref refid="classwx_tool_bar_1a47f5a68ad5f1182ab241dd3abfe7ac6c" kindref="member">AddTool</ref>(<ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbbabade95d4db047c65a8c8e213a6b21f7b" kindref="member">wxID_OPEN</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Open&quot;</highlight><highlight class="normal">,<sp/><ref refid="classwx_bitmap_bundle_1a4e46fb7cee28a465150c2233b3f0698f" kindref="member">wxBitmapBundle::FromBitmaps</ref>(bitmaps));</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>The code shown above will use 32 pixel bitmap in normal DPI, 64 pixel bitmap in &quot;high DPI&quot;, i.e. pixel-doubling or 200% resolution, and 48 pixel bitmap in 150% resolution. For all the other resolutions, the best matching bitmap will be created dynamically from the best available match, e.g. for 175% resolution, 64 pixel bitmap will be rescaled to 56 pixels.</para>
+<para>Of course, this code relies on actually having the resources with the corresponding names (i.e. <computeroutput>open_NxN</computeroutput>) in MSW .rc file or Mac application bundle and <computeroutput>open_NxN_png</computeroutput> arrays being defined in the program code, e.g. by including a file generated with <computeroutput>bin2c</computeroutput> (see <ref refid="gdicmn_8h_1a9eaa3cc84338a358ba0d0292bc67daaa" kindref="member">wxBITMAP_PNG_FROM_DATA()</ref>), on the other platforms.</para>
+<para>For the platforms with resources support, you can also create the bundle from the bitmaps defined in the resources, which has the advantage of not having to explicitly list all the bitmaps, e.g. the code above becomes <programlisting><codeline><highlight class="preprocessor">#ifdef<sp/>wxHAS_IMAGE_RESOURCES</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>toolBar-&gt;<ref refid="classwx_tool_bar_1a47f5a68ad5f1182ab241dd3abfe7ac6c" kindref="member">AddTool</ref>(<ref refid="defs_8h_1ac66d0a09761e7d86b2ac0b2e0c6a8cbbabade95d4db047c65a8c8e213a6b21f7b" kindref="member">wxID_OPEN</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Open&quot;</highlight><highlight class="normal">,<sp/><ref refid="classwx_bitmap_bundle_1af5521b4db71cbca163f54ecb1d2ad69d" kindref="member">wxBitmapBundle::FromResources</ref>(</highlight><highlight class="stringliteral">&quot;open&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...<sp/>same<sp/>code<sp/>as<sp/>shown<sp/>above<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">#endif</highlight></codeline>
+</programlisting> and will load all resources called <computeroutput>open</computeroutput>, <computeroutput>open_2x</computeroutput>, <computeroutput>open_1_5x</computeroutput> etc (at least the first one of them must be available). See also <ref refid="bmpbndl_8h_1ac1b58fbf47d9fead665cd4665d3b02bf" kindref="member">wxBITMAP_BUNDLE_2()</ref> macro which can avoid the need to check for wxHAS_IMAGE_RESOURCES explicitly in the code in a common case of having only 2 embedded resources (for standard and high DPI). See also <ref refid="classwx_bitmap_bundle_1ac0b9721c5265240ec7a9728ba6be0fe1" kindref="member">FromSVGResource()</ref>.</para>
+<para>Also note that the existing code using <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> is compatible with the functions taking <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> in wxWidgets 3.1.6 and later because bitmaps are implicitly convertible to the objects of this class, so just passing <ref refid="classwx_bitmap" kindref="compound">wxBitmap</ref> to the functions taking <ref refid="classwx_bitmap_bundle" kindref="compound">wxBitmapBundle</ref> continues to work and if high resolution versions of bitmap are not (yet) available for the other toolbar tools, single bitmaps can continue to be used instead.</para>
+<para><heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__gdi" kindref="compound">Graphics Device Interface (GDI)</ref></para>
+<para><simplesect kind="since"><para>3.1.6 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="interface/wx/bmpbndl.h" line="93" column="1" bodyfile="interface/wx/bmpbndl.h" bodystart="94" bodyend="428"/>
+    <listofallmembers>
+      <member refid="classwx_bitmap_bundle_1abf7f9c0159c67f3efea55a964b4fe5d5" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>Clear</name></member>
+      <member refid="classwx_bitmap_bundle_1a17e765ddbd5b3ffa3946be04b7ea5137" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromBitmap</name></member>
+      <member refid="classwx_bitmap_bundle_1a4e46fb7cee28a465150c2233b3f0698f" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromBitmaps</name></member>
+      <member refid="classwx_bitmap_bundle_1a2ac52084fc3b501fbabd3c952f264d30" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromBitmaps</name></member>
+      <member refid="classwx_bitmap_bundle_1aef5f4778d6fd9463128d68d9e280c67a" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromFiles</name></member>
+      <member refid="classwx_bitmap_bundle_1af5f2d82a22c4a5903dc95569f8556e3e" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromFiles</name></member>
+      <member refid="classwx_bitmap_bundle_1a1208f457855de2a641cf5c523cf287d1" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromIconBundle</name></member>
+      <member refid="classwx_bitmap_bundle_1a01b30c8f19d1b36addf9553a3e33833a" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromImage</name></member>
+      <member refid="classwx_bitmap_bundle_1ab1d0babc46f3176bd4b63ce2750c89d6" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromImpl</name></member>
+      <member refid="classwx_bitmap_bundle_1af5521b4db71cbca163f54ecb1d2ad69d" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromResources</name></member>
+      <member refid="classwx_bitmap_bundle_1a148dc26191f48f22e57c1ef2d8ff611b" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromSVG</name></member>
+      <member refid="classwx_bitmap_bundle_1ad7add757fd27af9ad000750cef9c61f9" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromSVG</name></member>
+      <member refid="classwx_bitmap_bundle_1ac0b99263576f8c11815ab60cfbb573ab" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromSVGFile</name></member>
+      <member refid="classwx_bitmap_bundle_1ac0b9721c5265240ec7a9728ba6be0fe1" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>FromSVGResource</name></member>
+      <member refid="classwx_bitmap_bundle_1a4b05aed3535a217093cff3f604bbe918" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>GetBitmap</name></member>
+      <member refid="classwx_bitmap_bundle_1a2b427e6ad729074b042acdd805c91e46" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>GetBitmapFor</name></member>
+      <member refid="classwx_bitmap_bundle_1a577a349a985b8c4b477288673072bcdc" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>GetDefaultSize</name></member>
+      <member refid="classwx_bitmap_bundle_1a8da4786c0260adb65d5a4caedd7ef944" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>GetIcon</name></member>
+      <member refid="classwx_bitmap_bundle_1a8306317d34c3abc57254834998224498" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>GetIconFor</name></member>
+      <member refid="classwx_bitmap_bundle_1ab1b530e0df1b57afe08b2615a2d41ab4" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>GetPreferredBitmapSizeAtScale</name></member>
+      <member refid="classwx_bitmap_bundle_1a718bffe698fa7093570968817e9bcf90" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>GetPreferredBitmapSizeFor</name></member>
+      <member refid="classwx_bitmap_bundle_1a7334c0d48ad8b53a21d315d6eaed75b8" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>GetPreferredLogicalSizeFor</name></member>
+      <member refid="classwx_bitmap_bundle_1a4055896cbaba793a70ef23668b7250bd" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>IsOk</name></member>
+      <member refid="classwx_bitmap_bundle_1a307c73ddb5c04414303418146b54e40e" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>IsSameAs</name></member>
+      <member refid="classwx_bitmap_bundle_1a40752e57066dc8e22a74a952c9cecad5" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>operator=</name></member>
+      <member refid="classwx_bitmap_bundle_1a147abda71276821e3957be38e9b9baa4" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>wxBitmapBundle</name></member>
+      <member refid="classwx_bitmap_bundle_1a922b10aa1d1127d38a169fc2281a2e03" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>wxBitmapBundle</name></member>
+      <member refid="classwx_bitmap_bundle_1a26700eb799253754c332308ee469ad11" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>wxBitmapBundle</name></member>
+      <member refid="classwx_bitmap_bundle_1a5e5fa07df8d5e5d60b107f5949f5d12d" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>wxBitmapBundle</name></member>
+      <member refid="classwx_bitmap_bundle_1aeb9d813e1163b586497c2a86ee7eb2b0" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>wxBitmapBundle</name></member>
+      <member refid="classwx_bitmap_bundle_1a11d8e7869e602087cc5552b34e4b6230" prot="public" virt="non-virtual"><scope>wxBitmapBundle</scope><name>wxBitmapBundle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

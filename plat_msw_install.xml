@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="plat_msw_install" kind="page">
     <compoundname>plat_msw_install</compoundname>
     <title>Installing wxWidgets for Windows</title>
@@ -12,11 +12,11 @@
     </briefdescription>
     <detaileddescription>
 <para><anchor id="plat_msw_install_1md_docs_msw_install"/></para>
-<para>This is wxWidgets for Microsoft Windows (XP, Vista, 7, 8, 10, etc) including both 32 bit and 64 bit versions.</para>
+<para>This is wxWidgets for Microsoft Windows (XP, Vista, 7, 8, 10, 11) including both 32 bit and 64 bit versions.</para>
 <sect1 id="plat_msw_install_1msw_install">
 <title>Installation</title>
 <para>If you are using one of the supported compilers, you can use <ref refid="plat_msw_binaries" kindref="compound">pre-built binaries</ref>.</para>
-<para>In this case, just uncompress the binaries archive under any directory and skip to <ulink url="#msw_build_apps">Building Applications Using wxWidgets</ulink> part.</para>
+<para>In this case, just uncompress the binaries archive under any directory and skip to <ref refid="plat_msw_install_1msw_build_apps" kindref="member">Building Applications Using wxWidgets</ref> part.</para>
 <para>Otherwise, or if you want to build a configuration of the library different from the default one, you need to build the library from sources before using it.</para>
 <para>If you use CMake, please see <ref refid="overview_cmake" kindref="compound">CMake Overview</ref> for building wxWidgets using it.</para>
 <para>The first step, which you may have already performed, unless you are reading this file online, is to download the source archive and uncompress it in any directory. It is strongly advised to avoid using spaces in the name of this directory, i.e. notably do <emphasis>not</emphasis> choose a location under &quot;C:\Program Files&quot;, as this risks creating problems with makefiles and other command-line tools.</para>
@@ -25,72 +25,78 @@
 <sect1 id="plat_msw_install_1msw_build">
 <title>Building wxWidgets</title>
 <para>The following sections explain how to compile wxWidgets with each supported compiler, see the &quot;Building Applications&quot; section about the instructions for building your application using wxWidgets.</para>
-<para>All makefiles and project are located in build\msw directory.</para>
+<para>All makefiles and project are located in <computeroutput>build\msw</computeroutput> directory.</para>
 <sect2 id="plat_msw_install_1msw_build_msvs">
 <title>Microsoft Visual C++ Compilation</title>
-<para><itemizedlist>
-<listitem><para>From command line using the provided makefiles:</para>
-</listitem></itemizedlist>
-</para>
-<para>0. Open a &quot;Visual Studio Command Prompt&quot; window shortcut to which must have been installed to the &quot;Start&quot; menu or the &quot;Start&quot; screen by MSVS installation.</para>
-<para><orderedlist>
-<listitem><para>Change directory to %WXWIN%\build\msw and type <verbatim> &gt; nmake /f makefile.vc
-</verbatim> to build wxWidgets in the default debug configuration as a static library. You can also do <verbatim> &gt; nmake /f makefile.vc BUILD=release
-</verbatim> to build a release version or <verbatim> &gt; nmake /f makefile.vc BUILD=release SHARED=1 TARGET_CPU=X86
-</verbatim> to build a 32 bit release DLL version from an x86 command prompt, or <verbatim> &gt; nmake /f makefile.vc BUILD=release SHARED=1 TARGET_CPU=X64
+<sect3 id="plat_msw_install_1autotoc_md17">
+<title>From the IDE</title>
+<para>Ready to use project files are provided for VC++ versions 8, 9, 10, 11, 12, 14, 15, 16 and 17 (also known as MSVS 2005, 2008, 2010, 2012, 2013, 2015, 2017, 2019 and 2022 respectively).</para>
+<para>Simply open <computeroutput>wx_vcN.sln</computeroutput> (for N=8, 9, 10, 11, 12, 14, 15, 16 or 17) file, select the appropriate configuration (Debug or Release, static or DLL) and build the solution. Notice that when building a DLL configuration, you may need to perform the build several times because the projects are not always built in the correct order, and this may result in link errors. Simply do the build again, up to 3 times, to fix this.</para>
+</sect3>
+<sect3 id="plat_msw_install_1autotoc_md18">
+<title>From the command line</title>
+<para>wxWidgets can also be built from the command line using the provided makefiles.</para>
+<para>This needs to be done from the &quot;Visual Studio Command Prompt&quot; window, which can be opened using a shortcut installed to the &quot;Start&quot; menu or the &quot;Start&quot; screen by MSVS installation.</para>
+<para>In this window, change directory to <computeroutput>%WXWIN%\build\msw</computeroutput> and type <verbatim>    &gt; nmake /f makefile.vc
+</verbatim> to build wxWidgets in the default debug configuration as a static library. You can also do <verbatim>    &gt; nmake /f makefile.vc BUILD=release
+</verbatim> to build a release version or <verbatim>    &gt; nmake /f makefile.vc BUILD=release SHARED=1 TARGET_CPU=X86
+</verbatim> to build a 32 bit release DLL version from an x86 command prompt, or <verbatim>    &gt; nmake /f makefile.vc BUILD=release SHARED=1 TARGET_CPU=X64
 </verbatim> to build a 64 bit release DLL version from an x64 command prompt.</para>
-<para>See &quot;Configuring the Build&quot; for more information about the additional parameters that can be specified on the command line.</para>
-</listitem><listitem><para>To verify your build, change the directory to %WXWIN%\samples\minimal and run the same nmake command (with the same parameters there), this should create a working minimal wxWidgets sample.</para>
-</listitem><listitem><para>If you need to rebuild, use &quot;clean&quot; target first or &quot;nmake /a&quot;.</para>
-</listitem></orderedlist>
-<itemizedlist>
-<listitem><para>From the IDE using the provided project files:</para>
-</listitem></itemizedlist>
-</para>
-<para>Ready to use project files are provided for VC++ versions 7, 8, 9, 10, 11, 12, 14, 15 and 16 (also known as MSVS 2003, 2005, 2008, 2010, 2012, 2013, 2015, 2017 and 2019 respectively).</para>
-<para>Simply open <computeroutput>wx_vcN.sln</computeroutput> (for N=7, 8, 9, 10, 11, 12, 14, 15 or 16) file, select the appropriate configuration (Debug or Release, static or DLL) and build the solution. Notice that when building a DLL configuration, you may need to perform the build several times because the projects are not always built in the correct order, and this may result in link errors. Simply do the build again, up to 3 times, to fix this.</para>
+<para>See <ref refid="plat_msw_install_1msw_build_make_params" kindref="member">Make Parameters</ref> for more information about the additional parameters that can be specified on the command line.</para>
+<para>To verify your build, change the directory to <computeroutput>%WXWIN%\samples\minimal</computeroutput> and run the same nmake command (with the same parameters there), this should create a working minimal wxWidgets sample.</para>
+<para>If you need to rebuild, use &quot;clean&quot; target first or &quot;nmake /a&quot;.</para>
+</sect3>
 <sect3 id="plat_msw_install_1autotoc_md19">
+<title>Using vcpkg</title>
+<para>You can download and install wxWidgets using the <ulink url="https://github.com/Microsoft/vcpkg">vcpkg</ulink> dependency manager: <verbatim>&gt; git clone https://github.com/Microsoft/vcpkg.git
+&gt; cd vcpkg
+&gt; bootstrap-vcpkg.bat
+&gt; vcpkg integrate install
+&gt; vcpkg install wxwidgets
+&gt; vcpkg install wxwidgets:x64-windows
+</verbatim> The wxWidgets port in vcpkg is kept up to date by Microsoft team members and community contributors. If the version is out of date, please [create an issue or pull request] (<ulink url="https://github.com/Microsoft/vcpkg">https://github.com/Microsoft/vcpkg</ulink>) on the vcpkg repository.</para>
+</sect3>
+<sect3 id="plat_msw_install_1autotoc_md20">
 <title>Special notes for Visual Studio 2010+</title>
-<para>For Visual Studio 2010+ solutions it is possible to customize the build by creating a <computeroutput>wx_local.props</computeroutput> file in the build\msw directory which is used, if it exists, by the projects. The settings in that file override the default values for the properties such as wxCfg (corresponding to the CFG makefile variable described below) or wxVendor (corresponding to VENDOR). The typical way to make the file is to copy <computeroutput>wx_setup.props</computeroutput> to <computeroutput>wx_local.props</computeroutput> and then edit local.</para>
+<para>For Visual Studio 2010+ solutions it is possible to customize the build by creating a <computeroutput>wx_local.props</computeroutput> file in the <computeroutput>build\msw</computeroutput> directory which is used, if it exists, by the projects. The settings in that file override the default values for the properties such as wxCfg (corresponding to the CFG makefile variable described below) or wxVendor (corresponding to VENDOR). The typical way to make the file is to copy <computeroutput>wx_setup.props</computeroutput> to <computeroutput>wx_local.props</computeroutput> and then edit local.</para>
 <para>For example, if you are building wxWidgets libraries using multiple versions of Visual Studio you could change wxCompilerPrefix to include the toolset: <verbatim>-    &lt;wxCompilerPrefix&gt;vc&lt;/wxCompilerPrefix&gt;
 +    &lt;wxCompilerPrefix&gt;vc$(PlatformToolsetVersion)&lt;/wxCompilerPrefix&gt;
 </verbatim> Following that example if you are using Visual Studio 2013 and open <computeroutput>wx_vc12.sln</computeroutput> it will build using the &quot;vc120&quot; prefix for the build directories so to allow its build files to coexist with the files produced by the other MSVC versions.</para>
 <para>Keep in mind that by using a separate local props file you ensure that your changes won&apos;t be lost when updating to a future wxWidgets version. But if <computeroutput>wx_setup.props</computeroutput> is updated in some later commit your <computeroutput>wx_local.props</computeroutput> is not updated with it. For example the version information in <computeroutput>wx_setup.props</computeroutput> could change and the information in your <computeroutput>wx_local.props</computeroutput> would be outdated. It is your responsibility to monitor for such situations.</para>
 </sect3>
-<sect3 id="plat_msw_install_1autotoc_md20">
+<sect3 id="plat_msw_install_1autotoc_md21">
 <title>Improve debugging for Visual Studio 2012+</title>
 <para>Debug visualizers for Visual Studio 2012+ are provided which makes inspecting various wxWidgets classes easier to view while debugging. To use them:</para>
 <para><orderedlist>
-<listitem><para>Open the folder %WXWIN%\misc\msvc</para>
-</listitem><listitem><para>Open the folder %USERPROFILE%\My Documents\Visual Studio 2012\Visualizers\ (or the corresponding location for newer versions, e.g. ...2013\Visualizers)</para>
-</listitem><listitem><para>Copy wxWidgets.natvis and autoexp.inc</para>
-</listitem><listitem><para>For Visual Studio 2013+ additionally copy wxWidgets.2013.natvis</para>
+<listitem><para>Open the folder <computeroutput>%WXWIN%\misc\msvc</computeroutput></para>
+</listitem><listitem><para>Open the folder <computeroutput>%USERPROFILE%\My Documents\Visual Studio 2012\Visualizers</computeroutput> (or the corresponding location for newer versions, e.g. <computeroutput>...2013\Visualizers</computeroutput>)</para>
+</listitem><listitem><para>Copy <computeroutput>wxWidgets.natvis</computeroutput> and <computeroutput>autoexp.inc</computeroutput></para>
+</listitem><listitem><para>For Visual Studio 2013+ additionally copy <computeroutput>wxWidgets.2013.natvis</computeroutput></para>
 </listitem></orderedlist>
 </para>
 </sect3>
 </sect2>
-<sect2 id="plat_msw_install_1msw_build_cygwin">
-<title>Cygwin/MinGW Compilation</title>
-<para>wxWidgets supports Cygwin, MinGW, MinGW-w64 and TDM-GCC tool chains under Windows. They can be downloaded from:</para>
-<para><ulink url="http://www.cygwin.com/">http://www.cygwin.com/</ulink></para>
-<para><ulink url="http://www.mingw.org/">http://www.mingw.org/</ulink></para>
-<para><ulink url="http://mingw-w64.sourceforge.net/">http://mingw-w64.sourceforge.net/</ulink></para>
-<para><ulink url="http://tdm-gcc.tdragon.net/">http://tdm-gcc.tdragon.net/</ulink></para>
-<para>respectively. Please retrieve and install the latest version of your preferred tool chain by following the instructions provided by these packages. Notice that Cygwin includes both native Cygwin compiler, which produces binaries that require Cygwin during run-time, and MinGW[-w64] cross-compilers which can still be used in Cygwin environment themselves but produce plain Windows binaries without any special run-time requirements. You will probably want to use the latter for developing your applications.</para>
-<para>If using MinGW, you can download the add-on MSYS package to provide Unix-like tools that you&apos;ll need to build wxWidgets using configure.</para>
-<para>C++11 note: If you want to compile wxWidgets in C++11 mode, you currently have to use -std=gnu++11 switch as -std=c++11 disables some extensions that wxWidgets relies on. I.e. please use CXXFLAGS=&quot;-std=gnu++11&quot;.</para>
-<para>All of these tool chains can be used either with Unix-like configure+make build process (preferred) or with the provided makefile.gcc makefiles without using configure:</para>
-<sect3 id="plat_msw_install_1autotoc_md21">
+<sect2 id="plat_msw_install_1msw_build_mingw">
+<title>MinGW Compilation</title>
+<para>wxWidgets supports several different gcc-based toolchains under Windows, including:</para>
+<para><itemizedlist>
+<listitem><para><ulink url="http://mingw-w64.sourceforge.net/">MinGW-w64</ulink></para>
+</listitem><listitem><para><ulink url="http://tdm-gcc.tdragon.net/">TDM-GCC</ulink></para>
+</listitem><listitem><para>Classic <ulink url="http://www.mingw.org/">MinGW</ulink></para>
+</listitem></itemizedlist>
+</para>
+<para>Please retrieve and install the latest version of your preferred tool chain by following the instructions provided by these packages.</para>
+<para>Additionally note that MinGW-w64 can be used as a cross-compiler from Unix systems, including <ulink url="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux">WSL</ulink>.</para>
+<para>All of these tool chains can be used either with Unix-like configure+make build process (preferred) or with the provided makefile.gcc makefiles without using configure.</para>
+<sect3 id="plat_msw_install_1autotoc_md22">
 <title>Using configure</title>
-<para>This method works in exactly the same way as under Unix systems, including OS X, and requires a Unix-like environment to work, i.e. either MSYS or Cygwin.</para>
-<para>0. Open MSYS or Cygwin shell prompt.</para>
+<para>This method works in exactly the same way as under Unix systems, and requires a Unix-like environment to work, i.e. one of MSYS, <ulink url="https://www.msys2.org/">MSYS2</ulink> or <ulink url="https://www.cygwin.com/">Cygwin</ulink>, so the following steps should be done from MSYS or Cygwin shell prompt:</para>
 <para><orderedlist>
-<listitem><para>Create a build directory: it is is strongly recommended to not build the library in the directory containing the sources (<computeroutput>$WXWIN</computeroutput>) but to create a separate build directory instead. The build directory can be placed anywhere (using the fastest available disk may be a good idea), but in this example we create it as a subdirectory of the source one: <verbatim> $ cd $WXWIN
+<listitem><para>Create a build directory: it is strongly recommended to not build the library in the directory containing the sources (<computeroutput>$WXWIN</computeroutput>) but to create a separate build directory instead. The build directory can be placed anywhere (using the fastest available disk may be a good idea), but in this example we create it as a subdirectory of the source one: <verbatim> $ cd $WXWIN
  $ mkdir build-debug
  $ cd build-debug
 </verbatim></para>
-</listitem><listitem><para>Run configure passing it any of the options shown by &quot;configure
-   --help&quot;. Notice that configure builds shared libraries by default, use <ndash/>disable-shared to build static ones. For example: <verbatim> $ ../configure --enable-debug
+</listitem><listitem><para>Run configure passing it any of the options shown by <computeroutput>configure --help</computeroutput>. Notice that configure builds shared libraries by default, use <computeroutput>--disable-shared</computeroutput> to build static ones. For example: <verbatim> $ ../configure --enable-debug
 </verbatim></para>
 </listitem><listitem><para>Build the library: <verbatim> $ make
 </verbatim></para>
@@ -102,39 +108,29 @@
 </listitem></orderedlist>
 </para>
 </sect3>
-<sect3 id="plat_msw_install_1autotoc_md22">
-<title>Using plain makefiles:</title>
-<para>NOTE: The makefile.gcc makefiles are for compilation under MinGW using Windows command interpreter (command.com/cmd.exe), they won&apos;t work if you use Unix shell, as is the case with MSYS. Follow the instructions for using configure above instead if you prefer to use Unix shell.</para>
-<para>0. Open DOS command line window (cmd.exe, <emphasis>not</emphasis> Bash sh.exe).</para>
+<sect3 id="plat_msw_install_1autotoc_md23">
+<title>Using makefiles from Windows command line</title>
+<para>The <computeroutput>makefile.gcc</computeroutput> makefiles are for compilation using MinGW using Windows command interpreter (<computeroutput>cmd.exe</computeroutput>), they will <emphasis>not</emphasis> work if you use Unix shell, as is the case with MSYS. Follow the instructions for using configure above instead if you prefer to use Unix shell. The commands shown here must be executed from a DOS command line window (cmd.exe, <emphasis>not</emphasis> Bash sh.exe).</para>
 <para><orderedlist>
-<listitem><para>Change directory to %WXWIN%\build\msw and type <verbatim> &gt; mingw32-make -f makefile.gcc
-</verbatim> to build wxWidgets in the default debug configuration as a static library. Add &quot;BUILD=release&quot; and/or &quot;SHARED=1&quot; to build the library in release configuration and/or as a shared library instead of the default static one.</para>
-<para>NOTE: For parallel builds, i.e. using -jN make option, please run <computeroutput>mingw32-make -jN ... setup_h</computeroutput> first and then rerun the full make command without <computeroutput>setup_h</computeroutput> at the end to work around a bug in the current makefiles.</para>
-</listitem><listitem><para>To verify your build, change the directory to samples\minimal and run the same mingw32-make command (with the same parameters there), this should create a working minimal wxWidgets sample.</para>
+<listitem><para>Change directory to <computeroutput>%WXWIN%\build\msw</computeroutput> and type <verbatim> &gt; mingw32-make -f makefile.gcc
+</verbatim> to build wxWidgets in the default debug configuration as a static library. Add &quot;BUILD=release&quot; and/or &quot;SHARED=1&quot; to build the library in release configuration and/or as a shared library instead of the default static one, see <ref refid="plat_msw_install_1msw_build_make_params" kindref="member">Make Parameters</ref> for more details.</para>
+<para>NOTE: For parallel builds, i.e. using <computeroutput>-jN</computeroutput> make option, please run <computeroutput>mingw32-make -jN ... setup_h</computeroutput> first and then rerun the full make command without <computeroutput>setup_h</computeroutput> at the end to work around a bug in the current makefiles.</para>
+</listitem><listitem><para>To verify your build, change the directory to <computeroutput>samples\minimal</computeroutput> and run the same mingw32-make command (with the same parameters there), this should create a working minimal wxWidgets sample.</para>
 </listitem><listitem><para>If you need to rebuild, use &quot;clean&quot; target first.</para>
 </listitem></orderedlist>
 </para>
 </sect3>
 </sect2>
 </sect1>
-<sect1 id="plat_msw_install_1msw_install_and_build">
-<title>Installing and building wxWidgets using vcpkg</title>
-<para>You can download and install wxWidgets using the <ulink url="https://github.com/Microsoft/vcpkg">vcpkg</ulink> dependency manager: <verbatim>&gt; git clone https://github.com/Microsoft/vcpkg.git
-&gt; cd vcpkg
-&gt; bootstrap-vcpkg.bat
-&gt; vcpkg integrate install
-&gt; vcpkg install wxwidgets
-</verbatim> The wxWidgets port in vcpkg is kept up to date by Microsoft team members and community contributors. If the version is out of date, please <ulink url="https://github.com/Microsoft/vcpkg">create an issue or pull request</ulink> on the vcpkg repository.</para>
-</sect1>
-<sect1 id="plat_msw_install_1msw_build_config">
-<title>Configuring the Build</title>
-<para>NOTE: If you use configure to build the library with Cygwin/MinGW, the contents of this section does not apply, just pass the arguments to configure directly in this case.</para>
-<sect2 id="plat_msw_install_1autotoc_md23">
+<sect1 id="plat_msw_install_1msw_build_make_params">
+<title>Make Parameters</title>
+<para>NOTE: If you use configure to build the library with MinGW, the contents of this section does not apply, just pass the arguments to configure directly in this case.</para>
+<sect2 id="plat_msw_install_1autotoc_md24">
 <title>Library configuration</title>
-<para>While it is never necessary to do it, you may want to change some of the options in the %WXWIN%\include\wx\msw\setup.h file before building wxWidgets. This file is heavily commented, please read it and enable or disable the features you would like to compile wxWidgets with[out].</para>
+<para>While it is never necessary to do it, you may want to change some of the options in the <computeroutput>%WXWIN%\include\wx\msw\setup.h</computeroutput> file before building wxWidgets. This file is heavily commented, please read it and enable or disable the features you would like to compile wxWidgets with[out].</para>
 <para>Notice that this file is later copied into a directory under lib for each of the build configurations which allows to have different build options for different configurations too if you edit any configuration-specific file.</para>
 </sect2>
-<sect2 id="plat_msw_install_1autotoc_md24">
+<sect2 id="plat_msw_install_1autotoc_md25">
 <title>Makefile parameters</title>
 <para>When building using makefiles, you can specify many build settings (unlike when using the project files where you are limited to choosing just the configuration and platform). This can be done either by passing the values as arguments when invoking make or by editing <computeroutput>build\msw\config.$compiler</computeroutput> file where <computeroutput>$compiler</computeroutput> is the same extension as the makefile you use has (see below). The latter is good for setting options that never change in your development process (e.g. <computeroutput>GCC_VERSION</computeroutput> or <computeroutput>VENDOR</computeroutput>). If you want to build several versions of wxWidgets and use them side by side, the former method is better. Settings in <computeroutput>config.*</computeroutput> files are shared by all makefiles (including the samples), but if you pass the options as arguments, you must use the same arguments you used for the library when building samples!</para>
 <para>For example, to build the library in release mode you can either change the &quot;BUILD&quot; variable definition in <computeroutput>build\msw\config.$compiler</computeroutput> or use <verbatim>    &gt; nmake -f makefile.vc BUILD=debug
@@ -174,7 +170,7 @@
 </listitem><listitem><para><computeroutput>VENDOR=&lt;your company name&gt;</computeroutput></para>
 <para>Set this to a short string identifying your company if you are planning to distribute wxWidgets DLLs with your application. Default value is &apos;custom&apos;. This string is included as part of DLL name. wxWidgets DLLs contain compiler name, version information and vendor name in them. For example <computeroutput>wxmsw311u_core_vc_custom.dll</computeroutput> is one of DLLs build using Visual C++ with default settings. If you set VENDOR=mycorp, the name will change to <computeroutput>wxmsw311u_core_vc_mycorp.dll.</computeroutput></para>
 </listitem><listitem><para><computeroutput>CFG=&lt;configuration name&gt;</computeroutput></para>
-<para>Sets configuration name so that you can have multiple wxWidgets builds with different setup.h settings coexisting in same tree. The value of this option is appended to the build directories names. This is useful for building the library in some non-default configuration, e.g. you could change <computeroutput>wxUSE_STL</computeroutput> to 1 in <computeroutput>\WXWIN\%\include\wx\msw\setup.h</computeroutput> and then build with <computeroutput>CFG=-stl</computeroutput>. Alternatively, you could build with e.g. <computeroutput>RUNTIME_LIBS=static CFG=-mt</computeroutput> when using MSVC.</para>
+<para>Sets configuration name so that you can have multiple wxWidgets builds with different setup.h settings coexisting in same tree. The value of this option is appended to the build directories names. This is useful for building the library in some non-default configuration, e.g. you could change <computeroutput>wxUSE_STL</computeroutput> to 1 in <computeroutput>%WXWIN%\include\wx\msw\setup.h</computeroutput> and then build with <computeroutput>CFG=-stl</computeroutput>. Alternatively, you could build with e.g. <computeroutput>RUNTIME_LIBS=static CFG=-mt</computeroutput> when using MSVC.</para>
 </listitem><listitem><para><computeroutput>COMPILER_PREFIX=&lt;string&gt;</computeroutput></para>
 <para>If you build with multiple versions of the same compiler, you can put their outputs into directories like <computeroutput>vc6_lib</computeroutput>, <computeroutput>vc8_lib</computeroutput> etc. instead of <computeroutput>vc_lib</computeroutput> by setting this variable to e.g. <computeroutput>vc6</computeroutput>. This is merely a convenience variable, you can achieve the same effect (but different directory names) with the CFG option.</para>
 </listitem><listitem><para>CFLAGS</para>

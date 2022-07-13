@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_html_list_box" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxHtmlListBox</compoundname>
     <basecompoundref refid="classwx_v_list_box" prot="public" virt="non-virtual">wxVListBox</basecompoundref>
@@ -12,6 +12,7 @@
         <definition>wxHtmlListBox::wxHtmlListBox</definition>
         <argsstring>(wxWindow *parent, wxWindowID id=wxID_ANY, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=0, const wxString &amp;name=wxHtmlListBoxNameStr)</argsstring>
         <name>wxHtmlListBox</name>
+        <qualifiedname>wxHtmlListBox::wxHtmlListBox</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -55,6 +56,7 @@
         <definition>wxHtmlListBox::wxHtmlListBox</definition>
         <argsstring>()</argsstring>
         <name>wxHtmlListBox</name>
+        <qualifiedname>wxHtmlListBox::wxHtmlListBox</qualifiedname>
         <briefdescription>
 <para>Default constructor, you must call <ref refid="classwx_html_list_box_1a27e85801bbec57a6d130b214fa5004f7" kindref="member">Create()</ref> later. </para>
         </briefdescription>
@@ -69,6 +71,7 @@
         <definition>virtual wxHtmlListBox::~wxHtmlListBox</definition>
         <argsstring>()</argsstring>
         <name>~wxHtmlListBox</name>
+        <qualifiedname>wxHtmlListBox::~wxHtmlListBox</qualifiedname>
         <briefdescription>
 <para>Destructor cleans up whatever resources we use. </para>
         </briefdescription>
@@ -83,6 +86,7 @@
         <definition>bool wxHtmlListBox::Create</definition>
         <argsstring>(wxWindow *parent, wxWindowID id=wxID_ANY, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=0, const wxString &amp;name=wxHtmlListBoxNameStr)</argsstring>
         <name>Create</name>
+        <qualifiedname>wxHtmlListBox::Create</qualifiedname>
         <param>
           <type><ref refid="classwx_window" kindref="compound">wxWindow</ref> *</type>
           <declname>parent</declname>
@@ -128,6 +132,7 @@
         <definition>wxFileSystem &amp; wxHtmlListBox::GetFileSystem</definition>
         <argsstring>() const</argsstring>
         <name>GetFileSystem</name>
+        <qualifiedname>wxHtmlListBox::GetFileSystem</qualifiedname>
         <briefdescription>
 <para>Returns the <ref refid="classwx_file_system" kindref="compound">wxFileSystem</ref> used by the HTML parser of this object. </para>
         </briefdescription>
@@ -143,6 +148,7 @@
         <definition>const wxFileSystem &amp; wxHtmlListBox::GetFileSystem</definition>
         <argsstring>() const</argsstring>
         <name>GetFileSystem</name>
+        <qualifiedname>wxHtmlListBox::GetFileSystem</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -158,6 +164,7 @@
         <definition>virtual void wxHtmlListBox::OnLinkClicked</definition>
         <argsstring>(size_t n, const wxHtmlLinkInfo &amp;link)</argsstring>
         <name>OnLinkClicked</name>
+        <qualifiedname>wxHtmlListBox::OnLinkClicked</qualifiedname>
         <param>
           <type>size_t</type>
           <declname>n</declname>
@@ -201,6 +208,7 @@
         <definition>virtual wxColour wxHtmlListBox::GetSelectedTextBgColour</definition>
         <argsstring>(const wxColour &amp;colBg) const</argsstring>
         <name>GetSelectedTextBgColour</name>
+        <qualifiedname>wxHtmlListBox::GetSelectedTextBgColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>colBg</declname>
@@ -223,6 +231,7 @@
         <definition>virtual wxColour wxHtmlListBox::GetSelectedTextColour</definition>
         <argsstring>(const wxColour &amp;colFg) const</argsstring>
         <name>GetSelectedTextColour</name>
+        <qualifiedname>wxHtmlListBox::GetSelectedTextColour</qualifiedname>
         <param>
           <type>const <ref refid="classwx_colour" kindref="compound">wxColour</ref> &amp;</type>
           <declname>colFg</declname>
@@ -245,6 +254,7 @@
         <definition>virtual wxString wxHtmlListBox::OnGetItemMarkup</definition>
         <argsstring>(size_t n) const</argsstring>
         <name>OnGetItemMarkup</name>
+        <qualifiedname>wxHtmlListBox::OnGetItemMarkup</qualifiedname>
         <param>
           <type>size_t</type>
           <declname>n</declname>
@@ -263,6 +273,7 @@
         <definition>virtual wxString wxHtmlListBox::OnGetItem</definition>
         <argsstring>(size_t n) const =0</argsstring>
         <name>OnGetItem</name>
+        <qualifiedname>wxHtmlListBox::OnGetItem</qualifiedname>
         <reimplementedby refid="classwx_rich_text_style_list_box_1a8d8ab12ae96581f0184a689346349611">OnGetItem</reimplementedby>
         <param>
           <type>size_t</type>
@@ -284,8 +295,7 @@
     </briefdescription>
     <detaileddescription>
 <para>This is still an abstract base class and you will need to derive your own class from it (see htlbox sample for the example), but you will only need to override a single <ref refid="classwx_html_list_box_1a677a4784e26be4a2e1f2bf1442fe578d" kindref="member">wxHtmlListBox::OnGetItem</ref> function.</para>
-<para><linebreak/>
-<heading level="2">Events emitted by this class</heading>
+<para><heading level="2">Events emitted by this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_html_cell_event" kindref="compound">wxHtmlCellEvent</ref>&amp;<nonbreakablespace/>event) or void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_html_link_event" kindref="compound">wxHtmlLinkEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros for events emitted by this class: <itemizedlist>
@@ -293,12 +303,13 @@
 </listitem>
 <listitem><para>EVT_HTML_CELL_HOVER(id,  func): The mouse passed over a <ref refid="classwx_html_cell" kindref="compound">wxHtmlCell</ref>. </para>
 </listitem>
-<listitem><para>EVT_HTML_LINK_CLICKED(id,  func): A <ref refid="classwx_html_cell" kindref="compound">wxHtmlCell</ref> which contains a hyperlink was clicked. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_HTML_LINK_CLICKED(id,  func): A <ref refid="classwx_html_cell" kindref="compound">wxHtmlCell</ref> which contains a hyperlink was clicked. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxhtml" kindref="member">wxHTML</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxhtml" kindref="member">wxHTML</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__ctrl" kindref="compound">Controls</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_simple_html_list_box" kindref="compound">wxSimpleHtmlListBox</ref> </para>
 </simplesect>
 </para>
@@ -524,6 +535,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1a71f45373a9fc55e128d263391093c32a" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1ad122671fcef564f7e11658c3ee0d4d87" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>FromDIP</name></member>
       <member refid="classwx_window_1aee63c8b1f8055fef76962578aa7f38c1" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>FromDIP</name></member>
+      <member refid="classwx_window_1a144678f0b197268aa9d8d81b76a150a7" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a048d540d731ac83550c206df4af04270" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1ac3f185cef9f6a645be63b9b62afae46a" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a2fe6412d36c2b81c0dd3eeb1dd8bd004" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1af1ddb23778f531a56f2e1aa937a66d9c" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>FromPhys</name></member>
+      <member refid="classwx_window_1a27efab91147b0ffeee600f02059c23fc" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>FromPhys</name></member>
       <member refid="classwx_window_1a9cf3fd71ffab949cdf06f8f8e2646d56" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>GetAcceleratorTable</name></member>
       <member refid="classwx_window_1a00547805ce11e2ba64607d31fc2c67e2" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>GetAccessible</name></member>
       <member refid="classwx_window_1a64e3f936ab812d24966827ea4e0f15c0" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>GetAutoLayout</name></member>
@@ -832,6 +849,12 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
       <member refid="classwx_window_1a1771a46c000060619f6e1249ce362433" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>ToDIP</name></member>
       <member refid="classwx_v_list_box_1ae530f18573bd96ea497d64b1b1b18905" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>Toggle</name></member>
       <member refid="classwx_window_1a8a4fa47129de552bfec37db8c69688a2" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>ToggleWindowStyle</name></member>
+      <member refid="classwx_window_1a5d3a9450e6b6f44c6b7d0d4a002fa40f" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1afca50ba59976ad9913148fffd38ff0ef" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1ad0bea5e21d33d00d0cf19c011bad39bf" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aaf0ac2191826f233f04bffa900dbc357" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1aef56d76b1cacdca83daebffcc385d6db" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>ToPhys</name></member>
+      <member refid="classwx_window_1a6797f4c9656276796031b9846ecc20b6" prot="public" virt="non-virtual"><scope>wxHtmlListBox</scope><name>ToPhys</name></member>
       <member refid="classwx_window_1ab8e51f36e7d8790b361c8d8c6f37b1ad" prot="public" virt="virtual"><scope>wxHtmlListBox</scope><name>TransferDataFromWindow</name></member>
       <member refid="classwx_window_1a88cc65e424a129d9b0057756cdb67ec9" prot="public" virt="virtual"><scope>wxHtmlListBox</scope><name>TransferDataToWindow</name></member>
       <member refid="classwx_evt_handler_1a5e25fece1cb6cbc11fd1d41ec140319c" prot="protected" virt="virtual"><scope>wxHtmlListBox</scope><name>TryAfter</name></member>

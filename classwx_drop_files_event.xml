@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_drop_files_event" kind="class" language="C++" prot="public">
     <compoundname>wxDropFilesEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxDropFilesEvent::wxDropFilesEvent</definition>
         <argsstring>(wxEventType id=0, int noFiles=0, wxString *files=NULL)</argsstring>
         <name>wxDropFilesEvent</name>
+        <qualifiedname>wxDropFilesEvent::wxDropFilesEvent</qualifiedname>
         <param>
           <type><ref refid="event_8h_1a6a7fd172612c0d6d9029bfa3aa91aca0" kindref="member">wxEventType</ref></type>
           <declname>id</declname>
@@ -32,13 +33,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3029" column="5"/>
+        <location file="interface/wx/event.h" line="3054" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_drop_files_event_1ad2ed6e868dc33b4a9a7bf3e83b8da8aa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_string" kindref="compound">wxString</ref> *</type>
         <definition>wxString * wxDropFilesEvent::GetFiles</definition>
         <argsstring>() const</argsstring>
         <name>GetFiles</name>
+        <qualifiedname>wxDropFilesEvent::GetFiles</qualifiedname>
         <briefdescription>
 <para>Returns an array of filenames. </para>
         </briefdescription>
@@ -46,13 +48,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3035" column="14"/>
+        <location file="interface/wx/event.h" line="3060" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classwx_drop_files_event_1a715e19151462c985df616fe993e7ddcb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int wxDropFilesEvent::GetNumberOfFiles</definition>
         <argsstring>() const</argsstring>
         <name>GetNumberOfFiles</name>
+        <qualifiedname>wxDropFilesEvent::GetNumberOfFiles</qualifiedname>
         <briefdescription>
 <para>Returns the number of files dropped. </para>
         </briefdescription>
@@ -60,13 +63,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3040" column="9"/>
+        <location file="interface/wx/event.h" line="3065" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classwx_drop_files_event_1a7c4a0590cc9eb5dffdf798a0f29bc71e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
         <definition>wxPoint wxDropFilesEvent::GetPosition</definition>
         <argsstring>() const</argsstring>
         <name>GetPosition</name>
+        <qualifiedname>wxDropFilesEvent::GetPosition</qualifiedname>
         <briefdescription>
 <para>Returns the position at which the files were dropped. </para>
         </briefdescription>
@@ -75,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="3046" column="13"/>
+        <location file="interface/wx/event.h" line="3071" column="13"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -84,19 +88,19 @@
     <detaileddescription>
 <para>The window must have previously been enabled for dropping by calling <ref refid="classwx_window_1a7e7015bc61bd79b6821d2dccaecf9eda" kindref="member">wxWindow::DragAcceptFiles()</ref>.</para>
 <para>Important note: this is a separate implementation to the more general drag and drop implementation documented in the <ref refid="overview_dnd" kindref="compound">Drag and Drop Overview</ref>. It uses the older, Windows message-based approach of dropping files.</para>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_drop_files_event" kindref="compound">wxDropFilesEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
-<listitem><para>EVT_DROP_FILES(func): Process a <computeroutput>wxEVT_DROP_FILES</computeroutput> event. <linebreak/>
- <simplesect kind="remark"><para>Windows only until version 2.8.9, available on all platforms since 2.8.10.</para>
+<listitem><para>EVT_DROP_FILES(func): Process a <computeroutput>wxEVT_DROP_FILES</computeroutput> event. </para>
+</listitem>
+</itemizedlist>
+<simplesect kind="remark"><para>Windows only until version 2.8.9, available on all platforms since 2.8.10.</para>
 </simplesect>
 <heading level="2"></heading>
 </para>
-</listitem>
-</itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="overview_events" kindref="compound">Events and Event Handling</ref>, <ref refid="classwx_window_1a7e7015bc61bd79b6821d2dccaecf9eda" kindref="member">wxWindow::DragAcceptFiles()</ref> </para>
 </simplesect>
 </para>
@@ -144,7 +148,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="3023" column="1" bodyfile="interface/wx/event.h" bodystart="3024" bodyend="3047"/>
+    <location file="interface/wx/event.h" line="3048" column="1" bodyfile="interface/wx/event.h" bodystart="3049" bodyend="3072"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxDropFilesEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxDropFilesEvent</scope><name>Clone</name></member>

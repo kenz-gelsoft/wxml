@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_move_event" kind="class" language="C++" prot="public">
     <compoundname>wxMoveEvent</compoundname>
     <basecompoundref refid="classwx_event" prot="public" virt="non-virtual">wxEvent</basecompoundref>
@@ -10,6 +10,7 @@
         <definition>wxMoveEvent::wxMoveEvent</definition>
         <argsstring>(const wxPoint &amp;pt, int id=0)</argsstring>
         <name>wxMoveEvent</name>
+        <qualifiedname>wxMoveEvent::wxMoveEvent</qualifiedname>
         <param>
           <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
           <declname>pt</declname>
@@ -26,13 +27,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4717" column="5"/>
+        <location file="interface/wx/event.h" line="4788" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classwx_move_event_1a4d49085d2cc9c758e8520048cdd33bee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_point" kindref="compound">wxPoint</ref></type>
         <definition>wxPoint wxMoveEvent::GetPosition</definition>
         <argsstring>() const</argsstring>
         <name>GetPosition</name>
+        <qualifiedname>wxMoveEvent::GetPosition</qualifiedname>
         <briefdescription>
 <para>Returns the position of the window generating the move change event. </para>
         </briefdescription>
@@ -40,26 +42,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4722" column="13"/>
+        <location file="interface/wx/event.h" line="4793" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classwx_move_event_1ae759cbaaa2f269271bcc3ec2f27f15fb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classwx_rect" kindref="compound">wxRect</ref></type>
         <definition>wxRect wxMoveEvent::GetRect</definition>
         <argsstring>() const</argsstring>
         <name>GetRect</name>
+        <qualifiedname>wxMoveEvent::GetRect</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4724" column="12"/>
+        <location file="interface/wx/event.h" line="4795" column="12"/>
       </memberdef>
       <memberdef kind="function" id="classwx_move_event_1a8a497be8943285a6cbc031b466dda914" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxMoveEvent::SetRect</definition>
         <argsstring>(const wxRect &amp;rect)</argsstring>
         <name>SetRect</name>
+        <qualifiedname>wxMoveEvent::SetRect</qualifiedname>
         <param>
           <type>const <ref refid="classwx_rect" kindref="compound">wxRect</ref> &amp;</type>
           <declname>rect</declname>
@@ -70,13 +74,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4725" column="10"/>
+        <location file="interface/wx/event.h" line="4796" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classwx_move_event_1a4abd7f5e82edbc613cbddca16d54f4ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void wxMoveEvent::SetPosition</definition>
         <argsstring>(const wxPoint &amp;pos)</argsstring>
         <name>SetPosition</name>
+        <qualifiedname>wxMoveEvent::SetPosition</qualifiedname>
         <param>
           <type>const <ref refid="classwx_point" kindref="compound">wxPoint</ref> &amp;</type>
           <declname>pos</declname>
@@ -87,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="interface/wx/event.h" line="4726" column="10"/>
+        <location file="interface/wx/event.h" line="4797" column="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -95,8 +100,7 @@
     </briefdescription>
     <detaileddescription>
 <para>These events are currently generated for top level (see <ref refid="classwx_top_level_window" kindref="compound">wxTopLevelWindow</ref>) windows in all ports, but are not generated for the child windows in wxGTK.</para>
-<para><linebreak/>
-<heading level="2">Events using this class</heading>
+<para><heading level="2">Events using this class</heading>
 </para>
 <para>The following event handler macros redirect the events to member function handlers &apos;<bold>func</bold>&apos; with prototypes like: void<nonbreakablespace/>handlerFuncName(<ref refid="classwx_move_event" kindref="compound">wxMoveEvent</ref>&amp;<nonbreakablespace/>event)</para>
 <para>Event macros: <itemizedlist>
@@ -106,12 +110,13 @@
 </listitem>
 <listitem><para>EVT_MOVING(func): Process a <computeroutput>wxEVT_MOVING</computeroutput> event, which is generated while the user is moving the window. wxMSW only. </para>
 </listitem>
-<listitem><para>EVT_MOVE_END(func): Process a <computeroutput>wxEVT_MOVE_END</computeroutput> event, which is generated when the user stops moving or sizing a window. wxMSW only. <linebreak/>
- <heading level="2"></heading>
-</para>
+<listitem><para>EVT_MOVE_END(func): Process a <computeroutput>wxEVT_MOVE_END</computeroutput> event, which is generated when the user stops moving or sizing a window. wxMSW only. </para>
 </listitem>
 </itemizedlist>
-Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<heading level="2"></heading>
+</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxcore" kindref="member">wxCore</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__events" kindref="compound">Events</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_point" kindref="compound">wxPoint</ref>, <ref refid="overview_events" kindref="compound">Events and Event Handling</ref> </para>
 </simplesect>
 </para>
@@ -159,7 +164,7 @@ Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs
         <link refid="classwx_object_ref_data"/>
       </node>
     </collaborationgraph>
-    <location file="interface/wx/event.h" line="4711" column="1" bodyfile="interface/wx/event.h" bodystart="4712" bodyend="4727"/>
+    <location file="interface/wx/event.h" line="4782" column="1" bodyfile="interface/wx/event.h" bodystart="4783" bodyend="4798"/>
     <listofallmembers>
       <member refid="classwx_object_1a60204063f3cc3aa2fa1c7ff5bda9eb13" prot="protected" virt="non-virtual"><scope>wxMoveEvent</scope><name>AllocExclusive</name></member>
       <member refid="classwx_event_1a1458e0e59752bd8753ec20cb719e088b" prot="public" virt="pure-virtual"><scope>wxMoveEvent</scope><name>Clone</name></member>

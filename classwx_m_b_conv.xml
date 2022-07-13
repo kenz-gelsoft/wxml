@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
   <compounddef id="classwx_m_b_conv" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>wxMBConv</compoundname>
     <derivedcompoundref refid="classwx_c_s_conv" prot="public" virt="non-virtual">wxCSConv</derivedcompoundref>
@@ -15,6 +15,7 @@
         <definition>wxMBConv::wxMBConv</definition>
         <argsstring>()</argsstring>
         <name>wxMBConv</name>
+        <qualifiedname>wxMBConv::wxMBConv</qualifiedname>
         <briefdescription>
 <para>Trivial default constructor. </para>
         </briefdescription>
@@ -29,6 +30,7 @@
         <definition>virtual wxMBConv * wxMBConv::Clone</definition>
         <argsstring>() const =0</argsstring>
         <name>Clone</name>
+        <qualifiedname>wxMBConv::Clone</qualifiedname>
         <briefdescription>
 <para>This pure virtual function is overridden in each of the derived classes to return a new copy of the object it is called on. </para>
         </briefdescription>
@@ -44,6 +46,7 @@
         <definition>virtual size_t wxMBConv::GetMaxCharLen</definition>
         <argsstring>() const</argsstring>
         <name>GetMaxCharLen</name>
+        <qualifiedname>wxMBConv::GetMaxCharLen</qualifiedname>
         <briefdescription>
 <para>This function must be overridden in the derived classes to return the maximum length, in bytes, of a single Unicode character representation in this encoding. </para>
         </briefdescription>
@@ -63,6 +66,7 @@
         <definition>virtual size_t wxMBConv::GetMBNulLen</definition>
         <argsstring>() const</argsstring>
         <name>GetMBNulLen</name>
+        <qualifiedname>wxMBConv::GetMBNulLen</qualifiedname>
         <briefdescription>
 <para>This function returns 1 for most of the multibyte encodings in which the string is terminated by a single <computeroutput>NUL</computeroutput>, 2 for UTF-16 and 4 for UTF-32 for which the string is terminated with 2 and 4 <computeroutput>NUL</computeroutput> characters respectively. </para>
         </briefdescription>
@@ -78,6 +82,7 @@
         <definition>virtual bool wxMBConv::IsUTF8</definition>
         <argsstring>() const</argsstring>
         <name>IsUTF8</name>
+        <qualifiedname>wxMBConv::IsUTF8</qualifiedname>
         <briefdescription>
 <para>Return true if the converter&apos;s charset is UTF-8. </para>
         </briefdescription>
@@ -94,6 +99,7 @@
         <definition>virtual size_t wxMBConv::ToWChar</definition>
         <argsstring>(wchar_t *dst, size_t dstLen, const char *src, size_t srcLen=wxNO_LEN) const</argsstring>
         <name>ToWChar</name>
+        <qualifiedname>wxMBConv::ToWChar</qualifiedname>
         <param>
           <type>wchar_t *</type>
           <declname>dst</declname>
@@ -173,6 +179,7 @@
         <definition>virtual size_t wxMBConv::FromWChar</definition>
         <argsstring>(char *dst, size_t dstLen, const wchar_t *src, size_t srcLen=wxNO_LEN) const</argsstring>
         <name>FromWChar</name>
+        <qualifiedname>wxMBConv::FromWChar</qualifiedname>
         <param>
           <type>char *</type>
           <declname>dst</declname>
@@ -241,6 +248,7 @@
         <definition>wxWCharBuffer wxMBConv::cMB2WC</definition>
         <argsstring>(const char *in, size_t inLen, size_t *outLen) const</argsstring>
         <name>cMB2WC</name>
+        <qualifiedname>wxMBConv::cMB2WC</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>in</declname>
@@ -269,6 +277,7 @@
         <definition>wxWCharBuffer wxMBConv::cMB2WC</definition>
         <argsstring>(const wxCharBuffer &amp;buf) const</argsstring>
         <name>cMB2WC</name>
+        <qualifiedname>wxMBConv::cMB2WC</qualifiedname>
         <param>
           <type>const <ref refid="classwx_char_buffer" kindref="compound">wxCharBuffer</ref> &amp;</type>
           <declname>buf</declname>
@@ -293,6 +302,7 @@
         <definition>const char * wxMBConv::cMB2WX</definition>
         <argsstring>(const char *psz) const</argsstring>
         <name>cMB2WX</name>
+        <qualifiedname>wxMBConv::cMB2WX</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>psz</declname>
@@ -312,6 +322,7 @@
         <definition>wxWCharBuffer wxMBConv::cMB2WX</definition>
         <argsstring>(const char *psz) const</argsstring>
         <name>cMB2WX</name>
+        <qualifiedname>wxMBConv::cMB2WX</qualifiedname>
         <param>
           <type>const char *</type>
           <declname>psz</declname>
@@ -329,6 +340,7 @@
         <definition>wxCharBuffer wxMBConv::cWC2MB</definition>
         <argsstring>(const wchar_t *in, size_t inLen, size_t *outLen) const</argsstring>
         <name>cWC2MB</name>
+        <qualifiedname>wxMBConv::cWC2MB</qualifiedname>
         <param>
           <type>const wchar_t *</type>
           <declname>in</declname>
@@ -357,6 +369,7 @@
         <definition>wxCharBuffer wxMBConv::cWC2MB</definition>
         <argsstring>(const wxWCharBuffer &amp;buf) const</argsstring>
         <name>cWC2MB</name>
+        <qualifiedname>wxMBConv::cWC2MB</qualifiedname>
         <param>
           <type>const <ref refid="classwx_w_char_buffer" kindref="compound">wxWCharBuffer</ref> &amp;</type>
           <declname>buf</declname>
@@ -381,6 +394,7 @@
         <definition>const wchar_t * wxMBConv::cWC2WX</definition>
         <argsstring>(const wchar_t *psz) const</argsstring>
         <name>cWC2WX</name>
+        <qualifiedname>wxMBConv::cWC2WX</qualifiedname>
         <param>
           <type>const wchar_t *</type>
           <declname>psz</declname>
@@ -400,6 +414,7 @@
         <definition>wxCharBuffer wxMBConv::cWC2WX</definition>
         <argsstring>(const wchar_t *psz) const</argsstring>
         <name>cWC2WX</name>
+        <qualifiedname>wxMBConv::cWC2WX</qualifiedname>
         <param>
           <type>const wchar_t *</type>
           <declname>psz</declname>
@@ -417,6 +432,7 @@
         <definition>const char * wxMBConv::cWX2MB</definition>
         <argsstring>(const wxChar *psz) const</argsstring>
         <name>cWX2MB</name>
+        <qualifiedname>wxMBConv::cWX2MB</qualifiedname>
         <param>
           <type>const <ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref> *</type>
           <declname>psz</declname>
@@ -436,6 +452,7 @@
         <definition>wxCharBuffer wxMBConv::cWX2MB</definition>
         <argsstring>(const wxChar *psz) const</argsstring>
         <name>cWX2MB</name>
+        <qualifiedname>wxMBConv::cWX2MB</qualifiedname>
         <param>
           <type>const <ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref> *</type>
           <declname>psz</declname>
@@ -453,6 +470,7 @@
         <definition>const wchar_t * wxMBConv::cWX2WC</definition>
         <argsstring>(const wxChar *psz) const</argsstring>
         <name>cWX2WC</name>
+        <qualifiedname>wxMBConv::cWX2WC</qualifiedname>
         <param>
           <type>const <ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref> *</type>
           <declname>psz</declname>
@@ -472,6 +490,7 @@
         <definition>wxWCharBuffer wxMBConv::cWX2WC</definition>
         <argsstring>(const wxChar *psz) const</argsstring>
         <name>cWX2WC</name>
+        <qualifiedname>wxMBConv::cWX2WC</qualifiedname>
         <param>
           <type>const <ref refid="chartype_8h_1ad42f64d8c82f1ce4ae58773a89b2d6a7" kindref="member">wxChar</ref> *</type>
           <declname>psz</declname>
@@ -489,6 +508,7 @@
         <definition>virtual size_t wxMBConv::MB2WC</definition>
         <argsstring>(wchar_t *out, const char *in, size_t outLen) const</argsstring>
         <name>MB2WC</name>
+        <qualifiedname>wxMBConv::MB2WC</qualifiedname>
         <param>
           <type>wchar_t *</type>
           <declname>out</declname>
@@ -504,7 +524,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000078"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is deprecated, please use <ref refid="classwx_m_b_conv_1a78f42e20f5ea3b4de70d35881fc84206" kindref="member">ToWChar()</ref> instead.</para>
+<para><xrefsect id="deprecated_1_deprecated000082"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is deprecated, please use <ref refid="classwx_m_b_conv_1a78f42e20f5ea3b4de70d35881fc84206" kindref="member">ToWChar()</ref> instead.</para>
 </xrefdescription></xrefsect></para>
 <para>Converts from a string <emphasis>in</emphasis> multibyte encoding to Unicode putting up to <emphasis>outLen</emphasis> characters into the buffer <emphasis>out</emphasis>.</para>
 <para>If <emphasis>out</emphasis> is NULL, only the length of the string which would result from the conversion is calculated and returned. Note that this is the length and not size, i.e. the returned value does not include the trailing <computeroutput>NUL</computeroutput>. But when the function is called with a non-NULL <emphasis>out</emphasis> buffer, the <emphasis>outLen</emphasis> parameter should be one more to allow to properly <computeroutput>NUL-terminate</computeroutput> the string.</para>
@@ -555,6 +575,7 @@
         <definition>virtual size_t wxMBConv::WC2MB</definition>
         <argsstring>(char *buf, const wchar_t *psz, size_t n) const</argsstring>
         <name>WC2MB</name>
+        <qualifiedname>wxMBConv::WC2MB</qualifiedname>
         <param>
           <type>char *</type>
           <declname>buf</declname>
@@ -570,7 +591,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000079"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is deprecated, please use <ref refid="classwx_m_b_conv_1a60b29e90d06bc49f09485b611384c6e0" kindref="member">FromWChar()</ref> instead.</para>
+<para><xrefsect id="deprecated_1_deprecated000083"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This function is deprecated, please use <ref refid="classwx_m_b_conv_1a60b29e90d06bc49f09485b611384c6e0" kindref="member">FromWChar()</ref> instead.</para>
 </xrefdescription></xrefsect></para>
 <para>Converts from Unicode to multibyte encoding. The semantics of this function (including the return value meaning) is the same as for <ref refid="classwx_m_b_conv_1ae4582332f44606da0a0101b546093cb3" kindref="member">wxMBConv::MB2WC</ref>. Notice that when the function is called with a non-NULL buffer, the <emphasis>n</emphasis> parameter should be the size of the buffer and so it should take into account the trailing <computeroutput>NUL</computeroutput>, which might take two or four bytes for some encodings (UTF-16 and UTF-32) and not one, i.e. <ref refid="classwx_m_b_conv_1aeb12a168d9852d6b9c2e9a2d8633b9b4" kindref="member">GetMBNulLen()</ref>. </para>
         </detaileddescription>
@@ -585,6 +606,7 @@
         <definition>static size_t wxMBConv::GetMaxMBNulLen</definition>
         <argsstring>()</argsstring>
         <name>GetMaxMBNulLen</name>
+        <qualifiedname>wxMBConv::GetMaxMBNulLen</qualifiedname>
         <briefdescription>
 <para>Returns the maximal value which can be returned by <ref refid="classwx_m_b_conv_1aeb12a168d9852d6b9c2e9a2d8633b9b4" kindref="member">GetMBNulLen()</ref> for any conversion object. </para>
         </briefdescription>
@@ -605,7 +627,8 @@
 <para>In the documentation for this and related classes please notice that length of the string refers to the number of characters in the string not counting the terminating <computeroutput>NUL</computeroutput>, if any. While the size of the string is the total number of bytes in the string, including any trailing <computeroutput>NUL</computeroutput>. Thus, length of wide character string <computeroutput>L&quot;foo&quot;</computeroutput> is 3 while its size can be either 8 or 16 depending on whether <computeroutput>wchar_t</computeroutput> is 2 bytes (as under Windows) or 4 (Unix).</para>
 <para><heading level="2"></heading>
 </para>
-<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref> &lt;&gt;&lt; =&apos;&apos;&gt;:&lt;/&gt;&amp;;&amp;;&lt; =&apos;&apos;&gt;\ &lt;/&gt;&lt;/&gt;</para>
+<para>Library:<nonbreakablespace/><nonbreakablespace/><ref refid="page_libs_1page_libs_wxbase" kindref="member">wxBase</ref></para>
+<para>Category:<nonbreakablespace/><nonbreakablespace/><ref refid="group__group__class__conv" kindref="compound">Text Conversion</ref></para>
 <para><simplesect kind="see"><para><ref refid="classwx_c_s_conv" kindref="compound">wxCSConv</ref>, <ref refid="classwx_encoding_converter" kindref="compound">wxEncodingConverter</ref>, <ref refid="overview_mbconv" kindref="compound">wxMBConv Overview</ref> </para>
 </simplesect>
 </para>
